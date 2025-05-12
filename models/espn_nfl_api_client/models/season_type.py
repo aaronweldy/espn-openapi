@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -14,32 +13,32 @@ class SeasonType:
     """
     Attributes:
         id (str):  Example: 2.
-        type_ (int):  Example: 2.
+        type (int):  Example: 2.
         name (str):  Example: Regular Season.
         abbreviation (Union[Unset, str]):  Example: reg.
     """
 
     id: str
-    type_: int
+    type: int
     name: str
     abbreviation: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
-        type_ = self.type_
+        type = self.type
 
         name = self.name
 
         abbreviation = self.abbreviation
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "id": id,
-                "type": type_,
+                "type": type,
                 "name": name,
             }
         )
@@ -49,11 +48,11 @@ class SeasonType:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
         id = d.pop("id")
 
-        type_ = d.pop("type")
+        type = d.pop("type")
 
         name = d.pop("name")
 
@@ -61,7 +60,7 @@ class SeasonType:
 
         season_type = cls(
             id=id,
-            type_=type_,
+            type=type,
             name=name,
             abbreviation=abbreviation,
         )
@@ -70,7 +69,7 @@ class SeasonType:
         return season_type
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

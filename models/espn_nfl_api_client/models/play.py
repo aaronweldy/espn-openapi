@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,7 +20,7 @@ class Play:
     Attributes:
         id (Union[Unset, str]):
         sequence_number (Union[Unset, str]):
-        type_ (Union[Unset, PlayType]):
+        type (Union[Unset, PlayType]):
         text (Union[Unset, str]):
         period (Union[Unset, PlayPeriod]):
         clock (Union[Unset, PlayClock]):
@@ -29,40 +28,40 @@ class Play:
 
     id: Union[Unset, str] = UNSET
     sequence_number: Union[Unset, str] = UNSET
-    type_: Union[Unset, "PlayType"] = UNSET
+    type: Union[Unset, "PlayType"] = UNSET
     text: Union[Unset, str] = UNSET
     period: Union[Unset, "PlayPeriod"] = UNSET
     clock: Union[Unset, "PlayClock"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         sequence_number = self.sequence_number
 
-        type_: Union[Unset, dict[str, Any]] = UNSET
-        if not isinstance(self.type_, Unset):
-            type_ = self.type_.to_dict()
+        type: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.type, Unset):
+            type = self.type.to_dict()
 
         text = self.text
 
-        period: Union[Unset, dict[str, Any]] = UNSET
+        period: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.period, Unset):
             period = self.period.to_dict()
 
-        clock: Union[Unset, dict[str, Any]] = UNSET
+        clock: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.clock, Unset):
             clock = self.clock.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
             field_dict["id"] = id
         if sequence_number is not UNSET:
             field_dict["sequenceNumber"] = sequence_number
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
         if text is not UNSET:
             field_dict["text"] = text
         if period is not UNSET:
@@ -73,22 +72,22 @@ class Play:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.play_clock import PlayClock
         from ..models.play_period import PlayPeriod
         from ..models.play_type import PlayType
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id", UNSET)
 
         sequence_number = d.pop("sequenceNumber", UNSET)
 
-        _type_ = d.pop("type", UNSET)
-        type_: Union[Unset, PlayType]
-        if isinstance(_type_, Unset):
-            type_ = UNSET
+        _type = d.pop("type", UNSET)
+        type: Union[Unset, PlayType]
+        if isinstance(_type, Unset):
+            type = UNSET
         else:
-            type_ = PlayType.from_dict(_type_)
+            type = PlayType.from_dict(_type)
 
         text = d.pop("text", UNSET)
 
@@ -109,7 +108,7 @@ class Play:
         play = cls(
             id=id,
             sequence_number=sequence_number,
-            type_=type_,
+            type=type,
             text=text,
             period=period,
             clock=clock,
@@ -119,7 +118,7 @@ class Play:
         return play
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,37 +16,37 @@ T = TypeVar("T", bound="TeamRecordItem")
 class TeamRecordItem:
     """
     Attributes:
-        type_ (Union[Unset, str]):  Example: total.
+        type (Union[Unset, str]):  Example: total.
         summary (Union[Unset, str]):  Example: 15-2.
         description (Union[Unset, str]):  Example: Home Record.
-        stats (Union[Unset, list['TeamRecordStat']]):
+        stats (Union[Unset, List['TeamRecordStat']]):
     """
 
-    type_: Union[Unset, str] = UNSET
+    type: Union[Unset, str] = UNSET
     summary: Union[Unset, str] = UNSET
     description: Union[Unset, str] = UNSET
-    stats: Union[Unset, list["TeamRecordStat"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    stats: Union[Unset, List["TeamRecordStat"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        type_ = self.type_
+    def to_dict(self) -> Dict[str, Any]:
+        type = self.type
 
         summary = self.summary
 
         description = self.description
 
-        stats: Union[Unset, list[dict[str, Any]]] = UNSET
+        stats: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.stats, Unset):
             stats = []
             for stats_item_data in self.stats:
                 stats_item = stats_item_data.to_dict()
                 stats.append(stats_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
         if summary is not UNSET:
             field_dict["summary"] = summary
         if description is not UNSET:
@@ -58,11 +57,11 @@ class TeamRecordItem:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.team_record_stat import TeamRecordStat
 
-        d = dict(src_dict)
-        type_ = d.pop("type", UNSET)
+        d = src_dict.copy()
+        type = d.pop("type", UNSET)
 
         summary = d.pop("summary", UNSET)
 
@@ -76,7 +75,7 @@ class TeamRecordItem:
             stats.append(stats_item)
 
         team_record_item = cls(
-            type_=type_,
+            type=type,
             summary=summary,
             description=description,
             stats=stats,
@@ -86,7 +85,7 @@ class TeamRecordItem:
         return team_record_item
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

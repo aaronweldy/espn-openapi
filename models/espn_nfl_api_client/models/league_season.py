@@ -1,6 +1,5 @@
 import datetime
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,23 +19,23 @@ class LeagueSeason:
     """
     Attributes:
         year (int):  Example: 2024.
-        type_ (SeasonType):
+        type (SeasonType):
         start_date (Union[Unset, datetime.datetime]):
         end_date (Union[Unset, datetime.datetime]):
         display_name (Union[Unset, str]):  Example: 2024.
     """
 
     year: int
-    type_: "SeasonType"
+    type: "SeasonType"
     start_date: Union[Unset, datetime.datetime] = UNSET
     end_date: Union[Unset, datetime.datetime] = UNSET
     display_name: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         year = self.year
 
-        type_ = self.type_.to_dict()
+        type = self.type.to_dict()
 
         start_date: Union[Unset, str] = UNSET
         if not isinstance(self.start_date, Unset):
@@ -48,12 +47,12 @@ class LeagueSeason:
 
         display_name = self.display_name
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "year": year,
-                "type": type_,
+                "type": type,
             }
         )
         if start_date is not UNSET:
@@ -66,13 +65,13 @@ class LeagueSeason:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.season_type import SeasonType
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         year = d.pop("year")
 
-        type_ = SeasonType.from_dict(d.pop("type"))
+        type = SeasonType.from_dict(d.pop("type"))
 
         _start_date = d.pop("startDate", UNSET)
         start_date: Union[Unset, datetime.datetime]
@@ -92,7 +91,7 @@ class LeagueSeason:
 
         league_season = cls(
             year=year,
-            type_=type_,
+            type=type,
             start_date=start_date,
             end_date=end_date,
             display_name=display_name,
@@ -102,7 +101,7 @@ class LeagueSeason:
         return league_season
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

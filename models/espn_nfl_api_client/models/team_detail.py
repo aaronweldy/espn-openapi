@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -31,8 +30,8 @@ class TeamDetail:
         alternate_color (Union[Unset, str]):  Example: 000000.
         is_active (Union[Unset, bool]):
         is_all_star (Union[Unset, bool]):
-        logos (Union[Unset, list['TeamLogo']]):
-        links (Union[Unset, list['TeamLink']]):
+        logos (Union[Unset, List['TeamLogo']]):
+        links (Union[Unset, List['TeamLink']]):
     """
 
     id: str
@@ -48,11 +47,11 @@ class TeamDetail:
     alternate_color: Union[Unset, str] = UNSET
     is_active: Union[Unset, bool] = UNSET
     is_all_star: Union[Unset, bool] = UNSET
-    logos: Union[Unset, list["TeamLogo"]] = UNSET
-    links: Union[Unset, list["TeamLink"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    logos: Union[Unset, List["TeamLogo"]] = UNSET
+    links: Union[Unset, List["TeamLink"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         display_name = self.display_name
@@ -79,21 +78,21 @@ class TeamDetail:
 
         is_all_star = self.is_all_star
 
-        logos: Union[Unset, list[dict[str, Any]]] = UNSET
+        logos: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.logos, Unset):
             logos = []
             for logos_item_data in self.logos:
                 logos_item = logos_item_data.to_dict()
                 logos.append(logos_item)
 
-        links: Union[Unset, list[dict[str, Any]]] = UNSET
+        links: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             links = []
             for links_item_data in self.links:
                 links_item = links_item_data.to_dict()
                 links.append(links_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -131,11 +130,11 @@ class TeamDetail:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.team_link import TeamLink
         from ..models.team_logo import TeamLogo
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         display_name = d.pop("displayName")
@@ -198,7 +197,7 @@ class TeamDetail:
         return team_detail
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

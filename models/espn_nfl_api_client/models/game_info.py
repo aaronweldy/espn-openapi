@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,23 +19,23 @@ class GameInfo:
     """
     Attributes:
         venue (Union[Unset, Venue]):
-        officials (Union[Unset, list['Official']]):
+        officials (Union[Unset, List['Official']]):
         attendance (Union[Unset, int]):
         weather (Union[Unset, Weather]):
     """
 
     venue: Union[Unset, "Venue"] = UNSET
-    officials: Union[Unset, list["Official"]] = UNSET
+    officials: Union[Unset, List["Official"]] = UNSET
     attendance: Union[Unset, int] = UNSET
     weather: Union[Unset, "Weather"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        venue: Union[Unset, dict[str, Any]] = UNSET
+    def to_dict(self) -> Dict[str, Any]:
+        venue: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.venue, Unset):
             venue = self.venue.to_dict()
 
-        officials: Union[Unset, list[dict[str, Any]]] = UNSET
+        officials: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.officials, Unset):
             officials = []
             for officials_item_data in self.officials:
@@ -45,11 +44,11 @@ class GameInfo:
 
         attendance = self.attendance
 
-        weather: Union[Unset, dict[str, Any]] = UNSET
+        weather: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.weather, Unset):
             weather = self.weather.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if venue is not UNSET:
@@ -64,12 +63,12 @@ class GameInfo:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.official import Official
         from ..models.venue import Venue
         from ..models.weather import Weather
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         _venue = d.pop("venue", UNSET)
         venue: Union[Unset, Venue]
         if isinstance(_venue, Unset):
@@ -104,7 +103,7 @@ class GameInfo:
         return game_info
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

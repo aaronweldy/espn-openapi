@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,7 +19,7 @@ class SportLeague:
     Attributes:
         id (str):  Example: 28.
         name (str):  Example: National Football League.
-        teams (list['TeamEntry']):
+        teams (List['TeamEntry']):
         uid (Union[Unset, str]):  Example: s:20~l:28.
         abbreviation (Union[Unset, str]):  Example: NFL.
         short_name (Union[Unset, str]):  Example: NFL.
@@ -31,16 +30,16 @@ class SportLeague:
 
     id: str
     name: str
-    teams: list["TeamEntry"]
+    teams: List["TeamEntry"]
     uid: Union[Unset, str] = UNSET
     abbreviation: Union[Unset, str] = UNSET
     short_name: Union[Unset, str] = UNSET
     slug: Union[Unset, str] = UNSET
     year: Union[Unset, int] = UNSET
     season: Union[Unset, "SportLeagueSeason"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -60,11 +59,11 @@ class SportLeague:
 
         year = self.year
 
-        season: Union[Unset, dict[str, Any]] = UNSET
+        season: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.season, Unset):
             season = self.season.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -89,11 +88,11 @@ class SportLeague:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.sport_league_season import SportLeagueSeason
         from ..models.team_entry import TeamEntry
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         name = d.pop("name")
@@ -138,7 +137,7 @@ class SportLeague:
         return sport_league
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

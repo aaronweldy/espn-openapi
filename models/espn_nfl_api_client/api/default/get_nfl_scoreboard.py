@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any, Dict, Optional, Union
 
 import httpx
 
@@ -16,8 +16,8 @@ def _get_kwargs(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetNFLScoreboardSeasontype] = UNSET,
-) -> dict[str, Any]:
-    params: dict[str, Any] = {}
+) -> Dict[str, Any]:
+    params: Dict[str, Any] = {}
 
     params["dates"] = dates
 
@@ -31,7 +31,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: dict[str, Any] = {
+    _kwargs: Dict[str, Any] = {
         "method": "get",
         "url": "/sports/football/nfl/scoreboard",
         "params": params,

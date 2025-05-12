@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -11,24 +10,24 @@ T = TypeVar("T", bound="SeasonInfo")
 class SeasonInfo:
     """
     Attributes:
-        type_ (int): Season type (1=preseason, 2=regular, 3=postseason, 4=off-season) Example: 3.
+        type (int): Season type (1=preseason, 2=regular, 3=postseason, 4=off-season) Example: 3.
         year (int):  Example: 2024.
     """
 
-    type_: int
+    type: int
     year: int
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        type_ = self.type_
+    def to_dict(self) -> Dict[str, Any]:
+        type = self.type
 
         year = self.year
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "type": type_,
+                "type": type,
                 "year": year,
             }
         )
@@ -36,14 +35,14 @@ class SeasonInfo:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
-        type_ = d.pop("type")
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
+        type = d.pop("type")
 
         year = d.pop("year")
 
         season_info = cls(
-            type_=type_,
+            type=type,
             year=year,
         )
 
@@ -51,7 +50,7 @@ class SeasonInfo:
         return season_info
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

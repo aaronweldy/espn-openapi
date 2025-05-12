@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -13,7 +12,7 @@ T = TypeVar("T", bound="TeamLink")
 class TeamLink:
     """
     Attributes:
-        rel (list[str]):
+        rel (List[str]):
         href (str):  Example: https://www.espn.com/nfl/team/_/name/ari/arizona-cardinals.
         language (Union[Unset, str]):  Example: en-US.
         text (Union[Unset, str]):  Example: Clubhouse.
@@ -23,7 +22,7 @@ class TeamLink:
         is_hidden (Union[Unset, bool]):
     """
 
-    rel: list[str]
+    rel: List[str]
     href: str
     language: Union[Unset, str] = UNSET
     text: Union[Unset, str] = UNSET
@@ -31,9 +30,9 @@ class TeamLink:
     is_external: Union[Unset, bool] = UNSET
     is_premium: Union[Unset, bool] = UNSET
     is_hidden: Union[Unset, bool] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         rel = self.rel
 
         href = self.href
@@ -50,7 +49,7 @@ class TeamLink:
 
         is_hidden = self.is_hidden
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -74,9 +73,9 @@ class TeamLink:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
-        rel = cast(list[str], d.pop("rel"))
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
+        rel = cast(List[str], d.pop("rel"))
 
         href = d.pop("href")
 
@@ -107,7 +106,7 @@ class TeamLink:
         return team_link
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,27 +18,27 @@ class LeaderCategory:
     Attributes:
         name (Union[Unset, str]):
         display_name (Union[Unset, str]):
-        leaders (Union[Unset, list['LeaderEntry']]):
+        leaders (Union[Unset, List['LeaderEntry']]):
     """
 
     name: Union[Unset, str] = UNSET
     display_name: Union[Unset, str] = UNSET
-    leaders: Union[Unset, list["LeaderEntry"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    leaders: Union[Unset, List["LeaderEntry"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         name = self.name
 
         display_name = self.display_name
 
-        leaders: Union[Unset, list[dict[str, Any]]] = UNSET
+        leaders: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.leaders, Unset):
             leaders = []
             for leaders_item_data in self.leaders:
                 leaders_item = leaders_item_data.to_dict()
                 leaders.append(leaders_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if name is not UNSET:
@@ -52,10 +51,10 @@ class LeaderCategory:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.leader_entry import LeaderEntry
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         name = d.pop("name", UNSET)
 
         display_name = d.pop("displayName", UNSET)
@@ -77,7 +76,7 @@ class LeaderCategory:
         return leader_category
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

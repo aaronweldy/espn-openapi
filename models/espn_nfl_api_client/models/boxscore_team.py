@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,26 +18,26 @@ class BoxscoreTeam:
     """
     Attributes:
         team (Union[Unset, Team]):
-        statistics (Union[Unset, list['Statistic']]):
+        statistics (Union[Unset, List['Statistic']]):
     """
 
     team: Union[Unset, "Team"] = UNSET
-    statistics: Union[Unset, list["Statistic"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    statistics: Union[Unset, List["Statistic"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        team: Union[Unset, dict[str, Any]] = UNSET
+    def to_dict(self) -> Dict[str, Any]:
+        team: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.team, Unset):
             team = self.team.to_dict()
 
-        statistics: Union[Unset, list[dict[str, Any]]] = UNSET
+        statistics: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.statistics, Unset):
             statistics = []
             for statistics_item_data in self.statistics:
                 statistics_item = statistics_item_data.to_dict()
                 statistics.append(statistics_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if team is not UNSET:
@@ -49,11 +48,11 @@ class BoxscoreTeam:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.statistic import Statistic
         from ..models.team import Team
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         _team = d.pop("team", UNSET)
         team: Union[Unset, Team]
         if isinstance(_team, Unset):
@@ -77,7 +76,7 @@ class BoxscoreTeam:
         return boxscore_team
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

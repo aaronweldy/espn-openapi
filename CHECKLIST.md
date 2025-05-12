@@ -8,8 +8,7 @@
 - [x] `/sports/football/nfl/summary` - Already implemented
 - [x] `/sports/football/nfl/news` - Implemented
 - [x] `/v2/sports/football/nfl/standings` - Implemented
-- [ ] `/sports/football/nfl/rankings`
-- [ ] `/sports/football/nfl/teams/{teamId}/roster`
+- [x] `/sports/football/nfl/teams/{teamId}/roster` - Implemented
 - [ ] `/sports/football/nfl/athletes/{athleteId}`
 - [ ] `/sports/football/nfl/athletes/{athleteId}/stats`
 

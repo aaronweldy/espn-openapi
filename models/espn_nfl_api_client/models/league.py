@@ -1,6 +1,5 @@
 import datetime
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,12 +26,12 @@ class League:
         uid (Union[Unset, str]):  Example: s:20~l:28.
         abbreviation (Union[Unset, str]):  Example: NFL.
         slug (Union[Unset, str]):  Example: nfl.
-        logos (Union[Unset, list['Logo']]):
+        logos (Union[Unset, List['Logo']]):
         calendar_type (Union[Unset, str]):  Example: list.
         calendar_is_whitelist (Union[Unset, bool]):
         calendar_start_date (Union[Unset, datetime.datetime]):
         calendar_end_date (Union[Unset, datetime.datetime]):
-        calendar (Union[Unset, list['CalendarItem']]):
+        calendar (Union[Unset, List['CalendarItem']]):
     """
 
     id: str
@@ -41,15 +40,15 @@ class League:
     uid: Union[Unset, str] = UNSET
     abbreviation: Union[Unset, str] = UNSET
     slug: Union[Unset, str] = UNSET
-    logos: Union[Unset, list["Logo"]] = UNSET
+    logos: Union[Unset, List["Logo"]] = UNSET
     calendar_type: Union[Unset, str] = UNSET
     calendar_is_whitelist: Union[Unset, bool] = UNSET
     calendar_start_date: Union[Unset, datetime.datetime] = UNSET
     calendar_end_date: Union[Unset, datetime.datetime] = UNSET
-    calendar: Union[Unset, list["CalendarItem"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    calendar: Union[Unset, List["CalendarItem"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -62,7 +61,7 @@ class League:
 
         slug = self.slug
 
-        logos: Union[Unset, list[dict[str, Any]]] = UNSET
+        logos: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.logos, Unset):
             logos = []
             for logos_item_data in self.logos:
@@ -81,14 +80,14 @@ class League:
         if not isinstance(self.calendar_end_date, Unset):
             calendar_end_date = self.calendar_end_date.isoformat()
 
-        calendar: Union[Unset, list[dict[str, Any]]] = UNSET
+        calendar: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.calendar, Unset):
             calendar = []
             for calendar_item_data in self.calendar:
                 calendar_item = calendar_item_data.to_dict()
                 calendar.append(calendar_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -119,12 +118,12 @@ class League:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.calendar_item import CalendarItem
         from ..models.league_season import LeagueSeason
         from ..models.logo import Logo
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         name = d.pop("name")
@@ -188,7 +187,7 @@ class League:
         return league
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

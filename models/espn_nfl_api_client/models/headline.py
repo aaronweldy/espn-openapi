@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -13,28 +12,28 @@ T = TypeVar("T", bound="Headline")
 class Headline:
     """
     Attributes:
-        type_ (str):  Example: Recap.
+        type (str):  Example: Recap.
         description (Union[Unset, str]):
         short_link_text (Union[Unset, str]):
     """
 
-    type_: str
+    type: str
     description: Union[Unset, str] = UNSET
     short_link_text: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        type_ = self.type_
+    def to_dict(self) -> Dict[str, Any]:
+        type = self.type
 
         description = self.description
 
         short_link_text = self.short_link_text
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "type": type_,
+                "type": type,
             }
         )
         if description is not UNSET:
@@ -45,16 +44,16 @@ class Headline:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
-        type_ = d.pop("type")
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
+        type = d.pop("type")
 
         description = d.pop("description", UNSET)
 
         short_link_text = d.pop("shortLinkText", UNSET)
 
         headline = cls(
-            type_=type_,
+            type=type,
             description=description,
             short_link_text=short_link_text,
         )
@@ -63,7 +62,7 @@ class Headline:
         return headline
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

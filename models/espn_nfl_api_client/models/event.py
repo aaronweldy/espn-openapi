@@ -1,6 +1,5 @@
 import datetime
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,29 +24,29 @@ class Event:
     Attributes:
         id (str):  Example: 401671889.
         date (datetime.datetime):
-        competitions (list['EventCompetition']):
+        competitions (List['EventCompetition']):
         uid (Union[Unset, str]):  Example: s:20~l:28~e:401671889.
         name (Union[Unset, str]):  Example: Kansas City Chiefs at Philadelphia Eagles.
         short_name (Union[Unset, str]):  Example: KC VS PHI.
         season (Union[Unset, EventSeason]):
         week (Union[Unset, EventWeek]):
-        links (Union[Unset, list['Link']]):
+        links (Union[Unset, List['Link']]):
         status (Union[Unset, GameStatus]):
     """
 
     id: str
     date: datetime.datetime
-    competitions: list["EventCompetition"]
+    competitions: List["EventCompetition"]
     uid: Union[Unset, str] = UNSET
     name: Union[Unset, str] = UNSET
     short_name: Union[Unset, str] = UNSET
     season: Union[Unset, "EventSeason"] = UNSET
     week: Union[Unset, "EventWeek"] = UNSET
-    links: Union[Unset, list["Link"]] = UNSET
+    links: Union[Unset, List["Link"]] = UNSET
     status: Union[Unset, "GameStatus"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         date = self.date.isoformat()
@@ -63,26 +62,26 @@ class Event:
 
         short_name = self.short_name
 
-        season: Union[Unset, dict[str, Any]] = UNSET
+        season: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.season, Unset):
             season = self.season.to_dict()
 
-        week: Union[Unset, dict[str, Any]] = UNSET
+        week: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.week, Unset):
             week = self.week.to_dict()
 
-        links: Union[Unset, list[dict[str, Any]]] = UNSET
+        links: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             links = []
             for links_item_data in self.links:
                 links_item = links_item_data.to_dict()
                 links.append(links_item)
 
-        status: Union[Unset, dict[str, Any]] = UNSET
+        status: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -109,14 +108,14 @@ class Event:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.event_competition import EventCompetition
         from ..models.event_season import EventSeason
         from ..models.event_week import EventWeek
         from ..models.game_status import GameStatus
         from ..models.link import Link
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         date = isoparse(d.pop("date"))
@@ -179,7 +178,7 @@ class Event:
         return event
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

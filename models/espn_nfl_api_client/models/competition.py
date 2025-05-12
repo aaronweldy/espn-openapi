@@ -1,6 +1,5 @@
 import datetime
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,36 +24,36 @@ class Competition:
         id (str):  Example: 401547417.
         uid (str):  Example: s:20~l:28~e:401547417~c:401547417.
         date (datetime.datetime):  Example: 2023-02-12T23:30:00Z.
-        competitors (list['Competitor']):
+        competitors (List['Competitor']):
         attendance (Union[Unset, int]):  Example: 70048.
-        type_ (Union[Unset, CompetitionType]):
+        type (Union[Unset, CompetitionType]):
         time_valid (Union[Unset, bool]):
         neutral_site (Union[Unset, bool]):
         conference_competition (Union[Unset, bool]):
         play_by_play_available (Union[Unset, bool]):
         recent (Union[Unset, bool]):
         venue (Union[Unset, Venue]):
-        notes (Union[Unset, list[str]]):
+        notes (Union[Unset, List[str]]):
         status (Union[Unset, GameStatus]):
     """
 
     id: str
     uid: str
     date: datetime.datetime
-    competitors: list["Competitor"]
+    competitors: List["Competitor"]
     attendance: Union[Unset, int] = UNSET
-    type_: Union[Unset, "CompetitionType"] = UNSET
+    type: Union[Unset, "CompetitionType"] = UNSET
     time_valid: Union[Unset, bool] = UNSET
     neutral_site: Union[Unset, bool] = UNSET
     conference_competition: Union[Unset, bool] = UNSET
     play_by_play_available: Union[Unset, bool] = UNSET
     recent: Union[Unset, bool] = UNSET
     venue: Union[Unset, "Venue"] = UNSET
-    notes: Union[Unset, list[str]] = UNSET
+    notes: Union[Unset, List[str]] = UNSET
     status: Union[Unset, "GameStatus"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         uid = self.uid
@@ -68,9 +67,9 @@ class Competition:
 
         attendance = self.attendance
 
-        type_: Union[Unset, dict[str, Any]] = UNSET
-        if not isinstance(self.type_, Unset):
-            type_ = self.type_.to_dict()
+        type: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.type, Unset):
+            type = self.type.to_dict()
 
         time_valid = self.time_valid
 
@@ -82,19 +81,19 @@ class Competition:
 
         recent = self.recent
 
-        venue: Union[Unset, dict[str, Any]] = UNSET
+        venue: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.venue, Unset):
             venue = self.venue.to_dict()
 
-        notes: Union[Unset, list[str]] = UNSET
+        notes: Union[Unset, List[str]] = UNSET
         if not isinstance(self.notes, Unset):
             notes = self.notes
 
-        status: Union[Unset, dict[str, Any]] = UNSET
+        status: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -106,8 +105,8 @@ class Competition:
         )
         if attendance is not UNSET:
             field_dict["attendance"] = attendance
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
         if time_valid is not UNSET:
             field_dict["timeValid"] = time_valid
         if neutral_site is not UNSET:
@@ -128,13 +127,13 @@ class Competition:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.competition_type import CompetitionType
         from ..models.competitor import Competitor
         from ..models.game_status import GameStatus
         from ..models.venue import Venue
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         uid = d.pop("uid")
@@ -150,12 +149,12 @@ class Competition:
 
         attendance = d.pop("attendance", UNSET)
 
-        _type_ = d.pop("type", UNSET)
-        type_: Union[Unset, CompetitionType]
-        if isinstance(_type_, Unset):
-            type_ = UNSET
+        _type = d.pop("type", UNSET)
+        type: Union[Unset, CompetitionType]
+        if isinstance(_type, Unset):
+            type = UNSET
         else:
-            type_ = CompetitionType.from_dict(_type_)
+            type = CompetitionType.from_dict(_type)
 
         time_valid = d.pop("timeValid", UNSET)
 
@@ -174,7 +173,7 @@ class Competition:
         else:
             venue = Venue.from_dict(_venue)
 
-        notes = cast(list[str], d.pop("notes", UNSET))
+        notes = cast(List[str], d.pop("notes", UNSET))
 
         _status = d.pop("status", UNSET)
         status: Union[Unset, GameStatus]
@@ -189,7 +188,7 @@ class Competition:
             date=date,
             competitors=competitors,
             attendance=attendance,
-            type_=type_,
+            type=type,
             time_valid=time_valid,
             neutral_site=neutral_site,
             conference_competition=conference_competition,
@@ -204,7 +203,7 @@ class Competition:
         return competition
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

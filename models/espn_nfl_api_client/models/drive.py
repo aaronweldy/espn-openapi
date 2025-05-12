@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -33,9 +32,9 @@ class Drive:
     play_count: Union[Unset, int] = UNSET
     yards: Union[Unset, int] = UNSET
     time_of_possession: Union[Unset, "DriveTimeOfPossession"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         description = self.description
@@ -48,11 +47,11 @@ class Drive:
 
         yards = self.yards
 
-        time_of_possession: Union[Unset, dict[str, Any]] = UNSET
+        time_of_possession: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.time_of_possession, Unset):
             time_of_possession = self.time_of_possession.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -73,10 +72,10 @@ class Drive:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.drive_time_of_possession import DriveTimeOfPossession
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id", UNSET)
 
         description = d.pop("description", UNSET)
@@ -110,7 +109,7 @@ class Drive:
         return drive
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

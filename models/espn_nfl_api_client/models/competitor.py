@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,12 +25,12 @@ class Competitor:
         order (int):
         home_away (CompetitorHomeAway):
         team (Team):
-        type_ (Union[Unset, str]):  Example: team.
+        type (Union[Unset, str]):  Example: team.
         winner (Union[Unset, bool]):
         score (Union[Unset, str]):  Example: 35.
-        linescores (Union[Unset, list['Linescore']]):
-        statistics (Union[Unset, list['Statistic']]):
-        records (Union[Unset, list['Record']]):
+        linescores (Union[Unset, List['Linescore']]):
+        statistics (Union[Unset, List['Statistic']]):
+        records (Union[Unset, List['Record']]):
     """
 
     id: str
@@ -39,15 +38,15 @@ class Competitor:
     order: int
     home_away: CompetitorHomeAway
     team: "Team"
-    type_: Union[Unset, str] = UNSET
+    type: Union[Unset, str] = UNSET
     winner: Union[Unset, bool] = UNSET
     score: Union[Unset, str] = UNSET
-    linescores: Union[Unset, list["Linescore"]] = UNSET
-    statistics: Union[Unset, list["Statistic"]] = UNSET
-    records: Union[Unset, list["Record"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    linescores: Union[Unset, List["Linescore"]] = UNSET
+    statistics: Union[Unset, List["Statistic"]] = UNSET
+    records: Union[Unset, List["Record"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         uid = self.uid
@@ -58,34 +57,34 @@ class Competitor:
 
         team = self.team.to_dict()
 
-        type_ = self.type_
+        type = self.type
 
         winner = self.winner
 
         score = self.score
 
-        linescores: Union[Unset, list[dict[str, Any]]] = UNSET
+        linescores: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.linescores, Unset):
             linescores = []
             for linescores_item_data in self.linescores:
                 linescores_item = linescores_item_data.to_dict()
                 linescores.append(linescores_item)
 
-        statistics: Union[Unset, list[dict[str, Any]]] = UNSET
+        statistics: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.statistics, Unset):
             statistics = []
             for statistics_item_data in self.statistics:
                 statistics_item = statistics_item_data.to_dict()
                 statistics.append(statistics_item)
 
-        records: Union[Unset, list[dict[str, Any]]] = UNSET
+        records: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.records, Unset):
             records = []
             for records_item_data in self.records:
                 records_item = records_item_data.to_dict()
                 records.append(records_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -96,8 +95,8 @@ class Competitor:
                 "team": team,
             }
         )
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
         if winner is not UNSET:
             field_dict["winner"] = winner
         if score is not UNSET:
@@ -112,13 +111,13 @@ class Competitor:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.linescore import Linescore
         from ..models.record import Record
         from ..models.statistic import Statistic
         from ..models.team import Team
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         uid = d.pop("uid")
@@ -129,7 +128,7 @@ class Competitor:
 
         team = Team.from_dict(d.pop("team"))
 
-        type_ = d.pop("type", UNSET)
+        type = d.pop("type", UNSET)
 
         winner = d.pop("winner", UNSET)
 
@@ -162,7 +161,7 @@ class Competitor:
             order=order,
             home_away=home_away,
             team=team,
-            type_=type_,
+            type=type,
             winner=winner,
             score=score,
             linescores=linescores,
@@ -174,7 +173,7 @@ class Competitor:
         return competitor
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,6 +1,5 @@
 import datetime
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -31,53 +30,53 @@ class EventCompetition:
     Attributes:
         id (str):  Example: 401671889.
         date (datetime.datetime):
-        competitors (list['Competitor']):
+        competitors (List['Competitor']):
         uid (Union[Unset, str]):  Example: s:20~l:28~e:401671889~c:401671889.
         attendance (Union[Unset, int]):  Example: 65719.
-        type_ (Union[Unset, CompetitionType]):
+        type (Union[Unset, CompetitionType]):
         time_valid (Union[Unset, bool]):
         neutral_site (Union[Unset, bool]):
         conference_competition (Union[Unset, bool]):
         play_by_play_available (Union[Unset, bool]):
         recent (Union[Unset, bool]):
         venue (Union[Unset, Venue]):
-        notes (Union[Unset, list['EventCompetitionNotesItem']]):
+        notes (Union[Unset, List['EventCompetitionNotesItem']]):
         status (Union[Unset, GameStatus]):
-        broadcasts (Union[Unset, list['Broadcast']]):
-        leaders (Union[Unset, list['CompetitionLeader']]):
+        broadcasts (Union[Unset, List['Broadcast']]):
+        leaders (Union[Unset, List['CompetitionLeader']]):
         format_ (Union[Unset, GameFormat]):
         start_date (Union[Unset, datetime.datetime]):
         broadcast (Union[Unset, str]):  Example: FOX.
-        geo_broadcasts (Union[Unset, list['GeoBroadcast']]):
-        highlights (Union[Unset, list['EventCompetitionHighlightsItem']]):
-        headlines (Union[Unset, list['Headline']]):
+        geo_broadcasts (Union[Unset, List['GeoBroadcast']]):
+        highlights (Union[Unset, List['EventCompetitionHighlightsItem']]):
+        headlines (Union[Unset, List['Headline']]):
     """
 
     id: str
     date: datetime.datetime
-    competitors: list["Competitor"]
+    competitors: List["Competitor"]
     uid: Union[Unset, str] = UNSET
     attendance: Union[Unset, int] = UNSET
-    type_: Union[Unset, "CompetitionType"] = UNSET
+    type: Union[Unset, "CompetitionType"] = UNSET
     time_valid: Union[Unset, bool] = UNSET
     neutral_site: Union[Unset, bool] = UNSET
     conference_competition: Union[Unset, bool] = UNSET
     play_by_play_available: Union[Unset, bool] = UNSET
     recent: Union[Unset, bool] = UNSET
     venue: Union[Unset, "Venue"] = UNSET
-    notes: Union[Unset, list["EventCompetitionNotesItem"]] = UNSET
+    notes: Union[Unset, List["EventCompetitionNotesItem"]] = UNSET
     status: Union[Unset, "GameStatus"] = UNSET
-    broadcasts: Union[Unset, list["Broadcast"]] = UNSET
-    leaders: Union[Unset, list["CompetitionLeader"]] = UNSET
+    broadcasts: Union[Unset, List["Broadcast"]] = UNSET
+    leaders: Union[Unset, List["CompetitionLeader"]] = UNSET
     format_: Union[Unset, "GameFormat"] = UNSET
     start_date: Union[Unset, datetime.datetime] = UNSET
     broadcast: Union[Unset, str] = UNSET
-    geo_broadcasts: Union[Unset, list["GeoBroadcast"]] = UNSET
-    highlights: Union[Unset, list["EventCompetitionHighlightsItem"]] = UNSET
-    headlines: Union[Unset, list["Headline"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    geo_broadcasts: Union[Unset, List["GeoBroadcast"]] = UNSET
+    highlights: Union[Unset, List["EventCompetitionHighlightsItem"]] = UNSET
+    headlines: Union[Unset, List["Headline"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         date = self.date.isoformat()
@@ -91,9 +90,9 @@ class EventCompetition:
 
         attendance = self.attendance
 
-        type_: Union[Unset, dict[str, Any]] = UNSET
-        if not isinstance(self.type_, Unset):
-            type_ = self.type_.to_dict()
+        type: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.type, Unset):
+            type = self.type.to_dict()
 
         time_valid = self.time_valid
 
@@ -105,36 +104,36 @@ class EventCompetition:
 
         recent = self.recent
 
-        venue: Union[Unset, dict[str, Any]] = UNSET
+        venue: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.venue, Unset):
             venue = self.venue.to_dict()
 
-        notes: Union[Unset, list[dict[str, Any]]] = UNSET
+        notes: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.notes, Unset):
             notes = []
             for notes_item_data in self.notes:
                 notes_item = notes_item_data.to_dict()
                 notes.append(notes_item)
 
-        status: Union[Unset, dict[str, Any]] = UNSET
+        status: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.status, Unset):
             status = self.status.to_dict()
 
-        broadcasts: Union[Unset, list[dict[str, Any]]] = UNSET
+        broadcasts: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.broadcasts, Unset):
             broadcasts = []
             for broadcasts_item_data in self.broadcasts:
                 broadcasts_item = broadcasts_item_data.to_dict()
                 broadcasts.append(broadcasts_item)
 
-        leaders: Union[Unset, list[dict[str, Any]]] = UNSET
+        leaders: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.leaders, Unset):
             leaders = []
             for leaders_item_data in self.leaders:
                 leaders_item = leaders_item_data.to_dict()
                 leaders.append(leaders_item)
 
-        format_: Union[Unset, dict[str, Any]] = UNSET
+        format_: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.format_, Unset):
             format_ = self.format_.to_dict()
 
@@ -144,28 +143,28 @@ class EventCompetition:
 
         broadcast = self.broadcast
 
-        geo_broadcasts: Union[Unset, list[dict[str, Any]]] = UNSET
+        geo_broadcasts: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.geo_broadcasts, Unset):
             geo_broadcasts = []
             for geo_broadcasts_item_data in self.geo_broadcasts:
                 geo_broadcasts_item = geo_broadcasts_item_data.to_dict()
                 geo_broadcasts.append(geo_broadcasts_item)
 
-        highlights: Union[Unset, list[dict[str, Any]]] = UNSET
+        highlights: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.highlights, Unset):
             highlights = []
             for highlights_item_data in self.highlights:
                 highlights_item = highlights_item_data.to_dict()
                 highlights.append(highlights_item)
 
-        headlines: Union[Unset, list[dict[str, Any]]] = UNSET
+        headlines: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.headlines, Unset):
             headlines = []
             for headlines_item_data in self.headlines:
                 headlines_item = headlines_item_data.to_dict()
                 headlines.append(headlines_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -178,8 +177,8 @@ class EventCompetition:
             field_dict["uid"] = uid
         if attendance is not UNSET:
             field_dict["attendance"] = attendance
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
         if time_valid is not UNSET:
             field_dict["timeValid"] = time_valid
         if neutral_site is not UNSET:
@@ -216,7 +215,7 @@ class EventCompetition:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.broadcast import Broadcast
         from ..models.competition_leader import CompetitionLeader
         from ..models.competition_type import CompetitionType
@@ -229,7 +228,7 @@ class EventCompetition:
         from ..models.headline import Headline
         from ..models.venue import Venue
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         date = isoparse(d.pop("date"))
@@ -245,12 +244,12 @@ class EventCompetition:
 
         attendance = d.pop("attendance", UNSET)
 
-        _type_ = d.pop("type", UNSET)
-        type_: Union[Unset, CompetitionType]
-        if isinstance(_type_, Unset):
-            type_ = UNSET
+        _type = d.pop("type", UNSET)
+        type: Union[Unset, CompetitionType]
+        if isinstance(_type, Unset):
+            type = UNSET
         else:
-            type_ = CompetitionType.from_dict(_type_)
+            type = CompetitionType.from_dict(_type)
 
         time_valid = d.pop("timeValid", UNSET)
 
@@ -340,7 +339,7 @@ class EventCompetition:
             competitors=competitors,
             uid=uid,
             attendance=attendance,
-            type_=type_,
+            type=type,
             time_valid=time_valid,
             neutral_site=neutral_site,
             conference_competition=conference_competition,
@@ -363,7 +362,7 @@ class EventCompetition:
         return event_competition
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

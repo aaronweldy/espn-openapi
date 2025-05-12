@@ -148,6 +148,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/football/nfl/teams/{teamId}/roster:
+    get:
+      summary: Get NFL Team Roster
+      description: Retrieve detailed roster information for a specific NFL team including player details organized by positions
+      operationId: getNFLTeamRoster
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          description: The ID of the NFL team
+          schema:
+            type: string
+            example: "12"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamRosterResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/football/nfl/news:
     get:
       summary: Get NFL News
@@ -2116,3 +2149,202 @@ components:
               type: integer
             message:
               type: string
+
+    TeamRosterResponse:
+      type: object
+      description: The response for a team roster request
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: The timestamp of when the data was generated
+        status:
+          type: string
+          description: The status of the response
+        season:
+          $ref: '#/components/schemas/Season'
+        athletes:
+          type: array
+          description: List of roster position groups
+          items:
+            $ref: '#/components/schemas/PositionGroup'
+
+    PositionGroup:
+      type: object
+      description: Group of athletes by position category
+      properties:
+        position:
+          type: string
+          description: The position category name (e.g., offense, defense, special teams)
+        items:
+          type: array
+          description: List of athletes in this position category
+          items:
+            $ref: '#/components/schemas/RosterAthlete'
+
+    RosterAthlete:
+      type: object
+      description: Athlete information for team roster
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the athlete
+        uid:
+          type: string
+          description: Unique identifier in the format s:xx~l:xx~a:xxxxxxx
+        guid:
+          type: string
+          description: Global unique identifier
+        alternateIds:
+          type: object
+          properties:
+            sdr:
+              type: string
+          description: Alternative IDs for the athlete
+        firstName:
+          type: string
+          description: Athlete's first name
+        lastName:
+          type: string
+          description: Athlete's last name
+        fullName:
+          type: string
+          description: Athlete's full name
+        displayName:
+          type: string
+          description: Athlete's display name
+        shortName:
+          type: string
+          description: Athlete's short name
+        weight:
+          type: number
+          description: Athlete's weight in pounds
+        displayWeight:
+          type: string
+          description: Athlete's weight as a formatted string
+        height:
+          type: number
+          description: Athlete's height in inches
+        displayHeight:
+          type: string
+          description: Athlete's height as a formatted string
+        age:
+          type: integer
+          description: Athlete's age
+        dateOfBirth:
+          type: string
+          format: date-time
+          description: Athlete's date of birth
+        birthPlace:
+          type: object
+          properties:
+            city:
+              type: string
+              description: Birth city
+            state:
+              type: string
+              description: Birth state
+            country:
+              type: string
+              description: Birth country
+        links:
+          type: array
+          description: URLs related to the athlete
+          items:
+            $ref: '#/components/schemas/Link'
+        college:
+          $ref: '#/components/schemas/College'
+        slug:
+          type: string
+          description: URL slug for the athlete
+        headshot:
+          type: object
+          properties:
+            href:
+              type: string
+              description: URL for athlete's headshot
+            alt:
+              type: string
+              description: Alt text for headshot image
+        jersey:
+          type: string
+          description: Athlete's jersey number
+        position:
+          $ref: '#/components/schemas/Position'
+        injuries:
+          type: array
+          description: Current injuries for the athlete
+          items:
+            $ref: '#/components/schemas/Injury'
+        teams:
+          type: array
+          description: Teams associated with the athlete
+          items:
+            type: object
+            properties:
+              $ref:
+                type: string
+                description: Reference to team information
+        contracts:
+          type: array
+          description: Contract information
+          items:
+            type: object
+        experience:
+          type: object
+          properties:
+            years:
+              type: integer
+              description: Number of years of experience
+        status:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Status ID
+            name:
+              type: string
+              description: Status name (e.g., Active)
+            type:
+              type: string
+              description: Status type
+            abbreviation:
+              type: string
+              description: Status abbreviation
+
+    Injury:
+      type: object
+      description: Athlete injury information
+      properties:
+        status:
+          type: string
+          description: Injury status (e.g., Questionable, Out)
+        date:
+          type: string
+          format: date-time
+          description: Date of injury status update
+
+    College:
+      type: object
+      description: Information about athlete's college
+      properties:
+        id:
+          type: string
+          description: College ID
+        mascot:
+          type: string
+          description: College team mascot
+        name:
+          type: string
+          description: College name
+        shortName:
+          type: string
+          description: Short name of the college
+        abbrev:
+          type: string
+          description: Abbreviation of the college
+        logos:
+          type: array
+          description: College logos
+          items:
+            $ref: '#/components/schemas/Logo'

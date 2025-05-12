@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -14,45 +13,45 @@ class GeoBroadcastMarket:
     """
     Attributes:
         id (Union[Unset, str]):  Example: 1.
-        type_ (Union[Unset, str]):  Example: National.
+        type (Union[Unset, str]):  Example: National.
     """
 
     id: Union[Unset, str] = UNSET
-    type_: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    type: Union[Unset, str] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
-        type_ = self.type_
+        type = self.type
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
             field_dict["id"] = id
-        if type_ is not UNSET:
-            field_dict["type"] = type_
+        if type is not UNSET:
+            field_dict["type"] = type
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
         id = d.pop("id", UNSET)
 
-        type_ = d.pop("type", UNSET)
+        type = d.pop("type", UNSET)
 
         geo_broadcast_market = cls(
             id=id,
-            type_=type_,
+            type=type,
         )
 
         geo_broadcast_market.additional_properties = d
         return geo_broadcast_market
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -14,28 +13,28 @@ class Season:
     """
     Attributes:
         year (int):  Example: 2023.
-        type_ (int): Season type (1=preseason, 2=regular, 3=postseason) Example: 3.
+        type (int): Season type (1=preseason, 2=regular, 3=postseason) Example: 3.
         slug (Union[Unset, str]):  Example: post-season.
     """
 
     year: int
-    type_: int
+    type: int
     slug: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         year = self.year
 
-        type_ = self.type_
+        type = self.type
 
         slug = self.slug
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "year": year,
-                "type": type_,
+                "type": type,
             }
         )
         if slug is not UNSET:
@@ -44,17 +43,17 @@ class Season:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        d = dict(src_dict)
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        d = src_dict.copy()
         year = d.pop("year")
 
-        type_ = d.pop("type")
+        type = d.pop("type")
 
         slug = d.pop("slug", UNSET)
 
         season = cls(
             year=year,
-            type_=type_,
+            type=type,
             slug=slug,
         )
 
@@ -62,7 +61,7 @@ class Season:
         return season
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

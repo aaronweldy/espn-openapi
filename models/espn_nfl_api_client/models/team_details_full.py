@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -34,12 +33,12 @@ class TeamDetailsFull:
         color (Union[Unset, str]):  Example: e31837.
         alternate_color (Union[Unset, str]):  Example: ffb612.
         is_active (Union[Unset, bool]):
-        logos (Union[Unset, list['TeamLogo']]):
+        logos (Union[Unset, List['TeamLogo']]):
         record (Union[Unset, TeamRecord]):
         groups (Union[Unset, TeamGroups]):
-        links (Union[Unset, list['TeamLink']]):
+        links (Union[Unset, List['TeamLink']]):
         franchise (Union[Unset, TeamFranchise]):
-        next_event (Union[Unset, list['TeamDetailsFullNextEventItem']]):
+        next_event (Union[Unset, List['TeamDetailsFullNextEventItem']]):
         standing_summary (Union[Unset, str]):  Example: 1st in AFC West.
     """
 
@@ -55,16 +54,16 @@ class TeamDetailsFull:
     color: Union[Unset, str] = UNSET
     alternate_color: Union[Unset, str] = UNSET
     is_active: Union[Unset, bool] = UNSET
-    logos: Union[Unset, list["TeamLogo"]] = UNSET
+    logos: Union[Unset, List["TeamLogo"]] = UNSET
     record: Union[Unset, "TeamRecord"] = UNSET
     groups: Union[Unset, "TeamGroups"] = UNSET
-    links: Union[Unset, list["TeamLink"]] = UNSET
+    links: Union[Unset, List["TeamLink"]] = UNSET
     franchise: Union[Unset, "TeamFranchise"] = UNSET
-    next_event: Union[Unset, list["TeamDetailsFullNextEventItem"]] = UNSET
+    next_event: Union[Unset, List["TeamDetailsFullNextEventItem"]] = UNSET
     standing_summary: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         display_name = self.display_name
@@ -89,33 +88,33 @@ class TeamDetailsFull:
 
         is_active = self.is_active
 
-        logos: Union[Unset, list[dict[str, Any]]] = UNSET
+        logos: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.logos, Unset):
             logos = []
             for logos_item_data in self.logos:
                 logos_item = logos_item_data.to_dict()
                 logos.append(logos_item)
 
-        record: Union[Unset, dict[str, Any]] = UNSET
+        record: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.record, Unset):
             record = self.record.to_dict()
 
-        groups: Union[Unset, dict[str, Any]] = UNSET
+        groups: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.groups, Unset):
             groups = self.groups.to_dict()
 
-        links: Union[Unset, list[dict[str, Any]]] = UNSET
+        links: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             links = []
             for links_item_data in self.links:
                 links_item = links_item_data.to_dict()
                 links.append(links_item)
 
-        franchise: Union[Unset, dict[str, Any]] = UNSET
+        franchise: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.franchise, Unset):
             franchise = self.franchise.to_dict()
 
-        next_event: Union[Unset, list[dict[str, Any]]] = UNSET
+        next_event: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.next_event, Unset):
             next_event = []
             for next_event_item_data in self.next_event:
@@ -124,7 +123,7 @@ class TeamDetailsFull:
 
         standing_summary = self.standing_summary
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -170,7 +169,7 @@ class TeamDetailsFull:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.team_details_full_next_event_item import TeamDetailsFullNextEventItem
         from ..models.team_franchise import TeamFranchise
         from ..models.team_groups import TeamGroups
@@ -178,7 +177,7 @@ class TeamDetailsFull:
         from ..models.team_logo import TeamLogo
         from ..models.team_record import TeamRecord
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id")
 
         display_name = d.pop("displayName")
@@ -273,7 +272,7 @@ class TeamDetailsFull:
         return team_details_full
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

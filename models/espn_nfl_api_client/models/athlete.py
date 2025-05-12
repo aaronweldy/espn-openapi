@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +28,7 @@ class Athlete:
         jersey (Union[Unset, str]):
         position (Union[Unset, Position]):
         headshot (Union[Unset, str]): URL to the athlete's headshot image
-        links (Union[Unset, list['Link']]):
+        links (Union[Unset, List['Link']]):
         active (Union[Unset, bool]):
     """
 
@@ -44,11 +43,11 @@ class Athlete:
     jersey: Union[Unset, str] = UNSET
     position: Union[Unset, "Position"] = UNSET
     headshot: Union[Unset, str] = UNSET
-    links: Union[Unset, list["Link"]] = UNSET
+    links: Union[Unset, List["Link"]] = UNSET
     active: Union[Unset, bool] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         uid = self.uid
@@ -67,13 +66,13 @@ class Athlete:
 
         jersey = self.jersey
 
-        position: Union[Unset, dict[str, Any]] = UNSET
+        position: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.position, Unset):
             position = self.position.to_dict()
 
         headshot = self.headshot
 
-        links: Union[Unset, list[dict[str, Any]]] = UNSET
+        links: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
             links = []
             for links_item_data in self.links:
@@ -82,7 +81,7 @@ class Athlete:
 
         active = self.active
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -115,11 +114,11 @@ class Athlete:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.link import Link
         from ..models.position import Position
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id", UNSET)
 
         uid = d.pop("uid", UNSET)
@@ -176,7 +175,7 @@ class Athlete:
         return athlete
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

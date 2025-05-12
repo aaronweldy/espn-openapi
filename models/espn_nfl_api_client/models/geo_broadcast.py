@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,26 +18,26 @@ T = TypeVar("T", bound="GeoBroadcast")
 class GeoBroadcast:
     """
     Attributes:
-        type_ (GeoBroadcastType):
+        type (GeoBroadcastType):
         market (GeoBroadcastMarket):
         media (Union[Unset, GeoBroadcastMedia]):
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
     """
 
-    type_: "GeoBroadcastType"
+    type: "GeoBroadcastType"
     market: "GeoBroadcastMarket"
     media: Union[Unset, "GeoBroadcastMedia"] = UNSET
     lang: Union[Unset, str] = UNSET
     region: Union[Unset, str] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        type_ = self.type_.to_dict()
+    def to_dict(self) -> Dict[str, Any]:
+        type = self.type.to_dict()
 
         market = self.market.to_dict()
 
-        media: Union[Unset, dict[str, Any]] = UNSET
+        media: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.media, Unset):
             media = self.media.to_dict()
 
@@ -46,11 +45,11 @@ class GeoBroadcast:
 
         region = self.region
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "type": type_,
+                "type": type,
                 "market": market,
             }
         )
@@ -64,13 +63,13 @@ class GeoBroadcast:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.geo_broadcast_market import GeoBroadcastMarket
         from ..models.geo_broadcast_media import GeoBroadcastMedia
         from ..models.geo_broadcast_type import GeoBroadcastType
 
-        d = dict(src_dict)
-        type_ = GeoBroadcastType.from_dict(d.pop("type"))
+        d = src_dict.copy()
+        type = GeoBroadcastType.from_dict(d.pop("type"))
 
         market = GeoBroadcastMarket.from_dict(d.pop("market"))
 
@@ -86,7 +85,7 @@ class GeoBroadcast:
         region = d.pop("region", UNSET)
 
         geo_broadcast = cls(
-            type_=type_,
+            type=type,
             market=market,
             media=media,
             lang=lang,
@@ -97,7 +96,7 @@ class GeoBroadcast:
         return geo_broadcast
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -24,18 +23,18 @@ class GameFormat:
 
     regulation: Union[Unset, "GameFormatRegulation"] = UNSET
     overtime: Union[Unset, "GameFormatOvertime"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        regulation: Union[Unset, dict[str, Any]] = UNSET
+    def to_dict(self) -> Dict[str, Any]:
+        regulation: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.regulation, Unset):
             regulation = self.regulation.to_dict()
 
-        overtime: Union[Unset, dict[str, Any]] = UNSET
+        overtime: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.overtime, Unset):
             overtime = self.overtime.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if regulation is not UNSET:
@@ -46,11 +45,11 @@ class GameFormat:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.game_format_overtime import GameFormatOvertime
         from ..models.game_format_regulation import GameFormatRegulation
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         _regulation = d.pop("regulation", UNSET)
         regulation: Union[Unset, GameFormatRegulation]
         if isinstance(_regulation, Unset):
@@ -74,7 +73,7 @@ class GameFormat:
         return game_format
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

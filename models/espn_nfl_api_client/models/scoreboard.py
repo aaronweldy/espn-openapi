@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,19 +17,19 @@ T = TypeVar("T", bound="Scoreboard")
 class Scoreboard:
     """
     Attributes:
-        leagues (list['League']):
+        leagues (List['League']):
         season (SeasonInfo):
         week (WeekInfo):
-        events (list['Event']):
+        events (List['Event']):
     """
 
-    leagues: list["League"]
+    leagues: List["League"]
     season: "SeasonInfo"
     week: "WeekInfo"
-    events: list["Event"]
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    events: List["Event"]
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         leagues = []
         for leagues_item_data in self.leagues:
             leagues_item = leagues_item_data.to_dict()
@@ -45,7 +44,7 @@ class Scoreboard:
             events_item = events_item_data.to_dict()
             events.append(events_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -59,13 +58,13 @@ class Scoreboard:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.event import Event
         from ..models.league import League
         from ..models.season_info import SeasonInfo
         from ..models.week_info import WeekInfo
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         leagues = []
         _leagues = d.pop("leagues")
         for leagues_item_data in _leagues:
@@ -95,7 +94,7 @@ class Scoreboard:
         return scoreboard
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

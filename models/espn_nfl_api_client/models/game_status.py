@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,20 +16,20 @@ T = TypeVar("T", bound="GameStatus")
 class GameStatus:
     """
     Attributes:
-        type_ (StatusType):
+        type (StatusType):
         clock (Union[Unset, float]):
         display_clock (Union[Unset, str]):  Example: 0:00.
         period (Union[Unset, int]):  Example: 4.
     """
 
-    type_: "StatusType"
+    type: "StatusType"
     clock: Union[Unset, float] = UNSET
     display_clock: Union[Unset, str] = UNSET
     period: Union[Unset, int] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        type_ = self.type_.to_dict()
+    def to_dict(self) -> Dict[str, Any]:
+        type = self.type.to_dict()
 
         clock = self.clock
 
@@ -38,11 +37,11 @@ class GameStatus:
 
         period = self.period
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "type": type_,
+                "type": type,
             }
         )
         if clock is not UNSET:
@@ -55,11 +54,11 @@ class GameStatus:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.status_type import StatusType
 
-        d = dict(src_dict)
-        type_ = StatusType.from_dict(d.pop("type"))
+        d = src_dict.copy()
+        type = StatusType.from_dict(d.pop("type"))
 
         clock = d.pop("clock", UNSET)
 
@@ -68,7 +67,7 @@ class GameStatus:
         period = d.pop("period", UNSET)
 
         game_status = cls(
-            type_=type_,
+            type=type,
             clock=clock,
             display_clock=display_clock,
             period=period,
@@ -78,7 +77,7 @@ class GameStatus:
         return game_status
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

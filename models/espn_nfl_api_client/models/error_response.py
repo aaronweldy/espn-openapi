@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,14 +20,14 @@ class ErrorResponse:
     """
 
     error: Union[Unset, "ErrorResponseError"] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
-        error: Union[Unset, dict[str, Any]] = UNSET
+    def to_dict(self) -> Dict[str, Any]:
+        error: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.error, Unset):
             error = self.error.to_dict()
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if error is not UNSET:
@@ -37,10 +36,10 @@ class ErrorResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.error_response_error import ErrorResponseError
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         _error = d.pop("error", UNSET)
         error: Union[Unset, ErrorResponseError]
         if isinstance(_error, Unset):
@@ -56,7 +55,7 @@ class ErrorResponse:
         return error_response
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

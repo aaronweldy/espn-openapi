@@ -1,5 +1,4 @@
-from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -23,7 +22,7 @@ class DetailedVenue:
         address (Union[Unset, Address]):
         grass (Union[Unset, bool]):
         indoor (Union[Unset, bool]):
-        images (Union[Unset, list['VenueImage']]):
+        images (Union[Unset, List['VenueImage']]):
     """
 
     id: Union[Unset, str] = UNSET
@@ -31,15 +30,15 @@ class DetailedVenue:
     address: Union[Unset, "Address"] = UNSET
     grass: Union[Unset, bool] = UNSET
     indoor: Union[Unset, bool] = UNSET
-    images: Union[Unset, list["VenueImage"]] = UNSET
-    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+    images: Union[Unset, List["VenueImage"]] = UNSET
+    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
         full_name = self.full_name
 
-        address: Union[Unset, dict[str, Any]] = UNSET
+        address: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.address, Unset):
             address = self.address.to_dict()
 
@@ -47,14 +46,14 @@ class DetailedVenue:
 
         indoor = self.indoor
 
-        images: Union[Unset, list[dict[str, Any]]] = UNSET
+        images: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.images, Unset):
             images = []
             for images_item_data in self.images:
                 images_item = images_item_data.to_dict()
                 images.append(images_item)
 
-        field_dict: dict[str, Any] = {}
+        field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -73,11 +72,11 @@ class DetailedVenue:
         return field_dict
 
     @classmethod
-    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.address import Address
         from ..models.venue_image import VenueImage
 
-        d = dict(src_dict)
+        d = src_dict.copy()
         id = d.pop("id", UNSET)
 
         full_name = d.pop("fullName", UNSET)
@@ -113,7 +112,7 @@ class DetailedVenue:
         return detailed_venue
 
     @property
-    def additional_keys(self) -> list[str]:
+    def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
