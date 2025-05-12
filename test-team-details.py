@@ -1,0 +1,184 @@
+#!/usr/bin/env python3
+"""
+Test ESPN NFL API - Team Details Endpoint
+Requires Python 3.10+
+"""
+
+import json
+
+import requests
+from models.espn_nfl_api_client import Client
+from models.espn_nfl_api_client.api.default.get_nfl_team_details import sync
+from models.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.espn_nfl_api_client.models.team_details_response import TeamDetailsResponse
+from models.espn_nfl_api_client.types import UNSET
+
+
+def validate_schema_response(data: TeamDetailsResponse) -> bool:
+    """Validate if response matches expected schema structure."""
+    if not data.team:
+        print("Missing required attribute: team")
+        return False
+
+    team = data.team
+    required_attrs = ["id", "display_name", "abbreviation"]
+    for attr in required_attrs:
+        if getattr(team, attr, UNSET) is UNSET:
+            print(f"Missing required attribute: {attr}")
+            return False
+
+    # Check for records
+    if team.record:
+        if not team.record.items:
+            print("Record items is empty")
+
+    # Check for franchise
+    if team.franchise:
+        if getattr(team.franchise, "display_name", UNSET) is UNSET:
+            print("Franchise missing display_name")
+
+    return True
+
+
+def format_team_details(data: TeamDetailsResponse) -> str:
+    """Format team details data for display."""
+    if not data.team:
+        return "Invalid data format: missing team"
+
+    team = data.team
+    output = []
+    output.append(f"=== {team.display_name} ({team.abbreviation}) ===")
+    output.append(f"Team ID: {team.id}")
+
+    if team.location and team.name:
+        output.append(f"Location: {team.location}")
+        output.append(f"Name: {team.name}")
+
+    if team.color:
+        output.append(
+            f"Colors: Primary={team.color}, Alt={team.alternate_color or 'None'}"
+        )
+
+    # Add logo URL if available
+    if team.logos and len(team.logos) > 0:
+        output.append(f"Logo: {team.logos[0].href}")
+
+    # Add record if available
+    if team.record and team.record.items:
+        output.append("\n--- Records ---")
+        for record in team.record.items:
+            desc = record.description or record.type_
+            output.append(f"{desc}: {record.summary}")
+
+    # Add standing summary if available
+    if team.standing_summary:
+        output.append(f"\nStanding: {team.standing_summary}")
+
+    # Add venue info if available in franchise
+    if team.franchise and team.franchise.venue:
+        venue = team.franchise.venue
+        output.append("\n--- Venue ---")
+        output.append(f"Name: {venue.full_name}")
+        if venue.address:
+            city = venue.address.city or ""
+            state = venue.address.state or ""
+            output.append(f"Location: {city}, {state}")
+        output.append(f"Indoor: {'Yes' if venue.indoor else 'No'}")
+        output.append(f"Grass: {'Yes' if venue.grass else 'No'}")
+
+    return "\n".join(output)
+
+
+def fetch_direct_team_details(team_id: str):
+    """Fetch the team details data directly using requests to bypass model issues."""
+    url = f"https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    return None
+
+
+def main():
+    """Main function to test the ESPN NFL Team Details API."""
+    print("ESPN NFL Team Details API Test Script")
+    print("=" * 50)
+
+    # Team ID to test with - Kansas City Chiefs
+    team_id = "12"
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+
+    print(f"\nFetching NFL team details for team ID: {team_id}")
+    print("-" * 50)
+
+    # For testing purposes, we'll first try the client
+    try:
+        print("\nUsing the generated client to fetch team details:")
+        team_data: TeamDetailsResponse | ErrorResponse | None = sync(
+            client=client, team_id=team_id
+        )
+
+        if isinstance(team_data, ErrorResponse):
+            print("✗ API returned an error response:")
+            print(
+                team_data.error.message
+                if hasattr(team_data, "error")
+                and team_data.error
+                and hasattr(team_data.error, "message")
+                else str(team_data)
+            )
+        elif isinstance(team_data, TeamDetailsResponse):
+            # Validate schema
+            if validate_schema_response(team_data):
+                print("✓ Response matches expected schema structure")
+            else:
+                print("✗ Response does not match expected schema structure")
+
+            # Display formatted summary
+            print("\n" + format_team_details(team_data))
+
+            # Save full response for analysis
+            with open("nfl_team_details_response_processed.json", "w") as f:
+                json.dump(team_data.to_dict(), f, indent=2)
+            print(
+                "\n✓ Full processed response saved to nfl_team_details_response_processed.json"
+            )
+        else:
+            print("✗ Failed to fetch team details using client")
+    except Exception as e:
+        print(f"✗ Error using generated client: {str(e)}")
+
+        # Fall back to direct request
+        print("\nFalling back to direct request:")
+        team_json = fetch_direct_team_details(team_id)
+
+        if not team_json:
+            print(f"✗ Failed to fetch team details for team ID {team_id} directly")
+            return
+
+        # Save the raw JSON for analysis
+        with open("nfl_team_details_direct.json", "w") as f:
+            json.dump(team_json, f, indent=2)
+
+        print("✓ Successfully fetched team details")
+
+        # Basic validation and display from the direct JSON
+        if "team" not in team_json:
+            print("✗ Response does not match expected structure")
+            return
+
+        team = team_json["team"]
+        print(
+            f"\n=== {team.get('displayName', 'Unknown')} ({team.get('abbreviation', 'UNK')}) ==="
+        )
+        print(f"Team ID: {team.get('id', 'Unknown')}")
+        print(f"Location: {team.get('location', 'Unknown')}")
+        print(
+            f"Colors: Primary={team.get('color', 'Unknown')}, Alt={team.get('alternateColor', 'None')}"
+        )
+
+        print("\n✓ Full team details response saved to nfl_team_details_direct.json")
+
+
+if __name__ == "__main__":
+    main()

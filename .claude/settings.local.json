@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(jq:*)",
+      "Bash(python:*)",
+      "Bash(cp:*)",
+      "Bash(openapi-python-client generate:*)"
+    ],
+    "deny": []
+  }
+}

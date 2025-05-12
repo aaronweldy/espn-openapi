@@ -1,0 +1,97 @@
+from collections.abc import Mapping
+from typing import Any, TypeVar, Union, cast
+
+from attrs import define as _attrs_define
+from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
+
+T = TypeVar("T", bound="VenueImage")
+
+
+@_attrs_define
+class VenueImage:
+    """
+    Attributes:
+        href (Union[Unset, str]):  Example: https://a.espncdn.com/i/venues/nfl/day/3622.jpg.
+        width (Union[Unset, int]):  Example: 2000.
+        height (Union[Unset, int]):  Example: 1125.
+        alt (Union[Unset, str]):
+        rel (Union[Unset, list[str]]):
+    """
+
+    href: Union[Unset, str] = UNSET
+    width: Union[Unset, int] = UNSET
+    height: Union[Unset, int] = UNSET
+    alt: Union[Unset, str] = UNSET
+    rel: Union[Unset, list[str]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        href = self.href
+
+        width = self.width
+
+        height = self.height
+
+        alt = self.alt
+
+        rel: Union[Unset, list[str]] = UNSET
+        if not isinstance(self.rel, Unset):
+            rel = self.rel
+
+        field_dict: dict[str, Any] = {}
+        field_dict.update(self.additional_properties)
+        field_dict.update({})
+        if href is not UNSET:
+            field_dict["href"] = href
+        if width is not UNSET:
+            field_dict["width"] = width
+        if height is not UNSET:
+            field_dict["height"] = height
+        if alt is not UNSET:
+            field_dict["alt"] = alt
+        if rel is not UNSET:
+            field_dict["rel"] = rel
+
+        return field_dict
+
+    @classmethod
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        d = dict(src_dict)
+        href = d.pop("href", UNSET)
+
+        width = d.pop("width", UNSET)
+
+        height = d.pop("height", UNSET)
+
+        alt = d.pop("alt", UNSET)
+
+        rel = cast(list[str], d.pop("rel", UNSET))
+
+        venue_image = cls(
+            href=href,
+            width=width,
+            height=height,
+            alt=alt,
+            rel=rel,
+        )
+
+        venue_image.additional_properties = d
+        return venue_image
+
+    @property
+    def additional_keys(self) -> list[str]:
+        return list(self.additional_properties.keys())
+
+    def __getitem__(self, key: str) -> Any:
+        return self.additional_properties[key]
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.additional_properties[key] = value
+
+    def __delitem__(self, key: str) -> None:
+        del self.additional_properties[key]
+
+    def __contains__(self, key: str) -> bool:
+        return key in self.additional_properties

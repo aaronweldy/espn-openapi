@@ -1,0 +1,846 @@
+{
+  "leagues": [
+    {
+      "id": "28",
+      "name": "National Football League",
+      "season": {
+        "year": 2024,
+        "type": {
+          "id": "2",
+          "type": 2,
+          "name": "Regular Season",
+          "abbreviation": "reg"
+        },
+        "startDate": "2024-08-01T07:00:00+00:00",
+        "endDate": "2025-02-15T07:59:00+00:00",
+        "displayName": "2024"
+      },
+      "uid": "s:20~l:28",
+      "abbreviation": "NFL",
+      "slug": "nfl",
+      "logos": [
+        {
+          "lastUpdated": "2018-06-05T12:07Z",
+          "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "lastUpdated": "2025-05-12T00:10Z",
+          "href": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500-dark/nfl.png&w=500&h=500&transparent=true",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        }
+      ],
+      "calendarType": "list",
+      "calendarIsWhitelist": true,
+      "calendarStartDate": "2024-08-01T07:00:00+00:00",
+      "calendarEndDate": "2025-02-15T07:59:00+00:00",
+      "calendar": [
+        {
+          "label": "Preseason",
+          "value": "1",
+          "startDate": "2024-08-01T07:00:00+00:00",
+          "endDate": "2024-09-05T06:59:00+00:00",
+          "entries": [
+            {
+              "label": "Hall of Fame Weekend",
+              "value": "1",
+              "startDate": "2024-08-01T07:00:00+00:00",
+              "endDate": "2024-08-08T06:59:00+00:00",
+              "alternateLabel": "HOF",
+              "detail": "Aug 1-7"
+            },
+            {
+              "label": "Preseason Week 1",
+              "value": "2",
+              "startDate": "2024-08-08T07:00:00+00:00",
+              "endDate": "2024-08-15T06:59:00+00:00",
+              "alternateLabel": "Pre Wk 1",
+              "detail": "Aug 8-14"
+            },
+            {
+              "label": "Preseason Week 2",
+              "value": "3",
+              "startDate": "2024-08-15T07:00:00+00:00",
+              "endDate": "2024-08-22T06:59:00+00:00",
+              "alternateLabel": "Pre Wk 2",
+              "detail": "Aug 15-21"
+            },
+            {
+              "label": "Preseason Week 3",
+              "value": "4",
+              "startDate": "2024-08-22T07:00:00+00:00",
+              "endDate": "2024-09-05T06:59:00+00:00",
+              "alternateLabel": "Pre Wk 3",
+              "detail": "Aug 22-Sep 4"
+            }
+          ]
+        },
+        {
+          "label": "Regular Season",
+          "value": "2",
+          "startDate": "2024-09-05T07:00:00+00:00",
+          "endDate": "2025-01-09T07:59:00+00:00",
+          "entries": [
+            {
+              "label": "Week 1",
+              "value": "1",
+              "startDate": "2024-09-05T07:00:00+00:00",
+              "endDate": "2024-09-11T06:59:00+00:00",
+              "alternateLabel": "Week 1",
+              "detail": "Sep 5-10"
+            },
+            {
+              "label": "Week 2",
+              "value": "2",
+              "startDate": "2024-09-11T07:00:00+00:00",
+              "endDate": "2024-09-18T06:59:00+00:00",
+              "alternateLabel": "Week 2",
+              "detail": "Sep 11-17"
+            },
+            {
+              "label": "Week 3",
+              "value": "3",
+              "startDate": "2024-09-18T07:00:00+00:00",
+              "endDate": "2024-09-25T06:59:00+00:00",
+              "alternateLabel": "Week 3",
+              "detail": "Sep 18-24"
+            },
+            {
+              "label": "Week 4",
+              "value": "4",
+              "startDate": "2024-09-25T07:00:00+00:00",
+              "endDate": "2024-10-02T06:59:00+00:00",
+              "alternateLabel": "Week 4",
+              "detail": "Sep 25-Oct 1"
+            },
+            {
+              "label": "Week 5",
+              "value": "5",
+              "startDate": "2024-10-02T07:00:00+00:00",
+              "endDate": "2024-10-09T06:59:00+00:00",
+              "alternateLabel": "Week 5",
+              "detail": "Oct 2-8"
+            },
+            {
+              "label": "Week 6",
+              "value": "6",
+              "startDate": "2024-10-09T07:00:00+00:00",
+              "endDate": "2024-10-16T06:59:00+00:00",
+              "alternateLabel": "Week 6",
+              "detail": "Oct 9-15"
+            },
+            {
+              "label": "Week 7",
+              "value": "7",
+              "startDate": "2024-10-16T07:00:00+00:00",
+              "endDate": "2024-10-23T06:59:00+00:00",
+              "alternateLabel": "Week 7",
+              "detail": "Oct 16-22"
+            },
+            {
+              "label": "Week 8",
+              "value": "8",
+              "startDate": "2024-10-23T07:00:00+00:00",
+              "endDate": "2024-10-30T06:59:00+00:00",
+              "alternateLabel": "Week 8",
+              "detail": "Oct 23-29"
+            },
+            {
+              "label": "Week 9",
+              "value": "9",
+              "startDate": "2024-10-30T07:00:00+00:00",
+              "endDate": "2024-11-06T07:59:00+00:00",
+              "alternateLabel": "Week 9",
+              "detail": "Oct 30-Nov 5"
+            },
+            {
+              "label": "Week 10",
+              "value": "10",
+              "startDate": "2024-11-06T08:00:00+00:00",
+              "endDate": "2024-11-13T07:59:00+00:00",
+              "alternateLabel": "Week 10",
+              "detail": "Nov 6-12"
+            },
+            {
+              "label": "Week 11",
+              "value": "11",
+              "startDate": "2024-11-13T08:00:00+00:00",
+              "endDate": "2024-11-20T07:59:00+00:00",
+              "alternateLabel": "Week 11",
+              "detail": "Nov 13-19"
+            },
+            {
+              "label": "Week 12",
+              "value": "12",
+              "startDate": "2024-11-20T08:00:00+00:00",
+              "endDate": "2024-11-27T07:59:00+00:00",
+              "alternateLabel": "Week 12",
+              "detail": "Nov 20-26"
+            },
+            {
+              "label": "Week 13",
+              "value": "13",
+              "startDate": "2024-11-27T08:00:00+00:00",
+              "endDate": "2024-12-04T07:59:00+00:00",
+              "alternateLabel": "Week 13",
+              "detail": "Nov 27-Dec 3"
+            },
+            {
+              "label": "Week 14",
+              "value": "14",
+              "startDate": "2024-12-04T08:00:00+00:00",
+              "endDate": "2024-12-11T07:59:00+00:00",
+              "alternateLabel": "Week 14",
+              "detail": "Dec 4-10"
+            },
+            {
+              "label": "Week 15",
+              "value": "15",
+              "startDate": "2024-12-11T08:00:00+00:00",
+              "endDate": "2024-12-18T07:59:00+00:00",
+              "alternateLabel": "Week 15",
+              "detail": "Dec 11-17"
+            },
+            {
+              "label": "Week 16",
+              "value": "16",
+              "startDate": "2024-12-18T08:00:00+00:00",
+              "endDate": "2024-12-25T07:59:00+00:00",
+              "alternateLabel": "Week 16",
+              "detail": "Dec 18-24"
+            },
+            {
+              "label": "Week 17",
+              "value": "17",
+              "startDate": "2024-12-25T08:00:00+00:00",
+              "endDate": "2025-01-01T07:59:00+00:00",
+              "alternateLabel": "Week 17",
+              "detail": "Dec 25-31"
+            },
+            {
+              "label": "Week 18",
+              "value": "18",
+              "startDate": "2025-01-01T08:00:00+00:00",
+              "endDate": "2025-01-08T07:59:00+00:00",
+              "alternateLabel": "Week 18",
+              "detail": "Jan 1-7"
+            }
+          ]
+        },
+        {
+          "label": "Postseason",
+          "value": "3",
+          "startDate": "2025-01-08T08:00:00+00:00",
+          "endDate": "2025-02-15T07:59:00+00:00",
+          "entries": [
+            {
+              "label": "Wild Card",
+              "value": "1",
+              "startDate": "2025-01-08T08:00:00+00:00",
+              "endDate": "2025-01-16T07:59:00+00:00",
+              "alternateLabel": "Wild Card",
+              "detail": "Jan 8-15"
+            },
+            {
+              "label": "Divisional Round",
+              "value": "2",
+              "startDate": "2025-01-16T08:00:00+00:00",
+              "endDate": "2025-01-23T07:59:00+00:00",
+              "alternateLabel": "Div Rd",
+              "detail": "Jan 16-22"
+            },
+            {
+              "label": "Conference Championship",
+              "value": "3",
+              "startDate": "2025-01-23T08:00:00+00:00",
+              "endDate": "2025-01-30T07:59:00+00:00",
+              "alternateLabel": "Conf Champ",
+              "detail": "Jan 23-29"
+            },
+            {
+              "label": "Pro Bowl",
+              "value": "4",
+              "startDate": "2025-01-30T08:00:00+00:00",
+              "endDate": "2025-02-06T07:59:00+00:00",
+              "alternateLabel": "Pro Bowl",
+              "detail": "Jan 30-Feb 5"
+            },
+            {
+              "label": "Super Bowl",
+              "value": "5",
+              "startDate": "2025-02-06T08:00:00+00:00",
+              "endDate": "2025-02-14T07:59:00+00:00",
+              "alternateLabel": "Super Bowl",
+              "detail": "Feb 6-13"
+            }
+          ]
+        },
+        {
+          "label": "Off Season",
+          "value": "4",
+          "startDate": "2025-02-15T08:00:00+00:00",
+          "endDate": "2025-07-31T06:59:00+00:00",
+          "entries": [
+            {
+              "label": "Week 1",
+              "value": "1",
+              "startDate": "2025-02-14T08:00:00+00:00",
+              "endDate": "2025-08-01T06:59:00+00:00",
+              "alternateLabel": "Week 1",
+              "detail": "Feb 14-Jul 31"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "season": {
+    "type": 3,
+    "year": 2024
+  },
+  "week": {
+    "number": 5
+  },
+  "events": [
+    {
+      "id": "401671889",
+      "date": "2025-02-09T23:30:00+00:00",
+      "competitions": [
+        {
+          "id": "401671889",
+          "date": "2025-02-09T23:30:00+00:00",
+          "competitors": [
+            {
+              "id": "21",
+              "uid": "s:20~l:28~t:21",
+              "order": 0,
+              "homeAway": "home",
+              "team": {
+                "id": "21",
+                "uid": "s:20~l:28~t:21",
+                "location": "Philadelphia",
+                "name": "Eagles",
+                "abbreviation": "PHI",
+                "displayName": "Philadelphia Eagles",
+                "shortDisplayName": "Eagles",
+                "color": "06424d",
+                "alternateColor": "000000",
+                "isActive": true,
+                "venue": {
+                  "id": "3806"
+                },
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+                "logos": [],
+                "links": [
+                  {
+                    "href": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles",
+                    "text": "Clubhouse",
+                    "rel": [
+                      "clubhouse",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/roster/_/name/phi/philadelphia-eagles",
+                    "text": "Roster",
+                    "rel": [
+                      "roster",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/stats/_/name/phi/philadelphia-eagles",
+                    "text": "Statistics",
+                    "rel": [
+                      "stats",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/schedule/_/name/phi",
+                    "text": "Schedule",
+                    "rel": [
+                      "schedule",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  }
+                ]
+              },
+              "type": "team",
+              "winner": true,
+              "score": "40",
+              "linescores": [
+                {
+                  "displayValue": "7",
+                  "period": 1,
+                  "value": 7.0
+                },
+                {
+                  "displayValue": "17",
+                  "period": 2,
+                  "value": 17.0
+                },
+                {
+                  "displayValue": "10",
+                  "period": 3,
+                  "value": 10.0
+                },
+                {
+                  "displayValue": "6",
+                  "period": 4,
+                  "value": 6.0
+                }
+              ],
+              "statistics": [],
+              "records": [
+                {
+                  "name": "overall",
+                  "abbreviation": "Any",
+                  "type": "total",
+                  "summary": "14-3"
+                },
+                {
+                  "name": "Home",
+                  "type": "home",
+                  "summary": "8-1"
+                },
+                {
+                  "name": "Road",
+                  "type": "road",
+                  "summary": "6-2"
+                }
+              ]
+            },
+            {
+              "id": "12",
+              "uid": "s:20~l:28~t:12",
+              "order": 1,
+              "homeAway": "away",
+              "team": {
+                "id": "12",
+                "uid": "s:20~l:28~t:12",
+                "location": "Kansas City",
+                "name": "Chiefs",
+                "abbreviation": "KC",
+                "displayName": "Kansas City Chiefs",
+                "shortDisplayName": "Chiefs",
+                "color": "e31837",
+                "alternateColor": "ffb612",
+                "isActive": true,
+                "venue": {
+                  "id": "3622"
+                },
+                "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+                "logos": [],
+                "links": [
+                  {
+                    "href": "https://www.espn.com/nfl/team/_/name/kc/kansas-city-chiefs",
+                    "text": "Clubhouse",
+                    "rel": [
+                      "clubhouse",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/roster/_/name/kc/kansas-city-chiefs",
+                    "text": "Roster",
+                    "rel": [
+                      "roster",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/stats/_/name/kc/kansas-city-chiefs",
+                    "text": "Statistics",
+                    "rel": [
+                      "stats",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  },
+                  {
+                    "href": "https://www.espn.com/nfl/team/schedule/_/name/kc",
+                    "text": "Schedule",
+                    "rel": [
+                      "schedule",
+                      "desktop",
+                      "team"
+                    ],
+                    "isExternal": false,
+                    "isPremium": false
+                  }
+                ]
+              },
+              "type": "team",
+              "winner": false,
+              "score": "22",
+              "linescores": [
+                {
+                  "displayValue": "0",
+                  "period": 1,
+                  "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 2,
+                  "value": 0.0
+                },
+                {
+                  "displayValue": "6",
+                  "period": 3,
+                  "value": 6.0
+                },
+                {
+                  "displayValue": "16",
+                  "period": 4,
+                  "value": 16.0
+                }
+              ],
+              "statistics": [],
+              "records": [
+                {
+                  "name": "overall",
+                  "abbreviation": "Any",
+                  "type": "total",
+                  "summary": "15-2"
+                },
+                {
+                  "name": "Home",
+                  "type": "home",
+                  "summary": "8-0"
+                },
+                {
+                  "name": "Road",
+                  "type": "road",
+                  "summary": "7-2"
+                }
+              ]
+            }
+          ],
+          "uid": "s:20~l:28~e:401671889~c:401671889",
+          "attendance": 65719,
+          "type": {
+            "id": "1",
+            "abbreviation": "STD"
+          },
+          "timeValid": true,
+          "neutralSite": true,
+          "conferenceCompetition": false,
+          "playByPlayAvailable": true,
+          "recent": false,
+          "venue": {
+            "id": "3493",
+            "fullName": "Caesars Superdome",
+            "address": {
+              "city": "New Orleans",
+              "state": "LA",
+              "country": "USA"
+            },
+            "indoor": true,
+            "images": []
+          },
+          "notes": [
+            {
+              "type": "event",
+              "headline": "Super Bowl LIX"
+            }
+          ],
+          "status": {
+            "isTBDFlex": false,
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            },
+            "clock": 0.0,
+            "displayClock": "0:00",
+            "period": 4
+          },
+          "broadcasts": [
+            {
+              "market": "national",
+              "names": [
+                "FOX"
+              ]
+            }
+          ],
+          "leaders": [
+            {
+              "name": "passingYards",
+              "displayName": "Passing Leader",
+              "leaders": [
+                {
+                  "displayValue": "21/32, 257 YDS, 3 TD, 2 INT",
+                  "value": 257.0,
+                  "athlete": {
+                    "team": {
+                      "id": "12"
+                    },
+                    "id": "3139477",
+                    "fullName": "Patrick Mahomes",
+                    "displayName": "Patrick Mahomes",
+                    "shortName": "P. Mahomes",
+                    "jersey": "15",
+                    "position": {
+                      "abbreviation": "QB"
+                    },
+                    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/nfl/player/_/id/3139477/patrick-mahomes",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ],
+                    "active": true
+                  },
+                  "team": {
+                    "id": "12",
+                    "logos": [],
+                    "links": []
+                  }
+                }
+              ],
+              "shortDisplayName": "PASS",
+              "abbreviation": "PYDS"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Leader",
+              "leaders": [
+                {
+                  "displayValue": "11 CAR, 72 YDS, 1 TD",
+                  "value": 72.0,
+                  "athlete": {
+                    "team": {
+                      "id": "21"
+                    },
+                    "id": "4040715",
+                    "fullName": "Jalen Hurts",
+                    "displayName": "Jalen Hurts",
+                    "shortName": "J. Hurts",
+                    "jersey": "1",
+                    "position": {
+                      "abbreviation": "QB"
+                    },
+                    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4040715.png",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/nfl/player/_/id/4040715/jalen-hurts",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ],
+                    "active": true
+                  },
+                  "team": {
+                    "id": "21",
+                    "logos": [],
+                    "links": []
+                  }
+                }
+              ],
+              "shortDisplayName": "RUSH",
+              "abbreviation": "RYDS"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Leader",
+              "leaders": [
+                {
+                  "displayValue": "8 REC, 157 YDS, 2 TD",
+                  "value": 157.0,
+                  "athlete": {
+                    "team": {
+                      "id": "12"
+                    },
+                    "id": "4683062",
+                    "fullName": "Xavier Worthy",
+                    "displayName": "Xavier Worthy",
+                    "shortName": "X. Worthy",
+                    "jersey": "1",
+                    "position": {
+                      "abbreviation": "WR"
+                    },
+                    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4683062.png",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/nfl/player/_/id/4683062/xavier-worthy",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ],
+                    "active": true
+                  },
+                  "team": {
+                    "id": "12",
+                    "logos": [],
+                    "links": []
+                  }
+                }
+              ],
+              "shortDisplayName": "REC",
+              "abbreviation": "RECYDS"
+            }
+          ],
+          "format": {
+            "regulation": {
+              "periods": 4
+            }
+          },
+          "startDate": "2025-02-09T23:30:00+00:00",
+          "broadcast": "FOX",
+          "geoBroadcasts": [
+            {
+              "type": {
+                "id": "1",
+                "shortName": "TV"
+              },
+              "market": {
+                "id": "1",
+                "type": "National"
+              },
+              "media": {
+                "shortName": "FOX"
+              },
+              "lang": "en",
+              "region": "us"
+            }
+          ],
+          "highlights": [],
+          "headlines": [
+            {
+              "type": "Recap",
+              "description": "\u2014 Cooper DeJean, Josh Sweat and the Philadelphia Eagles\u2019 ferocious defense denied Patrick Mahomes, Travis Kelce and the Kansas City Chiefs a Super Bowl three-peat.",
+              "shortLinkText": "Eagles deny the Chiefs a Super Bowl three-peat with dominant defense in a 40-22 rout"
+            }
+          ]
+        }
+      ],
+      "uid": "s:20~l:28~e:401671889",
+      "name": "Kansas City Chiefs at Philadelphia Eagles",
+      "shortName": "KC VS PHI",
+      "season": {
+        "year": 2024,
+        "type": 3,
+        "slug": "post-season"
+      },
+      "week": {
+        "number": 5
+      },
+      "links": [
+        {
+          "language": "en-US",
+          "shortText": "Gamecast",
+          "href": "https://www.espn.com/nfl/game/_/gameId/401671889/chiefs-eagles",
+          "text": "Gamecast",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/nfl/boxscore/_/gameId/401671889",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/nfl/playbyplay/_/gameId/401671889",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Recap",
+          "href": "https://www.espn.com/nfl/recap?gameId=401671889",
+          "text": "Recap",
+          "rel": [
+            "recap",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "status": {
+        "type": {
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
+        },
+        "clock": 0.0,
+        "displayClock": "0:00",
+        "period": 4
+      }
+    }
+  ]
+}
