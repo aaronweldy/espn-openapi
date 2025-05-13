@@ -13,9 +13,9 @@ Use those files to find the entire set of endpoints you need to generate schemas
 
 Your workflow should look like the following:
 1. Find an endpoint that is not documented in @spec.yaml.
-2. Fetch that endpoint to get an example JSON response. Put this in @json_output.
+2. Fetch that endpoint to get an example JSON response. Put this in @json_output. ACTUALLY CURL THE ENDPOINT
 3. Add the endpoint to spec.yaml. Figure out what models are missing.
-4. Add definitions for those models, and run `openapi-python-client generate --path optimizer/espn-api/spec.yaml --output-path optimizer/espn-api/models/ --overwrite`
+4. Add definitions for those models, and run `make openapi` (potentially with a more specific command)
 5. Test the model definitions by making an API call to the new route using the generated Python models in @test-api.py. (run with `uv run espn-api/tests/test-api.py`). Make sure the fields are populated as expected. Put tests in @tests.
 6. If anything goes wrong in your test, repeat steps 2-5 again.
 7. Once you have fully verified that the new generated types work, pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
@@ -37,3 +37,45 @@ Keep going until you have a comprehensive OpenAPI spec of all endpoints. Feel fr
   ```
 - Remember that camelCase JSON fields are converted to snake_case in the Python models.
   - API returns `firstName`, but access as `first_name` in Python
+
+### Handling $ref-only Objects
+
+- **Problem**: Some API responses may return an object containing only a `$ref` key (e.g., `"team": { "$ref": "..." }`) where the OpenAPI schema might expect a full object based on the component definition (e.g., `#/components/schemas/Team`). This can lead to `KeyError` during model parsing if the model's `from_dict` expects fields that are not present in the `$ref`-only object.
+- **Solution**: Use the `oneOf` keyword in the OpenAPI specification where this might occur.
+  1. Define a generic `Reference` schema in your `components/schemas`:
+     ```yaml
+     Reference:
+       type: object
+       properties:
+         $ref:
+           type: string
+           format: uri
+       required:
+         - $ref
+     ```
+  2. In the schema where a field might be a full object or just a reference (e.g., the `team` field in `AthleteDetailsResponse`), use `oneOf`:
+     ```yaml
+     properties:
+       team:
+         oneOf:
+           - $ref: '#/components/schemas/Team' # Reference to the full Team schema
+           - $ref: '#/components/schemas/Reference' # Reference to the generic Reference schema
+     ```
+  3. Keep the base schema definition (e.g., `Team`) strict, requiring its normal fields. The `oneOf` provides the flexibility.
+- **Usage in Code**: When accessing a field defined with `oneOf` (like `data.team` above), the resulting Python object could be either a `Team` instance or a `Reference` instance. You **must** check the type before accessing attributes specific to the full object:
+  ```python
+  from models.your_api_client.models.team import Team
+  from models.your_api_client.models.reference import Reference
+  from models.your_api_client.types import UNSET
+
+  # ... fetch data ...
+
+  if data.team:
+      if isinstance(data.team, Team) and data.team.display_name:
+          print(f"Team Name: {data.team.display_name}")
+      elif isinstance(data.team, Reference) and data.team.ref:
+          print(f"Team Reference URL: {data.team.ref}")
+      else:
+          print("Team information unavailable or in unexpected format")
+
+  ```

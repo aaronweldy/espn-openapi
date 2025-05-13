@@ -1,0 +1,756 @@
+openapi: 3.0.3
+info:
+  title: ESPN Site Web API
+  version: 1.0.0
+  description: Unofficial ESPN Site Web API for retrieving sports data from site.web.api.espn.com. This API is not officially supported by ESPN and may change without notice.
+
+servers:
+  - url: https://site.web.api.espn.com
+    description: ESPN Site Web API Production Server
+
+paths:
+  /apis/common/v3/sports/football/nfl/athletes/{athleteId}/overview:
+    get:
+      summary: Get NFL Athlete Overview
+      description: Retrieve comprehensive overview data for a specific NFL athlete including bio, stats, and news
+      operationId: getNFLAthleteOverview
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "3139477"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteOverviewResponse'
+        '404':
+          description: Athlete not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/common/v3/sports/football/nfl/athletes/{athleteId}/gamelog:
+    get:
+      summary: Get NFL Athlete Game Log
+      description: Retrieve game-by-game statistics for a specific NFL athlete
+      operationId: getNFLAthleteGameLog
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "3139477"
+        - name: season
+          in: query
+          required: false
+          description: Season year to filter by
+          schema:
+            type: integer
+            example: 2023
+        - name: seasontype
+          in: query
+          required: false
+          description: Season type (1=preseason, 2=regular, 3=postseason)
+          schema:
+            type: integer
+            enum: [1, 2, 3]
+            example: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteGameLogResponse'
+        '404':
+          description: Athlete game log not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/common/v3/search:
+    get:
+      summary: General Search
+      description: Search for sports content including teams, athletes, articles and more
+      operationId: getGeneralSearch
+      parameters:
+        - name: query
+          in: query
+          required: true
+          description: Search query term
+          schema:
+            type: string
+            example: "Mahomes"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of results to return
+          schema:
+            type: integer
+            example: 10
+        - name: mode
+          in: query
+          required: false
+          description: Search mode (e.g., prefix, full)
+          schema:
+            type: string
+            enum: [prefix, full]
+            example: "prefix"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v2/scoreboard/header:
+    get:
+      summary: Get Scoreboard Header
+      description: Retrieve header information for scoreboard pages
+      operationId: getScoreboardHeader
+      parameters:
+        - name: sport
+          in: query
+          required: true
+          description: Sport identifier
+          schema:
+            type: string
+            example: "football"
+        - name: league
+          in: query
+          required: true
+          description: League identifier
+          schema:
+            type: string
+            example: "nfl"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScoreboardHeaderResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    AthleteOverviewResponse:
+      type: object
+      properties:
+        athlete:
+          $ref: '#/components/schemas/AthleteOverview'
+        league:
+          $ref: '#/components/schemas/LeagueReference'
+        team:
+          $ref: '#/components/schemas/TeamReference'
+        position:
+          $ref: '#/components/schemas/Position'
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatCategory'
+        news:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsItem'
+        injuries:
+          type: array
+          items:
+            $ref: '#/components/schemas/InjuryReport'
+      required:
+        - athlete
+
+    AthleteOverview:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "3139477"
+        uid:
+          type: string
+          example: "s:20~l:28~a:3139477"
+        guid:
+          type: string
+          example: "b8464d14e3f517b3b34f7881c4334353"
+        firstName:
+          type: string
+          example: "Patrick"
+        lastName:
+          type: string
+          example: "Mahomes"
+        fullName:
+          type: string
+          example: "Patrick Mahomes"
+        displayName:
+          type: string
+          example: "Patrick Mahomes"
+        shortName:
+          type: string
+          example: "P. Mahomes"
+        weight:
+          type: integer
+          example: 225
+        displayWeight:
+          type: string
+          example: "225 lbs"
+        height:
+          type: integer
+          example: 75
+        displayHeight:
+          type: string
+          example: "6' 3\""
+        age:
+          type: integer
+          example: 28
+        dateOfBirth:
+          type: string
+          format: date-time
+          example: "1995-09-17T00:00:00Z"
+        birthPlace:
+          $ref: '#/components/schemas/BirthPlace'
+        jersey:
+          type: string
+          example: "15"
+        headshot:
+          type: object
+          properties:
+            href:
+              type: string
+              format: uri
+              example: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
+            alt:
+              type: string
+              example: "Patrick Mahomes"
+        experience:
+          type: object
+          properties:
+            years:
+              type: integer
+              example: 7
+            displayValue:
+              type: string
+              example: "7 years"
+        draft:
+          $ref: '#/components/schemas/DraftInfo'
+        college:
+          $ref: '#/components/schemas/College'
+        status:
+          $ref: '#/components/schemas/AthleteStatus'
+      required:
+        - id
+        - fullName
+
+    AthleteGameLogResponse:
+      type: object
+      properties:
+        athlete:
+          $ref: '#/components/schemas/AthleteReference'
+        league:
+          $ref: '#/components/schemas/LeagueReference'
+        season:
+          $ref: '#/components/schemas/Season'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/GameLogCategory'
+      required:
+        - athlete
+        - categories
+
+    GameLogCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "passing"
+        displayName:
+          type: string
+          example: "Passing"
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryLabel'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/GameLogEvent'
+      required:
+        - name
+        - displayName
+        - events
+
+    CategoryLabel:
+      type: object
+      properties:
+        label:
+          type: string
+          example: "COMP/ATT"
+        abbreviation:
+          type: string
+          example: "C/A"
+      required:
+        - label
+
+    GameLogEvent:
+      type: object
+      properties:
+        eventId:
+          type: string
+          example: "401547417"
+        date:
+          type: string
+          format: date-time
+          example: "2023-02-12T23:30:00Z"
+        opponent:
+          $ref: '#/components/schemas/TeamReference'
+        homeAway:
+          type: string
+          enum: [home, away]
+          example: "home"
+        result:
+          type: string
+          example: "W 38-35"
+        stats:
+          type: array
+          items:
+            type: string
+            example: "286"
+      required:
+        - eventId
+        - date
+        - opponent
+        - stats
+
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResult'
+        metadata:
+          $ref: '#/components/schemas/SearchMetadata'
+      required:
+        - results
+
+    SearchResult:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "athlete"
+          description: "Type of search result (athlete, team, article, etc.)"
+        id:
+          type: string
+          example: "3139477"
+        uid:
+          type: string
+          example: "s:20~l:28~a:3139477"
+        name:
+          type: string
+          example: "Patrick Mahomes"
+        description:
+          type: string
+          example: "Kansas City Chiefs quarterback"
+        sport:
+          $ref: '#/components/schemas/SportReference'
+        league:
+          $ref: '#/components/schemas/LeagueReference'
+        team:
+          $ref: '#/components/schemas/TeamReference'
+        image:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
+        url:
+          type: string
+          format: uri
+          example: "https://www.espn.com/nfl/player/_/id/3139477/patrick-mahomes"
+      required:
+        - type
+        - id
+        - name
+
+    SearchMetadata:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 10
+        totalCount:
+          type: integer
+          example: 125
+        offset:
+          type: integer
+          example: 0
+      required:
+        - count
+
+    ScoreboardHeaderResponse:
+      type: object
+      properties:
+        league:
+          $ref: '#/components/schemas/LeagueReference'
+        season:
+          $ref: '#/components/schemas/Season'
+        navigation:
+          type: array
+          items:
+            $ref: '#/components/schemas/NavigationItem'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardEvent'
+      required:
+        - league
+        - season
+
+    NavigationItem:
+      type: object
+      properties:
+        label:
+          type: string
+          example: "Scores"
+        url:
+          type: string
+          format: uri
+          example: "/nfl/scoreboard"
+        isActive:
+          type: boolean
+          example: true
+      required:
+        - label
+        - url
+
+    ScoreboardEvent:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "401547417"
+        name:
+          type: string
+          example: "Kansas City Chiefs vs. Philadelphia Eagles"
+        shortName:
+          type: string
+          example: "KC vs PHI"
+        date:
+          type: string
+          format: date-time
+          example: "2023-02-12T23:30:00Z"
+        homeTeam:
+          $ref: '#/components/schemas/TeamReference'
+        awayTeam:
+          $ref: '#/components/schemas/TeamReference'
+        status:
+          $ref: '#/components/schemas/EventStatus'
+      required:
+        - id
+        - name
+        - date
+
+    EventStatus:
+      type: object
+      properties:
+        state:
+          type: string
+          enum: [pre, in, post]
+          example: "post"
+        detail:
+          type: string
+          example: "Final"
+        shortDetail:
+          type: string
+          example: "Final"
+      required:
+        - state
+
+    LeagueReference:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "28"
+        name:
+          type: string
+          example: "National Football League"
+        abbreviation:
+          type: string
+          example: "NFL"
+        slug:
+          type: string
+          example: "nfl"
+      required:
+        - id
+        - name
+
+    SportReference:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "20"
+        name:
+          type: string
+          example: "Football"
+        slug:
+          type: string
+          example: "football"
+      required:
+        - id
+        - name
+
+    TeamReference:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "12"
+        abbreviation:
+          type: string
+          example: "KC"
+        displayName:
+          type: string
+          example: "Kansas City Chiefs"
+        logo:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png"
+      required:
+        - id
+        - displayName
+
+    AthleteReference:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "3139477"
+        fullName:
+          type: string
+          example: "Patrick Mahomes"
+        displayName:
+          type: string
+          example: "Patrick Mahomes"
+        headshot:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
+      required:
+        - id
+        - fullName
+
+    Position:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "8"
+        name:
+          type: string
+          example: "Quarterback"
+        displayName:
+          type: string
+          example: "Quarterback"
+        abbreviation:
+          type: string
+          example: "QB"
+      required:
+        - id
+        - abbreviation
+
+    StatCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "passingYards"
+        displayName:
+          type: string
+          example: "Passing Yards"
+        value:
+          type: number
+          example: 4183
+        displayValue:
+          type: string
+          example: "4,183"
+        rankDisplayValue:
+          type: string
+          example: "6th in NFL"
+      required:
+        - name
+        - value
+
+    NewsItem:
+      type: object
+      properties:
+        headline:
+          type: string
+          example: "Mahomes throws 3 TDs in comeback win"
+        description:
+          type: string
+          example: "Patrick Mahomes led the Chiefs to a comeback victory..."
+        published:
+          type: string
+          format: date-time
+          example: "2023-02-13T04:30:00Z"
+        image:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/photo/2023/0213/r1129633_1296x729_16-9.jpg"
+        url:
+          type: string
+          format: uri
+          example: "https://www.espn.com/nfl/story/_/id/35642589/patrick-mahomes-comeback-win"
+      required:
+        - headline
+        - published
+
+    InjuryReport:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "Questionable"
+        date:
+          type: string
+          format: date-time
+          example: "2023-02-10T18:00:00Z"
+        description:
+          type: string
+          example: "Ankle"
+      required:
+        - status
+        - date
+
+    BirthPlace:
+      type: object
+      properties:
+        city:
+          type: string
+          example: "Tyler"
+        state:
+          type: string
+          example: "Texas"
+        country:
+          type: string
+          example: "USA"
+
+    College:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "2641"
+        name:
+          type: string
+          example: "Texas Tech"
+        abbreviation:
+          type: string
+          example: "TTU"
+        logo:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"
+      required:
+        - id
+        - name
+
+    DraftInfo:
+      type: object
+      properties:
+        year:
+          type: integer
+          example: 2017
+        round:
+          type: integer
+          example: 1
+        pick:
+          type: integer
+          example: 10
+        displayText:
+          type: string
+          example: "2017 Round 1 (10th overall)"
+      required:
+        - year
+
+    AthleteStatus:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        name:
+          type: string
+          example: "Active"
+        type:
+          type: string
+          example: "active"
+        abbreviation:
+          type: string
+          example: "ACT"
+      required:
+        - id
+        - name
+
+    Season:
+      type: object
+      properties:
+        year:
+          type: integer
+          example: 2023
+        type:
+          type: integer
+          description: Season type (1=preseason, 2=regular, 3=postseason)
+          example: 2
+        displayName:
+          type: string
+          example: "2023"
+      required:
+        - year
+        - type
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string 

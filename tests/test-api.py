@@ -6,11 +6,11 @@ Requires Python 3.10+
 
 import json
 
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_game_summary import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.game_summary import GameSummary
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_game_summary import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.game_summary import GameSummary
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data: GameSummary) -> bool:
@@ -21,28 +21,20 @@ def validate_schema_response(data: GameSummary) -> bool:
             print(f"Missing required attribute: {attr}")
             return False
     header = data.header
-    if header is UNSET:
-        print("Invalid header structure: header is UNSET")
+    if not header:
+        print("Invalid header structure: header is None")
         return False
-    if (
-        getattr(header, "id", UNSET) is UNSET
-        or getattr(header, "uid", UNSET) is UNSET
-        or getattr(header, "season", UNSET) is UNSET
-        or getattr(header, "competitions", UNSET) is UNSET
-    ):
+    if not header.id or not header.uid or not header.season or not header.competitions:
         print("Invalid header structure: missing required keys in header")
         return False
 
-    competitions = getattr(header, "competitions", UNSET)
-    if competitions is UNSET or not competitions:
+    competitions = header.competitions
+    if not competitions:
         print("No competitions found or competitions list is empty")
         return False
 
     competition = competitions[0]
-    if (
-        getattr(competition, "competitors", UNSET) is UNSET
-        or not competition.competitors
-    ):
+    if not competition.competitors:
         print("No competitors found in competition")
         return False
     return True
@@ -56,11 +48,11 @@ def format_game_summary(data: GameSummary) -> str:
     if not header:
         return "Invalid data format: header is empty"
 
-    competitions = header.competitions
+    competitions = header.competitions or []
     if not competitions:
         return "Invalid competition data: header.competitions is empty"
     competition = competitions[0]
-    competitors_on_competition = competition.competitors
+    competitors_on_competition = competition.competitors or []
     if not competitors_on_competition:
         return "Invalid competition data: no competitors found"
 
@@ -69,7 +61,7 @@ def format_game_summary(data: GameSummary) -> str:
         (
             c
             for c in competitors_list
-            if getattr(c, "home_away", UNSET) is not UNSET and c.home_away == "away"
+            if c.home_away is not UNSET and c.home_away == "away"
         ),
         None,
     )
@@ -77,7 +69,7 @@ def format_game_summary(data: GameSummary) -> str:
         (
             c
             for c in competitors_list
-            if getattr(c, "home_away", UNSET) is not UNSET and c.home_away == "home"
+            if c.home_away is not UNSET and c.home_away == "home"
         ),
         None,
     )
@@ -92,29 +84,25 @@ def format_game_summary(data: GameSummary) -> str:
 
     output = []
     output.append("=== ESPN NFL Game Summary ===")
-    game_id = getattr(header, "id", "N/A")
+    game_id = header.id or "N/A"
     output.append(f"Game ID: {game_id}")
 
-    game_date = getattr(competition, "date", "N/A")
+    game_date = competition.date or "N/A"
     output.append(f"Date: {game_date}")
 
     output.append("\n--- Teams ---")
-    away_team_display_name = away_team.team.display_name
-    away_team_score = away_team.score
+    away_team_display_name = away_team.team.display_name or "Unknown"
+    away_team_score = away_team.score or "N/A"
     output.append(f"{away_team_display_name} (Away): {away_team_score}")
 
-    home_team_display_name = home_team.team.display_name
-    home_team_score = home_team.score
+    home_team_display_name = home_team.team.display_name or "Unknown"
+    home_team_score = home_team.score or "N/A"
     output.append(f"{home_team_display_name} (Home): {home_team_score}")
 
     status_desc = "Unknown"
     competition_status = competition.status
-    if competition_status is not UNSET:
-        status_type_attr = getattr(competition_status, "type_", UNSET)
-        if status_type_attr is not UNSET:
-            status_desc_attr = getattr(status_type_attr, "description", UNSET)
-            if status_desc_attr is not UNSET:
-                status_desc = status_desc_attr
+    if competition_status and competition_status.type:
+        status_desc = competition_status.type.description or "Unknown"
     output.append(f"\nStatus: {status_desc}")
 
     venue_name = "Unknown"
@@ -124,14 +112,14 @@ def format_game_summary(data: GameSummary) -> str:
 
     game_info = data.game_info
     if game_info:
-        venue_name = game_info.venue.full_name
+        if game_info.venue:
+            venue_name = game_info.venue.full_name or "Unknown"
 
-        venue_address = game_info.venue.address
-        if venue_address:
-            city = venue_address.city
-            state = venue_address.state
+            if game_info.venue.address:
+                city = game_info.venue.address.city or "Unknown"
+                state = game_info.venue.address.state or "Unknown"
 
-        attendance_val = game_info.attendance
+        attendance_val = game_info.attendance or "N/A"
 
         output.append("\n--- Venue ---")
         output.append(f"Name: {venue_name}")
@@ -163,9 +151,7 @@ def main():
         print("✗ API returned an error response:")
         print(
             game_data.error.message
-            if hasattr(game_data, "error")
-            and game_data.error
-            and hasattr(game_data.error, "message")
+            if game_data.error and game_data.error.message
             else str(game_data)
         )
         return

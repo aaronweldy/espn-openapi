@@ -7,12 +7,16 @@ Requires Python 3.10+
 import json
 import requests
 
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_standings import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.standings_response import StandingsResponse
-from models.espn_nfl_api_client.models.get_nfl_standings_seasontype import GetNFLStandingsSeasontype
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_standings import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.standings_response import (
+    StandingsResponse,
+)
+from models.site_api.espn_nfl_api_client.models.get_nfl_standings_seasontype import (
+    GetNFLStandingsSeasontype,
+)
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data):
@@ -60,7 +64,7 @@ def validate_schema_response(data):
         return False
 
 
-def format_standings_response(data):
+def format_standings_response(data: StandingsResponse):
     """Format standings data for display."""
     if not data.name or not data.children:
         return "Invalid data format: missing name or children"
@@ -71,34 +75,96 @@ def format_standings_response(data):
     for conference in data.children:
         output.append(f"\n--- {conference.name} ---")
 
-        if hasattr(conference, 'standings'):
+        if hasattr(conference, "standings"):
             standings = conference.standings
             output.append(f"Season: {standings.season} ({standings.season_type})")
 
-            output.append("\nTeam                  W-L    PCT   PF    PA    DIFF   STRK")
-            output.append("--------------------------------------------------------------")
+            output.append(
+                "\nTeam                  W-L    PCT   PF    PA    DIFF   STRK"
+            )
+            output.append(
+                "--------------------------------------------------------------"
+            )
 
-            if hasattr(standings, 'entries'):
+            if hasattr(standings, "entries"):
                 for entry in standings.entries:
-                    if hasattr(entry, 'team') and hasattr(entry, 'stats'):
+                    if entry.team and entry.stats:
                         team = entry.team
 
                         # Extract stats for display (using snake_case attribute names)
-                        wins = next((s.value for s in entry.stats if s.name == "wins"), 0)
-                        losses = next((s.value for s in entry.stats if s.name == "losses"), 0)
-                        ties = next((s.value for s in entry.stats if s.name == "ties"), 0)
-                        win_pct = next((s.display_value for s in entry.stats if s.name == "winPercent"), "0.000")
-                        points_for = next((s.value for s in entry.stats if s.name == "pointsFor"), 0)
-                        points_against = next((s.value for s in entry.stats if s.name == "pointsAgainst"), 0)
-                        diff = next((s.display_value for s in entry.stats if s.name == "differential"), "0")
-                        streak = next((s.display_value for s in entry.stats if s.name == "streak"), "")
+                        wins = next(
+                            (
+                                s.value
+                                for s in entry.stats
+                                if s.name == "wins" and s.value
+                            ),
+                            0,
+                        )
+                        losses = next(
+                            (
+                                s.value
+                                for s in entry.stats
+                                if s.name == "losses" and s.value
+                            ),
+                            0,
+                        )
+                        ties = next(
+                            (
+                                s.value
+                                for s in entry.stats
+                                if s.name == "ties" and s.value
+                            ),
+                            0,
+                        )
+                        win_pct = next(
+                            (
+                                s.display_value
+                                for s in entry.stats
+                                if s.name == "winPercent" and s.display_value
+                            ),
+                            "0.000",
+                        )
+                        points_for = next(
+                            (
+                                s.value
+                                for s in entry.stats
+                                if s.name == "pointsFor" and s.value
+                            ),
+                            0,
+                        )
+                        points_against = next(
+                            (
+                                s.value
+                                for s in entry.stats
+                                if s.name == "pointsAgainst" and s.value
+                            ),
+                            0,
+                        )
+                        diff = next(
+                            (
+                                s.display_value
+                                for s in entry.stats
+                                if s.name == "differential" and s.display_value
+                            ),
+                            "0",
+                        )
+                        streak = next(
+                            (
+                                s.display_value
+                                for s in entry.stats
+                                if s.name == "streak" and s.display_value
+                            ),
+                            "",
+                        )
 
-                        if hasattr(team, 'display_name'):
+                        if team.display_name:
                             team_name = team.display_name
                         else:
                             team_name = "Unknown"
 
-                        output.append(f"{team_name:<20}  {int(wins)}-{int(losses)}  {win_pct:<5} {int(points_for):<5} {int(points_against):<5} {diff:<6} {streak}")
+                        output.append(
+                            f"{team_name:<20}  {int(wins)}-{int(losses)}  {win_pct:<5} {int(points_for):<5} {int(points_against):<5} {diff:<6} {streak}"
+                        )
 
     return "\n".join(output)
 
@@ -121,58 +187,85 @@ def main():
 
     print("\nFetching NFL standings data")
     print("-" * 50)
-    
+
     # For testing purposes, we'll first try the direct request
     standings_json = fetch_direct_standings()
-    
+
     if not standings_json:
         print("✗ Failed to fetch standings data directly")
         return
-        
+
     # Save the raw JSON for analysis
     with open("json_output/nfl_standings_direct.json", "w") as f:
         json.dump(standings_json, f, indent=2)
-    
+
     print("✓ Successfully fetched standings data")
-    
+
     # Basic validation and display from the direct JSON
     if "name" not in standings_json or "children" not in standings_json:
         print("✗ Response does not match expected structure")
         return
-    
+
     print(f"\n=== {standings_json.get('name', 'NFL')} Standings ===")
-    
+
     children = standings_json.get("children", [])
     for conference in children:
         print(f"\n--- {conference.get('name', 'Unknown')} ---")
-        
+
         standings = conference.get("standings", {})
-        print(f"Season: {standings.get('season', 'Unknown')} ({standings.get('seasonType', 'Unknown')})")
-        
+        print(
+            f"Season: {standings.get('season', 'Unknown')} ({standings.get('seasonType', 'Unknown')})"
+        )
+
         entries = standings.get("entries", [])
         if not entries:
             print("No standings entries found")
             continue
-            
+
         print("\nTeam                  W-L    PCT   PF    PA    DIFF")
         print("--------------------------------------------------")
-        
+
         for entry in entries[:5]:  # Show first 5 teams per conference
             team = entry.get("team", {})
             team_name = team.get("displayName", "Unknown")
-            
+
             stats = entry.get("stats", [])
-            wins = next((s.get("value", 0) for s in stats if s.get("name") == "wins"), 0)
-            losses = next((s.get("value", 0) for s in stats if s.get("name") == "losses"), 0)
-            win_pct = next((s.get("displayValue", "0.000") for s in stats if s.get("name") == "winPercent"), "0.000")
-            points_for = next((s.get("value", 0) for s in stats if s.get("name") == "pointsFor"), 0)
-            points_against = next((s.get("value", 0) for s in stats if s.get("name") == "pointsAgainst"), 0)
-            diff = next((s.get("displayValue", "0") for s in stats if s.get("name") == "differential"), "0")
-            
-            print(f"{team_name:<20}  {int(wins)}-{int(losses)}  {win_pct:<5} {int(points_for):<5} {int(points_against):<5} {diff}")
-    
+            wins = next(
+                (s.get("value", 0) for s in stats if s.get("name") == "wins"), 0
+            )
+            losses = next(
+                (s.get("value", 0) for s in stats if s.get("name") == "losses"), 0
+            )
+            win_pct = next(
+                (
+                    s.get("displayValue", "0.000")
+                    for s in stats
+                    if s.get("name") == "winPercent"
+                ),
+                "0.000",
+            )
+            points_for = next(
+                (s.get("value", 0) for s in stats if s.get("name") == "pointsFor"), 0
+            )
+            points_against = next(
+                (s.get("value", 0) for s in stats if s.get("name") == "pointsAgainst"),
+                0,
+            )
+            diff = next(
+                (
+                    s.get("displayValue", "0")
+                    for s in stats
+                    if s.get("name") == "differential"
+                ),
+                "0",
+            )
+
+            print(
+                f"{team_name:<20}  {int(wins)}-{int(losses)}  {win_pct:<5} {int(points_for):<5} {int(points_against):<5} {diff}"
+            )
+
     print("\n✓ Full standings response saved to json_output/nfl_standings_direct.json")
-    
+
     # Now try using the generated client
     try:
         print("\nUsing the generated client to fetch standings:")
@@ -194,11 +287,15 @@ def main():
             # Save the raw direct response
             with open("json_output/nfl_standings_response_direct.json", "w") as f:
                 json.dump(response.json(), f, indent=2)
-            print("✓ Direct response saved to json_output/nfl_standings_response_direct.json")
+            print(
+                "✓ Direct response saved to json_output/nfl_standings_response_direct.json"
+            )
 
             # Try to use the client
             try:
-                standings_data = sync(client=client, season=2024, seasontype=season_type)
+                standings_data = sync(
+                    client=client, season=2024, seasontype=season_type
+                )
 
                 if isinstance(standings_data, ErrorResponse):
                     print("✗ API returned an error response:")
@@ -220,14 +317,19 @@ def main():
                     print("\n" + format_standings_response(standings_data))
 
                     # Save full response for analysis
-                    with open("json_output/nfl_standings_response_processed.json", "w") as f:
+                    with open(
+                        "json_output/nfl_standings_response_processed.json", "w"
+                    ) as f:
                         json.dump(standings_data.to_dict(), f, indent=2)
-                    print("\n✓ Full processed response saved to json_output/nfl_standings_response_processed.json")
+                    print(
+                        "\n✓ Full processed response saved to json_output/nfl_standings_response_processed.json"
+                    )
                 else:
                     print("✗ Failed to fetch standings data using client")
             except Exception as e:
                 print(f"✗ Error processing standings with client: {str(e)}")
                 import traceback
+
                 print(traceback.format_exc())
         else:
             print(f"✗ Direct request failed with status code: {response.status_code}")
@@ -235,6 +337,7 @@ def main():
     except Exception as e:
         print(f"✗ Error using generated client: {str(e)}")
         import traceback
+
         print(traceback.format_exc())
 
 

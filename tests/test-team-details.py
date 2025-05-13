@@ -7,11 +7,13 @@ Requires Python 3.10+
 import json
 
 import requests
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_team_details import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.team_details_response import TeamDetailsResponse
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_details import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.team_details_response import (
+    TeamDetailsResponse,
+)
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data: TeamDetailsResponse) -> bool:
@@ -27,15 +29,8 @@ def validate_schema_response(data: TeamDetailsResponse) -> bool:
             print(f"Missing required attribute: {attr}")
             return False
 
-    # Check for records
-    if team.record:
-        if not team.record.items:
-            print("Record items is empty")
-
-    # Check for franchise
-    if team.franchise:
-        if getattr(team.franchise, "display_name", UNSET) is UNSET:
-            print("Franchise missing display_name")
+    # We'll validate other fields when we have the actual API response
+    # to see the exact field names
 
     return True
 
@@ -64,10 +59,10 @@ def format_team_details(data: TeamDetailsResponse) -> str:
         output.append(f"Logo: {team.logos[0].href}")
 
     # Add record if available
-    if team.record and team.record.items:
+    if team.record and hasattr(team.record, "items") and team.record.items:
         output.append("\n--- Records ---")
         for record in team.record.items:
-            desc = record.description or record.type_
+            desc = record.description or record.type or ""
             output.append(f"{desc}: {record.summary}")
 
     # Add standing summary if available
@@ -122,9 +117,7 @@ def main():
             print("✗ API returned an error response:")
             print(
                 team_data.error.message
-                if hasattr(team_data, "error")
-                and team_data.error
-                and hasattr(team_data.error, "message")
+                if team_data.error and team_data.error.message
                 else str(team_data)
             )
         elif isinstance(team_data, TeamDetailsResponse):

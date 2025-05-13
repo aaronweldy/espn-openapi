@@ -7,11 +7,11 @@ Requires Python 3.10+
 import json
 import requests
 
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_news import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.news_response import NewsResponse
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_news import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.news_response import NewsResponse
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data):
@@ -85,29 +85,29 @@ def main():
 
     print("\nFetching NFL news data")
     print("-" * 50)
-    
+
     # First try the direct approach
     news_json = fetch_direct_news()
-    
+
     if not news_json:
         print("✗ Failed to fetch news data directly")
         return
-        
+
     # Save the raw JSON for analysis
     with open("json_output/nfl_news_response.json", "w") as f:
         json.dump(news_json, f, indent=2)
-    
+
     print("✓ Successfully fetched news data")
-        
+
     # Basic validation and display from the direct JSON
     if "header" not in news_json or "articles" not in news_json:
         print("✗ Response does not match expected structure")
         return
-    
+
     articles = news_json.get("articles", [])
     print(f"\n=== {news_json.get('header', 'NFL News')} ===")
     print(f"Total Articles: {len(articles)}")
-    
+
     print("\n--- Recent Articles ---")
     for idx, article in enumerate(articles[:5], 1):  # Show top 5 articles
         print(f"{idx}. {article.get('headline', 'No headline')}")
@@ -115,9 +115,9 @@ def main():
         print(f"   Published: {article.get('published', 'Unknown')}")
         print(f"   By: {article.get('byline', 'Unknown')}")
         print("")
-    
+
     print("\n✓ Full news response saved to json_output/nfl_news_response.json")
-    
+
     # Now try using the generated client
     try:
         print("\nUsing the generated client to fetch news:")
@@ -127,7 +127,7 @@ def main():
             print("✗ API returned an error response:")
             print(
                 news_data.error.message
-                if hasattr(news_data, "error") 
+                if hasattr(news_data, "error")
                 and news_data.error
                 and hasattr(news_data.error, "message")
                 else str(news_data)
@@ -145,7 +145,9 @@ def main():
             # Save full response for analysis
             with open("json_output/nfl_news_response_processed.json", "w") as f:
                 json.dump(news_data.to_dict(), f, indent=2)
-            print("\n✓ Full processed response saved to json_output/nfl_news_response_processed.json")
+            print(
+                "\n✓ Full processed response saved to json_output/nfl_news_response_processed.json"
+            )
         else:
             print("✗ Failed to fetch news data using client")
     except Exception as e:

@@ -1,0 +1,996 @@
+openapi: 3.0.3
+info:
+  title: ESPN Fantasy API
+  version: 1.0.0
+  description: Unofficial ESPN Fantasy API for retrieving fantasy sports data from fantasy.espn.com. This API is not officially supported by ESPN and may change without notice.
+
+servers:
+  - url: https://fantasy.espn.com
+    description: ESPN Fantasy API Production Server
+
+paths:
+  /apis/v3/games/ffl/seasons/{year}/segments/{segment}/leagues/{leagueId}:
+    get:
+      summary: Get Fantasy Football League
+      description: Retrieve detailed information for a specific fantasy football league
+      operationId: getFantasyFootballLeague
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2023
+        - name: segment
+          in: path
+          required: true
+          description: The league segment (0 for regular season)
+          schema:
+            type: integer
+            example: 0
+        - name: leagueId
+          in: path
+          required: true
+          description: The ID of the fantasy football league
+          schema:
+            type: integer
+            example: 12345678
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [mTeam, mRoster, mMatchup, mSettings, mDraftDetail]
+            example: "mTeam"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasyLeagueResponse'
+        '401':
+          description: Unauthorized (for private leagues)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: League not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v3/games/ffl/seasons/{year}/segments/{segment}/leagues/{leagueId}/teams/{teamId}:
+    get:
+      summary: Get Fantasy Football Team
+      description: Retrieve detailed information for a specific fantasy football team
+      operationId: getFantasyFootballTeam
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2023
+        - name: segment
+          in: path
+          required: true
+          description: The league segment (0 for regular season)
+          schema:
+            type: integer
+            example: 0
+        - name: leagueId
+          in: path
+          required: true
+          description: The ID of the fantasy football league
+          schema:
+            type: integer
+            example: 12345678
+        - name: teamId
+          in: path
+          required: true
+          description: The ID of the fantasy team
+          schema:
+            type: integer
+            example: 1
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [mTeam, mRoster, mMatchup]
+            example: "mRoster"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasyTeamResponse'
+        '401':
+          description: Unauthorized (for private leagues)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v3/games/ffl/seasons/{year}/segments/{segment}/leagues/{leagueId}/players/available:
+    get:
+      summary: Get Available Players
+      description: Retrieve list of available players in a fantasy football league
+      operationId: getAvailablePlayers
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2023
+        - name: segment
+          in: path
+          required: true
+          description: The league segment (0 for regular season)
+          schema:
+            type: integer
+            example: 0
+        - name: leagueId
+          in: path
+          required: true
+          description: The ID of the fantasy football league
+          schema:
+            type: integer
+            example: 12345678
+        - name: scoringPeriodId
+          in: query
+          required: false
+          description: The scoring period (week) ID
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AvailablePlayersResponse'
+        '401':
+          description: Unauthorized (for private leagues)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: League not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    FantasyLeagueResponse:
+      type: object
+      properties:
+        gameId:
+          type: integer
+          example: 1
+          description: ID of the fantasy game (1 = fantasy football)
+        id:
+          type: integer
+          example: 12345678
+          description: League ID
+        name:
+          type: string
+          example: "Example League"
+          description: League name
+        abbreviation:
+          type: string
+          example: "EXL"
+          description: League abbreviation
+        isPublic:
+          type: boolean
+          description: Whether the league is public
+        seasonId:
+          type: integer
+          example: 2023
+          description: Season year
+        segmentId:
+          type: integer
+          example: 0
+          description: League segment (0 = regular season)
+        settings:
+          $ref: '#/components/schemas/LeagueSettings'
+        status:
+          $ref: '#/components/schemas/LeagueStatus'
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyTeam'
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeagueMember'
+        schedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduleItem'
+        communication:
+          $ref: '#/components/schemas/LeagueCommunication'
+      required:
+        - gameId
+        - id
+        - name
+        - seasonId
+        - segmentId
+
+    LeagueSettings:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Example League"
+        size:
+          type: integer
+          example: 10
+          description: Number of teams
+        draftSettings:
+          $ref: '#/components/schemas/DraftSettings'
+        rosterSettings:
+          $ref: '#/components/schemas/RosterSettings'
+        scheduleSettings:
+          $ref: '#/components/schemas/ScheduleSettings'
+        scoringSettings:
+          $ref: '#/components/schemas/ScoringSettings'
+        tradeSettings:
+          $ref: '#/components/schemas/TradeSettings'
+        waiverSettings:
+          $ref: '#/components/schemas/WaiverSettings'
+      required:
+        - name
+        - size
+
+    DraftSettings:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+          example: "2023-08-31T23:00:00Z"
+          description: Draft date
+        type:
+          type: integer
+          example: 1
+          description: Draft type (1 = snake, 2 = auction)
+        timePerSelection:
+          type: integer
+          example: 90
+          description: Seconds per pick
+        slotCount:
+          type: integer
+          example: 16
+          description: Number of roster slots per team
+      required:
+        - type
+        - slotCount
+
+    RosterSettings:
+      type: object
+      properties:
+        lineupSlotCounts:
+          type: object
+          additionalProperties:
+            type: integer
+          example: 
+            {
+              "0": 1,
+              "2": 2,
+              "4": 2,
+              "6": 1,
+              "23": 1,
+              "20": 1,
+              "21": 7
+            }
+          description: Count of each position slot (keys are position IDs)
+        positionLimits:
+          type: object
+          additionalProperties:
+            type: integer
+          description: Maximum number of players per position
+        locktime:
+          type: integer
+          example: 0
+          description: Time when lineups lock (0 = game time)
+      required:
+        - lineupSlotCounts
+
+    ScheduleSettings:
+      type: object
+      properties:
+        matchupPeriodCount:
+          type: integer
+          example: 14
+          description: Number of regular season matchup periods
+        matchupPeriodLength:
+          type: integer
+          example: 1
+          description: Length of each matchup in weeks
+        playoffMatchupPeriodLength:
+          type: integer
+          example: 1
+          description: Length of playoff matchups in weeks
+        playoffTeamCount:
+          type: integer
+          example: 6
+          description: Number of teams that make playoffs
+      required:
+        - matchupPeriodCount
+        - playoffTeamCount
+
+    ScoringSettings:
+      type: object
+      properties:
+        scoringType:
+          type: integer
+          example: 1
+          description: Scoring type (1 = head-to-head, 2 = rotisserie, 3 = points)
+        matchupTieRule:
+          type: integer
+          example: 0
+          description: Tiebreaker rule
+        homeTeamBonus:
+          type: number
+          example: 0.0
+          description: Home team bonus points
+        isCustomScoring:
+          type: boolean
+        isDefaultPositionScoring:
+          type: boolean
+        statSettings:
+          type: object
+          properties:
+            stats:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/StatRule'
+          description: Scoring rules for each stat
+      required:
+        - scoringType
+
+    StatRule:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 42
+          description: Stat ID
+        name:
+          type: string
+          example: "Passing TD"
+          description: Stat name
+        points:
+          type: number
+          example: 4.0
+          description: Points awarded for this stat
+        isActive:
+          type: boolean
+          example: true
+      required:
+        - id
+        - points
+
+    TradeSettings:
+      type: object
+      properties:
+        deadlineDate:
+          type: string
+          format: date-time
+          example: "2023-11-10T17:00:00Z"
+          description: Trade deadline
+        vetoPeriod:
+          type: integer
+          example: 1
+          description: Days to vote on trade veto
+        vetoVotesRequired:
+          type: integer
+          example: 4
+          description: Votes needed to veto a trade
+      required:
+        - deadlineDate
+
+    WaiverSettings:
+      type: object
+      properties:
+        processDay:
+          type: integer
+          example: 3
+          description: Day of week waivers process (1 = Mon, 3 = Wed)
+        processHour:
+          type: integer
+          example: 8
+          description: Hour of day waivers process
+        acquisitionLimit:
+          type: integer
+          example: -1
+          description: Max acquisitions per season (-1 = unlimited)
+        acquisitionType:
+          type: integer
+          example: 1
+          description: Acquisition type (1 = waivers, 2 = free agency)
+      required:
+        - processDay
+        - acquisitionType
+
+    LeagueStatus:
+      type: object
+      properties:
+        currentMatchupPeriod:
+          type: integer
+          example: 1
+          description: Current matchup period (week)
+        currentScoringPeriod:
+          type: integer
+          example: 1
+          description: Current scoring period (week)
+        isActive:
+          type: boolean
+          example: true
+          description: Whether the league is active
+        latestScoringPeriod:
+          type: integer
+          example: 1
+          description: Latest completed scoring period
+        teamsJoined:
+          type: integer
+          example: 10
+          description: Number of teams joined
+        waiverLastExecutionDate:
+          type: string
+          format: date-time
+          description: Last time waivers were processed
+      required:
+        - currentMatchupPeriod
+        - isActive
+
+    FantasyTeam:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+          description: Team ID
+        abbreviation:
+          type: string
+          example: "TEAM1"
+          description: Team abbreviation
+        location:
+          type: string
+          example: "Example"
+          description: Team location (first part of name)
+        nickname:
+          type: string
+          example: "Team"
+          description: Team nickname (second part of name)
+        name:
+          type: string
+          example: "Example Team"
+          description: Full team name
+        logo:
+          type: string
+          format: uri
+          example: "https://example.com/logo.png"
+          description: Team logo URL
+        ownerId:
+          type: string
+          example: "{123456789-ABCD-EF12-3456-7890ABCDEF12}"
+          description: Owner's member ID
+        primaryOwner:
+          type: string
+          example: "{123456789-ABCD-EF12-3456-7890ABCDEF12}"
+          description: Primary owner's member ID
+        draftDayProjectedRank:
+          type: integer
+          example: 5
+          description: Projected rank on draft day
+        currentProjectedRank:
+          type: integer
+          example: 3
+          description: Current projected rank
+        playoffSeed:
+          type: integer
+          example: 0
+          description: Team's playoff seed (0 if not determined)
+        points:
+          type: number
+          example: 108.5
+          description: Total points scored
+        pointsAdjusted:
+          type: number
+          example: 108.5
+          description: Points after adjustments
+        pointsAgainst:
+          type: number
+          example: 95.2
+          description: Total points scored against
+        divisionId:
+          type: integer
+          example: 0
+          description: Division ID
+        record:
+          $ref: '#/components/schemas/TeamRecord'
+        roster:
+          $ref: '#/components/schemas/TeamRoster'
+        transactionCounter:
+          $ref: '#/components/schemas/TransactionCounter'
+      required:
+        - id
+        - name
+
+    TeamRecord:
+      type: object
+      properties:
+        overall:
+          $ref: '#/components/schemas/Record'
+        division:
+          $ref: '#/components/schemas/Record'
+        home:
+          $ref: '#/components/schemas/Record'
+        away:
+          $ref: '#/components/schemas/Record'
+      required:
+        - overall
+
+    Record:
+      type: object
+      properties:
+        wins:
+          type: integer
+          example: 1
+          description: Number of wins
+        losses:
+          type: integer
+          example: 0
+          description: Number of losses
+        ties:
+          type: integer
+          example: 0
+          description: Number of ties
+        percentage:
+          type: number
+          example: 1.0
+          description: Win percentage
+        pointsFor:
+          type: number
+          example: 108.5
+          description: Points scored
+        pointsAgainst:
+          type: number
+          example: 95.2
+          description: Points scored against
+      required:
+        - wins
+        - losses
+        - percentage
+
+    TeamRoster:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterEntry'
+        lineupSlotCounts:
+          type: object
+          additionalProperties:
+            type: integer
+          description: Count of each position slot (keys are position IDs)
+      required:
+        - entries
+
+    RosterEntry:
+      type: object
+      properties:
+        playerId:
+          type: integer
+          example: 3139477
+          description: Player ID
+        playerPoolEntry:
+          $ref: '#/components/schemas/PlayerPoolEntry'
+        status:
+          type: string
+          example: "ACTIVE"
+          description: Player roster status
+        lineupSlotId:
+          type: integer
+          example: 0
+          description: Lineup slot ID (position)
+        acquisitionDate:
+          type: string
+          format: date-time
+          example: "2023-08-31T23:45:00Z"
+          description: Date player was acquired
+        acquisitionType:
+          type: string
+          example: "DRAFT"
+          description: How player was acquired
+      required:
+        - playerId
+        - playerPoolEntry
+        - lineupSlotId
+
+    PlayerPoolEntry:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 3139477
+          description: Player ID
+        player:
+          $ref: '#/components/schemas/Player'
+        ratings:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PlayerRating'
+          description: Player ratings
+        appliedStatTotal:
+          type: number
+          example: 22.4
+          description: Total stats applied for scoring
+      required:
+        - id
+        - player
+
+    Player:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 3139477
+          description: Player ID
+        fullName:
+          type: string
+          example: "Patrick Mahomes"
+          description: Player's full name
+        firstName:
+          type: string
+          example: "Patrick"
+          description: Player's first name
+        lastName:
+          type: string
+          example: "Mahomes"
+          description: Player's last name
+        active:
+          type: boolean
+          example: true
+          description: Whether player is active
+        defaultPositionId:
+          type: integer
+          example: 1
+          description: Default position ID
+        proTeamId:
+          type: integer
+          example: 12
+          description: Pro team ID
+        eligibleSlots:
+          type: array
+          items:
+            type: integer
+          example: [0, 20, 21]
+          description: Slots player is eligible for
+        injuryStatus:
+          type: string
+          example: "ACTIVE"
+          description: Player injury status
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayerStats'
+          description: Player statistics
+      required:
+        - id
+        - fullName
+        - defaultPositionId
+        - proTeamId
+        - eligibleSlots
+
+    PlayerStats:
+      type: object
+      properties:
+        seasonId:
+          type: integer
+          example: 2023
+          description: Season year
+        seasonValue:
+          type: integer
+          example: 2023
+          description: Season value
+        scoringPeriodId:
+          type: integer
+          example: 1
+          description: Week number
+        statSourceId:
+          type: integer
+          example: 0
+          description: Source of stats
+        statSplitTypeId:
+          type: integer
+          example: 0
+          description: Type of stat split
+        stats:
+          type: object
+          additionalProperties:
+            type: number
+          example: 
+            {
+              "0": 25,
+              "1": 38,
+              "3": 297,
+              "4": 3
+            }
+          description: Stats by category (keys are stat IDs)
+      required:
+        - seasonId
+        - scoringPeriodId
+        - stats
+
+    PlayerRating:
+      type: object
+      properties:
+        positionalRanking:
+          type: integer
+          example: 1
+          description: Ranking at position
+        totalRanking:
+          type: integer
+          example: 15
+          description: Overall ranking
+        totalRating:
+          type: number
+          example: 8.5
+          description: Player rating (1-10 scale)
+      required:
+        - positionalRanking
+        - totalRanking
+
+    TransactionCounter:
+      type: object
+      properties:
+        acquisitions:
+          type: integer
+          example: 5
+          description: Number of player acquisitions
+        drops:
+          type: integer
+          example: 5
+          description: Number of player drops
+        trades:
+          type: integer
+          example: 1
+          description: Number of trades
+        moveToActive:
+          type: integer
+          example: 8
+          description: Number of bench-to-active moves
+        moveToIR:
+          type: integer
+          example: 0
+          description: Number of moves to IR
+      required:
+        - acquisitions
+        - drops
+
+    LeagueMember:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "{123456789-ABCD-EF12-3456-7890ABCDEF12}"
+          description: Member ID
+        displayName:
+          type: string
+          example: "User123"
+          description: Display name
+        firstName:
+          type: string
+          example: "John"
+          description: First name
+        lastName:
+          type: string
+          example: "Doe"
+          description: Last name
+        isLeagueManager:
+          type: boolean
+          example: true
+          description: Whether member is league manager
+        isLeagueCreator:
+          type: boolean
+          example: true
+          description: Whether member created the league
+        email:
+          type: string
+          format: email
+          example: "user@example.com"
+          description: Member email
+      required:
+        - id
+        - displayName
+
+    ScheduleItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+          description: Schedule item ID
+        matchupPeriodId:
+          type: integer
+          example: 1
+          description: Matchup period (week)
+        home:
+          $ref: '#/components/schemas/ScheduleTeam'
+        away:
+          $ref: '#/components/schemas/ScheduleTeam'
+        winner:
+          type: string
+          enum: [HOME, AWAY, UNDECIDED]
+          example: "HOME"
+          description: Winner of matchup
+      required:
+        - id
+        - matchupPeriodId
+        - home
+        - away
+
+    ScheduleTeam:
+      type: object
+      properties:
+        teamId:
+          type: integer
+          example: 1
+          description: Team ID
+        totalPoints:
+          type: number
+          example: 108.5
+          description: Total points scored
+        totalPointsLive:
+          type: number
+          example: 108.5
+          description: Live points total
+      required:
+        - teamId
+
+    LeagueCommunication:
+      type: object
+      properties:
+        lastRead:
+          type: number
+          format: int64
+          example: 1630464000000
+          description: Timestamp of last read message
+        topics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+      required:
+        - lastRead
+
+    Topic:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "topic-1234"
+          description: Topic ID
+        type:
+          type: string
+          example: "GROUP"
+          description: Topic type
+        date:
+          type: number
+          format: int64
+          example: 1630464000000
+          description: Topic timestamp
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+      required:
+        - id
+        - type
+        - date
+
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "message-5678"
+          description: Message ID
+        topicId:
+          type: string
+          example: "topic-1234"
+          description: Topic ID
+        date:
+          type: number
+          format: int64
+          example: 1630464000000
+          description: Message timestamp
+        membershipId:
+          type: string
+          example: "{123456789-ABCD-EF12-3456-7890ABCDEF12}"
+          description: ID of the member who sent the message
+        text:
+          type: string
+          example: "Good luck everyone this season!"
+          description: Message text
+      required:
+        - id
+        - topicId
+        - date
+        - membershipId
+        - text
+
+    FantasyTeamResponse:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/FantasyTeam'
+      required:
+        - team
+
+    AvailablePlayersResponse:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayerPoolEntry'
+        scoringPeriodId:
+          type: integer
+          example: 1
+          description: Scoring period (week) ID
+      required:
+        - players
+        - scoringPeriodId
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string 

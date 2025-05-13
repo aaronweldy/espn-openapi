@@ -1,0 +1,178 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477?lang=en&region=us",
+  "birthPlace": {
+    "city": "Whitehouse",
+    "state": "TX",
+    "country": "USA"
+  },
+  "college": {
+    "$ref": "http://sports.core.api.espn.com/v2/colleges/2641?lang=en&region=us"
+  },
+  "slug": "patrick-mahomes",
+  "headshot": {
+    "href": "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png",
+    "alt": "Patrick Mahomes"
+  },
+  "linked": true,
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statistics?lang=en&region=us"
+  },
+  "contracts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/contracts?lang=en&region=us"
+  },
+  "collegeAthlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/3139477?lang=en&region=us"
+  },
+  "draft": {
+    "displayText": "Year: 2017 Round: 1 Pick: 10",
+    "round": 1,
+    "year": 2017,
+    "selection": 10,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2017/teams/12?lang=en&region=us"
+    },
+    "pick": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2017/draft/rounds/1/picks/10?lang=en&region=us"
+    }
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statisticslog?lang=en&region=us"
+  },
+  "id": "3139477",
+  "uid": "s:20~l:28~a:3139477",
+  "fullName": "Patrick Mahomes",
+  "guid": "37d87523-280a-9d4a-0adb-22cfc6d3619c",
+  "type": "football",
+  "alternateIds": {
+    "sdr": "3139477"
+  },
+  "firstName": "Patrick",
+  "lastName": "Mahomes",
+  "displayName": "Patrick Mahomes",
+  "shortName": "P. Mahomes",
+  "weight": 225.0,
+  "displayWeight": "225 lbs",
+  "height": 74.0,
+  "displayHeight": "6' 2\"",
+  "age": 29,
+  "dateOfBirth": "1995-09-17T07:00:00+00:00",
+  "debutYear": 2017,
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Player Card"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/stats/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Stats"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/splits/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Splits"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/gamelog/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Game Log"
+    },
+    {
+      "language": "en-US",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/news/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "text": "News"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/bio/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Bio"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/player/_/id/3139477/patrick-mahomes",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Overview"
+    }
+  ],
+  "jersey": "15",
+  "position": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us",
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+    },
+    "id": "8",
+    "name": "Quarterback",
+    "abbreviation": "QB",
+    "displayName": "Quarterback",
+    "leaf": true
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/12?lang=en&region=us"
+  },
+  "active": true,
+  "status": {
+    "id": "1",
+    "name": "Active",
+    "type": "active",
+    "abbreviation": "Active"
+  },
+  "experience": {
+    "years": 8
+  }
+}

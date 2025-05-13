@@ -8,11 +8,13 @@ import json
 import os
 from pathlib import Path
 
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_team_roster import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.team_roster_response import TeamRosterResponse
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_roster import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.team_roster_response import (
+    TeamRosterResponse,
+)
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data: TeamRosterResponse) -> bool:

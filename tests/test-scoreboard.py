@@ -7,11 +7,11 @@ Requires Python 3.10+
 import json
 
 import requests
-from models.espn_nfl_api_client import Client
-from models.espn_nfl_api_client.api.default.get_nfl_scoreboard import sync
-from models.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.espn_nfl_api_client.models.scoreboard import Scoreboard
-from models.espn_nfl_api_client.types import UNSET
+from models.site_api.espn_nfl_api_client import Client
+from models.site_api.espn_nfl_api_client.api.default.get_nfl_scoreboard import sync
+from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.scoreboard import Scoreboard
+from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 def validate_schema_response(data: Scoreboard) -> bool:
@@ -68,7 +68,7 @@ def format_scoreboard(data: Scoreboard) -> str:
     output = []
     output.append("=== ESPN NFL Scoreboard ===")
     output.append(f"League: {league.name}")
-    output.append(f"Season: {season_info.year} (Type: {season_info.type_})")
+    output.append(f"Season: {season_info.year} (Type: {season_info.type})")
     output.append(f"Week: {week_info.number}")
 
     output.append("\n--- Games ---")
@@ -103,8 +103,8 @@ def format_scoreboard(data: Scoreboard) -> str:
 
         # Game status
         status_desc = "Unknown"
-        if competition.status and competition.status.type_:
-            status_desc = competition.status.type_.description or "Unknown"
+        if competition.status and competition.status.type:
+            status_desc = competition.status.type.description or "Unknown"
         output.append(f"Status: {status_desc}")
 
         # Venue info if available
