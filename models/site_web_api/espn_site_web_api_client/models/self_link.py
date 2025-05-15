@@ -6,53 +6,53 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.error import Error
+    from ..models.href_link import HrefLink
 
 
-T = TypeVar("T", bound="ErrorResponse")
+T = TypeVar("T", bound="SelfLink")
 
 
 @_attrs_define
-class ErrorResponse:
+class SelfLink:
     """
     Attributes:
-        error (Union[Unset, Error]):
+        self_ (Union[Unset, HrefLink]):
     """
 
-    error: Union[Unset, "Error"] = UNSET
+    self_: Union[Unset, "HrefLink"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        error: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.error, Unset):
-            error = self.error.to_dict()
+        self_: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.self_, Unset):
+            self_ = self.self_.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if error is not UNSET:
-            field_dict["error"] = error
+        if self_ is not UNSET:
+            field_dict["self"] = self_
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.error import Error
+        from ..models.href_link import HrefLink
 
         d = src_dict.copy()
-        _error = d.pop("error", UNSET)
-        error: Union[Unset, Error]
-        if isinstance(_error, Unset):
-            error = UNSET
+        _self_ = d.pop("self", UNSET)
+        self_: Union[Unset, HrefLink]
+        if isinstance(_self_, Unset):
+            self_ = UNSET
         else:
-            error = Error.from_dict(_error)
+            self_ = HrefLink.from_dict(_self_)
 
-        error_response = cls(
-            error=error,
+        self_link = cls(
+            self_=self_,
         )
 
-        error_response.additional_properties = d
-        return error_response
+        self_link.additional_properties = d
+        return self_link
 
     @property
     def additional_keys(self) -> List[str]:

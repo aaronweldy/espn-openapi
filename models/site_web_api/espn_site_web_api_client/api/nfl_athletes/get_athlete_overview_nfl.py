@@ -6,12 +6,12 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.athlete_overview_response import AthleteOverviewResponse
-from ...models.error_response import ErrorResponse
+from ...models.error import Error
 from ...types import Response
 
 
 def _get_kwargs(
-    athlete_id: str,
+    athlete_id: int,
 ) -> Dict[str, Any]:
     _kwargs: Dict[str, Any] = {
         "method": "get",
@@ -23,17 +23,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[AthleteOverviewResponse, ErrorResponse]]:
+) -> Optional[Union[AthleteOverviewResponse, Error]]:
     if response.status_code == 200:
         response_200 = AthleteOverviewResponse.from_dict(response.json())
 
         return response_200
-    if response.status_code == 404:
-        response_404 = ErrorResponse.from_dict(response.json())
-
-        return response_404
     if response.status_code == 400:
-        response_400 = ErrorResponse.from_dict(response.json())
+        response_400 = Error.from_dict(response.json())
 
         return response_400
     if client.raise_on_unexpected_status:
@@ -44,7 +40,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[AthleteOverviewResponse, ErrorResponse]]:
+) -> Response[Union[AthleteOverviewResponse, Error]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -54,23 +50,21 @@ def _build_response(
 
 
 def sync_detailed(
-    athlete_id: str,
+    athlete_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[Union[AthleteOverviewResponse, ErrorResponse]]:
-    """Get NFL Athlete Overview
-
-     Retrieve comprehensive overview data for a specific NFL athlete including bio, stats, and news
+) -> Response[Union[AthleteOverviewResponse, Error]]:
+    """Get NFL athlete overview
 
     Args:
-        athlete_id (str):  Example: 3139477.
+        athlete_id (int):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AthleteOverviewResponse, ErrorResponse]]
+        Response[Union[AthleteOverviewResponse, Error]]
     """
 
     kwargs = _get_kwargs(
@@ -85,23 +79,21 @@ def sync_detailed(
 
 
 def sync(
-    athlete_id: str,
+    athlete_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[Union[AthleteOverviewResponse, ErrorResponse]]:
-    """Get NFL Athlete Overview
-
-     Retrieve comprehensive overview data for a specific NFL athlete including bio, stats, and news
+) -> Optional[Union[AthleteOverviewResponse, Error]]:
+    """Get NFL athlete overview
 
     Args:
-        athlete_id (str):  Example: 3139477.
+        athlete_id (int):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AthleteOverviewResponse, ErrorResponse]
+        Union[AthleteOverviewResponse, Error]
     """
 
     return sync_detailed(
@@ -111,23 +103,21 @@ def sync(
 
 
 async def asyncio_detailed(
-    athlete_id: str,
+    athlete_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Response[Union[AthleteOverviewResponse, ErrorResponse]]:
-    """Get NFL Athlete Overview
-
-     Retrieve comprehensive overview data for a specific NFL athlete including bio, stats, and news
+) -> Response[Union[AthleteOverviewResponse, Error]]:
+    """Get NFL athlete overview
 
     Args:
-        athlete_id (str):  Example: 3139477.
+        athlete_id (int):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[AthleteOverviewResponse, ErrorResponse]]
+        Response[Union[AthleteOverviewResponse, Error]]
     """
 
     kwargs = _get_kwargs(
@@ -140,23 +130,21 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    athlete_id: str,
+    athlete_id: int,
     *,
     client: Union[AuthenticatedClient, Client],
-) -> Optional[Union[AthleteOverviewResponse, ErrorResponse]]:
-    """Get NFL Athlete Overview
-
-     Retrieve comprehensive overview data for a specific NFL athlete including bio, stats, and news
+) -> Optional[Union[AthleteOverviewResponse, Error]]:
+    """Get NFL athlete overview
 
     Args:
-        athlete_id (str):  Example: 3139477.
+        athlete_id (int):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[AthleteOverviewResponse, ErrorResponse]
+        Union[AthleteOverviewResponse, Error]
     """
 
     return (

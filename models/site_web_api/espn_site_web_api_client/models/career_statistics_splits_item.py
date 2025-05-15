@@ -1,58 +1,53 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.error import Error
-
-
-T = TypeVar("T", bound="ErrorResponse")
+T = TypeVar("T", bound="CareerStatisticsSplitsItem")
 
 
 @_attrs_define
-class ErrorResponse:
+class CareerStatisticsSplitsItem:
     """
     Attributes:
-        error (Union[Unset, Error]):
+        display_name (str):  Example: Career.
+        stats (List[str]):  Example: ['7753', '12050', '64.3', '89,214', '7.4', '649', '212', '99', '97.2'].
     """
 
-    error: Union[Unset, "Error"] = UNSET
+    display_name: str
+    stats: List[str]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        error: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.error, Unset):
-            error = self.error.to_dict()
+        display_name = self.display_name
+
+        stats = self.stats
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if error is not UNSET:
-            field_dict["error"] = error
+        field_dict.update(
+            {
+                "displayName": display_name,
+                "stats": stats,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.error import Error
-
         d = src_dict.copy()
-        _error = d.pop("error", UNSET)
-        error: Union[Unset, Error]
-        if isinstance(_error, Unset):
-            error = UNSET
-        else:
-            error = Error.from_dict(_error)
+        display_name = d.pop("displayName")
 
-        error_response = cls(
-            error=error,
+        stats = cast(List[str], d.pop("stats"))
+
+        career_statistics_splits_item = cls(
+            display_name=display_name,
+            stats=stats,
         )
 
-        error_response.additional_properties = d
-        return error_response
+        career_statistics_splits_item.additional_properties = d
+        return career_statistics_splits_item
 
     @property
     def additional_keys(self) -> List[str]:

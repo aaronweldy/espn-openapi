@@ -5,50 +5,41 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="AthleteOverviewHeadshot")
+T = TypeVar("T", bound="AthleteDetailsAlternateIds")
 
 
 @_attrs_define
-class AthleteOverviewHeadshot:
+class AthleteDetailsAlternateIds:
     """
     Attributes:
-        href (Union[Unset, str]):  Example: https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png.
-        alt (Union[Unset, str]):  Example: Patrick Mahomes.
+        sdr (Union[Unset, str]):  Example: 2330.
     """
 
-    href: Union[Unset, str] = UNSET
-    alt: Union[Unset, str] = UNSET
+    sdr: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        href = self.href
-
-        alt = self.alt
+        sdr = self.sdr
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if href is not UNSET:
-            field_dict["href"] = href
-        if alt is not UNSET:
-            field_dict["alt"] = alt
+        if sdr is not UNSET:
+            field_dict["sdr"] = sdr
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        href = d.pop("href", UNSET)
+        sdr = d.pop("sdr", UNSET)
 
-        alt = d.pop("alt", UNSET)
-
-        athlete_overview_headshot = cls(
-            href=href,
-            alt=alt,
+        athlete_details_alternate_ids = cls(
+            sdr=sdr,
         )
 
-        athlete_overview_headshot.additional_properties = d
-        return athlete_overview_headshot
+        athlete_details_alternate_ids.additional_properties = d
+        return athlete_details_alternate_ids
 
     @property
     def additional_keys(self) -> List[str]:

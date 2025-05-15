@@ -5,70 +5,60 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="DraftInfo")
+T = TypeVar("T", bound="CareerStatisticsCategoriesItem")
 
 
 @_attrs_define
-class DraftInfo:
+class CareerStatisticsCategoriesItem:
     """
     Attributes:
-        year (int):  Example: 2017.
-        round_ (Union[Unset, int]):  Example: 1.
-        pick (Union[Unset, int]):  Example: 10.
-        display_text (Union[Unset, str]):  Example: 2017 Round 1 (10th overall).
+        name (str):  Example: passing.
+        display_name (str):  Example: Passing.
+        count (Union[Unset, int]):  Example: 9.
     """
 
-    year: int
-    round_: Union[Unset, int] = UNSET
-    pick: Union[Unset, int] = UNSET
-    display_text: Union[Unset, str] = UNSET
+    name: str
+    display_name: str
+    count: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        year = self.year
+        name = self.name
 
-        round_ = self.round_
+        display_name = self.display_name
 
-        pick = self.pick
-
-        display_text = self.display_text
+        count = self.count
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "year": year,
+                "name": name,
+                "displayName": display_name,
             }
         )
-        if round_ is not UNSET:
-            field_dict["round"] = round_
-        if pick is not UNSET:
-            field_dict["pick"] = pick
-        if display_text is not UNSET:
-            field_dict["displayText"] = display_text
+        if count is not UNSET:
+            field_dict["count"] = count
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        year = d.pop("year")
+        name = d.pop("name")
 
-        round_ = d.pop("round", UNSET)
+        display_name = d.pop("displayName")
 
-        pick = d.pop("pick", UNSET)
+        count = d.pop("count", UNSET)
 
-        display_text = d.pop("displayText", UNSET)
-
-        draft_info = cls(
-            year=year,
-            round_=round_,
-            pick=pick,
-            display_text=display_text,
+        career_statistics_categories_item = cls(
+            name=name,
+            display_name=display_name,
+            count=count,
         )
 
-        draft_info.additional_properties = d
-        return draft_info
+        career_statistics_categories_item.additional_properties = d
+        return career_statistics_categories_item
 
     @property
     def additional_keys(self) -> List[str]:

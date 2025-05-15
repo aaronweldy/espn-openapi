@@ -1,54 +1,45 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
-T = TypeVar("T", bound="ErrorResponseError")
+T = TypeVar("T", bound="Reference")
 
 
 @_attrs_define
-class ErrorResponseError:
+class Reference:
     """
     Attributes:
-        code (Union[Unset, int]):
-        message (Union[Unset, str]):
+        ref (str):
     """
 
-    code: Union[Unset, int] = UNSET
-    message: Union[Unset, str] = UNSET
+    ref: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        code = self.code
-
-        message = self.message
+        ref = self.ref
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if code is not UNSET:
-            field_dict["code"] = code
-        if message is not UNSET:
-            field_dict["message"] = message
+        field_dict.update(
+            {
+                "$ref": ref,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        code = d.pop("code", UNSET)
+        ref = d.pop("$ref")
 
-        message = d.pop("message", UNSET)
-
-        error_response_error = cls(
-            code=code,
-            message=message,
+        reference = cls(
+            ref=ref,
         )
 
-        error_response_error.additional_properties = d
-        return error_response_error
+        reference.additional_properties = d
+        return reference
 
     @property
     def additional_keys(self) -> List[str]:

@@ -5,68 +5,59 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="College")
+T = TypeVar("T", bound="ImageLinkWithSize")
 
 
 @_attrs_define
-class College:
+class ImageLinkWithSize:
     """
     Attributes:
-        id (Union[Unset, str]):
-        mascot (Union[Unset, str]):
-        name (Union[Unset, str]):
-        short_name (Union[Unset, str]):
+        href (Union[Unset, str]):
+        width (Union[Unset, int]):
+        height (Union[Unset, int]):
     """
 
-    id: Union[Unset, str] = UNSET
-    mascot: Union[Unset, str] = UNSET
-    name: Union[Unset, str] = UNSET
-    short_name: Union[Unset, str] = UNSET
+    href: Union[Unset, str] = UNSET
+    width: Union[Unset, int] = UNSET
+    height: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        id = self.id
+        href = self.href
 
-        mascot = self.mascot
+        width = self.width
 
-        name = self.name
-
-        short_name = self.short_name
+        height = self.height
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if id is not UNSET:
-            field_dict["id"] = id
-        if mascot is not UNSET:
-            field_dict["mascot"] = mascot
-        if name is not UNSET:
-            field_dict["name"] = name
-        if short_name is not UNSET:
-            field_dict["shortName"] = short_name
+        if href is not UNSET:
+            field_dict["href"] = href
+        if width is not UNSET:
+            field_dict["width"] = width
+        if height is not UNSET:
+            field_dict["height"] = height
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        id = d.pop("id", UNSET)
+        href = d.pop("href", UNSET)
 
-        mascot = d.pop("mascot", UNSET)
+        width = d.pop("width", UNSET)
 
-        name = d.pop("name", UNSET)
+        height = d.pop("height", UNSET)
 
-        short_name = d.pop("shortName", UNSET)
-
-        college = cls(
-            id=id,
-            mascot=mascot,
-            name=name,
-            short_name=short_name,
+        image_link_with_size = cls(
+            href=href,
+            width=width,
+            height=height,
         )
 
-        college.additional_properties = d
-        return college
+        image_link_with_size.additional_properties = d
+        return image_link_with_size
 
     @property
     def additional_keys(self) -> List[str]:

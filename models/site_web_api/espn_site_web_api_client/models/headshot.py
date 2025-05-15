@@ -1,58 +1,65 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-if TYPE_CHECKING:
-    from ..models.error import Error
-
-
-T = TypeVar("T", bound="ErrorResponse")
+T = TypeVar("T", bound="Headshot")
 
 
 @_attrs_define
-class ErrorResponse:
+class Headshot:
     """
     Attributes:
-        error (Union[Unset, Error]):
+        href (Union[Unset, str]):
+        alt (Union[None, Unset, str]):  Example: Tom Brady.
     """
 
-    error: Union[Unset, "Error"] = UNSET
+    href: Union[Unset, str] = UNSET
+    alt: Union[None, Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        error: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.error, Unset):
-            error = self.error.to_dict()
+        href = self.href
+
+        alt: Union[None, Unset, str]
+        if isinstance(self.alt, Unset):
+            alt = UNSET
+        else:
+            alt = self.alt
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if error is not UNSET:
-            field_dict["error"] = error
+        if href is not UNSET:
+            field_dict["href"] = href
+        if alt is not UNSET:
+            field_dict["alt"] = alt
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.error import Error
-
         d = src_dict.copy()
-        _error = d.pop("error", UNSET)
-        error: Union[Unset, Error]
-        if isinstance(_error, Unset):
-            error = UNSET
-        else:
-            error = Error.from_dict(_error)
+        href = d.pop("href", UNSET)
 
-        error_response = cls(
-            error=error,
+        def _parse_alt(data: object) -> Union[None, Unset, str]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
+
+        alt = _parse_alt(d.pop("alt", UNSET))
+
+        headshot = cls(
+            href=href,
+            alt=alt,
         )
 
-        error_response.additional_properties = d
-        return error_response
+        headshot.additional_properties = d
+        return headshot
 
     @property
     def additional_keys(self) -> List[str]:

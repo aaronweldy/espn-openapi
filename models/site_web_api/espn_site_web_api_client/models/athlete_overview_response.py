@@ -6,12 +6,11 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.athlete_overview import AthleteOverview
-    from ..models.injury_report import InjuryReport
-    from ..models.league_reference import LeagueReference
-    from ..models.news_item import NewsItem
-    from ..models.position import Position
-    from ..models.stat_category import StatCategory
+    from ..models.athlete_details import AthleteDetails
+    from ..models.career_statistics import CareerStatistics
+    from ..models.news_item_detailed import NewsItemDetailed
+    from ..models.season import Season
+    from ..models.team import Team
     from ..models.team_reference import TeamReference
 
 
@@ -22,45 +21,26 @@ T = TypeVar("T", bound="AthleteOverviewResponse")
 class AthleteOverviewResponse:
     """
     Attributes:
-        athlete (AthleteOverview):
-        league (Union[Unset, LeagueReference]):
-        team (Union[Unset, TeamReference]):
-        position (Union[Unset, Position]):
-        stats (Union[Unset, List['StatCategory']]):
-        news (Union[Unset, List['NewsItem']]):
-        injuries (Union[Unset, List['InjuryReport']]):
+        statistics (Union[Unset, CareerStatistics]):
+        news (Union[Unset, List['NewsItemDetailed']]):
+        athlete (Union[Unset, AthleteDetails]):
+        teams (Union[Unset, List[Union['Team', 'TeamReference']]]):
+        season (Union[Unset, Season]):
     """
 
-    athlete: "AthleteOverview"
-    league: Union[Unset, "LeagueReference"] = UNSET
-    team: Union[Unset, "TeamReference"] = UNSET
-    position: Union[Unset, "Position"] = UNSET
-    stats: Union[Unset, List["StatCategory"]] = UNSET
-    news: Union[Unset, List["NewsItem"]] = UNSET
-    injuries: Union[Unset, List["InjuryReport"]] = UNSET
+    statistics: Union[Unset, "CareerStatistics"] = UNSET
+    news: Union[Unset, List["NewsItemDetailed"]] = UNSET
+    athlete: Union[Unset, "AthleteDetails"] = UNSET
+    teams: Union[Unset, List[Union["Team", "TeamReference"]]] = UNSET
+    season: Union[Unset, "Season"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        athlete = self.athlete.to_dict()
+        from ..models.team import Team
 
-        league: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.league, Unset):
-            league = self.league.to_dict()
-
-        team: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.team, Unset):
-            team = self.team.to_dict()
-
-        position: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.position, Unset):
-            position = self.position.to_dict()
-
-        stats: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.stats, Unset):
-            stats = []
-            for stats_item_data in self.stats:
-                stats_item = stats_item_data.to_dict()
-                stats.append(stats_item)
+        statistics: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.statistics, Unset):
+            statistics = self.statistics.to_dict()
 
         news: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.news, Unset):
@@ -69,98 +49,109 @@ class AthleteOverviewResponse:
                 news_item = news_item_data.to_dict()
                 news.append(news_item)
 
-        injuries: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.injuries, Unset):
-            injuries = []
-            for injuries_item_data in self.injuries:
-                injuries_item = injuries_item_data.to_dict()
-                injuries.append(injuries_item)
+        athlete: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.athlete, Unset):
+            athlete = self.athlete.to_dict()
+
+        teams: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.teams, Unset):
+            teams = []
+            for teams_item_data in self.teams:
+                teams_item: Dict[str, Any]
+                if isinstance(teams_item_data, Team):
+                    teams_item = teams_item_data.to_dict()
+                else:
+                    teams_item = teams_item_data.to_dict()
+
+                teams.append(teams_item)
+
+        season: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.season, Unset):
+            season = self.season.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update(
-            {
-                "athlete": athlete,
-            }
-        )
-        if league is not UNSET:
-            field_dict["league"] = league
-        if team is not UNSET:
-            field_dict["team"] = team
-        if position is not UNSET:
-            field_dict["position"] = position
-        if stats is not UNSET:
-            field_dict["stats"] = stats
+        field_dict.update({})
+        if statistics is not UNSET:
+            field_dict["statistics"] = statistics
         if news is not UNSET:
             field_dict["news"] = news
-        if injuries is not UNSET:
-            field_dict["injuries"] = injuries
+        if athlete is not UNSET:
+            field_dict["athlete"] = athlete
+        if teams is not UNSET:
+            field_dict["teams"] = teams
+        if season is not UNSET:
+            field_dict["season"] = season
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_overview import AthleteOverview
-        from ..models.injury_report import InjuryReport
-        from ..models.league_reference import LeagueReference
-        from ..models.news_item import NewsItem
-        from ..models.position import Position
-        from ..models.stat_category import StatCategory
+        from ..models.athlete_details import AthleteDetails
+        from ..models.career_statistics import CareerStatistics
+        from ..models.news_item_detailed import NewsItemDetailed
+        from ..models.season import Season
+        from ..models.team import Team
         from ..models.team_reference import TeamReference
 
         d = src_dict.copy()
-        athlete = AthleteOverview.from_dict(d.pop("athlete"))
-
-        _league = d.pop("league", UNSET)
-        league: Union[Unset, LeagueReference]
-        if isinstance(_league, Unset):
-            league = UNSET
+        _statistics = d.pop("statistics", UNSET)
+        statistics: Union[Unset, CareerStatistics]
+        if isinstance(_statistics, Unset):
+            statistics = UNSET
         else:
-            league = LeagueReference.from_dict(_league)
-
-        _team = d.pop("team", UNSET)
-        team: Union[Unset, TeamReference]
-        if isinstance(_team, Unset):
-            team = UNSET
-        else:
-            team = TeamReference.from_dict(_team)
-
-        _position = d.pop("position", UNSET)
-        position: Union[Unset, Position]
-        if isinstance(_position, Unset):
-            position = UNSET
-        else:
-            position = Position.from_dict(_position)
-
-        stats = []
-        _stats = d.pop("stats", UNSET)
-        for stats_item_data in _stats or []:
-            stats_item = StatCategory.from_dict(stats_item_data)
-
-            stats.append(stats_item)
+            statistics = CareerStatistics.from_dict(_statistics)
 
         news = []
         _news = d.pop("news", UNSET)
         for news_item_data in _news or []:
-            news_item = NewsItem.from_dict(news_item_data)
+            news_item = NewsItemDetailed.from_dict(news_item_data)
 
             news.append(news_item)
 
-        injuries = []
-        _injuries = d.pop("injuries", UNSET)
-        for injuries_item_data in _injuries or []:
-            injuries_item = InjuryReport.from_dict(injuries_item_data)
+        _athlete = d.pop("athlete", UNSET)
+        athlete: Union[Unset, AthleteDetails]
+        if isinstance(_athlete, Unset):
+            athlete = UNSET
+        else:
+            athlete = AthleteDetails.from_dict(_athlete)
 
-            injuries.append(injuries_item)
+        teams = []
+        _teams = d.pop("teams", UNSET)
+        for teams_item_data in _teams or []:
+
+            def _parse_teams_item(data: object) -> Union["Team", "TeamReference"]:
+                try:
+                    if not isinstance(data, dict):
+                        raise TypeError()
+                    teams_item_type_0 = Team.from_dict(data)
+
+                    return teams_item_type_0
+                except:  # noqa: E722
+                    pass
+                if not isinstance(data, dict):
+                    raise TypeError()
+                teams_item_type_1 = TeamReference.from_dict(data)
+
+                return teams_item_type_1
+
+            teams_item = _parse_teams_item(teams_item_data)
+
+            teams.append(teams_item)
+
+        _season = d.pop("season", UNSET)
+        season: Union[Unset, Season]
+        if isinstance(_season, Unset):
+            season = UNSET
+        else:
+            season = Season.from_dict(_season)
 
         athlete_overview_response = cls(
-            athlete=athlete,
-            league=league,
-            team=team,
-            position=position,
-            stats=stats,
+            statistics=statistics,
             news=news,
-            injuries=injuries,
+            athlete=athlete,
+            teams=teams,
+            season=season,
         )
 
         athlete_overview_response.additional_properties = d

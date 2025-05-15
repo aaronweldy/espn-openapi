@@ -3,43 +3,28 @@ from typing import Any, Dict, List, Type, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="LeagueReference")
+T = TypeVar("T", bound="NewsCategoryTeamLinks")
 
 
 @_attrs_define
-class LeagueReference:
-    """
-    Attributes:
-        ref (str):
-    """
+class NewsCategoryTeamLinks:
+    """ """
 
-    ref: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        ref = self.ref
-
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update(
-            {
-                "$ref": ref,
-            }
-        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        ref = d.pop("$ref")
+        news_category_team_links = cls()
 
-        league_reference = cls(
-            ref=ref,
-        )
-
-        league_reference.additional_properties = d
-        return league_reference
+        news_category_team_links.additional_properties = d
+        return news_category_team_links
 
     @property
     def additional_keys(self) -> List[str]:

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -12,22 +12,30 @@ T = TypeVar("T", bound="BirthPlace")
 class BirthPlace:
     """
     Attributes:
-        city (Union[Unset, str]):  Example: Tyler.
-        state (Union[Unset, str]):  Example: Texas.
-        country (Union[Unset, str]):  Example: USA.
+        city (Union[Unset, str]):  Example: San Mateo.
+        state (Union[None, Unset, str]):  Example: CA.
+        country (Union[None, Unset, str]):  Example: USA.
     """
 
     city: Union[Unset, str] = UNSET
-    state: Union[Unset, str] = UNSET
-    country: Union[Unset, str] = UNSET
+    state: Union[None, Unset, str] = UNSET
+    country: Union[None, Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         city = self.city
 
-        state = self.state
+        state: Union[None, Unset, str]
+        if isinstance(self.state, Unset):
+            state = UNSET
+        else:
+            state = self.state
 
-        country = self.country
+        country: Union[None, Unset, str]
+        if isinstance(self.country, Unset):
+            country = UNSET
+        else:
+            country = self.country
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -46,9 +54,23 @@ class BirthPlace:
         d = src_dict.copy()
         city = d.pop("city", UNSET)
 
-        state = d.pop("state", UNSET)
+        def _parse_state(data: object) -> Union[None, Unset, str]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
 
-        country = d.pop("country", UNSET)
+        state = _parse_state(d.pop("state", UNSET))
+
+        def _parse_country(data: object) -> Union[None, Unset, str]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
+
+        country = _parse_country(d.pop("country", UNSET))
 
         birth_place = cls(
             city=city,

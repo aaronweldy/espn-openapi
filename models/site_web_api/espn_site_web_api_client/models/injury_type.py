@@ -5,50 +5,59 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="AthleteOverviewExperience")
+T = TypeVar("T", bound="InjuryType")
 
 
 @_attrs_define
-class AthleteOverviewExperience:
+class InjuryType:
     """
     Attributes:
-        years (Union[Unset, int]):  Example: 7.
-        display_value (Union[Unset, str]):  Example: 7 years.
+        id (Union[Unset, str]):
+        name (Union[Unset, str]):
+        abbreviation (Union[Unset, str]):
     """
 
-    years: Union[Unset, int] = UNSET
-    display_value: Union[Unset, str] = UNSET
+    id: Union[Unset, str] = UNSET
+    name: Union[Unset, str] = UNSET
+    abbreviation: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        years = self.years
+        id = self.id
 
-        display_value = self.display_value
+        name = self.name
+
+        abbreviation = self.abbreviation
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if years is not UNSET:
-            field_dict["years"] = years
-        if display_value is not UNSET:
-            field_dict["displayValue"] = display_value
+        if id is not UNSET:
+            field_dict["id"] = id
+        if name is not UNSET:
+            field_dict["name"] = name
+        if abbreviation is not UNSET:
+            field_dict["abbreviation"] = abbreviation
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        years = d.pop("years", UNSET)
+        id = d.pop("id", UNSET)
 
-        display_value = d.pop("displayValue", UNSET)
+        name = d.pop("name", UNSET)
 
-        athlete_overview_experience = cls(
-            years=years,
-            display_value=display_value,
+        abbreviation = d.pop("abbreviation", UNSET)
+
+        injury_type = cls(
+            id=id,
+            name=name,
+            abbreviation=abbreviation,
         )
 
-        athlete_overview_experience.additional_properties = d
-        return athlete_overview_experience
+        injury_type.additional_properties = d
+        return injury_type
 
     @property
     def additional_keys(self) -> List[str]:
