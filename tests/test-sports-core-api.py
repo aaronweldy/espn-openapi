@@ -615,6 +615,114 @@ def test_league_seasons(sport: str = "football", league: str = "nfl"):
     print(f"Seasons test passed: {response.count} items found.")
 
 
+def test_league_season_weeks(
+    sport: str = "football", league: str = "nfl", year: int = 2024, season_type: int = 2
+):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_season_weeks import (
+        sync as get_league_season_weeks,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.paginated_reference_list_response import (
+        PaginatedReferenceListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.get_league_season_weeks_season_type import (
+        GetLeagueSeasonWeeksSeasonType,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_season_weeks(
+        sport=sport,
+        league=league,
+        year=year,
+        season_type=GetLeagueSeasonWeeksSeasonType(season_type),
+        client=client,
+    )
+    assert response is not None, "No response returned from weeks endpoint"
+    assert isinstance(response, PaginatedReferenceListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Weeks count should be > 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Weeks test passed: {response.count} items found.")
+
+
+def test_league_events(
+    sport: str = "football",
+    league: str = "nfl",
+    week: int = 1,
+    season: int = 2025,
+    seasontypes: str = "2",
+):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_events import (
+        sync as get_league_events,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.paginated_reference_list_response import (
+        PaginatedReferenceListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_events(
+        sport=sport,
+        league=league,
+        week=week,
+        season=season,
+        seasontypes=seasontypes,
+        client=client,
+    )
+    assert response is not None, "No response returned from events endpoint"
+    assert isinstance(response, PaginatedReferenceListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Events count should be > 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Events test passed: {response.count} items found.")
+
+
+def test_league_event_details(
+    sport: str = "football", league: str = "nfl", event_id: str = "401772510"
+):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_event_details import (
+        sync as get_league_event_details,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.event_detail import (
+        EventDetail,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_event_details(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        client=client,
+    )
+    assert response is not None, "No response returned from event details endpoint"
+    assert isinstance(response, EventDetail), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.id == event_id, f"Event ID mismatch: {response.id} != {event_id}"
+    assert response.date, "Event date missing"
+    assert response.competitions, "Event competitions missing"
+    print(
+        f"Event details test passed: {response.id} {response.name if hasattr(response, 'name') else ''}"
+    )
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -647,6 +755,15 @@ def main():
 
     # Test league seasons endpoint
     test_league_seasons()
+
+    # Test league season weeks endpoint
+    test_league_season_weeks()
+
+    # Test league events endpoint
+    test_league_events()
+
+    # Test league event details endpoint
+    test_league_event_details()
 
     # Summary
     print("\n===== Test Results Summary =====")

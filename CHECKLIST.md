@@ -113,8 +113,9 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [x] `/v2/sports/{sport}/leagues/{league}/venues`
 - [x] `/v2/sports/{sport}/leagues/{league}/franchises`
 - [x] `/v2/sports/{sport}/leagues/{league}/seasons`
-- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/weeks`
-- [ ] `/v2/sports/{sport}/leagues/{league}/events`
+- [x] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/weeks`
+- [x] `/v2/sports/{sport}/leagues/{league}/events`
+- [x] `/v2/sports/{sport}/leagues/{league}/events/{eventId}`
 
 ### site.web.api.espn.com
 - [ ] `/apis/v2/scoreboard/header`

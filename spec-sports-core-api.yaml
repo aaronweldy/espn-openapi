@@ -268,6 +268,211 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/weeks:
+    get:
+      summary: Get League Season Weeks
+      description: Retrieve the list of weeks for a given season and season type in a league and sport. Returns a paginated list of week resource references.
+      operationId: getLeagueSeasonWeeks
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasonType
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedReferenceListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events:
+    get:
+      summary: Get League Events
+      description: Retrieve the list of events for a given league and sport. Returns a paginated list of event resource references.
+      operationId: getLeagueEvents
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+        - name: week
+          in: query
+          required: false
+          description: Filter by week number
+          schema:
+            type: integer
+            example: 1
+        - name: season
+          in: query
+          required: false
+          description: Filter by season year
+          schema:
+            type: integer
+            example: 2024
+        - name: seasontypes
+          in: query
+          required: false
+          description: Filter by season type(s) (comma-separated)
+          schema:
+            type: string
+            example: "2"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedReferenceListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{eventId}:
+    get:
+      summary: Get League Event Details
+      description: Retrieve detailed information for a specific event in a league and sport.
+      operationId: getLeagueEventDetails
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+        - name: eventId
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401772510"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventDetail'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -703,4 +908,110 @@ components:
         - pageIndex
         - pageSize
         - pageCount
-        - items 
+        - items
+
+    PaginatedReferenceListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 18
+        pageIndex:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 25
+        pageCount:
+          type: integer
+          example: 1
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    EventDetail:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        uid:
+          type: string
+        date:
+          type: string
+          format: date-time
+        name:
+          type: string
+        shortName:
+          type: string
+        season:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        seasonType:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        week:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        timeValid:
+          type: boolean
+        competitions:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Reference'
+              - type: object
+                properties:
+                  $ref:
+                    type: string
+                    format: uri
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        venues:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/Reference'
+              - type: object
+                properties:
+                  $ref:
+                    type: string
+                    format: uri
+        league:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+      required:
+        - id
+        - date
+        - competitions 
