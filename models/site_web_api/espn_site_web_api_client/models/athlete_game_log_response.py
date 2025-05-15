@@ -6,10 +6,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.athlete_reference import AthleteReference
-    from ..models.game_log_category import GameLogCategory
-    from ..models.league_reference import LeagueReference
-    from ..models.season import Season
+    from ..models.athlete_game_log_response_events import AthleteGameLogResponseEvents
+    from ..models.game_log_season import GameLogSeason
+    from ..models.requested_season import RequestedSeason
 
 
 T = TypeVar("T", bound="AthleteGameLogResponse")
@@ -19,29 +18,22 @@ T = TypeVar("T", bound="AthleteGameLogResponse")
 class AthleteGameLogResponse:
     """
     Attributes:
-        athlete (AthleteReference):
-        categories (List['GameLogCategory']):
-        league (Union[Unset, LeagueReference]):
-        season (Union[Unset, Season]):
+        events (AthleteGameLogResponseEvents): A dictionary of events, keyed by event ID
+        requested_season (Union[Unset, RequestedSeason]):
+        season (Union[Unset, GameLogSeason]):
     """
 
-    athlete: "AthleteReference"
-    categories: List["GameLogCategory"]
-    league: Union[Unset, "LeagueReference"] = UNSET
-    season: Union[Unset, "Season"] = UNSET
+    events: "AthleteGameLogResponseEvents"
+    requested_season: Union[Unset, "RequestedSeason"] = UNSET
+    season: Union[Unset, "GameLogSeason"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        athlete = self.athlete.to_dict()
+        events = self.events.to_dict()
 
-        categories = []
-        for categories_item_data in self.categories:
-            categories_item = categories_item_data.to_dict()
-            categories.append(categories_item)
-
-        league: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.league, Unset):
-            league = self.league.to_dict()
+        requested_season: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.requested_season, Unset):
+            requested_season = self.requested_season.to_dict()
 
         season: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.season, Unset):
@@ -51,12 +43,11 @@ class AthleteGameLogResponse:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "athlete": athlete,
-                "categories": categories,
+                "events": events,
             }
         )
-        if league is not UNSET:
-            field_dict["league"] = league
+        if requested_season is not UNSET:
+            field_dict["requested_season"] = requested_season
         if season is not UNSET:
             field_dict["season"] = season
 
@@ -64,39 +55,30 @@ class AthleteGameLogResponse:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_reference import AthleteReference
-        from ..models.game_log_category import GameLogCategory
-        from ..models.league_reference import LeagueReference
-        from ..models.season import Season
+        from ..models.athlete_game_log_response_events import AthleteGameLogResponseEvents
+        from ..models.game_log_season import GameLogSeason
+        from ..models.requested_season import RequestedSeason
 
         d = src_dict.copy()
-        athlete = AthleteReference.from_dict(d.pop("athlete"))
+        events = AthleteGameLogResponseEvents.from_dict(d.pop("events"))
 
-        categories = []
-        _categories = d.pop("categories")
-        for categories_item_data in _categories:
-            categories_item = GameLogCategory.from_dict(categories_item_data)
-
-            categories.append(categories_item)
-
-        _league = d.pop("league", UNSET)
-        league: Union[Unset, LeagueReference]
-        if isinstance(_league, Unset):
-            league = UNSET
+        _requested_season = d.pop("requested_season", UNSET)
+        requested_season: Union[Unset, RequestedSeason]
+        if isinstance(_requested_season, Unset):
+            requested_season = UNSET
         else:
-            league = LeagueReference.from_dict(_league)
+            requested_season = RequestedSeason.from_dict(_requested_season)
 
         _season = d.pop("season", UNSET)
-        season: Union[Unset, Season]
+        season: Union[Unset, GameLogSeason]
         if isinstance(_season, Unset):
             season = UNSET
         else:
-            season = Season.from_dict(_season)
+            season = GameLogSeason.from_dict(_season)
 
         athlete_game_log_response = cls(
-            athlete=athlete,
-            categories=categories,
-            league=league,
+            events=events,
+            requested_season=requested_season,
             season=season,
         )
 

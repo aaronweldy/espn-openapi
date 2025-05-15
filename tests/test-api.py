@@ -5,12 +5,34 @@ Requires Python 3.10+
 """
 
 import json
+import sys
+from pathlib import Path
+from typing import cast, Dict, Any, List
+
+import httpx
+
+# Add the project root to the Python path
+sys.path.append(str(Path(__file__).parent.parent))
 
 from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_game_summary import sync
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.game_summary import GameSummary
 from models.site_api.espn_nfl_api_client.types import UNSET
+
+from models.site_web_api.espn_site_web_api_client.api.default.get_nfl_athlete_game_log import (
+    sync_detailed as get_athlete_gamelog,
+)
+from models.site_web_api.espn_site_web_api_client.client import (
+    Client as SiteWebApiClient,
+)
+from models.site_web_api.espn_site_web_api_client.models.athlete_game_log_response import (
+    AthleteGameLogResponse,
+)
+
+# Removed site-web-api imports
+
+# Removed TEST_ATHLETE_ID_NFL constant
 
 
 def validate_schema_response(data: GameSummary) -> bool:
@@ -173,5 +195,75 @@ def main():
         print("✗ Failed to fetch game data")
 
 
+def test_nfl_athlete_gamelog():
+    """Test the NFL athlete gamelog endpoint"""
+    print("\n=== Testing NFL Athlete Gamelog ===")
+
+    # Create API client
+    client = SiteWebApiClient(
+        base_url="https://site.web.api.espn.com", timeout=httpx.Timeout(30.0)
+    )
+
+    # Patrick Mahomes ID
+    athlete_id = "3139477"
+
+    # Make API request
+    response = get_athlete_gamelog(athlete_id=athlete_id, client=client)
+
+    # Check if request was successful
+    if response.status_code == 200 and isinstance(
+        response.parsed, AthleteGameLogResponse
+    ):
+        game_log = cast(AthleteGameLogResponse, response.parsed)
+
+        if game_log.events and game_log.events.additional_properties:
+            games_count = len(game_log.events.additional_properties)
+            print(
+                f"✓ Successfully retrieved {games_count} games for athlete ID: {athlete_id}"
+            )
+
+            # Show a sample of games
+            games = list(game_log.events.additional_properties.values())
+            if games:
+                sample_game = games[0]
+                print(
+                    f"✓ Sample game: {sample_game.game_date.strftime('%Y-%m-%d')} - Score: {sample_game.score}"
+                )
+
+                if sample_game.opponent and sample_game.opponent.display_name:
+                    print(f"✓ Opponent: {sample_game.opponent.display_name}")
+
+            print("✓ Test passed!")
+            return True
+        else:
+            print("✗ No games found in response")
+            return False
+    else:
+        print(f"✗ Error fetching data: {response.status_code}")
+        print(response.content)
+        return False
+
+
+def run_all_tests():
+    """Run all API tests"""
+    tests = [
+        test_nfl_athlete_gamelog,
+    ]
+
+    results = []
+    for test in tests:
+        results.append(test())
+
+    # Print summary
+    print("\n=== Test Summary ===")
+    print(f"Total tests: {len(tests)}")
+    print(f"Passed: {results.count(True)}")
+    print(f"Failed: {results.count(False)}")
+
+    # Return overall success/failure
+    return all(results)
+
+
 if __name__ == "__main__":
-    main()
+    success = run_all_tests()
+    sys.exit(0 if success else 1)

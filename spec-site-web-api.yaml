@@ -339,83 +339,167 @@ components:
     AthleteGameLogResponse:
       type: object
       properties:
-        athlete:
-          $ref: '#/components/schemas/AthleteReference'
-        league:
-          $ref: '#/components/schemas/LeagueReference'
-        season:
-          $ref: '#/components/schemas/Season'
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/GameLogCategory'
-      required:
-        - athlete
-        - categories
-
-    GameLogCategory:
-      type: object
-      properties:
-        name:
-          type: string
-          example: "passing"
-        displayName:
-          type: string
-          example: "Passing"
-        labels:
-          type: array
-          items:
-            $ref: '#/components/schemas/CategoryLabel'
         events:
-          type: array
-          items:
-            $ref: '#/components/schemas/GameLogEvent'
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/GameEvent'
+          description: A dictionary of events, keyed by event ID
+        requested_season:
+          $ref: '#/components/schemas/RequestedSeason'
+        season:
+          $ref: '#/components/schemas/GameLogSeason'
       required:
-        - name
-        - displayName
         - events
 
-    CategoryLabel:
+    GameEvent:
       type: object
       properties:
-        label:
+        id:
           type: string
-          example: "COMP/ATT"
-        abbreviation:
-          type: string
-          example: "C/A"
-      required:
-        - label
-
-    GameLogEvent:
-      type: object
-      properties:
-        eventId:
-          type: string
-          example: "401547417"
-        date:
-          type: string
-          format: date-time
-          example: "2023-02-12T23:30:00Z"
-        opponent:
-          $ref: '#/components/schemas/TeamReference'
-        homeAway:
-          type: string
-          enum: [home, away]
-          example: "home"
-        result:
-          type: string
-          example: "W 38-35"
-        stats:
+          example: "401671788"
+        links:
           type: array
           items:
-            type: string
-            example: "286"
+            $ref: '#/components/schemas/Link'
+        week:
+          type: integer
+          example: 14
+        atVs:
+          type: string
+          enum: ["vs", "@"]
+          example: "vs"
+        gameDate:
+          type: string
+          format: date-time
+          example: "2024-12-09T01:20:00.000+00:00"
+        score:
+          type: string
+          example: "19-17"
+        homeTeamId:
+          type: string
+          example: "12"
+        awayTeamId:
+          type: string
+          example: "24"
+        homeTeamScore:
+          type: string
+          example: "19"
+        awayTeamScore:
+          type: string
+          example: "17"
+        gameResult:
+          type: string
+          enum: ["W", "L", "T"]
+          example: "W"
+        opponent:
+          $ref: '#/components/schemas/GameEventTeam'
+        leagueName:
+          type: string
+          example: "National Football League"
+        leagueAbbreviation:
+          type: string
+          example: "NFL"
+        leagueShortName:
+          type: string
+          example: "NFL"
+        team:
+          $ref: '#/components/schemas/GameEventTeam'
       required:
-        - eventId
-        - date
+        - id
+        - gameDate
+        - score
         - opponent
-        - stats
+        - team
+
+    GameEventTeam:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "24"
+        uid:
+          type: string
+          example: "s:20~l:28~t:24"
+        abbreviation:
+          type: string
+          example: "LAC"
+        displayName:
+          type: string
+          example: "Los Angeles Chargers"
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        logo:
+          type: string
+          format: uri
+          example: "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png"
+        isAllStar:
+          type: boolean
+          example: false
+      required:
+        - id
+        - abbreviation
+
+    RequestedSeason:
+      type: object
+      properties:
+        year:
+          type: integer
+          example: 2024
+        type:
+          type: integer
+          example: 2
+        name:
+          type: string
+          example: "Regular Season"
+        displayName:
+          type: string
+          example: "2024 Regular Season"
+      required:
+        - year
+        - type
+
+    GameLogSeason:
+      type: object
+      properties:
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/SeasonType'
+        year:
+          type: integer
+          example: 2024
+      required:
+        - year
+        - types
+
+    SeasonType:
+      type: object
+      properties:
+        type:
+          type: integer
+          example: 2
+        name:
+          type: string
+          example: "Regular Season"
+        abbreviation:
+          type: string
+          example: "reg"
+        startDate:
+          type: string
+          format: date
+          example: "2024-09-05"
+        endDate: 
+          type: string
+          format: date
+          example: "2025-01-05"
+        hasStandings:
+          type: boolean
+          example: true
+      required:
+        - type
+        - name
 
     SearchResponse:
       type: object
