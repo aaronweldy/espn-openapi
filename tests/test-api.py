@@ -29,6 +29,7 @@ from models.site_web_api.espn_site_web_api_client.client import (
 from models.site_web_api.espn_site_web_api_client.models.athlete_game_log_response import (
     AthleteGameLogResponse,
 )
+from models.site_web_api.espn_site_web_api_client.models.game_event import GameEvent
 
 # Removed site-web-api imports
 
@@ -195,6 +196,61 @@ def main():
         print("✗ Failed to fetch game data")
 
 
+def format_gamelog(games, athlete_id):
+    """Format game log into a nice table-like display."""
+    if not games:
+        return "No games available"
+
+    # Count wins and losses
+    wins = sum(
+        1 for game in games if game.game_result and game.game_result.value == "W"
+    )
+    losses = sum(
+        1 for game in games if game.game_result and game.game_result.value == "L"
+    )
+    ties = sum(
+        1 for game in games if game.game_result and game.game_result.value == "T"
+    )
+
+    # Sort games by date (most recent first)
+    sorted_games = sorted(games, key=lambda x: x.game_date, reverse=True)
+
+    # Build header
+    header = f"{'DATE':<12} {'OPPONENT':<25} {'RESULT':<8} {'SCORE':<10} {'HOME/AWAY':<10} {'WEEK':<6}"
+    divider = "-" * 75
+
+    # Build rows
+    rows = []
+    for game in sorted_games:
+        date = game.game_date.strftime("%Y-%m-%d") if game.game_date else "N/A"
+        opponent = (
+            game.opponent.display_name
+            if game.opponent and game.opponent.display_name
+            else "Unknown"
+        )
+        result = game.game_result.value if game.game_result else "N/A"
+        score = game.score if game.score else "N/A"
+        home_away = "Home" if game.at_vs and game.at_vs.value == "vs" else "Away"
+        week = f"Week {game.week}" if game.week else "N/A"
+
+        row = f"{date:<12} {opponent:<25} {result:<8} {score:<10} {home_away:<10} {week:<6}"
+        rows.append(row)
+
+    # Build season stats
+    record = f"Record: {wins}-{losses}" + (f"-{ties}" if ties > 0 else "")
+
+    # Combine all parts
+    return "\n".join([
+        f"\n{'=' * 75}",
+        f"GAME LOG FOR ATHLETE ID: {athlete_id}",
+        f"{record}",
+        f"{'=' * 75}",
+        header,
+        divider,
+        "\n".join(rows),
+    ])
+
+
 def test_nfl_athlete_gamelog():
     """Test the NFL athlete gamelog endpoint"""
     print("\n=== Testing NFL Athlete Gamelog ===")
@@ -222,16 +278,14 @@ def test_nfl_athlete_gamelog():
                 f"✓ Successfully retrieved {games_count} games for athlete ID: {athlete_id}"
             )
 
-            # Show a sample of games
-            games = list(game_log.events.additional_properties.values())
-            if games:
-                sample_game = games[0]
-                print(
-                    f"✓ Sample game: {sample_game.game_date.strftime('%Y-%m-%d')} - Score: {sample_game.score}"
-                )
+            # Print info about seasons if available
+            if game_log.requested_season:
+                print(f"✓ Season: {game_log.requested_season.display_name}")
 
-                if sample_game.opponent and sample_game.opponent.display_name:
-                    print(f"✓ Opponent: {sample_game.opponent.display_name}")
+            # Format and display gamelog
+            games = list(game_log.events.additional_properties.values())
+            formatted_gamelog = format_gamelog(games, athlete_id)
+            print(formatted_gamelog)
 
             print("✓ Test passed!")
             return True
