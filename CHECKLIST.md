@@ -22,6 +22,8 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}` - Detailed athlete information
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}/statistics` - Athlete statistics
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}/statisticslog` - Athlete statistics log
+- [x] `/v2/sports/football/leagues/nfl/events/{eid}/competitions/{eid}/plays`
+- [x] `/v2/sports/football/leagues/nfl/events/{eid}/competitions/{eid}/drives`
 
 ### site.web.api.espn.com
 - [x] `/apis/common/v3/sports/football/nfl/athletes/{athleteId}/overview` - Athlete overview

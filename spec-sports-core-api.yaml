@@ -473,6 +473,86 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/events/{eventId}/competitions/{competitionId}/drives:
+    get:
+      summary: Get Drives for a Competition
+      description: Retrieve all drives for a given NFL event/competition.
+      operationId: getNFLCompetitionDrives
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: competitionId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrivesListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/football/leagues/nfl/events/{eventId}/competitions/{competitionId}/plays:
+    get:
+      summary: Get Plays for a Competition
+      description: Retrieve all plays for a given NFL event/competition.
+      operationId: getNFLCompetitionPlays
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: competitionId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageIndex
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaysListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1014,4 +1094,298 @@ components:
       required:
         - id
         - date
-        - competitions 
+        - competitions
+
+    DrivesListResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Drive'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    PlaysListResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Play'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    Drive:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        description:
+          type: string
+        sequenceNumber:
+          type: string
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - $ref: '#/components/schemas/Team'
+        endTeam:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - $ref: '#/components/schemas/Team'
+        start:
+          $ref: '#/components/schemas/DriveFieldPosition'
+        end:
+          $ref: '#/components/schemas/DriveFieldPosition'
+        timeElapsed:
+          $ref: '#/components/schemas/DriveTimeElapsed'
+        yards:
+          type: integer
+        isScore:
+          type: boolean
+        offensivePlays:
+          type: integer
+        result:
+          type: string
+        shortDisplayResult:
+          type: string
+        displayResult:
+          type: string
+        source:
+          $ref: '#/components/schemas/DriveSource'
+        plays:
+          $ref: '#/components/schemas/PlaysListResponse'
+
+    DriveFieldPosition:
+      type: object
+      properties:
+        period:
+          $ref: '#/components/schemas/DrivePeriod'
+        clock:
+          $ref: '#/components/schemas/DriveClock'
+        yardLine:
+          type: integer
+        text:
+          type: string
+
+    DrivePeriod:
+      type: object
+      properties:
+        type:
+          type: string
+        number:
+          type: integer
+
+    DriveClock:
+      type: object
+      properties:
+        value:
+          type: number
+        displayValue:
+          type: string
+
+    DriveTimeElapsed:
+      type: object
+      properties:
+        value:
+          type: number
+        displayValue:
+          type: string
+
+    DriveSource:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+
+    Play:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        sequenceNumber:
+          type: string
+        type:
+          $ref: '#/components/schemas/PlayType'
+        text:
+          type: string
+        shortText:
+          type: string
+        alternativeText:
+          type: string
+        shortAlternativeText:
+          type: string
+        awayScore:
+          type: integer
+        homeScore:
+          type: integer
+        period:
+          $ref: '#/components/schemas/PlayPeriod'
+        clock:
+          $ref: '#/components/schemas/PlayClock'
+        scoringPlay:
+          type: boolean
+        priority:
+          type: boolean
+        scoreValue:
+          type: integer
+        modified:
+          type: string
+          format: date-time
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - $ref: '#/components/schemas/Team'
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayParticipant'
+        probability:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        wallclock:
+          type: string
+          format: date-time
+        drive:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - $ref: '#/components/schemas/Drive'
+        start:
+          $ref: '#/components/schemas/PlayFieldPosition'
+        end:
+          $ref: '#/components/schemas/PlayFieldPosition'
+        statYardage:
+          type: integer
+
+    PlayType:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        abbreviation:
+          type: string
+
+    PlayPeriod:
+      type: object
+      properties:
+        number:
+          type: integer
+
+    PlayClock:
+      type: object
+      properties:
+        value:
+          type: number
+        displayValue:
+          type: string
+
+    PlayFieldPosition:
+      type: object
+      properties:
+        period:
+          $ref: '#/components/schemas/PlayPeriod'
+        clock:
+          $ref: '#/components/schemas/PlayClock'
+        yardLine:
+          type: integer
+        text:
+          type: string
+
+    PlayParticipant:
+      type: object
+      properties:
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        position:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        statistics:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayStat'
+        order:
+          type: integer
+        type:
+          type: string
+
+    PlayStat:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        shortDisplayName:
+          type: string
+        description:
+          type: string
+        abbreviation:
+          type: string
+        value:
+          type: number
+        displayValue:
+          type: string 

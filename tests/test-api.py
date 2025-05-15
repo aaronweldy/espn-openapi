@@ -31,6 +31,25 @@ from models.site_web_api.espn_site_web_api_client.models.athlete_game_log_respon
 )
 from models.site_web_api.espn_site_web_api_client.models.game_event import GameEvent
 
+from models.sports_core_api.espn_sports_core_api_client.client import (
+    Client as CoreApiClient,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_competition_drives import (
+    sync as get_nfl_competition_drives,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_competition_plays import (
+    sync as get_nfl_competition_plays,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.drives_list_response import (
+    DrivesListResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.plays_list_response import (
+    PlaysListResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.error_response import (
+    ErrorResponse as CoreErrorResponse,
+)
+
 # Removed site-web-api imports
 
 # Removed TEST_ATHLETE_ID_NFL constant
@@ -298,10 +317,58 @@ def test_nfl_athlete_gamelog():
         return False
 
 
+def test_nfl_competition_drives():
+    print("\n=== Testing NFL Competition Drives ===")
+    client = CoreApiClient(base_url="https://sports.core.api.espn.com")
+    event_id = "401547417"
+    competition_id = "401547417"
+    response = get_nfl_competition_drives(
+        event_id=event_id, competition_id=competition_id, client=client
+    )
+    if isinstance(response, DrivesListResponse):
+        print(f"✓ Retrieved {response.count} drives for event {event_id}")
+        if response.items:
+            drive = response.items[0]
+            print(f"First drive: id={drive.id}, description={drive.description}")
+        print("✓ Test passed!")
+        return True
+    elif isinstance(response, CoreErrorResponse):
+        print(f"✗ API error: {response.error.message if response.error else response}")
+        return False
+    else:
+        print("✗ Unexpected response type")
+        return False
+
+
+def test_nfl_competition_plays():
+    print("\n=== Testing NFL Competition Plays ===")
+    client = CoreApiClient(base_url="https://sports.core.api.espn.com")
+    event_id = "401547417"
+    competition_id = "401547417"
+    response = get_nfl_competition_plays(
+        event_id=event_id, competition_id=competition_id, client=client
+    )
+    if isinstance(response, PlaysListResponse):
+        print(f"✓ Retrieved {response.count} plays for event {event_id}")
+        if response.items:
+            play = response.items[0]
+            print(f"First play: id={play.id}, text={play.text}")
+        print("✓ Test passed!")
+        return True
+    elif isinstance(response, CoreErrorResponse):
+        print(f"✗ API error: {response.error.message if response.error else response}")
+        return False
+    else:
+        print("✗ Unexpected response type")
+        return False
+
+
 def run_all_tests():
     """Run all API tests"""
     tests = [
         test_nfl_athlete_gamelog,
+        test_nfl_competition_drives,
+        test_nfl_competition_plays,
     ]
 
     results = []
