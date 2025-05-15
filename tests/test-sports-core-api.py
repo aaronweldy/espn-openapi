@@ -502,6 +502,119 @@ def test_athlete_statistics_log(athlete_id: str = EXAMPLE_ATHLETE_ID):
         return False
 
 
+def test_league_calendar(sport: str = "football", league: str = "nfl"):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_calendar import (
+        sync as get_league_calendar,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.calendar_list_response import (
+        CalendarListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.error_response import (
+        ErrorResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.types import UNSET
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_calendar(sport=sport, league=league, client=client)
+    assert response is not None, "No response returned from calendar endpoint"
+    assert isinstance(response, CalendarListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Calendar count should be > 0"
+    assert isinstance(response.items, list), "Items should be a list"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Calendar test passed: {response.count} items found.")
+
+
+def test_league_venues(sport: str = "football", league: str = "nfl"):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_venues import (
+        sync as get_league_venues,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.calendar_list_response import (
+        CalendarListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_venues(sport=sport, league=league, client=client)
+    assert response is not None, "No response returned from venues endpoint"
+    assert isinstance(response, CalendarListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Venues count should be > 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Venues test passed: {response.count} items found.")
+
+
+def test_league_franchises(sport: str = "football", league: str = "nfl"):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_franchises import (
+        sync as get_league_franchises,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.calendar_list_response import (
+        CalendarListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_franchises(sport=sport, league=league, client=client)
+    assert response is not None, "No response returned from franchises endpoint"
+    assert isinstance(response, CalendarListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Franchises count should be > 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Franchises test passed: {response.count} items found.")
+
+
+def test_league_seasons(sport: str = "football", league: str = "nfl"):
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_seasons import (
+        sync as get_league_seasons,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.calendar_list_response import (
+        CalendarListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_league_seasons(sport=sport, league=league, client=client)
+    assert response is not None, "No response returned from seasons endpoint"
+    assert isinstance(response, CalendarListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Seasons count should be > 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(f"Seasons test passed: {response.count} items found.")
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -522,6 +635,18 @@ def main():
     # Test athlete statistics log endpoint
     athlete_log_result = test_athlete_statistics_log()
     results.append(("NFL Athlete Statistics Log", athlete_log_result))
+
+    # Test league calendar endpoint
+    test_league_calendar()
+
+    # Test league venues endpoint
+    test_league_venues()
+
+    # Test league franchises endpoint
+    test_league_franchises()
+
+    # Test league seasons endpoint
+    test_league_seasons()
 
     # Summary
     print("\n===== Test Results Summary =====")

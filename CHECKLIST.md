@@ -109,12 +109,11 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [ ] `/apis/search/v2`
 
 ### sports.core.api.espn.com
-- [ ] `/v2/sports/{sport}/leagues/{league}/calendar`
-- [ ] `/v2/sports/{sport}/leagues/{league}/venues`
-- [ ] `/v2/sports/{sport}/leagues/{league}/franchises`
-- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}`
+- [x] `/v2/sports/{sport}/leagues/{league}/calendar`
+- [x] `/v2/sports/{sport}/leagues/{league}/venues`
+- [x] `/v2/sports/{sport}/leagues/{league}/franchises`
+- [x] `/v2/sports/{sport}/leagues/{league}/seasons`
 - [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/weeks`
-- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/weeks/{weekNumber}`
 - [ ] `/v2/sports/{sport}/leagues/{league}/events`
 
 ### site.web.api.espn.com

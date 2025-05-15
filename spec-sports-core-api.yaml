@@ -108,6 +108,166 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/calendar:
+    get:
+      summary: Get League Calendar
+      description: Retrieve the calendar for a given league and sport (e.g., NFL, NBA, etc). Returns a list of calendar resource references.
+      operationId: getLeagueCalendar
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/venues:
+    get:
+      summary: Get League Venues
+      description: Retrieve the list of venues for a given league and sport. Returns a paginated list of venue resource references.
+      operationId: getLeagueVenues
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/franchises:
+    get:
+      summary: Get League Franchises
+      description: Retrieve the list of franchises for a given league and sport. Returns a paginated list of franchise resource references.
+      operationId: getLeagueFranchises
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/seasons:
+    get:
+      summary: Get League Seasons
+      description: Retrieve the list of seasons for a given league and sport. Returns a paginated list of season resource references.
+      operationId: getLeagueSeasons
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            type: string
+            example: football
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            type: string
+            example: nfl
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -517,4 +677,30 @@ components:
           type: string
           format: uri
       required:
-        - $ref 
+        - $ref
+
+    CalendarListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 4
+        pageIndex:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 25
+        pageCount:
+          type: integer
+          example: 1
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items 
