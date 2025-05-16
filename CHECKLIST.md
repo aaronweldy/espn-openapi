@@ -19,8 +19,8 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [x] `/sports/football/nfl/teams/{teamId}/roster` - Implemented
 
 ### cdn.espn.com
-- [ ] `/core/nfl/scoreboard` Params: xhr, limit
-- [ ] `/core/nfl/schedule` Params: xhr, limit, year, week
+- [x] `/core/nfl/scoreboard` Params: xhr, limit
+- [x] `/core/nfl/schedule` Params: xhr, limit, year, week
 - [ ] `/core/nfl/standings` Params: season
 - [ ] `/core/nfl/boxscore` Params: xhr (=1), gameid (={event_id})
 - [ ] `/core/nfl/playbyplay` Params: xhr (=1), gameid (=event_id)
