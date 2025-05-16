@@ -1,56 +1,61 @@
-from typing import Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
-T = TypeVar("T", bound="CategoryLabel")
+T = TypeVar("T", bound="SearchV2ResultType")
 
 
 @_attrs_define
-class CategoryLabel:
+class SearchV2ResultType:
     """
     Attributes:
-        label (str):  Example: COMP/ATT.
-        abbreviation (Union[Unset, str]):  Example: C/A.
+        total_found (int):
+        type (str):
+        display_name (str):
     """
 
-    label: str
-    abbreviation: Union[Unset, str] = UNSET
+    total_found: int
+    type: str
+    display_name: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        label = self.label
+        total_found = self.total_found
 
-        abbreviation = self.abbreviation
+        type = self.type
+
+        display_name = self.display_name
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "label": label,
+                "totalFound": total_found,
+                "type": type,
+                "displayName": display_name,
             }
         )
-        if abbreviation is not UNSET:
-            field_dict["abbreviation"] = abbreviation
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        label = d.pop("label")
+        total_found = d.pop("totalFound")
 
-        abbreviation = d.pop("abbreviation", UNSET)
+        type = d.pop("type")
 
-        category_label = cls(
-            label=label,
-            abbreviation=abbreviation,
+        display_name = d.pop("displayName")
+
+        search_v2_result_type = cls(
+            total_found=total_found,
+            type=type,
+            display_name=display_name,
         )
 
-        category_label.additional_properties = d
-        return category_label
+        search_v2_result_type.additional_properties = d
+        return search_v2_result_type
 
     @property
     def additional_keys(self) -> List[str]:

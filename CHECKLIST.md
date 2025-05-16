@@ -28,6 +28,8 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 ### site.web.api.espn.com
 - [x] `/apis/common/v3/sports/football/nfl/athletes/{athleteId}/overview` - Athlete overview
 - [x] `/apis/common/v3/sports/football/nfl/athletes/{athleteId}/gamelog` - Athlete game log
+- [x] `/apis/common/v3/search` - General Search
+- [x] `/apis/search/v2` - General Search (v2)
 
 ### General 
 - [x] `/v2/sports/football/nfl/standings` - Implemented (site.api.espn.com)

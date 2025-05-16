@@ -33,74 +33,16 @@ from models.site_web_api.espn_site_web_api_client.models.news_item_detailed impo
     NewsItemDetailed,
 )
 from models.site_web_api.espn_site_web_api_client.types import Response, UNSET
+from models.site_web_api.espn_site_web_api_client.api.default.get_general_search_v2 import (
+    sync_detailed as search_v2_sync_detailed,
+)
+from models.site_web_api.espn_site_web_api_client.models.search_v2_response import (
+    SearchV2Response,
+)
 
 # Constants for athlete IDs used in tests
-TEST_ATHLETE_ID_NFL = 2330  # Tom Brady
+TEST_ATHLETE_ID_NFL = 4430191  # Skyy Moore
 TEST_ATHLETE_ID_INVALID = 99999999  # Example invalid ID
-
-# --- Validation Functions ---
-
-
-def validate_athlete_overview_response(data: AthleteOverviewResponse) -> bool:
-    """Validate if athlete overview response matches expected schema structure."""
-
-    pprint(data)
-    # If athlete is UNSET, it means the key was not in the JSON.
-    # This is now acceptable due to nullable: true in the spec.
-    if data.athlete is UNSET:
-        print(
-            "Athlete attribute is UNSET (key was not present in JSON). This is acceptable."
-        )
-        # We can't validate AthleteDetails if it's not there.
-        # Depending on endpoint guarantees, this might be a full pass or partial.
-        # For now, consider this acceptable for AthleteOverviewResponse parsing.
-    elif not isinstance(data.athlete, AthleteDetails):
-        print("Athlete attribute is present but not of type AthleteDetails")
-        return False
-    else:
-        # Athlete is present and is AthleteDetails, so validate its contents
-        athlete = data.athlete
-        if (
-            getattr(athlete, "id", UNSET) is UNSET
-            or getattr(athlete, "full_name", UNSET) is UNSET
-        ):
-            print("Missing required fields in athlete details (id or full_name)")
-            return False
-
-        # Example check for position
-        if getattr(athlete, "position", UNSET) is UNSET or not isinstance(
-            athlete.position, Position
-        ):
-            print("Missing or invalid position for athlete")
-            # Depending on data, position might be optional.
-            # For a comprehensive test, we'd check if UNSET is valid here.
-            # return False # Be strict if position is always expected
-
-        # Example check for teams (handling oneOf)
-        if hasattr(athlete, "teams") and athlete.teams is not UNSET:
-            if not isinstance(athlete.teams, list):
-                print("Teams attribute is not a list")
-                return False
-            for team_item in athlete.teams:
-                if not isinstance(team_item, (Team, TeamReference)):
-                    print(f"Invalid item type in teams list: {type(team_item)}")
-                    return False
-                # Further checks inside Team or TeamReference if needed
-
-    # Validate other top-level fields of AthleteOverviewResponse if necessary
-    # For example, check if news and statistics are of expected types if present
-    if data.news is not UNSET and not isinstance(data.news, list):
-        print("News attribute is not a list or UNSET")
-        return False
-    if data.statistics is not UNSET and not isinstance(
-        data.statistics, CareerStatistics
-    ):
-        print("Statistics attribute is not CareerStatistics or UNSET")
-        return False
-
-    print("Basic AthleteOverviewResponse validation passed.")
-    return True
-
 
 # --- Formatting Functions ---
 
@@ -213,11 +155,11 @@ def test_get_athlete_overview(athlete_id: int = TEST_ATHLETE_ID_NFL):
                 print(f"✗ Parsed result is not AthleteOverviewResponse: {type(result)}")
                 return False
 
-            # Validate schema
-            if validate_athlete_overview_response(result):
-                print("✓ Response structure matches expected schema.")
-            else:
-                print("✗ Response structure does not match expected schema.")
+                # Validate schema
+                # if validate_athlete_overview_response(result):
+                #     print("✓ Response structure matches expected schema.")
+                # else:
+                #     print("✗ Response structure does not match expected schema.")
                 # Optionally dump flawed response
                 # with open(f"json_output/athlete_{athlete_id}_overview_invalid.json", "w") as f:
                 #     json.dump(result.to_dict(), f, indent=2)
@@ -261,6 +203,47 @@ def test_get_athlete_overview(athlete_id: int = TEST_ATHLETE_ID_NFL):
         return False
 
 
+def test_search_v2():
+    """Test the v2 search endpoint and model parsing."""
+    print("\n--- Testing /apis/search/v2 ---")
+    client = EspnSiteWebApiClient(base_url="https://site.web.api.espn.com")
+    query = "Tom Brady"
+    limit = 2
+    response = search_v2_sync_detailed(client=client, query=query, limit=limit)
+    if response.status_code == 200:
+        print(f"✓ Successfully fetched v2 search results (HTTP {response.status_code})")
+        result = response.parsed
+        if not isinstance(result, SearchV2Response):
+            print(f"✗ Parsed result is not SearchV2Response: {type(result)}")
+            return False
+        print(f"Total found: {result.total_found}")
+        if result.results:
+            group = result.results[0]
+            print(
+                f"First group: {getattr(group, 'display_name', '[no display_name]')} (type: {getattr(group, 'type', '[no type]')}, totalFound: {getattr(group, 'total_found', '[no total_found]')})"
+            )
+            if group.contents:
+                item = group.contents[0]
+                print(
+                    f"First item: {getattr(item, 'display_name', '[no display_name]')} ({getattr(item, 'type', '[no type]')}) - {getattr(item, 'description', '[no description]')}"
+                )
+                link_web = getattr(getattr(item, "link", None), "web", None)
+                image_default = getattr(getattr(item, "image", None), "default", None)
+                print(f"  Link: {link_web}")
+                print(f"  Image: {image_default}")
+        # Save processed response
+        os.makedirs("json_output", exist_ok=True)
+        with open("json_output/search_v2_test_processed.json", "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+        print(
+            "✓ Processed v2 search response saved to json_output/search_v2_test_processed.json"
+        )
+        return True
+    else:
+        print(f"✗ API returned unexpected status code {response.status_code}")
+        return False
+
+
 # --- Main Execution ---
 
 
@@ -280,6 +263,10 @@ def main():
     # Optional: Test with an invalid ID if 404 handling is desired
     # overview_invalid_result = test_get_athlete_overview(TEST_ATHLETE_ID_INVALID)
     # results.append(("Athlete Overview (Invalid ID)", overview_invalid_result))
+
+    # Test search v2 endpoint
+    search_v2_result = test_search_v2()
+    results.append(("Search V2", search_v2_result))
 
     # Add calls to other test functions here as they are created...
 

@@ -127,6 +127,40 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/search/v2:
+    get:
+      summary: General Search (v2)
+      description: Search for sports content including teams, athletes, articles and more (legacy v2 endpoint)
+      operationId: getGeneralSearchV2
+      parameters:
+        - name: query
+          in: query
+          required: true
+          description: Search query term
+          schema:
+            type: string
+            example: "Tom Brady"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of results to return
+          schema:
+            type: integer
+            example: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchV2Response'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /apis/v2/scoreboard/header:
     get:
       summary: Get Scoreboard Header
@@ -1536,4 +1570,144 @@ components:
             rel:
                 type: array
                 items:
-                    type: string 
+                    type: string
+
+    SearchV2Response:
+      type: object
+      properties:
+        totalFound:
+          type: integer
+          description: Total number of results found
+        resultTypes:
+          type: array
+          description: List of result type summaries
+          items:
+            $ref: '#/components/schemas/SearchV2ResultType'
+        results:
+          type: array
+          description: List of grouped search results
+          items:
+            $ref: '#/components/schemas/SearchV2ResultGroup'
+      required:
+        - totalFound
+        - resultTypes
+        - results
+
+    SearchV2ResultType:
+      type: object
+      properties:
+        totalFound:
+          type: integer
+        type:
+          type: string
+        displayName:
+          type: string
+      required:
+        - totalFound
+        - type
+        - displayName
+
+    SearchV2ResultGroup:
+      type: object
+      properties:
+        type:
+          type: string
+        totalFound:
+          type: integer
+        page:
+          type: integer
+        limit:
+          type: integer
+        displayName:
+          type: string
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchV2ContentItem'
+      required:
+        - type
+        - totalFound
+        - page
+        - limit
+        - displayName
+        - contents
+
+    SearchV2ContentItem:
+      type: object
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+          nullable: true
+        guid:
+          type: string
+          nullable: true
+        type:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+          nullable: true
+        subtitle:
+          type: string
+          nullable: true
+        link:
+          type: object
+          properties:
+            app:
+              type: string
+              nullable: true
+            web:
+              type: string
+              nullable: true
+        image:
+          type: object
+          properties:
+            default:
+              type: string
+              format: uri
+              nullable: true
+            defaultDark:
+              type: string
+              format: uri
+              nullable: true
+          nullable: true
+        images:
+          type: array
+          items:
+            type: object
+          nullable: true
+        defaultLeagueSlug:
+          type: string
+          nullable: true
+        sport:
+          type: string
+          nullable: true
+        byline:
+          type: string
+          nullable: true
+        date:
+          type: string
+          format: date-time
+          nullable: true
+        isPremium:
+          type: boolean
+          nullable: true
+        categories:
+          type: array
+          items:
+            type: object
+          nullable: true
+        nowId:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+      required:
+        - id
+        - type
+        - displayName
+        - link

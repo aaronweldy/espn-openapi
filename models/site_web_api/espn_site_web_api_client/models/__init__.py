@@ -4,6 +4,7 @@ from .athlete_details import AthleteDetails
 from .athlete_details_alternate_ids import AthleteDetailsAlternateIds
 from .athlete_details_college import AthleteDetailsCollege
 from .athlete_game_log_response import AthleteGameLogResponse
+from .athlete_game_log_response_events import AthleteGameLogResponseEvents
 from .athlete_overview_response import AthleteOverviewResponse
 from .athlete_reference import AthleteReference
 from .athlete_status import AthleteStatus
@@ -13,7 +14,6 @@ from .birth_place import BirthPlace
 from .career_statistics import CareerStatistics
 from .career_statistics_categories_item import CareerStatisticsCategoriesItem
 from .career_statistics_splits_item import CareerStatisticsSplitsItem
-from .category_label import CategoryLabel
 from .college import College
 from .draft import Draft
 from .error import Error
@@ -22,9 +22,11 @@ from .event_status import EventStatus
 from .event_status_state import EventStatusState
 from .experience import Experience
 from .flag_type_0 import FlagType0
-from .game_log_category import GameLogCategory
-from .game_log_event import GameLogEvent
-from .game_log_event_home_away import GameLogEventHomeAway
+from .game_event import GameEvent
+from .game_event_at_vs import GameEventAtVs
+from .game_event_game_result import GameEventGameResult
+from .game_event_team import GameEventTeam
+from .game_log_season import GameLogSeason
 from .get_general_search_mode import GetGeneralSearchMode
 from .get_nfl_athlete_game_log_seasontype import GetNFLAthleteGameLogSeasontype
 from .hand_type_0 import HandType0
@@ -51,12 +53,22 @@ from .news_links import NewsLinks
 from .note import Note
 from .position import Position
 from .reference import Reference
+from .requested_season import RequestedSeason
 from .scoreboard_event import ScoreboardEvent
 from .scoreboard_header_response import ScoreboardHeaderResponse
 from .search_metadata import SearchMetadata
 from .search_response import SearchResponse
 from .search_result import SearchResult
+from .search_v2_content_item import SearchV2ContentItem
+from .search_v2_content_item_categories_type_0_item import SearchV2ContentItemCategoriesType0Item
+from .search_v2_content_item_image_type_0 import SearchV2ContentItemImageType0
+from .search_v2_content_item_images_type_0_item import SearchV2ContentItemImagesType0Item
+from .search_v2_content_item_link import SearchV2ContentItemLink
+from .search_v2_response import SearchV2Response
+from .search_v2_result_group import SearchV2ResultGroup
+from .search_v2_result_type import SearchV2ResultType
 from .season import Season
+from .season_type import SeasonType
 from .self_link import SelfLink
 from .sport_reference import SportReference
 from .stat_category import StatCategory
@@ -81,6 +93,7 @@ __all__ = (
     "AthleteDetailsAlternateIds",
     "AthleteDetailsCollege",
     "AthleteGameLogResponse",
+    "AthleteGameLogResponseEvents",
     "AthleteOverviewResponse",
     "AthleteReference",
     "AthleteStatus",
@@ -90,7 +103,6 @@ __all__ = (
     "CareerStatistics",
     "CareerStatisticsCategoriesItem",
     "CareerStatisticsSplitsItem",
-    "CategoryLabel",
     "College",
     "Draft",
     "Error",
@@ -99,9 +111,11 @@ __all__ = (
     "EventStatusState",
     "Experience",
     "FlagType0",
-    "GameLogCategory",
-    "GameLogEvent",
-    "GameLogEventHomeAway",
+    "GameEvent",
+    "GameEventAtVs",
+    "GameEventGameResult",
+    "GameEventTeam",
+    "GameLogSeason",
     "GetGeneralSearchMode",
     "GetNFLAthleteGameLogSeasontype",
     "HandType0",
@@ -128,12 +142,22 @@ __all__ = (
     "Note",
     "Position",
     "Reference",
+    "RequestedSeason",
     "ScoreboardEvent",
     "ScoreboardHeaderResponse",
     "SearchMetadata",
     "SearchResponse",
     "SearchResult",
+    "SearchV2ContentItem",
+    "SearchV2ContentItemCategoriesType0Item",
+    "SearchV2ContentItemImagesType0Item",
+    "SearchV2ContentItemImageType0",
+    "SearchV2ContentItemLink",
+    "SearchV2Response",
+    "SearchV2ResultGroup",
+    "SearchV2ResultType",
     "Season",
+    "SeasonType",
     "SelfLink",
     "SportReference",
     "StatCategory",
