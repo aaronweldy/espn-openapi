@@ -4,17 +4,25 @@ Test ESPN CDN NFL API - Scoreboard and Schedule Endpoints
 Requires Python 3.10+
 """
 
+import pprint
 from models.cdn_api.espn_cdn_nfl_api_client import Client
 from models.cdn_api.espn_cdn_nfl_api_client.api.default import (
     get_core_nfl_scoreboard,
     get_core_nfl_schedule,
+    get_core_nfl_standings,
+    get_core_nfl_boxscore,
+    get_core_nfl_playbyplay,
 )
 from models.cdn_api.espn_cdn_nfl_api_client.models import (
     NflScoreboardResponse,
     NflScheduleResponse,
+    NflStandingsResponse,
+    NflBoxscoreResponse,
+    NflPlayByPlayResponse,
 )
 from models.cdn_api.espn_cdn_nfl_api_client.types import UNSET, Unset
 import datetime
+import textwrap
 
 BASE_URL = "https://cdn.espn.com"
 
@@ -165,6 +173,65 @@ def format_schedule(data: NflScheduleResponse) -> str:
     return "\n".join(output)
 
 
+def format_standings_table(data: NflStandingsResponse) -> str:
+    if (
+        not data.content
+        or not data.content.standings
+        or not data.content.standings.groups
+    ):
+        return "No standings data available."
+    output = []
+    # Top-level: conferences
+    for conf in data.content.standings.groups:
+        conf_name = getattr(conf, "name", "Unknown Conference")
+        output.append(f"\n=== {conf_name} ===")
+        # Next level: divisions
+        divisions = getattr(conf, "groups", [])
+        if not divisions:
+            output.append("No divisions in this conference.")
+            continue
+        for div in divisions:
+            div_name = getattr(div, "name", "Unknown Division")
+            output.append(f"\n{div_name}")
+            standings = getattr(div, "standings", None)
+            entries = (
+                getattr(standings, "entries", None)
+                if standings not in (UNSET, None)
+                else None
+            )
+            if entries in (UNSET, None) or not isinstance(entries, list):
+                output.append("No teams in this division.")
+                continue
+            # Table header
+            header = f"{'Team':<25} {'W':>2} {'L':>2} {'T':>2} {'PCT':>5} {'PF':>4} {'PA':>4} {'DIFF':>5} {'STRK':>5}"
+            output.append(header)
+            output.append("-" * len(header))
+            for entry in entries:
+                team = (
+                    entry.team.display_name
+                    if entry.team and entry.team.display_name
+                    else "?"
+                )
+                # Extract stats by name
+                stats = {
+                    s.name: s.display_value
+                    for s in entry.stats
+                    if s.name and s.display_value
+                }
+                w = stats.get("wins", "-")
+                l = stats.get("losses", "-")
+                t = stats.get("ties", "-")
+                pct = stats.get("winPercent", "-")
+                pf = stats.get("pointsFor", "-")
+                pa = stats.get("pointsAgainst", "-")
+                diff = stats.get("differential", "-")
+                strk = stats.get("streak", "-")
+                output.append(
+                    f"{team:<25} {w:>2} {l:>2} {t:>2} {pct:>5} {pf:>4} {pa:>4} {diff:>5} {strk:>5}"
+                )
+    return "\n".join(output)
+
+
 def test_get_core_nfl_scoreboard():
     client = Client(base_url=BASE_URL)
     response = get_core_nfl_scoreboard.sync(client=client, xhr=1, limit=1)
@@ -187,13 +254,12 @@ def test_get_core_nfl_schedule_by_week():
     client = Client(base_url=BASE_URL)
     # Fetch the calendar to get the list of regular season weeks and the year
     initial_response = get_core_nfl_schedule.sync(
-        client=client, xhr=1, limit=1, year=2024
+        client=client, xhr=1, limit=1, year=2025
     )
     assert isinstance(initial_response, NflScheduleResponse)
     assert initial_response.content is not None
     content = initial_response.content
-    # Try to get the year from defaults, else use 2024
-    year = 2024
+    year = 2025
     defaults = getattr(content, "defaults", UNSET)
     if isinstance(defaults, dict) and "year" in defaults:
         year = defaults["year"]
@@ -241,11 +307,40 @@ def test_get_core_nfl_schedule_by_week():
             print(f"Week: {week_label}\n  No games found for this week.")
 
 
+def test_get_core_nfl_standings():
+    client = Client(base_url=BASE_URL)
+    response = get_core_nfl_standings.sync(client=client, season=2023, xhr=1)
+    assert isinstance(response, NflStandingsResponse)
+    print("\n=== CDN NFL Standings ===")
+    print(format_standings_table(response))
+
+
+def test_get_core_nfl_boxscore():
+    client = Client(base_url=BASE_URL)
+    response = get_core_nfl_boxscore.sync(client=client, xhr=1, gameid="401547602")
+    assert isinstance(response, NflBoxscoreResponse)
+    print("\n=== CDN NFL Boxscore ===")
+    d = response.to_dict()
+    print(sorted(d.keys()))
+
+
+def test_get_core_nfl_playbyplay():
+    client = Client(base_url=BASE_URL)
+    response = get_core_nfl_playbyplay.sync(client=client, xhr=1, gameid="401547602")
+    assert isinstance(response, NflPlayByPlayResponse)
+    print("\n=== CDN NFL PlayByPlay ===")
+    d = response.to_dict()
+    print(sorted(d.keys()))
+
+
 def main():
     print("\nRunning CDN NFL API tests...")
     test_get_core_nfl_scoreboard()
     test_get_core_nfl_schedule()
     test_get_core_nfl_schedule_by_week()
+    test_get_core_nfl_standings()
+    test_get_core_nfl_boxscore()
+    test_get_core_nfl_playbyplay()
     print("\nAll CDN NFL API tests passed.")
 
 

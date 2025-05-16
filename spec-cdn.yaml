@@ -1,0 +1,1038 @@
+openapi: 3.0.0
+info:
+  title: ESPN CDN NFL API
+  version: 0.1.0
+  description: OpenAPI schema for cdn.espn.com NFL endpoints
+servers:
+  - url: https://cdn.espn.com
+paths:
+  /core/nfl/scoreboard:
+    get:
+      summary: NFL Scoreboard
+      description: Get the NFL scoreboard data.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflScoreboardResponse'
+  /core/nfl/schedule:
+    get:
+      summary: NFL Schedule
+      description: Get the NFL schedule data.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+        - in: query
+          name: year
+          schema:
+            type: integer
+          required: false
+        - in: query
+          name: week
+          schema:
+            type: integer
+          required: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflScheduleResponse'
+  /core/nfl/standings:
+    get:
+      summary: NFL Standings
+      description: Get the NFL standings data.
+      parameters:
+        - in: query
+          name: season
+          schema:
+            type: integer
+          required: false
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflStandingsResponse'
+  /core/nfl/boxscore:
+    get:
+      summary: NFL Boxscore
+      description: Get the NFL boxscore data for a game.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: gameid
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflBoxscoreResponse'
+  /core/nfl/playbyplay:
+    get:
+      summary: NFL Play-by-Play
+      description: Get the NFL play-by-play data for a game.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: gameid
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflPlayByPlayResponse'
+components:
+  schemas:
+    NflScoreboardResponse:
+      type: object
+      properties:
+        news:
+          $ref: '#/components/schemas/ScoreboardNews'
+        pinnedCount:
+          type: integer
+        nowFeedMD5Hash:
+          type: string
+        type:
+          type: string
+        content:
+          $ref: '#/components/schemas/ScoreboardContent'
+    NflScheduleResponse:
+      type: object
+      properties:
+        ads:
+          type: object
+          additionalProperties: true
+        analytics:
+          type: object
+          additionalProperties: true
+        content:
+          $ref: '#/components/schemas/NflScheduleContent'
+        meta:
+          type: object
+          additionalProperties: true
+        nowFeedSupported:
+          type: boolean
+        sport:
+          type: string
+        tier2Nav:
+          type: object
+          additionalProperties: true
+        type:
+          type: string
+    NflScheduleContent:
+      type: object
+      properties:
+        activeDate:
+          type: string
+        calendar:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflScheduleResponseCalendarItem'
+        canonical:
+          type: string
+        daysToShow:
+          type: integer
+        defaults:
+          type: object
+          additionalProperties: true
+        description:
+          type: string
+        edition:
+          type: string
+        league:
+          type: string
+        og_type:
+          type: string
+        pageTitle:
+          type: string
+        parameters:
+          type: object
+          additionalProperties: true
+        root:
+          type: string
+        schedule:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/NflScheduleDateGames'
+        sortedLeagues:
+          type: array
+          items:
+            type: string
+        sport:
+          type: string
+        title:
+          type: string
+        weekMap:
+          type: object
+          additionalProperties: true
+    NflScheduleDateGames:
+      type: object
+      properties:
+        games:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflScheduleGame'
+    NflScheduleGame:
+      type: object
+      properties:
+        competitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCompetition'
+        date:
+          type: string
+        id:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardLink'
+        name:
+          type: string
+        season:
+          type: object
+          additionalProperties: true
+        shortName:
+          type: string
+        status:
+          $ref: '#/components/schemas/ScoreboardStatus'
+        uid:
+          type: string
+        week:
+          type: object
+          additionalProperties: true
+    NflScheduleResponseCalendarItem:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflScheduleResponseCalendarEntry'
+        endDate:
+          type: string
+          format: date-time
+        label:
+          type: string
+        value:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+    NflScheduleResponseCalendarEntry:
+      type: object
+      properties:
+        endDate:
+          type: string
+          format: date-time
+        alternateLabel:
+          type: string
+        label:
+          type: string
+        detail:
+          type: string
+        value:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+    ScoreboardNews:
+      type: object
+      properties:
+        link:
+          $ref: '#/components/schemas/ScoreboardLink'
+        header:
+          type: string
+        articles:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardArticle'
+    ScoreboardLink:
+      type: object
+      properties:
+        isExternal:
+          type: boolean
+        shortText:
+          type: string
+        rel:
+          type: array
+          items:
+            type: string
+        language:
+          type: string
+        href:
+          type: string
+        text:
+          type: string
+        isPremium:
+          type: boolean
+    ScoreboardArticle:
+      type: object
+      properties:
+        contentKey:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardImage'
+        dataSourceIdentifier:
+          type: string
+        description:
+          type: string
+        published:
+          type: string
+        type:
+          type: string
+        nowId:
+          type: string
+        premium:
+          type: boolean
+        links:
+          $ref: '#/components/schemas/ScoreboardArticleLinks'
+        id:
+          type: integer
+        lastModified:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCategory'
+        headline:
+          type: string
+        byline:
+          type: string
+    ScoreboardImage:
+      type: object
+      properties:
+        dataSourceIdentifier:
+          type: string
+        name:
+          type: string
+        width:
+          type: integer
+        id:
+          type: integer
+        type:
+          type: string
+        credit:
+          type: string
+        url:
+          type: string
+        height:
+          type: integer
+        caption:
+          type: string
+        alt:
+          type: string
+    ScoreboardArticleLinks:
+      type: object
+      properties:
+        app:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ScoreboardLink'
+        web:
+          oneOf:
+            - $ref: '#/components/schemas/ScoreboardLink'
+            - type: object
+              additionalProperties:
+                $ref: '#/components/schemas/ScoreboardLink'
+        mobile:
+          oneOf:
+            - $ref: '#/components/schemas/ScoreboardLink'
+            - type: object
+              additionalProperties:
+                $ref: '#/components/schemas/ScoreboardLink'
+        api:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ScoreboardLink'
+        sportscenter:
+          $ref: '#/components/schemas/ScoreboardLink'
+    ScoreboardCategory:
+      type: object
+      properties:
+        sportId:
+          type: integer
+        topicId:
+          type: integer
+        guid:
+          type: string
+        description:
+          type: string
+        id:
+          type: integer
+        type:
+          type: string
+        teamId:
+          type: integer
+        team:
+          $ref: '#/components/schemas/ScoreboardTeam'
+        leagueId:
+          type: integer
+        league:
+          $ref: '#/components/schemas/ScoreboardLeague'
+        contributor:
+          $ref: '#/components/schemas/ScoreboardContributor'
+        slug:
+          type: string
+        uid:
+          type: string
+    ScoreboardTeam:
+      type: object
+      properties:
+        description:
+          type: string
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ScoreboardLink'
+        id:
+          type: integer
+    ScoreboardLeague:
+      type: object
+      properties:
+        description:
+          type: string
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ScoreboardLink'
+        id:
+          type: integer
+        abbreviation:
+          type: string
+    ScoreboardContributor:
+      type: object
+      properties:
+        description:
+          type: string
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ScoreboardLink'
+        id:
+          type: integer
+    ScoreboardContent:
+      type: object
+      properties:
+        league:
+          type: string
+        sbGroup:
+          $ref: '#/components/schemas/ScoreboardSbGroup'
+        sbData:
+          $ref: '#/components/schemas/ScoreboardSbData'
+        calendar:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCalendar'
+        canonical:
+          type: string
+        dateParams:
+          type: object
+          additionalProperties: true
+        defaults:
+          type: object
+          additionalProperties: true
+        description:
+          type: string
+        isWeekOriented:
+          type: boolean
+        og_type:
+          type: string
+        title:
+          type: string
+    ScoreboardSbGroup:
+      type: object
+      properties:
+        pageTitle:
+          type: string
+        altTitle:
+          type: string
+        scheduleStartDate:
+          type: string
+        isCollege:
+          type: boolean
+        league:
+          type: string
+        sport:
+          type: string
+    ScoreboardSbData:
+      type: object
+      properties:
+        week:
+          $ref: '#/components/schemas/ScoreboardWeek'
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardLeagueData'
+        season:
+          $ref: '#/components/schemas/ScoreboardSeason'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardEvent'
+    ScoreboardWeek:
+      type: object
+      properties:
+        number:
+          type: integer
+    ScoreboardLeagueData:
+      type: object
+      properties:
+        calendarIsWhitelist:
+          type: boolean
+        calendar:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCalendar'
+        uid:
+          type: string
+        calendarType:
+          type: string
+        calendarEndDate:
+          type: string
+        calendarStartDate:
+          type: string
+        name:
+          type: string
+        season:
+          $ref: '#/components/schemas/ScoreboardSeason'
+        id:
+          type: string
+        abbreviation:
+          type: string
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardImage'
+        slug:
+          type: string
+    ScoreboardCalendar:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCalendarEntry'
+        endDate:
+          type: string
+        label:
+          type: string
+        value:
+          type: string
+        startDate:
+          type: string
+    ScoreboardCalendarEntry:
+      type: object
+      properties:
+        endDate:
+          type: string
+        alternateLabel:
+          type: string
+        label:
+          type: string
+        detail:
+          type: string
+        value:
+          type: string
+        startDate:
+          type: string
+    ScoreboardSeason:
+      type: object
+      properties:
+        year:
+          type: integer
+        endDate:
+          type: string
+        displayName:
+          type: string
+        type:
+          oneOf:
+            - $ref: '#/components/schemas/ScoreboardSeasonType'
+            - type: integer
+        startDate:
+          type: string
+    ScoreboardSeasonType:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+        type:
+          type: integer
+        abbreviation:
+          type: string
+    ScoreboardEvent:
+      type: object
+      properties:
+        date:
+          type: string
+        uid:
+          type: string
+        week:
+          $ref: '#/components/schemas/ScoreboardWeek'
+        name:
+          type: string
+        competitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCompetition'
+        shortName:
+          type: string
+        status:
+          $ref: '#/components/schemas/ScoreboardStatus'
+    ScoreboardCompetition:
+      type: object
+      properties:
+        date:
+          type: string
+        broadcast:
+          type: string
+        venue:
+          $ref: '#/components/schemas/ScoreboardVenue'
+        conferenceCompetition:
+          type: boolean
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardNote'
+        tickets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardTicket'
+        timeValid:
+          type: boolean
+        geoBroadcasts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardGeoBroadcast'
+        format:
+          $ref: '#/components/schemas/ScoreboardFormat'
+        broadcasts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardBroadcast'
+        playByPlayAvailable:
+          type: boolean
+        type:
+          $ref: '#/components/schemas/ScoreboardCompetitionType'
+        uid:
+          type: string
+        competitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardCompetitor'
+    ScoreboardVenue:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/ScoreboardVenueAddress'
+        fullName:
+          type: string
+        indoor:
+          type: boolean
+        id:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: string
+    ScoreboardVenueAddress:
+      type: object
+      properties:
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+    ScoreboardNote:
+      type: object
+      properties:
+        type:
+          type: string
+        headline:
+          type: string
+    ScoreboardTicket:
+      type: object
+      properties:
+        summary:
+          type: string
+        numberAvailable:
+          type: integer
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardLink'
+    ScoreboardGeoBroadcast:
+      type: object
+      properties:
+        market:
+          $ref: '#/components/schemas/ScoreboardMarket'
+        media:
+          $ref: '#/components/schemas/ScoreboardMedia'
+        type:
+          $ref: '#/components/schemas/ScoreboardGeoBroadcastType'
+        lang:
+          type: string
+        region:
+          type: string
+    ScoreboardMarket:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+    ScoreboardMedia:
+      type: object
+      properties:
+        shortName:
+          type: string
+    ScoreboardGeoBroadcastType:
+      type: object
+      properties:
+        id:
+          type: string
+        shortName:
+          type: string
+    ScoreboardFormat:
+      type: object
+      properties:
+        regulation:
+          $ref: '#/components/schemas/ScoreboardRegulation'
+    ScoreboardRegulation:
+      type: object
+      properties:
+        periods:
+          type: integer
+    ScoreboardBroadcast:
+      type: object
+      properties:
+        market:
+          type: string
+        names:
+          type: array
+          items:
+            type: string
+    ScoreboardCompetitionType:
+      type: object
+      properties:
+        id:
+          type: string
+        abbreviation:
+          type: string
+    ScoreboardCompetitor:
+      type: object
+      properties:
+        uid:
+          type: string
+        homeAway:
+          type: string
+        score:
+          type: string
+        id:
+          type: string
+        team:
+          $ref: '#/components/schemas/ScoreboardTeamData'
+        type:
+          type: string
+        order:
+          type: integer
+        statistics:
+          type: array
+          items:
+            type: object
+    ScoreboardTeamData:
+      type: object
+      properties:
+        alternateColor:
+          type: string
+        venue:
+          $ref: '#/components/schemas/ScoreboardVenue'
+        color:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        isActive:
+          type: boolean
+        shortDisplayName:
+          type: string
+        uid:
+          type: string
+        name:
+          type: string
+        logo:
+          type: string
+        location:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreboardLink'
+        id:
+          type: string
+    ScoreboardStatus:
+      type: object
+      properties:
+        period:
+          type: integer
+        displayClock:
+          type: string
+        isTBDFlex:
+          type: boolean
+        clock:
+          type: integer
+        type:
+          $ref: '#/components/schemas/ScoreboardStatusType'
+    ScoreboardStatusType:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        state:
+          type: string
+        completed:
+          type: boolean
+        detail:
+          type: string
+        shortDetail:
+          type: string
+    NflStandingsResponse:
+      type: object
+      properties:
+        ads:
+          type: object
+          additionalProperties: true
+        analytics:
+          type: object
+          additionalProperties: true
+        content:
+          $ref: '#/components/schemas/NflStandingsContent'
+        meta:
+          type: object
+          additionalProperties: true
+        nowFeedSupported:
+          type: boolean
+        sport:
+          type: string
+        tier2Nav:
+          type: object
+          additionalProperties: true
+        type:
+          type: string
+    NflStandingsContent:
+      type: object
+      properties:
+        canonical:
+          type: string
+        config:
+          type: object
+          additionalProperties: true
+        description:
+          type: string
+        league:
+          type: string
+        og_type:
+          type: string
+        params:
+          type: object
+          additionalProperties: true
+        sport:
+          type: string
+        standings:
+          $ref: '#/components/schemas/NflStandings'
+        title:
+          type: string
+    NflStandings:
+      type: object
+      properties:
+        abbreviation:
+          type: string
+        groupId:
+          type: integer
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflStandingsGroup'
+        name:
+          type: string
+        uid:
+          type: string
+    NflStandingsGroup:
+      type: object
+      properties:
+        uid:
+          type: string
+        groupId:
+          type: integer
+        name:
+          type: string
+        abbreviation:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflStandingsGroupDivision'
+        standings:
+          $ref: '#/components/schemas/NflStandingsGroupStandings'
+    
+    NflStandingsGroupDivision:
+      type: object
+      properties:
+        uid:
+          type: string
+        groupId:
+          type: integer
+        name:
+          type: string
+        abbreviation:
+          type: string
+        standings:
+          $ref: '#/components/schemas/NflStandingsGroupStandings'
+    
+    NflStandingsGroupStandings:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflStandingsEntry'
+        displayName:
+          type: string
+        name:
+          type: string
+        id:
+          type: string
+    NflStandingsEntry:
+      type: object
+      properties:
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflStandingsStat'
+        team:
+          $ref: '#/components/schemas/NflStandingsTeam'
+    NflStandingsStat:
+      type: object
+      properties:
+        shortDisplayName:
+          type: string
+        displayValue:
+          type: string
+        displayName:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        abbreviation:
+          type: string
+        value:
+          type: string
+    NflStandingsTeam:
+      type: object
+      properties:
+        shortDisplayName:
+          type: string
+        uid:
+          type: string
+        seed:
+          type: string
+        displayName:
+          type: string
+        name:
+          type: string
+        link:
+          type: string
+        location:
+          type: string
+        id:
+          type: string
+        abbreviation:
+          type: string
+        isActive:
+          type: boolean
+        logos:
+          type: array
+          items:
+            type: object
+            properties:
+              href:
+                type: string
+              width:
+                type: integer
+              height:
+                type: integer
+              alt:
+                type: string
+        clincher:
+          type: string
+    NflBoxscoreResponse:
+      type: object
+      description: TODO - Flesh out based on /core/nfl/boxscore JSON structure
+      additionalProperties: true
+    NflPlayByPlayResponse:
+      type: object
+      description: TODO - Flesh out based on /core/nfl/playbyplay JSON structure
+      additionalProperties: true 

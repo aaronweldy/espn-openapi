@@ -19,11 +19,11 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [x] `/sports/football/nfl/teams/{teamId}/roster` - Implemented
 
 ### cdn.espn.com
-- [x] `/core/nfl/scoreboard` Params: xhr, limit
-- [x] `/core/nfl/schedule` Params: xhr, limit, year, week
-- [ ] `/core/nfl/standings` Params: season
-- [ ] `/core/nfl/boxscore` Params: xhr (=1), gameid (={event_id})
-- [ ] `/core/nfl/playbyplay` Params: xhr (=1), gameid (=event_id)
+- [x] `/core/nfl/scoreboard` Params: xhr, limit ✓
+- [x] `/core/nfl/schedule` Params: xhr, limit, year, week ✓
+- [x] `/core/nfl/standings` Params: season ✓
+- [x] `/core/nfl/boxscore` Params: xhr (=1), gameid (={event_id}) ✓
+- [x] `/core/nfl/playbyplay` Params: xhr (=1), gameid (=event_id) ✓
 
 ### sports.core.api.espn.com
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}` - Detailed athlete information
@@ -153,6 +153,7 @@ To handle multiple base URLs in our OpenAPI specification, we will:
    - `spec-sports-core-api.yaml` - For sports.core.api.espn.com endpoints
    - `spec-site-web-api.yaml` - For site.web.api.espn.com endpoints
    - `spec-fantasy.yaml` - For fantasy.espn.com endpoints
+   - `spec-cdn.yaml` - For cdn.espn.com endpoints
 
 2. Each specification file will define:
    - Its own servers section with the appropriate base URL
@@ -168,4 +169,6 @@ To handle multiple base URLs in our OpenAPI specification, we will:
    2. Then address sports.core.api.espn.com endpoints
    3. Follow with other base URLs based on priority
 
-5. Testing will be organized by base URL to ensure efficient validation of each API domain.- [x] Fetch and print games for each week of the regular season using the week param in test-cdn.py
+5. Testing will be organized by base URL to ensure efficient validation of each API domain.
+   - [x] Fetch and print games for each week of the regular season using the week param in test-cdn.py
+   - [x] Format scoreboard, schedule and standings responses in test-cdn.py
