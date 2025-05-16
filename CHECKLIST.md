@@ -18,6 +18,13 @@ The ESPN API uses multiple base URLs for different types of endpoints:
 - [x] `/sports/football/nfl/news` - Implemented
 - [x] `/sports/football/nfl/teams/{teamId}/roster` - Implemented
 
+### cdn.espn.com
+- [ ] `/core/nfl/scoreboard` Params: xhr, limit
+- [ ] `/core/nfl/schedule` Params: xhr, limit, year, week
+- [ ] `/core/nfl/standings` Params: season
+- [ ] `/core/nfl/boxscore` Params: xhr (=1), gameid (={event_id})
+- [ ] `/core/nfl/playbyplay` Params: xhr (=1), gameid (=event_id)
+
 ### sports.core.api.espn.com
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}` - Detailed athlete information
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athleteId}/statistics` - Athlete statistics
@@ -161,4 +168,4 @@ To handle multiple base URLs in our OpenAPI specification, we will:
    2. Then address sports.core.api.espn.com endpoints
    3. Follow with other base URLs based on priority
 
-5. Testing will be organized by base URL to ensure efficient validation of each API domain.
+5. Testing will be organized by base URL to ensure efficient validation of each API domain.- [x] Fetch and print games for each week of the regular season using the week param in test-cdn.py
