@@ -232,6 +232,134 @@ def format_standings_table(data: NflStandingsResponse) -> str:
     return "\n".join(output)
 
 
+def format_boxscore(data: NflBoxscoreResponse) -> str:
+    if not data:
+        return "No boxscore data available."
+
+    # Convert to dict to access the keys that might not be in the model
+    data_dict = data.to_dict()
+    gamepackage = data_dict.get("__gamepackage__", {})
+
+    output = []
+    output.append("=== CDN NFL Boxscore ===")
+
+    # Get home and away team information
+    home_team = gamepackage.get("homeTeam", {})
+    away_team = gamepackage.get("awayTeam", {})
+
+    if not home_team or not away_team:
+        output.append("Team information not available")
+        return "\n".join(output)
+
+    # Get team names and scores
+    home_name = home_team.get("team", {}).get("displayName", "Home Team")
+    away_name = away_team.get("team", {}).get("displayName", "Away Team")
+    home_score = home_team.get("score", "0")
+    away_score = away_team.get("score", "0")
+
+    # Add matchup and final score
+    output.append(f"\nMatchup: {away_name} @ {home_name}")
+    output.append(f"Final Score: {away_name} {away_score} - {home_name} {home_score}")
+
+    # Add team records
+    home_record = home_team.get("record", [])
+    if home_record and len(home_record) > 0:
+        home_record_summary = home_record[0].get("summary", "N/A")
+        output.append(f"{home_name} Record: {home_record_summary}")
+
+    away_record = away_team.get("record", [])
+    if away_record and len(away_record) > 0:
+        away_record_summary = away_record[0].get("summary", "N/A")
+        output.append(f"{away_name} Record: {away_record_summary}")
+
+    # Check if either team won
+    if home_team.get("winner", False):
+        output.append(f"\nWinner: {home_name}")
+    elif away_team.get("winner", False):
+        output.append(f"\nWinner: {away_name}")
+
+    return "\n".join(output)
+
+
+def format_playbyplay(data: NflPlayByPlayResponse) -> str:
+    if not data:
+        return "No play-by-play data available."
+
+    # Convert to dict to access the keys that might not be in the model
+    data_dict = data.to_dict()
+    gamepackage = data_dict.get("gamepackageJSON", {})
+
+    output = []
+    output.append("=== CDN NFL Play-by-Play ===")
+
+    # Get drives information
+    drives = gamepackage.get("drives", {})
+    if not drives:
+        output.append("No drives data available")
+        return "\n".join(output)
+
+    # Count total drives
+    drive_count = 0
+    for drive_key in drives:
+        if isinstance(drives[drive_key], dict) and "plays" in drives[drive_key]:
+            drive_count += 1
+
+    output.append(f"\nTotal Drives: {drive_count}")
+
+    # Display a sample of drives and plays
+    drive_sample_count = min(3, drive_count)
+    play_sample_count = 3  # Number of plays to show per drive
+
+    output.append("\nSample of Drives:")
+    drive_ids = sorted([k for k in drives.keys() if k.isdigit()], key=int)
+
+    for i, drive_id in enumerate(drive_ids[:drive_sample_count]):
+        drive = drives[drive_id]
+        if not isinstance(drive, dict):
+            continue
+
+        team_name = "Unknown Team"
+        if "team" in drive and "displayName" in drive["team"]:
+            team_name = drive["team"]["displayName"]
+
+        result = drive.get("result", "Unknown")
+        description = drive.get("description", "")
+
+        output.append(f"\nDrive {i + 1}: {team_name} - {result}")
+        output.append(f"Description: {description}")
+
+        plays = drive.get("plays", {})
+        if not plays:
+            output.append("  No plays in this drive")
+            continue
+
+        output.append("  Sample Plays:")
+        play_ids = sorted([p for p in plays.keys() if p.isdigit()], key=int)
+
+        for j, play_id in enumerate(play_ids[:play_sample_count]):
+            play = plays[play_id]
+            if not isinstance(play, dict):
+                continue
+
+            play_text = play.get("text", "Unknown play")
+            play_type = play.get("type", {}).get("text", "Unknown type")
+
+            output.append(f"  {j + 1}. [{play_type}] {play_text}")
+
+    # Add scoring plays if available
+    scoring_plays = gamepackage.get("scoringPlays", [])
+    if scoring_plays:
+        output.append("\nScoring Plays:")
+        for i, play in enumerate(scoring_plays[:5]):  # Show at most 5 scoring plays
+            team_name = play.get("team", {}).get("displayName", "Unknown Team")
+            play_desc = play.get("text", "Unknown play")
+            score = f"{play.get('awayScore', 0)}-{play.get('homeScore', 0)}"
+
+            output.append(f"  {i + 1}. {team_name} - {play_desc} (Score: {score})")
+
+    return "\n".join(output)
+
+
 def test_get_core_nfl_scoreboard():
     client = Client(base_url=BASE_URL)
     response = get_core_nfl_scoreboard.sync(client=client, xhr=1, limit=1)
@@ -319,18 +447,14 @@ def test_get_core_nfl_boxscore():
     client = Client(base_url=BASE_URL)
     response = get_core_nfl_boxscore.sync(client=client, xhr=1, gameid="401547602")
     assert isinstance(response, NflBoxscoreResponse)
-    print("\n=== CDN NFL Boxscore ===")
-    d = response.to_dict()
-    print(sorted(d.keys()))
+    print(format_boxscore(response))
 
 
 def test_get_core_nfl_playbyplay():
     client = Client(base_url=BASE_URL)
     response = get_core_nfl_playbyplay.sync(client=client, xhr=1, gameid="401547602")
     assert isinstance(response, NflPlayByPlayResponse)
-    print("\n=== CDN NFL PlayByPlay ===")
-    d = response.to_dict()
-    print(sorted(d.keys()))
+    print(format_playbyplay(response))
 
 
 def main():

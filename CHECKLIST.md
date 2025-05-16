@@ -172,3 +172,4 @@ To handle multiple base URLs in our OpenAPI specification, we will:
 5. Testing will be organized by base URL to ensure efficient validation of each API domain.
    - [x] Fetch and print games for each week of the regular season using the week param in test-cdn.py
    - [x] Format scoreboard, schedule and standings responses in test-cdn.py
+   - [x] Format boxscore and playbyplay responses in test-cdn.py
