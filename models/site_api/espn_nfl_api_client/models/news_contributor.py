@@ -4,24 +4,24 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.athlete_links import AthleteLinks
+    from ..models.news_contributor_links import NewsContributorLinks
 
 
-T = TypeVar("T", bound="Athlete")
+T = TypeVar("T", bound="NewsContributor")
 
 
 @_attrs_define
-class Athlete:
+class NewsContributor:
     """
     Attributes:
-        id (int): Athlete identifier Example: 15846.
-        description (str): Athlete name Example: John Jenkins.
-        links (AthleteLinks):
+        id (int): Contributor identifier Example: 2078.
+        description (str): Contributor name Example: Jamison Hensley.
+        links (NewsContributorLinks):
     """
 
     id: int
     description: str
-    links: "AthleteLinks"
+    links: "NewsContributorLinks"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -45,23 +45,23 @@ class Athlete:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_links import AthleteLinks
+        from ..models.news_contributor_links import NewsContributorLinks
 
         d = src_dict.copy()
         id = d.pop("id")
 
         description = d.pop("description")
 
-        links = AthleteLinks.from_dict(d.pop("links"))
+        links = NewsContributorLinks.from_dict(d.pop("links"))
 
-        athlete = cls(
+        news_contributor = cls(
             id=id,
             description=description,
             links=links,
         )
 
-        athlete.additional_properties = d
-        return athlete
+        news_contributor.additional_properties = d
+        return news_contributor
 
     @property
     def additional_keys(self) -> List[str]:

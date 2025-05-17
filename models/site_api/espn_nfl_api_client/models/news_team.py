@@ -1,58 +1,67 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
 if TYPE_CHECKING:
-    from ..models.link import Link
+    from ..models.news_team_links import NewsTeamLinks
 
 
-T = TypeVar("T", bound="CategoryLeagueLinksMobile")
+T = TypeVar("T", bound="NewsTeam")
 
 
 @_attrs_define
-class CategoryLeagueLinksMobile:
+class NewsTeam:
     """
     Attributes:
-        leagues (Union[Unset, Link]):
+        id (int): Team identifier Example: 33.
+        description (str): Team name Example: Baltimore Ravens.
+        links (NewsTeamLinks):
     """
 
-    leagues: Union[Unset, "Link"] = UNSET
+    id: int
+    description: str
+    links: "NewsTeamLinks"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        leagues: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.leagues, Unset):
-            leagues = self.leagues.to_dict()
+        id = self.id
+
+        description = self.description
+
+        links = self.links.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if leagues is not UNSET:
-            field_dict["leagues"] = leagues
+        field_dict.update(
+            {
+                "id": id,
+                "description": description,
+                "links": links,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.link import Link
+        from ..models.news_team_links import NewsTeamLinks
 
         d = src_dict.copy()
-        _leagues = d.pop("leagues", UNSET)
-        leagues: Union[Unset, Link]
-        if isinstance(_leagues, Unset):
-            leagues = UNSET
-        else:
-            leagues = Link.from_dict(_leagues)
+        id = d.pop("id")
 
-        category_league_links_mobile = cls(
-            leagues=leagues,
+        description = d.pop("description")
+
+        links = NewsTeamLinks.from_dict(d.pop("links"))
+
+        news_team = cls(
+            id=id,
+            description=description,
+            links=links,
         )
 
-        category_league_links_mobile.additional_properties = d
-        return category_league_links_mobile
+        news_team.additional_properties = d
+        return news_team
 
     @property
     def additional_keys(self) -> List[str]:

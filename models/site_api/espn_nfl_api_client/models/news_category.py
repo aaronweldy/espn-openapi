@@ -4,24 +4,24 @@ from uuid import UUID
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.category_type import CategoryType
+from ..models.news_category_type import NewsCategoryType
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.athlete import Athlete
-    from ..models.contributor import Contributor
-    from ..models.league import League
-    from ..models.team import Team
+    from ..models.news_athlete import NewsAthlete
+    from ..models.news_contributor import NewsContributor
+    from ..models.news_league import NewsLeague
+    from ..models.news_team import NewsTeam
 
 
-T = TypeVar("T", bound="Category")
+T = TypeVar("T", bound="NewsCategory")
 
 
 @_attrs_define
-class Category:
+class NewsCategory:
     """
     Attributes:
-        type (CategoryType): Type of category Example: topic.
+        type (NewsCategoryType): Type of category Example: topic.
         guid (UUID): Global unique identifier Example: 52313677-19f8-b106-ec91-d8d17e6087fe.
         id (Union[Unset, int]): Category identifier Example: 409224.
         description (Union[Unset, str]): Description of the category Example: news.
@@ -29,16 +29,16 @@ class Category:
         topic_id (Union[Unset, int]): Topic identifier Example: 781.
         uid (Union[Unset, str]): Unique identifier with format Example: s:20~l:28~a:15846.
         athlete_id (Union[Unset, int]): Athlete identifier Example: 15846.
-        athlete (Union[Unset, Athlete]):
+        athlete (Union[Unset, NewsAthlete]):
         team_id (Union[Unset, int]): Team identifier Example: 33.
-        team (Union[Unset, Team]):
+        team (Union[Unset, NewsTeam]):
         slug (Union[Unset, str]): URL slug Example: jamison-hensley.
-        contributor (Union[Unset, Contributor]):
+        contributor (Union[Unset, NewsContributor]):
         league_id (Union[Unset, int]): League identifier Example: 28.
-        league (Union[Unset, League]):
+        league (Union[Unset, NewsLeague]):
     """
 
-    type: CategoryType
+    type: NewsCategoryType
     guid: UUID
     id: Union[Unset, int] = UNSET
     description: Union[Unset, str] = UNSET
@@ -46,13 +46,13 @@ class Category:
     topic_id: Union[Unset, int] = UNSET
     uid: Union[Unset, str] = UNSET
     athlete_id: Union[Unset, int] = UNSET
-    athlete: Union[Unset, "Athlete"] = UNSET
+    athlete: Union[Unset, "NewsAthlete"] = UNSET
     team_id: Union[Unset, int] = UNSET
-    team: Union[Unset, "Team"] = UNSET
+    team: Union[Unset, "NewsTeam"] = UNSET
     slug: Union[Unset, str] = UNSET
-    contributor: Union[Unset, "Contributor"] = UNSET
+    contributor: Union[Unset, "NewsContributor"] = UNSET
     league_id: Union[Unset, int] = UNSET
-    league: Union[Unset, "League"] = UNSET
+    league: Union[Unset, "NewsLeague"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -133,13 +133,13 @@ class Category:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete import Athlete
-        from ..models.contributor import Contributor
-        from ..models.league import League
-        from ..models.team import Team
+        from ..models.news_athlete import NewsAthlete
+        from ..models.news_contributor import NewsContributor
+        from ..models.news_league import NewsLeague
+        from ..models.news_team import NewsTeam
 
         d = src_dict.copy()
-        type = CategoryType(d.pop("type"))
+        type = NewsCategoryType(d.pop("type"))
 
         guid = UUID(d.pop("guid"))
 
@@ -156,40 +156,40 @@ class Category:
         athlete_id = d.pop("athleteId", UNSET)
 
         _athlete = d.pop("athlete", UNSET)
-        athlete: Union[Unset, Athlete]
+        athlete: Union[Unset, NewsAthlete]
         if isinstance(_athlete, Unset):
             athlete = UNSET
         else:
-            athlete = Athlete.from_dict(_athlete)
+            athlete = NewsAthlete.from_dict(_athlete)
 
         team_id = d.pop("teamId", UNSET)
 
         _team = d.pop("team", UNSET)
-        team: Union[Unset, Team]
+        team: Union[Unset, NewsTeam]
         if isinstance(_team, Unset):
             team = UNSET
         else:
-            team = Team.from_dict(_team)
+            team = NewsTeam.from_dict(_team)
 
         slug = d.pop("slug", UNSET)
 
         _contributor = d.pop("contributor", UNSET)
-        contributor: Union[Unset, Contributor]
+        contributor: Union[Unset, NewsContributor]
         if isinstance(_contributor, Unset):
             contributor = UNSET
         else:
-            contributor = Contributor.from_dict(_contributor)
+            contributor = NewsContributor.from_dict(_contributor)
 
         league_id = d.pop("leagueId", UNSET)
 
         _league = d.pop("league", UNSET)
-        league: Union[Unset, League]
+        league: Union[Unset, NewsLeague]
         if isinstance(_league, Unset):
             league = UNSET
         else:
-            league = League.from_dict(_league)
+            league = NewsLeague.from_dict(_league)
 
-        category = cls(
+        news_category = cls(
             type=type,
             guid=guid,
             id=id,
@@ -207,8 +207,8 @@ class Category:
             league=league,
         )
 
-        category.additional_properties = d
-        return category
+        news_category.additional_properties = d
+        return news_category
 
     @property
     def additional_keys(self) -> List[str]:

@@ -1,43 +1,29 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-if TYPE_CHECKING:
-    from ..models.athlete_links import AthleteLinks
-
-
-T = TypeVar("T", bound="Athlete")
+T = TypeVar("T", bound="NewsLinkItem")
 
 
 @_attrs_define
-class Athlete:
+class NewsLinkItem:
     """
     Attributes:
-        id (int): Athlete identifier Example: 15846.
-        description (str): Athlete name Example: John Jenkins.
-        links (AthleteLinks):
+        href (str): URL for the link Example: https://www.espn.com/nfl/player/_/id/15846/john-jenkins.
     """
 
-    id: int
-    description: str
-    links: "AthleteLinks"
+    href: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        id = self.id
-
-        description = self.description
-
-        links = self.links.to_dict()
+        href = self.href
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "id": id,
-                "description": description,
-                "links": links,
+                "href": href,
             }
         )
 
@@ -45,23 +31,15 @@ class Athlete:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_links import AthleteLinks
-
         d = src_dict.copy()
-        id = d.pop("id")
+        href = d.pop("href")
 
-        description = d.pop("description")
-
-        links = AthleteLinks.from_dict(d.pop("links"))
-
-        athlete = cls(
-            id=id,
-            description=description,
-            links=links,
+        news_link_item = cls(
+            href=href,
         )
 
-        athlete.additional_properties = d
-        return athlete
+        news_link_item.additional_properties = d
+        return news_link_item
 
     @property
     def additional_keys(self) -> List[str]:

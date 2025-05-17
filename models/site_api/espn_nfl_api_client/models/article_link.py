@@ -3,28 +3,44 @@ from typing import Any, Dict, List, Type, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="CategoryContributorLinksWeb")
+T = TypeVar("T", bound="ArticleLink")
 
 
 @_attrs_define
-class CategoryContributorLinksWeb:
-    """ """
+class ArticleLink:
+    """
+    Attributes:
+        href (str): URL for the article Example: https://www.espn.com/nfl/story/_/id/45184227/baltimore-ravens-sign-
+            veteran-nose-tackle-john-jenkins.
+    """
 
+    href: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        href = self.href
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
+        field_dict.update(
+            {
+                "href": href,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        category_contributor_links_web = cls()
+        href = d.pop("href")
 
-        category_contributor_links_web.additional_properties = d
-        return category_contributor_links_web
+        article_link = cls(
+            href=href,
+        )
+
+        article_link.additional_properties = d
+        return article_link
 
     @property
     def additional_keys(self) -> List[str]:

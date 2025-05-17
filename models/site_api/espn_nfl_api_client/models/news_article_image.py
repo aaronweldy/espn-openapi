@@ -5,11 +5,11 @@ from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
 
-T = TypeVar("T", bound="ArticleImage")
+T = TypeVar("T", bound="NewsArticleImage")
 
 
 @_attrs_define
-class ArticleImage:
+class NewsArticleImage:
     """
     Attributes:
         data_source_identifier (Union[Unset, str]): Data source identifier for the image Example: 3b206fdd0ebb6.
@@ -107,7 +107,7 @@ class ArticleImage:
 
         alt = d.pop("alt", UNSET)
 
-        article_image = cls(
+        news_article_image = cls(
             data_source_identifier=data_source_identifier,
             id=id,
             type=type,
@@ -120,8 +120,8 @@ class ArticleImage:
             alt=alt,
         )
 
-        article_image.additional_properties = d
-        return article_image
+        news_article_image.additional_properties = d
+        return news_article_image
 
     @property
     def additional_keys(self) -> List[str]:

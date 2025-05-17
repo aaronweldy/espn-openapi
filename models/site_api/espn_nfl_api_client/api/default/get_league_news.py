@@ -11,21 +11,20 @@ from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
+    sport: str,
+    league: str,
     *,
     limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
     params["limit"] = limit
 
-    params["offset"] = offset
-
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": "/sports/football/nfl/news",
+        "url": f"/sports/{sport}/{league}/news",
         "params": params,
     }
 
@@ -65,18 +64,20 @@ def _build_response(
 
 
 def sync_detailed(
+    sport: str,
+    league: str,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    """Get League News
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -87,8 +88,9 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         limit=limit,
-        offset=offset,
     )
 
     response = client.get_httpx_client().request(
@@ -99,18 +101,20 @@ def sync_detailed(
 
 
 def sync(
+    sport: str,
+    league: str,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    """Get League News
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -121,25 +125,28 @@ def sync(
     """
 
     return sync_detailed(
+        sport=sport,
+        league=league,
         client=client,
         limit=limit,
-        offset=offset,
     ).parsed
 
 
 async def asyncio_detailed(
+    sport: str,
+    league: str,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    """Get League News
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -150,8 +157,9 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         limit=limit,
-        offset=offset,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -160,18 +168,20 @@ async def asyncio_detailed(
 
 
 async def asyncio(
+    sport: str,
+    league: str,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    """Get League News
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -183,8 +193,9 @@ async def asyncio(
 
     return (
         await asyncio_detailed(
+            sport=sport,
+            league=league,
             client=client,
             limit=limit,
-            offset=offset,
         )
     ).parsed

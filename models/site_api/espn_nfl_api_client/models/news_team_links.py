@@ -1,58 +1,59 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
 if TYPE_CHECKING:
-    from ..models.link import Link
+    from ..models.news_web_mobile_links import NewsWebMobileLinks
 
 
-T = TypeVar("T", bound="CategoryAthleteLinksMobile")
+T = TypeVar("T", bound="NewsTeamLinks")
 
 
 @_attrs_define
-class CategoryAthleteLinksMobile:
+class NewsTeamLinks:
     """
     Attributes:
-        athletes (Union[Unset, Link]):
+        web (NewsWebMobileLinks):
+        mobile (NewsWebMobileLinks):
     """
 
-    athletes: Union[Unset, "Link"] = UNSET
+    web: "NewsWebMobileLinks"
+    mobile: "NewsWebMobileLinks"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        athletes: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.athletes, Unset):
-            athletes = self.athletes.to_dict()
+        web = self.web.to_dict()
+
+        mobile = self.mobile.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if athletes is not UNSET:
-            field_dict["athletes"] = athletes
+        field_dict.update(
+            {
+                "web": web,
+                "mobile": mobile,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.link import Link
+        from ..models.news_web_mobile_links import NewsWebMobileLinks
 
         d = src_dict.copy()
-        _athletes = d.pop("athletes", UNSET)
-        athletes: Union[Unset, Link]
-        if isinstance(_athletes, Unset):
-            athletes = UNSET
-        else:
-            athletes = Link.from_dict(_athletes)
+        web = NewsWebMobileLinks.from_dict(d.pop("web"))
 
-        category_athlete_links_mobile = cls(
-            athletes=athletes,
+        mobile = NewsWebMobileLinks.from_dict(d.pop("mobile"))
+
+        news_team_links = cls(
+            web=web,
+            mobile=mobile,
         )
 
-        category_athlete_links_mobile.additional_properties = d
-        return category_athlete_links_mobile
+        news_team_links.additional_properties = d
+        return news_team_links
 
     @property
     def additional_keys(self) -> List[str]:

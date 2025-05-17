@@ -6,23 +6,23 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.category_contributor_links_mobile import CategoryContributorLinksMobile
-    from ..models.category_contributor_links_web import CategoryContributorLinksWeb
+    from ..models.news_contributor_links_mobile import NewsContributorLinksMobile
+    from ..models.news_contributor_links_web import NewsContributorLinksWeb
 
 
-T = TypeVar("T", bound="CategoryContributorLinks")
+T = TypeVar("T", bound="NewsContributorLinks")
 
 
 @_attrs_define
-class CategoryContributorLinks:
+class NewsContributorLinks:
     """
     Attributes:
-        web (Union[Unset, CategoryContributorLinksWeb]):
-        mobile (Union[Unset, CategoryContributorLinksMobile]):
+        web (Union[Unset, NewsContributorLinksWeb]):
+        mobile (Union[Unset, NewsContributorLinksMobile]):
     """
 
-    web: Union[Unset, "CategoryContributorLinksWeb"] = UNSET
-    mobile: Union[Unset, "CategoryContributorLinksMobile"] = UNSET
+    web: Union[Unset, "NewsContributorLinksWeb"] = UNSET
+    mobile: Union[Unset, "NewsContributorLinksMobile"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -46,31 +46,31 @@ class CategoryContributorLinks:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.category_contributor_links_mobile import CategoryContributorLinksMobile
-        from ..models.category_contributor_links_web import CategoryContributorLinksWeb
+        from ..models.news_contributor_links_mobile import NewsContributorLinksMobile
+        from ..models.news_contributor_links_web import NewsContributorLinksWeb
 
         d = src_dict.copy()
         _web = d.pop("web", UNSET)
-        web: Union[Unset, CategoryContributorLinksWeb]
+        web: Union[Unset, NewsContributorLinksWeb]
         if isinstance(_web, Unset):
             web = UNSET
         else:
-            web = CategoryContributorLinksWeb.from_dict(_web)
+            web = NewsContributorLinksWeb.from_dict(_web)
 
         _mobile = d.pop("mobile", UNSET)
-        mobile: Union[Unset, CategoryContributorLinksMobile]
+        mobile: Union[Unset, NewsContributorLinksMobile]
         if isinstance(_mobile, Unset):
             mobile = UNSET
         else:
-            mobile = CategoryContributorLinksMobile.from_dict(_mobile)
+            mobile = NewsContributorLinksMobile.from_dict(_mobile)
 
-        category_contributor_links = cls(
+        news_contributor_links = cls(
             web=web,
             mobile=mobile,
         )
 
-        category_contributor_links.additional_properties = d
-        return category_contributor_links
+        news_contributor_links.additional_properties = d
+        return news_contributor_links
 
     @property
     def additional_keys(self) -> List[str]:

@@ -4,25 +4,25 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.article import Article
-    from ..models.link import Link
+    from ..models.news_article import NewsArticle
+    from ..models.news_link import NewsLink
 
 
-T = TypeVar("T", bound="NewsResponse")
+T = TypeVar("T", bound="SportNewsAPISchema")
 
 
 @_attrs_define
-class NewsResponse:
+class SportNewsAPISchema:
     """
     Attributes:
         header (str): Header title for the news feed Example: NFL News.
-        articles (List['Article']):
-        link (Link):
+        articles (List['NewsArticle']):
+        link (NewsLink):
     """
 
     header: str
-    articles: List["Article"]
-    link: "Link"
+    articles: List["NewsArticle"]
+    link: "NewsLink"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -49,8 +49,8 @@ class NewsResponse:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.article import Article
-        from ..models.link import Link
+        from ..models.news_article import NewsArticle
+        from ..models.news_link import NewsLink
 
         d = src_dict.copy()
         header = d.pop("header")
@@ -58,20 +58,20 @@ class NewsResponse:
         articles = []
         _articles = d.pop("articles")
         for articles_item_data in _articles:
-            articles_item = Article.from_dict(articles_item_data)
+            articles_item = NewsArticle.from_dict(articles_item_data)
 
             articles.append(articles_item)
 
-        link = Link.from_dict(d.pop("link"))
+        link = NewsLink.from_dict(d.pop("link"))
 
-        news_response = cls(
+        sport_news_api_schema = cls(
             header=header,
             articles=articles,
             link=link,
         )
 
-        news_response.additional_properties = d
-        return news_response
+        sport_news_api_schema.additional_properties = d
+        return sport_news_api_schema
 
     @property
     def additional_keys(self) -> List[str]:

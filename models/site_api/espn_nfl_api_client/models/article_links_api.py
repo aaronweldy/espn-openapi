@@ -1,67 +1,58 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..types import UNSET, Unset
+
 if TYPE_CHECKING:
-    from ..models.athlete_links import AthleteLinks
+    from ..models.link import Link
 
 
-T = TypeVar("T", bound="Athlete")
+T = TypeVar("T", bound="ArticleLinksApi")
 
 
 @_attrs_define
-class Athlete:
+class ArticleLinksApi:
     """
     Attributes:
-        id (int): Athlete identifier Example: 15846.
-        description (str): Athlete name Example: John Jenkins.
-        links (AthleteLinks):
+        self_ (Union[Unset, Link]):
     """
 
-    id: int
-    description: str
-    links: "AthleteLinks"
+    self_: Union[Unset, "Link"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        id = self.id
-
-        description = self.description
-
-        links = self.links.to_dict()
+        self_: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.self_, Unset):
+            self_ = self.self_.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update(
-            {
-                "id": id,
-                "description": description,
-                "links": links,
-            }
-        )
+        field_dict.update({})
+        if self_ is not UNSET:
+            field_dict["self"] = self_
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_links import AthleteLinks
+        from ..models.link import Link
 
         d = src_dict.copy()
-        id = d.pop("id")
+        _self_ = d.pop("self", UNSET)
+        self_: Union[Unset, Link]
+        if isinstance(_self_, Unset):
+            self_ = UNSET
+        else:
+            self_ = Link.from_dict(_self_)
 
-        description = d.pop("description")
-
-        links = AthleteLinks.from_dict(d.pop("links"))
-
-        athlete = cls(
-            id=id,
-            description=description,
-            links=links,
+        article_links_api = cls(
+            self_=self_,
         )
 
-        athlete.additional_properties = d
-        return athlete
+        article_links_api.additional_properties = d
+        return article_links_api
 
     @property
     def additional_keys(self) -> List[str]:

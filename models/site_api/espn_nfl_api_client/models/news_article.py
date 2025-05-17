@@ -1,56 +1,57 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
-from ..models.article_type import ArticleType
+from ..models.news_article_type import NewsArticleType
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.article_image import ArticleImage
-    from ..models.article_links import ArticleLinks
-    from ..models.category import Category
+    from ..models.news_article_image import NewsArticleImage
+    from ..models.news_article_links import NewsArticleLinks
+    from ..models.news_category import NewsCategory
 
 
-T = TypeVar("T", bound="Article")
+T = TypeVar("T", bound="NewsArticle")
 
 
 @_attrs_define
-class Article:
+class NewsArticle:
     """
     Attributes:
         id (int): Unique identifier for the article Example: 45184227.
         now_id (str): ID used for the 'now' platform Example: 1-45184227.
         content_key (str): Content identification key Example: 45184227-1-5-1.
         data_source_identifier (str): Data source identifier Example: 7be1db4ba2243.
-        type (ArticleType): Type of article content Example: HeadlineNews.
+        type (NewsArticleType): Type of article content Example: HeadlineNews.
         headline (str): Article headline Example: Ravens sign veteran nose tackle John Jenkins.
         description (str): Brief summary of the article Example: The Ravens on Friday signed journeyman nose tackle John
             Jenkins, who most recently played two seasons for the Raiders..
         last_modified (datetime.datetime): Last time the article was modified Example: 2025-05-17T01:27:10Z.
         published (datetime.datetime): When the article was published Example: 2025-05-17T01:03:00Z.
-        images (List['ArticleImage']): Images associated with the article
-        categories (List['Category']): Categories the article belongs to
+        images (List['NewsArticleImage']): Images associated with the article
+        categories (List['NewsCategory']): Categories the article belongs to
         premium (bool): Whether the article is premium content
-        links (ArticleLinks):
-        byline (str): Author of the article Example: Jamison Hensley.
+        links (NewsArticleLinks):
+        byline (Union[Unset, str]): Author of the article Example: Jamison Hensley.
     """
 
     id: int
     now_id: str
     content_key: str
     data_source_identifier: str
-    type: ArticleType
+    type: NewsArticleType
     headline: str
     description: str
     last_modified: datetime.datetime
     published: datetime.datetime
-    images: List["ArticleImage"]
-    categories: List["Category"]
+    images: List["NewsArticleImage"]
+    categories: List["NewsCategory"]
     premium: bool
-    links: "ArticleLinks"
-    byline: str
+    links: "NewsArticleLinks"
+    byline: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -105,17 +106,18 @@ class Article:
                 "categories": categories,
                 "premium": premium,
                 "links": links,
-                "byline": byline,
             }
         )
+        if byline is not UNSET:
+            field_dict["byline"] = byline
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.article_image import ArticleImage
-        from ..models.article_links import ArticleLinks
-        from ..models.category import Category
+        from ..models.news_article_image import NewsArticleImage
+        from ..models.news_article_links import NewsArticleLinks
+        from ..models.news_category import NewsCategory
 
         d = src_dict.copy()
         id = d.pop("id")
@@ -126,7 +128,7 @@ class Article:
 
         data_source_identifier = d.pop("dataSourceIdentifier")
 
-        type = ArticleType(d.pop("type"))
+        type = NewsArticleType(d.pop("type"))
 
         headline = d.pop("headline")
 
@@ -139,24 +141,24 @@ class Article:
         images = []
         _images = d.pop("images")
         for images_item_data in _images:
-            images_item = ArticleImage.from_dict(images_item_data)
+            images_item = NewsArticleImage.from_dict(images_item_data)
 
             images.append(images_item)
 
         categories = []
         _categories = d.pop("categories")
         for categories_item_data in _categories:
-            categories_item = Category.from_dict(categories_item_data)
+            categories_item = NewsCategory.from_dict(categories_item_data)
 
             categories.append(categories_item)
 
         premium = d.pop("premium")
 
-        links = ArticleLinks.from_dict(d.pop("links"))
+        links = NewsArticleLinks.from_dict(d.pop("links"))
 
-        byline = d.pop("byline")
+        byline = d.pop("byline", UNSET)
 
-        article = cls(
+        news_article = cls(
             id=id,
             now_id=now_id,
             content_key=content_key,
@@ -173,8 +175,8 @@ class Article:
             byline=byline,
         )
 
-        article.additional_properties = d
-        return article
+        news_article.additional_properties = d
+        return news_article
 
     @property
     def additional_keys(self) -> List[str]:

@@ -4,40 +4,35 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.athlete_links import AthleteLinks
+    from ..models.web_mobile_links import WebMobileLinks
 
 
-T = TypeVar("T", bound="Athlete")
+T = TypeVar("T", bound="AthleteLinks")
 
 
 @_attrs_define
-class Athlete:
+class AthleteLinks:
     """
     Attributes:
-        id (int): Athlete identifier Example: 15846.
-        description (str): Athlete name Example: John Jenkins.
-        links (AthleteLinks):
+        web (WebMobileLinks):
+        mobile (WebMobileLinks):
     """
 
-    id: int
-    description: str
-    links: "AthleteLinks"
+    web: "WebMobileLinks"
+    mobile: "WebMobileLinks"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        id = self.id
+        web = self.web.to_dict()
 
-        description = self.description
-
-        links = self.links.to_dict()
+        mobile = self.mobile.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "id": id,
-                "description": description,
-                "links": links,
+                "web": web,
+                "mobile": mobile,
             }
         )
 
@@ -45,23 +40,20 @@ class Athlete:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_links import AthleteLinks
+        from ..models.web_mobile_links import WebMobileLinks
 
         d = src_dict.copy()
-        id = d.pop("id")
+        web = WebMobileLinks.from_dict(d.pop("web"))
 
-        description = d.pop("description")
+        mobile = WebMobileLinks.from_dict(d.pop("mobile"))
 
-        links = AthleteLinks.from_dict(d.pop("links"))
-
-        athlete = cls(
-            id=id,
-            description=description,
-            links=links,
+        athlete_links = cls(
+            web=web,
+            mobile=mobile,
         )
 
-        athlete.additional_properties = d
-        return athlete
+        athlete_links.additional_properties = d
+        return athlete_links
 
     @property
     def additional_keys(self) -> List[str]:

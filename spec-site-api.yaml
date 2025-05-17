@@ -201,20 +201,60 @@ paths:
           schema:
             type: integer
             example: 0
-        - name: type
-          in: query
-          required: false
-          description: Filter by article type (e.g., "Story", "HeadlineNews")
-          schema:
-            type: string
-            example: "Story"
       responses:
         '200':
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NewsResponse'
+                $ref: '#/components/schemas/SportNewsAPISchema'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/{sport}/{league}/news:
+    get:
+      summary: Get League News
+      description: Retrieve the latest news articles and headlines for a specified sport and league
+      operationId: getLeagueNews
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball)
+          schema:
+            type: string
+            example: "football"
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, mlb, nba)
+          schema:
+            type: string
+            example: "nfl"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of articles to return
+          schema:
+            type: integer
+            example: 10
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SportNewsAPISchema'
         '404':
           description: Not found
           content:
@@ -1555,39 +1595,6 @@ components:
           additionalProperties:
             type: string
 
-    Athlete:
-      type: object
-      properties:
-        id:
-          type: string
-        uid:
-          type: string
-        guid:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        fullName:
-          type: string
-        displayName:
-          type: string
-        shortName:
-          type: string
-        jersey:
-          type: string
-        position:
-          $ref: '#/components/schemas/Position'
-        headshot:
-          type: string
-          format: uri
-          description: URL to the athlete's headshot image
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/Link'
-        active:
-          type: boolean
 
     Position:
       type: object
@@ -1783,6 +1790,7 @@ components:
       required:
         - header
         - articles
+        - link
 
     Article:
       type: object
@@ -1790,217 +1798,663 @@ components:
         id:
           type: integer
           description: Unique identifier for the article
+          example: 45184227
         nowId:
           type: string
-          description: Alternative identifier
+          description: ID used for the 'now' platform
+          example: "1-45184227"
         contentKey:
           type: string
-          description: Content identifier key
+          description: Content identification key
+          example: "45184227-1-5-1"
         dataSourceIdentifier:
           type: string
           description: Data source identifier
-        headline:
-          type: string
-          description: Article headline/title
-        description:
-          type: string
-          description: Brief summary or description of the article
-        byline:
-          type: string
-          description: Author of the article
+          example: "7be1db4ba2243"
         type:
           type: string
-          description: Type of content (e.g., "Story", "HeadlineNews", "Video")
-        premium:
-          type: boolean
-          description: Whether the content is premium/subscription content
-        published:
+          description: Type of article content
+          example: "HeadlineNews"
+          enum: ["HeadlineNews", "Media", "Story"]
+        headline:
           type: string
-          format: date-time
-          description: When the article was first published
+          description: Article headline
+          example: "Ravens sign veteran nose tackle John Jenkins"
+        description:
+          type: string
+          description: Brief summary of the article
+          example: "The Ravens on Friday signed journeyman nose tackle John Jenkins, who most recently played two seasons for the Raiders."
         lastModified:
           type: string
           format: date-time
-          description: When the article was last modified
+          description: Last time the article was modified
+          example: "2025-05-17T01:27:10Z"
+        published:
+          type: string
+          format: date-time
+          description: When the article was published
+          example: "2025-05-17T01:03:00Z"
         images:
           type: array
+          description: Images associated with the article
           items:
             $ref: '#/components/schemas/ArticleImage'
-        links:
-          type: object
-          properties:
-            api:
-              $ref: '#/components/schemas/Link'
-            web:
-              $ref: '#/components/schemas/Link'
-            mobile:
-              $ref: '#/components/schemas/Link'
-            app:
-              type: object
-              properties:
-                sportscenter:
-                  $ref: '#/components/schemas/Link'
         categories:
           type: array
+          description: Categories the article belongs to
           items:
             $ref: '#/components/schemas/Category'
+        premium:
+          type: boolean
+          description: Whether the article is premium content
+          example: false
+        links:
+          $ref: '#/components/schemas/ArticleLinks'
+        byline:
+          type: string
+          description: Author of the article
+          example: "Jamison Hensley"
       required:
         - id
+        - nowId
+        - contentKey
+        - dataSourceIdentifier
+        - type
         - headline
         - description
+        - lastModified
         - published
+        - images
+        - categories
+        - premium
+        - links
+        - byline
 
     ArticleImage:
       type: object
       properties:
-        name:
-          type: string
-          description: Name of the image
-        type:
-          type: string
-          description: Type of image (e.g., "header", "Media")
-        url:
-          type: string
-          format: uri
-          description: URL to the image
-        width:
-          type: integer
-          description: Width of the image in pixels
-        height:
-          type: integer
-          description: Height of the image in pixels
-        id:
-          type: integer
-          description: Unique identifier for the image
         dataSourceIdentifier:
           type: string
-          description: Data source identifier
-        caption:
+          description: Data source identifier for the image
+          example: "3b206fdd0ebb6"
+        id:
+          type: integer
+          description: Image identifier
+          example: 45184155
+        type:
           type: string
-          description: Caption text for the image
+          description: Type of image
+          example: "header"
+        name:
+          type: string
+          description: Image name
+          example: "John Jenkins [600x400]"
         credit:
           type: string
-          description: Photo credit/attribution
+          description: Credit for the image
+          example: "Abbie Parr/AP"
+        height:
+          type: integer
+          description: Image height in pixels
+          example: 400
+        width:
+          type: integer
+          description: Image width in pixels
+          example: 600
+        url:
+          type: string
+          description: URL of the image
+          example: "https://a.espncdn.com/photo/2025/0517/r1494212_600x400_3-2.jpg"
+        caption:
+          type: string
+          description: Caption for the image
         alt:
           type: string
-          description: Alternative text
-      required:
-        - url
+          description: Alt text for the image
 
     Category:
       type: object
       properties:
         id:
           type: integer
-          description: Category ID
-        description:
-          type: string
-          description: Category name/description
+          description: Category identifier
+          example: 409224
         type:
           type: string
-          description: Category type (e.g., "athlete", "team", "league", "topic", "contributor")
-        sportId:
-          type: integer
-          description: ID of the sport if sports-related
-        leagueId:
-          type: integer
-          description: ID of the league if league-related
-        teamId:
-          type: integer
-          description: ID of the team if team-related
-        athleteId:
-          type: integer
-          description: ID of the athlete if athlete-related
-        topicId:
-          type: integer
-          description: ID of the topic if topic-related
+          description: Type of category
+          example: "topic"
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid"]
         guid:
           type: string
+          format: uuid
           description: Global unique identifier
+          example: "52313677-19f8-b106-ec91-d8d17e6087fe"
+        description:
+          type: string
+          description: Description of the category
+          example: "news"
+        sportId:
+          type: integer
+          description: Sport identifier
+          example: 28
+        topicId:
+          type: integer
+          description: Topic identifier
+          example: 781
         uid:
           type: string
-          description: Universal identifier
+          description: Unique identifier with format
+          example: "s:20~l:28~a:15846"
+        athleteId:
+          type: integer
+          description: Athlete identifier
+          example: 15846
+        athlete:
+          $ref: '#/components/schemas/Athlete'
+        teamId:
+          type: integer
+          description: Team identifier
+          example: 33
+        team:
+          $ref: '#/components/schemas/Team'
         slug:
           type: string
           description: URL slug
+          example: "jamison-hensley"
         contributor:
-          type: object
-          properties:
-            id:
-              type: integer
-            description:
-              type: string
-            links:
-              type: object
-              properties:
-                web:
-                  type: object
-                mobile:
-                  type: object
-        athlete:
-          type: object
-          properties:
-            id:
-              type: integer
-            description:
-              type: string
-            links:
-              type: object
-              properties:
-                web:
-                  type: object
-                  properties:
-                    athletes:
-                      $ref: '#/components/schemas/Link'
-                mobile:
-                  type: object
-                  properties:
-                    athletes:
-                      $ref: '#/components/schemas/Link'
-        team:
-          type: object
-          properties:
-            id:
-              type: integer
-            description:
-              type: string
-            links:
-              type: object
-              properties:
-                web:
-                  type: object
-                  properties:
-                    teams:
-                      $ref: '#/components/schemas/Link'
-                mobile:
-                  type: object
-                  properties:
-                    teams:
-                      $ref: '#/components/schemas/Link'
+          $ref: '#/components/schemas/Contributor'
+        leagueId:
+          type: integer
+          description: League identifier
+          example: 28
         league:
-          type: object
-          properties:
-            id:
-              type: integer
-            description:
-              type: string
-            abbreviation:
-              type: string
-            links:
-              type: object
-              properties:
-                web:
-                  type: object
-                  properties:
-                    leagues:
-                      $ref: '#/components/schemas/Link'
-                mobile:
-                  type: object
-                  properties:
-                    leagues:
-                      $ref: '#/components/schemas/Link'
+          $ref: '#/components/schemas/League'
       required:
         - type
+        - guid
+
+    Athlete:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Athlete identifier
+          example: 15846
+        description:
+          type: string
+          description: Athlete name
+          example: "John Jenkins"
+        links:
+          $ref: '#/components/schemas/AthleteLinks'
+      required:
+        - id
+        - description
+        - links
+
+    AthleteLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/WebMobileLinks'
+        mobile:
+          $ref: '#/components/schemas/WebMobileLinks'
+      required:
+        - web
+        - mobile
+
+    WebMobileLinks:
+      type: object
+      properties:
+        athletes:
+          $ref: '#/components/schemas/Link'
+        teams:
+          $ref: '#/components/schemas/Link'
+        leagues:
+          $ref: '#/components/schemas/Link'
+
+    Contributor:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Contributor identifier
+          example: 2078
+        description:
+          type: string
+          description: Contributor name
+          example: "Jamison Hensley"
+        links:
+          type: object
+          properties:
+            web:
+              type: object
+            mobile:
+              type: object
+      required:
+        - id
+        - description
+        - links
+
+    LeagueLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/WebMobileLinks'
+        mobile:
+          $ref: '#/components/schemas/WebMobileLinks'
+      required:
+        - web
+        - mobile
+
+    ArticleLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/ArticleLink'
+        mobile:
+          $ref: '#/components/schemas/ArticleLink'
+        api:
+          type: object
+          properties:
+            self:
+              $ref: '#/components/schemas/Link'
+        app:
+          type: object
+          properties:
+            sportscenter:
+              $ref: '#/components/schemas/Link'
+      required:
+        - web
+        - mobile
+        - api
+        - app
+
+    ArticleLink:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URL for the article
+          example: "https://www.espn.com/nfl/story/_/id/45184227/baltimore-ravens-sign-veteran-nose-tackle-john-jenkins"
+      required:
+        - href
+
+    NewsArticle:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the article
+          example: 45184227
+        nowId:
+          type: string
+          description: ID used for the 'now' platform
+          example: "1-45184227"
+        contentKey:
+          type: string
+          description: Content identification key
+          example: "45184227-1-5-1"
+        dataSourceIdentifier:
+          type: string
+          description: Data source identifier
+          example: "7be1db4ba2243"
+        type:
+          type: string
+          description: Type of article content
+          example: "HeadlineNews"
+          enum: ["HeadlineNews", "Media", "Story"]
+        headline:
+          type: string
+          description: Article headline
+          example: "Ravens sign veteran nose tackle John Jenkins"
+        description:
+          type: string
+          description: Brief summary of the article
+          example: "The Ravens on Friday signed journeyman nose tackle John Jenkins, who most recently played two seasons for the Raiders."
+        lastModified:
+          type: string
+          format: date-time
+          description: Last time the article was modified
+          example: "2025-05-17T01:27:10Z"
+        published:
+          type: string
+          format: date-time
+          description: When the article was published
+          example: "2025-05-17T01:03:00Z"
+        images:
+          type: array
+          description: Images associated with the article
+          items:
+            $ref: '#/components/schemas/NewsArticleImage'
+        categories:
+          type: array
+          description: Categories the article belongs to
+          items:
+            $ref: '#/components/schemas/NewsCategory'
+        premium:
+          type: boolean
+          description: Whether the article is premium content
+          example: false
+        links:
+          $ref: '#/components/schemas/NewsArticleLinks'
+        byline:
+          type: string
+          description: Author of the article
+          example: "Jamison Hensley"
+      required:
+        - id
+        - nowId
+        - contentKey
+        - dataSourceIdentifier
+        - type
+        - headline
+        - description
+        - lastModified
+        - published
+        - images
+        - categories
+        - premium
+        - links
+
+    NewsArticleImage:
+      type: object
+      properties:
+        dataSourceIdentifier:
+          type: string
+          description: Data source identifier for the image
+          example: "3b206fdd0ebb6"
+        id:
+          type: integer
+          description: Image identifier
+          example: 45184155
+        type:
+          type: string
+          description: Type of image
+          example: "header"
+        name:
+          type: string
+          description: Image name
+          example: "John Jenkins [600x400]"
+        credit:
+          type: string
+          description: Credit for the image
+          example: "Abbie Parr/AP"
+        height:
+          type: integer
+          description: Image height in pixels
+          example: 400
+        width:
+          type: integer
+          description: Image width in pixels
+          example: 600
+        url:
+          type: string
+          description: URL of the image
+          example: "https://a.espncdn.com/photo/2025/0517/r1494212_600x400_3-2.jpg"
+        caption:
+          type: string
+          description: Caption for the image
+        alt:
+          type: string
+          description: Alt text for the image
+
+    NewsCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Category identifier
+          example: 409224
+        type:
+          type: string
+          description: Type of category
+          example: "topic"
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid"]
+        guid:
+          type: string
+          format: uuid
+          description: Global unique identifier
+          example: "52313677-19f8-b106-ec91-d8d17e6087fe"
+        description:
+          type: string
+          description: Description of the category
+          example: "news"
+        sportId:
+          type: integer
+          description: Sport identifier
+          example: 28
+        topicId:
+          type: integer
+          description: Topic identifier
+          example: 781
+        uid:
+          type: string
+          description: Unique identifier with format
+          example: "s:20~l:28~a:15846"
+        athleteId:
+          type: integer
+          description: Athlete identifier
+          example: 15846
+        athlete:
+          $ref: '#/components/schemas/NewsAthlete'
+        teamId:
+          type: integer
+          description: Team identifier
+          example: 33
+        team:
+          $ref: '#/components/schemas/NewsTeam'
+        slug:
+          type: string
+          description: URL slug
+          example: "jamison-hensley"
+        contributor:
+          $ref: '#/components/schemas/NewsContributor'
+        leagueId:
+          type: integer
+          description: League identifier
+          example: 28
+        league:
+          $ref: '#/components/schemas/NewsLeague'
+      required:
+        - type
+        - guid
+
+    NewsAthlete:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Athlete identifier
+          example: 15846
+        description:
+          type: string
+          description: Athlete name
+          example: "John Jenkins"
+        links:
+          $ref: '#/components/schemas/NewsAthleteLinks'
+      required:
+        - id
+        - description
+        - links
+
+    NewsAthleteLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+        mobile:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+      required:
+        - web
+        - mobile
+
+    NewsWebMobileLinks:
+      type: object
+      properties:
+        athletes:
+          $ref: '#/components/schemas/NewsLinkItem'
+        teams:
+          $ref: '#/components/schemas/NewsLinkItem'
+        leagues:
+          $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsContributor:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Contributor identifier
+          example: 2078
+        description:
+          type: string
+          description: Contributor name
+          example: "Jamison Hensley"
+        links:
+          type: object
+          properties:
+            web:
+              type: object
+            mobile:
+              type: object
+      required:
+        - id
+        - description
+        - links
+
+    NewsTeam:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Team identifier
+          example: 33
+        description:
+          type: string
+          description: Team name
+          example: "Baltimore Ravens"
+        links:
+          $ref: '#/components/schemas/NewsTeamLinks'
+      required:
+        - id
+        - description
+        - links
+
+    NewsTeamLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+        mobile:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+      required:
+        - web
+        - mobile
+
+    NewsLeague:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: League identifier
+          example: 28
+        description:
+          type: string
+          description: League name
+          example: "NFL"
+        abbreviation:
+          type: string
+          description: League abbreviation
+          example: "NFL"
+        links:
+          $ref: '#/components/schemas/NewsLeagueLinks'
+      required:
+        - id
+        - description
+
+    NewsLeagueLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+        mobile:
+          $ref: '#/components/schemas/NewsWebMobileLinks'
+      required:
+        - web
+        - mobile
+
+    NewsArticleLinks:
+      type: object
+      properties:
+        web:
+          $ref: '#/components/schemas/NewsArticleLink'
+        mobile:
+          $ref: '#/components/schemas/NewsArticleLink'
+        api:
+          type: object
+          properties:
+            self:
+              $ref: '#/components/schemas/NewsLinkItem'
+        app:
+          type: object
+          properties:
+            sportscenter:
+              $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsArticleLink:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URL for the article
+          example: "https://www.espn.com/nfl/story/_/id/45184227/baltimore-ravens-sign-veteran-nose-tackle-john-jenkins"
+      required:
+        - href
+
+    NewsLink:
+      type: object
+      properties:
+        language:
+          type: string
+          description: Language of the content
+          example: "en"
+        rel:
+          type: array
+          items:
+            type: string
+          description: Relationship types
+          example: ["index", "desktop", "league"]
+        href:
+          type: string
+          description: URL for the link
+          example: "https://www.espn.com/nfl/"
+        text:
+          type: string
+          description: Display text for the link
+          example: "All NFL News"
+        shortText:
+          type: string
+          description: Short display text for the link
+          example: "All News"
+        isExternal:
+          type: boolean
+          description: Whether the link is external
+          example: false
+        isPremium:
+          type: boolean
+          description: Whether the linked content is premium
+          example: false
+      required:
+        - href
+
+    NewsLinkItem:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URL for the link
+          example: "https://www.espn.com/nfl/player/_/id/15846/john-jenkins"
+      required:
+        - href
 
     StandingsResponse:
       type: object
@@ -2348,3 +2802,21 @@ components:
           description: College logos
           items:
             $ref: '#/components/schemas/Logo'
+
+    SportNewsAPISchema:
+      type: object
+      properties:
+        header:
+          type: string
+          example: "NFL News"
+          description: Header title for the news feed
+        articles:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsArticle'
+        link:
+          $ref: '#/components/schemas/NewsLink'
+      required:
+        - header
+        - articles
+        - link

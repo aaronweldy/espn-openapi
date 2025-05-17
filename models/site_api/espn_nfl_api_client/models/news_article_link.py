@@ -1,58 +1,46 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.link import Link
-
-
-T = TypeVar("T", bound="CategoryTeamLinksMobile")
+T = TypeVar("T", bound="NewsArticleLink")
 
 
 @_attrs_define
-class CategoryTeamLinksMobile:
+class NewsArticleLink:
     """
     Attributes:
-        teams (Union[Unset, Link]):
+        href (str): URL for the article Example: https://www.espn.com/nfl/story/_/id/45184227/baltimore-ravens-sign-
+            veteran-nose-tackle-john-jenkins.
     """
 
-    teams: Union[Unset, "Link"] = UNSET
+    href: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        teams: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.teams, Unset):
-            teams = self.teams.to_dict()
+        href = self.href
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if teams is not UNSET:
-            field_dict["teams"] = teams
+        field_dict.update(
+            {
+                "href": href,
+            }
+        )
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.link import Link
-
         d = src_dict.copy()
-        _teams = d.pop("teams", UNSET)
-        teams: Union[Unset, Link]
-        if isinstance(_teams, Unset):
-            teams = UNSET
-        else:
-            teams = Link.from_dict(_teams)
+        href = d.pop("href")
 
-        category_team_links_mobile = cls(
-            teams=teams,
+        news_article_link = cls(
+            href=href,
         )
 
-        category_team_links_mobile.additional_properties = d
-        return category_team_links_mobile
+        news_article_link.additional_properties = d
+        return news_article_link
 
     @property
     def additional_keys(self) -> List[str]:

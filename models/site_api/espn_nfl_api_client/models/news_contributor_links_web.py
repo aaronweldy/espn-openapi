@@ -3,11 +3,11 @@ from typing import Any, Dict, List, Type, TypeVar
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="CategoryContributorLinksMobile")
+T = TypeVar("T", bound="NewsContributorLinksWeb")
 
 
 @_attrs_define
-class CategoryContributorLinksMobile:
+class NewsContributorLinksWeb:
     """ """
 
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -21,10 +21,10 @@ class CategoryContributorLinksMobile:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        category_contributor_links_mobile = cls()
+        news_contributor_links_web = cls()
 
-        category_contributor_links_mobile.additional_properties = d
-        return category_contributor_links_mobile
+        news_contributor_links_web.additional_properties = d
+        return news_contributor_links_web
 
     @property
     def additional_keys(self) -> List[str]:

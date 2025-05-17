@@ -6,53 +6,53 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.link import Link
+    from ..models.news_link_item import NewsLinkItem
 
 
-T = TypeVar("T", bound="CategoryTeamLinksWeb")
+T = TypeVar("T", bound="NewsArticleLinksApi")
 
 
 @_attrs_define
-class CategoryTeamLinksWeb:
+class NewsArticleLinksApi:
     """
     Attributes:
-        teams (Union[Unset, Link]):
+        self_ (Union[Unset, NewsLinkItem]):
     """
 
-    teams: Union[Unset, "Link"] = UNSET
+    self_: Union[Unset, "NewsLinkItem"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        teams: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.teams, Unset):
-            teams = self.teams.to_dict()
+        self_: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.self_, Unset):
+            self_ = self.self_.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if teams is not UNSET:
-            field_dict["teams"] = teams
+        if self_ is not UNSET:
+            field_dict["self"] = self_
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.link import Link
+        from ..models.news_link_item import NewsLinkItem
 
         d = src_dict.copy()
-        _teams = d.pop("teams", UNSET)
-        teams: Union[Unset, Link]
-        if isinstance(_teams, Unset):
-            teams = UNSET
+        _self_ = d.pop("self", UNSET)
+        self_: Union[Unset, NewsLinkItem]
+        if isinstance(_self_, Unset):
+            self_ = UNSET
         else:
-            teams = Link.from_dict(_teams)
+            self_ = NewsLinkItem.from_dict(_self_)
 
-        category_team_links_web = cls(
-            teams=teams,
+        news_article_links_api = cls(
+            self_=self_,
         )
 
-        category_team_links_web.additional_properties = d
-        return category_team_links_web
+        news_article_links_api.additional_properties = d
+        return news_article_links_api
 
     @property
     def additional_keys(self) -> List[str]:
