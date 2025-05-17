@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,7 +29,7 @@ class Event:
         name (Union[Unset, str]):  Example: Kansas City Chiefs at Philadelphia Eagles.
         short_name (Union[Unset, str]):  Example: KC VS PHI.
         season (Union[Unset, EventSeason]):
-        week (Union[Unset, EventWeek]):
+        week (Union['EventWeek', Unset, int]):
         links (Union[Unset, List['Link']]):
         status (Union[Unset, GameStatus]):
     """
@@ -41,12 +41,14 @@ class Event:
     name: Union[Unset, str] = UNSET
     short_name: Union[Unset, str] = UNSET
     season: Union[Unset, "EventSeason"] = UNSET
-    week: Union[Unset, "EventWeek"] = UNSET
+    week: Union["EventWeek", Unset, int] = UNSET
     links: Union[Unset, List["Link"]] = UNSET
     status: Union[Unset, "GameStatus"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.event_week import EventWeek
+
         id = self.id
 
         date = self.date.isoformat()
@@ -66,9 +68,13 @@ class Event:
         if not isinstance(self.season, Unset):
             season = self.season.to_dict()
 
-        week: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.week, Unset):
+        week: Union[Dict[str, Any], Unset, int]
+        if isinstance(self.week, Unset):
+            week = UNSET
+        elif isinstance(self.week, EventWeek):
             week = self.week.to_dict()
+        else:
+            week = self.week
 
         links: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.links, Unset):
@@ -140,12 +146,20 @@ class Event:
         else:
             season = EventSeason.from_dict(_season)
 
-        _week = d.pop("week", UNSET)
-        week: Union[Unset, EventWeek]
-        if isinstance(_week, Unset):
-            week = UNSET
-        else:
-            week = EventWeek.from_dict(_week)
+        def _parse_week(data: object) -> Union["EventWeek", Unset, int]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                week_type_0 = EventWeek.from_dict(data)
+
+                return week_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["EventWeek", Unset, int], data)
+
+        week = _parse_week(d.pop("week", UNSET))
 
         links = []
         _links = d.pop("links", UNSET)

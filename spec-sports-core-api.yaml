@@ -600,6 +600,60 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}:
+    get:
+      summary: Get NFL Team Details for a Season
+      description: Retrieve detailed information for a specific NFL team in a given season (core API).
+      operationId: getNflSeasonTeam
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: team_id
+          in: path
+          required: true
+          description: The team ID (e.g., 12)
+          schema:
+            type: string
+            example: "12"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoreNflSeasonTeamResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1521,4 +1575,199 @@ components:
         - rel
         - athlete
         - statistics
-        - active 
+        - active
+
+    CoreNflSeasonTeamResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        guid:
+          type: string
+        uid:
+          type: string
+        alternateIds:
+          $ref: '#/components/schemas/AlternateIDS'
+        slug:
+          type: string
+        location:
+          type: string
+        name:
+          type: string
+        nickname:
+          type: string
+        abbreviation:
+          type: string
+        displayName:
+          type: string
+        shortDisplayName:
+          type: string
+        color:
+          type: string
+        alternateColor:
+          type: string
+        isActive:
+          type: boolean
+        isAllStar:
+          type: boolean
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+        record:
+          $ref: '#/components/schemas/Reference'
+        oddsRecords:
+          $ref: '#/components/schemas/Reference'
+        athletes:
+          $ref: '#/components/schemas/Reference'
+        venue:
+          $ref: '#/components/schemas/Venue'
+        groups:
+          $ref: '#/components/schemas/Reference'
+        ranks:
+          $ref: '#/components/schemas/Reference'
+        statistics:
+          $ref: '#/components/schemas/Reference'
+        leaders:
+          $ref: '#/components/schemas/Reference'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        injuries:
+          $ref: '#/components/schemas/Reference'
+        notes:
+          $ref: '#/components/schemas/Reference'
+        againstTheSpreadRecords:
+          $ref: '#/components/schemas/Reference'
+        franchise:
+          $ref: '#/components/schemas/Reference'
+        projection:
+          $ref: '#/components/schemas/Reference'
+        events:
+          $ref: '#/components/schemas/Reference'
+        transactions:
+          $ref: '#/components/schemas/Reference'
+        coaches:
+          $ref: '#/components/schemas/Reference'
+        attendance:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - $ref
+        - id
+        - guid
+        - uid
+        - alternateIds
+        - slug
+        - location
+        - name
+        - nickname
+        - abbreviation
+        - displayName
+        - shortDisplayName
+        - color
+        - alternateColor
+        - isActive
+        - isAllStar
+        - logos
+        - record
+        - oddsRecords
+        - athletes
+        - venue
+        - groups
+        - ranks
+        - statistics
+        - leaders
+        - links
+        - injuries
+        - notes
+        - againstTheSpreadRecords
+        - franchise
+        - projection
+        - events
+        - transactions
+        - coaches
+        - attendance
+
+    AlternateIDS:
+      type: object
+      properties:
+        sdr:
+          type: string
+      required:
+        - sdr
+
+    Venue:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        fullName:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        grass:
+          type: boolean
+        indoor:
+          type: boolean
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+      required:
+        - $ref
+        - id
+        - fullName
+        - address
+        - grass
+        - indoor
+        - images
+
+    Address:
+      type: object
+      properties:
+        city:
+          type: string
+        state:
+          type: string
+        zipCode:
+          type: string
+        country:
+          type: string
+      required:
+        - city
+        - state
+        - zipCode
+        - country
+
+    Logo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        width:
+          type: integer
+        height:
+          type: integer
+        alt:
+          type: string
+        rel:
+          type: array
+          items:
+            type: string
+        lastUpdated:
+          type: string
+          format: date-time
+      required:
+        - href
+        - width
+        - height
+        - alt
+        - rel 

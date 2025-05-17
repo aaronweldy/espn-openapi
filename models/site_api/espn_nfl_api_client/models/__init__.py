@@ -68,6 +68,7 @@ from .league_season import LeagueSeason
 from .linescore import Linescore
 from .link import Link
 from .logo import Logo
+from .monday_night_football_response import MondayNightFootballResponse
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
 from .news_article_link import NewsArticleLink
@@ -125,6 +126,7 @@ from .statistic import Statistic
 from .statistic_entry import StatisticEntry
 from .status_type import StatusType
 from .status_type_state import StatusTypeState
+from .sunday_night_football_response import SundayNightFootballResponse
 from .team import Team
 from .team_detail import TeamDetail
 from .team_details_full import TeamDetailsFull
@@ -143,6 +145,7 @@ from .team_record_stat import TeamRecordStat
 from .team_roster_response import TeamRosterResponse
 from .team_venue import TeamVenue
 from .teams_list_response import TeamsListResponse
+from .thursday_night_football_response import ThursdayNightFootballResponse
 from .venue import Venue
 from .venue_image import VenueImage
 from .weather import Weather
@@ -218,6 +221,7 @@ __all__ = (
     "Linescore",
     "Link",
     "Logo",
+    "MondayNightFootballResponse",
     "NewsArticle",
     "NewsArticleImage",
     "NewsArticleLink",
@@ -275,6 +279,7 @@ __all__ = (
     "StatisticEntry",
     "StatusType",
     "StatusTypeState",
+    "SundayNightFootballResponse",
     "Team",
     "TeamDetail",
     "TeamDetailsFull",
@@ -293,6 +298,7 @@ __all__ = (
     "TeamRosterResponse",
     "TeamsListResponse",
     "TeamVenue",
+    "ThursdayNightFootballResponse",
     "Venue",
     "VenueImage",
     "Weather",

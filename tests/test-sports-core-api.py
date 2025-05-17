@@ -49,6 +49,12 @@ from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_categ
 from models.sports_core_api.espn_sports_core_api_client.models.nfl_leader import (
     NflLeader,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_season_team import (
+    sync as get_nfl_season_team,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.core_nfl_season_team_response import (
+    CoreNflSeasonTeamResponse,
+)
 
 
 # Example athlete ID for testing
@@ -761,6 +767,20 @@ def test_nfl_league_leaders(limit: int = 5):
     print(f"    Statistics ref: {first_leader.statistics.ref}")
 
 
+def test_nfl_season_team(year: int = 2024, team_id: str = "12"):
+    """Test the NFL season team endpoint for a specific team and year."""
+    client = Client(base_url="https://sports.core.api.espn.com")
+    data = get_nfl_season_team(year=year, team_id=team_id, client=client)
+    assert isinstance(data, CoreNflSeasonTeamResponse), (
+        f"Unexpected response type: {type(data)}"
+    )
+    print(f"Team: {data.display_name} ({data.abbreviation})")
+    print(f"Location: {data.location}")
+    print(f"Venue: {data.venue.full_name if data.venue else 'N/A'}")
+    print(f"Active: {data.is_active}")
+    print(f"Logos: {[logo.href for logo in data.logos]}")
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -805,6 +825,9 @@ def main():
 
     # Test NFL league leaders endpoint
     test_nfl_league_leaders()
+
+    # Test NFL season team endpoint
+    test_nfl_season_team()
 
     # Summary
     print("\n===== Test Results Summary =====")
