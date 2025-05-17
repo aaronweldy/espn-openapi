@@ -58,6 +58,15 @@ from models.sports_core_api.espn_sports_core_api_client.models.core_nfl_season_t
 from models.sports_core_api.espn_sports_core_api_client.models.nfl_athlete_injury import (
     NflAthleteInjury,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_season_type_leaders import (
+    sync as get_nfl_season_type_leaders,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_draft import (
+    sync as get_nfl_draft,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.nfl_draft_response import (
+    NflDraftResponse,
+)
 
 
 # Example athlete ID for testing
@@ -763,9 +772,7 @@ def test_nfl_league_leaders(limit: int = 5):
     assert first_cat.leaders, "No leaders in first category"
     first_leader = first_cat.leaders[0]
     assert isinstance(first_leader, NflLeader), "First leader is not NflLeader"
-    print(
-        f"    Leader: {first_leader.display_value} ({first_leader.value}) - Active: {first_leader.active}"
-    )
+    print(f"    Leader: {first_leader.display_value} ({first_leader.value})")
     print(f"    Athlete ref: {first_leader.athlete.ref}")
     print(f"    Statistics ref: {first_leader.statistics.ref}")
 
@@ -836,6 +843,54 @@ def test_nfl_team_injuries(team_id: str = "1"):
             print(f"  [Injury {i + 1}] Error: {e}")
 
 
+def test_nfl_season_type_leaders(year: int = 2023, seasontype: int = 2, limit: int = 5):
+    """Test the NFL season/type leaders endpoint and validate the response structure."""
+    client = Client(base_url="https://sports.core.api.espn.com")
+    data = get_nfl_season_type_leaders(
+        year=year, seasontype=seasontype, client=client, limit=limit
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_response import (
+        NflLeadersResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_category import (
+        NflLeadersCategory,
+    )
+
+    assert isinstance(data, NflLeadersResponse), (
+        f"Expected NflLeadersResponse, got {type(data)}"
+    )
+    print(
+        f"NFL Leaders (Season {year}, Type {seasontype}): {data.name} ({data.type}) - {len(data.categories)} categories"
+    )
+    assert data.categories, "No categories returned in leaders response"
+    first_cat = data.categories[0]
+    assert isinstance(first_cat, NflLeadersCategory), (
+        "First category is not NflLeadersCategory"
+    )
+    print(
+        f"  Category: {first_cat.display_name} ({first_cat.abbreviation}) - {len(first_cat.leaders)} leaders"
+    )
+    assert first_cat.leaders, "No leaders in first category"
+    first_leader = first_cat.leaders[0]
+    print(f"    Leader: {first_leader.display_value} ({first_leader.value})")
+
+
+def test_nfl_draft(year: int = 2023):
+    """Test the NFL Draft endpoint and validate the response structure."""
+    client = Client(base_url="https://sports.core.api.espn.com")
+    data = get_nfl_draft(year=year, client=client)
+    assert isinstance(data, NflDraftResponse), (
+        f"Expected NflDraftResponse, got {type(data)}"
+    )
+    print(f"NFL Draft {year}: {data.display_name} ({data.uid})")
+    # Print available fields for debugging
+    print(f"  Rounds: {hasattr(data, 'rounds')}")
+    print(f"  Athletes: {hasattr(data, 'athletes')}")
+    print(f"  Positions: {len(data.positions)}")
+    print(f"  Needs: {len(data.needs)}")
+    print(f"  Links: {len(data.links)}")
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -886,6 +941,12 @@ def main():
 
     # Test NFL team injuries endpoint
     test_nfl_team_injuries()
+
+    # Test NFL season/type leaders endpoint
+    test_nfl_season_type_leaders()
+
+    # Test NFL Draft endpoint
+    test_nfl_draft()
 
     # Summary
     print("\n===== Test Results Summary =====")

@@ -20,7 +20,8 @@ Your workflow should look like the following:
 5. Add definitions for those models, and run `make openapi` (potentially with a more specific command)
 6. Test the model definitions by making an API call to the new route using the generated Python models in a new test file. (run with `uv run espn-api/tests/test-api.py`). Make sure the fields are populated as expected. Use the GENERATED API CLIENt. Put tests in @tests. Use other tests as an example. 
 7. If anything goes wrong in your test, repeat steps 2-6 again.
-8. Once you have fully verified that the new generated types work, pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
+8. If you find an endpoint in a $ref param that is not in @CHECKLIST.md, add it to the list.
+9. Once you have fully verified that the new generated types work, check off the endpoint in @CHECKLIST.md, make a git commit with the changes, and then pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
 
 If you need to inspect JSON, use JQ. Read the JQ documentation from context7 if you need to.
 

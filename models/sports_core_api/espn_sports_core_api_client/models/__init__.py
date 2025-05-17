@@ -32,9 +32,32 @@ from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .link import Link
 from .logo import Logo
+from .nfl_athlete_eventlog_events import NflAthleteEventlogEvents
+from .nfl_athlete_eventlog_item import NflAthleteEventlogItem
+from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
+from .nfl_athlete_eventlog_response_teams import NflAthleteEventlogResponseTeams
+from .nfl_athlete_eventlog_team import NflAthleteEventlogTeam
+from .nfl_athlete_injury import NflAthleteInjury
+from .nfl_athlete_injury_athlete_type_1 import NflAthleteInjuryAthleteType1
+from .nfl_athlete_injury_source import NflAthleteInjurySource
+from .nfl_athlete_injury_team_type_1 import NflAthleteInjuryTeamType1
+from .nfl_athlete_injury_type import NflAthleteInjuryType
+from .nfl_draft_athlete import NflDraftAthlete
+from .nfl_draft_position import NflDraftPosition
+from .nfl_draft_position_parent import NflDraftPositionParent
+from .nfl_draft_response import NflDraftResponse
+from .nfl_draft_round import NflDraftRound
+from .nfl_draft_team import NflDraftTeam
+from .nfl_draft_team_need import NflDraftTeamNeed
 from .nfl_leader import NflLeader
 from .nfl_leaders_category import NflLeadersCategory
 from .nfl_leaders_response import NflLeadersResponse
+from .nfl_team_depthchart_athlete import NflTeamDepthchartAthlete
+from .nfl_team_depthchart_item import NflTeamDepthchartItem
+from .nfl_team_depthchart_item_positions import NflTeamDepthchartItemPositions
+from .nfl_team_depthchart_position import NflTeamDepthchartPosition
+from .nfl_team_depthchart_position_value import NflTeamDepthchartPositionValue
+from .nfl_team_depthchart_response import NflTeamDepthchartResponse
 from .paginated_reference_list_response import PaginatedReferenceListResponse
 from .play import Play
 from .play_clock import PlayClock
@@ -93,9 +116,32 @@ __all__ = (
     "GetLeagueSeasonWeeksSeasonType",
     "Link",
     "Logo",
+    "NflAthleteEventlogEvents",
+    "NflAthleteEventlogItem",
+    "NflAthleteEventlogResponse",
+    "NflAthleteEventlogResponseTeams",
+    "NflAthleteEventlogTeam",
+    "NflAthleteInjury",
+    "NflAthleteInjuryAthleteType1",
+    "NflAthleteInjurySource",
+    "NflAthleteInjuryTeamType1",
+    "NflAthleteInjuryType",
+    "NflDraftAthlete",
+    "NflDraftPosition",
+    "NflDraftPositionParent",
+    "NflDraftResponse",
+    "NflDraftRound",
+    "NflDraftTeam",
+    "NflDraftTeamNeed",
     "NflLeader",
     "NflLeadersCategory",
     "NflLeadersResponse",
+    "NflTeamDepthchartAthlete",
+    "NflTeamDepthchartItem",
+    "NflTeamDepthchartItemPositions",
+    "NflTeamDepthchartPosition",
+    "NflTeamDepthchartPositionValue",
+    "NflTeamDepthchartResponse",
     "PaginatedReferenceListResponse",
     "Play",
     "PlayClock",

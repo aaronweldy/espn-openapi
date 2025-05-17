@@ -600,6 +600,67 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/leaders:
+    get:
+      summary: Get NFL Leaders for a Season and Type
+      description: Retrieve league leaders for various statistical categories in the NFL for a specific season and season type (e.g., regular, postseason).
+      operationId: getNFLSeasonTypeLeaders
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: seasontype
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason)
+          schema:
+            type: integer
+            example: 2
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of leader entries to return per category
+          schema:
+            type: integer
+            example: 10
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflLeadersResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}:
     get:
       summary: Get NFL Team Details for a Season
@@ -688,6 +749,161 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaginatedReferenceListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/football/leagues/nfl/seasons/{year}/draft:
+    get:
+      summary: Get NFL Draft for a Season
+      description: Retrieve NFL Draft data for a specific season, including rounds, athletes, positions, and team needs.
+      operationId: getNflDraft
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflDraftResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}/depthcharts:
+    get:
+      summary: Get NFL Team Depth Chart
+      description: Retrieve the depth chart for a specific NFL team in a given season (core API).
+      operationId: getNflTeamDepthchart
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: team_id
+          in: path
+          required: true
+          description: The team ID (e.g., 2)
+          schema:
+            type: string
+            example: "2"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflTeamDepthchartResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog:
+    get:
+      summary: Get NFL Athlete Event Log
+      description: Retrieve the event log for a specific NFL athlete in a given season (core API).
+      operationId: getNflAthleteEventlog
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: athlete_id
+          in: path
+          required: true
+          description: The athlete ID (e.g., 3139477)
+          schema:
+            type: string
+            example: "3139477"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflAthleteEventlogResponse'
         '404':
           description: Not found
           content:
@@ -1613,16 +1829,14 @@ components:
           $ref: '#/components/schemas/Reference'
         statistics:
           $ref: '#/components/schemas/Reference'
-        active:
-          type: boolean
-          example: false
+        team:
+          $ref: '#/components/schemas/Reference'
       required:
         - displayValue
         - value
         - rel
         - athlete
         - statistics
-        - active
 
     CoreNflSeasonTeamResponse:
       type: object
@@ -1892,3 +2106,300 @@ components:
         - source
         - type
       description: Detailed NFL athlete injury object 
+
+    NflDraftResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        uid:
+          type: string
+        year:
+          type: integer
+        numberOfRounds:
+          type: integer
+        displayName:
+          type: string
+        shortDisplayName:
+          type: string
+        status:
+          $ref: '#/components/schemas/NflDraftRound'
+        athletes:
+          $ref: '#/components/schemas/NflDraftRound'
+        rounds:
+          $ref: '#/components/schemas/NflDraftRound'
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftPosition'
+        needs:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftTeamNeed'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+      required:
+        - $ref
+        - uid
+        - year
+        - numberOfRounds
+        - displayName
+        - shortDisplayName
+        - status
+        - athletes
+        - rounds
+        - positions
+        - needs
+        - links
+
+    NflDraftRound:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref
+
+    NflDraftTeam:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref
+
+    NflDraftAthlete:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref
+
+    NflDraftPosition:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        leaf:
+          type: boolean
+        parent:
+          $ref: '#/components/schemas/NflDraftPositionParent'
+      required:
+        - $ref
+        - id
+        - name
+        - displayName
+        - abbreviation
+        - leaf
+        - parent
+
+    NflDraftPositionParent:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref
+
+    NflDraftTeamNeed:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/NflDraftTeam'
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftPosition'
+      required:
+        - team
+        - positions
+
+    NflTeamDepthchartResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflTeamDepthchartItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    NflTeamDepthchartItem:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        positions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/NflTeamDepthchartPositionValue'
+      required:
+        - id
+        - name
+        - positions
+
+    NflTeamDepthchartPositionValue:
+      type: object
+      properties:
+        position:
+          $ref: '#/components/schemas/NflTeamDepthchartPosition'
+        athletes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflTeamDepthchartAthlete'
+      required:
+        - position
+        - athletes
+
+    NflTeamDepthchartAthlete:
+      type: object
+      properties:
+        slot:
+          type: integer
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the athlete object
+        rank:
+          type: integer
+      required:
+        - slot
+        - athlete
+        - rank
+
+    NflTeamDepthchartPosition:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        leaf:
+          type: boolean
+        parent:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the parent position object
+      required:
+        - $ref
+        - id
+        - name
+        - displayName
+        - abbreviation
+        - leaf
+        - parent
+
+    NflAthleteEventlogResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        teams:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/NflAthleteEventlogTeam'
+        events:
+          $ref: '#/components/schemas/NflAthleteEventlogEvents'
+      required:
+        - $ref
+        - teams
+        - events
+
+    NflAthleteEventlogTeam:
+      type: object
+      properties:
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the team object
+        id:
+          type: string
+      required:
+        - team
+        - id
+
+    NflAthleteEventlogEvents:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflAthleteEventlogItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    NflAthleteEventlogItem:
+      type: object
+      properties:
+        event:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the event object
+        competition:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the competition object
+        statistics:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the statistics object
+        teamId:
+          type: string
+        played:
+          type: boolean
+      required:
+        - event
+        - competition
+        - teamId
+        - played 

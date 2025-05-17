@@ -1,0 +1,140 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflAthleteEventlogSchema",
+    "definitions": {
+        "12": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "id",
+                "team"
+            ],
+            "title": "12"
+        },
+        "NflAthleteEventlogSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "teams": {
+                    "$ref": "#/definitions/Teams"
+                },
+                "events": {
+                    "$ref": "#/definitions/Events"
+                }
+            },
+            "required": [
+                "$ref",
+                "events",
+                "teams"
+            ],
+            "title": "NflAthleteEventlogSchema"
+        },
+        "Events": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "Events"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "event": {
+                    "$ref": "#/definitions/Team"
+                },
+                "competition": {
+                    "$ref": "#/definitions/Team"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Team"
+                },
+                "teamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "played": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "competition",
+                "event",
+                "played",
+                "teamId"
+            ],
+            "title": "Item"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Team"
+        },
+        "Teams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "12": {
+                    "$ref": "#/definitions/12"
+                }
+            },
+            "required": [
+                "12"
+            ],
+            "title": "Teams"
+        }
+    }
+}

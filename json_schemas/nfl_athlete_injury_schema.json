@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflAthleteInjurySchema",
+    "definitions": {
+        "NflAthleteInjurySchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "longComment": {
+                    "type": "string"
+                },
+                "shortComment": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "team": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "source": {
+                    "$ref": "#/definitions/Source"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                }
+            },
+            "required": [
+                "$ref",
+                "athlete",
+                "date",
+                "id",
+                "longComment",
+                "shortComment",
+                "source",
+                "status",
+                "team",
+                "type"
+            ],
+            "title": "NflAthleteInjurySchema"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "state"
+            ],
+            "title": "Source"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "id",
+                "name"
+            ],
+            "title": "Type"
+        }
+    }
+}

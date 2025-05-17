@@ -1,7 +1,9 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, cast
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.reference import Reference
@@ -19,7 +21,7 @@ class NflLeader:
         rel (List[str]):
         athlete (Reference):
         statistics (Reference):
-        active (bool):
+        team (Union[Unset, Reference]):
     """
 
     display_value: str
@@ -27,7 +29,7 @@ class NflLeader:
     rel: List[str]
     athlete: "Reference"
     statistics: "Reference"
-    active: bool
+    team: Union[Unset, "Reference"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -41,7 +43,9 @@ class NflLeader:
 
         statistics = self.statistics.to_dict()
 
-        active = self.active
+        team: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.team, Unset):
+            team = self.team.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -52,9 +56,10 @@ class NflLeader:
                 "rel": rel,
                 "athlete": athlete,
                 "statistics": statistics,
-                "active": active,
             }
         )
+        if team is not UNSET:
+            field_dict["team"] = team
 
         return field_dict
 
@@ -73,7 +78,12 @@ class NflLeader:
 
         statistics = Reference.from_dict(d.pop("statistics"))
 
-        active = d.pop("active")
+        _team = d.pop("team", UNSET)
+        team: Union[Unset, Reference]
+        if isinstance(_team, Unset):
+            team = UNSET
+        else:
+            team = Reference.from_dict(_team)
 
         nfl_leader = cls(
             display_value=display_value,
@@ -81,7 +91,7 @@ class NflLeader:
             rel=rel,
             athlete=athlete,
             statistics=statistics,
-            active=active,
+            team=team,
         )
 
         nfl_leader.additional_properties = d

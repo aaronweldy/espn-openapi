@@ -1,0 +1,163 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflTeamDepthchartSchema",
+    "definitions": {
+        "NflTeamDepthchartSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "NflTeamDepthchartSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "positions": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PositionValue"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "positions"
+            ],
+            "title": "Item"
+        },
+        "PositionValue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "position": {
+                    "$ref": "#/definitions/PositionPosition"
+                },
+                "athletes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Athlete"
+                    }
+                }
+            },
+            "required": [
+                "athletes",
+                "position"
+            ],
+            "title": "PositionValue"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "slot": {
+                    "type": "integer"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Parent"
+                },
+                "rank": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "athlete",
+                "rank",
+                "slot"
+            ],
+            "title": "Athlete"
+        },
+        "Parent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Parent"
+        },
+        "PositionPosition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/Parent"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name",
+                "parent"
+            ],
+            "title": "PositionPosition"
+        }
+    }
+}
