@@ -28,6 +28,9 @@ from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .link import Link
+from .nfl_leader import NflLeader
+from .nfl_leaders_category import NflLeadersCategory
+from .nfl_leaders_response import NflLeadersResponse
 from .paginated_reference_list_response import PaginatedReferenceListResponse
 from .play import Play
 from .play_clock import PlayClock
@@ -81,6 +84,9 @@ __all__ = (
     "EventReference",
     "GetLeagueSeasonWeeksSeasonType",
     "Link",
+    "NflLeader",
+    "NflLeadersCategory",
+    "NflLeadersResponse",
     "PaginatedReferenceListResponse",
     "Play",
     "PlayClock",

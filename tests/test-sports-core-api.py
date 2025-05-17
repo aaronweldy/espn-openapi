@@ -37,6 +37,18 @@ from models.sports_core_api.espn_sports_core_api_client.models.reference import 
     Reference,
 )
 from models.sports_core_api.espn_sports_core_api_client.types import UNSET
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_leaders import (
+    sync as get_nfl_leaders,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_response import (
+    NflLeadersResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_category import (
+    NflLeadersCategory,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.nfl_leader import (
+    NflLeader,
+)
 
 
 # Example athlete ID for testing
@@ -723,6 +735,32 @@ def test_league_event_details(
     )
 
 
+def test_nfl_league_leaders(limit: int = 5):
+    """Test the NFL league leaders endpoint and validate the response structure."""
+    client = Client(base_url="https://sports.core.api.espn.com")
+    data = get_nfl_leaders(client=client, limit=limit)
+    assert isinstance(data, NflLeadersResponse), (
+        f"Expected NflLeadersResponse, got {type(data)}"
+    )
+    print(f"NFL Leaders: {data.name} ({data.type}) - {len(data.categories)} categories")
+    assert data.categories, "No categories returned in leaders response"
+    first_cat = data.categories[0]
+    assert isinstance(first_cat, NflLeadersCategory), (
+        "First category is not NflLeadersCategory"
+    )
+    print(
+        f"  Category: {first_cat.display_name} ({first_cat.abbreviation}) - {len(first_cat.leaders)} leaders"
+    )
+    assert first_cat.leaders, "No leaders in first category"
+    first_leader = first_cat.leaders[0]
+    assert isinstance(first_leader, NflLeader), "First leader is not NflLeader"
+    print(
+        f"    Leader: {first_leader.display_value} ({first_leader.value}) - Active: {first_leader.active}"
+    )
+    print(f"    Athlete ref: {first_leader.athlete.ref}")
+    print(f"    Statistics ref: {first_leader.statistics.ref}")
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -764,6 +802,9 @@ def main():
 
     # Test league event details endpoint
     test_league_event_details()
+
+    # Test NFL league leaders endpoint
+    test_nfl_league_leaders()
 
     # Summary
     print("\n===== Test Results Summary =====")

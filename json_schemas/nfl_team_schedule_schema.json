@@ -151,12 +151,6 @@
                 },
                 "status": {
                     "$ref": "#/definitions/Status"
-                },
-                "tickets": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Ticket"
-                    }
                 }
             },
             "required": [
@@ -229,25 +223,6 @@
             "properties": {
                 "shortName": {
                     "type": "string"
-                },
-                "logo": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "https"
-                    ],
-                    "qt-uri-extensions": [
-                        ".png"
-                    ]
-                },
-                "darkLogo": {
-                    "type": "string",
-                    "qt-uri-protocols": [
-                        "https"
-                    ],
-                    "qt-uri-extensions": [
-                        ".png"
-                    ]
                 }
             },
             "required": [
@@ -282,7 +257,7 @@
                     "format": "integer"
                 },
                 "type": {
-                    "$ref": "#/definitions/CompetitorType"
+                    "$ref": "#/definitions/TypeElement"
                 },
                 "order": {
                     "type": "integer"
@@ -290,18 +265,200 @@
                 "homeAway": {
                     "$ref": "#/definitions/HomeAway"
                 },
+                "winner": {
+                    "type": "boolean"
+                },
                 "team": {
                     "$ref": "#/definitions/CompetitorTeam"
+                },
+                "score": {
+                    "$ref": "#/definitions/Score"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CompetitorLeader"
+                    }
+                },
+                "record": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Record"
+                    }
                 }
             },
             "required": [
                 "homeAway",
                 "id",
                 "order",
+                "record",
+                "score",
                 "team",
-                "type"
+                "type",
+                "winner"
             ],
             "title": "Competitor"
+        },
+        "CompetitorLeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/LeaderName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/LeaderDisplayName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/LeaderAbbreviation"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LeaderLeader"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "leaders",
+                "name"
+            ],
+            "title": "CompetitorLeader"
+        },
+        "LeaderLeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayValue": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                }
+            },
+            "required": [
+                "athlete",
+                "displayValue",
+                "value"
+            ],
+            "title": "LeaderLeader"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AthleteLink"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "id",
+                "lastName",
+                "links",
+                "shortName"
+            ],
+            "title": "Athlete"
+        },
+        "AthleteLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleRel"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "href",
+                "rel"
+            ],
+            "title": "AthleteLink"
+        },
+        "Record": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/RecordAbbreviation"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/RecordDisplayName"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/ShortDisplayName"
+                },
+                "description": {
+                    "$ref": "#/definitions/RecordDescription"
+                },
+                "type": {
+                    "$ref": "#/definitions/RecordType"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "displayName",
+                "displayValue",
+                "id",
+                "shortDisplayName",
+                "type"
+            ],
+            "title": "Record"
+        },
+        "Score": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "displayValue",
+                "value"
+            ],
+            "title": "Score"
         },
         "CompetitorTeam": {
             "type": "object",
@@ -358,7 +515,7 @@
                 "rel": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/CompetitorType"
+                        "$ref": "#/definitions/TypeElement"
                     }
                 },
                 "href": {
@@ -409,7 +566,7 @@
                     }
                 },
                 "lastUpdated": {
-                    "$ref": "#/definitions/LastUpdated"
+                    "type": "string"
                 }
             },
             "required": [
@@ -427,7 +584,7 @@
             "additionalProperties": false,
             "properties": {
                 "type": {
-                    "$ref": "#/definitions/NoteType"
+                    "$ref": "#/definitions/TypeEnum"
                 },
                 "headline": {
                     "type": "string"
@@ -486,13 +643,13 @@
                     "type": "boolean"
                 },
                 "description": {
-                    "$ref": "#/definitions/Description"
+                    "$ref": "#/definitions/DetailEnum"
                 },
                 "detail": {
-                    "type": "string"
+                    "$ref": "#/definitions/DetailEnum"
                 },
                 "shortDetail": {
-                    "type": "string"
+                    "$ref": "#/definitions/DetailEnum"
                 }
             },
             "required": [
@@ -505,75 +662,6 @@
                 "state"
             ],
             "title": "StatusType"
-        },
-        "Ticket": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "integer"
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "maxPrice": {
-                    "type": "number"
-                },
-                "startingPrice": {
-                    "type": "number"
-                },
-                "numberAvailable": {
-                    "type": "integer"
-                },
-                "totalPostings": {
-                    "type": "integer"
-                },
-                "links": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/TicketLink"
-                    }
-                }
-            },
-            "required": [
-                "description",
-                "id",
-                "links",
-                "maxPrice",
-                "numberAvailable",
-                "startingPrice",
-                "summary",
-                "totalPostings"
-            ],
-            "title": "Ticket"
-        },
-        "TicketLink": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "rel": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/NoteType"
-                    }
-                },
-                "href": {
-                    "type": "string",
-                    "format": "uri",
-                    "qt-uri-protocols": [
-                        "https"
-                    ]
-                }
-            },
-            "required": [
-                "href",
-                "rel"
-            ],
-            "title": "TicketLink"
         },
         "CompetitionType": {
             "type": "object",
@@ -629,14 +717,14 @@
                 "city": {
                     "type": "string"
                 },
-                "country": {
-                    "$ref": "#/definitions/Country"
-                },
                 "state": {
                     "type": "string"
                 },
                 "zipCode": {
                     "type": "string"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country"
                 }
             },
             "required": [
@@ -655,12 +743,13 @@
                 "rel": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/LinkRel"
+                        "$ref": "#/definitions/TypeEnum"
                     }
                 },
                 "href": {
                     "type": "string",
                     "qt-uri-protocols": [
+                        "http",
                         "https"
                     ]
                 },
@@ -908,8 +997,8 @@
         "ShortName": {
             "type": "string",
             "enum": [
-                "Streaming",
-                "TV"
+                "TV",
+                "Streaming"
             ],
             "title": "ShortName"
         },
@@ -921,7 +1010,92 @@
             ],
             "title": "HomeAway"
         },
-        "CompetitorType": {
+        "LeaderAbbreviation": {
+            "type": "string",
+            "enum": [
+                "PYDS",
+                "RYDS",
+                "RECYDS"
+            ],
+            "title": "LeaderAbbreviation"
+        },
+        "LeaderDisplayName": {
+            "type": "string",
+            "enum": [
+                "Passing Leader",
+                "Rushing Leader",
+                "Receiving Leader"
+            ],
+            "title": "LeaderDisplayName"
+        },
+        "PurpleRel": {
+            "type": "string",
+            "enum": [
+                "playercard",
+                "desktop",
+                "athlete",
+                "stats",
+                "splits",
+                "gamelog",
+                "news",
+                "bio",
+                "overview"
+            ],
+            "title": "PurpleRel"
+        },
+        "LeaderName": {
+            "type": "string",
+            "enum": [
+                "passingLeader",
+                "rushingLeader",
+                "receivingLeader"
+            ],
+            "title": "LeaderName"
+        },
+        "RecordAbbreviation": {
+            "type": "string",
+            "enum": [
+                "Game"
+            ],
+            "title": "RecordAbbreviation"
+        },
+        "RecordDescription": {
+            "type": "string",
+            "enum": [
+                "Overall Record",
+                "Home Record",
+                "Away Record"
+            ],
+            "title": "RecordDescription"
+        },
+        "RecordDisplayName": {
+            "type": "string",
+            "enum": [
+                "Record Year To Date",
+                "Home",
+                "Road"
+            ],
+            "title": "RecordDisplayName"
+        },
+        "ShortDisplayName": {
+            "type": "string",
+            "enum": [
+                "YTD",
+                "HOME",
+                "AWAY"
+            ],
+            "title": "ShortDisplayName"
+        },
+        "RecordType": {
+            "type": "string",
+            "enum": [
+                "total",
+                "home",
+                "road"
+            ],
+            "title": "RecordType"
+        },
+        "TypeElement": {
             "type": "string",
             "enum": [
                 "clubhouse",
@@ -937,7 +1111,7 @@
                 "injuries",
                 "depthchart"
             ],
-            "title": "CompetitorType"
+            "title": "TypeElement"
         },
         "PurpleText": {
             "type": "string",
@@ -954,28 +1128,6 @@
                 "Depth Chart"
             ],
             "title": "PurpleText"
-        },
-        "LastUpdated": {
-            "type": "string",
-            "enum": [
-                "2024-06-25T18:52Z",
-                "2024-06-25T18:51Z",
-                "2024-12-03T20:48Z",
-                "2024-12-03T20:49Z",
-                "2024-06-25T18:55Z",
-                "2024-06-25T18:56Z",
-                "2024-12-03T20:47Z",
-                "2024-06-25T18:59Z",
-                "2024-06-25T18:44Z",
-                "2024-06-25T18:45Z",
-                "2024-06-25T18:50Z",
-                "2024-06-25T18:48Z",
-                "2024-09-22T22:51Z",
-                "2024-06-25T18:58Z",
-                "2024-06-25T18:47Z",
-                "2024-06-25T18:49Z"
-            ],
-            "title": "LastUpdated"
         },
         "LogoRel": {
             "type": "string",
@@ -1002,36 +1154,26 @@
             ],
             "title": "DisplayClock"
         },
-        "Description": {
+        "DetailEnum": {
             "type": "string",
             "enum": [
-                "Scheduled"
+                "Final"
             ],
-            "title": "Description"
+            "title": "DetailEnum"
         },
         "TypeName": {
             "type": "string",
             "enum": [
-                "STATUS_SCHEDULED"
+                "STATUS_FINAL"
             ],
             "title": "TypeName"
         },
         "State": {
             "type": "string",
             "enum": [
-                "pre"
+                "post"
             ],
             "title": "State"
-        },
-        "NoteType": {
-            "type": "string",
-            "enum": [
-                "tickets",
-                "desktop",
-                "event",
-                "venue"
-            ],
-            "title": "NoteType"
         },
         "TypeAbbreviation": {
             "type": "string",
@@ -1057,8 +1199,8 @@
         "Country": {
             "type": "string",
             "enum": [
-                "Brazil",
-                "USA"
+                "USA",
+                "Germany"
             ],
             "title": "Country"
         },
@@ -1069,7 +1211,7 @@
             ],
             "title": "Language"
         },
-        "LinkRel": {
+        "TypeEnum": {
             "type": "string",
             "enum": [
                 "summary",
@@ -1078,20 +1220,31 @@
                 "sportscenter",
                 "app",
                 "now",
-                "odds",
+                "teamstats",
+                "boxscore",
+                "gamecast",
                 "mobile",
+                "recap",
+                "pbp",
+                "videos",
+                "odds",
                 "watchespn"
             ],
-            "title": "LinkRel"
+            "title": "TypeEnum"
         },
         "ShortTextEnum": {
             "type": "string",
             "enum": [
                 "Summary",
                 "Now",
+                "Team Stats",
+                "Box Score",
+                "Gamecast",
+                "Recap",
+                "Play-by-Play",
+                "Videos",
                 "Odds",
-                "WatchESPN",
-                "Gamecast"
+                "WatchESPN"
             ],
             "title": "ShortTextEnum"
         },
