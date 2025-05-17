@@ -247,5 +247,75 @@ def main():
         print(f"✗ Error using generated client: {str(e)}")
 
 
+def test_monday_night_football():
+    from models.site_api.espn_nfl_api_client.api.default.get_monday_night_football import (
+        sync as mnf_sync,
+    )
+    from models.site_api.espn_nfl_api_client.models.monday_night_football_response import (
+        MondayNightFootballResponse,
+    )
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    response = mnf_sync(client=client)
+    assert isinstance(response, MondayNightFootballResponse)
+    assert response.leagues and response.season and response.events
+    print(
+        "\nMonday Night Football: ",
+        response.leagues[0].name,
+        "- Events:",
+        len(response.events),
+    )
+    if response.events:
+        print("First MNF Event:", response.events[0].name)
+
+
+def test_thursday_night_football():
+    from models.site_api.espn_nfl_api_client.api.default.get_thursday_night_football import (
+        sync as tnf_sync,
+    )
+    from models.site_api.espn_nfl_api_client.models.thursday_night_football_response import (
+        ThursdayNightFootballResponse,
+    )
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    response = tnf_sync(client=client)
+    assert isinstance(response, ThursdayNightFootballResponse)
+    assert response.leagues and response.season and response.events
+    print(
+        "\nThursday Night Football: ",
+        response.leagues[0].name,
+        "- Events:",
+        len(response.events),
+    )
+    if response.events:
+        print("First TNF Event:", response.events[0].name)
+
+
+def test_sunday_night_football():
+    from models.site_api.espn_nfl_api_client.api.default.get_sunday_night_football import (
+        sync as snf_sync,
+    )
+    from models.site_api.espn_nfl_api_client.models.sunday_night_football_response import (
+        SundayNightFootballResponse,
+    )
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    response = snf_sync(client=client)
+    assert isinstance(response, SundayNightFootballResponse)
+    assert response.leagues and response.season and response.events
+    print(
+        "\nSunday Night Football: ",
+        response.leagues[0].name,
+        "- Events:",
+        len(response.events),
+    )
+    if response.events:
+        print("First SNF Event:", response.events[0].name)
+
+
 if __name__ == "__main__":
     main()
+    print("\n--- Running Night Football Endpoint Tests ---")
+    test_monday_night_football()
+    test_thursday_night_football()
+    test_sunday_night_football()

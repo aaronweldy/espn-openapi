@@ -356,6 +356,45 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /mondaynightfootball:
+    get:
+      summary: Get Monday Night Football schedule and games
+      description: Retrieve the full Monday Night Football schedule and game details for the NFL season.
+      operationId: getMondayNightFootball
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MondayNightFootballResponse'
+
+  /thursdaynightfootball:
+    get:
+      summary: Get Thursday Night Football schedule and games
+      description: Retrieve the full Thursday Night Football schedule and game details for the NFL season.
+      operationId: getThursdayNightFootball
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThursdayNightFootballResponse'
+
+  /sundaynightfootball:
+    get:
+      summary: Get Sunday Night Football schedule and games
+      description: Retrieve the full Sunday Night Football schedule and game details for the NFL season.
+      operationId: getSundayNightFootball
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SundayNightFootballResponse'
+
 components:
   schemas:
     TeamsListResponse:
@@ -965,7 +1004,11 @@ components:
         season:
           $ref: '#/components/schemas/EventSeason'
         week:
-          $ref: '#/components/schemas/EventWeek'
+          oneOf:
+            - $ref: '#/components/schemas/EventWeek'
+            - type: integer
+              example: 1
+
         competitions:
           type: array
           items:
@@ -2893,3 +2936,57 @@ components:
         - requestedSeason
         - byeWeek
       description: NFL team schedule response, including all games for the team in the specified season.
+
+    MondayNightFootballResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+      required:
+        - leagues
+        - season
+        - events
+
+    ThursdayNightFootballResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+      required:
+        - leagues
+        - season
+        - events
+
+    SundayNightFootballResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+      required:
+        - leagues
+        - season
+        - events

@@ -31,10 +31,9 @@ site.api.espn.com/apis/site/v2
 [x] /sports/football/nfl/teams/{team_id}/roster - NFL Team Roster. Path Param: {team_id}. Query Params: enable=roster,projection,stats - Implemented (path refined)
 [x] /sports/football/nfl/standings - NFL Standings. Query Param: season - Implemented
 [x] /sports/football/nfl/teams/{team_id}/schedule - NFL Team Schedule. Path Param: {team_id}. Query Param: season
-[ ] /apis/site/v3/sports/football/nfl/leaders - NFL Leaders (Site API v3). Query Params: season, seasontype
-[ ] /apis/site/v2/mondaynightfootball - Specific Night Football
-[ ] /apis/site/v2/thursdaynightfootball - Specific Night Football
-[ ] /apis/site/v2/sundaynightfootball - Specific Night Football
+[x] /apis/site/v2/mondaynightfootball - Specific Night Football
+[x] /apis/site/v2/thursdaynightfootball - Specific Night Football
+[x] /apis/site/v2/sundaynightfootball - Specific Night Football
 cdn.espn.com
 [x] /core/nfl/scoreboard - NFL Scoreboard (CDN). Params: xhr=1, limit ✓
 [x] /core/nfl/schedule - NFL Schedule (CDN). Params: xhr=1, year, week ✓
