@@ -125,6 +125,58 @@ def test_nfl_news():
     return True
 
 
+def test_nfl_news_team_specific():
+    """Test retrieving NFL news filtered by team (Kansas City Chiefs, team=12)"""
+    print("Testing NFL News endpoint with team filter (team=12, Kansas City Chiefs)...")
+    limit = 5
+    team_id = 12
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    response = get_nfl_news(client=client, limit=limit, team=team_id)
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+
+    if isinstance(response, ErrorResponse):
+        print(f"Error: {response.parsed}")
+        return False
+
+    assert isinstance(response.parsed, SportNewsAPISchema)
+    news: SportNewsAPISchema = response.parsed
+
+    assert isinstance(news.header, str)
+    assert isinstance(news.articles, list)
+    assert len(news.articles) > 0
+    assert hasattr(news, "link")
+    assert hasattr(news.link, "href")
+
+    # Check that at least one article has a category with team id 12
+    found_team = False
+    for article in news.articles:
+        for cat in article.categories:
+            if hasattr(cat, "team") and cat.team and cat.team is not UNSET:
+                if hasattr(cat.team, "id") and cat.team.id == team_id:
+                    found_team = True
+                    break
+        if found_team:
+            break
+    assert found_team, (
+        "No article found with category for team id 12 (Kansas City Chiefs)"
+    )
+
+    # Print a summary of the first article for debugging
+    article = news.articles[0]
+    print("First article summary (team-specific):")
+    print(f"  Headline: {article.headline}")
+    print(f"  Description: {article.description}")
+    print(f"  Published: {article.published}")
+    print(f"  Images: {len(article.images)}")
+    print(f"  Categories: {len(article.categories)}")
+    print(f"  Links: web={getattr(article.links.web, 'href', None)}")
+
+    return True
+
+
 def test_generic_news_endpoint():
     """Test retrieving news from the generic sport/league endpoint"""
     # Skip this test for now
@@ -132,7 +184,7 @@ def test_generic_news_endpoint():
 
 
 if __name__ == "__main__":
-    tests = [test_nfl_news, test_generic_news_endpoint]
+    tests = [test_nfl_news, test_nfl_news_team_specific, test_generic_news_endpoint]
 
     success = True
     for test in tests:

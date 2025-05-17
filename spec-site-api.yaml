@@ -201,6 +201,13 @@ paths:
           schema:
             type: integer
             example: 0
+        - name: team
+          in: query
+          required: false
+          description: Filter news by a specific NFL team ID
+          schema:
+            type: integer
+            example: 12
       responses:
         '200':
           description: Successful response
@@ -1594,7 +1601,6 @@ components:
           type: object
           additionalProperties:
             type: string
-
 
     Position:
       type: object
