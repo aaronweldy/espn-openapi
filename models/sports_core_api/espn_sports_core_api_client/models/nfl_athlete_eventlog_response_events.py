@@ -4,28 +4,28 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.nfl_athlete_eventlog_item import NflAthleteEventlogItem
+    from ..models.nfl_athlete_eventlog_response_events_items_item import NflAthleteEventlogResponseEventsItemsItem
 
 
-T = TypeVar("T", bound="NflAthleteEventlogEvents")
+T = TypeVar("T", bound="NflAthleteEventlogResponseEvents")
 
 
 @_attrs_define
-class NflAthleteEventlogEvents:
+class NflAthleteEventlogResponseEvents:
     """
     Attributes:
         count (int):
         page_index (int):
         page_size (int):
         page_count (int):
-        items (List['NflAthleteEventlogItem']):
+        items (List['NflAthleteEventlogResponseEventsItemsItem']):
     """
 
     count: int
     page_index: int
     page_size: int
     page_count: int
-    items: List["NflAthleteEventlogItem"]
+    items: List["NflAthleteEventlogResponseEventsItemsItem"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -58,7 +58,7 @@ class NflAthleteEventlogEvents:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.nfl_athlete_eventlog_item import NflAthleteEventlogItem
+        from ..models.nfl_athlete_eventlog_response_events_items_item import NflAthleteEventlogResponseEventsItemsItem
 
         d = src_dict.copy()
         count = d.pop("count")
@@ -72,11 +72,11 @@ class NflAthleteEventlogEvents:
         items = []
         _items = d.pop("items")
         for items_item_data in _items:
-            items_item = NflAthleteEventlogItem.from_dict(items_item_data)
+            items_item = NflAthleteEventlogResponseEventsItemsItem.from_dict(items_item_data)
 
             items.append(items_item)
 
-        nfl_athlete_eventlog_events = cls(
+        nfl_athlete_eventlog_response_events = cls(
             count=count,
             page_index=page_index,
             page_size=page_size,
@@ -84,8 +84,8 @@ class NflAthleteEventlogEvents:
             items=items,
         )
 
-        nfl_athlete_eventlog_events.additional_properties = d
-        return nfl_athlete_eventlog_events
+        nfl_athlete_eventlog_response_events.additional_properties = d
+        return nfl_athlete_eventlog_response_events
 
     @property
     def additional_keys(self) -> List[str]:

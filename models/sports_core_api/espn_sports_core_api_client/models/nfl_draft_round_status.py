@@ -4,40 +4,35 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.reference import Reference
+    from ..models.nfl_draft_pick_status import NflDraftPickStatus
 
 
-T = TypeVar("T", bound="NflTeamDepthchartAthlete")
+T = TypeVar("T", bound="NflDraftRoundStatus")
 
 
 @_attrs_define
-class NflTeamDepthchartAthlete:
+class NflDraftRoundStatus:
     """
     Attributes:
-        rank (int):
-        slot (int):
-        athlete (Reference):
+        round_ (int):
+        type (NflDraftPickStatus):
     """
 
-    rank: int
-    slot: int
-    athlete: "Reference"
+    round_: int
+    type: "NflDraftPickStatus"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        rank = self.rank
+        round_ = self.round_
 
-        slot = self.slot
-
-        athlete = self.athlete.to_dict()
+        type = self.type.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "rank": rank,
-                "slot": slot,
-                "athlete": athlete,
+                "round": round_,
+                "type": type,
             }
         )
 
@@ -45,23 +40,20 @@ class NflTeamDepthchartAthlete:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.reference import Reference
+        from ..models.nfl_draft_pick_status import NflDraftPickStatus
 
         d = src_dict.copy()
-        rank = d.pop("rank")
+        round_ = d.pop("round")
 
-        slot = d.pop("slot")
+        type = NflDraftPickStatus.from_dict(d.pop("type"))
 
-        athlete = Reference.from_dict(d.pop("athlete"))
-
-        nfl_team_depthchart_athlete = cls(
-            rank=rank,
-            slot=slot,
-            athlete=athlete,
+        nfl_draft_round_status = cls(
+            round_=round_,
+            type=type,
         )
 
-        nfl_team_depthchart_athlete.additional_properties = d
-        return nfl_team_depthchart_athlete
+        nfl_draft_round_status.additional_properties = d
+        return nfl_draft_round_status
 
     @property
     def additional_keys(self) -> List[str]:

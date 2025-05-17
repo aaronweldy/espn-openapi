@@ -1,41 +1,33 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-if TYPE_CHECKING:
-    from ..models.reference import Reference
-
-
-T = TypeVar("T", bound="NflDraftPosition")
+T = TypeVar("T", bound="NflDraftAthleteAttribute")
 
 
 @_attrs_define
-class NflDraftPosition:
+class NflDraftAthleteAttribute:
     """
     Attributes:
-        ref (str):
-        id (str):
+        type (int):
         name (str):
         display_name (str):
         abbreviation (str):
-        leaf (bool):
-        parent (Reference):
+        value (float):
+        display_value (str):
     """
 
-    ref: str
-    id: str
+    type: int
     name: str
     display_name: str
     abbreviation: str
-    leaf: bool
-    parent: "Reference"
+    value: float
+    display_value: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        ref = self.ref
-
-        id = self.id
+        type = self.type
 
         name = self.name
 
@@ -43,21 +35,20 @@ class NflDraftPosition:
 
         abbreviation = self.abbreviation
 
-        leaf = self.leaf
+        value = self.value
 
-        parent = self.parent.to_dict()
+        display_value = self.display_value
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "$ref": ref,
-                "id": id,
+                "type": type,
                 "name": name,
                 "displayName": display_name,
                 "abbreviation": abbreviation,
-                "leaf": leaf,
-                "parent": parent,
+                "value": value,
+                "displayValue": display_value,
             }
         )
 
@@ -65,12 +56,8 @@ class NflDraftPosition:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.reference import Reference
-
         d = src_dict.copy()
-        ref = d.pop("$ref")
-
-        id = d.pop("id")
+        type = d.pop("type")
 
         name = d.pop("name")
 
@@ -78,22 +65,21 @@ class NflDraftPosition:
 
         abbreviation = d.pop("abbreviation")
 
-        leaf = d.pop("leaf")
+        value = d.pop("value")
 
-        parent = Reference.from_dict(d.pop("parent"))
+        display_value = d.pop("displayValue")
 
-        nfl_draft_position = cls(
-            ref=ref,
-            id=id,
+        nfl_draft_athlete_attribute = cls(
+            type=type,
             name=name,
             display_name=display_name,
             abbreviation=abbreviation,
-            leaf=leaf,
-            parent=parent,
+            value=value,
+            display_value=display_value,
         )
 
-        nfl_draft_position.additional_properties = d
-        return nfl_draft_position
+        nfl_draft_athlete_attribute.additional_properties = d
+        return nfl_draft_athlete_attribute
 
     @property
     def additional_keys(self) -> List[str]:

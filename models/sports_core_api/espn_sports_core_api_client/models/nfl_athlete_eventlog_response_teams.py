@@ -4,7 +4,9 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.nfl_athlete_eventlog_team import NflAthleteEventlogTeam
+    from ..models.nfl_athlete_eventlog_response_teams_additional_property import (
+        NflAthleteEventlogResponseTeamsAdditionalProperty,
+    )
 
 
 T = TypeVar("T", bound="NflAthleteEventlogResponseTeams")
@@ -14,7 +16,9 @@ T = TypeVar("T", bound="NflAthleteEventlogResponseTeams")
 class NflAthleteEventlogResponseTeams:
     """ """
 
-    additional_properties: Dict[str, "NflAthleteEventlogTeam"] = _attrs_field(init=False, factory=dict)
+    additional_properties: Dict[str, "NflAthleteEventlogResponseTeamsAdditionalProperty"] = _attrs_field(
+        init=False, factory=dict
+    )
 
     def to_dict(self) -> Dict[str, Any]:
         field_dict: Dict[str, Any] = {}
@@ -25,14 +29,16 @@ class NflAthleteEventlogResponseTeams:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.nfl_athlete_eventlog_team import NflAthleteEventlogTeam
+        from ..models.nfl_athlete_eventlog_response_teams_additional_property import (
+            NflAthleteEventlogResponseTeamsAdditionalProperty,
+        )
 
         d = src_dict.copy()
         nfl_athlete_eventlog_response_teams = cls()
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = NflAthleteEventlogTeam.from_dict(prop_dict)
+            additional_property = NflAthleteEventlogResponseTeamsAdditionalProperty.from_dict(prop_dict)
 
             additional_properties[prop_name] = additional_property
 
@@ -43,10 +49,10 @@ class NflAthleteEventlogResponseTeams:
     def additional_keys(self) -> List[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(self, key: str) -> "NflAthleteEventlogTeam":
+    def __getitem__(self, key: str) -> "NflAthleteEventlogResponseTeamsAdditionalProperty":
         return self.additional_properties[key]
 
-    def __setitem__(self, key: str, value: "NflAthleteEventlogTeam") -> None:
+    def __setitem__(self, key: str, value: "NflAthleteEventlogResponseTeamsAdditionalProperty") -> None:
         self.additional_properties[key] = value
 
     def __delitem__(self, key: str) -> None:

@@ -1,59 +1,73 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-if TYPE_CHECKING:
-    from ..models.reference import Reference
+from ..types import UNSET, Unset
 
-
-T = TypeVar("T", bound="NflAthleteEventlogTeam")
+T = TypeVar("T", bound="NflDraftAthleteAnalysis")
 
 
 @_attrs_define
-class NflAthleteEventlogTeam:
+class NflDraftAthleteAnalysis:
     """
     Attributes:
-        team (Reference):
         id (str):
+        type (str):
+        text (Union[Unset, str]):
+        grade (Union[Unset, int]):
     """
 
-    team: "Reference"
     id: str
+    type: str
+    text: Union[Unset, str] = UNSET
+    grade: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        team = self.team.to_dict()
-
         id = self.id
+
+        type = self.type
+
+        text = self.text
+
+        grade = self.grade
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "team": team,
                 "id": id,
+                "type": type,
             }
         )
+        if text is not UNSET:
+            field_dict["text"] = text
+        if grade is not UNSET:
+            field_dict["grade"] = grade
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.reference import Reference
-
         d = src_dict.copy()
-        team = Reference.from_dict(d.pop("team"))
-
         id = d.pop("id")
 
-        nfl_athlete_eventlog_team = cls(
-            team=team,
+        type = d.pop("type")
+
+        text = d.pop("text", UNSET)
+
+        grade = d.pop("grade", UNSET)
+
+        nfl_draft_athlete_analysis = cls(
             id=id,
+            type=type,
+            text=text,
+            grade=grade,
         )
 
-        nfl_athlete_eventlog_team.additional_properties = d
-        return nfl_athlete_eventlog_team
+        nfl_draft_athlete_analysis.additional_properties = d
+        return nfl_draft_athlete_analysis
 
     @property
     def additional_keys(self) -> List[str]:

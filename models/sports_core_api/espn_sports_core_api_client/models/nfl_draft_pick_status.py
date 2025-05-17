@@ -1,27 +1,27 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-if TYPE_CHECKING:
-    from ..models.nfl_team_depthchart_item_positions import NflTeamDepthchartItemPositions
+from ..types import UNSET, Unset
 
-
-T = TypeVar("T", bound="NflTeamDepthchartItem")
+T = TypeVar("T", bound="NflDraftPickStatus")
 
 
 @_attrs_define
-class NflTeamDepthchartItem:
+class NflDraftPickStatus:
     """
     Attributes:
-        id (str):
+        id (int):
         name (str):
-        positions (NflTeamDepthchartItemPositions):
+        description (str):
+        state (Union[None, Unset, str]):
     """
 
-    id: str
+    id: int
     name: str
-    positions: "NflTeamDepthchartItemPositions"
+    description: str
+    state: Union[None, Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -29,7 +29,13 @@ class NflTeamDepthchartItem:
 
         name = self.name
 
-        positions = self.positions.to_dict()
+        description = self.description
+
+        state: Union[None, Unset, str]
+        if isinstance(self.state, Unset):
+            state = UNSET
+        else:
+            state = self.state
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -37,31 +43,41 @@ class NflTeamDepthchartItem:
             {
                 "id": id,
                 "name": name,
-                "positions": positions,
+                "description": description,
             }
         )
+        if state is not UNSET:
+            field_dict["state"] = state
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.nfl_team_depthchart_item_positions import NflTeamDepthchartItemPositions
-
         d = src_dict.copy()
         id = d.pop("id")
 
         name = d.pop("name")
 
-        positions = NflTeamDepthchartItemPositions.from_dict(d.pop("positions"))
+        description = d.pop("description")
 
-        nfl_team_depthchart_item = cls(
+        def _parse_state(data: object) -> Union[None, Unset, str]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
+
+        state = _parse_state(d.pop("state", UNSET))
+
+        nfl_draft_pick_status = cls(
             id=id,
             name=name,
-            positions=positions,
+            description=description,
+            state=state,
         )
 
-        nfl_team_depthchart_item.additional_properties = d
-        return nfl_team_depthchart_item
+        nfl_draft_pick_status.additional_properties = d
+        return nfl_draft_pick_status
 
     @property
     def additional_keys(self) -> List[str]:

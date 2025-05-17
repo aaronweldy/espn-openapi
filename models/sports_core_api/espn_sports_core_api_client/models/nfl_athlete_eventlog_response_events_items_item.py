@@ -9,11 +9,11 @@ if TYPE_CHECKING:
     from ..models.reference import Reference
 
 
-T = TypeVar("T", bound="NflAthleteEventlogItem")
+T = TypeVar("T", bound="NflAthleteEventlogResponseEventsItemsItem")
 
 
 @_attrs_define
-class NflAthleteEventlogItem:
+class NflAthleteEventlogResponseEventsItemsItem:
     """
     Attributes:
         event (Reference):
@@ -78,7 +78,7 @@ class NflAthleteEventlogItem:
         else:
             statistics = Reference.from_dict(_statistics)
 
-        nfl_athlete_eventlog_item = cls(
+        nfl_athlete_eventlog_response_events_items_item = cls(
             event=event,
             competition=competition,
             team_id=team_id,
@@ -86,8 +86,8 @@ class NflAthleteEventlogItem:
             statistics=statistics,
         )
 
-        nfl_athlete_eventlog_item.additional_properties = d
-        return nfl_athlete_eventlog_item
+        nfl_athlete_eventlog_response_events_items_item.additional_properties = d
+        return nfl_athlete_eventlog_response_events_items_item
 
     @property
     def additional_keys(self) -> List[str]:

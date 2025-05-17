@@ -51,9 +51,10 @@ sports.core.api.espn.com
 [x] /v2/sports/football/leagues/nfl/teams/{team_id}/injuries - NFL Team Injuries. Path Param: {team_id}
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}/depthcharts - NFL Team Depth Chart. Path Params: {year}, {team_id}
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog - NFL Athlete Eventlog. Path Params: {year}, {athlete_id}
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/leaders - NFL Leaders (Core API). Path Params: {year}, {seasontype}
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/leaders - NFL Leaders (Core API). Path Params: {year}, {seasontype}
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/draft - NFL Draft. Path Param: {year}
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/rounds
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/draft/rounds - NFL Draft Rounds. Path Param: {year}
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/groups/{group_id}/standings - NFL Conference Standings. Path Params: {year}, {seasontype}, {group_id} (e.g., 7=NFC, 8=AFC)
 site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/overview - NFL Athlete overview. Path Param: {athlete_id} - (Matches original)
@@ -219,4 +220,4 @@ sports.core.api.espn.com
 [ ] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
 [ ] /v2/sports/{sport}/leagues/{league}/talentpicks - General Talent Picks. Path Params: {sport}, {league}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
-[ ] `/v2/sports/{sport}/leagues/{league
+[ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}

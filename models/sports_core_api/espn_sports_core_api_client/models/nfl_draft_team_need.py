@@ -1,11 +1,12 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..types import UNSET, Unset
+
 if TYPE_CHECKING:
-    from ..models.nfl_draft_position import NflDraftPosition
-    from ..models.nfl_draft_team import NflDraftTeam
+    from ..models.reference import Reference
 
 
 T = TypeVar("T", bound="NflDraftTeamNeed")
@@ -15,51 +16,74 @@ T = TypeVar("T", bound="NflDraftTeamNeed")
 class NflDraftTeamNeed:
     """
     Attributes:
-        team (NflDraftTeam):
-        positions (List['NflDraftPosition']):
+        team (Reference):
+        need (str):
+        rank (int):
+        description (str):
+        position (Union[Unset, Reference]):
     """
 
-    team: "NflDraftTeam"
-    positions: List["NflDraftPosition"]
+    team: "Reference"
+    need: str
+    rank: int
+    description: str
+    position: Union[Unset, "Reference"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         team = self.team.to_dict()
 
-        positions = []
-        for positions_item_data in self.positions:
-            positions_item = positions_item_data.to_dict()
-            positions.append(positions_item)
+        need = self.need
+
+        rank = self.rank
+
+        description = self.description
+
+        position: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.position, Unset):
+            position = self.position.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "team": team,
-                "positions": positions,
+                "need": need,
+                "rank": rank,
+                "description": description,
             }
         )
+        if position is not UNSET:
+            field_dict["position"] = position
 
         return field_dict
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.nfl_draft_position import NflDraftPosition
-        from ..models.nfl_draft_team import NflDraftTeam
+        from ..models.reference import Reference
 
         d = src_dict.copy()
-        team = NflDraftTeam.from_dict(d.pop("team"))
+        team = Reference.from_dict(d.pop("team"))
 
-        positions = []
-        _positions = d.pop("positions")
-        for positions_item_data in _positions:
-            positions_item = NflDraftPosition.from_dict(positions_item_data)
+        need = d.pop("need")
 
-            positions.append(positions_item)
+        rank = d.pop("rank")
+
+        description = d.pop("description")
+
+        _position = d.pop("position", UNSET)
+        position: Union[Unset, Reference]
+        if isinstance(_position, Unset):
+            position = UNSET
+        else:
+            position = Reference.from_dict(_position)
 
         nfl_draft_team_need = cls(
             team=team,
-            positions=positions,
+            need=need,
+            rank=rank,
+            description=description,
+            position=position,
         )
 
         nfl_draft_team_need.additional_properties = d

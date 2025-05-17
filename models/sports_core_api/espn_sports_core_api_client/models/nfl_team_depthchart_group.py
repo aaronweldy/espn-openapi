@@ -1,29 +1,38 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="NflDraftAthlete")
+if TYPE_CHECKING:
+    from ..models.nfl_team_depthchart_group_positions import NflTeamDepthchartGroupPositions
+
+
+T = TypeVar("T", bound="NflTeamDepthchartGroup")
 
 
 @_attrs_define
-class NflDraftAthlete:
+class NflTeamDepthchartGroup:
     """
     Attributes:
-        ref (str):
+        name (str):
+        positions (NflTeamDepthchartGroupPositions):
     """
 
-    ref: str
+    name: str
+    positions: "NflTeamDepthchartGroupPositions"
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        ref = self.ref
+        name = self.name
+
+        positions = self.positions.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "$ref": ref,
+                "name": name,
+                "positions": positions,
             }
         )
 
@@ -31,15 +40,20 @@ class NflDraftAthlete:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
-        ref = d.pop("$ref")
+        from ..models.nfl_team_depthchart_group_positions import NflTeamDepthchartGroupPositions
 
-        nfl_draft_athlete = cls(
-            ref=ref,
+        d = src_dict.copy()
+        name = d.pop("name")
+
+        positions = NflTeamDepthchartGroupPositions.from_dict(d.pop("positions"))
+
+        nfl_team_depthchart_group = cls(
+            name=name,
+            positions=positions,
         )
 
-        nfl_draft_athlete.additional_properties = d
-        return nfl_draft_athlete
+        nfl_team_depthchart_group.additional_properties = d
+        return nfl_team_depthchart_group
 
     @property
     def additional_keys(self) -> List[str]:

@@ -1,0 +1,184 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflDraftRounds2023_Schema",
+    "definitions": {
+        "NflDraftRounds2023_Schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "NflDraftRounds2023_Schema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "number": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "picks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Pick"
+                    }
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                }
+            },
+            "required": [
+                "displayName",
+                "number",
+                "picks",
+                "shortDisplayName",
+                "status"
+            ],
+            "title": "Item"
+        },
+        "Pick": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "status": {
+                    "$ref": "#/definitions/Type"
+                },
+                "pick": {
+                    "type": "integer"
+                },
+                "overall": {
+                    "type": "integer"
+                },
+                "round": {
+                    "type": "integer"
+                },
+                "traded": {
+                    "type": "boolean"
+                },
+                "tradeNote": {
+                    "type": "string"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "team": {
+                    "$ref": "#/definitions/Athlete"
+                }
+            },
+            "required": [
+                "athlete",
+                "overall",
+                "pick",
+                "round",
+                "status",
+                "team",
+                "traded"
+            ],
+            "title": "Pick"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ],
+            "title": "Type"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "round": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                }
+            },
+            "required": [
+                "round",
+                "type"
+            ],
+            "title": "Status"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "Selection Made",
+                "Completed"
+            ],
+            "title": "Description"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "SELECTION_MADE",
+                "COMPLETED"
+            ],
+            "title": "Name"
+        }
+    }
+}

@@ -4,28 +4,28 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.nfl_team_depthchart_group import NflTeamDepthchartGroup
+    from ..models.nfl_draft_round_detail import NflDraftRoundDetail
 
 
-T = TypeVar("T", bound="NflTeamDepthchartResponse")
+T = TypeVar("T", bound="NflDraftRoundsResponse")
 
 
 @_attrs_define
-class NflTeamDepthchartResponse:
+class NflDraftRoundsResponse:
     """
     Attributes:
         count (int):
         page_index (int):
         page_size (int):
         page_count (int):
-        items (List['NflTeamDepthchartGroup']):
+        items (List['NflDraftRoundDetail']):
     """
 
     count: int
     page_index: int
     page_size: int
     page_count: int
-    items: List["NflTeamDepthchartGroup"]
+    items: List["NflDraftRoundDetail"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -58,7 +58,7 @@ class NflTeamDepthchartResponse:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.nfl_team_depthchart_group import NflTeamDepthchartGroup
+        from ..models.nfl_draft_round_detail import NflDraftRoundDetail
 
         d = src_dict.copy()
         count = d.pop("count")
@@ -72,11 +72,11 @@ class NflTeamDepthchartResponse:
         items = []
         _items = d.pop("items")
         for items_item_data in _items:
-            items_item = NflTeamDepthchartGroup.from_dict(items_item_data)
+            items_item = NflDraftRoundDetail.from_dict(items_item_data)
 
             items.append(items_item)
 
-        nfl_team_depthchart_response = cls(
+        nfl_draft_rounds_response = cls(
             count=count,
             page_index=page_index,
             page_size=page_size,
@@ -84,8 +84,8 @@ class NflTeamDepthchartResponse:
             items=items,
         )
 
-        nfl_team_depthchart_response.additional_properties = d
-        return nfl_team_depthchart_response
+        nfl_draft_rounds_response.additional_properties = d
+        return nfl_draft_rounds_response
 
     @property
     def additional_keys(self) -> List[str]:

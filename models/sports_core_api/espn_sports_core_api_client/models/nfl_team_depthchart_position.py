@@ -4,7 +4,8 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 if TYPE_CHECKING:
-    from ..models.reference import Reference
+    from ..models.nfl_team_depthchart_athlete import NflTeamDepthchartAthlete
+    from ..models.position import Position
 
 
 T = TypeVar("T", bound="NflTeamDepthchartPosition")
@@ -14,50 +15,28 @@ T = TypeVar("T", bound="NflTeamDepthchartPosition")
 class NflTeamDepthchartPosition:
     """
     Attributes:
-        ref (str):
-        id (str):
-        name (str):
-        display_name (str):
-        abbreviation (str):
-        leaf (bool):
-        parent (Reference):
+        position (Position):
+        athletes (List['NflTeamDepthchartAthlete']):
     """
 
-    ref: str
-    id: str
-    name: str
-    display_name: str
-    abbreviation: str
-    leaf: bool
-    parent: "Reference"
+    position: "Position"
+    athletes: List["NflTeamDepthchartAthlete"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        ref = self.ref
+        position = self.position.to_dict()
 
-        id = self.id
-
-        name = self.name
-
-        display_name = self.display_name
-
-        abbreviation = self.abbreviation
-
-        leaf = self.leaf
-
-        parent = self.parent.to_dict()
+        athletes = []
+        for athletes_item_data in self.athletes:
+            athletes_item = athletes_item_data.to_dict()
+            athletes.append(athletes_item)
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "$ref": ref,
-                "id": id,
-                "name": name,
-                "displayName": display_name,
-                "abbreviation": abbreviation,
-                "leaf": leaf,
-                "parent": parent,
+                "position": position,
+                "athletes": athletes,
             }
         )
 
@@ -65,31 +44,22 @@ class NflTeamDepthchartPosition:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.reference import Reference
+        from ..models.nfl_team_depthchart_athlete import NflTeamDepthchartAthlete
+        from ..models.position import Position
 
         d = src_dict.copy()
-        ref = d.pop("$ref")
+        position = Position.from_dict(d.pop("position"))
 
-        id = d.pop("id")
+        athletes = []
+        _athletes = d.pop("athletes")
+        for athletes_item_data in _athletes:
+            athletes_item = NflTeamDepthchartAthlete.from_dict(athletes_item_data)
 
-        name = d.pop("name")
-
-        display_name = d.pop("displayName")
-
-        abbreviation = d.pop("abbreviation")
-
-        leaf = d.pop("leaf")
-
-        parent = Reference.from_dict(d.pop("parent"))
+            athletes.append(athletes_item)
 
         nfl_team_depthchart_position = cls(
-            ref=ref,
-            id=id,
-            name=name,
-            display_name=display_name,
-            abbreviation=abbreviation,
-            leaf=leaf,
-            parent=parent,
+            position=position,
+            athletes=athletes,
         )
 
         nfl_team_depthchart_position.additional_properties = d

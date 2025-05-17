@@ -917,6 +917,107 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/seasons/{year}/draft/rounds:
+    get:
+      summary: Get NFL Draft Rounds
+      description: Retrieve all rounds and picks for the NFL draft for a given season (core API).
+      operationId: getNflDraftRounds
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflDraftRoundsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/football/leagues/nfl/seasons/{year}/draft/athletes/{athlete_id}:
+    get:
+      summary: Get NFL Draft Athlete Details
+      description: Retrieve details for a specific NFL draft athlete (core API).
+      operationId: getNflDraftAthlete
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: athlete_id
+          in: path
+          required: true
+          description: The draft athlete ID (e.g., 106308)
+          schema:
+            type: string
+            example: "106308"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflDraftAthleteResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1880,42 +1981,59 @@ components:
             $ref: '#/components/schemas/Logo'
         record:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         oddsRecords:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         athletes:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         venue:
           $ref: '#/components/schemas/Venue'
+          nullable: true
         groups:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         ranks:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         statistics:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         leaders:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         links:
           type: array
           items:
             $ref: '#/components/schemas/Link'
         injuries:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         notes:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         againstTheSpreadRecords:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         franchise:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         projection:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         events:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         transactions:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         coaches:
           $ref: '#/components/schemas/Reference'
+          nullable: true
         attendance:
           $ref: '#/components/schemas/Reference'
+          nullable: true
       required:
         - $ref
         - id
@@ -1934,24 +2052,7 @@ components:
         - isActive
         - isAllStar
         - logos
-        - record
-        - oddsRecords
-        - athletes
-        - venue
-        - groups
-        - ranks
-        - statistics
-        - leaders
         - links
-        - injuries
-        - notes
-        - againstTheSpreadRecords
-        - franchise
-        - projection
-        - events
-        - transactions
-        - coaches
-        - attendance
 
     AlternateIDS:
       type: object
@@ -2173,14 +2274,232 @@ components:
       required:
         - $ref
 
-    NflDraftAthlete:
+    NflDraftAthleteResponse:
       type: object
       properties:
         $ref:
           type: string
           format: uri
+        id:
+          type: string
+        guid:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        shortName:
+          type: string
+        weight:
+          type: number
+        displayWeight:
+          type: string
+        height:
+          type: number
+        displayHeight:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        college:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        position:
+          $ref: '#/components/schemas/Position'
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftAthleteAttribute'
+        analysis:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftAthleteAnalysis'
+        pick:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        logo:
+          $ref: '#/components/schemas/Logo'
       required:
         - $ref
+        - id
+        - guid
+        - firstName
+        - lastName
+        - fullName
+        - displayName
+        - shortName
+        - weight
+        - displayWeight
+        - height
+        - displayHeight
+        - links
+        - college
+        - position
+        - positions
+        - team
+        - attributes
+        - analysis
+        - pick
+        - athlete
+        - logo
+
+    NflDraftAthleteAttribute:
+      type: object
+      properties:
+        type:
+          type: integer
+        name:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        value:
+          type: number
+        displayValue:
+          type: string
+      required:
+        - type
+        - name
+        - displayName
+        - abbreviation
+        - value
+        - displayValue
+
+    NflDraftAthleteAnalysis:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        text:
+          type: string
+        grade:
+          type: integer
+      required:
+        - id
+        - type
+
+    NflDraftRoundsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftRoundDetail'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    NflDraftRoundDetail:
+      type: object
+      properties:
+        number:
+          type: integer
+        displayName:
+          type: string
+        shortDisplayName:
+          type: string
+        picks:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflDraftPick'
+        status:
+          $ref: '#/components/schemas/NflDraftRoundStatus'
+      required:
+        - number
+        - displayName
+        - shortDisplayName
+        - picks
+        - status
+
+    NflDraftPick:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/NflDraftPickStatus'
+        pick:
+          type: integer
+        overall:
+          type: integer
+        round:
+          type: integer
+        traded:
+          type: boolean
+        tradeNote:
+          type: string
+          nullable: true
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the athlete object
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+          description: Reference to the team object
+      required:
+        - status
+        - pick
+        - overall
+        - round
+        - traded
+        - athlete
+        - team
+
+    NflDraftPickStatus:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+          nullable: true
+      required:
+        - id
+        - name
+        - description
+
+    NflDraftRoundStatus:
+      type: object
+      properties:
+        round:
+          type: integer
+        type:
+          $ref: '#/components/schemas/NflDraftPickStatus'
+      required:
+        - round
+        - type
 
     NflDraftPosition:
       type: object
@@ -2199,7 +2518,8 @@ components:
         leaf:
           type: boolean
         parent:
-          $ref: '#/components/schemas/NflDraftPositionParent'
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
       required:
         - $ref
         - id
@@ -2207,29 +2527,7 @@ components:
         - displayName
         - abbreviation
         - leaf
-        - parent
-
-    NflDraftPositionParent:
-      type: object
-      properties:
-        $ref:
-          type: string
-          format: uri
-      required:
-        - $ref
-
-    NflDraftTeamNeed:
-      type: object
-      properties:
-        team:
-          $ref: '#/components/schemas/NflDraftTeam'
-        positions:
-          type: array
-          items:
-            $ref: '#/components/schemas/NflDraftPosition'
-      required:
-        - team
-        - positions
+        - parent 
 
     NflTeamDepthchartResponse:
       type: object
@@ -2245,87 +2543,72 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/NflTeamDepthchartItem'
+            $ref: '#/components/schemas/NflTeamDepthchartGroup'
       required:
         - count
         - pageIndex
         - pageSize
         - pageCount
-        - items
+        - items 
 
-    NflTeamDepthchartItem:
+    NflTeamDepthchartGroup:
       type: object
       properties:
-        id:
-          type: string
         name:
           type: string
         positions:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/NflTeamDepthchartPositionValue'
+            $ref: '#/components/schemas/NflTeamDepthchartPosition'
       required:
-        - id
         - name
-        - positions
+        - positions 
 
-    NflTeamDepthchartPositionValue:
+    NflTeamDepthchartPosition:
       type: object
       properties:
         position:
-          $ref: '#/components/schemas/NflTeamDepthchartPosition'
+          $ref: '#/components/schemas/Position'
         athletes:
           type: array
           items:
             $ref: '#/components/schemas/NflTeamDepthchartAthlete'
       required:
         - position
-        - athletes
+        - athletes 
 
     NflTeamDepthchartAthlete:
       type: object
       properties:
+        rank:
+          type: integer
         slot:
           type: integer
         athlete:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the athlete object
-        rank:
-          type: integer
+          $ref: '#/components/schemas/Reference'
       required:
-        - slot
-        - athlete
         - rank
+        - slot
+        - athlete 
 
-    NflTeamDepthchartPosition:
+    NflDraftTeamNeed:
       type: object
       properties:
-        $ref:
+        team:
+          $ref: '#/components/schemas/Reference'
+        position:
+          $ref: '#/components/schemas/Reference'
+        need:
           type: string
-          format: uri
-        id:
+        rank:
+          type: integer
+        description:
           type: string
-        name:
-          type: string
-        displayName:
-          type: string
-        abbreviation:
-          type: string
-        leaf:
-          type: boolean
-        parent:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the parent position object
       required:
-        - $ref
-        - id
-        - name
-        - displayName
-        - abbreviation
-        - leaf
-        - parent
+        - team
+        - need
+        - rank
+        - description 
 
     NflAthleteEventlogResponse:
       type: object
@@ -2336,70 +2619,58 @@ components:
         teams:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/NflAthleteEventlogTeam'
+            type: object
+            properties:
+              team:
+                oneOf:
+                  - $ref: '#/components/schemas/Reference'
+              id:
+                type: string
+            required:
+              - id
+              - team
         events:
-          $ref: '#/components/schemas/NflAthleteEventlogEvents'
+          type: object
+          properties:
+            count:
+              type: integer
+            pageIndex:
+              type: integer
+            pageSize:
+              type: integer
+            pageCount:
+              type: integer
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  event:
+                    oneOf:
+                      - $ref: '#/components/schemas/Reference'
+                  competition:
+                    oneOf:
+                      - $ref: '#/components/schemas/Reference'
+                  statistics:
+                    oneOf:
+                      - $ref: '#/components/schemas/Reference'
+                  teamId:
+                    type: string
+                  played:
+                    type: boolean
+                required:
+                  - event
+                  - competition
+                  - teamId
+                  - played
+          required:
+            - count
+            - pageIndex
+            - pageSize
+            - pageCount
+            - items
       required:
         - $ref
         - teams
         - events
-
-    NflAthleteEventlogTeam:
-      type: object
-      properties:
-        team:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the team object
-        id:
-          type: string
-      required:
-        - team
-        - id
-
-    NflAthleteEventlogEvents:
-      type: object
-      properties:
-        count:
-          type: integer
-        pageIndex:
-          type: integer
-        pageSize:
-          type: integer
-        pageCount:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/NflAthleteEventlogItem'
-      required:
-        - count
-        - pageIndex
-        - pageSize
-        - pageCount
-        - items
-
-    NflAthleteEventlogItem:
-      type: object
-      properties:
-        event:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the event object
-        competition:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the competition object
-        statistics:
-          oneOf:
-            - $ref: '#/components/schemas/Reference'
-          description: Reference to the statistics object
-        teamId:
-          type: string
-        played:
-          type: boolean
-      required:
-        - event
-        - competition
-        - teamId
-        - played 
+      description: NFL athlete event log response object. 

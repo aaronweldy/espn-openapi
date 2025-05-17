@@ -32,31 +32,36 @@ from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .link import Link
 from .logo import Logo
-from .nfl_athlete_eventlog_events import NflAthleteEventlogEvents
-from .nfl_athlete_eventlog_item import NflAthleteEventlogItem
 from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
+from .nfl_athlete_eventlog_response_events import NflAthleteEventlogResponseEvents
+from .nfl_athlete_eventlog_response_events_items_item import NflAthleteEventlogResponseEventsItemsItem
 from .nfl_athlete_eventlog_response_teams import NflAthleteEventlogResponseTeams
-from .nfl_athlete_eventlog_team import NflAthleteEventlogTeam
+from .nfl_athlete_eventlog_response_teams_additional_property import NflAthleteEventlogResponseTeamsAdditionalProperty
 from .nfl_athlete_injury import NflAthleteInjury
 from .nfl_athlete_injury_athlete_type_1 import NflAthleteInjuryAthleteType1
 from .nfl_athlete_injury_source import NflAthleteInjurySource
 from .nfl_athlete_injury_team_type_1 import NflAthleteInjuryTeamType1
 from .nfl_athlete_injury_type import NflAthleteInjuryType
-from .nfl_draft_athlete import NflDraftAthlete
+from .nfl_draft_athlete_analysis import NflDraftAthleteAnalysis
+from .nfl_draft_athlete_attribute import NflDraftAthleteAttribute
+from .nfl_draft_athlete_response import NflDraftAthleteResponse
+from .nfl_draft_pick import NflDraftPick
+from .nfl_draft_pick_status import NflDraftPickStatus
 from .nfl_draft_position import NflDraftPosition
-from .nfl_draft_position_parent import NflDraftPositionParent
 from .nfl_draft_response import NflDraftResponse
 from .nfl_draft_round import NflDraftRound
+from .nfl_draft_round_detail import NflDraftRoundDetail
+from .nfl_draft_round_status import NflDraftRoundStatus
+from .nfl_draft_rounds_response import NflDraftRoundsResponse
 from .nfl_draft_team import NflDraftTeam
 from .nfl_draft_team_need import NflDraftTeamNeed
 from .nfl_leader import NflLeader
 from .nfl_leaders_category import NflLeadersCategory
 from .nfl_leaders_response import NflLeadersResponse
 from .nfl_team_depthchart_athlete import NflTeamDepthchartAthlete
-from .nfl_team_depthchart_item import NflTeamDepthchartItem
-from .nfl_team_depthchart_item_positions import NflTeamDepthchartItemPositions
+from .nfl_team_depthchart_group import NflTeamDepthchartGroup
+from .nfl_team_depthchart_group_positions import NflTeamDepthchartGroupPositions
 from .nfl_team_depthchart_position import NflTeamDepthchartPosition
-from .nfl_team_depthchart_position_value import NflTeamDepthchartPositionValue
 from .nfl_team_depthchart_response import NflTeamDepthchartResponse
 from .paginated_reference_list_response import PaginatedReferenceListResponse
 from .play import Play
@@ -116,31 +121,36 @@ __all__ = (
     "GetLeagueSeasonWeeksSeasonType",
     "Link",
     "Logo",
-    "NflAthleteEventlogEvents",
-    "NflAthleteEventlogItem",
     "NflAthleteEventlogResponse",
+    "NflAthleteEventlogResponseEvents",
+    "NflAthleteEventlogResponseEventsItemsItem",
     "NflAthleteEventlogResponseTeams",
-    "NflAthleteEventlogTeam",
+    "NflAthleteEventlogResponseTeamsAdditionalProperty",
     "NflAthleteInjury",
     "NflAthleteInjuryAthleteType1",
     "NflAthleteInjurySource",
     "NflAthleteInjuryTeamType1",
     "NflAthleteInjuryType",
-    "NflDraftAthlete",
+    "NflDraftAthleteAnalysis",
+    "NflDraftAthleteAttribute",
+    "NflDraftAthleteResponse",
+    "NflDraftPick",
+    "NflDraftPickStatus",
     "NflDraftPosition",
-    "NflDraftPositionParent",
     "NflDraftResponse",
     "NflDraftRound",
+    "NflDraftRoundDetail",
+    "NflDraftRoundsResponse",
+    "NflDraftRoundStatus",
     "NflDraftTeam",
     "NflDraftTeamNeed",
     "NflLeader",
     "NflLeadersCategory",
     "NflLeadersResponse",
     "NflTeamDepthchartAthlete",
-    "NflTeamDepthchartItem",
-    "NflTeamDepthchartItemPositions",
+    "NflTeamDepthchartGroup",
+    "NflTeamDepthchartGroupPositions",
     "NflTeamDepthchartPosition",
-    "NflTeamDepthchartPositionValue",
     "NflTeamDepthchartResponse",
     "PaginatedReferenceListResponse",
     "Play",

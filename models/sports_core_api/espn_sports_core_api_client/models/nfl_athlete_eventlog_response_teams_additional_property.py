@@ -1,29 +1,38 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-T = TypeVar("T", bound="NflDraftPositionParent")
+if TYPE_CHECKING:
+    from ..models.reference import Reference
+
+
+T = TypeVar("T", bound="NflAthleteEventlogResponseTeamsAdditionalProperty")
 
 
 @_attrs_define
-class NflDraftPositionParent:
+class NflAthleteEventlogResponseTeamsAdditionalProperty:
     """
     Attributes:
-        ref (str):
+        team (Reference):
+        id (str):
     """
 
-    ref: str
+    team: "Reference"
+    id: str
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        ref = self.ref
+        team = self.team.to_dict()
+
+        id = self.id
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "$ref": ref,
+                "team": team,
+                "id": id,
             }
         )
 
@@ -31,15 +40,20 @@ class NflDraftPositionParent:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        d = src_dict.copy()
-        ref = d.pop("$ref")
+        from ..models.reference import Reference
 
-        nfl_draft_position_parent = cls(
-            ref=ref,
+        d = src_dict.copy()
+        team = Reference.from_dict(d.pop("team"))
+
+        id = d.pop("id")
+
+        nfl_athlete_eventlog_response_teams_additional_property = cls(
+            team=team,
+            id=id,
         )
 
-        nfl_draft_position_parent.additional_properties = d
-        return nfl_draft_position_parent
+        nfl_athlete_eventlog_response_teams_additional_property.additional_properties = d
+        return nfl_athlete_eventlog_response_teams_additional_property
 
     @property
     def additional_keys(self) -> List[str]:
