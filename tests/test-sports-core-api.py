@@ -55,6 +55,9 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_seas
 from models.sports_core_api.espn_sports_core_api_client.models.core_nfl_season_team_response import (
     CoreNflSeasonTeamResponse,
 )
+from models.sports_core_api.espn_sports_core_api_client.models.nfl_athlete_injury import (
+    NflAthleteInjury,
+)
 
 
 # Example athlete ID for testing
@@ -781,6 +784,58 @@ def test_nfl_season_team(year: int = 2024, team_id: str = "12"):
     print(f"Logos: {[logo.href for logo in data.logos]}")
 
 
+def test_nfl_team_injuries(team_id: str = "1"):
+    """Test the NFL team injuries endpoint for a specific team and print details for a few injuries."""
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_team_injuries import (
+        sync as get_nfl_team_injuries,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.paginated_reference_list_response import (
+        PaginatedReferenceListResponse,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.reference import (
+        Reference,
+    )
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    response = get_nfl_team_injuries(team_id=team_id, client=client)
+    assert response is not None, "No response returned from injuries endpoint"
+    assert isinstance(response, PaginatedReferenceListResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count >= 0, "Injuries count should be >= 0"
+    for item in response.items:
+        assert isinstance(item, Reference), f"Item is not a Reference: {type(item)}"
+        assert item.ref.startswith("http"), (
+            f"Reference $ref does not look like a URL: {item.ref}"
+        )
+    print(
+        f"NFL Team Injuries test passed: {response.count} injuries found for team {team_id}."
+    )
+
+    # Fetch and print details for the first 3 injuries
+    print("\nSample injury details:")
+    for i, item in enumerate(response.items[:3]):
+        try:
+            r = requests.get(item.ref)
+            if r.status_code != 200:
+                print(
+                    f"  [Injury {i + 1}] Failed to fetch detail: HTTP {r.status_code}"
+                )
+                continue
+            data = r.json()
+            injury = NflAthleteInjury.from_dict(data)
+            print(f"  [Injury {i + 1}] id: {injury.id}")
+            print(f"    status: {injury.status}")
+            print(f"    date: {injury.date}")
+            print(f"    short_comment: {injury.short_comment}")
+            print(
+                f"    long_comment: {injury.long_comment[:120]}{'...' if len(injury.long_comment) > 120 else ''}"
+            )
+        except Exception as e:
+            print(f"  [Injury {i + 1}] Error: {e}")
+
+
 def main():
     """Main function to test ESPN Sports Core API endpoints."""
     print("===== ESPN Sports Core API Test Script =====")
@@ -828,6 +883,9 @@ def main():
 
     # Test NFL season team endpoint
     test_nfl_season_team()
+
+    # Test NFL team injuries endpoint
+    test_nfl_team_injuries()
 
     # Summary
     print("\n===== Test Results Summary =====")

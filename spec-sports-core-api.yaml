@@ -654,6 +654,53 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/teams/{team_id}/injuries:
+    get:
+      summary: Get NFL Team Injuries
+      description: Retrieve a paginated list of injury references for a specific NFL team.
+      operationId: getNflTeamInjuries
+      parameters:
+        - name: team_id
+          in: path
+          required: true
+          description: The team ID (e.g., 12)
+          schema:
+            type: string
+            example: "12"
+        - name: pageIndex
+          in: query
+          required: false
+          description: Page index for pagination
+          schema:
+            type: integer
+            example: 1
+        - name: pageSize
+          in: query
+          required: false
+          description: Page size for pagination
+          schema:
+            type: integer
+            example: 25
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedReferenceListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1770,4 +1817,78 @@ components:
         - width
         - height
         - alt
-        - rel 
+        - rel
+
+    NflAthleteInjury:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        longComment:
+          type: string
+        shortComment:
+          type: string
+        status:
+          type: string
+        date:
+          type: string
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        source:
+          type: object
+          properties:
+            id:
+              type: string
+            description:
+              type: string
+            state:
+              type: string
+          required:
+            - id
+            - description
+            - state
+        type:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+            abbreviation:
+              type: string
+          required:
+            - id
+            - name
+            - description
+            - abbreviation
+      required:
+        - $ref
+        - id
+        - longComment
+        - shortComment
+        - status
+        - date
+        - athlete
+        - team
+        - source
+        - type
+      description: Detailed NFL athlete injury object 
