@@ -21,10 +21,10 @@ class Competitor:
     """
     Attributes:
         id (str):  Example: 21.
-        uid (str):  Example: s:20~l:28~t:21.
         order (int):
         home_away (CompetitorHomeAway):
         team (Team):
+        uid (Union[Unset, str]):  Example: s:20~l:28~t:21.
         type (Union[Unset, str]):  Example: team.
         winner (Union[Unset, bool]):
         score (Union[Unset, str]):  Example: 35.
@@ -34,10 +34,10 @@ class Competitor:
     """
 
     id: str
-    uid: str
     order: int
     home_away: CompetitorHomeAway
     team: "Team"
+    uid: Union[Unset, str] = UNSET
     type: Union[Unset, str] = UNSET
     winner: Union[Unset, bool] = UNSET
     score: Union[Unset, str] = UNSET
@@ -49,13 +49,13 @@ class Competitor:
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
-        uid = self.uid
-
         order = self.order
 
         home_away = self.home_away.value
 
         team = self.team.to_dict()
+
+        uid = self.uid
 
         type = self.type
 
@@ -89,12 +89,13 @@ class Competitor:
         field_dict.update(
             {
                 "id": id,
-                "uid": uid,
                 "order": order,
                 "homeAway": home_away,
                 "team": team,
             }
         )
+        if uid is not UNSET:
+            field_dict["uid"] = uid
         if type is not UNSET:
             field_dict["type"] = type
         if winner is not UNSET:
@@ -120,13 +121,13 @@ class Competitor:
         d = src_dict.copy()
         id = d.pop("id")
 
-        uid = d.pop("uid")
-
         order = d.pop("order")
 
         home_away = CompetitorHomeAway(d.pop("homeAway"))
 
         team = Team.from_dict(d.pop("team"))
+
+        uid = d.pop("uid", UNSET)
 
         type = d.pop("type", UNSET)
 
@@ -157,10 +158,10 @@ class Competitor:
 
         competitor = cls(
             id=id,
-            uid=uid,
             order=order,
             home_away=home_away,
             team=team,
+            uid=uid,
             type=type,
             winner=winner,
             score=score,

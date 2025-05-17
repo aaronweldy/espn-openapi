@@ -1,7 +1,9 @@
-from typing import Any, Dict, List, Type, TypeVar, cast
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Broadcast")
 
@@ -11,26 +13,29 @@ class Broadcast:
     """
     Attributes:
         market (str):  Example: national.
-        names (List[str]):
+        names (Union[Unset, List[str]]):
     """
 
     market: str
-    names: List[str]
+    names: Union[Unset, List[str]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         market = self.market
 
-        names = self.names
+        names: Union[Unset, List[str]] = UNSET
+        if not isinstance(self.names, Unset):
+            names = self.names
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "market": market,
-                "names": names,
             }
         )
+        if names is not UNSET:
+            field_dict["names"] = names
 
         return field_dict
 
@@ -39,7 +44,7 @@ class Broadcast:
         d = src_dict.copy()
         market = d.pop("market")
 
-        names = cast(List[str], d.pop("names"))
+        names = cast(List[str], d.pop("names", UNSET))
 
         broadcast = cls(
             market=market,

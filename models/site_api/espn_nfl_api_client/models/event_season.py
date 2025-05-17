@@ -13,12 +13,12 @@ class EventSeason:
     """
     Attributes:
         year (int):  Example: 2024.
-        type (int):  Example: 3.
+        type (Union[Unset, int]):  Example: 3.
         slug (Union[Unset, str]):  Example: post-season.
     """
 
     year: int
-    type: int
+    type: Union[Unset, int] = UNSET
     slug: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -34,9 +34,10 @@ class EventSeason:
         field_dict.update(
             {
                 "year": year,
-                "type": type,
             }
         )
+        if type is not UNSET:
+            field_dict["type"] = type
         if slug is not UNSET:
             field_dict["slug"] = slug
 
@@ -47,7 +48,7 @@ class EventSeason:
         d = src_dict.copy()
         year = d.pop("year")
 
-        type = d.pop("type")
+        type = d.pop("type", UNSET)
 
         slug = d.pop("slug", UNSET)
 

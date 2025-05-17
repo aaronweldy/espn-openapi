@@ -6,29 +6,24 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
-from ...models.sport_news_api_schema import SportNewsAPISchema
+from ...models.nfl_team_schedule_response import NFLTeamScheduleResponse
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
+    team_id: str,
     *,
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
+    season: Union[Unset, int] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
-    params["limit"] = limit
-
-    params["offset"] = offset
-
-    params["team"] = team
+    params["season"] = season
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": "/sports/football/nfl/news",
+        "url": f"/sports/football/nfl/teams/{team_id}/schedule",
         "params": params,
     }
 
@@ -37,9 +32,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
+) -> Optional[Union[ErrorResponse, NFLTeamScheduleResponse]]:
     if response.status_code == 200:
-        response_200 = SportNewsAPISchema.from_dict(response.json())
+        response_200 = NFLTeamScheduleResponse.from_dict(response.json())
 
         return response_200
     if response.status_code == 404:
@@ -58,7 +53,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
+) -> Response[Union[ErrorResponse, NFLTeamScheduleResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -68,33 +63,30 @@ def _build_response(
 
 
 def sync_detailed(
+    team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    season: Union[Unset, int] = UNSET,
+) -> Response[Union[ErrorResponse, NFLTeamScheduleResponse]]:
+    """Get NFL Team Schedule
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the full schedule for a specific NFL team, including all games for the season.
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 12.
+        team_id (str):  Example: 12.
+        season (Union[Unset, int]):  Example: 2024.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ErrorResponse, SportNewsAPISchema]]
+        Response[Union[ErrorResponse, NFLTeamScheduleResponse]]
     """
 
     kwargs = _get_kwargs(
-        limit=limit,
-        offset=offset,
-        team=team,
+        team_id=team_id,
+        season=season,
     )
 
     response = client.get_httpx_client().request(
@@ -105,65 +97,59 @@ def sync_detailed(
 
 
 def sync(
+    team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    season: Union[Unset, int] = UNSET,
+) -> Optional[Union[ErrorResponse, NFLTeamScheduleResponse]]:
+    """Get NFL Team Schedule
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the full schedule for a specific NFL team, including all games for the season.
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 12.
+        team_id (str):  Example: 12.
+        season (Union[Unset, int]):  Example: 2024.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ErrorResponse, SportNewsAPISchema]
+        Union[ErrorResponse, NFLTeamScheduleResponse]
     """
 
     return sync_detailed(
+        team_id=team_id,
         client=client,
-        limit=limit,
-        offset=offset,
-        team=team,
+        season=season,
     ).parsed
 
 
 async def asyncio_detailed(
+    team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    season: Union[Unset, int] = UNSET,
+) -> Response[Union[ErrorResponse, NFLTeamScheduleResponse]]:
+    """Get NFL Team Schedule
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the full schedule for a specific NFL team, including all games for the season.
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 12.
+        team_id (str):  Example: 12.
+        season (Union[Unset, int]):  Example: 2024.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ErrorResponse, SportNewsAPISchema]]
+        Response[Union[ErrorResponse, NFLTeamScheduleResponse]]
     """
 
     kwargs = _get_kwargs(
-        limit=limit,
-        offset=offset,
-        team=team,
+        team_id=team_id,
+        season=season,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -172,34 +158,31 @@ async def asyncio_detailed(
 
 
 async def asyncio(
+    team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get NFL News
+    season: Union[Unset, int] = UNSET,
+) -> Optional[Union[ErrorResponse, NFLTeamScheduleResponse]]:
+    """Get NFL Team Schedule
 
-     Retrieve the latest NFL news articles and headlines
+     Retrieve the full schedule for a specific NFL team, including all games for the season.
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 12.
+        team_id (str):  Example: 12.
+        season (Union[Unset, int]):  Example: 2024.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ErrorResponse, SportNewsAPISchema]
+        Union[ErrorResponse, NFLTeamScheduleResponse]
     """
 
     return (
         await asyncio_detailed(
+            team_id=team_id,
             client=client,
-            limit=limit,
-            offset=offset,
-            team=team,
+            season=season,
         )
     ).parsed

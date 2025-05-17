@@ -181,6 +181,46 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/football/nfl/teams/{teamId}/schedule:
+    get:
+      summary: Get NFL Team Schedule
+      description: Retrieve the full schedule for a specific NFL team, including all games for the season.
+      operationId: getNFLTeamSchedule
+      parameters:
+        - name: teamId
+          in: path
+          required: true
+          description: The ID of the NFL team
+          schema:
+            type: string
+            example: "12"
+        - name: season
+          in: query
+          required: false
+          description: The season year to retrieve the schedule for
+          schema:
+            type: integer
+            example: 2024
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NFLTeamScheduleResponse'
+        '404':
+          description: Team or schedule not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/football/nfl/news:
     get:
       summary: Get NFL News
@@ -955,7 +995,6 @@ components:
           example: "post-season"
       required:
         - year
-        - type
 
     EventWeek:
       type: object
@@ -1056,7 +1095,6 @@ components:
             example: "FOX"
       required:
         - market
-        - names
 
     GeoBroadcast:
       type: object
@@ -1324,7 +1362,6 @@ components:
       type: object
       required:
         - id
-        - uid
         - order
         - homeAway
         - team
@@ -2826,3 +2863,33 @@ components:
         - header
         - articles
         - link
+
+    NFLTeamScheduleResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: string
+        season:
+          $ref: '#/components/schemas/Season'
+        team:
+          $ref: '#/components/schemas/TeamDetailsFull'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+        requestedSeason:
+          $ref: '#/components/schemas/Season'
+        byeWeek:
+          type: integer
+      required:
+        - timestamp
+        - status
+        - season
+        - team
+        - events
+        - requestedSeason
+        - byeWeek
+      description: NFL team schedule response, including all games for the team in the specified season.

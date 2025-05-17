@@ -91,6 +91,7 @@ from .news_response import NewsResponse
 from .news_team import NewsTeam
 from .news_team_links import NewsTeamLinks
 from .news_web_mobile_links import NewsWebMobileLinks
+from .nfl_team_schedule_response import NFLTeamScheduleResponse
 from .official import Official
 from .play import Play
 from .play_clock import PlayClock
@@ -240,6 +241,7 @@ __all__ = (
     "NewsTeam",
     "NewsTeamLinks",
     "NewsWebMobileLinks",
+    "NFLTeamScheduleResponse",
     "Official",
     "Play",
     "PlayClock",
