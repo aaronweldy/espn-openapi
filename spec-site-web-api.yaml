@@ -603,21 +603,212 @@ components:
     ScoreboardHeaderResponse:
       type: object
       properties:
-        league:
-          $ref: '#/components/schemas/LeagueReference'
-        season:
-          $ref: '#/components/schemas/Season'
-        navigation:
+        sports:
           type: array
           items:
-            $ref: '#/components/schemas/NavigationItem'
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/ScoreboardEvent'
+            type: object
+            properties:
+              id:
+                type: string
+              uid:
+                type: string
+              name:
+                type: string
+              abbreviation:
+                type: string
+              shortName:
+                type: string
+              slug:
+                type: string
+              tag:
+                type: string
+              isTournament:
+                type: boolean
+              leagues:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    uid:
+                      type: string
+                    name:
+                      type: string
+                    abbreviation:
+                      type: string
+                    shortName:
+                      type: string
+                    slug:
+                      type: string
+                    tag:
+                      type: string
+                    isTournament:
+                      type: boolean
+                    smartdates:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          label:
+                            type: string
+                          season:
+                            type: integer
+                          seasontype:
+                            type: integer
+                          week:
+                            type: integer
+                    events:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          uid:
+                            type: string
+                          guid:
+                            type: string
+                          date:
+                            type: string
+                            format: date-time
+                          timeValid:
+                            type: boolean
+                          recent:
+                            type: boolean
+                          name:
+                            type: string
+                          shortName:
+                            type: string
+                          links:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                rel:
+                                  type: array
+                                  items:
+                                    type: string
+                                href:
+                                  type: string
+                                text:
+                                  type: string
+                                shortText:
+                                  type: string
+                                isExternal:
+                                  type: boolean
+                                isPremium:
+                                  type: boolean
+                                isHidden:
+                                  type: boolean
+                                language:
+                                  type: string
+                              additionalProperties: true
+                          gamecastAvailable:
+                            type: boolean
+                          playByPlayAvailable:
+                            type: boolean
+                          commentaryAvailable:
+                            type: boolean
+                          wallclockAvailable:
+                            type: boolean
+                          onWatch:
+                            type: boolean
+                          competitionId:
+                            type: string
+                          location:
+                            type: string
+                          season:
+                            type: integer
+                          seasonStartDate:
+                            type: string
+                          seasonEndDate:
+                            type: string
+                          seasonType:
+                            type: string
+                          seasonTypeHasGroups:
+                            type: boolean
+                          group:
+                            type: object
+                            properties:
+                              groupId:
+                                type: string
+                              name:
+                                type: string
+                              abbreviation:
+                                type: string
+                              shortName:
+                                type: string
+                          week:
+                            type: integer
+                          weekText:
+                            type: string
+                          link:
+                            type: string
+                          status:
+                            type: string
+                          summary:
+                            type: string
+                          period:
+                            type: integer
+                          clock:
+                            type: string
+                          broadcasts:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                typeId:
+                                  type: integer
+                                priority:
+                                  type: integer
+                                type:
+                                  type: string
+                                isNational:
+                                  type: boolean
+                                broadcasterId:
+                                  type: integer
+                                broadcastId:
+                                  type: integer
+                                name:
+                                  type: string
+                                shortName:
+                                  type: string
+                                callLetters:
+                                  type: string
+                                station:
+                                  type: string
+                                lang:
+                                  type: string
+                                region:
+                                  type: string
+                                slug:
+                                  type: string
+                          broadcast:
+                            type: string
+                          odds:
+                            type: object
+                            additionalProperties: true
+                          fullStatus:
+                            type: object
+                            additionalProperties: true
+                          competitors:
+                            type: array
+                            items:
+                              type: object
+                              additionalProperties: true
+                          neutralSite:
+                            type: boolean
+                          appLinks:
+                            type: array
+                            items:
+                              type: object
+                              additionalProperties: true
+                      additionalProperties: true
+                  additionalProperties: true
+            additionalProperties: true
       required:
-        - league
-        - season
+        - sports
 
     NavigationItem:
       type: object

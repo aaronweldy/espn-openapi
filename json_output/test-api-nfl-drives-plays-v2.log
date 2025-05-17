@@ -1,0 +1,45 @@
+
+=== Testing NFL Athlete Gamelog ===
+✓ Successfully retrieved 19 games for athlete ID: 3139477
+
+===========================================================================
+GAME LOG FOR ATHLETE ID: 3139477
+Record: 17-2
+===========================================================================
+DATE         OPPONENT                  RESULT   SCORE      HOME/AWAY  WEEK  
+---------------------------------------------------------------------------
+2025-02-09   Philadelphia Eagles       L        40-22      Home       Week 5
+2025-01-26   Buffalo Bills             W        32-29      Home       Week 3
+2025-01-18   Houston Texans            W        23-14      Home       Week 2
+2024-12-25   Pittsburgh Steelers       W        29-10      Away       Week 17
+2024-12-21   Houston Texans            W        27-19      Home       Week 16
+2024-12-15   Cleveland Browns          W        21-7       Away       Week 15
+2024-12-09   Los Angeles Chargers      W        19-17      Home       Week 14
+2024-11-29   Las Vegas Raiders         W        19-17      Home       Week 13
+2024-11-24   Carolina Panthers         W        30-27      Away       Week 12
+2024-11-17   Buffalo Bills             L        30-21      Away       Week 11
+2024-11-10   Denver Broncos            W        16-14      Home       Week 10
+2024-11-05   Tampa Bay Buccaneers      W        30-24 OT   Home       Week 9
+2024-10-27   Las Vegas Raiders         W        27-20      Away       Week 8
+2024-10-20   San Francisco 49ers       W        28-18      Away       Week 7
+2024-10-08   New Orleans Saints        W        26-13      Home       Week 5
+2024-09-29   Los Angeles Chargers      W        17-10      Away       Week 4
+2024-09-23   Atlanta Falcons           W        22-17      Away       Week 3
+2024-09-15   Cincinnati Bengals        W        26-25      Home       Week 2
+2024-09-06   Baltimore Ravens          W        27-20      Home       Week 1
+✓ Test passed!
+
+=== Testing NFL Competition Drives ===
+✓ Retrieved 20 drives for event 401547417
+First drive: id=4015474171, description=3 plays, 37 yards, 1:06
+✓ Test passed!
+
+=== Testing NFL Competition Plays ===
+✓ Retrieved 187 plays for event 401547417
+First play: id=4015474171, text=GAME
+✓ Test passed!
+
+=== Test Summary ===
+Total tests: 3
+Passed: 3
+Failed: 0

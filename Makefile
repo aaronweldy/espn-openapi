@@ -19,6 +19,9 @@ openapi-site-web:
 openapi-fantasy:
 	openapi-python-client generate --path spec-fantasy.yaml --output-path models/fantasy_api/ --overwrite
 
+openapi-cdn:
+	openapi-python-client generate --path spec-cdn.yaml --output-path models/cdn_api/ --overwrite
+
 # Run a specific test file
 run-test:
 	uv run $(TEST_FILE)

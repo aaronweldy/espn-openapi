@@ -39,6 +39,12 @@ from models.site_web_api.espn_site_web_api_client.api.default.get_general_search
 from models.site_web_api.espn_site_web_api_client.models.search_v2_response import (
     SearchV2Response,
 )
+from models.site_web_api.espn_site_web_api_client.api.default import (
+    get_scoreboard_header,
+)
+from models.site_web_api.espn_site_web_api_client.models.scoreboard_header_response import (
+    ScoreboardHeaderResponse,
+)
 
 # Constants for athlete IDs used in tests
 TEST_ATHLETE_ID_NFL = 4430191  # Skyy Moore
@@ -244,6 +250,68 @@ def test_search_v2():
         return False
 
 
+def test_get_scoreboard_header():
+    """Test fetching and parsing the scoreboard header (site.web.api.espn.com/apis/v2/scoreboard/header)."""
+    print("\n--- Testing Scoreboard Header (NFL Football) --- ")
+    client = EspnSiteWebApiClient(base_url="https://site.web.api.espn.com")
+    try:
+        response = get_scoreboard_header.sync_detailed(
+            client=client,
+            sport="football",
+            league="nfl",
+        )
+        if response.status_code == 200:
+            print(
+                f"✓ Successfully fetched scoreboard header (HTTP {response.status_code})"
+            )
+            result = response.parsed
+            if not isinstance(result, ScoreboardHeaderResponse):
+                print(
+                    f"✗ Parsed result is not ScoreboardHeaderResponse: {type(result)}"
+                )
+                return False
+            # Print summary of the new structure
+            if not result.sports or len(result.sports) == 0:
+                print("✗ No sports found in response.")
+                return False
+            sport = result.sports[0]
+            print(
+                f"Sport: {sport.name if hasattr(sport, 'name') and sport.name is not UNSET else '[no name]'} (id: {sport.id if hasattr(sport, 'id') and sport.id is not UNSET else '[no id]'})"
+            )
+            if not sport.leagues or sport.leagues is UNSET or len(sport.leagues) == 0:
+                print("✗ No leagues found in first sport.")
+                return False
+            league = sport.leagues[0]
+            print(
+                f"League: {league.name if hasattr(league, 'name') and league.name is not UNSET else '[no name]'} (id: {league.id if hasattr(league, 'id') and league.id is not UNSET else '[no id]'})"
+            )
+            if not league.events or league.events is UNSET or len(league.events) == 0:
+                print("✗ No events found in first league.")
+                return False
+            event = league.events[0]
+            print(
+                f"First event: {event.name if hasattr(event, 'name') and event.name is not UNSET else '[no name]'} (id: {event.id if hasattr(event, 'id') and event.id is not UNSET else '[no id]'})"
+            )
+            # Save full response for analysis
+            os.makedirs("json_output", exist_ok=True)
+            with open(
+                "json_output/scoreboard_header_response_processed.json", "w"
+            ) as f:
+                json.dump(result.to_dict(), f, indent=2)
+            print(
+                "✓ Processed response saved to json_output/scoreboard_header_response_processed.json"
+            )
+            return True
+        else:
+            print(f"✗ API returned unexpected status code {response.status_code}")
+            print(response.content)
+            return False
+    except Exception as e:
+        print(f"✗ Exception occurred: {e}")
+        traceback.print_exc()
+        return False
+
+
 # --- Main Execution ---
 
 
@@ -267,6 +335,10 @@ def main():
     # Test search v2 endpoint
     search_v2_result = test_search_v2()
     results.append(("Search V2", search_v2_result))
+
+    # Test scoreboard header endpoint
+    scoreboard_header_result = test_get_scoreboard_header()
+    results.append(("Scoreboard Header", scoreboard_header_result))
 
     # Add calls to other test functions here as they are created...
 

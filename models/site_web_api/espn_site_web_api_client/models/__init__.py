@@ -56,6 +56,35 @@ from .reference import Reference
 from .requested_season import RequestedSeason
 from .scoreboard_event import ScoreboardEvent
 from .scoreboard_header_response import ScoreboardHeaderResponse
+from .scoreboard_header_response_sports_item import ScoreboardHeaderResponseSportsItem
+from .scoreboard_header_response_sports_item_leagues_item import ScoreboardHeaderResponseSportsItemLeaguesItem
+from .scoreboard_header_response_sports_item_leagues_item_events_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItem,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_app_links_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemAppLinksItem,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_broadcasts_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemBroadcastsItem,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_competitors_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemCompetitorsItem,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_full_status import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemFullStatus,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_group import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemGroup,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_links_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemLinksItem,
+)
+from .scoreboard_header_response_sports_item_leagues_item_events_item_odds import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemOdds,
+)
+from .scoreboard_header_response_sports_item_leagues_item_smartdates_item import (
+    ScoreboardHeaderResponseSportsItemLeaguesItemSmartdatesItem,
+)
 from .search_metadata import SearchMetadata
 from .search_response import SearchResponse
 from .search_result import SearchResult
@@ -145,6 +174,17 @@ __all__ = (
     "RequestedSeason",
     "ScoreboardEvent",
     "ScoreboardHeaderResponse",
+    "ScoreboardHeaderResponseSportsItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemAppLinksItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemBroadcastsItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemCompetitorsItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemFullStatus",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemGroup",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemLinksItem",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemEventsItemOdds",
+    "ScoreboardHeaderResponseSportsItemLeaguesItemSmartdatesItem",
     "SearchMetadata",
     "SearchResponse",
     "SearchResult",
