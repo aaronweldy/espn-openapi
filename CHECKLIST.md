@@ -49,7 +49,7 @@ sports.core.api.espn.com
 [x] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/drives - NFL Game Drives. Path Param: {event_id} - (Matches original)
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id} - NFL Get Team (Core API). Path Params: {year}, {team_id}
 [x] /v2/sports/football/leagues/nfl/teams/{team_id}/injuries - NFL Team Injuries. Path Param: {team_id}
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}/depthcharts - NFL Team Depth Chart. Path Params: {year}, {team_id}
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}/depthcharts - NFL Team Depth Chart. Path Params: {year}, {team_id}
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog - NFL Athlete Eventlog. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/leaders - NFL Leaders (Core API). Path Params: {year}, {seasontype}
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft - NFL Draft. Path Param: {year}
