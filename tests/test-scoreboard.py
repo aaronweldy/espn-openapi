@@ -124,6 +124,73 @@ def fetch_direct_scoreboard():
     return None
 
 
+def test_mlb_scoreboard():
+    """Test the MLB scoreboard endpoint and print the full formatted scoreboard for today's games, including active games."""
+    from models.site_api.espn_nfl_api_client import Client
+    from models.site_api.espn_nfl_api_client.api.default.get_mlb_scoreboard import (
+        sync as get_mlb_scoreboard,
+    )
+    from models.site_api.espn_nfl_api_client.models.mlb_scoreboard_response import (
+        MlbScoreboardResponse,
+    )
+    from models.site_api.espn_nfl_api_client.types import UNSET
+    import os
+    from datetime import datetime
+
+    today = datetime.now().strftime("%Y%m%d")
+    print(f"\n--- Testing MLB Scoreboard for {today} ---")
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    response = get_mlb_scoreboard(client=client, dates=today)
+    if not isinstance(response, MlbScoreboardResponse):
+        print(f"✗ Response is not MlbScoreboardResponse: {type(response)}")
+        return False
+    # Defensive: check for missing or empty fields
+    if not getattr(response, "leagues", None) or not getattr(response, "events", None):
+        print("No MLB games scheduled for today.")
+        return True
+    league = response.leagues[0]
+    print(f"League: {getattr(league, 'name', '[no name]')}")
+    print("\n--- MLB Games Today ---")
+    for event in response.events:
+        print(f"\nGame: {getattr(event, 'name', '[no name]')}")
+        print(f"Date: {getattr(event, 'date', '[no date]')}")
+        if event.competitions:
+            comp = event.competitions[0]
+            competitors = getattr(comp, "competitors", [])
+            teams = []
+            scores = []
+            for c in competitors:
+                team_name = getattr(
+                    getattr(c, "team", None), "display_name", "[no team]"
+                )
+                score = getattr(c, "score", "?")
+                teams.append(team_name)
+                scores.append(score)
+            print(f"Teams: {' vs '.join(teams)} | Scores: {', '.join(scores)}")
+            # Print game status
+            status = getattr(comp, "status", None)
+            status_type = getattr(status, "type", None) if status else None
+            state = getattr(status_type, "state", None) if status_type else None
+            desc = getattr(status_type, "description", None) if status_type else None
+            print(f"Status: {desc or '[no status]'}")
+            if state == "in":
+                print("  → Game is IN PROGRESS!")
+            elif state == "post":
+                print("  → Game is FINAL.")
+            elif state == "pre":
+                print("  → Game has not started yet.")
+    # Save processed response
+    os.makedirs("json_output", exist_ok=True)
+    with open("json_output/mlb_scoreboard_processed.json", "w") as f:
+        import json
+
+        json.dump(response.to_dict(), f, indent=2)
+    print(
+        "✓ Processed MLB scoreboard saved to json_output/mlb_scoreboard_processed.json"
+    )
+    return True
+
+
 def main():
     """Main function to test the ESPN NFL Scoreboard API."""
     print("ESPN NFL Scoreboard API Test Script")
@@ -245,6 +312,10 @@ def main():
             print("✗ Failed to fetch scoreboard data using client")
     except Exception as e:
         print(f"✗ Error using generated client: {str(e)}")
+
+    print("\n--- Running MLB Scoreboard Test ---")
+    mlb_result = test_mlb_scoreboard()
+    print(f"MLB Scoreboard Test: {'PASS' if mlb_result else 'FAIL'}")
 
 
 def test_monday_night_football():

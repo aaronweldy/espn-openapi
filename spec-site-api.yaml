@@ -395,6 +395,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/SundayNightFootballResponse'
 
+  /sports/baseball/mlb/scoreboard:
+    get:
+      summary: Get MLB Scoreboard
+      description: Retrieve current MLB scoreboard including game scores, status, and basic information
+      operationId: getMLBScoreboard
+      parameters:
+        - name: dates
+          in: query
+          required: false
+          description: Filter by specific dates (format YYYYMMDD)
+          schema:
+            type: string
+            example: "20240401"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MlbScoreboardResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     TeamsListResponse:
@@ -548,7 +581,6 @@ components:
         href:
           type: string
           format: uri
-          example: "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png"
         alt:
           type: string
         rel:
@@ -787,13 +819,10 @@ components:
         href:
           type: string
           format: uri
-          example: "https://a.espncdn.com/i/venues/nfl/day/3622.jpg"
         width:
           type: integer
-          example: 2000
         height:
           type: integer
-          example: 1125
         alt:
           type: string
         rel:
@@ -861,7 +890,9 @@ components:
         calendar:
           type: array
           items:
-            $ref: '#/components/schemas/CalendarItem'
+            oneOf:
+              - $ref: '#/components/schemas/CalendarItem'
+              - type: string
       required:
         - id
         - name
@@ -2071,19 +2102,28 @@ components:
           description: Athlete name
           example: "John Jenkins"
         links:
-          $ref: '#/components/schemas/AthleteLinks'
+          oneOf:
+            - $ref: '#/components/schemas/AthleteLinks'
+            - type: array
+              items:
+                $ref: '#/components/schemas/Link'
       required:
         - id
-        - description
         - links
 
     AthleteLinks:
       type: object
       properties:
         web:
-          $ref: '#/components/schemas/WebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/WebMobileLinks'
+            - type: string
+              format: uri
         mobile:
-          $ref: '#/components/schemas/WebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/WebMobileLinks'
+            - type: string
+              format: uri
       required:
         - web
         - mobile
@@ -2097,6 +2137,16 @@ components:
           $ref: '#/components/schemas/Link'
         leagues:
           $ref: '#/components/schemas/Link'
+        web:
+          oneOf:
+            - $ref: '#/components/schemas/Link'
+            - type: string
+              format: uri
+        mobile:
+          oneOf:
+            - $ref: '#/components/schemas/Link'
+            - type: string
+              format: uri
 
     Contributor:
       type: object
@@ -2125,9 +2175,15 @@ components:
       type: object
       properties:
         web:
-          $ref: '#/components/schemas/WebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/WebMobileLinks'
+            - type: string
+              format: uri
         mobile:
-          $ref: '#/components/schemas/WebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/WebMobileLinks'
+            - type: string
+              format: uri
       required:
         - web
         - mobile
@@ -2367,9 +2423,15 @@ components:
       type: object
       properties:
         web:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
         mobile:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
       required:
         - web
         - mobile
@@ -2429,9 +2491,15 @@ components:
       type: object
       properties:
         web:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
         mobile:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
       required:
         - web
         - mobile
@@ -2461,9 +2529,15 @@ components:
       type: object
       properties:
         web:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
         mobile:
-          $ref: '#/components/schemas/NewsWebMobileLinks'
+          oneOf:
+            - $ref: '#/components/schemas/NewsWebMobileLinks'
+            - type: string
+              format: uri
       required:
         - web
         - mobile
@@ -2990,3 +3064,29 @@ components:
         - leagues
         - season
         - events
+
+    MlbScoreboardResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+        day:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+          required:
+            - date
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+      required:
+        - leagues
+        - events
+      description: MLB scoreboard response, including all games for the specified date(s).
