@@ -183,8 +183,75 @@ def test_generic_news_endpoint():
     return True
 
 
+def test_mlb_news():
+    """Test retrieving MLB news from the specific endpoint"""
+    print("Testing MLB News endpoint...")
+    limit = 5
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    from models.site_api.espn_nfl_api_client.api.default.get_mlb_news import (
+        sync_detailed as get_mlb_news,
+    )
+
+    response = get_mlb_news(client=client, limit=limit)
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+
+    if isinstance(response, ErrorResponse):
+        print(f"Error: {response.parsed}")
+        return False
+
+    assert isinstance(response.parsed, SportNewsAPISchema)
+    news: SportNewsAPISchema = response.parsed
+
+    # Check top-level fields
+    assert isinstance(news.header, str)
+    assert isinstance(news.articles, list)
+    assert len(news.articles) > 0
+    assert hasattr(news, "link")
+    assert hasattr(news.link, "href")
+
+    # Check the first article in detail
+    article = news.articles[0]
+    assert isinstance(article, NewsArticle)
+    assert isinstance(article.id, int)
+    assert isinstance(article.now_id, str)
+    assert isinstance(article.content_key, str)
+    assert isinstance(article.data_source_identifier, str)
+    assert article.type.value in ["HeadlineNews", "Media", "Story", "Recap"]
+    assert isinstance(article.headline, str)
+    assert isinstance(article.description, str)
+    assert isinstance(article.last_modified, (str, datetime)) or hasattr(
+        article.last_modified, "isoformat"
+    )
+    assert isinstance(article.published, (str, datetime)) or hasattr(
+        article.published, "isoformat"
+    )
+    assert isinstance(article.images, list)
+    assert isinstance(article.categories, list)
+    assert isinstance(article.premium, bool)
+    assert hasattr(article, "links")
+
+    # Print a summary of the first article for debugging
+    print("First MLB article summary:")
+    print(f"  Headline: {article.headline}")
+    print(f"  Description: {article.description}")
+    print(f"  Published: {article.published}")
+    print(f"  Images: {len(article.images)}")
+    print(f"  Categories: {len(article.categories)}")
+    print(f"  Links: web={getattr(article.links.web, 'href', None)}")
+
+    return True
+
+
 if __name__ == "__main__":
-    tests = [test_nfl_news, test_nfl_news_team_specific, test_generic_news_endpoint]
+    tests = [
+        test_nfl_news,
+        test_nfl_news_team_specific,
+        test_generic_news_endpoint,
+        test_mlb_news,
+    ]
 
     success = True
     for test in tests:

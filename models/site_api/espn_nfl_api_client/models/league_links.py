@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -14,18 +14,28 @@ T = TypeVar("T", bound="LeagueLinks")
 class LeagueLinks:
     """
     Attributes:
-        web (WebMobileLinks):
-        mobile (WebMobileLinks):
+        web (Union['WebMobileLinks', str]):
+        mobile (Union['WebMobileLinks', str]):
     """
 
-    web: "WebMobileLinks"
-    mobile: "WebMobileLinks"
+    web: Union["WebMobileLinks", str]
+    mobile: Union["WebMobileLinks", str]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        web = self.web.to_dict()
+        from ..models.web_mobile_links import WebMobileLinks
 
-        mobile = self.mobile.to_dict()
+        web: Union[Dict[str, Any], str]
+        if isinstance(self.web, WebMobileLinks):
+            web = self.web.to_dict()
+        else:
+            web = self.web
+
+        mobile: Union[Dict[str, Any], str]
+        if isinstance(self.mobile, WebMobileLinks):
+            mobile = self.mobile.to_dict()
+        else:
+            mobile = self.mobile
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -43,9 +53,32 @@ class LeagueLinks:
         from ..models.web_mobile_links import WebMobileLinks
 
         d = src_dict.copy()
-        web = WebMobileLinks.from_dict(d.pop("web"))
 
-        mobile = WebMobileLinks.from_dict(d.pop("mobile"))
+        def _parse_web(data: object) -> Union["WebMobileLinks", str]:
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                web_type_0 = WebMobileLinks.from_dict(data)
+
+                return web_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["WebMobileLinks", str], data)
+
+        web = _parse_web(d.pop("web"))
+
+        def _parse_mobile(data: object) -> Union["WebMobileLinks", str]:
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                mobile_type_0 = WebMobileLinks.from_dict(data)
+
+                return mobile_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union["WebMobileLinks", str], data)
+
+        mobile = _parse_mobile(d.pop("mobile"))
 
         league_links = cls(
             web=web,

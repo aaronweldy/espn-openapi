@@ -12,7 +12,7 @@ T = TypeVar("T", bound="TeamLogo")
 class TeamLogo:
     """
     Attributes:
-        href (str):  Example: https://a.espncdn.com/i/teamlogos/nfl/500/ari.png.
+        href (str):
         alt (Union[Unset, str]):
         rel (Union[Unset, List[str]]):
         width (Union[Unset, int]):  Example: 500.

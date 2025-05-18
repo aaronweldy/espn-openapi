@@ -12,9 +12,9 @@ T = TypeVar("T", bound="VenueImage")
 class VenueImage:
     """
     Attributes:
-        href (Union[Unset, str]):  Example: https://a.espncdn.com/i/venues/nfl/day/3622.jpg.
-        width (Union[Unset, int]):  Example: 2000.
-        height (Union[Unset, int]):  Example: 1125.
+        href (Union[Unset, str]):
+        width (Union[Unset, int]):
+        height (Union[Unset, int]):
         alt (Union[Unset, str]):
         rel (Union[Unset, List[str]]):
     """

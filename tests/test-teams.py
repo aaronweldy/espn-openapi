@@ -121,6 +121,49 @@ def fetch_direct_teams_list():
     return None
 
 
+def test_mlb_teams_list():
+    """Test the ESPN MLB Teams List API."""
+    print("\nFetching MLB teams list data")
+    print("-" * 50)
+
+    from models.site_api.espn_nfl_api_client.api.default.get_mlb_teams_list import (
+        sync as get_mlb_teams_list,
+    )
+
+    client = Client("https://site.api.espn.com/apis/site/v2")
+    teams_data = get_mlb_teams_list(client=client)
+
+    if isinstance(teams_data, ErrorResponse):
+        print("✗ API returned an error response:")
+        print(
+            teams_data.error.message
+            if hasattr(teams_data, "error")
+            and teams_data.error
+            and hasattr(teams_data.error, "message")
+            else str(teams_data)
+        )
+        return False
+    elif isinstance(teams_data, TeamsListResponse):
+        # Validate schema
+        if validate_schema_response(teams_data):
+            print("✓ Response matches expected schema structure")
+        else:
+            print("✗ Response does not match expected schema structure")
+            return False
+
+        # Display formatted summary
+        print("\n" + format_teams_list(teams_data))
+
+        # Save full response for analysis
+        with open("mlb_teams_response_processed.json", "w") as f:
+            json.dump(teams_data.to_dict(), f, indent=2)
+        print("\n✓ Full processed response saved to mlb_teams_response_processed.json")
+        return True
+    else:
+        print("✗ Failed to fetch teams data using client")
+        return False
+
+
 def main():
     """Main function to test the ESPN NFL Teams List API."""
     print("ESPN NFL Teams List API Test Script")
@@ -206,6 +249,10 @@ def main():
             )
 
         print("\n✓ Full teams response saved to nfl_teams_direct.json")
+
+    print("\nRunning MLB Teams List Test")
+    mlb_result = test_mlb_teams_list()
+    print(f"MLB Teams List Test: {'PASS' if mlb_result else 'FAIL'}")
 
 
 if __name__ == "__main__":

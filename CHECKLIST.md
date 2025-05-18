@@ -61,30 +61,30 @@ site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/gamelog - NFL Athlete game log. Path Param: {athlete_id} - (Matches original)
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/splits - NFL Athlete Splits. Path Param: {athlete_id}
 III. MLB Endpoints
-site.api.espn.com/apis/site/v2
-[ ] /sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD)
-[ ] /sports/baseball/mlb/news - MLB News
-[ ] /sports/baseball/mlb/teams - MLB Teams List
-[ ] /sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
-[ ] /sports/baseball/mlb/summary?event={event_id} - MLB Game Summary. Query Param: event={event_id}
-[ ] /sports/baseball/mlb/teams/{team_id_or_abbrev}/roster - MLB Team Roster. Path Param: {team_id_or_abbrev}
-[ ] /sports/baseball/mlb/players - MLB Players List
-[ ] /sports/baseball/mlb/statistics/players - MLB Aggregate Player Statistics
+site.api.espn.com/apis/site
+[x] /v2/sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD)
+[x] /v2/sports/baseball/mlb/news - MLB News
+[x] /v2/sports/baseball/mlb/teams - MLB Teams List
+[ ] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
+[ ] /v2/sports/baseball/mlb/summary?event={event_id} - MLB Game Summary. Query Param: event={event_id}
+[ ] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev}/roster - MLB Team Roster. Path Param: {team_id_or_abbrev}
+[ ] /v2/sports/baseball/mlb/players - MLB Players List
+[ ] /v2/sports/baseball/mlb/statistics/players - MLB Aggregate Player Statistics
 sports.core.api.espn.com
 [ ] /v2/sports/baseball/leagues/mlb/athletes/{athlete_id} - Detailed MLB athlete information. Path Param: {athlete_id}
 [ ] /v2/sports/baseball/leagues/mlb/athletes/{athlete_id}/statistics - MLB Athlete statistics. Path Param: {athlete_id}
 site.web.api.espn.com
 [ ] /apis/common/v3/sports/baseball/mlb/athletes/{athlete_id} - MLB Player Details. Path Param: {athlete_id}
 IV. NHL Endpoints
-site.api.espn.com/apis/site/v2
-[ ] /sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
-[ ] /sports/hockey/nhl/news - NHL News
-[ ] /sports/hockey/nhl/teams - NHL Teams List
-[ ] /sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
-[ ] /sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
-[ ] /sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
-[ ] /sports/hockey/nhl/players - NHL Players List
-[ ] /sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics
+site.api.espn.com/apis/site
+[ ] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
+[ ] /v2/sports/hockey/nhl/news - NHL News
+[ ] /v2/sports/hockey/nhl/teams - NHL Teams List
+[ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
+[ ] /v2/sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
+[ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
+[ ] /v2/sports/hockey/nhl/players - NHL Players List
+[ ] /v2/sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics
 sports.core.api.espn.com
 [ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id} - Detailed NHL athlete information. Path Param: {athlete_id}
 [ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id}/statistics - NHL Athlete statistics. Path Param: {athlete_id}

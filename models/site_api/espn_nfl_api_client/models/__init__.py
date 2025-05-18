@@ -68,6 +68,8 @@ from .league_season import LeagueSeason
 from .linescore import Linescore
 from .link import Link
 from .logo import Logo
+from .mlb_scoreboard_response import MlbScoreboardResponse
+from .mlb_scoreboard_response_day import MlbScoreboardResponseDay
 from .monday_night_football_response import MondayNightFootballResponse
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
@@ -221,6 +223,8 @@ __all__ = (
     "Linescore",
     "Link",
     "Logo",
+    "MlbScoreboardResponse",
+    "MlbScoreboardResponseDay",
     "MondayNightFootballResponse",
     "NewsArticle",
     "NewsArticleImage",

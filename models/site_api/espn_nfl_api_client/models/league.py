@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -31,7 +31,7 @@ class League:
         calendar_is_whitelist (Union[Unset, bool]):
         calendar_start_date (Union[Unset, datetime.datetime]):
         calendar_end_date (Union[Unset, datetime.datetime]):
-        calendar (Union[Unset, List['CalendarItem']]):
+        calendar (Union[Unset, List[Union['CalendarItem', str]]]):
     """
 
     id: str
@@ -45,10 +45,12 @@ class League:
     calendar_is_whitelist: Union[Unset, bool] = UNSET
     calendar_start_date: Union[Unset, datetime.datetime] = UNSET
     calendar_end_date: Union[Unset, datetime.datetime] = UNSET
-    calendar: Union[Unset, List["CalendarItem"]] = UNSET
+    calendar: Union[Unset, List[Union["CalendarItem", str]]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.calendar_item import CalendarItem
+
         id = self.id
 
         name = self.name
@@ -80,11 +82,15 @@ class League:
         if not isinstance(self.calendar_end_date, Unset):
             calendar_end_date = self.calendar_end_date.isoformat()
 
-        calendar: Union[Unset, List[Dict[str, Any]]] = UNSET
+        calendar: Union[Unset, List[Union[Dict[str, Any], str]]] = UNSET
         if not isinstance(self.calendar, Unset):
             calendar = []
             for calendar_item_data in self.calendar:
-                calendar_item = calendar_item_data.to_dict()
+                calendar_item: Union[Dict[str, Any], str]
+                if isinstance(calendar_item_data, CalendarItem):
+                    calendar_item = calendar_item_data.to_dict()
+                else:
+                    calendar_item = calendar_item_data
                 calendar.append(calendar_item)
 
         field_dict: Dict[str, Any] = {}
@@ -164,7 +170,19 @@ class League:
         calendar = []
         _calendar = d.pop("calendar", UNSET)
         for calendar_item_data in _calendar or []:
-            calendar_item = CalendarItem.from_dict(calendar_item_data)
+
+            def _parse_calendar_item(data: object) -> Union["CalendarItem", str]:
+                try:
+                    if not isinstance(data, dict):
+                        raise TypeError()
+                    calendar_item_type_0 = CalendarItem.from_dict(data)
+
+                    return calendar_item_type_0
+                except:  # noqa: E722
+                    pass
+                return cast(Union["CalendarItem", str], data)
+
+            calendar_item = _parse_calendar_item(calendar_item_data)
 
             calendar.append(calendar_item)
 
