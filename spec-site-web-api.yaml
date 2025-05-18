@@ -205,15 +205,13 @@ paths:
           required: true
           description: Sport identifier
           schema:
-            type: string
-            example: "football"
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: query
           required: true
           description: League identifier
           schema:
-            type: string
-            example: "nfl"
+            $ref: '#/components/schemas/LeagueEnum'
       responses:
         '200':
           description: Successful response
@@ -2160,3 +2158,106 @@ components:
             - status
       required:
         - athlete
+
+    SportEnum:
+      type: string
+      description: Common sport identifiers used in ESPN APIs.
+      enum:
+        - football
+        - basketball
+        - baseball
+        - hockey
+        - soccer
+        - golf
+        - racing
+        - tennis
+    LeagueEnum:
+      type: string
+      description: Common league identifiers used in ESPN APIs.
+      enum:
+        - nfl
+        - mlb
+        - nba
+        - nhl
+        - wnba
+        - mens-college-basketball
+        - womens-college-basketball
+        - college-football
+        - college-baseball
+        - pga
+        - lpga
+        - f1
+        - nascar-premier
+        - atp
+        - wta
+        - mls
+        - epl
+        - laliga
+        - bundesliga
+        - serie-a
+        - ligue-1
+        - ucl
+        - europa-league
+        - other
+    
+    MlbStatisticName:
+      type: string
+      description: Statistic name identifiers used in MLB API responses
+      enum:
+        - avg
+        - obp
+        - slg
+        - ops
+        - rbi
+        - homeRuns
+        - runs
+        - hits
+        - atBats
+        - doubles
+        - triples
+        - stolenBases
+        - battingAverage
+        - strikeouts
+        - walks
+        - plateAppearances
+        - onBasePercentage
+        - sluggingPercentage
+        - onBasePlusSlugging
+        - totalBases
+        - earnedRunAverage
+        - wins
+        - losses
+        - saves
+        - blownSaves
+        - holds
+        - inningsPitched
+        - walksPlusHitsPerInningPitched
+        - hitsAllowed
+        - walksAllowed
+        - strikeoutsPitching
+        - runsPitching
+        - earnedRuns
+        - homersPitching
+        - fieldingPercentage
+        - putouts
+        - assists
+        - errors
+        - totalChances
+        - battingAverageAgainst
+        - saveOpportunities
+        - gamesPlayed
+        - gamesBatting
+        - gamesPitching
+        - gamesFielding
+        - gamesStarted
+        - completeGames
+        - shutouts
+        - hitBatsmen
+        - wildPitches
+        - pickoffs
+        - groundIntoDoublePlays
+        - sacrificeBunts
+        - sacrificeFlies
+        - intentionalWalks
+        - leftOnBase
+        - winPercentage
