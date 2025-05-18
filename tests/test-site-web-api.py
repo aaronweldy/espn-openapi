@@ -318,9 +318,33 @@ def test_get_scoreboard_header():
 
 
 def test_nfl_athlete_splits():
-    """Test the NFL Athlete Splits endpoint for athlete_id 4430191 (Patrick Mahomes)."""
+    """Test the NFL Athlete Splits endpoint for athlete_id 3139477 (Patrick Mahomes)."""
     client = EspnSiteWebApiClient(base_url="https://site.web.api.espn.com")
-    athlete_id = "4430191"
+    athlete_id = "3139477"
+
+    # Fetch and print athlete details
+    overview = get_athlete_overview_nfl.sync(
+        athlete_id=int(athlete_id),
+        client=client,
+    )
+    print("\n--- Athlete Details ---")
+    if (
+        isinstance(overview, AthleteOverviewResponse)
+        and hasattr(overview, "athlete")
+        and overview.athlete
+    ):
+        athlete = overview.athlete
+        print(f"Name: {getattr(athlete, 'full_name', '?')}")
+        print(f"ID: {getattr(athlete, 'id', '?')}")
+        print(
+            f"Position: {getattr(getattr(athlete, 'position', None), 'display_name', '?')}"
+        )
+        print(f"Age: {getattr(athlete, 'age', '?')}")
+        print(f"Height: {getattr(athlete, 'display_height', '?')}")
+        print(f"Weight: {getattr(athlete, 'display_weight', '?')}")
+        print(f"College: {getattr(getattr(athlete, 'college', None), 'name', '?')}")
+    else:
+        print("Athlete details unavailable.")
 
     response = get_nfl_athlete_splits.sync(
         client=client,
@@ -350,6 +374,30 @@ def test_nfl_athlete_splits():
     print(f"\u2713 Fetched splits for athlete {athlete_id}: {response.display_name}")
     for cat in response.split_categories:
         print(f"- Split Category: {cat.display_name}")
+    # Print detailed statistics for all splits in the 'Month' split category
+    month_category = next(
+        (
+            cat
+            for cat in response.split_categories
+            if cat.display_name.lower() == "month"
+        ),
+        None,
+    )
+    if month_category and month_category.splits and len(month_category.splits) > 0:
+        print("\nDetailed statistics by month:")
+        for split in month_category.splits:
+            print(f"  {split.display_name}:")
+            if (
+                hasattr(response, "labels")
+                and response.labels
+                and hasattr(split, "stats")
+            ):
+                for label, value in zip(response.labels, split.stats):
+                    print(f"    {label}: {value}")
+            else:
+                print(f"    Stats: {split.stats}")
+    else:
+        print("No month splits available.")
     print("\u2713 NFL Athlete Splits test passed!")
     return True
 
