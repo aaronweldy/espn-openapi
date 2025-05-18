@@ -836,7 +836,7 @@
                   "favoriteAtOpen": true,
                   "underdog": false,
                   "moneyLine": -150,
-                  "spreadOdds": 100,
+                  "spreadOdds": -105,
                   "team": {
                     "id": "12",
                     "abbreviation": "KC",
@@ -849,7 +849,7 @@
                   "favoriteAtOpen": false,
                   "underdog": false,
                   "moneyLine": 135,
-                  "spreadOdds": -120,
+                  "spreadOdds": -115,
                   "team": {
                     "id": "24",
                     "abbreviation": "LAC",
@@ -882,13 +882,13 @@
                     },
                     "close": {
                       "line": "+3",
-                      "odds": "-120",
+                      "odds": "-115",
                       "link": {
                         "rel": [
                           "homeSpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/86c72b79-3a65-4d07-aad9-308bcfbceea4&market_selection_id[0]=2792fdc6-87a4-4ae5-afb6-982d2f17fd5f&odds_numerator[0]=11&odds_denominator[0]=6",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/86c72b79-3a65-4d07-aad9-308bcfbceea4&market_selection_id[0]=2792fdc6-87a4-4ae5-afb6-982d2f17fd5f&odds_numerator[0]=43&odds_denominator[0]=23",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -910,13 +910,13 @@
                     },
                     "close": {
                       "line": "-3",
-                      "odds": "EVEN",
+                      "odds": "-105",
                       "link": {
                         "rel": [
                           "awaySpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/86c72b79-3a65-4d07-aad9-308bcfbceea4&market_selection_id[0]=553b034f-25ac-4509-8adb-e87f77dd9eab&odds_numerator[0]=2&odds_denominator[0]=1",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/86c72b79-3a65-4d07-aad9-308bcfbceea4&market_selection_id[0]=553b034f-25ac-4509-8adb-e87f77dd9eab&odds_numerator[0]=41&odds_denominator[0]=21",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -2111,9 +2111,9 @@
               ],
               "broadcast": "CBS",
               "odds": {
-                "details": "IND -1.5",
+                "details": "EVEN",
                 "overUnder": 45.5,
-                "spread": -1.5,
+                "spread": 0.0,
                 "overOdds": -110,
                 "underOdds": -110,
                 "provider": {
@@ -2144,7 +2144,7 @@
                 "awayTeamOdds": {
                   "favorite": false,
                   "favoriteAtOpen": false,
-                  "underdog": true,
+                  "underdog": false,
                   "moneyLine": 100,
                   "spreadOdds": -110,
                   "team": {
@@ -2155,7 +2155,7 @@
                   }
                 },
                 "homeTeamOdds": {
-                  "favorite": true,
+                  "favorite": false,
                   "favoriteAtOpen": true,
                   "underdog": false,
                   "moneyLine": -120,
@@ -2191,14 +2191,14 @@
                       "odds": "-110"
                     },
                     "close": {
-                      "line": "-1.5",
+                      "line": "PK",
                       "odds": "-110",
                       "link": {
                         "rel": [
                           "homeSpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/a70d2593-a2c4-4481-aef3-9cf413485836&market_selection_id[0]=0c1cdfbf-5bf7-4b79-b741-b17b6deefd15&odds_numerator[0]=21&odds_denominator[0]=11",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/a70d2593-a2c4-4481-aef3-9cf413485836&market_selection_id[0]=0977223b-d854-42ef-9588-3b7db6135e7f&odds_numerator[0]=21&odds_denominator[0]=11",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -2207,7 +2207,7 @@
                             "gameId": 401772719,
                             "betSide": "home",
                             "betType": "straight",
-                            "betDetails": "Spread:IND-1.5"
+                            "betDetails": "Spread:INDPK"
                           }
                         }
                       }
@@ -2219,14 +2219,14 @@
                       "odds": "-110"
                     },
                     "close": {
-                      "line": "+1.5",
+                      "line": "PK",
                       "odds": "-110",
                       "link": {
                         "rel": [
                           "awaySpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/a70d2593-a2c4-4481-aef3-9cf413485836&market_selection_id[0]=96f3b770-8c00-42d7-96d0-33c9d73541f8&odds_numerator[0]=21&odds_denominator[0]=11",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/a70d2593-a2c4-4481-aef3-9cf413485836&market_selection_id[0]=b6428efb-049f-4c68-a256-fead978595fc&odds_numerator[0]=21&odds_denominator[0]=11",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -2235,7 +2235,7 @@
                             "gameId": 401772719,
                             "betSide": "away",
                             "betType": "straight",
-                            "betDetails": "Spread:MIA+1.5"
+                            "betDetails": "Spread:MIAPK"
                           }
                         }
                       }
@@ -4076,9 +4076,9 @@
               ],
               "broadcast": "FOX",
               "odds": {
-                "details": "WSH -7",
+                "details": "WSH -7.5",
                 "overUnder": 44.5,
-                "spread": -7.0,
+                "spread": -7.5,
                 "overOdds": -120,
                 "underOdds": 100,
                 "provider": {
@@ -4101,17 +4101,17 @@
                   ]
                 },
                 "home": {
-                  "moneyLine": -340
+                  "moneyLine": -360
                 },
                 "away": {
-                  "moneyLine": 270
+                  "moneyLine": 280
                 },
                 "awayTeamOdds": {
                   "favorite": false,
                   "favoriteAtOpen": false,
                   "underdog": true,
-                  "moneyLine": 270,
-                  "spreadOdds": -105,
+                  "moneyLine": 280,
+                  "spreadOdds": -110,
                   "team": {
                     "id": "19",
                     "abbreviation": "NYG",
@@ -4123,8 +4123,8 @@
                   "favorite": true,
                   "favoriteAtOpen": true,
                   "underdog": false,
-                  "moneyLine": -340,
-                  "spreadOdds": -115,
+                  "moneyLine": -360,
+                  "spreadOdds": -110,
                   "team": {
                     "id": "28",
                     "abbreviation": "WSH",
@@ -4156,14 +4156,14 @@
                       "odds": "-110"
                     },
                     "close": {
-                      "line": "-7",
-                      "odds": "-115",
+                      "line": "-7.5",
+                      "odds": "-110",
                       "link": {
                         "rel": [
                           "homeSpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=57f02b27-4e3f-42a5-ba33-9d890b2cc317&odds_numerator[0]=43&odds_denominator[0]=23",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=ac6bef6c-002a-4685-a741-cf7520d26dc4&odds_numerator[0]=21&odds_denominator[0]=11",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -4172,7 +4172,7 @@
                             "gameId": 401772827,
                             "betSide": "home",
                             "betType": "straight",
-                            "betDetails": "Spread:WSH-7"
+                            "betDetails": "Spread:WSH-7.5"
                           }
                         }
                       }
@@ -4184,14 +4184,14 @@
                       "odds": "-110"
                     },
                     "close": {
-                      "line": "+7",
-                      "odds": "-105",
+                      "line": "+7.5",
+                      "odds": "-110",
                       "link": {
                         "rel": [
                           "awaySpread",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=6f6d546a-8a76-455e-b98a-7b9865fc2138&odds_numerator[0]=41&odds_denominator[0]=21",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=774475f3-8688-4ac3-8cef-7a616be0e19e&odds_numerator[0]=21&odds_denominator[0]=11",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -4200,7 +4200,7 @@
                             "gameId": 401772827,
                             "betSide": "away",
                             "betType": "straight",
-                            "betDetails": "Spread:NYG+7"
+                            "betDetails": "Spread:NYG+7.5"
                           }
                         }
                       }
@@ -4215,13 +4215,13 @@
                       "odds": "-300"
                     },
                     "close": {
-                      "odds": "-340",
+                      "odds": "-360",
                       "link": {
                         "rel": [
                           "home",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=bfaffdd1-968a-4113-883a-228dc94cec56&odds_numerator[0]=22&odds_denominator[0]=17",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=bfaffdd1-968a-4113-883a-228dc94cec56&odds_numerator[0]=23&odds_denominator[0]=18",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {
@@ -4240,13 +4240,13 @@
                       "odds": "+250"
                     },
                     "close": {
-                      "odds": "+270",
+                      "odds": "+280",
                       "link": {
                         "rel": [
                           "away",
                           "bets"
                         ],
-                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=2035dab5-d225-4222-8c3a-604baa270d79&odds_numerator[0]=37&odds_denominator[0]=10",
+                        "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/b8b0c1b2-ff24-4361-b1c2-367d17d6a62f&market_selection_id[0]=2035dab5-d225-4222-8c3a-604baa270d79&odds_numerator[0]=19&odds_denominator[0]=5",
                         "tracking": {
                           "campaign": "betting-integrations",
                           "tags": {

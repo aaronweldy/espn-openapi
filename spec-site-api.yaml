@@ -509,10 +509,41 @@ paths:
         - name: team_id_or_abbrev
           in: path
           required: true
-          description: The team ID or abbreviation
+          description: The team ID (numeric string) or abbreviation (see enum for valid abbreviations)
           schema:
             type: string
             example: "15"
+            enum:
+              - ARI
+              - ATH
+              - ATL
+              - BAL
+              - BOS
+              - CHC
+              - CHW
+              - CIN
+              - CLE
+              - COL
+              - DET
+              - HOU
+              - KC
+              - LAA
+              - LAD
+              - MIA
+              - MIL
+              - MIN
+              - NYM
+              - NYY
+              - PHI
+              - PIT
+              - SD
+              - SEA
+              - SF
+              - STL
+              - TB
+              - TEX
+              - TOR
+              - WSH
       responses:
         '200':
           description: Successful response

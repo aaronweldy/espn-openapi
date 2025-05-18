@@ -1,0 +1,184 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/AthleteSplitsSchema",
+    "definitions": {
+        "AthleteSplitsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Filter"
+                    }
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                },
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "names": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "displayNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "descriptions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "splitCategories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SplitCategory"
+                    }
+                }
+            },
+            "required": [
+                "categories",
+                "descriptions",
+                "displayName",
+                "displayNames",
+                "filters",
+                "labels",
+                "names",
+                "splitCategories"
+            ],
+            "title": "AthleteSplitsSchema"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "count",
+                "displayName",
+                "name"
+            ],
+            "title": "Category"
+        },
+        "Filter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "options": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Option"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "name",
+                "options",
+                "value"
+            ],
+            "title": "Filter"
+        },
+        "Option": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "displayValue": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "displayValue",
+                "value"
+            ],
+            "title": "Option"
+        },
+        "SplitCategory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "splits": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Split"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "name"
+            ],
+            "title": "SplitCategory"
+        },
+        "Split": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "stats"
+            ],
+            "title": "Split"
+        }
+    }
+}
