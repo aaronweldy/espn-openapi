@@ -65,7 +65,7 @@ site.api.espn.com/apis/site
 [x] /v2/sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD)
 [x] /v2/sports/baseball/mlb/news - MLB News
 [x] /v2/sports/baseball/mlb/teams - MLB Teams List
-[ ] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
+[x] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
 [ ] /v2/sports/baseball/mlb/summary?event={event_id} - MLB Game Summary. Query Param: event={event_id}
 [ ] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev}/roster - MLB Team Roster. Path Param: {team_id_or_abbrev}
 [ ] /v2/sports/baseball/mlb/players - MLB Players List

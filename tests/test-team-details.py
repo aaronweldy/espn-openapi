@@ -9,6 +9,9 @@ import json
 import requests
 from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_details import sync
+from models.site_api.espn_nfl_api_client.api.default.get_mlb_team_details import (
+    sync as get_mlb_team_details,
+)
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.team_details_response import (
     TeamDetailsResponse,
@@ -93,6 +96,47 @@ def fetch_direct_team_details(team_id: str):
     return None
 
 
+def test_mlb_team_details():
+    """Test the ESPN MLB Team Details API."""
+    print("\nFetching MLB team details for team ID: 15 (Boston Red Sox)")
+    print("-" * 50)
+
+    client = Client(base_url="https://site.api.espn.com/apis/site/v2")
+    team_data = get_mlb_team_details(client=client, team_id_or_abbrev="15")
+
+    if isinstance(team_data, ErrorResponse):
+        print("✗ API returned an error response:")
+        print(
+            team_data.error.message
+            if hasattr(team_data, "error")
+            and team_data.error
+            and hasattr(team_data.error, "message")
+            else str(team_data)
+        )
+        return False
+    elif isinstance(team_data, TeamDetailsResponse):
+        # Validate schema
+        if validate_schema_response(team_data):
+            print("✓ Response matches expected schema structure")
+        else:
+            print("✗ Response does not match expected schema structure")
+            return False
+
+        # Display formatted summary
+        print("\n" + format_team_details(team_data))
+
+        # Save full response for analysis
+        with open("mlb_team_details_response_processed.json", "w") as f:
+            json.dump(team_data.to_dict(), f, indent=2)
+        print(
+            "\n✓ Full processed response saved to mlb_team_details_response_processed.json"
+        )
+        return True
+    else:
+        print("✗ Failed to fetch team details using client")
+        return False
+
+
 def main():
     """Main function to test the ESPN NFL Team Details API."""
     print("ESPN NFL Team Details API Test Script")
@@ -171,6 +215,10 @@ def main():
         )
 
         print("\n✓ Full team details response saved to nfl_team_details_direct.json")
+
+    print("\nRunning MLB Team Details Test")
+    mlb_result = test_mlb_team_details()
+    print(f"MLB Team Details Test: {'PASS' if mlb_result else 'FAIL'}")
 
 
 if __name__ == "__main__":
