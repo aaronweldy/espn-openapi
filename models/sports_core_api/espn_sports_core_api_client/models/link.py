@@ -12,7 +12,7 @@ T = TypeVar("T", bound="Link")
 class Link:
     """
     Attributes:
-        href (str):  Example: https://www.espn.com/nfl/standings.
+        href (str):
         rel (List[str]):
         text (Union[Unset, str]):  Example: Standings.
     """

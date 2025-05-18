@@ -1018,6 +1018,54 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/groups/{group_id}/standings:
+    get:
+      summary: Get NFL Conference Standings
+      description: Retrieve NFL conference standings for a given year, season type, and group (e.g., NFC or AFC).
+      operationId: getNFLConferenceStandings
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: seasontype
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+        - name: group_id
+          in: path
+          required: true
+          description: The group ID (e.g., 7 for NFC, 8 for AFC)
+          schema:
+            type: integer
+            example: 7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflConferenceStandingsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1396,7 +1444,6 @@ components:
         href:
           type: string
           format: uri
-          example: "https://www.espn.com/nfl/standings"
         text:
           type: string
           example: "Standings"
@@ -2674,3 +2721,50 @@ components:
         - teams
         - events
       description: NFL athlete event log response object. 
+
+    NflConferenceStandingsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/NflConferenceStandingsItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+      description: NFL Conference Standings response object.
+
+    NflConferenceStandingsItem:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+      required:
+        - $ref
+        - id
+        - name
+        - displayName
+        - links
+      description: Item in NFL Conference Standings response. 

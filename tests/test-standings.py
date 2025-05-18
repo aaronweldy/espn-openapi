@@ -341,5 +341,47 @@ def main():
         print(traceback.format_exc())
 
 
+def test_nfl_conference_standings():
+    """Test the NFL Conference Standings endpoint for NFC 2023 regular season."""
+    from models.sports_core_api.espn_sports_core_api_client import Client
+    from models.sports_core_api.espn_sports_core_api_client.api.default import (
+        get_nfl_conference_standings,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models import (
+        NflConferenceStandingsResponse,
+        ErrorResponse,
+        GetNFLConferenceStandingsSeasontype,
+    )
+    import os
+
+    client = Client(base_url="https://sports.core.api.espn.com")
+    year = 2023
+    seasontype = GetNFLConferenceStandingsSeasontype.VALUE_2
+    group_id = 7  # NFC
+
+    response = get_nfl_conference_standings.sync(
+        client=client,
+        year=year,
+        seasontype=seasontype,
+        group_id=group_id,
+    )
+
+    assert response is not None, "No response returned from API"
+    if isinstance(response, ErrorResponse):
+        print(
+            f"API returned error: {response.error.message if response.error else response}"
+        )
+        assert False, "API returned error response"
+    assert isinstance(response, NflConferenceStandingsResponse), (
+        f"Unexpected response type: {type(response)}"
+    )
+    assert response.count > 0, "Standings count should be greater than 0"
+    assert response.items, "Standings items should not be empty"
+    print(f"\u2713 Fetched {response.count} conference standings items.")
+    for item in response.items:
+        print(f"- {item.display_name} (ID: {item.id})")
+    print("\u2713 NFL Conference Standings test passed!")
+
+
 if __name__ == "__main__":
     main()

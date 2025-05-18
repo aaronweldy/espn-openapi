@@ -30,6 +30,7 @@ from .event_detail_venues_item_type_1 import EventDetailVenuesItemType1
 from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
+from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
 from .link import Link
 from .logo import Logo
 from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
@@ -42,6 +43,8 @@ from .nfl_athlete_injury_athlete_type_1 import NflAthleteInjuryAthleteType1
 from .nfl_athlete_injury_source import NflAthleteInjurySource
 from .nfl_athlete_injury_team_type_1 import NflAthleteInjuryTeamType1
 from .nfl_athlete_injury_type import NflAthleteInjuryType
+from .nfl_conference_standings_item import NflConferenceStandingsItem
+from .nfl_conference_standings_response import NflConferenceStandingsResponse
 from .nfl_draft_athlete_analysis import NflDraftAthleteAnalysis
 from .nfl_draft_athlete_attribute import NflDraftAthleteAttribute
 from .nfl_draft_athlete_response import NflDraftAthleteResponse
@@ -119,6 +122,7 @@ __all__ = (
     "EventDetailWeekType1",
     "EventReference",
     "GetLeagueSeasonWeeksSeasonType",
+    "GetNFLConferenceStandingsSeasontype",
     "Link",
     "Logo",
     "NflAthleteEventlogResponse",
@@ -131,6 +135,8 @@ __all__ = (
     "NflAthleteInjurySource",
     "NflAthleteInjuryTeamType1",
     "NflAthleteInjuryType",
+    "NflConferenceStandingsItem",
+    "NflConferenceStandingsResponse",
     "NflDraftAthleteAnalysis",
     "NflDraftAthleteAttribute",
     "NflDraftAthleteResponse",

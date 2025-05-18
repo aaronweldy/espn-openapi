@@ -55,7 +55,7 @@ sports.core.api.espn.com
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/draft - NFL Draft. Path Param: {year}
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/draft/rounds - NFL Draft Rounds. Path Param: {year}
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/groups/{group_id}/standings - NFL Conference Standings. Path Params: {year}, {seasontype}, {group_id} (e.g., 7=NFC, 8=AFC)
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/groups/{group_id}/standings - NFL Conference Standings. Path Params: {year}, {seasontype}, {group_id} (e.g., 7=NFC, 8=AFC)
 site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/overview - NFL Athlete overview. Path Param: {athlete_id} - (Matches original)
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/gamelog - NFL Athlete game log. Path Param: {athlete_id} - (Matches original)
