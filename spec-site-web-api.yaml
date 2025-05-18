@@ -228,6 +228,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/common/v3/sports/football/nfl/athletes/{athleteId}:
+    get:
+      tags:
+        - NFL Athletes
+      summary: Get NFL athlete profile
+      operationId: getAthleteProfileNFL
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: ID of the athlete
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteProfileResponse'
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
 components:
   schemas:
     Reference:
@@ -979,7 +1006,9 @@ components:
           example: true
           nullable: true
         parent:
-          $ref: '#/components/schemas/Reference'
+          oneOf:
+            - $ref: '#/components/schemas/Position'
+            - $ref: '#/components/schemas/Reference'
           nullable: true
 
     StatCategory:
@@ -2063,3 +2092,71 @@ components:
         - stats
         - abbreviation
       description: Split in NFL Athlete Splits response.
+
+    AthleteProfileResponse:
+      type: object
+      properties:
+        athlete:
+          type: object
+          properties:
+            id:
+              type: string
+            uid:
+              type: string
+            guid:
+              type: string
+            type:
+              type: string
+            firstName:
+              type: string
+            lastName:
+              type: string
+            displayName:
+              type: string
+            fullName:
+              type: string
+            jersey:
+              type: string
+            position:
+              $ref: '#/components/schemas/Position'
+            age:
+              type: integer
+            displayHeight:
+              type: string
+            displayWeight:
+              type: string
+            college:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                abbrev:
+                  type: string
+            team:
+              $ref: '#/components/schemas/Team'
+            headshot:
+              $ref: '#/components/schemas/Headshot'
+            status:
+              $ref: '#/components/schemas/Status'
+          required:
+            - id
+            - uid
+            - guid
+            - type
+            - firstName
+            - lastName
+            - displayName
+            - fullName
+            - jersey
+            - position
+            - age
+            - displayHeight
+            - displayWeight
+            - college
+            - team
+            - headshot
+            - status
+      required:
+        - athlete

@@ -50,6 +50,12 @@ from models.site_web_api.espn_site_web_api_client.models import (
     AthleteSplitsResponse,
     ErrorResponse,
 )
+from models.site_web_api.espn_site_web_api_client.api.nfl_athletes.get_athlete_profile_nfl import (
+    sync_detailed as get_athlete_profile_nfl_sync_detailed,
+)
+from models.site_web_api.espn_site_web_api_client.models.athlete_profile_response import (
+    AthleteProfileResponse,
+)
 
 # Constants for athlete IDs used in tests
 TEST_ATHLETE_ID_NFL = 4430191  # Skyy Moore
@@ -323,17 +329,15 @@ def test_nfl_athlete_splits():
     athlete_id = "3139477"
 
     # Fetch and print athlete details
-    overview = get_athlete_overview_nfl.sync(
+    profile = get_athlete_profile_nfl_sync_detailed(
         athlete_id=int(athlete_id),
         client=client,
     )
     print("\n--- Athlete Details ---")
-    if (
-        isinstance(overview, AthleteOverviewResponse)
-        and hasattr(overview, "athlete")
-        and overview.athlete
+    if profile.status_code == 200 and isinstance(
+        profile.parsed, AthleteProfileResponse
     ):
-        athlete = overview.athlete
+        athlete = profile.parsed.athlete
         print(f"Name: {getattr(athlete, 'full_name', '?')}")
         print(f"ID: {getattr(athlete, 'id', '?')}")
         print(
@@ -402,6 +406,54 @@ def test_nfl_athlete_splits():
     return True
 
 
+def test_get_athlete_profile(athlete_id: int = TEST_ATHLETE_ID_NFL):
+    """Tests fetching and parsing the athlete profile (full biographical details)."""
+    print(f"\n--- Testing Athlete Profile (ID: {athlete_id}) --- ")
+    client = EspnSiteWebApiClient(base_url="https://site.web.api.espn.com")
+    try:
+        response = get_athlete_profile_nfl_sync_detailed(
+            athlete_id=athlete_id,
+            client=client,
+        )
+        if response.status_code == 200:
+            print(
+                f"✓ Successfully fetched athlete profile (HTTP {response.status_code})"
+            )
+            result = response.parsed
+            if not isinstance(result, AthleteProfileResponse):
+                print(f"✗ Parsed result is not AthleteProfileResponse: {type(result)}")
+                return False
+            athlete = result.athlete
+            print(f"Name: {athlete.full_name} (ID: {athlete.id})")
+            print(
+                f"Position: {athlete.position.display_name if athlete.position else '[no position]'}"
+            )
+            print(f"Age: {athlete.age}")
+            print(f"Ht/Wt: {athlete.display_height} / {athlete.display_weight}")
+            print(f"Team: {athlete.team.display_name if athlete.team else '[no team]'}")
+            print(
+                f"College: {athlete.college.name if athlete.college else '[no college]'}"
+            )
+            print(f"Status: {athlete.status.name if athlete.status else '[no status]'}")
+            # Save processed response
+            os.makedirs("json_output", exist_ok=True)
+            with open(
+                f"json_output/athlete_{athlete_id}_profile_processed.json", "w"
+            ) as f:
+                json.dump(result.to_dict(), f, indent=2)
+            print(
+                f"✓ Processed profile saved to json_output/athlete_{athlete_id}_profile_processed.json"
+            )
+            return True
+        else:
+            print(f"✗ API returned unexpected status code {response.status_code}")
+            return False
+    except Exception as e:
+        print(f"✗ Error during athlete profile test: {e}")
+        print(traceback.format_exc())
+        return False
+
+
 # --- Main Execution ---
 
 
@@ -417,6 +469,10 @@ def main():
     # Test athlete overview endpoint (valid ID)
     overview_result = test_get_athlete_overview(TEST_ATHLETE_ID_NFL)
     results.append(("Athlete Overview (Valid ID)", overview_result))
+
+    # Test athlete profile endpoint (full details)
+    profile_result = test_get_athlete_profile(TEST_ATHLETE_ID_NFL)
+    results.append(("Athlete Profile (Full Details)", profile_result))
 
     # Optional: Test with an invalid ID if 404 handling is desired
     # overview_invalid_result = test_get_athlete_overview(TEST_ATHLETE_ID_INVALID)

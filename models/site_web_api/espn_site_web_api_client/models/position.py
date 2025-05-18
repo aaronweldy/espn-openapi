@@ -21,7 +21,7 @@ class Position:
         display_name (Union[Unset, str]):  Example: Quarterback.
         abbreviation (Union[Unset, str]):  Example: QB.
         leaf (Union[None, Unset, bool]):  Example: True.
-        parent (Union[Unset, Reference]):
+        parent (Union['Position', 'Reference', None, Unset]):
     """
 
     id: Union[Unset, str] = UNSET
@@ -29,10 +29,12 @@ class Position:
     display_name: Union[Unset, str] = UNSET
     abbreviation: Union[Unset, str] = UNSET
     leaf: Union[None, Unset, bool] = UNSET
-    parent: Union[Unset, "Reference"] = UNSET
+    parent: Union["Position", "Reference", None, Unset] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.reference import Reference
+
         id = self.id
 
         name = self.name
@@ -47,9 +49,15 @@ class Position:
         else:
             leaf = self.leaf
 
-        parent: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.parent, Unset):
+        parent: Union[Dict[str, Any], None, Unset]
+        if isinstance(self.parent, Unset):
+            parent = UNSET
+        elif isinstance(self.parent, Position):
             parent = self.parent.to_dict()
+        elif isinstance(self.parent, Reference):
+            parent = self.parent.to_dict()
+        else:
+            parent = self.parent
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -91,12 +99,30 @@ class Position:
 
         leaf = _parse_leaf(d.pop("leaf", UNSET))
 
-        _parent = d.pop("parent", UNSET)
-        parent: Union[Unset, Reference]
-        if isinstance(_parent, Unset):
-            parent = UNSET
-        else:
-            parent = Reference.from_dict(_parent)
+        def _parse_parent(data: object) -> Union["Position", "Reference", None, Unset]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                parent_type_0 = Position.from_dict(data)
+
+                return parent_type_0
+            except:  # noqa: E722
+                pass
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                parent_type_1 = Reference.from_dict(data)
+
+                return parent_type_1
+            except:  # noqa: E722
+                pass
+            return cast(Union["Position", "Reference", None, Unset], data)
+
+        parent = _parse_parent(d.pop("parent", UNSET))
 
         position = cls(
             id=id,

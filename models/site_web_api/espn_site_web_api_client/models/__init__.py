@@ -6,6 +6,9 @@ from .athlete_details_college import AthleteDetailsCollege
 from .athlete_game_log_response import AthleteGameLogResponse
 from .athlete_game_log_response_events import AthleteGameLogResponseEvents
 from .athlete_overview_response import AthleteOverviewResponse
+from .athlete_profile_response import AthleteProfileResponse
+from .athlete_profile_response_athlete import AthleteProfileResponseAthlete
+from .athlete_profile_response_athlete_college import AthleteProfileResponseAthleteCollege
 from .athlete_reference import AthleteReference
 from .athlete_splits_category import AthleteSplitsCategory
 from .athlete_splits_filter import AthleteSplitsFilter
@@ -130,6 +133,9 @@ __all__ = (
     "AthleteGameLogResponse",
     "AthleteGameLogResponseEvents",
     "AthleteOverviewResponse",
+    "AthleteProfileResponse",
+    "AthleteProfileResponseAthlete",
+    "AthleteProfileResponseAthleteCollege",
     "AthleteReference",
     "AthleteSplitsCategory",
     "AthleteSplitsFilter",
