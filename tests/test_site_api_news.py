@@ -191,13 +191,6 @@ def test_nfl_news_team_specific(site_api_client, ensure_json_output_dir):
 
 
 @pytest.mark.api
-@pytest.mark.skip(reason="Test functionality not yet implemented")
-def test_generic_news_endpoint(site_api_client):
-    """Test retrieving news from the generic sport/league endpoint"""
-    pass
-
-
-@pytest.mark.api
 def test_mlb_news(site_api_client, ensure_json_output_dir):
     """Test retrieving MLB news from the specific endpoint"""
     limit = 5

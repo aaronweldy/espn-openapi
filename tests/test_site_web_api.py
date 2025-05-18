@@ -417,10 +417,8 @@ def test_get_athlete_profile(
 @pytest.mark.parametrize(
     "athlete_id, expect_success",
     [
-        (TEST_ATHLETE_ID_NFL, True),  # Valid athlete ID expected to succeed
-        pytest.param(
-            TEST_ATHLETE_ID_INVALID, False, marks=pytest.mark.xfail
-        ),  # Invalid ID expected to fail
+        (TEST_ATHLETE_ID_NFL, True),
+        (TEST_ATHLETE_ID_INVALID, False),
     ],
 )
 def test_athlete_profile_parametrized(
