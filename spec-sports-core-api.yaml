@@ -119,15 +119,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
       responses:
         '200':
           description: Successful response
@@ -159,15 +157,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
       responses:
         '200':
           description: Successful response
@@ -199,15 +195,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
       responses:
         '200':
           description: Successful response
@@ -239,15 +233,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
       responses:
         '200':
           description: Successful response
@@ -279,15 +271,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
         - name: year
           in: path
           required: true
@@ -348,15 +338,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
         - name: week
           in: query
           required: false
@@ -423,15 +411,13 @@ paths:
           required: true
           description: The sport key (e.g., football, basketball)
           schema:
-            type: string
-            example: football
+            $ref: '#/components/schemas/SportEnum'
         - name: league
           in: path
           required: true
           description: The league key (e.g., nfl, nba)
           schema:
-            type: string
-            example: nfl
+            $ref: '#/components/schemas/LeagueEnum'
         - name: eventId
           in: path
           required: true
@@ -2643,19 +2629,13 @@ components:
       properties:
         team:
           $ref: '#/components/schemas/Reference'
-        position:
-          $ref: '#/components/schemas/Reference'
-        need:
-          type: string
-        rank:
-          type: integer
-        description:
-          type: string
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
       required:
         - team
-        - need
-        - rank
-        - description 
+        - positions
 
     NflAthleteEventlogResponse:
       type: object
@@ -2768,3 +2748,44 @@ components:
         - displayName
         - links
       description: Item in NFL Conference Standings response. 
+
+    SportEnum:
+      type: string
+      description: Common sport identifiers used in ESPN APIs.
+      enum:
+        - football
+        - basketball
+        - baseball
+        - hockey
+        - soccer
+        - golf
+        - racing
+        - tennis
+    LeagueEnum:
+      type: string
+      description: Common league identifiers used in ESPN APIs.
+      enum:
+        - nfl
+        - mlb
+        - nba
+        - nhl
+        - wnba
+        - mens-college-basketball
+        - womens-college-basketball
+        - college-football
+        - college-baseball
+        - pga
+        - lpga
+        - f1
+        - nascar-premier
+        - atp
+        - wta
+        - mls
+        - epl
+        - laliga
+        - bundesliga
+        - serie-a
+        - ligue-1
+        - ucl
+        - europa-league
+        - other 
