@@ -6,20 +6,24 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
+from ...models.league_enum import LeagueEnum
 from ...models.scoreboard_header_response import ScoreboardHeaderResponse
+from ...models.sport_enum import SportEnum
 from ...types import UNSET, Response
 
 
 def _get_kwargs(
     *,
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
-    params["sport"] = sport
+    json_sport = sport.value
+    params["sport"] = json_sport
 
-    params["league"] = league
+    json_league = league.value
+    params["league"] = json_league
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -63,16 +67,16 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Response[Union[ErrorResponse, ScoreboardHeaderResponse]]:
     """Get Scoreboard Header
 
      Retrieve header information for scoreboard pages
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -97,16 +101,16 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Optional[Union[ErrorResponse, ScoreboardHeaderResponse]]:
     """Get Scoreboard Header
 
      Retrieve header information for scoreboard pages
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -126,16 +130,16 @@ def sync(
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Response[Union[ErrorResponse, ScoreboardHeaderResponse]]:
     """Get Scoreboard Header
 
      Retrieve header information for scoreboard pages
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -158,16 +162,16 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Optional[Union[ErrorResponse, ScoreboardHeaderResponse]]:
     """Get Scoreboard Header
 
      Retrieve header information for scoreboard pages
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

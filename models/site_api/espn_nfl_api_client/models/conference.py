@@ -17,17 +17,17 @@ class Conference:
     """
     Attributes:
         id (str):  Example: 8.
-        name (str):  Example: American Football Conference.
         standings (StandingGroup):
         uid (Union[Unset, str]):  Example: s:20~l:28~g:8.
+        name (Union[Unset, str]):  Example: American Football Conference.
         abbreviation (Union[Unset, str]):  Example: AFC.
         is_conference (Union[Unset, bool]):  Example: True.
     """
 
     id: str
-    name: str
     standings: "StandingGroup"
     uid: Union[Unset, str] = UNSET
+    name: Union[Unset, str] = UNSET
     abbreviation: Union[Unset, str] = UNSET
     is_conference: Union[Unset, bool] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -35,11 +35,11 @@ class Conference:
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
-        name = self.name
-
         standings = self.standings.to_dict()
 
         uid = self.uid
+
+        name = self.name
 
         abbreviation = self.abbreviation
 
@@ -50,12 +50,13 @@ class Conference:
         field_dict.update(
             {
                 "id": id,
-                "name": name,
                 "standings": standings,
             }
         )
         if uid is not UNSET:
             field_dict["uid"] = uid
+        if name is not UNSET:
+            field_dict["name"] = name
         if abbreviation is not UNSET:
             field_dict["abbreviation"] = abbreviation
         if is_conference is not UNSET:
@@ -70,11 +71,11 @@ class Conference:
         d = src_dict.copy()
         id = d.pop("id")
 
-        name = d.pop("name")
-
         standings = StandingGroup.from_dict(d.pop("standings"))
 
         uid = d.pop("uid", UNSET)
+
+        name = d.pop("name", UNSET)
 
         abbreviation = d.pop("abbreviation", UNSET)
 
@@ -82,9 +83,9 @@ class Conference:
 
         conference = cls(
             id=id,
-            name=name,
             standings=standings,
             uid=uid,
+            name=name,
             abbreviation=abbreviation,
             is_conference=is_conference,
         )

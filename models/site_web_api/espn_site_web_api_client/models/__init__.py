@@ -46,9 +46,11 @@ from .image_link import ImageLink
 from .image_link_with_size import ImageLinkWithSize
 from .injury import Injury
 from .injury_type import InjuryType
+from .league_enum import LeagueEnum
 from .league_reference import LeagueReference
 from .link import Link
 from .logo import Logo
+from .mlb_statistic_name import MlbStatisticName
 from .navigation_item import NavigationItem
 from .news_category import NewsCategory
 from .news_category_athlete import NewsCategoryAthlete
@@ -108,6 +110,7 @@ from .search_v2_result_type import SearchV2ResultType
 from .season import Season
 from .season_type import SeasonType
 from .self_link import SelfLink
+from .sport_enum import SportEnum
 from .sport_reference import SportReference
 from .stat_category import StatCategory
 from .status import Status
@@ -173,9 +176,11 @@ __all__ = (
     "ImageLinkWithSize",
     "Injury",
     "InjuryType",
+    "LeagueEnum",
     "LeagueReference",
     "Link",
     "Logo",
+    "MlbStatisticName",
     "NavigationItem",
     "NewsCategory",
     "NewsCategoryAthlete",
@@ -217,6 +222,7 @@ __all__ = (
     "Season",
     "SeasonType",
     "SelfLink",
+    "SportEnum",
     "SportReference",
     "StatCategory",
     "Status",

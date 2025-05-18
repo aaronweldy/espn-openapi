@@ -31,6 +31,7 @@ from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
+from .league_enum import LeagueEnum
 from .link import Link
 from .logo import Logo
 from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
@@ -82,6 +83,7 @@ from .plays_list_response import PlaysListResponse
 from .position import Position
 from .reference import Reference
 from .season import Season
+from .sport_enum import SportEnum
 from .statistic import Statistic
 from .statistic_category import StatisticCategory
 from .statistics_log_entry import StatisticsLogEntry
@@ -123,6 +125,7 @@ __all__ = (
     "EventReference",
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLConferenceStandingsSeasontype",
+    "LeagueEnum",
     "Link",
     "Logo",
     "NflAthleteEventlogResponse",
@@ -174,6 +177,7 @@ __all__ = (
     "Position",
     "Reference",
     "Season",
+    "SportEnum",
     "Statistic",
     "StatisticCategory",
     "StatisticsLogEntry",

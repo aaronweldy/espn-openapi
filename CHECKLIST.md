@@ -20,6 +20,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events - List Events (Games). Path Params: {sport}, {league}. Query Params: dates (e.g., YYYYMMDD, YYYYMMDD-YYYYMMDD, YYYY), limit - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/events - List Events by Week. Path Params: {sport}, {league}, {year}, {seasontype}, {week} - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id} - Get Specific Event. Path Params: {sport}, {league}, {event_id} - Derived from Implemented General Events
+[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page} - Athlete Statistics. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id}, {athlete_id}, {page}
 II. NFL Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/football/nfl/scoreboard - NFL Scoreboard. Query Params: dates, week, seasontype - Already implemented

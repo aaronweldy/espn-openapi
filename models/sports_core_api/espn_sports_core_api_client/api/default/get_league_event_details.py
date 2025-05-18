@@ -7,12 +7,14 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
 from ...models.event_detail import EventDetail
+from ...models.league_enum import LeagueEnum
+from ...models.sport_enum import SportEnum
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     event_id: str,
     *,
     lang: Union[Unset, str] = UNSET,
@@ -68,8 +70,8 @@ def _build_response(
 
 
 def sync_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     event_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
@@ -81,8 +83,8 @@ def sync_detailed(
      Retrieve detailed information for a specific event in a league and sport.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         event_id (str):  Example: 401772510.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
@@ -111,8 +113,8 @@ def sync_detailed(
 
 
 def sync(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     event_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
@@ -124,8 +126,8 @@ def sync(
      Retrieve detailed information for a specific event in a league and sport.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         event_id (str):  Example: 401772510.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
@@ -149,8 +151,8 @@ def sync(
 
 
 async def asyncio_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     event_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
@@ -162,8 +164,8 @@ async def asyncio_detailed(
      Retrieve detailed information for a specific event in a league and sport.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         event_id (str):  Example: 401772510.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
@@ -190,8 +192,8 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     event_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
@@ -203,8 +205,8 @@ async def asyncio(
      Retrieve detailed information for a specific event in a league and sport.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         event_id (str):  Example: 401772510.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.

@@ -5,9 +5,7 @@ Requires Python 3.10+
 """
 
 import json
-import os
 import pytest
-from typing import Any, Dict, Optional
 
 from models.sports_core_api.espn_sports_core_api_client.models.sport_enum import (
     SportEnum,
@@ -48,9 +46,6 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_e
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_team_injuries import (
     sync as get_nfl_team_injuries,
 )
-from models.sports_core_api.espn_sports_core_api_client.models.error_response import (
-    ErrorResponse,
-)
 from models.sports_core_api.espn_sports_core_api_client.models.athlete_details_response import (
     AthleteDetailsResponse,
 )
@@ -80,20 +75,11 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_lead
 from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_response import (
     NflLeadersResponse,
 )
-from models.sports_core_api.espn_sports_core_api_client.models.nfl_leaders_category import (
-    NflLeadersCategory,
-)
-from models.sports_core_api.espn_sports_core_api_client.models.nfl_leader import (
-    NflLeader,
-)
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_season_team import (
     sync as get_nfl_season_team,
 )
 from models.sports_core_api.espn_sports_core_api_client.models.core_nfl_season_team_response import (
     CoreNflSeasonTeamResponse,
-)
-from models.sports_core_api.espn_sports_core_api_client.models.nfl_athlete_injury import (
-    NflAthleteInjury,
 )
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_season_type_leaders import (
     sync as get_nfl_season_type_leaders,

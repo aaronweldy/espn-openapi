@@ -7,12 +7,14 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.calendar_list_response import CalendarListResponse
 from ...models.error_response import ErrorResponse
+from ...models.league_enum import LeagueEnum
+from ...models.sport_enum import SportEnum
 from ...types import Response
 
 
 def _get_kwargs(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
 ) -> Dict[str, Any]:
     _kwargs: Dict[str, Any] = {
         "method": "get",
@@ -55,8 +57,8 @@ def _build_response(
 
 
 def sync_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[CalendarListResponse, ErrorResponse]]:
@@ -66,8 +68,8 @@ def sync_detailed(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -90,8 +92,8 @@ def sync_detailed(
 
 
 def sync(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[CalendarListResponse, ErrorResponse]]:
@@ -101,8 +103,8 @@ def sync(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -120,8 +122,8 @@ def sync(
 
 
 async def asyncio_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[CalendarListResponse, ErrorResponse]]:
@@ -131,8 +133,8 @@ async def asyncio_detailed(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,8 +155,8 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[CalendarListResponse, ErrorResponse]]:
@@ -164,8 +166,8 @@ async def asyncio(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

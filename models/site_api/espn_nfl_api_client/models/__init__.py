@@ -52,8 +52,8 @@ from .geo_broadcast import GeoBroadcast
 from .geo_broadcast_market import GeoBroadcastMarket
 from .geo_broadcast_media import GeoBroadcastMedia
 from .geo_broadcast_type import GeoBroadcastType
+from .get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
 from .get_nfl_scoreboard_seasontype import GetNFLScoreboardSeasontype
-from .get_nfl_standings_seasontype import GetNFLStandingsSeasontype
 from .headline import Headline
 from .headshot import Headshot
 from .image import Image
@@ -63,6 +63,7 @@ from .leader_category import LeaderCategory
 from .leader_entry import LeaderEntry
 from .leader_performance import LeaderPerformance
 from .league import League
+from .league_enum import LeagueEnum
 from .league_links import LeagueLinks
 from .league_season import LeagueSeason
 from .linescore import Linescore
@@ -70,6 +71,7 @@ from .link import Link
 from .logo import Logo
 from .mlb_scoreboard_response import MlbScoreboardResponse
 from .mlb_scoreboard_response_day import MlbScoreboardResponseDay
+from .mlb_statistic_name import MlbStatisticName
 from .monday_night_football_response import MondayNightFootballResponse
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
@@ -94,6 +96,7 @@ from .news_response import NewsResponse
 from .news_team import NewsTeam
 from .news_team_links import NewsTeamLinks
 from .news_web_mobile_links import NewsWebMobileLinks
+from .nfl_statistic_name import NflStatisticName
 from .nfl_team_schedule_response import NFLTeamScheduleResponse
 from .official import Official
 from .play import Play
@@ -104,6 +107,8 @@ from .player_stats import PlayerStats
 from .player_stats_stats import PlayerStatsStats
 from .position import Position
 from .position_group import PositionGroup
+from .position_group_position import PositionGroupPosition
+from .position_name import PositionName
 from .record import Record
 from .roster_athlete import RosterAthlete
 from .roster_athlete_alternate_ids import RosterAthleteAlternateIds
@@ -118,14 +123,15 @@ from .season import Season
 from .season_info import SeasonInfo
 from .season_type import SeasonType
 from .sport import Sport
+from .sport_enum import SportEnum
 from .sport_league import SportLeague
 from .sport_league_season import SportLeagueSeason
 from .sport_news_api_schema import SportNewsAPISchema
 from .standing_entry import StandingEntry
 from .standing_group import StandingGroup
-from .standings_response import StandingsResponse
 from .statistic import Statistic
 from .statistic_entry import StatisticEntry
+from .statistic_entry_name import StatisticEntryName
 from .status_type import StatusType
 from .status_type_state import StatusTypeState
 from .sunday_night_football_response import SundayNightFootballResponse
@@ -207,8 +213,8 @@ __all__ = (
     "GeoBroadcastMarket",
     "GeoBroadcastMedia",
     "GeoBroadcastType",
+    "GetMLBTeamDetailsTeamIdOrAbbrev",
     "GetNFLScoreboardSeasontype",
-    "GetNFLStandingsSeasontype",
     "Headline",
     "Headshot",
     "Image",
@@ -218,6 +224,7 @@ __all__ = (
     "LeaderEntry",
     "LeaderPerformance",
     "League",
+    "LeagueEnum",
     "LeagueLinks",
     "LeagueSeason",
     "Linescore",
@@ -225,6 +232,7 @@ __all__ = (
     "Logo",
     "MlbScoreboardResponse",
     "MlbScoreboardResponseDay",
+    "MlbStatisticName",
     "MondayNightFootballResponse",
     "NewsArticle",
     "NewsArticleImage",
@@ -249,6 +257,7 @@ __all__ = (
     "NewsTeam",
     "NewsTeamLinks",
     "NewsWebMobileLinks",
+    "NflStatisticName",
     "NFLTeamScheduleResponse",
     "Official",
     "Play",
@@ -259,6 +268,8 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionGroup",
+    "PositionGroupPosition",
+    "PositionName",
     "Record",
     "RosterAthlete",
     "RosterAthleteAlternateIds",
@@ -273,14 +284,15 @@ __all__ = (
     "SeasonInfo",
     "SeasonType",
     "Sport",
+    "SportEnum",
     "SportLeague",
     "SportLeagueSeason",
     "SportNewsAPISchema",
     "StandingEntry",
     "StandingGroup",
-    "StandingsResponse",
     "Statistic",
     "StatisticEntry",
+    "StatisticEntryName",
     "StatusType",
     "StatusTypeState",
     "SundayNightFootballResponse",

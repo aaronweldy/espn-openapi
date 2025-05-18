@@ -3,6 +3,8 @@ from typing import Any, Dict, List, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
+from ..models.mlb_statistic_name import MlbStatisticName
+from ..models.nfl_statistic_name import NflStatisticName
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Statistic")
@@ -12,14 +14,14 @@ T = TypeVar("T", bound="Statistic")
 class Statistic:
     """
     Attributes:
-        name (Union[Unset, str]):  Example: firstDowns.
+        name (Union[MlbStatisticName, NflStatisticName, Unset]):
         display_name (Union[Unset, str]):  Example: First Downs.
         short_display_name (Union[Unset, str]):
         display_value (Union[Unset, str]):  Example: 27.
         value (Union[Unset, float]):  Example: 27.
     """
 
-    name: Union[Unset, str] = UNSET
+    name: Union[MlbStatisticName, NflStatisticName, Unset] = UNSET
     display_name: Union[Unset, str] = UNSET
     short_display_name: Union[Unset, str] = UNSET
     display_value: Union[Unset, str] = UNSET
@@ -27,7 +29,13 @@ class Statistic:
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        name = self.name
+        name: Union[Unset, str]
+        if isinstance(self.name, Unset):
+            name = UNSET
+        elif isinstance(self.name, NflStatisticName):
+            name = self.name.value
+        else:
+            name = self.name.value
 
         display_name = self.display_name
 
@@ -56,7 +64,25 @@ class Statistic:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        name = d.pop("name", UNSET)
+
+        def _parse_name(data: object) -> Union[MlbStatisticName, NflStatisticName, Unset]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                name_type_0 = NflStatisticName(data)
+
+                return name_type_0
+            except:  # noqa: E722
+                pass
+            if not isinstance(data, str):
+                raise TypeError()
+            name_type_1 = MlbStatisticName(data)
+
+            return name_type_1
+
+        name = _parse_name(d.pop("name", UNSET))
 
         display_name = d.pop("displayName", UNSET)
 

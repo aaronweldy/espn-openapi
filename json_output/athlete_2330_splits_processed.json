@@ -1,0 +1,1605 @@
+{
+  "filters": [
+    {
+      "displayName": "League",
+      "name": "league",
+      "value": "nfl",
+      "options": [
+        {
+          "value": "nfl",
+          "displayValue": "National Football League",
+          "shortDisplayName": "NFL"
+        }
+      ]
+    },
+    {
+      "displayName": "Season",
+      "name": "season",
+      "value": "2022",
+      "options": [
+        {
+          "value": "2022",
+          "displayValue": "2022"
+        },
+        {
+          "value": "2021",
+          "displayValue": "2021"
+        },
+        {
+          "value": "2020",
+          "displayValue": "2020"
+        },
+        {
+          "value": "2019",
+          "displayValue": "2019"
+        },
+        {
+          "value": "2018",
+          "displayValue": "2018"
+        },
+        {
+          "value": "2017",
+          "displayValue": "2017"
+        },
+        {
+          "value": "2016",
+          "displayValue": "2016"
+        },
+        {
+          "value": "2015",
+          "displayValue": "2015"
+        },
+        {
+          "value": "2014",
+          "displayValue": "2014"
+        },
+        {
+          "value": "2013",
+          "displayValue": "2013"
+        },
+        {
+          "value": "2012",
+          "displayValue": "2012"
+        },
+        {
+          "value": "2011",
+          "displayValue": "2011"
+        },
+        {
+          "value": "2010",
+          "displayValue": "2010"
+        },
+        {
+          "value": "2009",
+          "displayValue": "2009"
+        },
+        {
+          "value": "2008",
+          "displayValue": "2008"
+        },
+        {
+          "value": "2007",
+          "displayValue": "2007"
+        },
+        {
+          "value": "2006",
+          "displayValue": "2006"
+        },
+        {
+          "value": "2005",
+          "displayValue": "2005"
+        },
+        {
+          "value": "2004",
+          "displayValue": "2004"
+        },
+        {
+          "value": "2003",
+          "displayValue": "2003"
+        },
+        {
+          "value": "2002",
+          "displayValue": "2002"
+        },
+        {
+          "value": "2001",
+          "displayValue": "2001"
+        },
+        {
+          "value": "2000",
+          "displayValue": "2000"
+        }
+      ]
+    }
+  ],
+  "displayName": "2022 Splits",
+  "categories": [
+    {
+      "name": "passing",
+      "displayName": "Passing",
+      "count": 9
+    }
+  ],
+  "labels": [
+    "CMP",
+    "ATT",
+    "YDS",
+    "CMP%",
+    "AVG",
+    "TD",
+    "INT",
+    "LNG",
+    "SACK",
+    "RTG",
+    "CAR",
+    "YDS",
+    "AVG",
+    "TD",
+    "LNG"
+  ],
+  "names": [
+    "completions",
+    "passingAttempts",
+    "passingYards",
+    "completionPct",
+    "yardsPerPassAttempt",
+    "passingTouchdowns",
+    "interceptions",
+    "longPassing",
+    "sacks",
+    "QBRating",
+    "rushingAttempts",
+    "rushingYards",
+    "yardsPerRushAttempt",
+    "rushingTouchdowns",
+    "longRushing"
+  ],
+  "displayNames": [
+    "Completions",
+    "Passing Attempts",
+    "Passing Yards",
+    "Completion Percentage",
+    "Yards Per Pass Attempt",
+    "Passing Touchdowns",
+    "Interceptions",
+    "Longest Pass",
+    "Total Sacks",
+    "Passer Rating",
+    "Rushing Attempts",
+    "Rushing Yards",
+    "Yards Per Rush Attempt",
+    "Rushing Touchdowns",
+    "Long Rushing"
+  ],
+  "descriptions": [
+    "The times a player completes a pass to another player who is eligible to catch a pass.",
+    "The number of times a pass is attempted.",
+    "The total passing yards.",
+    "The percentage of completed passes.",
+    "The average number yards per pass attempt.",
+    "The total number of passing touchdowns.",
+    "The number of passes thrown that were intercepted by the opposing team.",
+    "The longest pass play completed in terms of yards.",
+    "The total number of sacks.",
+    "Passer Rating",
+    "The total number of attempted rushes.",
+    "The total rushing yards.",
+    "The average number of yards per rush attempt.",
+    "The total number of rushing touchdowns.",
+    "The amount of yards for the longest run."
+  ],
+  "splitCategories": [
+    {
+      "name": "split",
+      "displayName": "split",
+      "splits": [
+        {
+          "displayName": "All Splits",
+          "stats": [
+            "490",
+            "733",
+            "4,694",
+            "66.8",
+            "6.4",
+            "25",
+            "9",
+            "63",
+            "22",
+            "90.7",
+            "29",
+            "-1",
+            "0.0",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Any"
+        },
+        {
+          "displayName": "Home",
+          "stats": [
+            "289",
+            "420",
+            "2,895",
+            "68.8",
+            "6.9",
+            "17",
+            "4",
+            "63",
+            "13",
+            "97.7",
+            "17",
+            "-2",
+            "-0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Home"
+        },
+        {
+          "displayName": "Away",
+          "stats": [
+            "201",
+            "313",
+            "1,799",
+            "64.2",
+            "5.7",
+            "8",
+            "5",
+            "48",
+            "9",
+            "81.4",
+            "12",
+            "1",
+            "0.1",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Away"
+        }
+      ]
+    },
+    {
+      "name": "byOutcome",
+      "displayName": "Outcome",
+      "splits": [
+        {
+          "displayName": "Wins/Ties",
+          "stats": [
+            "231",
+            "347",
+            "2,285",
+            "66.6",
+            "6.6",
+            "12",
+            "5",
+            "63",
+            "8",
+            "90.5",
+            "20",
+            "-5",
+            "-0.3",
+            "1",
+            "2"
+          ],
+          "abbreviation": "In Win"
+        },
+        {
+          "displayName": "Losses",
+          "stats": [
+            "259",
+            "386",
+            "2,409",
+            "67.1",
+            "6.2",
+            "13",
+            "4",
+            "51",
+            "14",
+            "90.9",
+            "9",
+            "4",
+            "0.4",
+            "0",
+            "2"
+          ],
+          "abbreviation": "In Loss"
+        }
+      ]
+    },
+    {
+      "name": "byVictoryMargin",
+      "displayName": "Victory Margin",
+      "splits": [
+        {
+          "displayName": "0-7",
+          "stats": [
+            "195",
+            "286",
+            "1,883",
+            "68.2",
+            "6.6",
+            "10",
+            "4",
+            "63",
+            "5",
+            "92.2",
+            "15",
+            "-2",
+            "-0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Mgn<8"
+        },
+        {
+          "displayName": "8-14",
+          "stats": [
+            "18",
+            "34",
+            "190",
+            "52.9",
+            "5.6",
+            "1",
+            "0",
+            "41",
+            "1",
+            "79.3",
+            "3",
+            "-2",
+            "-0.7",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Mgn 8-14"
+        },
+        {
+          "displayName": "15+",
+          "stats": [
+            "18",
+            "27",
+            "212",
+            "66.7",
+            "7.9",
+            "1",
+            "1",
+            "48",
+            "2",
+            "87.3",
+            "2",
+            "-1",
+            "-0.5",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Mgn>14"
+        }
+      ]
+    },
+    {
+      "name": "byClose",
+      "displayName": "Close",
+      "splits": [
+        {
+          "displayName": "4th QTR, +/-7",
+          "stats": [
+            "55",
+            "88",
+            "539",
+            "62.5",
+            "6.1",
+            "4",
+            "0",
+            "51",
+            "3",
+            "94.8",
+            "9",
+            "-1",
+            "-0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Late&Close"
+        },
+        {
+          "displayName": "Last 2 Min. Half",
+          "stats": [
+            "75",
+            "116",
+            "767",
+            "64.7",
+            "6.6",
+            "7",
+            "1",
+            "48",
+            "4",
+            "100.0",
+            "19",
+            "-10",
+            "-0.5",
+            "1",
+            "2"
+          ],
+          "abbreviation": "2 Min"
+        }
+      ]
+    },
+    {
+      "name": "bySeasonGames",
+      "displayName": "Season Games",
+      "splits": [
+        {
+          "displayName": "1-8",
+          "stats": [
+            "224",
+            "340",
+            "2,267",
+            "65.9",
+            "6.7",
+            "9",
+            "1",
+            "51",
+            "13",
+            "92.4",
+            "12",
+            "-5",
+            "-0.4",
+            "0",
+            "1"
+          ],
+          "abbreviation": "Games 1-8"
+        },
+        {
+          "displayName": "9-16",
+          "stats": [
+            "266",
+            "393",
+            "2,427",
+            "67.7",
+            "6.2",
+            "16",
+            "8",
+            "63",
+            "9",
+            "89.3",
+            "17",
+            "4",
+            "0.2",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Games 9-16"
+        }
+      ]
+    },
+    {
+      "name": "byMonth",
+      "displayName": "Month",
+      "splits": [
+        {
+          "displayName": "September",
+          "stats": [
+            "67",
+            "103",
+            "673",
+            "65.0",
+            "6.5",
+            "3",
+            "1",
+            "48",
+            "6",
+            "89.2",
+            "6",
+            "-4",
+            "-0.7",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Sept"
+        },
+        {
+          "displayName": "October",
+          "stats": [
+            "157",
+            "237",
+            "1,594",
+            "66.2",
+            "6.7",
+            "6",
+            "0",
+            "51",
+            "7",
+            "93.8",
+            "6",
+            "-1",
+            "-0.2",
+            "0",
+            "1"
+          ],
+          "abbreviation": "Oct"
+        },
+        {
+          "displayName": "November",
+          "stats": [
+            "87",
+            "130",
+            "784",
+            "66.9",
+            "6.0",
+            "5",
+            "1",
+            "31",
+            "4",
+            "92.6",
+            "7",
+            "-1",
+            "-0.1",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Nov"
+        },
+        {
+          "displayName": "December",
+          "stats": [
+            "132",
+            "201",
+            "1,127",
+            "65.7",
+            "5.6",
+            "7",
+            "7",
+            "44",
+            "2",
+            "77.3",
+            "7",
+            "1",
+            "0.1",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Dec"
+        },
+        {
+          "displayName": "January",
+          "stats": [
+            "47",
+            "62",
+            "516",
+            "75.8",
+            "8.3",
+            "4",
+            "0",
+            "63",
+            "3",
+            "121.4",
+            "3",
+            "4",
+            "1.3",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Jan"
+        }
+      ]
+    },
+    {
+      "name": "byDayOfWeek",
+      "displayName": "DAY",
+      "splits": [
+        {
+          "displayName": "Sunday",
+          "stats": [
+            "428",
+            "635",
+            "4,088",
+            "67.4",
+            "6.4",
+            "22",
+            "8",
+            "63",
+            "18",
+            "91.4",
+            "27",
+            "-1",
+            "0.0",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Sun"
+        },
+        {
+          "displayName": "Monday",
+          "stats": [
+            "36",
+            "54",
+            "281",
+            "66.7",
+            "5.2",
+            "2",
+            "1",
+            "22",
+            "1",
+            "84.0",
+            "1",
+            "-1",
+            "-1.0",
+            "0",
+            "-1"
+          ],
+          "abbreviation": "Mon"
+        },
+        {
+          "displayName": "Other",
+          "stats": [
+            "26",
+            "44",
+            "325",
+            "59.1",
+            "7.4",
+            "1",
+            "0",
+            "51",
+            "3",
+            "89.7",
+            "1",
+            "1",
+            "1.0",
+            "0",
+            "1"
+          ],
+          "abbreviation": "Not Su/Mo"
+        }
+      ]
+    },
+    {
+      "name": "bySurface",
+      "displayName": "Surface",
+      "splits": [
+        {
+          "displayName": "Grass",
+          "stats": [
+            "441",
+            "655",
+            "4,208",
+            "67.3",
+            "6.4",
+            "22",
+            "8",
+            "63",
+            "19",
+            "91.1",
+            "24",
+            "2",
+            "0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Grass"
+        },
+        {
+          "displayName": "Turf",
+          "stats": [
+            "49",
+            "78",
+            "486",
+            "62.8",
+            "6.2",
+            "3",
+            "1",
+            "48",
+            "3",
+            "87.9",
+            "5",
+            "-3",
+            "-0.6",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Turf"
+        }
+      ]
+    },
+    {
+      "name": "byLocation",
+      "displayName": "Location",
+      "splits": [
+        {
+          "displayName": "Outdoors",
+          "stats": [
+            "419",
+            "626",
+            "3,950",
+            "66.9",
+            "6.3",
+            "20",
+            "7",
+            "63",
+            "19",
+            "90.1",
+            "18",
+            "5",
+            "0.3",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Outdoors"
+        },
+        {
+          "displayName": "Indoors",
+          "stats": [
+            "49",
+            "78",
+            "486",
+            "62.8",
+            "6.2",
+            "3",
+            "1",
+            "48",
+            "3",
+            "87.9",
+            "5",
+            "-3",
+            "-0.6",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Indoors"
+        }
+      ]
+    },
+    {
+      "name": "byWeather",
+      "displayName": "Weather",
+      "splits": [
+        {
+          "displayName": "81+ F",
+          "stats": [
+            "102",
+            "152",
+            "902",
+            "67.1",
+            "5.9",
+            "3",
+            "0",
+            "40",
+            "4",
+            "89.3",
+            "4",
+            "-4",
+            "-1.0",
+            "0",
+            "-1"
+          ],
+          "abbreviation": "High Temp"
+        }
+      ]
+    },
+    {
+      "name": "byDepthChart",
+      "displayName": "Depth Chart",
+      "splits": [
+        {
+          "displayName": "As Starter",
+          "stats": [
+            "490",
+            "733",
+            "4,694",
+            "66.8",
+            "6.4",
+            "25",
+            "9",
+            "63",
+            "22",
+            "90.7",
+            "29",
+            "-1",
+            "0.0",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Starter"
+        }
+      ]
+    },
+    {
+      "name": "byGroup",
+      "displayName": "Group",
+      "splits": [
+        {
+          "displayName": "vs AFC",
+          "stats": [
+            "149",
+            "223",
+            "1,511",
+            "66.8",
+            "6.8",
+            "10",
+            "2",
+            "51",
+            "10",
+            "97.2",
+            "5",
+            "4",
+            "0.8",
+            "0",
+            "2"
+          ],
+          "abbreviation": "vs AFC"
+        },
+        {
+          "displayName": "vs NFC",
+          "stats": [
+            "341",
+            "510",
+            "3,183",
+            "66.9",
+            "6.2",
+            "15",
+            "7",
+            "63",
+            "12",
+            "87.9",
+            "24",
+            "-5",
+            "-0.2",
+            "1",
+            "2"
+          ],
+          "abbreviation": "vs NFC"
+        },
+        {
+          "displayName": "vs. Own Division",
+          "stats": [
+            "168",
+            "251",
+            "1,628",
+            "66.9",
+            "6.5",
+            "8",
+            "1",
+            "63",
+            "6",
+            "93.8",
+            "11",
+            "-1",
+            "-0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "vs Div"
+        }
+      ]
+    },
+    {
+      "name": "byOpponent",
+      "displayName": "Opponent",
+      "splits": [
+        {
+          "displayName": "vs ARI",
+          "stats": [
+            "32",
+            "48",
+            "281",
+            "66.7",
+            "5.9",
+            "1",
+            "2",
+            "44",
+            "0",
+            "71.6",
+            "2",
+            "1",
+            "0.5",
+            "0",
+            "2"
+          ],
+          "abbreviation": "vs ARI"
+        },
+        {
+          "displayName": "vs ATL",
+          "stats": [
+            "48",
+            "69",
+            "435",
+            "69.6",
+            "6.3",
+            "2",
+            "0",
+            "40",
+            "0",
+            "96.0",
+            "3",
+            "-3",
+            "-1.0",
+            "0",
+            "-1"
+          ],
+          "abbreviation": "vs ATL"
+        },
+        {
+          "displayName": "vs BAL",
+          "stats": [
+            "26",
+            "44",
+            "325",
+            "59.1",
+            "7.4",
+            "1",
+            "0",
+            "51",
+            "3",
+            "89.7",
+            "1",
+            "1",
+            "1.0",
+            "0",
+            "1"
+          ],
+          "abbreviation": "vs BAL"
+        },
+        {
+          "displayName": "vs CAR",
+          "stats": [
+            "66",
+            "94",
+            "722",
+            "70.2",
+            "7.7",
+            "3",
+            "0",
+            "63",
+            "4",
+            "103.2",
+            "4",
+            "5",
+            "1.3",
+            "1",
+            "2"
+          ],
+          "abbreviation": "vs CAR"
+        },
+        {
+          "displayName": "vs CIN",
+          "stats": [
+            "30",
+            "44",
+            "312",
+            "68.2",
+            "7.1",
+            "3",
+            "2",
+            "24",
+            "1",
+            "92.2",
+            "2",
+            "1",
+            "0.5",
+            "0",
+            "1"
+          ],
+          "abbreviation": "vs CIN"
+        },
+        {
+          "displayName": "vs CLE",
+          "stats": [
+            "29",
+            "43",
+            "246",
+            "67.4",
+            "5.7",
+            "2",
+            "0",
+            "28",
+            "3",
+            "97.6",
+            "1",
+            "2",
+            "2.0",
+            "0",
+            "2"
+          ],
+          "abbreviation": "vs CLE"
+        },
+        {
+          "displayName": "vs DAL",
+          "stats": [
+            "18",
+            "27",
+            "212",
+            "66.7",
+            "7.9",
+            "1",
+            "1",
+            "48",
+            "2",
+            "87.3",
+            "2",
+            "-1",
+            "-0.5",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs DAL"
+        },
+        {
+          "displayName": "vs GB",
+          "stats": [
+            "31",
+            "42",
+            "271",
+            "73.8",
+            "6.5",
+            "1",
+            "0",
+            "25",
+            "3",
+            "98.4",
+            "1",
+            "-1",
+            "-1.0",
+            "0",
+            "-1"
+          ],
+          "abbreviation": "vs GB"
+        },
+        {
+          "displayName": "vs KC",
+          "stats": [
+            "39",
+            "52",
+            "385",
+            "75.0",
+            "7.4",
+            "3",
+            "0",
+            "30",
+            "1",
+            "114.7",
+            "0",
+            "0",
+            "0.0",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs KC"
+        },
+        {
+          "displayName": "vs LAR",
+          "stats": [
+            "36",
+            "58",
+            "280",
+            "62.1",
+            "4.8",
+            "1",
+            "0",
+            "28",
+            "1",
+            "79.7",
+            "0",
+            "0",
+            "0.0",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs LAR"
+        },
+        {
+          "displayName": "vs NO",
+          "stats": [
+            "54",
+            "88",
+            "471",
+            "61.4",
+            "5.4",
+            "3",
+            "1",
+            "41",
+            "2",
+            "82.2",
+            "4",
+            "-3",
+            "-0.8",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs NO"
+        },
+        {
+          "displayName": "vs PIT",
+          "stats": [
+            "25",
+            "40",
+            "243",
+            "62.5",
+            "6.1",
+            "1",
+            "0",
+            "28",
+            "2",
+            "87.8",
+            "1",
+            "0",
+            "0.0",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs PIT"
+        },
+        {
+          "displayName": "vs SEA",
+          "stats": [
+            "22",
+            "29",
+            "258",
+            "75.9",
+            "8.9",
+            "2",
+            "1",
+            "31",
+            "0",
+            "111.0",
+            "6",
+            "-3",
+            "-0.5",
+            "0",
+            "0"
+          ],
+          "abbreviation": "vs SEA"
+        },
+        {
+          "displayName": "vs SF",
+          "stats": [
+            "34",
+            "55",
+            "253",
+            "61.8",
+            "4.6",
+            "1",
+            "2",
+            "32",
+            "0",
+            "63.7",
+            "2",
+            "0",
+            "0.0",
+            "0",
+            "1"
+          ],
+          "abbreviation": "vs SF"
+        }
+      ]
+    },
+    {
+      "name": "byHalf",
+      "displayName": "Half",
+      "splits": [
+        {
+          "displayName": "1st",
+          "stats": [
+            "228",
+            "335",
+            "2,283",
+            "68.1",
+            "6.8",
+            "8",
+            "2",
+            "63",
+            "12",
+            "92.7",
+            "13",
+            "0",
+            "0.0",
+            "0",
+            "2"
+          ],
+          "abbreviation": "1st Half"
+        },
+        {
+          "displayName": "2nd",
+          "stats": [
+            "251",
+            "382",
+            "2,305",
+            "65.7",
+            "6.0",
+            "17",
+            "7",
+            "57",
+            "9",
+            "89.2",
+            "16",
+            "-1",
+            "-0.1",
+            "1",
+            "2"
+          ],
+          "abbreviation": "2nd Half"
+        }
+      ]
+    },
+    {
+      "name": "byQuarter",
+      "displayName": "Quarter",
+      "splits": [
+        {
+          "displayName": "1st",
+          "stats": [
+            "97",
+            "142",
+            "969",
+            "68.3",
+            "6.8",
+            "2",
+            "0",
+            "44",
+            "2",
+            "92.1",
+            "2",
+            "1",
+            "0.5",
+            "0",
+            "1"
+          ],
+          "abbreviation": "1st Qtr"
+        },
+        {
+          "displayName": "2nd",
+          "stats": [
+            "131",
+            "193",
+            "1,314",
+            "67.9",
+            "6.8",
+            "6",
+            "2",
+            "63",
+            "10",
+            "93.1",
+            "11",
+            "-1",
+            "-0.1",
+            "0",
+            "2"
+          ],
+          "abbreviation": "2nd Qtr"
+        },
+        {
+          "displayName": "3rd",
+          "stats": [
+            "102",
+            "163",
+            "900",
+            "62.6",
+            "5.5",
+            "4",
+            "4",
+            "40",
+            "3",
+            "75.2",
+            "3",
+            "2",
+            "0.7",
+            "0",
+            "1"
+          ],
+          "abbreviation": "3rd Qtr"
+        },
+        {
+          "displayName": "4th",
+          "stats": [
+            "149",
+            "219",
+            "1,405",
+            "68.0",
+            "6.4",
+            "13",
+            "3",
+            "57",
+            "6",
+            "99.6",
+            "13",
+            "-3",
+            "-0.2",
+            "1",
+            "2"
+          ],
+          "abbreviation": "4th Qtr"
+        }
+      ]
+    },
+    {
+      "name": "byPassAttempts",
+      "displayName": "ATT IN GM"
+    },
+    {
+      "name": "byRushAttempts",
+      "displayName": "Rush Attempts"
+    },
+    {
+      "name": "byDown",
+      "displayName": "Down",
+      "splits": [
+        {
+          "displayName": "1st",
+          "stats": [
+            "181",
+            "269",
+            "1,835",
+            "67.3",
+            "6.8",
+            "10",
+            "4",
+            "63",
+            "3",
+            "92.8",
+            "11",
+            "-7",
+            "-0.6",
+            "0",
+            "0"
+          ],
+          "abbreviation": "1st down"
+        },
+        {
+          "displayName": "2nd",
+          "stats": [
+            "190",
+            "269",
+            "1,751",
+            "70.6",
+            "6.5",
+            "5",
+            "1",
+            "51",
+            "6",
+            "92.7",
+            "6",
+            "-2",
+            "-0.3",
+            "1",
+            "1"
+          ],
+          "abbreviation": "2nd down"
+        },
+        {
+          "displayName": "3rd",
+          "stats": [
+            "109",
+            "181",
+            "1,043",
+            "60.2",
+            "5.8",
+            "8",
+            "4",
+            "57",
+            "12",
+            "81.8",
+            "9",
+            "3",
+            "0.3",
+            "0",
+            "2"
+          ],
+          "abbreviation": "3rd down"
+        },
+        {
+          "displayName": "4th",
+          "stats": [
+            "10",
+            "14",
+            "65",
+            "71.4",
+            "4.6",
+            "2",
+            "0",
+            "20",
+            "1",
+            "120.5",
+            "3",
+            "5",
+            "1.7",
+            "0",
+            "2"
+          ],
+          "abbreviation": "4th down"
+        }
+      ]
+    },
+    {
+      "name": "byDownAndLength",
+      "displayName": "Down and Length"
+    },
+    {
+      "name": "byDownAndDistance",
+      "displayName": "Down and Dist"
+    },
+    {
+      "name": "byPtDiff",
+      "displayName": "Pt Diff",
+      "splits": [
+        {
+          "displayName": "Ahead",
+          "stats": [
+            "93",
+            "148",
+            "913",
+            "62.8",
+            "6.2",
+            "5",
+            "4",
+            "48",
+            "7",
+            "80.2",
+            "14",
+            "-5",
+            "-0.4",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Winning"
+        },
+        {
+          "displayName": "Behind",
+          "stats": [
+            "303",
+            "447",
+            "2,880",
+            "67.8",
+            "6.4",
+            "16",
+            "4",
+            "63",
+            "10",
+            "93.6",
+            "12",
+            "2",
+            "0.2",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Down"
+        },
+        {
+          "displayName": "Tied",
+          "stats": [
+            "94",
+            "138",
+            "901",
+            "68.1",
+            "6.5",
+            "4",
+            "1",
+            "31",
+            "5",
+            "92.7",
+            "3",
+            "2",
+            "0.7",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Tied"
+        }
+      ]
+    },
+    {
+      "name": "byWinningPtDiff",
+      "displayName": "Win Pt Diff"
+    },
+    {
+      "name": "byLosingPtDiff",
+      "displayName": "Loss Pt Diff"
+    },
+    {
+      "name": "byFieldPosition",
+      "displayName": "Field Position",
+      "splits": [
+        {
+          "displayName": "Own 1-20",
+          "stats": [
+            "56",
+            "79",
+            "490",
+            "70.9",
+            "6.2",
+            "0",
+            "0",
+            "28",
+            "1",
+            "87.0",
+            "6",
+            "-4",
+            "-0.7",
+            "0",
+            "0"
+          ],
+          "abbreviation": "Own 1-20"
+        },
+        {
+          "displayName": "Own 21-50",
+          "stats": [
+            "229",
+            "329",
+            "2,394",
+            "69.6",
+            "7.3",
+            "2",
+            "5",
+            "63",
+            "15",
+            "86.1",
+            "7",
+            "1",
+            "0.1",
+            "0",
+            "2"
+          ],
+          "abbreviation": "Own 21-50"
+        },
+        {
+          "displayName": "Opp 49-20",
+          "stats": [
+            "148",
+            "228",
+            "1,480",
+            "64.9",
+            "6.5",
+            "3",
+            "4",
+            "40",
+            "3",
+            "80.3",
+            "7",
+            "-1",
+            "-0.1",
+            "0",
+            "1"
+          ],
+          "abbreviation": "Opp 49-20"
+        },
+        {
+          "displayName": "Opp 19-Goal",
+          "stats": [
+            "57",
+            "97",
+            "330",
+            "58.8",
+            "3.4",
+            "20",
+            "0",
+            "14",
+            "3",
+            "104.8",
+            "9",
+            "3",
+            "0.3",
+            "1",
+            "2"
+          ],
+          "abbreviation": "Opp 19-1"
+        }
+      ]
+    },
+    {
+      "name": "byOffensiveFormation",
+      "displayName": "Offensive Formation"
+    },
+    {
+      "name": "byWrFormation",
+      "displayName": "WR Formation"
+    },
+    {
+      "name": "byTeFormation",
+      "displayName": "TE Formation "
+    },
+    {
+      "name": "byOffensiveMotion",
+      "displayName": "Offensive Motion"
+    },
+    {
+      "name": "byDefensiveMotion",
+      "displayName": "Defensive Motion"
+    }
+  ]
+}

@@ -200,6 +200,46 @@ paths:
 
 components:
   schemas:
+    SportEnum:
+      type: string
+      description: Common sport identifiers used in ESPN APIs.
+      enum:
+        - football
+        - basketball
+        - baseball
+        - hockey
+        - soccer
+        - golf
+        - racing
+        - tennis
+    LeagueEnum:
+      type: string
+      description: Common league identifiers used in ESPN APIs.
+      enum:
+        - nfl
+        - mlb
+        - nba
+        - nhl
+        - wnba
+        - mens-college-basketball
+        - womens-college-basketball
+        - college-football
+        - college-baseball
+        - pga
+        - lpga
+        - f1
+        - nascar-premier
+        - atp
+        - wta
+        - mls
+        - epl
+        - laliga
+        - bundesliga
+        - serie-a
+        - ligue-1
+        - ucl
+        - europa-league
+        - other
     FantasyLeagueResponse:
       type: object
       properties:

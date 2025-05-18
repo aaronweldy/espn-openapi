@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
+from ...models.get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
 from ...models.team_details_response import TeamDetailsResponse
 from ...types import Response
 
 
 def _get_kwargs(
-    team_id_or_abbrev: str,
+    team_id_or_abbrev: GetMLBTeamDetailsTeamIdOrAbbrev,
 ) -> Dict[str, Any]:
     _kwargs: Dict[str, Any] = {
         "method": "get",
@@ -54,7 +55,7 @@ def _build_response(
 
 
 def sync_detailed(
-    team_id_or_abbrev: str,
+    team_id_or_abbrev: GetMLBTeamDetailsTeamIdOrAbbrev,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[ErrorResponse, TeamDetailsResponse]]:
@@ -63,7 +64,7 @@ def sync_detailed(
      Retrieve detailed information for a specific MLB team including records, venue and franchise details
 
     Args:
-        team_id_or_abbrev (str):  Example: 15.
+        team_id_or_abbrev (GetMLBTeamDetailsTeamIdOrAbbrev):  Example: 15.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -85,7 +86,7 @@ def sync_detailed(
 
 
 def sync(
-    team_id_or_abbrev: str,
+    team_id_or_abbrev: GetMLBTeamDetailsTeamIdOrAbbrev,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[ErrorResponse, TeamDetailsResponse]]:
@@ -94,7 +95,7 @@ def sync(
      Retrieve detailed information for a specific MLB team including records, venue and franchise details
 
     Args:
-        team_id_or_abbrev (str):  Example: 15.
+        team_id_or_abbrev (GetMLBTeamDetailsTeamIdOrAbbrev):  Example: 15.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -111,7 +112,7 @@ def sync(
 
 
 async def asyncio_detailed(
-    team_id_or_abbrev: str,
+    team_id_or_abbrev: GetMLBTeamDetailsTeamIdOrAbbrev,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[ErrorResponse, TeamDetailsResponse]]:
@@ -120,7 +121,7 @@ async def asyncio_detailed(
      Retrieve detailed information for a specific MLB team including records, venue and franchise details
 
     Args:
-        team_id_or_abbrev (str):  Example: 15.
+        team_id_or_abbrev (GetMLBTeamDetailsTeamIdOrAbbrev):  Example: 15.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -140,7 +141,7 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    team_id_or_abbrev: str,
+    team_id_or_abbrev: GetMLBTeamDetailsTeamIdOrAbbrev,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[ErrorResponse, TeamDetailsResponse]]:
@@ -149,7 +150,7 @@ async def asyncio(
      Retrieve detailed information for a specific MLB team including records, venue and franchise details
 
     Args:
-        team_id_or_abbrev (str):  Example: 15.
+        team_id_or_abbrev (GetMLBTeamDetailsTeamIdOrAbbrev):  Example: 15.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

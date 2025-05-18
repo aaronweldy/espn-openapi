@@ -6,13 +6,15 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
+from ...models.league_enum import LeagueEnum
 from ...models.paginated_reference_list_response import PaginatedReferenceListResponse
+from ...models.sport_enum import SportEnum
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
@@ -76,8 +78,8 @@ def _build_response(
 
 
 def sync_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     week: Union[Unset, int] = UNSET,
@@ -92,8 +94,8 @@ def sync_detailed(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
@@ -126,8 +128,8 @@ def sync_detailed(
 
 
 def sync(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     week: Union[Unset, int] = UNSET,
@@ -142,8 +144,8 @@ def sync(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
@@ -171,8 +173,8 @@ def sync(
 
 
 async def asyncio_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     week: Union[Unset, int] = UNSET,
@@ -187,8 +189,8 @@ async def asyncio_detailed(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
@@ -219,8 +221,8 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     week: Union[Unset, int] = UNSET,
@@ -235,8 +237,8 @@ async def asyncio(
     references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.

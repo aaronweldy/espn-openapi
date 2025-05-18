@@ -18,16 +18,55 @@ Your workflow should look like the following:
   - `npx quicktype --src json_output/core_nfl_boxscore.json --src-lang json --lang schema --out json_schema/core_nfl_boxscore_schema.json`
 4. Convert the generated JSON schema object with the relevant OpenAPI spec, adding spec details for the endpoint.
 5. Add definitions for those models, and run `make openapi` (potentially with a more specific command)
-6. Test the model definitions by making an API call to the new route using the generated Python models in a new test file. (run with `uv run espn-api/tests/test-api.py`). Make sure the fields are populated as expected. Use the GENERATED API CLIENt. Put tests in @tests. Use other tests as an example. 
-7. If anything goes wrong in your test, repeat steps 2-6 again.
-8. If you find an endpoint in a $ref param that is not in @CHECKLIST.md, add it to the list.
-9. Once you have fully verified that the new generated types work, check off the endpoint in @CHECKLIST.md, make a git commit with the changes, and then pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
+6. Test the model definitions by making an API call to the new route using the generated Python models in a new pytest test file. Put tests in @tests. Follow the pattern in existing tests with pytest assertions.
+7. Run the tests using pytest:
+  - `pytest -v tests/test_your_new_endpoint.py`
+8. If anything goes wrong in your test, repeat steps 2-7 again.
+9. If you find an endpoint in a $ref param that is not in @CHECKLIST.md, add it to the list.
+10. Once you have fully verified that the new generated types work, check off the endpoint in @CHECKLIST.md, make a git commit with the changes, and then pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
 
 If you need to inspect JSON, use JQ. Read the JQ documentation from context7 if you need to.
 
 YOU CANNOT MODIFY MODEL CODE DIRECTLY. NEVER MODIFY ANYTHING IN MODELS/ YOURSELF.
 
 Keep going until you have a comprehensive OpenAPI spec of all endpoints. Feel free to fetch API routes directly, if it's helpful.
+
+## Writing Tests with pytest
+
+All tests should use pytest assertions and follow these guidelines:
+
+1. Use the shared fixtures from `conftest.py` for API clients:
+   - `site_web_api_client`
+   - `cdn_api_client`
+   - `site_api_client`
+   - `sports_core_api_client`
+   - `fantasy_api_client`
+   - `ensure_json_output_dir`
+
+2. Use pytest assertions:
+   ```python
+   assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
+   assert isinstance(result, ExpectedModelClass), "Response should parse to ExpectedModelClass"
+   ```
+
+3. Add appropriate markers to your tests:
+   ```python
+   @pytest.mark.api  # For tests that make real API calls
+   def test_my_endpoint(site_api_client):
+       # Test code
+   ```
+
+4. Use pytest's parameterized testing for testing with different inputs:
+   ```python
+   @pytest.mark.parametrize("athlete_id", [
+       12345,  # Valid athlete
+       pytest.param(99999, marks=pytest.mark.xfail),  # Invalid athlete, expected to fail
+   ])
+   def test_athlete_endpoint(site_web_api_client, athlete_id):
+       # Test code
+   ```
+
+For more details on testing, see @TESTING.md.
 
 ## Important Notes on Model Usage
 

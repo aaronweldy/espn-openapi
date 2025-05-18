@@ -6,7 +6,7 @@ from models.sports_core_api.espn_sports_core_api_client.models import (
     NflTeamDepthchartResponse,
     ErrorResponse,
 )
-from typing import Optional, Union
+from typing import Union
 
 
 def test_get_nfl_team_depthchart():
@@ -81,11 +81,6 @@ def test_get_nfl_team_depthchart():
                         print("    No athletes listed for this position.")
             else:
                 print("  No positions listed for this group.")
-
-        return True
-    else:
-        print(f"✗ Unexpected response type: {type(response)}")
-        return False
 
 
 def main():

@@ -10,6 +10,7 @@ from .fantasy_team_response import FantasyTeamResponse
 from .get_fantasy_football_league_view import GetFantasyFootballLeagueView
 from .get_fantasy_football_team_view import GetFantasyFootballTeamView
 from .league_communication import LeagueCommunication
+from .league_enum import LeagueEnum
 from .league_member import LeagueMember
 from .league_settings import LeagueSettings
 from .league_status import LeagueStatus
@@ -32,6 +33,7 @@ from .schedule_team import ScheduleTeam
 from .scoring_settings import ScoringSettings
 from .scoring_settings_stat_settings import ScoringSettingsStatSettings
 from .scoring_settings_stat_settings_stats import ScoringSettingsStatSettingsStats
+from .sport_enum import SportEnum
 from .stat_rule import StatRule
 from .team_record import TeamRecord
 from .team_roster import TeamRoster
@@ -52,6 +54,7 @@ __all__ = (
     "GetFantasyFootballLeagueView",
     "GetFantasyFootballTeamView",
     "LeagueCommunication",
+    "LeagueEnum",
     "LeagueMember",
     "LeagueSettings",
     "LeagueStatus",
@@ -74,6 +77,7 @@ __all__ = (
     "ScoringSettings",
     "ScoringSettingsStatSettings",
     "ScoringSettingsStatSettingsStats",
+    "SportEnum",
     "StatRule",
     "TeamRecord",
     "TeamRoster",

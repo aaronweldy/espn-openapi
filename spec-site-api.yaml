@@ -313,47 +313,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  /v2/sports/football/nfl/standings:
-    get:
-      summary: Get NFL Standings
-      description: Retrieve current NFL standings for all divisions, including team records and ranking statistics
-      operationId: getNFLStandings
-      parameters:
-        - name: season
-          in: query
-          required: false
-          description: The season year to retrieve standings for
-          schema:
-            type: integer
-            example: 2024
-        - name: seasontype
-          in: query
-          required: false
-          description: Season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
-          schema:
-            type: integer
-            enum: [1, 2, 3, 4]
-            example: 2
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StandingsResponse'
-        '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
   /mondaynightfootball:
     get:
       summary: Get Monday Night Football schedule and games
@@ -1863,15 +1822,18 @@ components:
             - Fullback
             - Offensive Tackle
             - Offensive Guard
+            - Guard
             - Center
             - Defensive End
             - Defensive Tackle
             - Inside Linebacker
             - Outside Linebacker
+            - Linebacker
             - Cornerback
             - Safety
+            - Defensive Back
             - Long Snapper
-            - Place Kicker
+            - Place kicker
             - Punter
           description: The position category name (e.g., offense, defense, special teams)
         items:
@@ -2771,32 +2733,6 @@ components:
       required:
         - href
 
-    StandingsResponse:
-      type: object
-      properties:
-        uid:
-          type: string
-          example: "s:20~l:28~g:9"
-        id:
-          type: string
-          example: "9"
-        name:
-          type: string
-          example: "National Football League"
-        abbreviation:
-          type: string
-          example: "NFL"
-        shortName:
-          type: string
-          example: "NFL"
-        children:
-          type: array
-          items:
-            $ref: '#/components/schemas/Conference'
-      required:
-        - name
-        - children
-
     Conference:
       type: object
       properties:
@@ -2819,7 +2755,6 @@ components:
           $ref: '#/components/schemas/StandingGroup'
       required:
         - id
-        - name
         - standings
 
     StandingGroup:
@@ -2993,6 +2928,7 @@ components:
             - Fullback
             - Offensive Tackle
             - Offensive Guard
+            - Guard
             - Center
             - Defensive End
             - Defensive Tackle
@@ -3003,6 +2939,12 @@ components:
             - Long Snapper
             - Place Kicker
             - Punter
+            - offense
+            - defense
+            - specialTeam
+            - injuredReserveOrOut
+            - suspended
+            - practiceSquad
           description: The position category name (e.g., offense, defense, special teams)
         items:
           type: array

@@ -1,0 +1,4090 @@
+{
+  "count": 187,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 8,
+  "items": [
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/4015474171?lang=en&region=us",
+      "id": "4015474171",
+      "sequenceNumber": "100",
+      "type": {
+        "id": "70",
+        "text": "Coin Toss"
+      },
+      "text": "GAME",
+      "shortText": "ATL Win Toss, Elect to Defers west",
+      "alternativeText": "GAME",
+      "shortAlternativeText": "ATL Win Toss, Elect to Defers west",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 0
+      },
+      "clock": {
+        "value": 900.0,
+        "displayValue": "15:00"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/4015474171?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:02:21+00:00",
+      "start": {
+        "down": 0,
+        "distance": 0,
+        "yardsToEndzone": 0,
+        "yardLine": 0
+      },
+      "end": {
+        "down": 0,
+        "distance": 0,
+        "yardsToEndzone": 65,
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 0
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/40154741739?lang=en&region=us",
+      "id": "40154741739",
+      "sequenceNumber": "3900",
+      "type": {
+        "id": "53",
+        "text": "Kickoff",
+        "abbreviation": "K"
+      },
+      "text": "B.Pinion kicks 65 yards from ATL 35 to end zone, Touchback.",
+      "shortText": "Bradley Pinion 65 Yd Kickoff, TB",
+      "alternativeText": "B.Pinion kicks 65 yards from ATL 35 to end zone, Touchback.",
+      "shortAlternativeText": "Bradley Pinion 65 Yd Kickoff, TB",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 900.0,
+        "displayValue": "15:00"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/2977680?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/2977680/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "kickoffs",
+              "displayName": "Kickoffs",
+              "shortDisplayName": "K",
+              "description": "The number of kickoffs taken.",
+              "abbreviation": "K",
+              "value": 7.0,
+              "displayValue": "7"
+            },
+            {
+              "name": "touchbacks",
+              "displayName": "Touchbacks",
+              "shortDisplayName": "TB",
+              "description": "The number of kickoffs that result in touchbacks.",
+              "abbreviation": "TB",
+              "value": 5.0,
+              "displayValue": "5"
+            },
+            {
+              "name": "touchbackPct",
+              "displayName": "Touchback Percentage",
+              "shortDisplayName": "TB%",
+              "description": "The percentage of kickoffs that are touchbacks.",
+              "abbreviation": "TB%",
+              "value": 71.43000030517578,
+              "displayValue": "71"
+            }
+          ],
+          "order": 1,
+          "type": "kicker"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/40154741739?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:02:21+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 0,
+        "distance": 0,
+        "yardsToEndzone": 65,
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 35
+      },
+      "end": {
+        "down": 1,
+        "distance": 7,
+        "yardsToEndzone": 75,
+        "downDistanceText": "1st & 7 at GB 25",
+        "shortDownDistanceText": "1st & 7",
+        "possessionText": "GB 25",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 75
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/40154741755?lang=en&region=us",
+      "id": "40154741755",
+      "sequenceNumber": "5500",
+      "type": {
+        "id": "3",
+        "text": "Pass Incompletion"
+      },
+      "text": "(Shotgun) J.Love pass incomplete deep middle to D.Wicks. PENALTY on ATL-A.Terrell, Defensive Pass Interference, 44 yards, enforced at GB 25 - No Play.",
+      "shortText": "Jordan Love Incomplete Pass, Int'd For Dontayvion Wicks , A.J. Terrell 44 Yd Penalty",
+      "alternativeText": "(Shotgun) J.Love pass incomplete deep middle to D.Wicks. PENALTY on ATL-A.Terrell, Defensive Pass Interference, 44 yards, enforced at GB 25 - No Play.",
+      "shortAlternativeText": "Jordan Love Incomplete Pass, Int'd For Dontayvion Wicks , A.J. Terrell 44 Yd Penalty",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 900.0,
+        "displayValue": "15:00"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4036378?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4036378/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.56,
+              "displayValue": "14/25"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 151.0,
+              "displayValue": "151"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4428850?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4428850/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 40.0,
+              "displayValue": "40"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4428850?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4428850/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 40.0,
+              "displayValue": "40"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 3,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239995?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/29?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4239995/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 4,
+          "type": "penalized"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/40154741755?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:03:06+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 75,
+        "downDistanceText": "1st & 10 at GB 25",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "GB 25",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 75
+      },
+      "end": {
+        "down": 1,
+        "distance": 12,
+        "yardsToEndzone": 31,
+        "downDistanceText": "1st & 12 at ATL 31",
+        "shortDownDistanceText": "1st & 12",
+        "possessionText": "ATL 31",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 31
+      },
+      "statYardage": 44
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/40154741789?lang=en&region=us",
+      "id": "40154741789",
+      "sequenceNumber": "8900",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) A.Dillon right guard to ATL 28 for 3 yards (D.Onyemata; G.Jarrett).",
+      "shortText": "AJ Dillon 3 Yd Rush",
+      "alternativeText": "(Shotgun) A.Dillon right guard to ATL 28 for 3 yards (D.Onyemata; G.Jarrett).",
+      "shortAlternativeText": "AJ Dillon 3 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 893.0,
+        "displayValue": "14:53"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239934?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/21/roster/4239934/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 15.0,
+              "displayValue": "15"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 55.0,
+              "displayValue": "55"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4002046?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/32?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4002046/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "assistedBy"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/2576492?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/31?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/3/roster/2576492/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/40154741789?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:03:56+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 31,
+        "downDistanceText": "1st & 10 at ATL 31",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 31",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 31
+      },
+      "end": {
+        "down": 2,
+        "distance": 12,
+        "yardsToEndzone": 28,
+        "downDistanceText": "2nd & 12 at ATL 28",
+        "shortDownDistanceText": "2nd & 12",
+        "possessionText": "ATL 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 28
+      },
+      "statYardage": 3
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417111?lang=en&region=us",
+      "id": "401547417111",
+      "sequenceNumber": "11100",
+      "type": {
+        "id": "3",
+        "text": "Pass Incompletion"
+      },
+      "text": "(Shotgun) J.Love pass incomplete deep left to L.Musgrave.",
+      "shortText": "Jordan Love Incomplete Pass, Int'd For Luke Musgrave",
+      "alternativeText": "(Shotgun) J.Love pass incomplete deep left to L.Musgrave.",
+      "shortAlternativeText": "Jordan Love Incomplete Pass, Int'd For Luke Musgrave",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 849.0,
+        "displayValue": "14:09"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4036378?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4036378/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.56,
+              "displayValue": "14/25"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 151.0,
+              "displayValue": "151"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4428085?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4428085/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 25.0,
+              "displayValue": "25"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4428085?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4428085/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 25.0,
+              "displayValue": "25"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "receiver"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417111?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:04:40+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 7,
+        "yardsToEndzone": 38,
+        "downDistanceText": "2nd & 7 at ATL 28",
+        "shortDownDistanceText": "2nd & 7",
+        "possessionText": "ATL 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 28
+      },
+      "end": {
+        "down": 3,
+        "distance": 17,
+        "yardsToEndzone": 28,
+        "downDistanceText": "3rd & 17 at ATL 28",
+        "shortDownDistanceText": "3rd & 17",
+        "possessionText": "ATL 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 28
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417134?lang=en&region=us",
+      "id": "401547417134",
+      "sequenceNumber": "13400",
+      "type": {
+        "id": "8",
+        "text": "Penalty",
+        "abbreviation": "PEN"
+      },
+      "text": "(Shotgun) PENALTY on GB-R.Walker, False Start, 5 yards, enforced at ATL 28 - No Play.",
+      "shortText": "Rasheed Walker -5 Yd Penalty",
+      "alternativeText": "(Shotgun) PENALTY on GB-R.Walker, False Start, 5 yards, enforced at ATL 28 - No Play.",
+      "shortAlternativeText": "Rasheed Walker -5 Yd Penalty",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 846.0,
+        "displayValue": "14:06"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4361429?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/46?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4361429/statistics/0?lang=en&region=us"
+          },
+          "stats": [],
+          "order": 1,
+          "type": "penalized"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417134?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:05:22+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 3,
+        "distance": 7,
+        "yardsToEndzone": 28,
+        "downDistanceText": "3rd & 7 at ATL 28",
+        "shortDownDistanceText": "3rd & 7",
+        "possessionText": "ATL 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 28
+      },
+      "end": {
+        "down": 3,
+        "distance": 10,
+        "yardsToEndzone": 33,
+        "downDistanceText": "3rd & 10 at ATL 33",
+        "shortDownDistanceText": "3rd & 10",
+        "possessionText": "ATL 33",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 33
+      },
+      "statYardage": -5
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417158?lang=en&region=us",
+      "id": "401547417158",
+      "sequenceNumber": "15800",
+      "type": {
+        "id": "3",
+        "text": "Pass Incompletion"
+      },
+      "text": "(Shotgun) J.Love pass incomplete short left to J.Reed (D.Onyemata).",
+      "shortText": "Jordan Love Incomplete Pass, Int'd For Jayden Reed",
+      "alternativeText": "(Shotgun) J.Love pass incomplete short left to J.Reed (D.Onyemata).",
+      "shortAlternativeText": "Jordan Love Incomplete Pass, Int'd For Jayden Reed",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 846.0,
+        "displayValue": "14:06"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4036378?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4036378/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.56,
+              "displayValue": "14/25"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 151.0,
+              "displayValue": "151"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4362249?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4362249/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 37.0,
+              "displayValue": "37"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 2.0,
+              "displayValue": "2"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4362249?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4362249/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 37.0,
+              "displayValue": "37"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 2.0,
+              "displayValue": "2"
+            }
+          ],
+          "order": 3,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4002046?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/32?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4002046/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 4,
+          "type": "passDefender"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417158?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:06:03+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 3,
+        "distance": 12,
+        "yardsToEndzone": 80,
+        "downDistanceText": "3rd & 12 at ATL 33",
+        "shortDownDistanceText": "3rd & 12",
+        "possessionText": "ATL 33",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 33
+      },
+      "end": {
+        "down": 4,
+        "distance": 10,
+        "yardsToEndzone": 33,
+        "downDistanceText": "4th & 10 at ATL 33",
+        "shortDownDistanceText": "4th & 10",
+        "possessionText": "ATL 33",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 33
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417181?lang=en&region=us",
+      "id": "401547417181",
+      "sequenceNumber": "18100",
+      "type": {
+        "id": "8",
+        "text": "Penalty",
+        "abbreviation": "PEN"
+      },
+      "text": "(Field Goal formation) PENALTY on GB, Delay of Game, 5 yards, enforced at ATL 33 - No Play.",
+      "shortText": "GB -5 Yd Penalty",
+      "alternativeText": "(Field Goal formation) PENALTY on GB, Delay of Game, 5 yards, enforced at ATL 33 - No Play.",
+      "shortAlternativeText": "GB -5 Yd Penalty",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 846.0,
+        "displayValue": "14:06"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417181?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:07:38+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 4,
+        "distance": 12,
+        "yardsToEndzone": 33,
+        "downDistanceText": "4th & 12 at ATL 33",
+        "shortDownDistanceText": "4th & 12",
+        "possessionText": "ATL 33",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 33
+      },
+      "end": {
+        "down": 4,
+        "distance": 1,
+        "yardsToEndzone": 38,
+        "downDistanceText": "4th & 1 at ATL 38",
+        "shortDownDistanceText": "4th & 1",
+        "possessionText": "ATL 38",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 38
+      },
+      "statYardage": -5
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417211?lang=en&region=us",
+      "id": "401547417211",
+      "sequenceNumber": "21100",
+      "type": {
+        "id": "52",
+        "text": "Punt",
+        "abbreviation": "PUNT"
+      },
+      "text": "D.Whelan punts 38 yards to end zone, Center-M.Orzech, Touchback.",
+      "shortText": "Daniel Whelan 38 Yd Punt, TB",
+      "alternativeText": "D.Whelan punts 38 yards to end zone, Center-M.Orzech, Touchback.",
+      "shortAlternativeText": "Daniel Whelan 38 Yd Punt, TB",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 842.0,
+        "displayValue": "14:02"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4248789?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4248789/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "punts",
+              "displayName": "Punts",
+              "shortDisplayName": "P",
+              "description": "The number of punts taken.",
+              "abbreviation": "PUNTS",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "longPunt",
+              "displayName": "Long Punt",
+              "shortDisplayName": "LP",
+              "description": "The distance of the longest punt.",
+              "abbreviation": "LNG",
+              "value": 59.0,
+              "displayValue": "59"
+            },
+            {
+              "name": "grossAvgPuntYards",
+              "displayName": "Gross Average Punt Yards",
+              "shortDisplayName": "GYDS/P",
+              "description": "The average gross number of yards per punt.",
+              "abbreviation": "AVG",
+              "value": 49.75,
+              "displayValue": "49.8"
+            },
+            {
+              "name": "puntsInside20",
+              "displayName": "Punts Inside 20",
+              "shortDisplayName": "P 20",
+              "description": "The number of times a punt is downed inside the 20.",
+              "abbreviation": "IN20",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "punter"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417211?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:07:38+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 4,
+        "distance": 17,
+        "yardsToEndzone": 38,
+        "downDistanceText": "4th & 17 at ATL 38",
+        "shortDownDistanceText": "4th & 17",
+        "possessionText": "ATL 38",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 38
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 80,
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 0
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417220?lang=en&region=us",
+      "id": "401547417220",
+      "sequenceNumber": "22000",
+      "type": {
+        "id": "74",
+        "text": "Official Timeout",
+        "abbreviation": "Off TO"
+      },
+      "text": "Timeout at 13:54.",
+      "shortText": "Timeout",
+      "alternativeText": "Timeout at 13:54.",
+      "shortAlternativeText": "Timeout",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 834.0,
+        "displayValue": "13:54"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417220?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:09:21+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474171?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 80,
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 20
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 80,
+        "downDistanceText": "1st & 10 at ATL 20",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 20",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 20
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417229?lang=en&region=us",
+      "id": "401547417229",
+      "sequenceNumber": "22900",
+      "type": {
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
+      },
+      "text": "(Shotgun) D.Ridder pass short right to D.London to ATL 29 for 9 yards (K.Clark; Q.Walker).",
+      "shortText": "Desmond Ridder  Pass Complete for 9 Yds to Drake London",
+      "alternativeText": "(Shotgun) D.Ridder pass short right to D.London to ATL 29 for 9 yards (K.Clark; Q.Walker).",
+      "shortAlternativeText": "Desmond Ridder  Pass Complete for 9 Yds to Drake London",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 834.0,
+        "displayValue": "13:54"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4426502?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/1?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4426502/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 6.0,
+              "displayValue": "6"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 67.0,
+              "displayValue": "67"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3122752?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/32?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/3122752/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 6.0,
+              "displayValue": "6"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.5,
+              "displayValue": "0.5"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4379416?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4379416/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 17.0,
+              "displayValue": "17"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 4,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417229?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:10:39+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474172?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 80,
+        "downDistanceText": "1st & 10 at ATL 20",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 20",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 20
+      },
+      "end": {
+        "down": 2,
+        "distance": 11,
+        "yardsToEndzone": 71,
+        "downDistanceText": "2nd & 11 at ATL 29",
+        "shortDownDistanceText": "2nd & 11",
+        "possessionText": "ATL 29",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 29
+      },
+      "statYardage": 9
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417261?lang=en&region=us",
+      "id": "401547417261",
+      "sequenceNumber": "26100",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) B.Robinson left end to ATL 36 for 7 yards (D.Campbell; Q.Walker).",
+      "shortText": "Bijan Robinson 7 Yd Rush",
+      "alternativeText": "(Shotgun) B.Robinson left end to ATL 36 for 7 yards (D.Campbell; Q.Walker).",
+      "shortAlternativeText": "Bijan Robinson 7 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 800.0,
+        "displayValue": "13:20"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4430807?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4430807/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 19.0,
+              "displayValue": "19"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 124.0,
+              "displayValue": "124"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3040180?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/25/roster/3040180/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 14.0,
+              "displayValue": "14"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "assistedBy"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4379416?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4379416/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 17.0,
+              "displayValue": "17"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417261?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:11:13+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474172?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 1,
+        "yardsToEndzone": 71,
+        "downDistanceText": "2nd & 1 at ATL 29",
+        "shortDownDistanceText": "2nd & 1",
+        "possessionText": "ATL 29",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 29
+      },
+      "end": {
+        "down": 1,
+        "distance": 22,
+        "yardsToEndzone": 64,
+        "downDistanceText": "1st & 22 at ATL 36",
+        "shortDownDistanceText": "1st & 22",
+        "possessionText": "ATL 36",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 36
+      },
+      "statYardage": 7
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417283?lang=en&region=us",
+      "id": "401547417283",
+      "sequenceNumber": "28300",
+      "type": {
+        "id": "26",
+        "text": "Pass Interception Return",
+        "abbreviation": "INTR"
+      },
+      "text": "(Shotgun) D.Ridder pass deep middle intended for J.Smith INTERCEPTED by R.Douglas [K.Clark] at GB 42. R.Douglas to GB 40 for -2 yards (K.Pitts).",
+      "shortText": "Pass Intrcptd by Rasul Douglas, -2 Yd Retrn",
+      "alternativeText": "(Shotgun) D.Ridder pass deep middle intended for J.Smith INTERCEPTED by R.Douglas [K.Clark] at GB 42. R.Douglas to GB 40 for -2 yards (K.Pitts).",
+      "shortAlternativeText": "Pass Intrcptd by Rasul Douglas, -2 Yd Retrn",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 759.0,
+        "displayValue": "12:39"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3943270?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/29?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/2/roster/3943270/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 2,
+          "type": "passDefender"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3943270?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/29?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/2/roster/3943270/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 3,
+          "type": "returner"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4360248?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4360248/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 15.0,
+              "displayValue": "15"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 4,
+          "type": "tackler"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417283?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:11:54+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474172?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 64,
+        "downDistanceText": "1st & 10 at ATL 36",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 36",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 36
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 60,
+        "downDistanceText": "1st & 10 at GB 40",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "GB 40",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 60
+      },
+      "statYardage": -2
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417310?lang=en&region=us",
+      "id": "401547417310",
+      "sequenceNumber": "31000",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) R.Walker reported in as eligible.  A.Dillon left end to GB 44 for 4 yards (Z.Harrison; A.Ebiketie).",
+      "shortText": "AJ Dillon 4 Yd Rush",
+      "alternativeText": "(Shotgun) R.Walker reported in as eligible.  A.Dillon left end to GB 44 for 4 yards (Z.Harrison; A.Ebiketie).",
+      "shortAlternativeText": "AJ Dillon 4 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 750.0,
+        "displayValue": "12:30"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239934?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/21/roster/4239934/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 15.0,
+              "displayValue": "15"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 55.0,
+              "displayValue": "55"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4426412?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/31?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4426412/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "assistedBy"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4257591?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4257591/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417310?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:13:02+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474173?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 60,
+        "downDistanceText": "1st & 10 at GB 40",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "GB 40",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 60
+      },
+      "end": {
+        "down": 2,
+        "distance": 10,
+        "yardsToEndzone": 56,
+        "downDistanceText": "2nd & 10 at GB 44",
+        "shortDownDistanceText": "2nd & 10",
+        "possessionText": "GB 44",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 56
+      },
+      "statYardage": 4
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417334?lang=en&region=us",
+      "id": "401547417334",
+      "sequenceNumber": "33400",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "Em.Wilson left end to GB 39 for -5 yards (N.Landman).",
+      "shortText": "Emanuel Wilson Rush , Loss of 5 Yds",
+      "alternativeText": "Em.Wilson left end to GB 39 for -5 yards (N.Landman).",
+      "shortAlternativeText": "Emanuel Wilson Rush , Loss of 5 Yds",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 711.0,
+        "displayValue": "11:51"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4887558?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4887558/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 5.0,
+              "displayValue": "5"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4243181?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/14/roster/4243181/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "tackler"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417334?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:13:41+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474173?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 6,
+        "yardsToEndzone": 56,
+        "downDistanceText": "2nd & 6 at GB 44",
+        "shortDownDistanceText": "2nd & 6",
+        "possessionText": "GB 44",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 56
+      },
+      "end": {
+        "down": 3,
+        "distance": 10,
+        "yardsToEndzone": 61,
+        "downDistanceText": "3rd & 10 at GB 39",
+        "shortDownDistanceText": "3rd & 10",
+        "possessionText": "GB 39",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 61
+      },
+      "statYardage": -5
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417356?lang=en&region=us",
+      "id": "401547417356",
+      "sequenceNumber": "35600",
+      "type": {
+        "id": "7",
+        "text": "Sack"
+      },
+      "text": "(No Huddle, Shotgun) J.Love sacked at GB 28 for -11 yards (K.Elliss).",
+      "shortText": "Jordan Love Sacked by Kaden Elliss For 11 Yd Loss to GB 28",
+      "alternativeText": "(No Huddle, Shotgun) J.Love sacked at GB 28 for -11 yards (K.Elliss).",
+      "shortAlternativeText": "Jordan Love Sacked by Kaden Elliss For 11 Yd Loss to GB 28",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 681.0,
+        "displayValue": "11:21"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4036378?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4036378/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.56,
+              "displayValue": "14/25"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 151.0,
+              "displayValue": "151"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 3.0,
+              "displayValue": "3"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3124890?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/3124890/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 6.0,
+              "displayValue": "6"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "sackedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417356?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:14:11+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474173?lang=en&region=us"
+      },
+      "start": {
+        "down": 3,
+        "distance": 11,
+        "yardsToEndzone": 61,
+        "downDistanceText": "3rd & 11 at GB 39",
+        "shortDownDistanceText": "3rd & 11",
+        "possessionText": "GB 39",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 61
+      },
+      "end": {
+        "down": 4,
+        "distance": 10,
+        "yardsToEndzone": 72,
+        "downDistanceText": "4th & 10 at GB 28",
+        "shortDownDistanceText": "4th & 10",
+        "possessionText": "GB 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 72
+      },
+      "statYardage": -11
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417376?lang=en&region=us",
+      "id": "401547417376",
+      "sequenceNumber": "37600",
+      "type": {
+        "id": "52",
+        "text": "Punt",
+        "abbreviation": "PUNT"
+      },
+      "text": "D.Whelan punts 45 yards to ATL 27, Center-M.Orzech, fair catch by M.Hughes.",
+      "shortText": "Daniel Whelan 45 Yd Punt, Fair Catch by Mike Hughes at ATL 27",
+      "alternativeText": "D.Whelan punts 45 yards to ATL 27, Center-M.Orzech, fair catch by M.Hughes.",
+      "shortAlternativeText": "Daniel Whelan 45 Yd Punt, Fair Catch by Mike Hughes at ATL 27",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 641.0,
+        "displayValue": "10:41"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4248789?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4248789/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "punts",
+              "displayName": "Punts",
+              "shortDisplayName": "P",
+              "description": "The number of punts taken.",
+              "abbreviation": "PUNTS",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "longPunt",
+              "displayName": "Long Punt",
+              "shortDisplayName": "LP",
+              "description": "The distance of the longest punt.",
+              "abbreviation": "LNG",
+              "value": 59.0,
+              "displayValue": "59"
+            },
+            {
+              "name": "grossAvgPuntYards",
+              "displayName": "Gross Average Punt Yards",
+              "shortDisplayName": "GYDS/P",
+              "description": "The average gross number of yards per punt.",
+              "abbreviation": "AVG",
+              "value": 49.75,
+              "displayValue": "49.8"
+            },
+            {
+              "name": "puntsInside20",
+              "displayName": "Punts Inside 20",
+              "shortDisplayName": "P 20",
+              "description": "The number of times a punt is downed inside the 20.",
+              "abbreviation": "IN20",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "punter"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3895841?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/29?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/3895841/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "returner"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417376?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:14:52+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474173?lang=en&region=us"
+      },
+      "start": {
+        "down": 4,
+        "distance": 22,
+        "yardsToEndzone": 72,
+        "downDistanceText": "4th & 22 at GB 28",
+        "shortDownDistanceText": "4th & 22",
+        "possessionText": "GB 28",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+        },
+        "yardLine": 72
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 73,
+        "downDistanceText": "1st & 10 at ATL 27",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 27",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 27
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417386?lang=en&region=us",
+      "id": "401547417386",
+      "sequenceNumber": "38600",
+      "type": {
+        "id": "74",
+        "text": "Official Timeout",
+        "abbreviation": "Off TO"
+      },
+      "text": "Timeout at 10:33.",
+      "shortText": "Timeout",
+      "alternativeText": "Timeout at 10:33.",
+      "shortAlternativeText": "Timeout",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 633.0,
+        "displayValue": "10:33"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417386?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:15:14+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474173?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 73,
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 27
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 73,
+        "downDistanceText": "1st & 10 at ATL 27",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 27",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 27
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417396?lang=en&region=us",
+      "id": "401547417396",
+      "sequenceNumber": "39600",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) B.Robinson right end pushed ob at ATL 30 for 3 yards (T.Slaton).",
+      "shortText": "Bijan Robinson 3 Yd Rush",
+      "alternativeText": "(Shotgun) B.Robinson right end pushed ob at ATL 30 for 3 yards (T.Slaton).",
+      "shortAlternativeText": "Bijan Robinson 3 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 633.0,
+        "displayValue": "10:33"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4430807?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4430807/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 19.0,
+              "displayValue": "19"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 124.0,
+              "displayValue": "124"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4240612?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/32?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/4/roster/4240612/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "tackler"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417396?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:17:54+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 73,
+        "downDistanceText": "1st & 10 at ATL 27",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 27",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 27
+      },
+      "end": {
+        "down": 2,
+        "distance": 10,
+        "yardsToEndzone": 70,
+        "downDistanceText": "2nd & 10 at ATL 30",
+        "shortDownDistanceText": "2nd & 10",
+        "possessionText": "ATL 30",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 30
+      },
+      "statYardage": 3
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417430?lang=en&region=us",
+      "id": "401547417430",
+      "sequenceNumber": "43000",
+      "type": {
+        "id": "3",
+        "text": "Pass Incompletion"
+      },
+      "text": "(Shotgun) D.Ridder pass incomplete short right to B.Robinson.",
+      "shortText": "Desmond Ridder Incomplete Pass, Int'd For Bijan Robinson",
+      "alternativeText": "(Shotgun) D.Ridder pass incomplete short right to B.Robinson.",
+      "shortAlternativeText": "Desmond Ridder Incomplete Pass, Int'd For Bijan Robinson",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 607.0,
+        "displayValue": "10:07"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4430807?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4430807/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 48.0,
+              "displayValue": "48"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4430807?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4430807/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 48.0,
+              "displayValue": "48"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "receiver"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417430?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:18:23+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 7,
+        "yardsToEndzone": 41,
+        "downDistanceText": "2nd & 7 at ATL 30",
+        "shortDownDistanceText": "2nd & 7",
+        "possessionText": "ATL 30",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 30
+      },
+      "end": {
+        "down": 3,
+        "distance": 10,
+        "yardsToEndzone": 70,
+        "downDistanceText": "3rd & 10 at ATL 30",
+        "shortDownDistanceText": "3rd & 10",
+        "possessionText": "ATL 30",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 30
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417453?lang=en&region=us",
+      "id": "401547417453",
+      "sequenceNumber": "45300",
+      "type": {
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
+      },
+      "text": "(Shotgun) D.Ridder pass short middle to J.Smith to ATL 47 for 17 yards (R.Ford, D.Campbell) [P.Smith].",
+      "shortText": "Desmond Ridder  Pass Complete for 17 Yds to Jonnu Smith",
+      "alternativeText": "(Shotgun) D.Ridder pass short middle to J.Smith to ATL 47 for 17 yards (R.Ford, D.Campbell) [P.Smith].",
+      "shortAlternativeText": "Desmond Ridder  Pass Complete for 17 Yds to Jonnu Smith",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 601.0,
+        "displayValue": "10:01"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3054212?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/15/roster/3054212/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 47.0,
+              "displayValue": "47"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3051901?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/36?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/29/roster/3051901/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 7.0,
+              "displayValue": "7"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "tackler"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3040180?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/25/roster/3040180/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 14.0,
+              "displayValue": "14"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 4,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417453?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:19:05+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 3,
+        "distance": 7,
+        "yardsToEndzone": 70,
+        "downDistanceText": "3rd & 7 at ATL 30",
+        "shortDownDistanceText": "3rd & 7",
+        "possessionText": "ATL 30",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 30
+      },
+      "end": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 52,
+        "downDistanceText": "1st & 10 at ATL 47",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 47",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 47
+      },
+      "statYardage": 17
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417478?lang=en&region=us",
+      "id": "401547417478",
+      "sequenceNumber": "47800",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) T.Allgeier right tackle to ATL 49 for 2 yards (Q.Walker, T.Slaton).",
+      "shortText": "Tyler Allgeier 2 Yd Rush",
+      "alternativeText": "(Shotgun) T.Allgeier right tackle to ATL 49 for 2 yards (Q.Walker, T.Slaton).",
+      "shortAlternativeText": "Tyler Allgeier 2 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 561.0,
+        "displayValue": "9:21"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4373626?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4373626/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 16.0,
+              "displayValue": "16"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 48.0,
+              "displayValue": "48"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4379416?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4379416/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 17.0,
+              "displayValue": "17"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "tackler"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4240612?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/32?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/4/roster/4240612/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417478?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:19:44+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 53,
+        "downDistanceText": "1st & 10 at ATL 47",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "ATL 47",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 47
+      },
+      "end": {
+        "down": 2,
+        "distance": 3,
+        "yardsToEndzone": 51,
+        "downDistanceText": "2nd & 3 at ATL 49",
+        "shortDownDistanceText": "2nd & 3",
+        "possessionText": "ATL 49",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 49
+      },
+      "statYardage": 2
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417500?lang=en&region=us",
+      "id": "401547417500",
+      "sequenceNumber": "50000",
+      "type": {
+        "id": "5",
+        "text": "Rush",
+        "abbreviation": "RUSH"
+      },
+      "text": "(Shotgun) T.Allgeier left tackle to GB 41 for 10 yards (D.Campbell; D.Savage).",
+      "shortText": "Tyler Allgeier 10 Yd Rush",
+      "alternativeText": "(Shotgun) T.Allgeier left tackle to GB 41 for 10 yards (D.Campbell; D.Savage).",
+      "shortAlternativeText": "Tyler Allgeier 10 Yd Rush",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 524.0,
+        "displayValue": "8:44"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4373626?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/9?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4373626/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "rushingAttempts",
+              "displayName": "Rushing Attempts",
+              "shortDisplayName": "Rushing Attempts",
+              "description": "The total number of attempted rushes.",
+              "abbreviation": "ATT",
+              "value": 16.0,
+              "displayValue": "16"
+            },
+            {
+              "name": "rushingYards",
+              "displayName": "Rushing Yards",
+              "shortDisplayName": "Rush Yards",
+              "description": "The total rushing yards.",
+              "abbreviation": "YDS",
+              "value": 48.0,
+              "displayValue": "48"
+            },
+            {
+              "name": "rushingTouchdowns",
+              "displayName": "Rushing Touchdowns",
+              "shortDisplayName": "Rushing Touchdowns",
+              "description": "The total number of rushing touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 1,
+          "type": "rusher"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3040180?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/25/roster/3040180/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 14.0,
+              "displayValue": "14"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "assistedBy"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3915419?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/36?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/30/roster/3915419/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 8.0,
+              "displayValue": "8"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "assistedBy"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417500?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:20:22+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 8,
+        "yardsToEndzone": 51,
+        "downDistanceText": "2nd & 8 at ATL 49",
+        "shortDownDistanceText": "2nd & 8",
+        "possessionText": "ATL 49",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 49
+      },
+      "end": {
+        "down": 1,
+        "distance": 3,
+        "yardsToEndzone": 41,
+        "downDistanceText": "1st & 3 at GB 41",
+        "shortDownDistanceText": "1st & 3",
+        "possessionText": "GB 41",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 59
+      },
+      "statYardage": 10
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417522?lang=en&region=us",
+      "id": "401547417522",
+      "sequenceNumber": "52200",
+      "type": {
+        "id": "3",
+        "text": "Pass Incompletion"
+      },
+      "text": "(Shotgun) D.Ridder pass incomplete short left to K.Pitts.",
+      "shortText": "Desmond Ridder Incomplete Pass, Int'd For Kyle Pitts",
+      "alternativeText": "(Shotgun) D.Ridder pass incomplete short left to K.Pitts.",
+      "shortAlternativeText": "Desmond Ridder Incomplete Pass, Int'd For Kyle Pitts",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 481.0,
+        "displayValue": "8:01"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4360248?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4360248/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 15.0,
+              "displayValue": "15"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4360248?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/roster/4360248/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 2.0,
+              "displayValue": "2"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 15.0,
+              "displayValue": "15"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "receiver"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417522?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:21:05+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 1,
+        "distance": 10,
+        "yardsToEndzone": 20,
+        "downDistanceText": "1st & 10 at GB 41",
+        "shortDownDistanceText": "1st & 10",
+        "possessionText": "GB 41",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 59
+      },
+      "end": {
+        "down": 2,
+        "distance": 1,
+        "yardsToEndzone": 41,
+        "downDistanceText": "2nd & 1 at GB 41",
+        "shortDownDistanceText": "2nd & 1",
+        "possessionText": "GB 41",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 59
+      },
+      "statYardage": 0
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays/401547417545?lang=en&region=us",
+      "id": "401547417545",
+      "sequenceNumber": "54500",
+      "type": {
+        "id": "24",
+        "text": "Pass Reception",
+        "abbreviation": "REC"
+      },
+      "text": "D.Ridder pass short right to J.Smith pushed ob at GB 34 for 7 yards (Q.Walker).",
+      "shortText": "Desmond Ridder  Pass Complete for 7 Yds to Jonnu Smith",
+      "alternativeText": "D.Ridder pass short right to J.Smith pushed ob at GB 34 for 7 yards (Q.Walker).",
+      "shortAlternativeText": "Desmond Ridder  Pass Complete for 7 Yds to Jonnu Smith",
+      "awayScore": 0,
+      "homeScore": 0,
+      "period": {
+        "number": 1
+      },
+      "clock": {
+        "value": 476.0,
+        "displayValue": "7:56"
+      },
+      "scoringPlay": false,
+      "priority": false,
+      "scoreValue": 0,
+      "modified": "2023-09-20T21:34:00+00:00",
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+      },
+      "participants": [
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4239086?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/13/roster/4239086/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "completions/attempts",
+              "displayName": "Completions / Attempts",
+              "shortDisplayName": "COMP/ATT",
+              "description": "The number of passing completions and attempts.",
+              "abbreviation": "COMP/ATT",
+              "value": 0.59375,
+              "displayValue": "19/32"
+            },
+            {
+              "name": "passingYards",
+              "displayName": "Passing Yards",
+              "shortDisplayName": "Pass Yards",
+              "description": "The total passing yards.",
+              "abbreviation": "YDS",
+              "value": 237.0,
+              "displayValue": "237"
+            },
+            {
+              "name": "passingTouchdowns",
+              "displayName": "Passing Touchdowns",
+              "shortDisplayName": "Touchdowns",
+              "description": "The total number of passing touchdowns.",
+              "abbreviation": "TD",
+              "value": 1.0,
+              "displayValue": "1"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 1.0,
+              "displayValue": "1"
+            }
+          ],
+          "order": 1,
+          "type": "passer"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/3054212?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/7?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/15/roster/3054212/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "receptions",
+              "displayName": "Receptions",
+              "shortDisplayName": "Receptions",
+              "description": "The total number of receptions.",
+              "abbreviation": "REC",
+              "value": 4.0,
+              "displayValue": "4"
+            },
+            {
+              "name": "receivingYards",
+              "displayName": "Receiving Yards",
+              "shortDisplayName": "Rec. Yards",
+              "description": "The total receiving yards.",
+              "abbreviation": "YDS",
+              "value": 47.0,
+              "displayValue": "47"
+            },
+            {
+              "name": "receivingTouchdowns",
+              "displayName": "Receiving Touchdowns",
+              "shortDisplayName": "Receiving Touchdowns",
+              "description": "The total number of receiving touchdowns.",
+              "abbreviation": "TD",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 2,
+          "type": "receiver"
+        },
+        {
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/4379416?lang=en&region=us"
+          },
+          "position": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/4379416/statistics/0?lang=en&region=us"
+          },
+          "stats": [
+            {
+              "name": "totalTackles",
+              "displayName": "Total Tackles",
+              "shortDisplayName": "Tackles",
+              "description": "The total number of tackles.",
+              "abbreviation": "TOT",
+              "value": 17.0,
+              "displayValue": "17"
+            },
+            {
+              "name": "sacks",
+              "displayName": "Sacks",
+              "shortDisplayName": "Sacks",
+              "description": "The total number of sacks.",
+              "abbreviation": "SACK",
+              "value": 0.0,
+              "displayValue": "0"
+            },
+            {
+              "name": "interceptions",
+              "displayName": "Interceptions",
+              "shortDisplayName": "INT",
+              "description": "The number of passes thrown that were intercepted by the opposing team.",
+              "abbreviation": "INT",
+              "value": 0.0,
+              "displayValue": "0"
+            }
+          ],
+          "order": 3,
+          "type": "tackler"
+        }
+      ],
+      "probability": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/401547417545?lang=en&region=us"
+      },
+      "wallclock": "2023-09-17T17:21:49+00:00",
+      "drive": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/drives/4015474174?lang=en&region=us"
+      },
+      "start": {
+        "down": 2,
+        "distance": 10,
+        "yardsToEndzone": 41,
+        "downDistanceText": "2nd & 10 at GB 41",
+        "shortDownDistanceText": "2nd & 10",
+        "possessionText": "GB 41",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 59
+      },
+      "end": {
+        "down": 3,
+        "distance": 10,
+        "yardsToEndzone": 34,
+        "downDistanceText": "3rd & 10 at GB 34",
+        "shortDownDistanceText": "3rd & 10",
+        "possessionText": "GB 34",
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+        },
+        "yardLine": 66
+      },
+      "statYardage": 7
+    }
+  ],
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/plays?source=2&lang=en&region=us"
+}

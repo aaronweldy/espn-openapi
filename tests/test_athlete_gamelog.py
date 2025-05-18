@@ -1,17 +1,13 @@
 import json
-import sys
-from typing import cast, Dict, Any, List, Optional
-from pathlib import Path
+import logging
+from typing import Dict, Optional
 from datetime import datetime
 
-import httpx
-
-sys.path.append(str(Path(__file__).parent.parent))
+import pytest
 
 from models.site_web_api.espn_site_web_api_client.api.default.get_nfl_athlete_game_log import (
     sync_detailed,
 )
-from models.site_web_api.espn_site_web_api_client.client import Client
 from models.site_web_api.espn_site_web_api_client.models.athlete_game_log_response import (
     AthleteGameLogResponse,
 )
@@ -136,11 +132,11 @@ def format_gamelog(games: dict[str, GameEvent], season_stats=None):
     )
 
 
-def display_game_stats(game_id: str, raw_stats=None):
+def display_game_stats(game_id: str, raw_stats=None) -> Optional[Dict]:
     """Display detailed statistics for a specific game using real data."""
     if not raw_stats:
-        print(f"\nNo detailed statistics available for Game ID: {game_id}")
-        return
+        logging.info(f"No detailed statistics available for Game ID: {game_id}")
+        return None
 
     # Find stats for this specific game
     game_stats = {}
@@ -169,74 +165,72 @@ def display_game_stats(game_id: str, raw_stats=None):
                                     game_stats[display_name] = stats[i]
 
     if not game_stats:
-        print(f"\nNo detailed statistics available for Game ID: {game_id}")
-        return
+        logging.info(f"No detailed statistics available for Game ID: {game_id}")
+        return None
 
-    print(f"\nDetailed Statistics for Game ID: {game_id}")
+    logging.info(f"Detailed Statistics for Game ID: {game_id}")
     for name, value in game_stats.items():
-        print(f"{name}: {value}")
+        logging.info(f"{name}: {value}")
+
+    return game_stats
 
 
-def test_athlete_gamelog():
+@pytest.mark.api
+def test_athlete_gamelog(site_web_api_client, ensure_json_output_dir):
     """Test fetching an NFL athlete's game log data."""
-    client = Client(
-        base_url="https://site.web.api.espn.com", timeout=httpx.Timeout(30.0)
-    )
-
-    print(f"Fetching gamelog for athlete ID: {ATHLETE_ID}")
+    logging.info(f"Fetching gamelog for athlete ID: {ATHLETE_ID}")
 
     # Fetch data
     response = sync_detailed(
         athlete_id=ATHLETE_ID,
-        client=client,
+        client=site_web_api_client,
     )
 
     # Check if request was successful
-    if response.status_code == 200 and isinstance(
-        response.parsed, AthleteGameLogResponse
-    ):
-        game_log = response.parsed
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+    assert isinstance(response.parsed, AthleteGameLogResponse), (
+        "Response should parse to AthleteGameLogResponse"
+    )
 
-        # Get all events/games
-        events: dict[str, GameEvent] = {}
-        if game_log.events:
-            for game_id, game in game_log.events.additional_properties.items():
-                events[game_id] = game
+    game_log = response.parsed
 
-        # Also load raw JSON for detailed stats
-        raw_response = json.loads(response.content)
+    # Get all events/games
+    events: dict[str, GameEvent] = {}
+    if game_log.events:
+        for game_id, game in game_log.events.additional_properties.items():
+            events[game_id] = game
 
-        # Print formatted game log
-        formatted_log = format_gamelog(events, raw_response)
-        print(formatted_log)
+    # Also load raw JSON for detailed stats
+    raw_response = json.loads(response.content)
 
-        # If there are games, display detailed stats for the first one
-        if events:
-            # Get the first game ID
-            first_game_id = next(iter(events.keys()))
-            display_game_stats(first_game_id, raw_response)
+    # Save raw response for analysis
+    with open(f"{ensure_json_output_dir}/athlete_{ATHLETE_ID}_gamelog.json", "w") as f:
+        json.dump(raw_response, f, indent=2)
 
-        # Get season information
-        if game_log.requested_season:
-            season = game_log.requested_season
-            season_type_name = ""
-            if season.type:
-                # Convert to string representation
-                season_type_name = str(season.type)
-            print(f"\nRequested Season: {season.year} {season_type_name}")
+    # Print formatted game log
+    formatted_log = format_gamelog(events, raw_response)
+    logging.info(formatted_log)
 
-        # Additional information about the data
-        print(f"\nTotal Games Found: {len(events)}")
-        return True
-    else:
-        print(f"Failed to retrieve data: {response.status_code}")
-        if response.content:
-            print(response.content)
-        return False
+    # If there are games, display detailed stats for the first one
+    if events:
+        # Get the first game ID
+        first_game_id = next(iter(events.keys()))
+        game_stats = display_game_stats(first_game_id, raw_response)
+        assert game_stats is not None, (
+            f"Should have statistics for game ID {first_game_id}"
+        )
 
+    # Get season information
+    if game_log.requested_season:
+        season = game_log.requested_season
+        season_type_name = ""
+        if season.type:
+            # Convert to string representation
+            season_type_name = str(season.type)
+        logging.info(f"Requested Season: {season.year} {season_type_name}")
 
-if __name__ == "__main__":
-    test_athlete_gamelog()
-
-    # Uncomment to test with the Peyton Manning example
-    # test_manning_gamelog()
+    # Additional information about the data
+    logging.info(f"Total Games Found: {len(events)}")
+    assert len(events) > 0, "Expected to find at least one game"

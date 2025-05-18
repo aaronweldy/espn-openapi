@@ -6,13 +6,15 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
+from ...models.league_enum import LeagueEnum
+from ...models.sport_enum import SportEnum
 from ...models.sport_news_api_schema import SportNewsAPISchema
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     limit: Union[Unset, int] = UNSET,
 ) -> Dict[str, Any]:
@@ -64,8 +66,8 @@ def _build_response(
 
 
 def sync_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
@@ -75,8 +77,8 @@ def sync_detailed(
      Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
 
     Raises:
@@ -101,8 +103,8 @@ def sync_detailed(
 
 
 def sync(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
@@ -112,8 +114,8 @@ def sync(
      Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
 
     Raises:
@@ -133,8 +135,8 @@ def sync(
 
 
 async def asyncio_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
@@ -144,8 +146,8 @@ async def asyncio_detailed(
      Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
 
     Raises:
@@ -168,8 +170,8 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
@@ -179,8 +181,8 @@ async def asyncio(
      Retrieve the latest news articles and headlines for a specified sport and league
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
 
     Raises:

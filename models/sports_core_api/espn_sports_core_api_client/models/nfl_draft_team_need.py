@@ -1,9 +1,7 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-
-from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.reference import Reference
@@ -17,44 +15,29 @@ class NflDraftTeamNeed:
     """
     Attributes:
         team (Reference):
-        need (str):
-        rank (int):
-        description (str):
-        position (Union[Unset, Reference]):
+        positions (List['Reference']):
     """
 
     team: "Reference"
-    need: str
-    rank: int
-    description: str
-    position: Union[Unset, "Reference"] = UNSET
+    positions: List["Reference"]
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
         team = self.team.to_dict()
 
-        need = self.need
-
-        rank = self.rank
-
-        description = self.description
-
-        position: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.position, Unset):
-            position = self.position.to_dict()
+        positions = []
+        for positions_item_data in self.positions:
+            positions_item = positions_item_data.to_dict()
+            positions.append(positions_item)
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "team": team,
-                "need": need,
-                "rank": rank,
-                "description": description,
+                "positions": positions,
             }
         )
-        if position is not UNSET:
-            field_dict["position"] = position
 
         return field_dict
 
@@ -65,25 +48,16 @@ class NflDraftTeamNeed:
         d = src_dict.copy()
         team = Reference.from_dict(d.pop("team"))
 
-        need = d.pop("need")
+        positions = []
+        _positions = d.pop("positions")
+        for positions_item_data in _positions:
+            positions_item = Reference.from_dict(positions_item_data)
 
-        rank = d.pop("rank")
-
-        description = d.pop("description")
-
-        _position = d.pop("position", UNSET)
-        position: Union[Unset, Reference]
-        if isinstance(_position, Unset):
-            position = UNSET
-        else:
-            position = Reference.from_dict(_position)
+            positions.append(positions_item)
 
         nfl_draft_team_need = cls(
             team=team,
-            need=need,
-            rank=rank,
-            description=description,
-            position=position,
+            positions=positions,
         )
 
         nfl_draft_team_need.additional_properties = d

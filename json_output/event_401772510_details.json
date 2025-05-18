@@ -1,0 +1,335 @@
+{
+  "id": "401772510",
+  "date": "2025-09-05T00:20:00+00:00",
+  "competitions": [
+    {
+      "id": "401772510",
+      "guid": "814adeb4-496f-375d-8ed4-539db0892a20",
+      "uid": "s:20~l:28~e:401772510~c:401772510",
+      "date": "2025-09-05T00:20Z",
+      "attendance": 0,
+      "type": {
+        "id": "1",
+        "text": "Standard",
+        "abbreviation": "STD",
+        "slug": "standard",
+        "type": "standard"
+      },
+      "timeValid": true,
+      "dateValid": true,
+      "neutralSite": false,
+      "divisionCompetition": false,
+      "conferenceCompetition": false,
+      "previewAvailable": false,
+      "recapAvailable": false,
+      "boxscoreAvailable": false,
+      "lineupAvailable": false,
+      "gamecastAvailable": false,
+      "playByPlayAvailable": false,
+      "conversationAvailable": true,
+      "commentaryAvailable": false,
+      "pickcenterAvailable": true,
+      "summaryAvailable": true,
+      "liveAvailable": false,
+      "ticketsAvailable": true,
+      "shotChartAvailable": false,
+      "timeoutsAvailable": false,
+      "possessionArrowAvailable": false,
+      "onWatchESPN": false,
+      "recent": false,
+      "bracketAvailable": false,
+      "wallclockAvailable": false,
+      "highlightsAvailable": true,
+      "gameSource": {
+        "id": "1",
+        "description": "basic/manual",
+        "state": "basic"
+      },
+      "boxscoreSource": {
+        "id": "0",
+        "description": "none",
+        "state": "none"
+      },
+      "playByPlaySource": {
+        "id": "0",
+        "description": "none",
+        "state": "none"
+      },
+      "linescoreSource": {
+        "id": "1",
+        "description": "basic/manual",
+        "state": "basic"
+      },
+      "statsSource": {
+        "id": "0",
+        "description": "none",
+        "state": "none"
+      },
+      "venue": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues/3806?lang=en&region=us",
+        "id": "3806",
+        "fullName": "Lincoln Financial Field",
+        "address": {
+          "city": "Philadelphia",
+          "state": "PA",
+          "zipCode": "19148",
+          "country": "USA"
+        },
+        "grass": true,
+        "indoor": false,
+        "images": [
+          {
+            "href": "https://a.espncdn.com/i/venues/nfl/day/3806.jpg",
+            "width": 2000,
+            "height": 1125,
+            "alt": "",
+            "rel": [
+              "full",
+              "day"
+            ]
+          },
+          {
+            "href": "https://a.espncdn.com/i/venues/nfl/day/interior/3806.jpg",
+            "width": 2000,
+            "height": 1125,
+            "alt": "",
+            "rel": [
+              "full",
+              "day",
+              "interior"
+            ]
+          }
+        ]
+      },
+      "competitors": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/competitors/21?lang=en&region=us",
+          "id": "21",
+          "uid": "s:20~l:28~t:21",
+          "type": "team",
+          "order": 0,
+          "homeAway": "home",
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/21?lang=en&region=us"
+          },
+          "score": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/competitors/21/score?lang=en&region=us"
+          },
+          "record": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/teams/21/record?lang=en&region=us"
+          }
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/competitors/6?lang=en&region=us",
+          "id": "6",
+          "uid": "s:20~l:28~t:6",
+          "type": "team",
+          "order": 1,
+          "homeAway": "away",
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/6?lang=en&region=us"
+          },
+          "score": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/competitors/6/score?lang=en&region=us"
+          },
+          "record": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/teams/6/record?lang=en&region=us"
+          }
+        }
+      ],
+      "notes": [],
+      "situation": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/situation?lang=en&region=us"
+      },
+      "status": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/status?lang=en&region=us"
+      },
+      "odds": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/odds?lang=en&region=us"
+      },
+      "broadcasts": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/broadcasts?lang=en&region=us"
+      },
+      "tickets": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/tickets?lang=en&region=us"
+      },
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ],
+          "href": "https://www.espn.com/nfl/game/_/gameId/401772510/cowboys-eagles",
+          "text": "Gamecast",
+          "shortText": "Summary",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ],
+          "href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772510",
+          "text": "Gamecast",
+          "shortText": "Summary",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "now",
+            "desktop",
+            "event"
+          ],
+          "href": "https://www.espn.com/nfl/game/_/gameId/401772510",
+          "text": "Now",
+          "shortText": "Now",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "odds",
+            "desktop",
+            "event"
+          ],
+          "href": "https://www.espn.com/nfl/odds/_/gameId/401772510",
+          "text": "Odds",
+          "shortText": "Odds",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "odds",
+            "mobile",
+            "event"
+          ],
+          "href": "https://m.espn.com/nfl/odds/_/gameId/401772510",
+          "text": "Odds",
+          "shortText": "Odds",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "format": {
+        "regulation": {
+          "periods": 4,
+          "displayName": "Quarter",
+          "slug": "quarter",
+          "clock": 900.0
+        },
+        "overtime": {
+          "periods": 1,
+          "displayName": "sudden-death",
+          "slug": "sudden-death",
+          "clock": 600.0
+        }
+      },
+      "drives": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/drives?lang=en&region=us"
+      },
+      "hasDefensiveStats": false,
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510?lang=en&region=us"
+    }
+  ],
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510?lang=en&region=us",
+  "uid": "s:20~l:28~e:401772510",
+  "name": "Dallas Cowboys at Philadelphia Eagles",
+  "shortName": "DAL @ PHI",
+  "season": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025?lang=en&region=us"
+  },
+  "seasonType": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2?lang=en&region=us"
+  },
+  "week": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/2/weeks/1?lang=en&region=us"
+  },
+  "timeValid": true,
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Summary",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/game/_/gameId/401772510/cowboys-eagles",
+      "rel": [
+        "summary",
+        "desktop",
+        "event"
+      ],
+      "text": "Gamecast"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Summary",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772510",
+      "rel": [
+        "summary",
+        "sportscenter",
+        "app",
+        "event"
+      ],
+      "text": "Gamecast"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Now",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/game/_/gameId/401772510",
+      "rel": [
+        "now",
+        "desktop",
+        "event"
+      ],
+      "text": "Now"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Odds",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/odds/_/gameId/401772510",
+      "rel": [
+        "odds",
+        "desktop",
+        "event"
+      ],
+      "text": "Odds"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Odds",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://m.espn.com/nfl/odds/_/gameId/401772510",
+      "rel": [
+        "odds",
+        "mobile",
+        "event"
+      ],
+      "text": "Odds"
+    }
+  ],
+  "venues": [
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues/3806?lang=en&region=us"
+    }
+  ],
+  "league": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl?lang=en&region=us"
+  }
+}

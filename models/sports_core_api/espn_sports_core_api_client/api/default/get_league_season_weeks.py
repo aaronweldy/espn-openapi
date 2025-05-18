@@ -7,13 +7,15 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
 from ...models.get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
+from ...models.league_enum import LeagueEnum
 from ...models.paginated_reference_list_response import PaginatedReferenceListResponse
+from ...models.sport_enum import SportEnum
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     year: int,
     season_type: GetLeagueSeasonWeeksSeasonType,
     *,
@@ -70,8 +72,8 @@ def _build_response(
 
 
 def sync_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     year: int,
     season_type: GetLeagueSeasonWeeksSeasonType,
     *,
@@ -85,8 +87,8 @@ def sync_detailed(
     paginated list of week resource references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         year (int):  Example: 2024.
         season_type (GetLeagueSeasonWeeksSeasonType):  Example: 2.
         lang (Union[Unset, str]):  Example: en.
@@ -117,8 +119,8 @@ def sync_detailed(
 
 
 def sync(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     year: int,
     season_type: GetLeagueSeasonWeeksSeasonType,
     *,
@@ -132,8 +134,8 @@ def sync(
     paginated list of week resource references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         year (int):  Example: 2024.
         season_type (GetLeagueSeasonWeeksSeasonType):  Example: 2.
         lang (Union[Unset, str]):  Example: en.
@@ -159,8 +161,8 @@ def sync(
 
 
 async def asyncio_detailed(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     year: int,
     season_type: GetLeagueSeasonWeeksSeasonType,
     *,
@@ -174,8 +176,8 @@ async def asyncio_detailed(
     paginated list of week resource references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         year (int):  Example: 2024.
         season_type (GetLeagueSeasonWeeksSeasonType):  Example: 2.
         lang (Union[Unset, str]):  Example: en.
@@ -204,8 +206,8 @@ async def asyncio_detailed(
 
 
 async def asyncio(
-    sport: str,
-    league: str,
+    sport: SportEnum,
+    league: LeagueEnum,
     year: int,
     season_type: GetLeagueSeasonWeeksSeasonType,
     *,
@@ -219,8 +221,8 @@ async def asyncio(
     paginated list of week resource references.
 
     Args:
-        sport (str):  Example: football.
-        league (str):  Example: nfl.
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         year (int):  Example: 2024.
         season_type (GetLeagueSeasonWeeksSeasonType):  Example: 2.
         lang (Union[Unset, str]):  Example: en.
