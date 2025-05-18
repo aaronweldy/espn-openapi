@@ -85,6 +85,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/common/v3/sports/football/nfl/athletes/{athleteId}/splits:
+    get:
+      summary: Get NFL Athlete Splits
+      description: Retrieve split statistics for a specific NFL athlete (e.g., home/away, by opponent, etc)
+      operationId: getNFLAthleteSplits
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "4430191"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteSplitsResponse'
+        '404':
+          description: Athlete splits not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /apis/common/v3/search:
     get:
       summary: General Search
@@ -1902,3 +1935,131 @@ components:
         - type
         - displayName
         - link
+
+    AthleteSplitsResponse:
+      type: object
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/AthleteSplitsFilter'
+        displayName:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/AthleteSplitsCategory'
+        labels:
+          type: array
+          items:
+            type: string
+        names:
+          type: array
+          items:
+            type: string
+        displayNames:
+          type: array
+          items:
+            type: string
+        descriptions:
+          type: array
+          items:
+            type: string
+        splitCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/AthleteSplitsSplitCategory'
+      required:
+        - filters
+        - displayName
+        - categories
+        - labels
+        - names
+        - displayNames
+        - descriptions
+        - splitCategories
+      description: NFL Athlete Splits response object.
+
+    AthleteSplitsCategory:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        count:
+          type: integer
+      required:
+        - name
+        - displayName
+        - count
+      description: Category in NFL Athlete Splits response.
+
+    AthleteSplitsFilter:
+      type: object
+      properties:
+        displayName:
+          type: string
+        name:
+          type: string
+        value:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/AthleteSplitsOption'
+      required:
+        - displayName
+        - name
+        - value
+        - options
+      description: Filter in NFL Athlete Splits response.
+
+    AthleteSplitsOption:
+      type: object
+      properties:
+        value:
+          type: string
+        displayValue:
+          type: string
+        shortDisplayName:
+          type: string
+          nullable: true
+      required:
+        - value
+        - displayValue
+      description: Option in NFL Athlete Splits filter.
+
+    AthleteSplitsSplitCategory:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        splits:
+          type: array
+          items:
+            $ref: '#/components/schemas/AthleteSplitsSplit'
+          nullable: true
+      required:
+        - name
+        - displayName
+      description: Split category in NFL Athlete Splits response.
+
+    AthleteSplitsSplit:
+      type: object
+      properties:
+        displayName:
+          type: string
+        stats:
+          type: array
+          items:
+            type: string
+        abbreviation:
+          type: string
+      required:
+        - displayName
+        - stats
+        - abbreviation
+      description: Split in NFL Athlete Splits response.

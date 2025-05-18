@@ -41,9 +41,14 @@ from models.site_web_api.espn_site_web_api_client.models.search_v2_response impo
 )
 from models.site_web_api.espn_site_web_api_client.api.default import (
     get_scoreboard_header,
+    get_nfl_athlete_splits,
 )
 from models.site_web_api.espn_site_web_api_client.models.scoreboard_header_response import (
     ScoreboardHeaderResponse,
+)
+from models.site_web_api.espn_site_web_api_client.models import (
+    AthleteSplitsResponse,
+    ErrorResponse,
 )
 
 # Constants for athlete IDs used in tests
@@ -312,6 +317,43 @@ def test_get_scoreboard_header():
         return False
 
 
+def test_nfl_athlete_splits():
+    """Test the NFL Athlete Splits endpoint for athlete_id 4430191 (Patrick Mahomes)."""
+    client = EspnSiteWebApiClient(base_url="https://site.web.api.espn.com")
+    athlete_id = "4430191"
+
+    response = get_nfl_athlete_splits.sync(
+        client=client,
+        athlete_id=athlete_id,
+    )
+
+    if response is None:
+        print("No response returned from API")
+        return False
+    if isinstance(response, ErrorResponse):
+        print(
+            f"API returned error: {response.error.message if hasattr(response, 'error') and response.error else response}"
+        )
+        return False
+    if not isinstance(response, AthleteSplitsResponse):
+        print(f"Unexpected response type: {type(response)}")
+        return False
+    if not response.display_name:
+        print("display_name should not be empty")
+        return False
+    if not response.categories:
+        print("categories should not be empty")
+        return False
+    if not response.split_categories:
+        print("split_categories should not be empty")
+        return False
+    print(f"\u2713 Fetched splits for athlete {athlete_id}: {response.display_name}")
+    for cat in response.split_categories:
+        print(f"- Split Category: {cat.display_name}")
+    print("\u2713 NFL Athlete Splits test passed!")
+    return True
+
+
 # --- Main Execution ---
 
 
@@ -339,6 +381,10 @@ def main():
     # Test scoreboard header endpoint
     scoreboard_header_result = test_get_scoreboard_header()
     results.append(("Scoreboard Header", scoreboard_header_result))
+
+    # Test NFL Athlete Splits endpoint
+    splits_result = test_nfl_athlete_splits()
+    results.append(("NFL Athlete Splits", splits_result))
 
     # Add calls to other test functions here as they are created...
 

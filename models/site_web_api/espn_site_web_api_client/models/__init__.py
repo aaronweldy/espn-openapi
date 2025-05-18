@@ -7,6 +7,12 @@ from .athlete_game_log_response import AthleteGameLogResponse
 from .athlete_game_log_response_events import AthleteGameLogResponseEvents
 from .athlete_overview_response import AthleteOverviewResponse
 from .athlete_reference import AthleteReference
+from .athlete_splits_category import AthleteSplitsCategory
+from .athlete_splits_filter import AthleteSplitsFilter
+from .athlete_splits_option import AthleteSplitsOption
+from .athlete_splits_response import AthleteSplitsResponse
+from .athlete_splits_split import AthleteSplitsSplit
+from .athlete_splits_split_category import AthleteSplitsSplitCategory
 from .athlete_status import AthleteStatus
 from .author import Author
 from .author_links_type_0 import AuthorLinksType0
@@ -125,6 +131,12 @@ __all__ = (
     "AthleteGameLogResponseEvents",
     "AthleteOverviewResponse",
     "AthleteReference",
+    "AthleteSplitsCategory",
+    "AthleteSplitsFilter",
+    "AthleteSplitsOption",
+    "AthleteSplitsResponse",
+    "AthleteSplitsSplit",
+    "AthleteSplitsSplitCategory",
     "AthleteStatus",
     "Author",
     "AuthorLinksType0",

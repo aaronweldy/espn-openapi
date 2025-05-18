@@ -59,7 +59,7 @@ sports.core.api.espn.com
 site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/overview - NFL Athlete overview. Path Param: {athlete_id} - (Matches original)
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/gamelog - NFL Athlete game log. Path Param: {athlete_id} - (Matches original)
-[ ] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/splits - NFL Athlete Splits. Path Param: {athlete_id}
+[x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/splits - NFL Athlete Splits. Path Param: {athlete_id}
 III. MLB Endpoints
 site.api.espn.com/apis/site/v2
 [ ] /sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD)
