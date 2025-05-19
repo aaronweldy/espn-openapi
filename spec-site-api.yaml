@@ -521,6 +521,70 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/baseball/mlb/teams/{team_id_or_abbrev}/roster:
+    get:
+      summary: Get MLB Team Roster
+      description: Retrieve detailed roster information for a specific MLB team including player details organized by positions
+      operationId: getMLBTeamRoster
+      parameters:
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID (numeric string) or abbreviation (see enum for valid abbreviations)
+          schema:
+            type: string
+            example: "15"
+            enum:
+              - ARI
+              - ATH
+              - ATL
+              - BAL
+              - BOS
+              - CHC
+              - CHW
+              - CIN
+              - CLE
+              - COL
+              - DET
+              - HOU
+              - KC
+              - LAA
+              - LAD
+              - MIA
+              - MIL
+              - MIN
+              - NYM
+              - NYY
+              - PHI
+              - PIT
+              - SD
+              - SEA
+              - SF
+              - STL
+              - TB
+              - TEX
+              - TOR
+              - WSH
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MlbTeamRosterResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/baseball/mlb/summary:
     get:
       summary: Get MLB Game Summary
@@ -3594,3 +3658,319 @@ components:
       type: object
       description: MLB standings object. (To be filled in.)
       properties: {}
+    MlbTeamRosterResponse:
+      type: object
+      description: The response for an MLB team roster request
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: The timestamp of when the data was generated
+        status:
+          type: string
+          description: The status of the response
+        season:
+          type: object
+          properties:
+            year:
+              type: integer
+            displayName:
+              type: string
+            type:
+              type: integer
+            name:
+              type: string
+        athletes:
+          type: array
+          description: List of roster position groups
+          items:
+            $ref: '#/components/schemas/MlbPositionGroup'
+        coach:
+          type: array
+          description: List of coaches for the team
+          items:
+            $ref: '#/components/schemas/MlbCoach'
+        team:
+          type: object
+          properties:
+            id:
+              type: string
+            abbreviation:
+              type: string
+            location:
+              type: string
+            name:
+              type: string
+            displayName:
+              type: string
+            clubhouse:
+              type: string
+              format: uri
+            color:
+              type: string
+            logo:
+              type: string
+              format: uri
+            recordSummary:
+              type: string
+            seasonSummary:
+              type: string
+            standingSummary:
+              type: string
+      required:
+        - timestamp
+        - status
+        - season
+        - athletes
+        - coach
+        - team
+
+    MlbPositionGroup:
+      type: object
+      description: Group of athletes by position category (MLB)
+      properties:
+        position:
+          type: string
+          description: The position category name (e.g., Pitcher, Catcher, Infield, Outfield, etc.)
+        items:
+          type: array
+          description: List of athletes in this position category
+          items:
+            $ref: '#/components/schemas/MlbRosterAthlete'
+      required:
+        - position
+        - items
+
+    MlbRosterAthlete:
+      type: object
+      description: Athlete information for MLB team roster
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+        guid:
+          type: string
+        alternateIds:
+          type: object
+          properties:
+            sdr:
+              type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        nickname:
+          type: string
+        shortName:
+          type: string
+        weight:
+          type: integer
+        displayWeight:
+          type: string
+        height:
+          type: integer
+        displayHeight:
+          type: string
+        age:
+          type: integer
+        dateOfBirth:
+          type: string
+          format: date-time
+        debutYear:
+          type: integer
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        birthPlace:
+          type: object
+          properties:
+            city:
+              type: string
+            state:
+              type: string
+            country:
+              type: string
+            displayText:
+              type: string
+        slug:
+          type: string
+        headshot:
+          type: object
+          properties:
+            href:
+              type: string
+              format: uri
+            alt:
+              type: string
+        jersey:
+          type: string
+        position:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            displayName:
+              type: string
+            abbreviation:
+              type: string
+            leaf:
+              type: boolean
+            parent:
+              type: object
+        positions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              displayName:
+                type: string
+              abbreviation:
+                type: string
+              leaf:
+                type: boolean
+              parent:
+                type: object
+        injuries:
+          type: array
+          items:
+            type: object
+        teams:
+          type: array
+          items:
+            type: object
+            properties:
+              $ref:
+                type: string
+        contracts:
+          type: array
+          items:
+            type: object
+            properties:
+              salary:
+                type: integer
+              season:
+                type: object
+                properties:
+                  year:
+                    type: integer
+                  startDate:
+                    type: string
+                  endDate:
+                    type: string
+        experience:
+          type: object
+          properties:
+            years:
+              type: integer
+        status:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            type:
+              type: string
+            abbreviation:
+              type: string
+        bats:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [RIGHT, LEFT, BOTH]
+            abbreviation:
+              type: string
+              enum: [R, L, B]
+            displayValue:
+              type: string
+              enum: [Right, Left, Both]
+        throws:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [RIGHT, LEFT, BOTH]
+            abbreviation:
+              type: string
+              enum: [R, L, B]
+            displayValue:
+              type: string
+              enum: [Right, Left, Both]
+        college:
+          type: object
+          properties:
+            id:
+              type: string
+            guid:
+              type: string
+            mascot:
+              type: string
+            name:
+              type: string
+            shortName:
+              type: string
+            abbrev:
+              type: string
+            logos:
+              type: array
+              items:
+                $ref: '#/components/schemas/Logo'
+      required:
+        - id
+        - uid
+        - guid
+        - firstName
+        - lastName
+        - fullName
+        - displayName
+        - shortName
+        - weight
+        - displayWeight
+        - height
+        - displayHeight
+        - age
+        - dateOfBirth
+        - links
+        - slug
+        - headshot
+        - jersey
+        - position
+        - positions
+        - injuries
+        - teams
+        - contracts
+        - experience
+        - status
+        - bats
+        - throws
+
+    MlbCoach:
+      type: object
+      description: Coach information for MLB team roster
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        experience:
+          type: integer
+      required:
+        - id
+        - firstName
+        - lastName
+        - experience

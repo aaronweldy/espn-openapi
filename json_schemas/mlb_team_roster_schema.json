@@ -1,0 +1,805 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/MlbTeamRosterSchema",
+    "definitions": {
+        "MlbTeamRosterSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "season": {
+                    "$ref": "#/definitions/MlbTeamRosterSchemaSeason"
+                },
+                "athletes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Athlete"
+                    }
+                },
+                "coach": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Coach"
+                    }
+                },
+                "team": {
+                    "$ref": "#/definitions/MlbTeamRosterSchemaTeam"
+                }
+            },
+            "required": [
+                "athletes",
+                "coach",
+                "season",
+                "status",
+                "team",
+                "timestamp"
+            ],
+            "title": "MlbTeamRosterSchema"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "position": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "items",
+                "position"
+            ],
+            "title": "Athlete"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "alternateIds": {
+                    "$ref": "#/definitions/AlternateIDS"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "number"
+                },
+                "displayWeight": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "number"
+                },
+                "displayHeight": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "dateOfBirth": {
+                    "type": "string"
+                },
+                "debutYear": {
+                    "type": "integer"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "birthPlace": {
+                    "$ref": "#/definitions/BirthPlace"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "position": {
+                    "$ref": "#/definitions/ParentClass"
+                },
+                "positions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PositionElement"
+                    }
+                },
+                "injuries": {
+                    "type": "array",
+                    "items": {}
+                },
+                "teams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TeamElement"
+                    }
+                },
+                "contracts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Contract"
+                    }
+                },
+                "experience": {
+                    "$ref": "#/definitions/Experience"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "bats": {
+                    "$ref": "#/definitions/Bats"
+                },
+                "throws": {
+                    "$ref": "#/definitions/Bats"
+                },
+                "college": {
+                    "$ref": "#/definitions/College"
+                }
+            },
+            "required": [
+                "age",
+                "alternateIds",
+                "bats",
+                "birthPlace",
+                "contracts",
+                "dateOfBirth",
+                "debutYear",
+                "displayHeight",
+                "displayName",
+                "displayWeight",
+                "experience",
+                "firstName",
+                "fullName",
+                "guid",
+                "headshot",
+                "height",
+                "id",
+                "injuries",
+                "jersey",
+                "lastName",
+                "links",
+                "position",
+                "positions",
+                "shortName",
+                "slug",
+                "status",
+                "teams",
+                "throws",
+                "uid",
+                "weight"
+            ],
+            "title": "Item"
+        },
+        "AlternateIDS": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sdr": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "sdr"
+            ],
+            "title": "AlternateIDS"
+        },
+        "Bats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/BatsType"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/BatsAbbreviation"
+                },
+                "displayValue": {
+                    "$ref": "#/definitions/DisplayValue"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayValue",
+                "type"
+            ],
+            "title": "Bats"
+        },
+        "BirthPlace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "displayText": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "country",
+                "displayText"
+            ],
+            "title": "BirthPlace"
+        },
+        "College": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "mascot": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "abbrev": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                }
+            },
+            "required": [
+                "abbrev",
+                "guid",
+                "id",
+                "logos",
+                "mascot",
+                "name",
+                "shortName"
+            ],
+            "title": "College"
+        },
+        "Logo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoRel"
+                    }
+                },
+                "lastUpdated": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "lastUpdated",
+                "rel",
+                "width"
+            ],
+            "title": "Logo"
+        },
+        "Contract": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "salary": {
+                    "type": "integer"
+                },
+                "season": {
+                    "$ref": "#/definitions/ContractSeason"
+                }
+            },
+            "required": [
+                "salary",
+                "season"
+            ],
+            "title": "Contract"
+        },
+        "ContractSeason": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "endDate",
+                "startDate",
+                "year"
+            ],
+            "title": "ContractSeason"
+        },
+        "Experience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "years": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "years"
+            ],
+            "title": "Experience"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkRel"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/Text"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/Text"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "ParentClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/ParentClass"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name"
+            ],
+            "title": "ParentClass"
+        },
+        "PositionElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/TeamElement"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/TeamElement"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name"
+            ],
+            "title": "PositionElement"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/NameEnum"
+                },
+                "type": {
+                    "$ref": "#/definitions/StatusType"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/NameEnum"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name",
+                "type"
+            ],
+            "title": "Status"
+        },
+        "TeamElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "TeamElement"
+        },
+        "Coach": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "experience": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "experience",
+                "firstName",
+                "id",
+                "lastName"
+            ],
+            "title": "Coach"
+        },
+        "MlbTeamRosterSchemaSeason": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "displayName",
+                "name",
+                "type",
+                "year"
+            ],
+            "title": "MlbTeamRosterSchemaSeason"
+        },
+        "MlbTeamRosterSchemaTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "clubhouse": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "color": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "recordSummary": {
+                    "type": "string"
+                },
+                "seasonSummary": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "standingSummary": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "clubhouse",
+                "color",
+                "displayName",
+                "id",
+                "location",
+                "logo",
+                "name",
+                "recordSummary",
+                "seasonSummary",
+                "standingSummary"
+            ],
+            "title": "MlbTeamRosterSchemaTeam"
+        },
+        "BatsAbbreviation": {
+            "type": "string",
+            "enum": [
+                "R",
+                "L",
+                "B"
+            ],
+            "title": "BatsAbbreviation"
+        },
+        "DisplayValue": {
+            "type": "string",
+            "enum": [
+                "Right",
+                "Left",
+                "Both"
+            ],
+            "title": "DisplayValue"
+        },
+        "BatsType": {
+            "type": "string",
+            "enum": [
+                "RIGHT",
+                "LEFT",
+                "BOTH"
+            ],
+            "title": "BatsType"
+        },
+        "LogoRel": {
+            "type": "string",
+            "enum": [
+                "full",
+                "default",
+                "dark"
+            ],
+            "title": "LogoRel"
+        },
+        "Language": {
+            "type": "string",
+            "enum": [
+                "en-US"
+            ],
+            "title": "Language"
+        },
+        "LinkRel": {
+            "type": "string",
+            "enum": [
+                "playercard",
+                "desktop",
+                "athlete",
+                "stats",
+                "splits",
+                "gamelog",
+                "news",
+                "bio",
+                "overview",
+                "batvspitch"
+            ],
+            "title": "LinkRel"
+        },
+        "Text": {
+            "type": "string",
+            "enum": [
+                "Player Card",
+                "Stats",
+                "Splits",
+                "Game Log",
+                "News",
+                "Bio",
+                "Overview",
+                "Bat vs Pitch"
+            ],
+            "title": "Text"
+        },
+        "NameEnum": {
+            "type": "string",
+            "enum": [
+                "Active"
+            ],
+            "title": "NameEnum"
+        },
+        "StatusType": {
+            "type": "string",
+            "enum": [
+                "active"
+            ],
+            "title": "StatusType"
+        }
+    }
+}

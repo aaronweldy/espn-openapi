@@ -3,6 +3,7 @@ Test ESPN NFL API - Team Roster Endpoint
 """
 
 import json
+import logging
 import pytest
 
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_roster import sync
@@ -11,6 +12,16 @@ from models.site_api.espn_nfl_api_client.models.team_roster_response import (
     TeamRosterResponse,
 )
 from models.site_api.espn_nfl_api_client.types import UNSET
+
+from models.site_api.espn_nfl_api_client.api.default.get_mlb_team_roster import (
+    sync as mlb_sync,
+)
+from models.site_api.espn_nfl_api_client.models.mlb_team_roster_response import (
+    MlbTeamRosterResponse,
+)
+from models.site_api.espn_nfl_api_client.models.get_mlb_team_roster_team_id_or_abbrev import (
+    GetMLBTeamRosterTeamIdOrAbbrev,
+)
 
 
 def validate_schema_response(data: TeamRosterResponse) -> bool:
@@ -180,8 +191,8 @@ def test_get_nfl_team_roster(site_api_client, ensure_json_output_dir):
         f"{ensure_json_output_dir}/nfl_roster_response_{test_team_id}.json", "w"
     ) as f:
         json.dump(roster_data.to_dict(), f, indent=2)
-    print(
-        f"\nFull response saved to {ensure_json_output_dir}/nfl_roster_response_{test_team_id}.json"
+    logging.info(
+        f"Full response saved to {ensure_json_output_dir}/nfl_roster_response_{test_team_id}.json"
     )
 
     # Validate schema
@@ -189,5 +200,107 @@ def test_get_nfl_team_roster(site_api_client, ensure_json_output_dir):
         "Response does not match expected schema structure"
     )
 
-    # Display formatted summary
-    print("\n" + format_roster_data(roster_data))
+    # Log formatted summary
+    logging.info("===== FULL NFL ROSTER =====\n" + format_roster_data(roster_data))
+
+
+def validate_mlb_schema_response(data: MlbTeamRosterResponse) -> bool:
+    required_attrs = ["athletes", "season", "timestamp", "status", "coach", "team"]
+    for attr in required_attrs:
+        if hasattr(data, attr):
+            if getattr(data, attr) is UNSET:
+                print(f"Missing required attribute: {attr}")
+                return False
+        else:
+            print(f"Missing required attribute: {attr}")
+            return False
+    if not data.athletes:
+        print("No athlete position groups found")
+        return False
+    for position_group in data.athletes:
+        if not hasattr(position_group, "position") or position_group.position is UNSET:
+            print("Missing position group name")
+            return False
+        if not hasattr(position_group, "items") or position_group.items is UNSET:
+            print(
+                f"No players found in position group: {getattr(position_group, 'position', None)}"
+            )
+            continue
+        if position_group.items:
+            player = position_group.items[0]
+            if not hasattr(player, "id") or player.id is UNSET:
+                print("Player missing ID")
+                return False
+    return True
+
+
+@pytest.mark.api
+def test_get_mlb_team_roster(site_api_client, ensure_json_output_dir):
+    """Test the ESPN MLB Team Roster API for a specific team (Boston Red Sox)."""
+    test_team_id = GetMLBTeamRosterTeamIdOrAbbrev.BOS  # Boston Red Sox
+    roster_data = mlb_sync(team_id_or_abbrev=test_team_id, client=site_api_client)
+
+    # Assert the response is not an error
+    assert not isinstance(roster_data, ErrorResponse), (
+        f"API returned an error response: {getattr(getattr(roster_data, 'error', None), 'message', str(roster_data))}"
+    )
+    # Assert the response is the correct model
+    assert isinstance(roster_data, MlbTeamRosterResponse), (
+        "Failed to fetch MLB roster data or unexpected response type"
+    )
+
+    # Save response for future reference
+    out_path = f"{ensure_json_output_dir}/mlb_roster_response_{test_team_id}.json"
+    with open(out_path, "w") as f:
+        json.dump(roster_data.to_dict(), f, indent=2)
+    logging.info(f"Full response saved to {out_path}")
+
+    # Print the full roster in a readable format
+    mlb_roster_lines = []
+    mlb_roster_lines.append("===== FULL MLB ROSTER =====")
+    if not roster_data.athletes:
+        mlb_roster_lines.append("No roster data available")
+    else:
+        for group in roster_data.athletes:
+            position_name = (
+                group.position.upper()
+                if isinstance(group.position, str)
+                else str(group.position)
+            )
+            mlb_roster_lines.append(f"--- {position_name} ---")
+            if not group.items:
+                mlb_roster_lines.append("  No players listed")
+                continue
+            for player in group.items:
+                first_name = getattr(player, "first_name", "") or ""
+                last_name = getattr(player, "last_name", "") or ""
+                player_name = f"{first_name} {last_name}".strip() or "Unknown Player"
+                jersey = getattr(player, "jersey", "")
+                jersey_str = f"#{jersey} " if jersey else ""
+                pos = getattr(player, "position", None)
+                pos_name = pos.name if pos and hasattr(pos, "name") else ""
+                college = getattr(player, "college", None)
+                college_name = getattr(college, "name", "") if college else ""
+                college_str = f" - {college_name}" if college_name else ""
+                experience = getattr(player, "experience", None)
+                exp_years = getattr(experience, "years", None) if experience else None
+                experience_str = ""
+                if exp_years == 0:
+                    experience_str = " (Rookie)"
+                elif isinstance(exp_years, int):
+                    experience_str = f" ({exp_years} yr{'s' if exp_years > 1 else ''})"
+                mlb_roster_lines.append(
+                    f"  {jersey_str}{player_name} ({pos_name}){college_str}{experience_str}"
+                )
+    logging.info("\n".join(mlb_roster_lines))
+
+    # Print the full roster with index (legacy, still useful for debugging)
+    total_players = 0
+    for group in roster_data.athletes:
+        for i, player in enumerate(group.items):
+            name = f"{getattr(player, 'first_name', '')} {getattr(player, 'last_name', '')}".strip()
+            jersey = getattr(player, "jersey", "")
+            pos = getattr(player, "position", None)
+            pos_name = pos.name if pos and hasattr(pos, "name") else ""
+            total_players += 1
+    logging.info(f"Total players returned: {total_players}")

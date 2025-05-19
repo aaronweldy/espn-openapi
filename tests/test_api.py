@@ -344,18 +344,25 @@ def test_nfl_competition_plays(sports_core_api_client, ensure_json_output_dir):
         )
 
 
-def test_mlb_game_summary(site_api_client):
-    """Test the MLB game summary endpoint for a known event."""
+@pytest.mark.api
+def test_mlb_game_summary(site_api_client, ensure_json_output_dir):
+    """Test the MLB game summary endpoint for a known event, validate model, and save output."""
     event_id = "401472463"
     response = get_mlb_game_summary(client=site_api_client, event=event_id)
     assert isinstance(response, MlbGameSummaryResponse), (
         f"Expected MlbGameSummaryResponse, got {type(response)}"
     )
-    print(f"Notes: {response.notes[:2]}")
-    print(f"Boxscore: {type(response.boxscore)}")
-    print(f"Header: {type(response.header)}")
-    print(f"Meta: {type(response.meta)}")
+    # Print/log some interesting fields
+    print(f"Notes count: {len(response.notes)}")
     print(f"Wallclock available: {response.wallclock_available}")
+    print(f"Boxscore type: {type(response.boxscore)}")
+    print(f"Header type: {type(response.header)}")
+    # Save full response for analysis
+    with open(f"{ensure_json_output_dir}/mlb_game_summary_{event_id}.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)
+    print(
+        f"✓ Processed MLB game summary saved to {ensure_json_output_dir}/mlb_game_summary_{event_id}.json"
+    )
 
 
 test_mlb_game_summary = pytest.mark.api(test_mlb_game_summary)

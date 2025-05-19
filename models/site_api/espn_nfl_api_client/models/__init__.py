@@ -53,6 +53,7 @@ from .geo_broadcast_market import GeoBroadcastMarket
 from .geo_broadcast_media import GeoBroadcastMedia
 from .geo_broadcast_type import GeoBroadcastType
 from .get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
+from .get_mlb_team_roster_team_id_or_abbrev import GetMLBTeamRosterTeamIdOrAbbrev
 from .get_nfl_scoreboard_seasontype import GetNFLScoreboardSeasontype
 from .headline import Headline
 from .headshot import Headshot
@@ -69,9 +70,57 @@ from .league_season import LeagueSeason
 from .linescore import Linescore
 from .link import Link
 from .logo import Logo
+from .mlb_against_the_spread import MlbAgainstTheSpread
+from .mlb_article import MlbArticle
+from .mlb_boxscore import MlbBoxscore
+from .mlb_broadcast import MlbBroadcast
+from .mlb_coach import MlbCoach
+from .mlb_format import MlbFormat
+from .mlb_game_info import MlbGameInfo
+from .mlb_game_summary_response import MlbGameSummaryResponse
+from .mlb_game_summary_response_at_bats import MlbGameSummaryResponseAtBats
+from .mlb_game_summary_response_plays_map import MlbGameSummaryResponsePlaysMap
+from .mlb_header import MlbHeader
+from .mlb_injury import MlbInjury
+from .mlb_meta import MlbMeta
+from .mlb_news import MlbNews
+from .mlb_pickcenter import MlbPickcenter
+from .mlb_play import MlbPlay
+from .mlb_plays_map import MlbPlaysMap
+from .mlb_position_group import MlbPositionGroup
+from .mlb_roster import MlbRoster
+from .mlb_roster_athlete import MlbRosterAthlete
+from .mlb_roster_athlete_alternate_ids import MlbRosterAthleteAlternateIds
+from .mlb_roster_athlete_bats import MlbRosterAthleteBats
+from .mlb_roster_athlete_bats_abbreviation import MlbRosterAthleteBatsAbbreviation
+from .mlb_roster_athlete_bats_display_value import MlbRosterAthleteBatsDisplayValue
+from .mlb_roster_athlete_bats_type import MlbRosterAthleteBatsType
+from .mlb_roster_athlete_birth_place import MlbRosterAthleteBirthPlace
+from .mlb_roster_athlete_college import MlbRosterAthleteCollege
+from .mlb_roster_athlete_contracts_item import MlbRosterAthleteContractsItem
+from .mlb_roster_athlete_contracts_item_season import MlbRosterAthleteContractsItemSeason
+from .mlb_roster_athlete_experience import MlbRosterAthleteExperience
+from .mlb_roster_athlete_headshot import MlbRosterAthleteHeadshot
+from .mlb_roster_athlete_injuries_item import MlbRosterAthleteInjuriesItem
+from .mlb_roster_athlete_position import MlbRosterAthletePosition
+from .mlb_roster_athlete_position_parent import MlbRosterAthletePositionParent
+from .mlb_roster_athlete_positions_item import MlbRosterAthletePositionsItem
+from .mlb_roster_athlete_positions_item_parent import MlbRosterAthletePositionsItemParent
+from .mlb_roster_athlete_status import MlbRosterAthleteStatus
+from .mlb_roster_athlete_teams_item import MlbRosterAthleteTeamsItem
+from .mlb_roster_athlete_throws import MlbRosterAthleteThrows
+from .mlb_roster_athlete_throws_abbreviation import MlbRosterAthleteThrowsAbbreviation
+from .mlb_roster_athlete_throws_display_value import MlbRosterAthleteThrowsDisplayValue
+from .mlb_roster_athlete_throws_type import MlbRosterAthleteThrowsType
 from .mlb_scoreboard_response import MlbScoreboardResponse
 from .mlb_scoreboard_response_day import MlbScoreboardResponseDay
+from .mlb_season_series import MlbSeasonSeries
+from .mlb_standings import MlbStandings
 from .mlb_statistic_name import MlbStatisticName
+from .mlb_team_roster_response import MlbTeamRosterResponse
+from .mlb_team_roster_response_season import MlbTeamRosterResponseSeason
+from .mlb_team_roster_response_team import MlbTeamRosterResponseTeam
+from .mlb_win_probability import MlbWinProbability
 from .monday_night_football_response import MondayNightFootballResponse
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
@@ -214,6 +263,7 @@ __all__ = (
     "GeoBroadcastMedia",
     "GeoBroadcastType",
     "GetMLBTeamDetailsTeamIdOrAbbrev",
+    "GetMLBTeamRosterTeamIdOrAbbrev",
     "GetNFLScoreboardSeasontype",
     "Headline",
     "Headshot",
@@ -230,9 +280,57 @@ __all__ = (
     "Linescore",
     "Link",
     "Logo",
+    "MlbAgainstTheSpread",
+    "MlbArticle",
+    "MlbBoxscore",
+    "MlbBroadcast",
+    "MlbCoach",
+    "MlbFormat",
+    "MlbGameInfo",
+    "MlbGameSummaryResponse",
+    "MlbGameSummaryResponseAtBats",
+    "MlbGameSummaryResponsePlaysMap",
+    "MlbHeader",
+    "MlbInjury",
+    "MlbMeta",
+    "MlbNews",
+    "MlbPickcenter",
+    "MlbPlay",
+    "MlbPlaysMap",
+    "MlbPositionGroup",
+    "MlbRoster",
+    "MlbRosterAthlete",
+    "MlbRosterAthleteAlternateIds",
+    "MlbRosterAthleteBats",
+    "MlbRosterAthleteBatsAbbreviation",
+    "MlbRosterAthleteBatsDisplayValue",
+    "MlbRosterAthleteBatsType",
+    "MlbRosterAthleteBirthPlace",
+    "MlbRosterAthleteCollege",
+    "MlbRosterAthleteContractsItem",
+    "MlbRosterAthleteContractsItemSeason",
+    "MlbRosterAthleteExperience",
+    "MlbRosterAthleteHeadshot",
+    "MlbRosterAthleteInjuriesItem",
+    "MlbRosterAthletePosition",
+    "MlbRosterAthletePositionParent",
+    "MlbRosterAthletePositionsItem",
+    "MlbRosterAthletePositionsItemParent",
+    "MlbRosterAthleteStatus",
+    "MlbRosterAthleteTeamsItem",
+    "MlbRosterAthleteThrows",
+    "MlbRosterAthleteThrowsAbbreviation",
+    "MlbRosterAthleteThrowsDisplayValue",
+    "MlbRosterAthleteThrowsType",
     "MlbScoreboardResponse",
     "MlbScoreboardResponseDay",
+    "MlbSeasonSeries",
+    "MlbStandings",
     "MlbStatisticName",
+    "MlbTeamRosterResponse",
+    "MlbTeamRosterResponseSeason",
+    "MlbTeamRosterResponseTeam",
+    "MlbWinProbability",
     "MondayNightFootballResponse",
     "NewsArticle",
     "NewsArticleImage",
