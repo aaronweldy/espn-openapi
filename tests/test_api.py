@@ -46,6 +46,13 @@ from models.sports_core_api.espn_sports_core_api_client.models.error_response im
     ErrorResponse as CoreErrorResponse,
 )
 
+from models.site_api.espn_nfl_api_client.api.default.get_mlb_game_summary import (
+    sync as get_mlb_game_summary,
+)
+from models.site_api.espn_nfl_api_client.models.mlb_game_summary_response import (
+    MlbGameSummaryResponse,
+)
+
 
 def validate_schema_response(data: GameSummary) -> bool:
     """Validate if response matches expected schema structure."""
@@ -335,3 +342,20 @@ def test_nfl_competition_plays(sports_core_api_client, ensure_json_output_dir):
         print(
             f"✓ Processed plays data saved to {ensure_json_output_dir}/competition_{competition_id}_plays_processed.json"
         )
+
+
+def test_mlb_game_summary(site_api_client):
+    """Test the MLB game summary endpoint for a known event."""
+    event_id = "401472463"
+    response = get_mlb_game_summary(client=site_api_client, event=event_id)
+    assert isinstance(response, MlbGameSummaryResponse), (
+        f"Expected MlbGameSummaryResponse, got {type(response)}"
+    )
+    print(f"Notes: {response.notes[:2]}")
+    print(f"Boxscore: {type(response.boxscore)}")
+    print(f"Header: {type(response.header)}")
+    print(f"Meta: {type(response.meta)}")
+    print(f"Wallclock available: {response.wallclock_available}")
+
+
+test_mlb_game_summary = pytest.mark.api(test_mlb_game_summary)

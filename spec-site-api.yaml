@@ -521,6 +521,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/baseball/mlb/summary:
+    get:
+      summary: Get MLB Game Summary
+      description: Retrieve comprehensive summary data for a specific MLB game including scores, statistics, and detailed game information
+      operationId: getMLBGameSummary
+      parameters:
+        - name: event
+          in: query
+          required: true
+          description: The event ID of the MLB game
+          schema:
+            type: string
+            example: "401472463"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MlbGameSummaryResponse'
+        '404':
+          description: Game not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     TeamsListResponse:
@@ -3395,3 +3428,169 @@ components:
         - yardsPerPass
         - yardsPerPlay
         - yardsPerRushAttempt
+
+    MlbGameSummaryResponse:
+      type: object
+      description: MLB game summary response.
+      properties:
+        notes:
+          type: array
+          items: {}
+        boxscore:
+          $ref: '#/components/schemas/MlbBoxscore'
+        format:
+          $ref: '#/components/schemas/MlbFormat'
+        gameInfo:
+          $ref: '#/components/schemas/MlbGameInfo'
+        seasonseries:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbSeasonSeries'
+        injuries:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbInjury'
+        broadcasts:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbBroadcast'
+        pickcenter:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbPickcenter'
+        againstTheSpread:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbAgainstTheSpread'
+        odds:
+          type: array
+          items: {}
+        rosters:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbRoster'
+        header:
+          $ref: '#/components/schemas/MlbHeader'
+        news:
+          $ref: '#/components/schemas/MlbNews'
+        article:
+          $ref: '#/components/schemas/MlbArticle'
+        videos:
+          type: array
+          items: {}
+        winprobability:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbWinProbability'
+        plays:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlbPlay'
+        playsMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/MlbPlaysMap'
+        atBats:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/MlbPlaysMap'
+        wallclockAvailable:
+          type: boolean
+        meta:
+          $ref: '#/components/schemas/MlbMeta'
+        standings:
+          $ref: '#/components/schemas/MlbStandings'
+      required:
+        - againstTheSpread
+        - article
+        - atBats
+        - boxscore
+        - broadcasts
+        - format
+        - gameInfo
+        - header
+        - injuries
+        - meta
+        - news
+        - notes
+        - odds
+        - pickcenter
+        - plays
+        - playsMap
+        - rosters
+        - seasonseries
+        - standings
+        - videos
+        - wallclockAvailable
+        - winprobability
+
+    MlbBoxscore:
+      type: object
+      description: MLB boxscore object. (To be filled in.)
+      properties: {}
+    MlbFormat:
+      type: object
+      description: MLB format object. (To be filled in.)
+      properties: {}
+    MlbGameInfo:
+      type: object
+      description: MLB game info object. (To be filled in.)
+      properties: {}
+    MlbSeasonSeries:
+      type: object
+      description: MLB season series object. (To be filled in.)
+      properties: {}
+    MlbInjury:
+      type: object
+      description: MLB injury object. (To be filled in.)
+      properties: {}
+    MlbBroadcast:
+      type: object
+      description: MLB broadcast object. (To be filled in.)
+      properties: {}
+    MlbPickcenter:
+      type: object
+      description: MLB pickcenter object. (To be filled in.)
+      properties: {}
+    MlbAgainstTheSpread:
+      type: object
+      description: MLB against the spread object. (To be filled in.)
+      properties: {}
+    MlbRoster:
+      type: object
+      description: MLB roster object. (To be filled in.)
+      properties: {}
+    MlbHeader:
+      type: object
+      description: MLB header object. (To be filled in.)
+      properties: {}
+    MlbNews:
+      type: object
+      description: MLB news object. (To be filled in.)
+      properties: {}
+    MlbArticle:
+      type: object
+      description: MLB article object. (To be filled in.)
+      properties: {}
+    MlbWinProbability:
+      type: object
+      description: MLB win probability object. (To be filled in.)
+      properties: {}
+    MlbPlay:
+      type: object
+      description: MLB play object. (To be filled in.)
+      properties: {}
+    MlbPlaysMap:
+      type: object
+      description: MLB plays map object. (To be filled in.)
+      properties: {}
+    MlbMeta:
+      type: object
+      description: MLB meta object. (To be filled in.)
+      properties: {}
+    MlbStandings:
+      type: object
+      description: MLB standings object. (To be filled in.)
+      properties: {}
