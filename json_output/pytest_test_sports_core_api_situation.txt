@@ -1,0 +1,78 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.6.0 -- /home/aweldy/espn-api/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/aweldy/espn-api
+configfile: pytest.ini
+plugins: anyio-4.9.0
+collecting ... collected 17 items
+
+tests/test_sports_core_api.py::test_athlete_details 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477 "HTTP/1.1 200 OK"
+PASSED                                                                   [  5%]
+tests/test_sports_core_api.py::test_athlete_statistics 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statistics "HTTP/1.1 200 OK"
+PASSED                                                                   [ 11%]
+tests/test_sports_core_api.py::test_athlete_statistics_log 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statisticslog "HTTP/1.1 200 OK"
+PASSED                                                                   [ 17%]
+tests/test_sports_core_api.py::test_league_calendar 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/calendar "HTTP/1.1 200 OK"
+PASSED                                                                   [ 23%]
+tests/test_sports_core_api.py::test_league_venues 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues "HTTP/1.1 200 OK"
+PASSED                                                                   [ 29%]
+tests/test_sports_core_api.py::test_league_franchises 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/franchises "HTTP/1.1 200 OK"
+PASSED                                                                   [ 35%]
+tests/test_sports_core_api.py::test_league_seasons 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons "HTTP/1.1 200 OK"
+PASSED                                                                   [ 41%]
+tests/test_sports_core_api.py::test_league_season_weeks 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/weeks "HTTP/1.1 200 OK"
+PASSED                                                                   [ 47%]
+tests/test_sports_core_api.py::test_league_events 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events?week=1&season=2025&seasontypes=2 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 52%]
+tests/test_sports_core_api.py::test_league_event_details 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 58%]
+tests/test_sports_core_api.py::test_nfl_league_leaders 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/leaders?limit=5 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 64%]
+tests/test_sports_core_api.py::test_nfl_season_team 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/12 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 70%]
+tests/test_sports_core_api.py::test_nfl_team_injuries 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/1/injuries "HTTP/1.1 200 OK"
+PASSED                                                                   [ 76%]
+tests/test_sports_core_api.py::test_nfl_season_type_leaders 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/types/2/leaders?limit=5 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 82%]
+tests/test_sports_core_api.py::test_nfl_draft 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/draft "HTTP/1.1 200 OK"
+PASSED                                                                   [ 88%]
+tests/test_sports_core_api.py::test_competition_detail 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417 "HTTP/1.1 200 OK"
+PASSED                                                                   [ 94%]
+tests/test_sports_core_api.py::test_competition_situation 
+-------------------------------- live log call ---------------------------------
+INFO     httpx:_client.py:1025 HTTP Request: GET https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401220403/competitions/401220403/situation "HTTP/1.1 200 OK"
+PASSED                                                                   [100%]
+
+============================== 17 passed in 0.70s ==============================

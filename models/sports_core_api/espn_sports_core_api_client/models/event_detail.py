@@ -28,6 +28,7 @@ class EventDetail:
         id (str):
         date (datetime.datetime):
         competitions (List[Union['EventDetailCompetitionsItemType1', 'Reference']]):
+        links (List['Link']):
         ref (Union[Unset, str]):
         uid (Union[Unset, str]):
         name (Union[Unset, str]):
@@ -36,7 +37,6 @@ class EventDetail:
         season_type (Union['EventDetailSeasonTypeType1', 'Reference', Unset]):
         week (Union['EventDetailWeekType1', 'Reference', Unset]):
         time_valid (Union[Unset, bool]):
-        links (Union[Unset, List['Link']]):
         venues (Union[Unset, List[Union['EventDetailVenuesItemType1', 'Reference']]]):
         league (Union['EventDetailLeagueType1', 'Reference', Unset]):
     """
@@ -44,6 +44,7 @@ class EventDetail:
     id: str
     date: datetime.datetime
     competitions: List[Union["EventDetailCompetitionsItemType1", "Reference"]]
+    links: List["Link"]
     ref: Union[Unset, str] = UNSET
     uid: Union[Unset, str] = UNSET
     name: Union[Unset, str] = UNSET
@@ -52,7 +53,6 @@ class EventDetail:
     season_type: Union["EventDetailSeasonTypeType1", "Reference", Unset] = UNSET
     week: Union["EventDetailWeekType1", "Reference", Unset] = UNSET
     time_valid: Union[Unset, bool] = UNSET
-    links: Union[Unset, List["Link"]] = UNSET
     venues: Union[Unset, List[Union["EventDetailVenuesItemType1", "Reference"]]] = UNSET
     league: Union["EventDetailLeagueType1", "Reference", Unset] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -73,6 +73,11 @@ class EventDetail:
                 competitions_item = competitions_item_data.to_dict()
 
             competitions.append(competitions_item)
+
+        links = []
+        for links_item_data in self.links:
+            links_item = links_item_data.to_dict()
+            links.append(links_item)
 
         ref = self.ref
 
@@ -108,13 +113,6 @@ class EventDetail:
 
         time_valid = self.time_valid
 
-        links: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.links, Unset):
-            links = []
-            for links_item_data in self.links:
-                links_item = links_item_data.to_dict()
-                links.append(links_item)
-
         venues: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.venues, Unset):
             venues = []
@@ -142,6 +140,7 @@ class EventDetail:
                 "id": id,
                 "date": date,
                 "competitions": competitions,
+                "links": links,
             }
         )
         if ref is not UNSET:
@@ -160,8 +159,6 @@ class EventDetail:
             field_dict["week"] = week
         if time_valid is not UNSET:
             field_dict["timeValid"] = time_valid
-        if links is not UNSET:
-            field_dict["links"] = links
         if venues is not UNSET:
             field_dict["venues"] = venues
         if league is not UNSET:
@@ -207,6 +204,13 @@ class EventDetail:
             competitions_item = _parse_competitions_item(competitions_item_data)
 
             competitions.append(competitions_item)
+
+        links = []
+        _links = d.pop("links")
+        for links_item_data in _links:
+            links_item = Link.from_dict(links_item_data)
+
+            links.append(links_item)
 
         ref = d.pop("$ref", UNSET)
 
@@ -275,13 +279,6 @@ class EventDetail:
 
         time_valid = d.pop("timeValid", UNSET)
 
-        links = []
-        _links = d.pop("links", UNSET)
-        for links_item_data in _links or []:
-            links_item = Link.from_dict(links_item_data)
-
-            links.append(links_item)
-
         venues = []
         _venues = d.pop("venues", UNSET)
         for venues_item_data in _venues or []:
@@ -328,6 +325,7 @@ class EventDetail:
             id=id,
             date=date,
             competitions=competitions,
+            links=links,
             ref=ref,
             uid=uid,
             name=name,
@@ -336,7 +334,6 @@ class EventDetail:
             season_type=season_type,
             week=week,
             time_valid=time_valid,
-            links=links,
             venues=venues,
             league=league,
         )

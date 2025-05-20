@@ -16,15 +16,16 @@ Your workflow should look like the following:
 2. Fetch that endpoint to get an example JSON response. Put this in @json_output. ACTUALLY CURL THE ENDPOINT
 3. Use `quicktype` (npx quicktype) on the JSON response to generate a JSON schema object. Example:
   - `npx quicktype --src json_output/core_nfl_boxscore.json --src-lang json --lang schema --out json_schema/core_nfl_boxscore_schema.json`
-4. Convert the generated JSON schema object with the relevant OpenAPI spec, adding spec details for the endpoint.
-5. Add definitions for those models, and run `make openapi` (potentially with a more specific command)
-6. Test the model definitions by making an API call to the new route using the generated Python models in a new pytest test file. Put tests in @tests. Follow the pattern in existing tests with pytest assertions. Use @TESTING.md as a guide.
-7. Run the tests using pytest:
+4. Figure out what changes you need to make to the OpenAPI spec to add the new endpoint. You may need to add new schemas, paths, or components. You may also need to merge schemas, update enums, or share schemas between endpoints. No matter what -- do NOT break existing schemas, or modify them in a non-additive way. When you've figured this out, list the changes that you need to make to the relevant spec.
+5. Make the changes to the spec.
+6. Run `make openapi` (potentially with a more specific command)
+7. Test the model definitions by making an API call to the new route using the generated Python models in a new pytest test file. Put tests in @tests. Follow the pattern in existing tests with pytest assertions. Use @TESTING.md as a guide.
+8. Run the tests using pytest:
   - `pytest -v tests/test_your_new_endpoint.py`
-8. If anything goes wrong in your test, repeat steps 2-7 again.
-9. If you find an endpoint in a $ref param that is not in @CHECKLIST.md, add it to the list.
-10. You MUST not break any other tests. Run all tests before you commit.
-10. Once you have fully verified that the new generated types work, check off the endpoint in @CHECKLIST.md, make a git commit with the changes, and then pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
+9. If anything goes wrong in your test, repeat steps 2-7 again.
+10. If you find an endpoint in a $ref param that is not in @CHECKLIST.md, add it to the list.
+11. You MUST not break any other tests. Run all tests before you commit.
+12. Once you have fully verified that the new generated types work, check off the endpoint in @CHECKLIST.md, make a git commit with the changes, and then pick a new endpoint and start again. Make a Git commit with the new changes. Do NOT consider your job complete until your tests can fully parse the API response with the generated codes.
 
 If you need to inspect JSON, use JQ. Read the JQ documentation from context7 if you need to.
 

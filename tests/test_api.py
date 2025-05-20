@@ -9,6 +9,7 @@ import pytest
 from typing import cast, Dict, Any, List
 import httpx
 from datetime import datetime
+import logging
 
 from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_game_summary import sync
@@ -52,6 +53,8 @@ from models.site_api.espn_nfl_api_client.api.default.get_mlb_game_summary import
 from models.site_api.espn_nfl_api_client.models.mlb_game_summary_response import (
     MlbGameSummaryResponse,
 )
+
+logging.basicConfig(level=logging.INFO)
 
 
 def validate_schema_response(data: GameSummary) -> bool:
@@ -242,20 +245,20 @@ def test_nfl_athlete_gamelog(site_web_api_client, ensure_json_output_dir):
     assert game_log.events.additional_properties, "Game log should have events data"
 
     games_count = len(game_log.events.additional_properties)
-    print(f"\nFound {games_count} games for athlete ID {athlete_id}")
+    logging.info(f"\nFound {games_count} games for athlete ID {athlete_id}")
 
     # Format and display gamelog
     games = list(game_log.events.additional_properties.values())
     formatted_gamelog = format_gamelog(games, athlete_id)
-    print(formatted_gamelog)
+    logging.info(formatted_gamelog)
 
     # Save full response for analysis
     with open(
         f"{ensure_json_output_dir}/athlete_{athlete_id}_gamelog_processed.json", "w"
     ) as f:
         json.dump(game_log.to_dict(), f, indent=2)
-    print(
-        f"✓ Processed gamelog saved to {ensure_json_output_dir}/athlete_{athlete_id}_gamelog_processed.json"
+    logging.info(
+        f"\u2713 Processed gamelog saved to {ensure_json_output_dir}/athlete_{athlete_id}_gamelog_processed.json"
     )
 
 
@@ -276,7 +279,9 @@ def test_nfl_competition_drives(sports_core_api_client, ensure_json_output_dir):
         "Response should be a DrivesListResponse"
     )
 
-    print(f"\nSuccessfully retrieved drives data for competition {competition_id}")
+    logging.info(
+        f"\nSuccessfully retrieved drives data for competition {competition_id}"
+    )
 
     # Calculate some basic stats about the drives
     if response.items:
@@ -284,8 +289,8 @@ def test_nfl_competition_drives(sports_core_api_client, ensure_json_output_dir):
         scoring_drives = sum(
             1 for drive in response.items if drive.is_score and drive.is_score is True
         )
-        print(f"Total drives: {drive_count}")
-        print(f"Scoring drives: {scoring_drives}")
+        logging.info(f"Total drives: {drive_count}")
+        logging.info(f"Scoring drives: {scoring_drives}")
 
         # Save the data for analysis
         with open(
@@ -293,8 +298,8 @@ def test_nfl_competition_drives(sports_core_api_client, ensure_json_output_dir):
             "w",
         ) as f:
             json.dump(response.to_dict(), f, indent=2)
-        print(
-            f"✓ Processed drives data saved to {ensure_json_output_dir}/competition_{competition_id}_drives_processed.json"
+        logging.info(
+            f"\u2713 Processed drives data saved to {ensure_json_output_dir}/competition_{competition_id}_drives_processed.json"
         )
 
 
@@ -315,23 +320,25 @@ def test_nfl_competition_plays(sports_core_api_client, ensure_json_output_dir):
         "Response should be a PlaysListResponse"
     )
 
-    print(f"\nSuccessfully retrieved plays data for competition {competition_id}")
+    logging.info(
+        f"\nSuccessfully retrieved plays data for competition {competition_id}"
+    )
 
     # Calculate some basic stats about the plays
     if response.items:
         play_count = len(response.items)
-        print(f"Total plays: {play_count}")
+        logging.info(f"Total plays: {play_count}")
 
         # Show a sample of plays
         sample_size = min(5, play_count)
-        print(f"\nSample of {sample_size} plays:")
+        logging.info(f"\nSample of {sample_size} plays:")
         for i, play in enumerate(response.items[:sample_size]):
             play_type = getattr(play, "play_type", None)
             play_type_name = (
                 getattr(play_type, "name", "Unknown") if play_type else "Unknown"
             )
             play_text = getattr(play, "text", "Unknown")
-            print(f"{i + 1}. [{play_type_name}] {play_text}")
+            logging.info(f"{i + 1}. [{play_type_name}] {play_text}")
 
         # Save the data for analysis
         with open(
@@ -339,8 +346,8 @@ def test_nfl_competition_plays(sports_core_api_client, ensure_json_output_dir):
             "w",
         ) as f:
             json.dump(response.to_dict(), f, indent=2)
-        print(
-            f"✓ Processed plays data saved to {ensure_json_output_dir}/competition_{competition_id}_plays_processed.json"
+        logging.info(
+            f"\u2713 Processed plays data saved to {ensure_json_output_dir}/competition_{competition_id}_plays_processed.json"
         )
 
 
@@ -353,16 +360,13 @@ def test_mlb_game_summary(site_api_client, ensure_json_output_dir):
         f"Expected MlbGameSummaryResponse, got {type(response)}"
     )
     # Print/log some interesting fields
-    print(f"Notes count: {len(response.notes)}")
-    print(f"Wallclock available: {response.wallclock_available}")
-    print(f"Boxscore type: {type(response.boxscore)}")
-    print(f"Header type: {type(response.header)}")
+    logging.info(f"Notes count: {len(response.notes)}")
+    logging.info(f"Wallclock available: {response.wallclock_available}")
+    logging.info(f"Boxscore type: {type(response.boxscore)}")
+    logging.info(f"Header type: {type(response.header)}")
     # Save full response for analysis
     with open(f"{ensure_json_output_dir}/mlb_game_summary_{event_id}.json", "w") as f:
         json.dump(response.to_dict(), f, indent=2)
-    print(
-        f"✓ Processed MLB game summary saved to {ensure_json_output_dir}/mlb_game_summary_{event_id}.json"
+    logging.info(
+        f"\u2713 Processed MLB game summary saved to {ensure_json_output_dir}/mlb_game_summary_{event_id}.json"
     )
-
-
-test_mlb_game_summary = pytest.mark.api(test_mlb_game_summary)

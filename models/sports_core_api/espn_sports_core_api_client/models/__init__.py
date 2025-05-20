@@ -11,6 +11,24 @@ from .athlete_statistics_response import AthleteStatisticsResponse
 from .athlete_statistics_response_splits import AthleteStatisticsResponseSplits
 from .athlete_status import AthleteStatus
 from .calendar_list_response import CalendarListResponse
+from .competition_broadcast import CompetitionBroadcast
+from .competition_competitor import CompetitionCompetitor
+from .competition_competitor_leaders_type_1 import CompetitionCompetitorLeadersType1
+from .competition_competitor_linescores_type_1 import CompetitionCompetitorLinescoresType1
+from .competition_competitor_record_type_1 import CompetitionCompetitorRecordType1
+from .competition_competitor_roster_type_1 import CompetitionCompetitorRosterType1
+from .competition_competitor_score_type_1 import CompetitionCompetitorScoreType1
+from .competition_competitor_statistics_type_1 import CompetitionCompetitorStatisticsType1
+from .competition_competitor_team_type_1 import CompetitionCompetitorTeamType1
+from .competition_detail import CompetitionDetail
+from .competition_detail_notes_item import CompetitionDetailNotesItem
+from .competition_format import CompetitionFormat
+from .competition_overtime import CompetitionOvertime
+from .competition_situation_response import CompetitionSituationResponse
+from .competition_source import CompetitionSource
+from .competition_status import CompetitionStatus
+from .competition_status_type import CompetitionStatusType
+from .competition_type import CompetitionType
 from .core_nfl_season_team_response import CoreNflSeasonTeamResponse
 from .drive import Drive
 from .drive_clock import DriveClock
@@ -31,6 +49,7 @@ from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
+from .last_play_reference import LastPlayReference
 from .league_enum import LeagueEnum
 from .link import Link
 from .logo import Logo
@@ -105,6 +124,24 @@ __all__ = (
     "AthleteStatisticsResponseSplits",
     "AthleteStatus",
     "CalendarListResponse",
+    "CompetitionBroadcast",
+    "CompetitionCompetitor",
+    "CompetitionCompetitorLeadersType1",
+    "CompetitionCompetitorLinescoresType1",
+    "CompetitionCompetitorRecordType1",
+    "CompetitionCompetitorRosterType1",
+    "CompetitionCompetitorScoreType1",
+    "CompetitionCompetitorStatisticsType1",
+    "CompetitionCompetitorTeamType1",
+    "CompetitionDetail",
+    "CompetitionDetailNotesItem",
+    "CompetitionFormat",
+    "CompetitionOvertime",
+    "CompetitionSituationResponse",
+    "CompetitionSource",
+    "CompetitionStatus",
+    "CompetitionStatusType",
+    "CompetitionType",
     "CoreNflSeasonTeamResponse",
     "Drive",
     "DriveClock",
@@ -125,6 +162,7 @@ __all__ = (
     "EventReference",
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLConferenceStandingsSeasontype",
+    "LastPlayReference",
     "LeagueEnum",
     "Link",
     "Logo",

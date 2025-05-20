@@ -1148,6 +1148,56 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/status:
+    get:
+      summary: Get Competition Status
+      description: Retrieve the current status (clock, period, state, etc) for a specific competition (game).
+      operationId: getCompetitionStatus
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionStatus'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -3243,3 +3293,48 @@ components:
           format: uri
       required:
         - $ref
+
+    CompetitionStatus:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        clock:
+          type: number
+        displayClock:
+          type: string
+        period:
+          type: integer
+        type:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            state:
+              type: string
+            completed:
+              type: boolean
+            description:
+              type: string
+            detail:
+              type: string
+            shortDetail:
+              type: string
+          required:
+            - id
+            - name
+            - state
+            - completed
+            - description
+            - detail
+            - shortDetail
+      required:
+        - $ref
+        - clock
+        - displayClock
+        - period
+        - type
+      description: Competition status object (clock, period, state, etc) for a specific competition (game).

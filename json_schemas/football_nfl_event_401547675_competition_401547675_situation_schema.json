@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/FootballNflEvent401547675_Competition401547675_SituationSchema",
+    "definitions": {
+        "FootballNflEvent401547675_Competition401547675_SituationSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/Error"
+                }
+            },
+            "required": [
+                "error"
+            ],
+            "title": "FootballNflEvent401547675_Competition401547675_SituationSchema"
+        },
+        "Error": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "code",
+                "message"
+            ],
+            "title": "Error"
+        }
+    }
+}

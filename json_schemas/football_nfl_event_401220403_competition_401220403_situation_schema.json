@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/FootballNflEvent401220403_Competition401220403_SituationSchema",
+    "definitions": {
+        "FootballNflEvent401220403_Competition401220403_SituationSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "lastPlay": {
+                    "$ref": "#/definitions/LastPlay"
+                },
+                "down": {
+                    "type": "integer"
+                },
+                "yardLine": {
+                    "type": "integer"
+                },
+                "distance": {
+                    "type": "integer"
+                },
+                "isRedZone": {
+                    "type": "boolean"
+                },
+                "homeTimeouts": {
+                    "type": "integer"
+                },
+                "awayTimeouts": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "$ref",
+                "awayTimeouts",
+                "distance",
+                "down",
+                "homeTimeouts",
+                "isRedZone",
+                "lastPlay",
+                "yardLine"
+            ],
+            "title": "FootballNflEvent401220403_Competition401220403_SituationSchema"
+        },
+        "LastPlay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "LastPlay"
+        }
+    }
+}

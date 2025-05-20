@@ -1,0 +1,586 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/CoreNflEventCompetitionSchema",
+    "definitions": {
+        "CoreNflEventCompetitionSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "attendance": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "timeValid": {
+                    "type": "boolean"
+                },
+                "dateValid": {
+                    "type": "boolean"
+                },
+                "neutralSite": {
+                    "type": "boolean"
+                },
+                "divisionCompetition": {
+                    "type": "boolean"
+                },
+                "conferenceCompetition": {
+                    "type": "boolean"
+                },
+                "previewAvailable": {
+                    "type": "boolean"
+                },
+                "recapAvailable": {
+                    "type": "boolean"
+                },
+                "boxscoreAvailable": {
+                    "type": "boolean"
+                },
+                "lineupAvailable": {
+                    "type": "boolean"
+                },
+                "gamecastAvailable": {
+                    "type": "boolean"
+                },
+                "playByPlayAvailable": {
+                    "type": "boolean"
+                },
+                "conversationAvailable": {
+                    "type": "boolean"
+                },
+                "commentaryAvailable": {
+                    "type": "boolean"
+                },
+                "pickcenterAvailable": {
+                    "type": "boolean"
+                },
+                "summaryAvailable": {
+                    "type": "boolean"
+                },
+                "liveAvailable": {
+                    "type": "boolean"
+                },
+                "ticketsAvailable": {
+                    "type": "boolean"
+                },
+                "shotChartAvailable": {
+                    "type": "boolean"
+                },
+                "timeoutsAvailable": {
+                    "type": "boolean"
+                },
+                "possessionArrowAvailable": {
+                    "type": "boolean"
+                },
+                "onWatchESPN": {
+                    "type": "boolean"
+                },
+                "recent": {
+                    "type": "boolean"
+                },
+                "bracketAvailable": {
+                    "type": "boolean"
+                },
+                "wallclockAvailable": {
+                    "type": "boolean"
+                },
+                "highlightsAvailable": {
+                    "type": "boolean"
+                },
+                "gameSource": {
+                    "$ref": "#/definitions/Source"
+                },
+                "boxscoreSource": {
+                    "$ref": "#/definitions/Source"
+                },
+                "playByPlaySource": {
+                    "$ref": "#/definitions/Source"
+                },
+                "linescoreSource": {
+                    "$ref": "#/definitions/Source"
+                },
+                "statsSource": {
+                    "$ref": "#/definitions/Source"
+                },
+                "venue": {
+                    "$ref": "#/definitions/Venue"
+                },
+                "competitors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Competitor"
+                    }
+                },
+                "notes": {
+                    "type": "array",
+                    "items": {}
+                },
+                "situation": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "status": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "odds": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "broadcasts": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "officials": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "details": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "leaders": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "predictor": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "probabilities": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "powerIndexes": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "format": {
+                    "$ref": "#/definitions/Format"
+                },
+                "drives": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "hasDefensiveStats": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "$ref",
+                "attendance",
+                "boxscoreAvailable",
+                "boxscoreSource",
+                "bracketAvailable",
+                "broadcasts",
+                "commentaryAvailable",
+                "competitors",
+                "conferenceCompetition",
+                "conversationAvailable",
+                "date",
+                "dateValid",
+                "details",
+                "divisionCompetition",
+                "drives",
+                "format",
+                "gameSource",
+                "gamecastAvailable",
+                "guid",
+                "hasDefensiveStats",
+                "highlightsAvailable",
+                "id",
+                "leaders",
+                "linescoreSource",
+                "lineupAvailable",
+                "links",
+                "liveAvailable",
+                "neutralSite",
+                "notes",
+                "odds",
+                "officials",
+                "onWatchESPN",
+                "pickcenterAvailable",
+                "playByPlayAvailable",
+                "playByPlaySource",
+                "possessionArrowAvailable",
+                "powerIndexes",
+                "predictor",
+                "previewAvailable",
+                "probabilities",
+                "recapAvailable",
+                "recent",
+                "shotChartAvailable",
+                "situation",
+                "statsSource",
+                "status",
+                "summaryAvailable",
+                "ticketsAvailable",
+                "timeValid",
+                "timeoutsAvailable",
+                "type",
+                "uid",
+                "venue",
+                "wallclockAvailable"
+            ],
+            "title": "CoreNflEventCompetitionSchema"
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "state"
+            ],
+            "title": "Source"
+        },
+        "Broadcasts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Broadcasts"
+        },
+        "Competitor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "homeAway": {
+                    "type": "string"
+                },
+                "winner": {
+                    "type": "boolean"
+                },
+                "team": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "score": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "linescores": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "roster": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "leaders": {
+                    "$ref": "#/definitions/Broadcasts"
+                },
+                "record": {
+                    "$ref": "#/definitions/Broadcasts"
+                }
+            },
+            "required": [
+                "$ref",
+                "homeAway",
+                "id",
+                "leaders",
+                "linescores",
+                "order",
+                "record",
+                "roster",
+                "score",
+                "statistics",
+                "team",
+                "type",
+                "uid",
+                "winner"
+            ],
+            "title": "Competitor"
+        },
+        "Format": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "regulation": {
+                    "$ref": "#/definitions/Overtime"
+                },
+                "overtime": {
+                    "$ref": "#/definitions/Overtime"
+                }
+            },
+            "required": [
+                "overtime",
+                "regulation"
+            ],
+            "title": "Format"
+        },
+        "Overtime": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "periods": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "clock": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "clock",
+                "displayName",
+                "periods",
+                "slug"
+            ],
+            "title": "Overtime"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "text": {
+                    "type": "string"
+                },
+                "shortText": {
+                    "type": "string"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "slug",
+                "text",
+                "type"
+            ],
+            "title": "Type"
+        },
+        "Venue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/Address"
+                },
+                "grass": {
+                    "type": "boolean"
+                },
+                "indoor": {
+                    "type": "boolean"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Image"
+                    }
+                }
+            },
+            "required": [
+                "$ref",
+                "address",
+                "fullName",
+                "grass",
+                "id",
+                "images",
+                "indoor"
+            ],
+            "title": "Venue"
+        },
+        "Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "zipCode": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "country": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "country",
+                "state",
+                "zipCode"
+            ],
+            "title": "Address"
+        },
+        "Image": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "rel",
+                "width"
+            ],
+            "title": "Image"
+        },
+        "Language": {
+            "type": "string",
+            "enum": [
+                "en-US"
+            ],
+            "title": "Language"
+        }
+    }
+}

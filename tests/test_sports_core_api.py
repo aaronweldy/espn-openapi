@@ -108,6 +108,12 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_competit
 from models.sports_core_api.espn_sports_core_api_client.models.competition_situation_response import (
     CompetitionSituationResponse,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_status import (
+    sync as get_competition_status,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_status import (
+    CompetitionStatus,
+)
 
 
 # Example athlete ID for testing
@@ -827,3 +833,33 @@ def test_competition_situation(sports_core_api_client):
     assert isinstance(result.is_red_zone, bool), "is_red_zone should be bool"
     assert isinstance(result.home_timeouts, int), "home_timeouts should be int"
     assert isinstance(result.away_timeouts, int), "away_timeouts should be int"
+
+
+@pytest.mark.api
+def test_competition_status(sports_core_api_client):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/status endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401326638"
+    competition_id = "401326638"
+    result = get_competition_status(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(result, CompetitionStatus), (
+        f"Expected CompetitionStatus, got {type(result)}"
+    )
+    assert result.ref, "Missing $ref in CompetitionStatus"
+    assert result.clock is not None, "Missing clock in CompetitionStatus"
+    assert result.display_clock, "Missing display_clock in CompetitionStatus"
+    assert result.period is not None, "Missing period in CompetitionStatus"
+    assert result.type, "Missing type in CompetitionStatus"
+    assert result.type.id, "Missing id in CompetitionStatus.type"
+    assert result.type.name, "Missing name in CompetitionStatus.type"
+    assert result.type.state, "Missing state in CompetitionStatus.type"
+    assert result.type.description, "Missing description in CompetitionStatus.type"
+    assert result.type.detail, "Missing detail in CompetitionStatus.type"
+    assert result.type.short_detail, "Missing short_detail in CompetitionStatus.type"

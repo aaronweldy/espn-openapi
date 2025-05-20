@@ -189,7 +189,7 @@
             "additionalProperties": false,
             "properties": {
                 "athletes": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
             "required": [
@@ -197,7 +197,7 @@
             ],
             "title": "PurpleMobile"
         },
-        "SelfClass": {
+        "SportscenterClass": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -212,7 +212,7 @@
             "required": [
                 "href"
             ],
-            "title": "SelfClass"
+            "title": "SportscenterClass"
         },
         "League": {
             "type": "object",
@@ -232,7 +232,6 @@
                 }
             },
             "required": [
-                "abbreviation",
                 "description",
                 "id",
                 "links"
@@ -261,12 +260,10 @@
             "additionalProperties": false,
             "properties": {
                 "leagues": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
-            "required": [
-                "leagues"
-            ],
+            "required": [],
             "title": "FluffyMobile"
         },
         "Team": {
@@ -312,7 +309,7 @@
             "additionalProperties": false,
             "properties": {
                 "teams": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
             "required": [
@@ -361,11 +358,13 @@
                 },
                 "credit": {
                     "type": "string"
+                },
+                "alt": {
+                    "type": "string"
                 }
             },
             "required": [
                 "name",
-                "type",
                 "url"
             ],
             "title": "Image"
@@ -375,22 +374,23 @@
             "additionalProperties": false,
             "properties": {
                 "web": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/Web"
                 },
                 "mobile": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
                 },
                 "api": {
                     "$ref": "#/definitions/API"
                 },
                 "app": {
                     "$ref": "#/definitions/App"
+                },
+                "sportscenter": {
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
             "required": [
                 "api",
-                "app",
-                "mobile",
                 "web"
             ],
             "title": "ArticleLinks"
@@ -400,7 +400,10 @@
             "additionalProperties": false,
             "properties": {
                 "self": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
+                },
+                "artwork": {
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
             "required": [
@@ -413,13 +416,37 @@
             "additionalProperties": false,
             "properties": {
                 "sportscenter": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/SportscenterClass"
                 }
             },
             "required": [
                 "sportscenter"
             ],
             "title": "App"
+        },
+        "Web": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "self": {
+                    "$ref": "#/definitions/SportscenterClass"
+                },
+                "seo": {
+                    "$ref": "#/definitions/SportscenterClass"
+                }
+            },
+            "required": [
+                "href"
+            ],
+            "title": "Web"
         },
         "Link": {
             "type": "object",
@@ -472,7 +499,8 @@
                 "team",
                 "guid",
                 "topic",
-                "athlete"
+                "athlete",
+                "editorialindicator"
             ],
             "title": "CategoryType"
         },
