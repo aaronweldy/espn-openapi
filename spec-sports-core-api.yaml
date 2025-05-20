@@ -1198,6 +1198,275 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds:
+    get:
+      summary: Get Competition Odds
+      description: Retrieve betting odds for a specific competition within an event for a given sport and league.
+      operationId: getCompetitionOdds
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OddsResponse'
+        '404':
+          description: Odds not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts:
+    get:
+      summary: Get Competition Broadcasts
+      description: Retrieve broadcast information for a specific competition within an event for a given sport and league.
+      operationId: getCompetitionBroadcasts
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionBroadcastsResponse'
+        '404':
+          description: Broadcasts not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/officials:
+    get:
+      summary: Get Competition Officials
+      description: Retrieve officials for a specific competition within an event for a given sport and league.
+      operationId: getCompetitionOfficials
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionOfficialsResponse'
+        '404':
+          description: Officials not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/leaders:
+    get:
+      summary: Get Competition Leaders
+      description: Retrieve statistical leaders for a specific competition within an event for a given sport and league.
+      operationId: getCompetitionLeaders
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionLeadersResponse'
+        '404':
+          description: Leaders not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page}:
+    get:
+      summary: Get Competition Athlete Statistics
+      description: Retrieve detailed statistics for a specific athlete in a competition (game) for a given sport and league.
+      operationId: getCompetitionAthleteStatistics
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+        - name: competitor_id
+          in: path
+          required: true
+          description: The competitor ID (team ID within the competition)
+          schema:
+            type: string
+        - name: athlete_id
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+        - name: page
+          in: path
+          required: true
+          description: The statistics page number (usually 0)
+          schema:
+            type: integer
+            example: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionAthleteStatisticsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -3338,3 +3607,536 @@ components:
         - period
         - type
       description: Competition status object (clock, period, state, etc) for a specific competition (game).
+
+    OddsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OddsItem'
+      required:
+        - count
+        - items
+        - pageCount
+        - pageIndex
+        - pageSize
+
+    OddsItem:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        provider:
+          $ref: '#/components/schemas/OddsProvider'
+        bettingOdds:
+          $ref: '#/components/schemas/BettingOdds'
+        moneylineWinner:
+          type: boolean
+        spreadWinner:
+          type: boolean
+        details:
+          type: string
+        overUnder:
+          type: number
+        spread:
+          type: number
+        overOdds:
+          type: number
+        underOdds:
+          type: number
+        awayTeamOdds:
+          $ref: '#/components/schemas/TeamOdds'
+        homeTeamOdds:
+          $ref: '#/components/schemas/TeamOdds'
+        current:
+          $ref: '#/components/schemas/OddsItemCurrent'
+        headToHeads:
+          $ref: '#/components/schemas/HeadToHeads'
+        predictors:
+          $ref: '#/components/schemas/HeadToHeads'
+        moneyLineHistory:
+          $ref: '#/components/schemas/HeadToHeads'
+        spreadHistory:
+          $ref: '#/components/schemas/HeadToHeads'
+        totalHistory:
+          $ref: '#/components/schemas/HeadToHeads'
+      required:
+        - $ref
+        - moneylineWinner
+        - provider
+        - spreadWinner
+
+    OddsProvider:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        priority:
+          type: integer
+      required:
+        - $ref
+        - id
+        - name
+        - priority
+
+    BettingOdds:
+      type: object
+      properties:
+        homeTeam:
+          $ref: '#/components/schemas/Reference'
+        awayTeam:
+          $ref: '#/components/schemas/Reference'
+        teamOdds:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/OddsDetail'
+        preMatchMoneyLineAway:
+          $ref: '#/components/schemas/OddsDetail'
+        preMatchMoneyLineHome:
+          $ref: '#/components/schemas/OddsDetail'
+        preMatchSpreadHandicapAway:
+          $ref: '#/components/schemas/OddsDetail'
+        preMatchSpreadHome:
+          $ref: '#/components/schemas/OddsDetail'
+      required:
+        - homeTeam
+        - awayTeam
+        - teamOdds
+
+    OddsDetail:
+      type: object
+      properties:
+        oddId:
+          type: string
+        value:
+          type: string
+        betSlipUrl:
+          type: string
+      required:
+        - oddId
+        - value
+        - betSlipUrl
+
+    TeamOdds:
+      type: object
+      properties:
+        favorite:
+          type: boolean
+        underdog:
+          type: boolean
+        moneyLine:
+          type: integer
+        spreadOdds:
+          type: number
+        current:
+          $ref: '#/components/schemas/OddsTeamCurrent'
+        team:
+          $ref: '#/components/schemas/HeadToHeads'
+        winPercentage:
+          type: number
+        averageScore:
+          type: number
+        moneyLineOdds:
+          type: number
+        moneyLineReturn:
+          type: number
+        similarities:
+          $ref: '#/components/schemas/HeadToHeads'
+        spreadReturn:
+          type: number
+        spreadRecord:
+          $ref: '#/components/schemas/SpreadRecord'
+        pastPerformances:
+          $ref: '#/components/schemas/HeadToHeads'
+      required:
+        - current
+        - favorite
+        - team
+        - underdog
+
+    OddsTeamCurrent:
+      type: object
+      properties:
+        pointSpread:
+          $ref: '#/components/schemas/OddsValue'
+        spread:
+          $ref: '#/components/schemas/OddsValue'
+        moneyLine:
+          $ref: '#/components/schemas/OddsValue'
+
+    OddsValue:
+      type: object
+      properties:
+        alternateDisplayValue:
+          type: string
+        american:
+          type: string
+      required:
+        - alternateDisplayValue
+        - american
+
+    OddsItemCurrent:
+      type: object
+      properties:
+        over:
+          $ref: '#/components/schemas/OddsValue'
+        under:
+          $ref: '#/components/schemas/OddsValue'
+        total:
+          $ref: '#/components/schemas/OddsValue'
+
+    HeadToHeads:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+
+    SpreadRecord:
+      type: object
+      properties:
+        wins:
+          type: integer
+        losses:
+          type: integer
+        pushes:
+          type: integer
+        summary:
+          type: string
+      required:
+        - wins
+        - losses
+        - pushes
+        - summary
+
+    CompetitionBroadcastsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompetitionBroadcastItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    CompetitionBroadcastItem:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/BroadcastType'
+        channel:
+          type: integer
+        station:
+          type: string
+        slug:
+          type: string
+        priority:
+          type: integer
+        market:
+          $ref: '#/components/schemas/BroadcastMarket'
+        media:
+          $ref: '#/components/schemas/BroadcastMedia'
+        lang:
+          type: string
+        region:
+          type: string
+        competition:
+          $ref: '#/components/schemas/Reference'
+        partnered:
+          type: boolean
+      required:
+        - type
+        - channel
+        - station
+        - slug
+        - priority
+        - market
+        - media
+        - lang
+        - region
+        - competition
+        - partnered
+
+    BroadcastType:
+      type: object
+      properties:
+        id:
+          type: string
+        shortName:
+          type: string
+        longName:
+          type: string
+        slug:
+          type: string
+      required:
+        - id
+        - shortName
+        - longName
+        - slug
+
+    BroadcastMarket:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+      required:
+        - id
+        - type
+
+    BroadcastMedia:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        callLetters:
+          type: string
+        name:
+          type: string
+        shortName:
+          type: string
+        slug:
+          type: string
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/BroadcastLogo'
+      required:
+        - $ref
+        - id
+        - callLetters
+        - name
+        - shortName
+        - slug
+        - logos
+
+    BroadcastLogo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        width:
+          type: integer
+        height:
+          type: integer
+        alt:
+          type: string
+        rel:
+          type: array
+          items:
+            type: string
+        lastUpdated:
+          type: string
+      required:
+        - href
+        - width
+        - height
+        - alt
+        - rel
+        - lastUpdated
+
+    CompetitionOfficialsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompetitionOfficialItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    CompetitionOfficialItem:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        position:
+          $ref: '#/components/schemas/OfficialPosition'
+        order:
+          type: integer
+      required:
+        - $ref
+        - id
+        - firstName
+        - lastName
+        - fullName
+        - displayName
+        - position
+        - order
+
+    OfficialPosition:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        displayName:
+          type: string
+      required:
+        - id
+        - name
+        - displayName
+
+    CompetitionLeadersResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        name:
+          type: string
+        abbreviation:
+          type: string
+        type:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompetitionLeadersCategory'
+      required:
+        - $ref
+        - id
+        - name
+        - abbreviation
+        - type
+        - categories
+
+    CompetitionLeadersCategory:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        shortDisplayName:
+          type: string
+        abbreviation:
+          type: string
+        leaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompetitionLeader'
+      required:
+        - name
+        - displayName
+        - shortDisplayName
+        - abbreviation
+        - leaders
+
+    CompetitionLeader:
+      type: object
+      properties:
+        displayValue:
+          type: string
+        value:
+          type: number
+        rel:
+          type: array
+          items:
+            type: string
+        athlete:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        statistics:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - displayValue
+        - value
+        - rel
+        - athlete
+        - statistics
+        - team
+
+    CompetitionAthleteStatisticsResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        competition:
+          $ref: '#/components/schemas/Reference'
+        splits:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            abbreviation:
+              type: string
+            categories:
+              type: array
+              items:
+                $ref: '#/components/schemas/StatisticCategory'
+          required:
+            - id
+            - name
+            - abbreviation
+            - categories
+        athlete:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - $ref
+        - competition
+        - splits
+        - athlete
+      description: Statistics for a specific athlete in a competition (game).

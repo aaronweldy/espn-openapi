@@ -10,8 +10,18 @@ from .athlete_statistics_log_response import AthleteStatisticsLogResponse
 from .athlete_statistics_response import AthleteStatisticsResponse
 from .athlete_statistics_response_splits import AthleteStatisticsResponseSplits
 from .athlete_status import AthleteStatus
+from .betting_odds import BettingOdds
+from .betting_odds_team_odds import BettingOddsTeamOdds
+from .broadcast_logo import BroadcastLogo
+from .broadcast_market import BroadcastMarket
+from .broadcast_media import BroadcastMedia
+from .broadcast_type import BroadcastType
 from .calendar_list_response import CalendarListResponse
+from .competition_athlete_statistics_response import CompetitionAthleteStatisticsResponse
+from .competition_athlete_statistics_response_splits import CompetitionAthleteStatisticsResponseSplits
 from .competition_broadcast import CompetitionBroadcast
+from .competition_broadcast_item import CompetitionBroadcastItem
+from .competition_broadcasts_response import CompetitionBroadcastsResponse
 from .competition_competitor import CompetitionCompetitor
 from .competition_competitor_leaders_type_1 import CompetitionCompetitorLeadersType1
 from .competition_competitor_linescores_type_1 import CompetitionCompetitorLinescoresType1
@@ -23,6 +33,11 @@ from .competition_competitor_team_type_1 import CompetitionCompetitorTeamType1
 from .competition_detail import CompetitionDetail
 from .competition_detail_notes_item import CompetitionDetailNotesItem
 from .competition_format import CompetitionFormat
+from .competition_leader import CompetitionLeader
+from .competition_leaders_category import CompetitionLeadersCategory
+from .competition_leaders_response import CompetitionLeadersResponse
+from .competition_official_item import CompetitionOfficialItem
+from .competition_officials_response import CompetitionOfficialsResponse
 from .competition_overtime import CompetitionOvertime
 from .competition_situation_response import CompetitionSituationResponse
 from .competition_source import CompetitionSource
@@ -49,6 +64,7 @@ from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
+from .head_to_heads import HeadToHeads
 from .last_play_reference import LastPlayReference
 from .league_enum import LeagueEnum
 from .link import Link
@@ -86,6 +102,14 @@ from .nfl_team_depthchart_group import NflTeamDepthchartGroup
 from .nfl_team_depthchart_group_positions import NflTeamDepthchartGroupPositions
 from .nfl_team_depthchart_position import NflTeamDepthchartPosition
 from .nfl_team_depthchart_response import NflTeamDepthchartResponse
+from .odds_detail import OddsDetail
+from .odds_item import OddsItem
+from .odds_item_current import OddsItemCurrent
+from .odds_provider import OddsProvider
+from .odds_response import OddsResponse
+from .odds_team_current import OddsTeamCurrent
+from .odds_value import OddsValue
+from .official_position import OfficialPosition
 from .paginated_reference_list_response import PaginatedReferenceListResponse
 from .play import Play
 from .play_clock import PlayClock
@@ -103,12 +127,14 @@ from .position import Position
 from .reference import Reference
 from .season import Season
 from .sport_enum import SportEnum
+from .spread_record import SpreadRecord
 from .statistic import Statistic
 from .statistic_category import StatisticCategory
 from .statistics_log_entry import StatisticsLogEntry
 from .statistics_reference import StatisticsReference
 from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
+from .team_odds import TeamOdds
 from .team_reference import TeamReference
 from .venue import Venue
 
@@ -123,8 +149,18 @@ __all__ = (
     "AthleteStatisticsResponse",
     "AthleteStatisticsResponseSplits",
     "AthleteStatus",
+    "BettingOdds",
+    "BettingOddsTeamOdds",
+    "BroadcastLogo",
+    "BroadcastMarket",
+    "BroadcastMedia",
+    "BroadcastType",
     "CalendarListResponse",
+    "CompetitionAthleteStatisticsResponse",
+    "CompetitionAthleteStatisticsResponseSplits",
     "CompetitionBroadcast",
+    "CompetitionBroadcastItem",
+    "CompetitionBroadcastsResponse",
     "CompetitionCompetitor",
     "CompetitionCompetitorLeadersType1",
     "CompetitionCompetitorLinescoresType1",
@@ -136,6 +172,11 @@ __all__ = (
     "CompetitionDetail",
     "CompetitionDetailNotesItem",
     "CompetitionFormat",
+    "CompetitionLeader",
+    "CompetitionLeadersCategory",
+    "CompetitionLeadersResponse",
+    "CompetitionOfficialItem",
+    "CompetitionOfficialsResponse",
     "CompetitionOvertime",
     "CompetitionSituationResponse",
     "CompetitionSource",
@@ -162,6 +203,7 @@ __all__ = (
     "EventReference",
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLConferenceStandingsSeasontype",
+    "HeadToHeads",
     "LastPlayReference",
     "LeagueEnum",
     "Link",
@@ -199,6 +241,14 @@ __all__ = (
     "NflTeamDepthchartGroupPositions",
     "NflTeamDepthchartPosition",
     "NflTeamDepthchartResponse",
+    "OddsDetail",
+    "OddsItem",
+    "OddsItemCurrent",
+    "OddsProvider",
+    "OddsResponse",
+    "OddsTeamCurrent",
+    "OddsValue",
+    "OfficialPosition",
     "PaginatedReferenceListResponse",
     "Play",
     "PlayClock",
@@ -216,12 +266,14 @@ __all__ = (
     "Reference",
     "Season",
     "SportEnum",
+    "SpreadRecord",
     "Statistic",
     "StatisticCategory",
     "StatisticsLogEntry",
     "StatisticsReference",
     "StatisticsTypeEntry",
     "Team",
+    "TeamOdds",
     "TeamReference",
     "Venue",
 )

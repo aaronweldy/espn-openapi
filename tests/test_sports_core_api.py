@@ -114,6 +114,36 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_competit
 from models.sports_core_api.espn_sports_core_api_client.models.competition_status import (
     CompetitionStatus,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_odds import (
+    sync as get_competition_odds,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.odds_response import (
+    OddsResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_broadcasts import (
+    sync as get_competition_broadcasts,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_broadcasts_response import (
+    CompetitionBroadcastsResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_officials import (
+    sync as get_competition_officials,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_officials_response import (
+    CompetitionOfficialsResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_leaders import (
+    sync as get_competition_leaders,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_leaders_response import (
+    CompetitionLeadersResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_athlete_statistics import (
+    sync as get_competition_athlete_statistics,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_athlete_statistics_response import (
+    CompetitionAthleteStatisticsResponse,
+)
 
 
 # Example athlete ID for testing
@@ -863,3 +893,129 @@ def test_competition_status(sports_core_api_client):
     assert result.type.description, "Missing description in CompetitionStatus.type"
     assert result.type.detail, "Missing detail in CompetitionStatus.type"
     assert result.type.short_detail, "Missing short_detail in CompetitionStatus.type"
+
+
+@pytest.mark.api
+def test_competition_odds(sports_core_api_client):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401220181"
+    competition_id = "401220181"
+    response = get_competition_odds(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert response is not None, "No response returned from get_competition_odds"
+    assert isinstance(response, OddsResponse), (
+        f"Response should be OddsResponse, got {type(response)}"
+    )
+    assert response.items, "OddsResponse.items should not be empty"
+
+
+@pytest.mark.api
+def test_competition_broadcasts(sports_core_api_client, ensure_json_output_dir):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401547417"
+    competition_id = "401547417"
+    response = get_competition_broadcasts(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(response, CompetitionBroadcastsResponse), (
+        f"Expected CompetitionBroadcastsResponse, got {type(response)}"
+    )
+    assert response.items, "BroadcastsResponse.items should not be empty"
+    # Save the response for inspection
+    with open(f"json_output/competition_{competition_id}_broadcasts.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_competition_officials(sports_core_api_client, ensure_json_output_dir):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/officials endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401547417"
+    competition_id = "401547417"
+    response = get_competition_officials(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(response, CompetitionOfficialsResponse), (
+        f"Expected CompetitionOfficialsResponse, got {type(response)}"
+    )
+    assert response.items, "OfficialsResponse.items should not be empty"
+    # Save the response for inspection
+    with open(f"json_output/competition_{competition_id}_officials.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_competition_leaders(sports_core_api_client, ensure_json_output_dir):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/leaders endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401547417"
+    competition_id = "401547417"
+    response = get_competition_leaders(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(response, CompetitionLeadersResponse), (
+        f"Expected CompetitionLeadersResponse, got {type(response)}"
+    )
+    assert response.categories, "LeadersResponse.categories should not be empty"
+    # Save the response for inspection
+    with open(f"json_output/competition_{competition_id}_leaders.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_competition_athlete_statistics(sports_core_api_client, ensure_json_output_dir):
+    """Test the /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page} endpoint."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401547417"
+    competition_id = "401547417"
+    competitor_id = "1"
+    athlete_id = "4426502"
+    page = 0
+
+    response = get_competition_athlete_statistics(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        competitor_id=competitor_id,
+        athlete_id=athlete_id,
+        page=page,
+        client=sports_core_api_client,
+    )
+
+    assert isinstance(response, CompetitionAthleteStatisticsResponse), (
+        f"Expected CompetitionAthleteStatisticsResponse, got {type(response)}"
+    )
+    assert response.splits, "Response should contain splits"
+    assert response.splits.categories, "Splits should contain categories"
+
+    # Save the response for inspection
+    with open(
+        f"json_output/competition_{competition_id}_athlete_{athlete_id}_statistics_{page}.json",
+        "w",
+    ) as f:
+        json.dump(response.to_dict(), f, indent=2)
