@@ -1052,6 +1052,102 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}:
+    get:
+      summary: Get Competition Detail
+      description: Retrieve detailed information for a specific competition within an event for a given sport and league.
+      operationId: getCompetitionDetail
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionDetail'
+        '404':
+          description: Competition not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/situation:
+    get:
+      summary: Get Competition Situation
+      description: Retrieve the current situation (down, distance, yard line, timeouts, etc) for a specific competition (game).
+      operationId: getCompetitionSituation
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: '401220403'
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+            example: '401220403'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitionSituationResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -1593,6 +1689,10 @@ components:
         - id
         - date
         - competitions
+        - venue
+        - type
+        - status
+        - links
 
     DrivesListResponse:
       type: object
@@ -2789,3 +2889,357 @@ components:
         - ucl
         - europa-league
         - other 
+
+    CompetitionDetail:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        guid:
+          type: string
+        uid:
+          type: string
+        date:
+          type: string
+        attendance:
+          type: integer
+        type:
+          $ref: '#/components/schemas/CompetitionType'
+        timeValid:
+          type: boolean
+        dateValid:
+          type: boolean
+        neutralSite:
+          type: boolean
+        divisionCompetition:
+          type: boolean
+        conferenceCompetition:
+          type: boolean
+        previewAvailable:
+          type: boolean
+        recapAvailable:
+          type: boolean
+        boxscoreAvailable:
+          type: boolean
+        lineupAvailable:
+          type: boolean
+        gamecastAvailable:
+          type: boolean
+        playByPlayAvailable:
+          type: boolean
+        conversationAvailable:
+          type: boolean
+        commentaryAvailable:
+          type: boolean
+        pickcenterAvailable:
+          type: boolean
+        summaryAvailable:
+          type: boolean
+        liveAvailable:
+          type: boolean
+        ticketsAvailable:
+          type: boolean
+        shotChartAvailable:
+          type: boolean
+        timeoutsAvailable:
+          type: boolean
+        possessionArrowAvailable:
+          type: boolean
+        onWatchESPN:
+          type: boolean
+        recent:
+          type: boolean
+        bracketAvailable:
+          type: boolean
+        wallclockAvailable:
+          type: boolean
+        highlightsAvailable:
+          type: boolean
+        gameSource:
+          $ref: '#/components/schemas/CompetitionSource'
+        boxscoreSource:
+          $ref: '#/components/schemas/CompetitionSource'
+        playByPlaySource:
+          $ref: '#/components/schemas/CompetitionSource'
+        linescoreSource:
+          $ref: '#/components/schemas/CompetitionSource'
+        statsSource:
+          $ref: '#/components/schemas/CompetitionSource'
+        venue:
+          oneOf:
+            - $ref: '#/components/schemas/Venue'
+            - $ref: '#/components/schemas/Reference'
+        competitors:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/CompetitionCompetitor'
+              - $ref: '#/components/schemas/Reference'
+        notes:
+          type: array
+          items:
+            type: object
+        situation:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        status:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        odds:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        broadcasts:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        officials:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        details:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        leaders:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        predictor:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        probabilities:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        powerIndexes:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        format:
+          $ref: '#/components/schemas/CompetitionFormat'
+        drives:
+          oneOf:
+            - $ref: '#/components/schemas/CompetitionBroadcast'
+            - $ref: '#/components/schemas/Reference'
+        hasDefensiveStats:
+          type: boolean
+      required:
+        - $ref
+        - id
+        - date
+        - competitors
+        - venue
+        - type
+        - status
+        - links
+
+    CompetitionType:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        abbreviation:
+          type: string
+        slug:
+          type: string
+        type:
+          type: string
+      required:
+        - id
+        - text
+        - abbreviation
+        - slug
+        - type
+
+    CompetitionSource:
+      type: object
+      properties:
+        id:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+      required:
+        - id
+        - description
+        - state
+
+    CompetitionFormat:
+      type: object
+      properties:
+        regulation:
+          $ref: '#/components/schemas/CompetitionOvertime'
+        overtime:
+          $ref: '#/components/schemas/CompetitionOvertime'
+      required:
+        - regulation
+        - overtime
+
+    CompetitionOvertime:
+      type: object
+      properties:
+        periods:
+          type: integer
+        displayName:
+          type: string
+        slug:
+          type: string
+        clock:
+          type: integer
+      required:
+        - periods
+        - displayName
+        - slug
+        - clock
+
+    CompetitionBroadcast:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref
+
+    CompetitionCompetitor:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        uid:
+          type: string
+        type:
+          type: string
+        order:
+          type: integer
+        homeAway:
+          type: string
+        winner:
+          type: boolean
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        score:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        linescores:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        roster:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        statistics:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        leaders:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+        record:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+            - type: object
+              properties:
+                $ref:
+                  type: string
+                  format: uri
+      required:
+        - $ref
+        - id
+        - uid
+        - type
+        - order
+        - homeAway
+        - winner
+        - team
+        - score
+        - linescores
+        - roster
+        - statistics
+        - leaders
+        - record
+
+    CompetitionSituationResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        lastPlay:
+          $ref: '#/components/schemas/LastPlayReference'
+        down:
+          type: integer
+        yardLine:
+          type: integer
+        distance:
+          type: integer
+        isRedZone:
+          type: boolean
+        homeTimeouts:
+          type: integer
+        awayTimeouts:
+          type: integer
+      required:
+        - $ref
+        - lastPlay
+        - down
+        - yardLine
+        - distance
+        - isRedZone
+        - homeTimeouts
+        - awayTimeouts
+
+    LastPlayReference:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+      required:
+        - $ref

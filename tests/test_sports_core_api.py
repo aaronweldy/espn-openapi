@@ -93,6 +93,21 @@ from models.sports_core_api.espn_sports_core_api_client.models.nfl_draft_respons
 from models.sports_core_api.espn_sports_core_api_client.models.get_league_season_weeks_season_type import (
     GetLeagueSeasonWeeksSeasonType,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_detail import (
+    sync as get_competition_detail,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_detail import (
+    CompetitionDetail,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.error_response import (
+    ErrorResponse,
+)
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_situation import (
+    sync as get_competition_situation,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.competition_situation_response import (
+    CompetitionSituationResponse,
+)
 
 
 # Example athlete ID for testing
@@ -753,3 +768,62 @@ def test_nfl_draft(sports_core_api_client, ensure_json_output_dir, year: int = 2
     # Save the processed response
     with open(f"{ensure_json_output_dir}/nfl_draft_{year}_processed.json", "w") as f:
         json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_competition_detail(sports_core_api_client, ensure_json_output_dir):
+    """Test the competition detail endpoint for a known NFL event/competition."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401547417"
+    competition_id = "401547417"
+
+    result = get_competition_detail(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+
+    assert isinstance(result, CompetitionDetail), (
+        f"Expected CompetitionDetail, got {type(result)}"
+    )
+    assert result.id == competition_id, (
+        f"Competition ID mismatch: {result.id} != {competition_id}"
+    )
+    assert result.venue, "Venue should be present"
+    assert result.competitors, "Competitors should be present"
+    assert result.status, "Status should be present"
+    assert result.links, "Links should be present"
+
+    # Save the response for inspection
+    with open(f"json_output/competition_{competition_id}.json", "w") as f:
+        json.dump(result.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_competition_situation(sports_core_api_client):
+    """Test the competition situation endpoint with a valid NFL event/competition."""
+    sport = SportEnum.FOOTBALL
+    league = LeagueEnum.NFL
+    event_id = "401220403"
+    competition_id = "401220403"
+    result = get_competition_situation(
+        sport=sport,
+        league=league,
+        event_id=event_id,
+        competition_id=competition_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(result, CompetitionSituationResponse), (
+        f"Expected CompetitionSituationResponse, got {type(result)}"
+    )
+    assert result.ref, "Missing $ref in response"
+    assert result.last_play, "Missing last_play in response"
+    assert isinstance(result.down, int), "down should be int"
+    assert isinstance(result.yard_line, int), "yard_line should be int"
+    assert isinstance(result.distance, int), "distance should be int"
+    assert isinstance(result.is_red_zone, bool), "is_red_zone should be bool"
+    assert isinstance(result.home_timeouts, int), "home_timeouts should be int"
+    assert isinstance(result.away_timeouts, int), "away_timeouts should be int"
