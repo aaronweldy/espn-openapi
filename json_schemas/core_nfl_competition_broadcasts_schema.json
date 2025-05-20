@@ -1,0 +1,240 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/CoreNflCompetitionBroadcastsSchema",
+    "definitions": {
+        "CoreNflCompetitionBroadcastsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "CoreNflCompetitionBroadcastsSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/Type"
+                },
+                "channel": {
+                    "type": "integer"
+                },
+                "station": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "priority": {
+                    "type": "integer"
+                },
+                "market": {
+                    "$ref": "#/definitions/Market"
+                },
+                "media": {
+                    "$ref": "#/definitions/Media"
+                },
+                "lang": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "competition": {
+                    "$ref": "#/definitions/Competition"
+                },
+                "partnered": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "channel",
+                "competition",
+                "lang",
+                "market",
+                "media",
+                "partnered",
+                "priority",
+                "region",
+                "slug",
+                "station",
+                "type"
+            ],
+            "title": "Item"
+        },
+        "Competition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Competition"
+        },
+        "Market": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Market"
+        },
+        "Media": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "callLetters": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                }
+            },
+            "required": [
+                "$ref",
+                "callLetters",
+                "id",
+                "logos",
+                "name",
+                "shortName",
+                "slug"
+            ],
+            "title": "Media"
+        },
+        "Logo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "lastUpdated": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "lastUpdated",
+                "rel",
+                "width"
+            ],
+            "title": "Logo"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "longName": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "longName",
+                "shortName",
+                "slug"
+            ],
+            "title": "Type"
+        }
+    }
+}

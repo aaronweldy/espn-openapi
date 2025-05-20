@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/MlbStatisticsPlayersSchema",
+    "definitions": {
+        "MlbStatisticsPlayersSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/Error"
+                }
+            },
+            "required": [
+                "error"
+            ],
+            "title": "MlbStatisticsPlayersSchema"
+        },
+        "Error": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "code",
+                "message"
+            ],
+            "title": "Error"
+        }
+    }
+}

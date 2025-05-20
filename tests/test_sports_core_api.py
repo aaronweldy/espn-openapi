@@ -6,6 +6,7 @@ Requires Python 3.10+
 
 import json
 import pytest
+import logging
 
 from models.sports_core_api.espn_sports_core_api_client.models.sport_enum import (
     SportEnum,
@@ -144,10 +145,17 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_competit
 from models.sports_core_api.espn_sports_core_api_client.models.competition_athlete_statistics_response import (
     CompetitionAthleteStatisticsResponse,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_mlb_athlete_details import (
+    sync as get_mlb_athlete_details,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.mlb_athlete_details_response import (
+    MlbAthleteDetailsResponse,
+)
 
 
 # Example athlete ID for testing
 EXAMPLE_ATHLETE_ID = "3139477"  # Patrick Mahomes
+EXAMPLE_MLB_ATHLETE_ID = "33192"  # Shohei Ohtani
 
 
 def validate_athlete_details_response(data: AthleteDetailsResponse) -> bool:
@@ -384,25 +392,18 @@ def format_athlete_statistics_log(data: AthleteStatisticsLogResponse) -> str:
 def test_athlete_details(
     sports_core_api_client, ensure_json_output_dir, athlete_id: str = EXAMPLE_ATHLETE_ID
 ):
-    """Tests fetching and parsing the athlete details."""
+    """Test fetching and parsing NFL athlete details."""
     response = get_athlete_details(
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
-
     assert isinstance(response, AthleteDetailsResponse), (
         "Response should parse to AthleteDetailsResponse"
     )
-
-    # Validate the response structure
     assert validate_athlete_details_response(response), (
         "Response does not match expected schema structure"
     )
-
-    # Display formatted results
-    print("\n" + format_athlete_details(response))
-
-    # Save the processed response
+    logging.info(f"NFL Athlete: {response.full_name} ({response.id})")
     with open(
         f"{ensure_json_output_dir}/athlete_{athlete_id}_details_processed.json", "w"
     ) as f:
@@ -413,25 +414,18 @@ def test_athlete_details(
 def test_athlete_statistics(
     sports_core_api_client, ensure_json_output_dir, athlete_id: str = EXAMPLE_ATHLETE_ID
 ):
-    """Tests fetching and parsing the athlete statistics."""
+    """Test fetching and parsing NFL athlete statistics."""
     response = get_athlete_statistics(
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
-
     assert isinstance(response, AthleteStatisticsResponse), (
         "Response should parse to AthleteStatisticsResponse"
     )
-
-    # Validate the response structure
     assert validate_athlete_statistics_response(response), (
         "Response does not match expected schema structure"
     )
-
-    # Display formatted results
-    print("\n" + format_athlete_statistics(response))
-
-    # Save the processed response
+    logging.info(f"NFL Athlete Statistics for {athlete_id} fetched.")
     with open(
         f"{ensure_json_output_dir}/athlete_{athlete_id}_statistics_processed.json", "w"
     ) as f:
@@ -442,25 +436,18 @@ def test_athlete_statistics(
 def test_athlete_statistics_log(
     sports_core_api_client, ensure_json_output_dir, athlete_id: str = EXAMPLE_ATHLETE_ID
 ):
-    """Tests fetching and parsing the athlete statistics log."""
+    """Test fetching and parsing NFL athlete statistics log."""
     response = get_athlete_statistics_log(
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
-
     assert isinstance(response, AthleteStatisticsLogResponse), (
         "Response should parse to AthleteStatisticsLogResponse"
     )
-
-    # Validate the response structure
     assert validate_athlete_statistics_log_response(response), (
         "Response does not match expected schema structure"
     )
-
-    # Display formatted results
-    print("\n" + format_athlete_statistics_log(response))
-
-    # Save the processed response
+    logging.info(f"NFL Athlete Statistics Log for {athlete_id} fetched.")
     with open(
         f"{ensure_json_output_dir}/athlete_{athlete_id}_statistics_log_processed.json",
         "w",
@@ -1017,5 +1004,23 @@ def test_competition_athlete_statistics(sports_core_api_client, ensure_json_outp
     with open(
         f"json_output/competition_{competition_id}_athlete_{athlete_id}_statistics_{page}.json",
         "w",
+    ) as f:
+        json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+def test_mlb_athlete_details(sports_core_api_client, ensure_json_output_dir):
+    """Test fetching and parsing MLB athlete details (Shohei Ohtani)."""
+    athlete_id = EXAMPLE_MLB_ATHLETE_ID
+    response = get_mlb_athlete_details(
+        athlete_id=athlete_id,
+        client=sports_core_api_client,
+    )
+    assert isinstance(response, MlbAthleteDetailsResponse), (
+        "Response should parse to MlbAthleteDetailsResponse"
+    )
+    logging.info(f"MLB Athlete: {response.full_name} ({response.id})")
+    with open(
+        f"{ensure_json_output_dir}/mlb_athlete_{athlete_id}_details_processed.json", "w"
     ) as f:
         json.dump(response.to_dict(), f, indent=2)

@@ -1,0 +1,62 @@
+{
+  "count": 1,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 1,
+  "items": [
+    {
+      "type": {
+        "id": "1",
+        "shortName": "TV",
+        "longName": "Television",
+        "slug": "tv"
+      },
+      "channel": 148,
+      "station": "FOX",
+      "slug": "fox",
+      "priority": 1,
+      "market": {
+        "id": "1",
+        "type": "National"
+      },
+      "media": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/media/148?lang=en&region=us",
+        "id": "148",
+        "callLetters": "FOX",
+        "name": "FOX",
+        "shortName": "FOX",
+        "slug": "fox",
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/guid/1567408b-ad27-3efd-94cb-b42a34de57e6/logos/default.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2025-03-05T17:28Z"
+          },
+          {
+            "href": "https://a.espncdn.com/guid/1567408b-ad27-3efd-94cb-b42a34de57e6/logos/default-dark.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2025-03-05T17:28Z"
+          }
+        ]
+      },
+      "lang": "en",
+      "region": "us",
+      "competition": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417?lang=en&region=us"
+      },
+      "partnered": false
+    }
+  ]
+}

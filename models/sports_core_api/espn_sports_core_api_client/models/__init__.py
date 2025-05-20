@@ -69,6 +69,24 @@ from .last_play_reference import LastPlayReference
 from .league_enum import LeagueEnum
 from .link import Link
 from .logo import Logo
+from .mlb_athlete_details_response import MlbAthleteDetailsResponse
+from .mlb_athlete_details_response_alternate_ids import MlbAthleteDetailsResponseAlternateIds
+from .mlb_athlete_details_response_awards import MlbAthleteDetailsResponseAwards
+from .mlb_athlete_details_response_bats import MlbAthleteDetailsResponseBats
+from .mlb_athlete_details_response_birth_place import MlbAthleteDetailsResponseBirthPlace
+from .mlb_athlete_details_response_college import MlbAthleteDetailsResponseCollege
+from .mlb_athlete_details_response_contracts import MlbAthleteDetailsResponseContracts
+from .mlb_athlete_details_response_debut import MlbAthleteDetailsResponseDebut
+from .mlb_athlete_details_response_draft import MlbAthleteDetailsResponseDraft
+from .mlb_athlete_details_response_experience import MlbAthleteDetailsResponseExperience
+from .mlb_athlete_details_response_headshot import MlbAthleteDetailsResponseHeadshot
+from .mlb_athlete_details_response_links_item import MlbAthleteDetailsResponseLinksItem
+from .mlb_athlete_details_response_position import MlbAthleteDetailsResponsePosition
+from .mlb_athlete_details_response_statistics import MlbAthleteDetailsResponseStatistics
+from .mlb_athlete_details_response_statisticslog import MlbAthleteDetailsResponseStatisticslog
+from .mlb_athlete_details_response_status import MlbAthleteDetailsResponseStatus
+from .mlb_athlete_details_response_team import MlbAthleteDetailsResponseTeam
+from .mlb_athlete_details_response_throws import MlbAthleteDetailsResponseThrows
 from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
 from .nfl_athlete_eventlog_response_events import NflAthleteEventlogResponseEvents
 from .nfl_athlete_eventlog_response_events_items_item import NflAthleteEventlogResponseEventsItemsItem
@@ -208,6 +226,24 @@ __all__ = (
     "LeagueEnum",
     "Link",
     "Logo",
+    "MlbAthleteDetailsResponse",
+    "MlbAthleteDetailsResponseAlternateIds",
+    "MlbAthleteDetailsResponseAwards",
+    "MlbAthleteDetailsResponseBats",
+    "MlbAthleteDetailsResponseBirthPlace",
+    "MlbAthleteDetailsResponseCollege",
+    "MlbAthleteDetailsResponseContracts",
+    "MlbAthleteDetailsResponseDebut",
+    "MlbAthleteDetailsResponseDraft",
+    "MlbAthleteDetailsResponseExperience",
+    "MlbAthleteDetailsResponseHeadshot",
+    "MlbAthleteDetailsResponseLinksItem",
+    "MlbAthleteDetailsResponsePosition",
+    "MlbAthleteDetailsResponseStatistics",
+    "MlbAthleteDetailsResponseStatisticslog",
+    "MlbAthleteDetailsResponseStatus",
+    "MlbAthleteDetailsResponseTeam",
+    "MlbAthleteDetailsResponseThrows",
     "NflAthleteEventlogResponse",
     "NflAthleteEventlogResponseEvents",
     "NflAthleteEventlogResponseEventsItemsItem",

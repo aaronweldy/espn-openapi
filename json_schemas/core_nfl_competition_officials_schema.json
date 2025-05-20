@@ -1,0 +1,106 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/CoreNflCompetitionOfficialsSchema",
+    "definitions": {
+        "CoreNflCompetitionOfficialsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "CoreNflCompetitionOfficialsSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "position": {
+                    "$ref": "#/definitions/Position"
+                },
+                "order": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "$ref",
+                "displayName",
+                "firstName",
+                "fullName",
+                "id",
+                "lastName",
+                "order",
+                "position"
+            ],
+            "title": "Item"
+        },
+        "Position": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "displayName",
+                "id",
+                "name"
+            ],
+            "title": "Position"
+        }
+    }
+}

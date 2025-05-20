@@ -1,0 +1,453 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/MlbAthlete33192_Schema",
+    "definitions": {
+        "MlbAthlete33192_Schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "alternateIds": {
+                    "$ref": "#/definitions/AlternateIDS"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "number"
+                },
+                "displayWeight": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "number"
+                },
+                "displayHeight": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "dateOfBirth": {
+                    "type": "string"
+                },
+                "debutYear": {
+                    "type": "integer"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "birthPlace": {
+                    "$ref": "#/definitions/BirthPlace"
+                },
+                "college": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "position": {
+                    "$ref": "#/definitions/Position"
+                },
+                "linked": {
+                    "type": "boolean"
+                },
+                "team": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "contracts": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "experience": {
+                    "$ref": "#/definitions/Experience"
+                },
+                "debut": {
+                    "$ref": "#/definitions/Debut"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "draft": {
+                    "$ref": "#/definitions/Draft"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "statisticslog": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "awards": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "bats": {
+                    "$ref": "#/definitions/Bats"
+                },
+                "throws": {
+                    "$ref": "#/definitions/Bats"
+                }
+            },
+            "required": [
+                "$ref",
+                "active",
+                "age",
+                "alternateIds",
+                "awards",
+                "bats",
+                "birthPlace",
+                "college",
+                "contracts",
+                "dateOfBirth",
+                "debut",
+                "debutYear",
+                "displayHeight",
+                "displayName",
+                "displayWeight",
+                "draft",
+                "experience",
+                "firstName",
+                "fullName",
+                "guid",
+                "headshot",
+                "height",
+                "id",
+                "jersey",
+                "lastName",
+                "linked",
+                "links",
+                "nickname",
+                "position",
+                "shortName",
+                "slug",
+                "statistics",
+                "statisticslog",
+                "status",
+                "team",
+                "throws",
+                "type",
+                "uid",
+                "weight"
+            ],
+            "title": "MlbAthlete33192_Schema"
+        },
+        "AlternateIDS": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sdr": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "sdr"
+            ],
+            "title": "AlternateIDS"
+        },
+        "Awards": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Awards"
+        },
+        "Bats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayValue",
+                "type"
+            ],
+            "title": "Bats"
+        },
+        "BirthPlace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "country",
+                "state"
+            ],
+            "title": "BirthPlace"
+        },
+        "Debut": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "event": {
+                    "$ref": "#/definitions/Awards"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Awards"
+                }
+            },
+            "required": [
+                "event",
+                "statistics",
+                "year"
+            ],
+            "title": "Debut"
+        },
+        "Draft": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayText": {
+                    "type": "string"
+                },
+                "round": {
+                    "type": "integer"
+                },
+                "year": {
+                    "type": "integer"
+                },
+                "selection": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/Awards"
+                }
+            },
+            "required": [
+                "displayText",
+                "round",
+                "selection",
+                "team",
+                "year"
+            ],
+            "title": "Draft"
+        },
+        "Experience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "years": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "years"
+            ],
+            "title": "Experience"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "type": "string"
+                },
+                "shortText": {
+                    "type": "string"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Position": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/Awards"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name",
+                "parent"
+            ],
+            "title": "Position"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name",
+                "type"
+            ],
+            "title": "Status"
+        }
+    }
+}

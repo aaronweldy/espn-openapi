@@ -1,0 +1,139 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/CoreNflCompetitionLeadersSchema",
+    "definitions": {
+        "CoreNflCompetitionLeadersSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "categories",
+                "id",
+                "name",
+                "type"
+            ],
+            "title": "CoreNflCompetitionLeadersSchema"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Leader"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "leaders",
+                "name",
+                "shortDisplayName"
+            ],
+            "title": "Category"
+        },
+        "Leader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayValue": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Rel"
+                    }
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "team": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Athlete"
+                }
+            },
+            "required": [
+                "athlete",
+                "displayValue",
+                "rel",
+                "statistics",
+                "team",
+                "value"
+            ],
+            "title": "Leader"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "Rel": {
+            "type": "string",
+            "enum": [
+                "athlete"
+            ],
+            "title": "Rel"
+        }
+    }
+}

@@ -1467,6 +1467,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
+    get:
+      summary: Get MLB Athlete Details
+      description: Retrieve detailed information for a specific MLB athlete
+      operationId: getMLBAthleteDetails
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "33192"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MlbAthleteDetailsResponse'
+        '404':
+          description: Athlete not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -4140,3 +4173,209 @@ components:
         - splits
         - athlete
       description: Statistics for a specific athlete in a competition (game).
+
+    MlbAthleteDetailsResponse:
+      type: object
+      required:
+        - $ref
+        - active
+        - age
+        - alternateIds
+        - awards
+        - bats
+        - birthPlace
+        - college
+        - contracts
+        - dateOfBirth
+        - debut
+        - debutYear
+        - displayHeight
+        - displayName
+        - displayWeight
+        - draft
+        - experience
+        - firstName
+        - fullName
+        - guid
+        - headshot
+        - height
+        - id
+        - jersey
+        - lastName
+        - linked
+        - links
+        - nickname
+        - position
+        - shortName
+        - slug
+        - statistics
+        - statisticslog
+        - status
+        - team
+        - throws
+        - type
+        - uid
+        - weight
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        uid:
+          type: string
+        guid:
+          type: string
+          format: uuid
+        type:
+          type: string
+        alternateIds:
+          type: object
+          properties:
+            sdr:
+              type: string
+          required:
+            - sdr
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        nickname:
+          type: string
+        shortName:
+          type: string
+        weight:
+          type: number
+        displayWeight:
+          type: string
+        height:
+          type: number
+        displayHeight:
+          type: string
+        age:
+          type: integer
+        dateOfBirth:
+          type: string
+        debutYear:
+          type: integer
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              $ref:
+                type: string
+                format: uri
+        birthPlace:
+          type: object
+          properties:
+            city:
+              type: string
+            state:
+              type: string
+            country:
+              type: string
+        college:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        slug:
+          type: string
+        headshot:
+          type: object
+          properties:
+            href:
+              type: string
+              format: uri
+        jersey:
+          type: string
+        position:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        linked:
+          type: boolean
+        team:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        statistics:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        contracts:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        experience:
+          type: object
+          properties:
+            years:
+              type: integer
+            displayValue:
+              type: string
+        debut:
+          type: object
+          properties:
+            year:
+              type: integer
+            date:
+              type: string
+        active:
+          type: boolean
+        draft:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        status:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        statisticslog:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        awards:
+          type: object
+          properties:
+            $ref:
+              type: string
+              format: uri
+        bats:
+          type: object
+          properties:
+            code:
+              type: string
+            abbreviation:
+              type: string
+            displayValue:
+              type: string
+        throws:
+          type: object
+          properties:
+            code:
+              type: string
+            abbreviation:
+              type: string
+            displayValue:
+              type: string

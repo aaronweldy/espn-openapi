@@ -1,0 +1,341 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflOdds401220181_Schema",
+    "definitions": {
+        "NflOdds401220181_Schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "NflOdds401220181_Schema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "provider": {
+                    "$ref": "#/definitions/Provider"
+                },
+                "bettingOdds": {
+                    "$ref": "#/definitions/BettingOdds"
+                },
+                "moneylineWinner": {
+                    "type": "boolean"
+                },
+                "spreadWinner": {
+                    "type": "boolean"
+                },
+                "details": {
+                    "type": "string"
+                },
+                "overUnder": {
+                    "type": "number"
+                },
+                "spread": {
+                    "type": "number"
+                },
+                "overOdds": {
+                    "type": "number"
+                },
+                "underOdds": {
+                    "type": "number"
+                },
+                "awayTeamOdds": {
+                    "$ref": "#/definitions/TeamOdds"
+                },
+                "homeTeamOdds": {
+                    "$ref": "#/definitions/TeamOdds"
+                },
+                "current": {
+                    "$ref": "#/definitions/ItemCurrent"
+                },
+                "headToHeads": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "predictors": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "moneyLineHistory": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "spreadHistory": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "totalHistory": {
+                    "$ref": "#/definitions/HeadToHeads"
+                }
+            },
+            "required": [
+                "$ref",
+                "moneylineWinner",
+                "provider",
+                "spreadWinner"
+            ],
+            "title": "Item"
+        },
+        "TeamOdds": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "favorite": {
+                    "type": "boolean"
+                },
+                "underdog": {
+                    "type": "boolean"
+                },
+                "moneyLine": {
+                    "type": "integer"
+                },
+                "spreadOdds": {
+                    "type": "number"
+                },
+                "current": {
+                    "$ref": "#/definitions/AwayTeamOddsCurrent"
+                },
+                "team": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "winPercentage": {
+                    "type": "number"
+                },
+                "averageScore": {
+                    "type": "number"
+                },
+                "moneyLineOdds": {
+                    "type": "number"
+                },
+                "moneyLineReturn": {
+                    "type": "number"
+                },
+                "similarities": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "spreadReturn": {
+                    "type": "number"
+                },
+                "spreadRecord": {
+                    "$ref": "#/definitions/SpreadRecord"
+                },
+                "pastPerformances": {
+                    "$ref": "#/definitions/HeadToHeads"
+                }
+            },
+            "required": [
+                "current",
+                "favorite",
+                "team",
+                "underdog"
+            ],
+            "title": "TeamOdds"
+        },
+        "AwayTeamOddsCurrent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pointSpread": {
+                    "$ref": "#/definitions/Over"
+                },
+                "spread": {
+                    "$ref": "#/definitions/Over"
+                },
+                "moneyLine": {
+                    "$ref": "#/definitions/Over"
+                }
+            },
+            "required": [],
+            "title": "AwayTeamOddsCurrent"
+        },
+        "Over": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "alternateDisplayValue": {
+                    "type": "string"
+                },
+                "american": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alternateDisplayValue",
+                "american"
+            ],
+            "title": "Over"
+        },
+        "HeadToHeads": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "HeadToHeads"
+        },
+        "SpreadRecord": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "wins": {
+                    "type": "integer"
+                },
+                "losses": {
+                    "type": "integer"
+                },
+                "pushes": {
+                    "type": "integer"
+                },
+                "summary": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "losses",
+                "pushes",
+                "summary",
+                "wins"
+            ],
+            "title": "SpreadRecord"
+        },
+        "BettingOdds": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "homeTeam": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "awayTeam": {
+                    "$ref": "#/definitions/HeadToHeads"
+                },
+                "teamOdds": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/TeamOdd"
+                    }
+                }
+            },
+            "required": [
+                "awayTeam",
+                "homeTeam",
+                "teamOdds"
+            ],
+            "title": "BettingOdds"
+        },
+        "TeamOdd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "oddId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "value": {
+                    "type": "string"
+                },
+                "betSlipUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "betSlipUrl",
+                "oddId",
+                "value"
+            ],
+            "title": "TeamOdd"
+        },
+        "ItemCurrent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "over": {
+                    "$ref": "#/definitions/Over"
+                },
+                "under": {
+                    "$ref": "#/definitions/Over"
+                },
+                "total": {
+                    "$ref": "#/definitions/Over"
+                }
+            },
+            "required": [
+                "over",
+                "total",
+                "under"
+            ],
+            "title": "ItemCurrent"
+        },
+        "Provider": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "priority": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "$ref",
+                "id",
+                "name",
+                "priority"
+            ],
+            "title": "Provider"
+        }
+    }
+}

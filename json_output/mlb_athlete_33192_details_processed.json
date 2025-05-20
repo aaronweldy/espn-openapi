@@ -1,0 +1,208 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33192?lang=en&region=us",
+  "id": "33192",
+  "uid": "s:1~l:10~a:33192",
+  "guid": "e3e39e69-2861-f5b5-49be-b0880534c802",
+  "type": "baseball",
+  "alternateIds": {
+    "sdr": "3090568"
+  },
+  "firstName": "Aaron",
+  "lastName": "Judge",
+  "fullName": "Aaron Judge",
+  "displayName": "Aaron Judge",
+  "nickname": "",
+  "shortName": "A. Judge",
+  "weight": 282.0,
+  "displayWeight": "282 lbs",
+  "height": 79.0,
+  "displayHeight": "6' 7\"",
+  "age": 33,
+  "dateOfBirth": "1992-04-26T07:00Z",
+  "debutYear": 2016,
+  "links": [
+    {
+      "language": "en-US",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/_/id/33192",
+      "text": "Player Card",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/stats/_/id/33192/aaron-judge",
+      "text": "Stats",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/splits/_/id/33192/aaron-judge",
+      "text": "Splits",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/gamelog/_/id/33192/aaron-judge",
+      "text": "Game Log",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/news/_/id/33192/aaron-judge",
+      "text": "News",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/bio/_/id/33192/aaron-judge",
+      "text": "Bio",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/_/id/33192/aaron-judge",
+      "text": "Overview",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "batvspitch",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/mlb/player/batvspitch/_/id/33192/aaron-judge",
+      "text": "Bat vs Pitch",
+      "shortText": "Bat vs Pitch",
+      "isExternal": false,
+      "isPremium": false
+    }
+  ],
+  "birthPlace": {
+    "city": "Linden",
+    "state": "CA",
+    "country": "United States"
+  },
+  "college": {
+    "$ref": "http://sports.core.api.espn.com/v2/colleges/278?lang=en&region=us"
+  },
+  "slug": "aaron-judge",
+  "headshot": {
+    "alt": "Aaron Judge",
+    "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33192.png"
+  },
+  "jersey": "99",
+  "position": {
+    "id": "9",
+    "name": "Right Field",
+    "displayName": "Right Fielder",
+    "abbreviation": "RF",
+    "leaf": true,
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+    },
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us"
+  },
+  "linked": true,
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2025/teams/10?lang=en&region=us"
+  },
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33192/statistics?lang=en&region=us"
+  },
+  "contracts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33192/contracts?lang=en&region=us"
+  },
+  "experience": {
+    "years": 10
+  },
+  "debut": {
+    "event": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/360813110?lang=en&region=us"
+    },
+    "statistics": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/360813110/competitions/360813110/competitors/10/roster/33192/statistics/0?lang=en&region=us"
+    },
+    "year": 2016
+  },
+  "active": true,
+  "draft": {
+    "displayText": "Year: 2013 Round: 1 Pick: 32",
+    "round": 1,
+    "year": 2013,
+    "selection": 32,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2013/teams/10?lang=en&region=us"
+    }
+  },
+  "status": {
+    "id": "1",
+    "name": "Active",
+    "type": "active",
+    "abbreviation": "Active"
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33192/statisticslog?lang=en&region=us"
+  },
+  "awards": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33192/awards?lang=en&region=us"
+  },
+  "bats": {
+    "type": "RIGHT",
+    "abbreviation": "R",
+    "displayValue": "Right"
+  },
+  "throws": {
+    "type": "RIGHT",
+    "abbreviation": "R",
+    "displayValue": "Right"
+  }
+}
