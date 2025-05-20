@@ -2254,7 +2254,7 @@ components:
           type: string
           description: Type of category
           example: "topic"
-          enum: ["topic", "athlete", "team", "contributor", "league", "guid"]
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator"]
         guid:
           type: string
           format: uuid
@@ -2565,7 +2565,7 @@ components:
           type: string
           description: Type of category
           example: "topic"
-          enum: ["topic", "athlete", "team", "contributor", "league", "guid"]
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator"]
         guid:
           type: string
           format: uuid

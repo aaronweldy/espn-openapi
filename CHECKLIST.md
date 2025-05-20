@@ -22,7 +22,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id} - Get Specific Event. Path Params: {sport}, {league}, {event_id} - Derived from Implemented General Events
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/situation
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/status
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/status
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/officials
