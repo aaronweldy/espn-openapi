@@ -14,7 +14,7 @@ from models.sports_core_api.espn_sports_core_api_client.models.sport_enum import
 from models.sports_core_api.espn_sports_core_api_client.models.league_enum import (
     LeagueEnum,
 )
-from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_athlete_details import (
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_athlete_details import (
     sync as get_athlete_details,
 )
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_athlete_statistics import (
@@ -150,15 +150,6 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_mlb_athl
 )
 from models.sports_core_api.espn_sports_core_api_client.models.mlb_athlete_details_response import (
     MlbAthleteDetailsResponse,
-)
-from models.sports_core_api.espn_sports_core_api_client.api.default.get_weekly_talent_picks import (
-    sync as get_weekly_talent_picks,
-)
-from models.sports_core_api.espn_sports_core_api_client.models.get_weekly_talent_picks_seasontype import (
-    GetWeeklyTalentPicksSeasontype,
-)
-from models.sports_core_api.espn_sports_core_api_client.models.weekly_talent_picks_response import (
-    WeeklyTalentPicksResponse,
 )
 
 
@@ -398,11 +389,22 @@ def format_athlete_statistics_log(data: AthleteStatisticsLogResponse) -> str:
 
 
 @pytest.mark.api
+@pytest.mark.parametrize(
+    "sport,league,athlete_id",
+    [
+        (SportEnum.FOOTBALL, LeagueEnum.NFL, "14876"),  # Ryan Tannehill
+        (SportEnum.BASKETBALL, LeagueEnum.NBA, "4011"),  # Ricky Rubio
+        (SportEnum.BASEBALL, LeagueEnum.MLB, "6514"),  # Chris Young
+        (SportEnum.HOCKEY, LeagueEnum.NHL, "3024816"),  # Austin Czarnik
+    ],
+)
 def test_athlete_details(
-    sports_core_api_client, ensure_json_output_dir, athlete_id: str = EXAMPLE_ATHLETE_ID
+    sports_core_api_client, ensure_json_output_dir, sport, league, athlete_id
 ):
-    """Test fetching and parsing NFL athlete details."""
+    """Test fetching and parsing athlete details for multiple sports/leagues."""
     response = get_athlete_details(
+        sport=sport,
+        league=league,
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
@@ -412,9 +414,12 @@ def test_athlete_details(
     assert validate_athlete_details_response(response), (
         "Response does not match expected schema structure"
     )
-    logging.info(f"NFL Athlete: {response.full_name} ({response.id})")
+    logging.info(
+        f"Athlete: {response.full_name} ({response.id}) [{sport.value}/{league.value}]"
+    )
     with open(
-        f"{ensure_json_output_dir}/athlete_{athlete_id}_details_processed.json", "w"
+        f"{ensure_json_output_dir}/athlete_{sport.value}_{league.value}_{athlete_id}_details_processed.json",
+        "w",
     ) as f:
         json.dump(response.to_dict(), f, indent=2)
 
@@ -1083,25 +1088,3 @@ def test_positions_list(sports_core_api_client, ensure_json_output_dir, sport, l
 
         json.dump(result.to_dict(), f, indent=2)
     print(f"✓ Processed response saved to {out_path}")
-
-
-@pytest.mark.api
-def test_weekly_talent_picks(sports_core_api_client, ensure_json_output_dir):
-    """Test fetching weekly talent picks for NFL 2024 week 1."""
-    response = get_weekly_talent_picks(
-        sport=SportEnum.FOOTBALL,
-        league=LeagueEnum.NFL,
-        year=2024,
-        seasontype=GetWeeklyTalentPicksSeasontype.VALUE_2,  # Regular season
-        week=1,
-        client=sports_core_api_client,
-        limit=10,
-    )
-    assert isinstance(response, WeeklyTalentPicksResponse), (
-        "Response should parse to WeeklyTalentPicksResponse"
-    )
-    assert response.items, "Response should contain items field"
-    assert response.count > 0, "Talent picks count should be > 0"
-    # Save the processed response
-    with open(f"{ensure_json_output_dir}/talentpicks_nfl_2024_w1.json", "w") as f:
-        json.dump(response.to_dict(), f, indent=2)

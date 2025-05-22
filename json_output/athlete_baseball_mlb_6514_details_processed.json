@@ -1,0 +1,201 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/6514?lang=en&region=us",
+  "birthPlace": {
+    "city": "Houston",
+    "state": "TX",
+    "country": "United States"
+  },
+  "slug": "chris-young",
+  "headshot": {
+    "href": "https://a.espncdn.com/i/headshots/mlb/players/full/6514.png",
+    "alt": "Chris Young"
+  },
+  "linked": true,
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/6514/statistics?lang=en&region=us"
+  },
+  "contracts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/6514/contracts?lang=en&region=us"
+  },
+  "debut": {
+    "year": 2006,
+    "event": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/260818125?lang=en&region=us"
+    },
+    "statistics": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/260818125/competitions/260818125/competitors/29/roster/6514/statistics/0?lang=en&region=us"
+    }
+  },
+  "draft": {
+    "displayText": "Year: 2001 Round: 16 Pick: 493",
+    "round": 16,
+    "year": 2001,
+    "selection": 493,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2001/teams/4?lang=en&region=us"
+    }
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/6514/statisticslog?lang=en&region=us"
+  },
+  "bats": {
+    "type": "RIGHT",
+    "abbreviation": "R",
+    "displayValue": "Right"
+  },
+  "throws": {
+    "type": "RIGHT",
+    "abbreviation": "R",
+    "displayValue": "Right"
+  },
+  "id": "6514",
+  "uid": "s:1~l:10~a:6514",
+  "fullName": "Chris Young",
+  "guid": "00bfe8c0-8dfd-0da9-96fc-7ca494e2bf27",
+  "type": "baseball",
+  "alternateIds": {
+    "sdr": "2178574"
+  },
+  "firstName": "Chris",
+  "lastName": "Young",
+  "displayName": "Chris Young",
+  "shortName": "C. Young",
+  "weight": 200.0,
+  "displayWeight": "200 lbs",
+  "height": 74.0,
+  "displayHeight": "6' 2\"",
+  "age": 41,
+  "dateOfBirth": "1983-09-05T07:00:00+00:00",
+  "debutYear": 2006,
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/_/id/6514",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Player Card"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/stats/_/id/6514/chris-young",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Stats"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/splits/_/id/6514/chris-young",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Splits"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/gamelog/_/id/6514/chris-young",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Game Log"
+    },
+    {
+      "language": "en-US",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/news/_/id/6514/chris-young",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "text": "News"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/bio/_/id/6514/chris-young",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Bio"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/_/id/6514/chris-young",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Overview"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Bat vs Pitch",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/mlb/player/batvspitch/_/id/6514/chris-young",
+      "rel": [
+        "batvspitch",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Bat vs Pitch"
+    }
+  ],
+  "jersey": "24",
+  "position": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+    },
+    "id": "8",
+    "name": "Center Field",
+    "abbreviation": "CF",
+    "displayName": "Center Fielder",
+    "leaf": true
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2018/teams/3?lang=en&region=us"
+  },
+  "active": false,
+  "status": {
+    "id": "27",
+    "name": "Retired",
+    "type": "retired",
+    "abbreviation": "Retired"
+  },
+  "experience": {
+    "years": 13
+  }
+}

@@ -9,12 +9,24 @@ servers:
     description: ESPN Sports Core API Production Server
 
 paths:
-  /v2/sports/football/leagues/nfl/athletes/{athleteId}:
+  /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}:
     get:
-      summary: Get NFL Athlete Details
-      description: Retrieve detailed information for a specific NFL athlete
-      operationId: getNFLAthleteDetails
+      summary: Get Athlete Details
+      description: Retrieve detailed information for a specific athlete in any supported sport/league.
+      operationId: getAthleteDetails
       parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
         - name: athleteId
           in: path
           required: true
@@ -4105,7 +4117,6 @@ components:
         - height
         - alt
         - rel
-        - lastUpdated
 
     CompetitionOfficialsResponse:
       type: object

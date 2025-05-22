@@ -1,0 +1,269 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflWeek1_TalentpicksSchema",
+    "definitions": {
+        "NflWeek1_TalentpicksSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "NflWeek1_TalentpicksSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pick": {
+                    "$ref": "#/definitions/Pick"
+                },
+                "weekRecord": {
+                    "$ref": "#/definitions/WeekRecord"
+                }
+            },
+            "required": [
+                "pick",
+                "weekRecord"
+            ],
+            "title": "Item"
+        },
+        "Pick": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "person": {
+                    "$ref": "#/definitions/Person"
+                },
+                "competition": {
+                    "$ref": "#/definitions/Competition"
+                },
+                "competitor": {
+                    "$ref": "#/definitions/Competition"
+                },
+                "correct": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "competition",
+                "competitor",
+                "correct",
+                "person"
+            ],
+            "title": "Pick"
+        },
+        "Competition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Competition"
+        },
+        "Person": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "firstName": {
+                    "$ref": "#/definitions/FirstName"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/LastName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                }
+            },
+            "required": [
+                "displayName",
+                "firstName",
+                "headshot",
+                "id",
+                "lastName"
+            ],
+            "title": "Person"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "$ref": "#/definitions/DisplayName"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "WeekRecord": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayValue": {
+                    "$ref": "#/definitions/DisplayValue"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                },
+                "season": {
+                    "$ref": "#/definitions/Competition"
+                }
+            },
+            "required": [
+                "displayValue",
+                "season",
+                "stats"
+            ],
+            "title": "WeekRecord"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/Description"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/Abbreviation"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Abbreviation"
+                },
+                "type": {
+                    "$ref": "#/definitions/Name"
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "displayValue": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "type",
+                "value"
+            ],
+            "title": "Stat"
+        },
+        "DisplayName": {
+            "type": "string",
+            "enum": [
+                "Matt Bowen"
+            ],
+            "title": "DisplayName"
+        },
+        "FirstName": {
+            "type": "string",
+            "enum": [
+                "Matt"
+            ],
+            "title": "FirstName"
+        },
+        "LastName": {
+            "type": "string",
+            "enum": [
+                "Bowen"
+            ],
+            "title": "LastName"
+        },
+        "DisplayValue": {
+            "type": "string",
+            "enum": [
+                "15-1"
+            ],
+            "title": "DisplayValue"
+        },
+        "Abbreviation": {
+            "type": "string",
+            "enum": [
+                "W",
+                "L"
+            ],
+            "title": "Abbreviation"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "Wins",
+                "Losses"
+            ],
+            "title": "Description"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "win",
+                "loss"
+            ],
+            "title": "Name"
+        }
+    }
+}
