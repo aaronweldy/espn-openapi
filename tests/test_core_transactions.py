@@ -30,3 +30,11 @@ def test_get_league_transactions_nfl(sports_core_api_client):
     )
     assert result.count >= 0
     assert isinstance(result.items, list)
+    if not result.items:
+        print("No transactions returned for this league/sport.")
+    else:
+        print(f"Number of transactions returned: {len(result.items)}")
+        first = result.items[0]
+        print(f"Keys in first transaction: {list(first.additional_keys)}")
+        for i, item in enumerate(result.items[:3]):
+            print(f"Transaction {i + 1}: {item.to_dict()}")

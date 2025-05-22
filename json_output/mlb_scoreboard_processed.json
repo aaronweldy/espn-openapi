@@ -21585,10 +21585,10 @@
     },
     {
       "weather": {
-        "displayValue": "35",
+        "displayValue": "38",
         "temperature": 69,
         "highTemperature": 69,
-        "conditionId": "Partly cloudy",
+        "conditionId": "Mostly cloudy",
         "link": {
           "language": "en-US",
           "rel": [
@@ -21608,84 +21608,113 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016956461503010001",
+              "id": "4016956461699990058",
               "type": {
-                "id": "1",
-                "text": "Start Batter/Pitcher",
-                "alternativeText": "Now at bat",
-                "type": "start-batterpitcher"
+                "id": "58",
+                "text": "End Inning",
+                "type": "end-inning"
               },
-              "text": "Joe Ross pitches to Tyler Freeman",
+              "text": "Middle of the 9th inning",
               "scoreValue": 0,
               "team": {
-                "id": "27"
+                "id": "22"
               },
-              "atBatId": "4016956461503",
-              "summaryType": "A",
-              "athletesInvolved": []
+              "atBatId": "4016956461603"
             },
             "balls": 0,
             "strikes": 0,
-            "outs": 1,
-            "onFirst": true,
-            "pitcher": {
-              "playerId": 32684,
-              "period": 8,
-              "athlete": {
-                "id": "32684",
-                "fullName": "Joe Ross",
-                "displayName": "Joe Ross",
-                "shortName": "J. Ross",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/32684"
+            "outs": 0,
+            "dueUp": [
+              {
+                "playerId": 36497,
+                "period": 9,
+                "athlete": {
+                  "id": "36497",
+                  "fullName": "Nick Martini",
+                  "displayName": "Nick Martini",
+                  "shortName": "N. Martini",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/36497"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/36497.png",
+                  "jersey": "35",
+                  "position": "RF",
+                  "team": {
+                    "id": "27"
                   }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32684.png",
-                "jersey": "41",
-                "position": "RP",
-                "team": {
-                  "id": "22"
-                }
+                },
+                "batOrder": 8,
+                "summary": "1-3, HR, RBI, R"
               },
-              "summary": "1.1 IP, 0 ER, 2 H, 2 K, 0 BB"
-            },
-            "batter": {
-              "playerId": 40958,
-              "period": 8,
-              "athlete": {
-                "id": "40958",
-                "fullName": "Tyler Freeman",
-                "displayName": "Tyler Freeman",
-                "shortName": "T. Freeman",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/40958"
+              {
+                "playerId": 4917787,
+                "period": 9,
+                "athlete": {
+                  "id": "4917787",
+                  "fullName": "Adael Amador",
+                  "displayName": "Adael Amador",
+                  "shortName": "A. Amador",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/4917787"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4917787.png",
+                  "jersey": "1",
+                  "position": "2B",
+                  "team": {
+                    "id": "27"
                   }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40958.png",
-                "jersey": "2",
-                "position": "2B",
-                "team": {
-                  "id": "27"
-                }
+                },
+                "batOrder": 9,
+                "summary": "1-3, RBI"
               },
-              "summary": "0-1, K"
-            },
+              {
+                "playerId": 4619460,
+                "period": 9,
+                "athlete": {
+                  "id": "4619460",
+                  "fullName": "Jordan Beck",
+                  "displayName": "Jordan Beck",
+                  "shortName": "J. Beck",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/4619460"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4619460.png",
+                  "jersey": "27",
+                  "position": "LF",
+                  "team": {
+                    "id": "27"
+                  }
+                },
+                "batOrder": 1,
+                "summary": "2-4, R"
+              }
+            ],
+            "onFirst": false,
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "1 Out",
+          "outsText": "0 Outs",
           "id": "401695646",
           "date": "2025-05-22T00:40:00+00:00",
           "competitors": [
@@ -22078,7 +22107,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".276"
+                  "displayValue": ".258"
                 },
                 {
                   "abbreviation": "SV",
@@ -22098,7 +22127,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "9.00"
+                  "displayValue": "8.00"
                 },
                 {
                   "abbreviation": "E",
@@ -22501,6 +22530,11 @@
                   "displayValue": "0",
                   "period": 8,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 9,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -22517,7 +22551,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".343"
+                  "displayValue": ".316"
                 },
                 {
                   "abbreviation": "SV",
@@ -22537,7 +22571,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "3.68"
+                  "displayValue": "3.38"
                 },
                 {
                   "abbreviation": "E",
@@ -22596,12 +22630,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Bottom 8th",
-              "shortDetail": "Bot 8th"
+              "detail": "Middle 9th",
+              "shortDetail": "Mid 9th"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 8
+            "period": 9
           },
           "broadcasts": [
             {
@@ -22823,12 +22857,12 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Bottom 8th",
-          "shortDetail": "Bot 8th"
+          "detail": "Middle 9th",
+          "shortDetail": "Mid 9th"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 8
+        "period": 9
       }
     },
     {
@@ -22839,25 +22873,50 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4017645420501010001",
+              "id": "4017645420504020005",
               "type": {
-                "id": "1",
-                "text": "Start Batter/Pitcher",
-                "alternativeText": "Now at bat",
-                "type": "start-batterpitcher"
+                "id": "5",
+                "text": "Ball",
+                "abbreviation": "B",
+                "alternativeText": "Walk",
+                "type": "ball"
               },
-              "text": "Jack Kochanowicz pitches to Nick Kurtz",
+              "text": "Pitch 1 : Ball 1",
               "scoreValue": 0,
               "team": {
-                "id": "11"
+                "id": "3"
               },
-              "atBatId": "4017645420501",
-              "summaryType": "A",
-              "athletesInvolved": []
+              "atBatId": "4017645420504",
+              "summaryType": "P",
+              "athletesInvolved": [
+                {
+                  "id": "3962127",
+                  "fullName": "Max Schuemann",
+                  "displayName": "Max Schuemann",
+                  "shortName": "M. Schuemann",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/3962127"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/3962127.png",
+                  "jersey": "12",
+                  "position": "3B",
+                  "team": {
+                    "id": "11"
+                  }
+                }
+              ]
             },
-            "balls": 0,
+            "balls": 1,
             "strikes": 0,
-            "outs": 0,
+            "outs": 2,
+            "onFirst": true,
             "pitcher": {
               "playerId": 4917819,
               "period": 3,
@@ -22882,17 +22941,16 @@
                 "team": {
                   "id": "3"
                 }
-              },
-              "summary": "2.0 IP, 2 ER, 3 H, 2 K, 3 BB"
+              }
             },
             "batter": {
-              "playerId": 4966637,
+              "playerId": 3962127,
               "period": 3,
               "athlete": {
-                "id": "4966637",
-                "fullName": "Nick Kurtz",
-                "displayName": "Nick Kurtz",
-                "shortName": "N. Kurtz",
+                "id": "3962127",
+                "fullName": "Max Schuemann",
+                "displayName": "Max Schuemann",
+                "shortName": "M. Schuemann",
                 "links": [
                   {
                     "rel": [
@@ -22900,23 +22958,21 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4966637"
+                    "href": "https://www.espn.com/mlb/player/_/id/3962127"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4966637.png",
-                "jersey": "16",
-                "position": "1B",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/3962127.png",
+                "jersey": "12",
+                "position": "3B",
                 "team": {
                   "id": "11"
                 }
-              },
-              "summary": "0-1, K"
+              }
             },
-            "onFirst": false,
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "2 Outs",
           "id": "401764542",
           "date": "2025-05-22T02:05:00+00:00",
           "competitors": [
@@ -23286,7 +23342,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".273"
+                  "displayValue": ".231"
                 },
                 {
                   "abbreviation": "SV",
@@ -23721,7 +23777,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "9.00"
+                  "displayValue": "6.75"
                 },
                 {
                   "abbreviation": "E",
@@ -24017,10 +24073,10 @@
     },
     {
       "weather": {
-        "displayValue": "1",
-        "temperature": 72,
-        "highTemperature": 72,
-        "conditionId": "Sunny",
+        "displayValue": "34",
+        "temperature": 71,
+        "highTemperature": 71,
+        "conditionId": "Mostly clear",
         "link": {
           "language": "en-US",
           "rel": [
@@ -24040,33 +24096,57 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016956480701060021",
+              "id": "4016956480802020036",
               "type": {
-                "id": "21",
-                "text": "Foul Ball",
-                "abbreviation": "F",
-                "type": "foul-ball"
+                "id": "36",
+                "text": "Strike Looking",
+                "abbreviation": "SL",
+                "alternativeText": "Strikeout",
+                "type": "strike-looking"
               },
-              "text": "Pitch 5 : Strike 2 Foul",
+              "text": "Pitch 1 : Strike 1 Looking",
               "scoreValue": 0,
               "team": {
-                "id": "29"
+                "id": "19"
               },
-              "atBatId": "4016956480701",
+              "atBatId": "4016956480802",
               "summaryType": "P",
-              "athletesInvolved": []
+              "athletesInvolved": [
+                {
+                  "id": "41215",
+                  "fullName": "Alek Thomas",
+                  "displayName": "Alek Thomas",
+                  "shortName": "A. Thomas",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/41215"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41215.png",
+                  "jersey": "5",
+                  "position": "CF",
+                  "team": {
+                    "id": "29"
+                  }
+                }
+              ]
             },
-            "balls": 2,
-            "strikes": 2,
-            "outs": 0,
+            "balls": 0,
+            "strikes": 1,
+            "outs": 1,
             "pitcher": {
-              "playerId": 39878,
-              "period": 4,
+              "playerId": 40937,
+              "period": 5,
               "athlete": {
-                "id": "39878",
-                "fullName": "Corbin Burnes",
-                "displayName": "Corbin Burnes",
-                "shortName": "C. Burnes",
+                "id": "40937",
+                "fullName": "Dustin May",
+                "displayName": "Dustin May",
+                "shortName": "D. May",
                 "links": [
                   {
                     "rel": [
@@ -24074,25 +24154,25 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/39878"
+                    "href": "https://www.espn.com/mlb/player/_/id/40937"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39878.png",
-                "jersey": "39",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40937.png",
+                "jersey": "85",
                 "position": "SP",
                 "team": {
-                  "id": "29"
+                  "id": "19"
                 }
               }
             },
             "batter": {
-              "playerId": 39832,
-              "period": 4,
+              "playerId": 41215,
+              "period": 5,
               "athlete": {
-                "id": "39832",
-                "fullName": "Shohei Ohtani",
-                "displayName": "Shohei Ohtani",
-                "shortName": "S. Ohtani",
+                "id": "41215",
+                "fullName": "Alek Thomas",
+                "displayName": "Alek Thomas",
+                "shortName": "A. Thomas",
                 "links": [
                   {
                     "rel": [
@@ -24100,14 +24180,14 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/39832"
+                    "href": "https://www.espn.com/mlb/player/_/id/41215"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39832.png",
-                "jersey": "17",
-                "position": "DH",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41215.png",
+                "jersey": "5",
+                "position": "CF",
                 "team": {
-                  "id": "19"
+                  "id": "29"
                 }
               }
             },
@@ -24115,7 +24195,7 @@
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "1 Out",
           "id": "401695648",
           "date": "2025-05-22T02:10:00+00:00",
           "competitors": [
@@ -24128,8 +24208,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
-                      "value": 0.0,
+                      "displayValue": "1-2",
+                      "value": 0.5,
                       "athlete": {
                         "id": "30193",
                         "fullName": "Freddie Freeman",
@@ -24168,7 +24248,7 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
+                      "displayValue": "1-2",
                       "value": 0.0,
                       "athlete": {
                         "id": "30193",
@@ -24208,7 +24288,7 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
+                      "displayValue": "1-2",
                       "value": 0.0,
                       "athlete": {
                         "id": "30193",
@@ -24248,8 +24328,8 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
-                      "value": 58.75,
+                      "displayValue": "1-2",
+                      "value": 60.75,
                       "athlete": {
                         "id": "30193",
                         "fullName": "Freddie Freeman",
@@ -24288,8 +24368,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
-                      "value": 58.75,
+                      "displayValue": "1-2",
+                      "value": 60.75,
                       "athlete": {
                         "id": "30193",
                         "fullName": "Freddie Freeman",
@@ -24385,7 +24465,7 @@
                   "record": "(1-4, 4.43)"
                 }
               ],
-              "hits": 0,
+              "hits": 1,
               "errors": 0,
               "id": "19",
               "order": 0,
@@ -24479,7 +24559,7 @@
                 {
                   "abbreviation": "H",
                   "name": "hits",
-                  "displayValue": "0"
+                  "displayValue": "1"
                 },
                 {
                   "abbreviation": "R",
@@ -24489,7 +24569,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".000"
+                  "displayValue": ".077"
                 },
                 {
                   "abbreviation": "SV",
@@ -24509,7 +24589,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "2.25"
+                  "displayValue": "2.08"
                 },
                 {
                   "abbreviation": "E",
@@ -24892,6 +24972,11 @@
                   "displayValue": "1",
                   "period": 4,
                   "value": 1.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 5,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -24908,7 +24993,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".214"
+                  "displayValue": ".200"
                 },
                 {
                   "abbreviation": "SV",
@@ -24987,12 +25072,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Bottom 4th",
-              "shortDetail": "Bot 4th"
+              "detail": "Top 5th",
+              "shortDetail": "Top 5th"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 4
+            "period": 5
           },
           "broadcasts": [
             {
@@ -25214,12 +25299,12 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Bottom 4th",
-          "shortDetail": "Bot 4th"
+          "detail": "Top 5th",
+          "shortDetail": "Top 5th"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 4
+        "period": 5
       }
     }
   ]
