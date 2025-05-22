@@ -1544,6 +1544,51 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/transactions:
+    get:
+      summary: Get League Transactions
+      description: Retrieve the list of transactions for a given league and sport. Returns a paginated list of transaction objects (empty array if none).
+      operationId: getLeagueTransactions
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of results to return
+          schema:
+            type: integer
+            example: 25
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionsListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -4464,3 +4509,27 @@ components:
           items:
             $ref: '#/components/schemas/Reference'
       description: Paginated list of player positions for a given sport and league.
+    
+    TransactionsListResponse:
+      type: object
+      required:
+        - count
+        - items
+        - pageCount
+        - pageIndex
+        - pageSize
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+            description: "Transaction object (structure may vary by sport/league, currently empty for NFL)"
+      description: Paginated list of transactions for a given sport and league.

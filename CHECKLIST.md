@@ -83,12 +83,10 @@ site.web.api.espn.com
 IV. NHL Endpoints
 site.api.espn.com/apis/site
 [x] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
-[ ] /v2/sports/hockey/nhl/news - NHL News
 [ ] /v2/sports/hockey/nhl/teams - NHL Teams List
 [ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
 [ ] /v2/sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
 [ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
-[ ] /v2/sports/hockey/nhl/players - NHL Players List
 [ ] /v2/sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics
 sports.core.api.espn.com
 [ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id} - Detailed NHL athlete information. Path Param: {athlete_id}
@@ -102,7 +100,6 @@ site.api.espn.com/apis/site/v2
 [ ] /sports/basketball/nba/summary?event={event_id} - NBA Game Summary. Query Param: event={event_id}
 [ ] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev}
 [ ] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season
-[ ] /sports/basketball/nba/players - NBA Players List
 [ ] /sports/basketball/nba/statistics/players - NBA Aggregate Player Statistics
 sports.core.api.espn.com
 [ ] /v2/sports/basketball/leagues/nba/athletes/{athlete_id} - Detailed NBA athlete information. Path Param: {athlete_id}
@@ -221,8 +218,8 @@ sports.core.api.espn.com
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/powerindex/{team_id} - ESPN Power Index for Game. Path Params: As above.
 XVI. Utility & Miscellaneous Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com
-[ ] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit
-[ ] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
+[x] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit
+[x] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
 [ ] /v2/sports/{sport}/leagues/{league}/talentpicks - General Talent Picks. Path Params: {sport}, {league}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
 [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}

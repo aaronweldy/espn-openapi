@@ -155,6 +155,8 @@ from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
 from .team_odds import TeamOdds
 from .team_reference import TeamReference
+from .transactions_list_response import TransactionsListResponse
+from .transactions_list_response_items_item import TransactionsListResponseItemsItem
 from .venue import Venue
 
 __all__ = (
@@ -313,5 +315,7 @@ __all__ = (
     "Team",
     "TeamOdds",
     "TeamReference",
+    "TransactionsListResponse",
+    "TransactionsListResponseItemsItem",
     "Venue",
 )

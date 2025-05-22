@@ -297,29 +297,17 @@
       "date": "2025-05-22T00:00:00+00:00",
       "competitions": [
         {
-          "situation": {
-            "lastPlay": {
-              "id": "401773321000004250",
-              "type": {
-                "id": "516",
-                "text": "Stoppage",
-                "abbreviation": "stoppage"
-              },
-              "text": "Puck in Netting",
-              "scoreValue": 0
-            }
-          },
           "series": {
             "type": "playoff",
             "title": "Playoff Series",
-            "summary": "",
+            "summary": "DAL leads series 1-0",
             "completed": false,
             "totalCompetitions": 7,
             "competitors": [
               {
                 "id": "9",
                 "uid": "s:70~l:90~t:9",
-                "wins": 0,
+                "wins": 1,
                 "ties": 0,
                 "href": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/seasons/2025/teams/9?lang=en&region=us"
               },
@@ -373,72 +361,7 @@
                       },
                       "team": {
                         "id": "9"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 4.0,
-                          "displayValue": "4"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 3.0,
-                          "displayValue": "3"
-                        }
-                      ]
+                      }
                     },
                     {
                       "displayValue": "1",
@@ -470,72 +393,7 @@
                       },
                       "team": {
                         "id": "9"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 5.0,
-                          "displayValue": "5"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        }
-                      ]
+                      }
                     },
                     {
                       "displayValue": "1",
@@ -567,72 +425,39 @@
                       },
                       "team": {
                         "id": "9"
+                      }
+                    },
+                    {
+                      "displayValue": "1",
+                      "value": 1.0,
+                      "athlete": {
+                        "id": "3069352",
+                        "fullName": "Esa Lindell",
+                        "displayName": "Esa Lindell",
+                        "shortName": "E. Lindell",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/nhl/player/_/id/3069352"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3069352.png",
+                        "jersey": "23",
+                        "position": {
+                          "abbreviation": "D"
+                        },
+                        "team": {
+                          "id": "9"
+                        },
+                        "active": true
                       },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        }
-                      ]
+                      "team": {
+                        "id": "9"
+                      }
                     },
                     {
                       "displayValue": "1",
@@ -664,72 +489,7 @@
                       },
                       "team": {
                         "id": "9"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": -2.0,
-                          "displayValue": "-2"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        }
-                      ]
+                      }
                     }
                   ]
                 },
@@ -935,7 +695,8 @@
               },
               "uid": "s:70~l:90~t:9",
               "type": "team",
-              "score": "5",
+              "winner": true,
+              "score": "6",
               "linescores": [
                 {
                   "displayValue": "1",
@@ -948,9 +709,9 @@
                   "value": 0.0
                 },
                 {
-                  "displayValue": "4",
+                  "displayValue": "5",
                   "period": 3,
-                  "value": 4.0
+                  "value": 5.0
                 }
               ],
               "statistics": [
@@ -967,7 +728,7 @@
                 {
                   "abbreviation": "G",
                   "name": "goals",
-                  "displayValue": "5"
+                  "displayValue": "6"
                 },
                 {
                   "abbreviation": "YTDG",
@@ -982,7 +743,7 @@
                 {
                   "abbreviation": "PTS",
                   "name": "points",
-                  "displayValue": "13"
+                  "displayValue": "14"
                 }
               ],
               "records": [
@@ -1044,72 +805,7 @@
                       },
                       "team": {
                         "id": "6"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 6.0,
-                          "displayValue": "6"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 3.0,
-                          "displayValue": "3"
-                        }
-                      ]
+                      }
                     },
                     {
                       "displayValue": "1",
@@ -1141,72 +837,7 @@
                       },
                       "team": {
                         "id": "6"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 4.0,
-                          "displayValue": "4"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 2.0,
-                          "displayValue": "2"
-                        }
-                      ]
+                      }
                     },
                     {
                       "displayValue": "1",
@@ -1238,72 +869,7 @@
                       },
                       "team": {
                         "id": "6"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "ytdGoals",
-                          "displayName": "Year to Date Goals",
-                          "shortDisplayName": "Year to Date Goals",
-                          "description": "Year to date goals/",
-                          "abbreviation": "YTDG",
-                          "value": 5.0,
-                          "displayValue": "5"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        }
-                      ]
+                      }
                     }
                   ]
                 },
@@ -1430,6 +996,7 @@
               "curatedRank": {
                 "current": 99
               },
+              "record": "0-1",
               "id": "6",
               "order": 1,
               "homeAway": "away",
@@ -1509,6 +1076,7 @@
               },
               "uid": "s:70~l:90~t:6",
               "type": "team",
+              "winner": false,
               "score": "3",
               "linescores": [
                 {
@@ -1531,12 +1099,12 @@
                 {
                   "abbreviation": "SV",
                   "name": "saves",
-                  "displayValue": "21"
+                  "displayValue": "22"
                 },
                 {
                   "abbreviation": "SV%",
                   "name": "savePct",
-                  "displayValue": ".808"
+                  "displayValue": ".815"
                 },
                 {
                   "abbreviation": "G",
@@ -1610,16 +1178,16 @@
           ],
           "status": {
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "3:41 - 3rd Period",
-              "shortDetail": "3:41 - 3rd"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
-            "clock": 221.0,
-            "displayClock": "3:41",
+            "clock": 0.0,
+            "displayClock": "0:00",
             "period": 3
           },
           "broadcasts": [
@@ -1691,10 +1259,10 @@
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/nhl/game/_/gameId/401773321",
+          "href": "https://www.espn.com/nhl/game/_/gameId/401773321/oilers-stars",
           "text": "Gamecast",
           "rel": [
-            "live",
+            "summary",
             "desktop",
             "event"
           ],
@@ -1742,16 +1310,16 @@
       ],
       "status": {
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
-          "state": "in",
-          "completed": false,
-          "description": "In Progress",
-          "detail": "3:41 - 3rd Period",
-          "shortDetail": "3:41 - 3rd"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         },
-        "clock": 221.0,
-        "displayClock": "3:41",
+        "clock": 0.0,
+        "displayClock": "0:00",
         "period": 3
       }
     }
