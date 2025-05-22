@@ -6,11 +6,8 @@ Requires Python 3.10+
 
 import json
 import pytest
-import requests
-import os
 from datetime import datetime
 
-from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_scoreboard import sync
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.scoreboard import Scoreboard

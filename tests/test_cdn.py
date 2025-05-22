@@ -4,14 +4,10 @@ Test ESPN CDN NFL API - Scoreboard and Schedule Endpoints
 Requires Python 3.10+
 """
 
-import pprint
 import pytest
 import datetime
-import textwrap
 import json
-from typing import Any, Dict, List, Optional
 
-from models.cdn_api.espn_cdn_nfl_api_client import Client
 from models.cdn_api.espn_cdn_nfl_api_client.api.default import (
     get_core_nfl_scoreboard,
     get_core_nfl_schedule,
@@ -26,7 +22,7 @@ from models.cdn_api.espn_cdn_nfl_api_client.models import (
     NflBoxscoreResponse,
     NflPlayByPlayResponse,
 )
-from models.cdn_api.espn_cdn_nfl_api_client.types import UNSET, Unset
+from models.cdn_api.espn_cdn_nfl_api_client.types import UNSET
 
 
 def validate_scoreboard_response(data: NflScoreboardResponse) -> bool:
@@ -214,16 +210,16 @@ def format_standings_table(data: NflStandingsResponse) -> str:
                     for s in entry.stats
                     if s.name and s.display_value
                 }
-                w = stats.get("wins", "-")
-                l = stats.get("losses", "-")
-                t = stats.get("ties", "-")
+                wins = stats.get("wins", "-")
+                losses = stats.get("losses", "-")
+                ties = stats.get("ties", "-")
                 pct = stats.get("winPercent", "-")
                 pf = stats.get("pointsFor", "-")
                 pa = stats.get("pointsAgainst", "-")
                 diff = stats.get("differential", "-")
                 strk = stats.get("streak", "-")
                 output.append(
-                    f"{team:<25} {w:>2} {l:>2} {t:>2} {pct:>5} {pf:>4} {pa:>4} {diff:>5} {strk:>5}"
+                    f"{team:<25} {wins:>2} {losses:>2} {ties:>2} {pct:>5} {pf:>4} {pa:>4} {diff:>5} {strk:>5}"
                 )
     return "\n".join(output)
 

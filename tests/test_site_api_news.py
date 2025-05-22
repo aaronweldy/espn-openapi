@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import pytest
+import json
+import logging
 from datetime import datetime
 
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_news import (
@@ -13,34 +15,30 @@ from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.news_article import NewsArticle
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 @pytest.mark.api
 def test_nfl_news(site_api_client, ensure_json_output_dir):
     """Test retrieving NFL news from the specific endpoint"""
     limit = 5
-
     response = get_nfl_news(client=site_api_client, limit=limit)
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )
-
     assert not isinstance(response.parsed, ErrorResponse), (
         f"API returned an error: {response.parsed}"
     )
     assert isinstance(response.parsed, SportNewsAPISchema), (
         "Response should parse to SportNewsAPISchema"
     )
-
     news: SportNewsAPISchema = response.parsed
-
-    # Check top-level fields
     assert isinstance(news.header, str), "Header should be a string"
     assert isinstance(news.articles, list), "Articles should be a list"
     assert len(news.articles) > 0, "Articles list should not be empty"
     assert news.link, "Link should be present"
     assert news.link.href, "Link should have href attribute"
-
-    # Check the first article in detail
     article = news.articles[0]
     assert isinstance(article, NewsArticle), "Article should be a NewsArticle instance"
     assert isinstance(article.id, int), "Article ID should be an integer"
@@ -68,19 +66,14 @@ def test_nfl_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.categories, list), "Categories should be a list"
     assert isinstance(article.premium, bool), "Premium flag should be a boolean"
     assert article.links, "Links should be present"
-
-    # Check images
     for img in article.images:
         assert hasattr(img, "url"), "Image should have URL attribute"
         assert isinstance(img.url, str) or img.url is UNSET, (
             "Image URL should be a string or UNSET"
         )
-
-    # Check categories
     for cat in article.categories:
         assert hasattr(cat, "type"), "Category should have type attribute"
         assert hasattr(cat, "guid"), "Category should have guid attribute"
-        # Optional nested objects
         if cat.athlete and cat.athlete is not UNSET:
             assert hasattr(cat.athlete, "id"), "Athlete should have id attribute"
             assert hasattr(cat.athlete, "description"), (
@@ -96,8 +89,6 @@ def test_nfl_news(site_api_client, ensure_json_output_dir):
             assert hasattr(cat.league, "description"), (
                 "League should have description attribute"
             )
-
-    # Check links
     links = article.links
     assert hasattr(links, "web"), "Links should have web attribute"
     if links.web and links.web is not UNSET:
@@ -114,21 +105,15 @@ def test_nfl_news(site_api_client, ensure_json_output_dir):
             assert hasattr(links.app.sportscenter, "href"), (
                 "Sportscenter app link should have href attribute"
             )
-
-    # Save response for analysis
-    import json
-
     with open(f"{ensure_json_output_dir}/nfl_news_response.json", "w") as f:
         json.dump(news.to_dict(), f, indent=2)
-
-    # Print a summary of the first article for debugging
-    print("First article summary:")
-    print(f"  Headline: {article.headline}")
-    print(f"  Description: {article.description}")
-    print(f"  Published: {article.published}")
-    print(f"  Images: {len(article.images)}")
-    print(f"  Categories: {len(article.categories)}")
-    print(f"  Links: web={getattr(links.web, 'href', None)}")
+    logger.info("First article summary:")
+    logger.info(f"  Headline: {article.headline}")
+    logger.info(f"  Description: {article.description}")
+    logger.info(f"  Published: {article.published}")
+    logger.info(f"  Images: {len(article.images)}")
+    logger.info(f"  Categories: {len(article.categories)}")
+    logger.info(f"  Links: web={getattr(links.web, 'href', None)}")
 
 
 @pytest.mark.api
@@ -136,28 +121,22 @@ def test_nfl_news_team_specific(site_api_client, ensure_json_output_dir):
     """Test retrieving NFL news filtered by team (Kansas City Chiefs, team=12)"""
     limit = 5
     team_id = 12
-
     response = get_nfl_news(client=site_api_client, limit=limit, team=team_id)
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )
-
     assert not isinstance(response.parsed, ErrorResponse), (
         f"API returned an error: {response.parsed}"
     )
     assert isinstance(response.parsed, SportNewsAPISchema), (
         "Response should parse to SportNewsAPISchema"
     )
-
     news: SportNewsAPISchema = response.parsed
-
     assert isinstance(news.header, str), "Header should be a string"
     assert isinstance(news.articles, list), "Articles should be a list"
     assert len(news.articles) > 0, "Articles list should not be empty"
     assert news.link, "Link should be present"
     assert news.link.href, "Link should have href attribute"
-
-    # Check that at least one article has a category with team id 12
     found_team = False
     for article in news.articles:
         for cat in article.categories:
@@ -170,31 +149,24 @@ def test_nfl_news_team_specific(site_api_client, ensure_json_output_dir):
     assert found_team, (
         "No article found with category for team id 12 (Kansas City Chiefs)"
     )
-
-    # Save response for analysis
-    import json
-
     with open(
         f"{ensure_json_output_dir}/nfl_news_team_{team_id}_response.json", "w"
     ) as f:
         json.dump(news.to_dict(), f, indent=2)
-
-    # Print a summary of the first article for debugging
     article = news.articles[0]
-    print("First article summary (team-specific):")
-    print(f"  Headline: {article.headline}")
-    print(f"  Description: {article.description}")
-    print(f"  Published: {article.published}")
-    print(f"  Images: {len(article.images)}")
-    print(f"  Categories: {len(article.categories)}")
-    print(f"  Links: web={getattr(article.links.web, 'href', None)}")
+    logger.info("First article summary (team-specific):")
+    logger.info(f"  Headline: {article.headline}")
+    logger.info(f"  Description: {article.description}")
+    logger.info(f"  Published: {article.published}")
+    logger.info(f"  Images: {len(article.images)}")
+    logger.info(f"  Categories: {len(article.categories)}")
+    logger.info(f"  Links: web={getattr(article.links.web, 'href', None)}")
 
 
 @pytest.mark.api
 def test_mlb_news(site_api_client, ensure_json_output_dir):
     """Test retrieving MLB news from the specific endpoint"""
     limit = 5
-
     from models.site_api.espn_nfl_api_client.api.default.get_mlb_news import (
         sync_detailed as get_mlb_news,
     )
@@ -203,24 +175,18 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )
-
     assert not isinstance(response.parsed, ErrorResponse), (
         f"API returned an error: {response.parsed}"
     )
     assert isinstance(response.parsed, SportNewsAPISchema), (
         "Response should parse to SportNewsAPISchema"
     )
-
     news: SportNewsAPISchema = response.parsed
-
-    # Check top-level fields
     assert isinstance(news.header, str), "Header should be a string"
     assert isinstance(news.articles, list), "Articles should be a list"
     assert len(news.articles) > 0, "Articles list should not be empty"
     assert news.link, "Link should be present"
     assert news.link.href, "Link should have href attribute"
-
-    # Check the first article in detail
     article = news.articles[0]
     assert isinstance(article, NewsArticle), "Article should be a NewsArticle instance"
     assert isinstance(article.id, int), "Article ID should be an integer"
@@ -248,18 +214,12 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.categories, list), "Categories should be a list"
     assert isinstance(article.premium, bool), "Premium flag should be a boolean"
     assert article.links, "Links should be present"
-
-    # Save response for analysis
-    import json
-
     with open(f"{ensure_json_output_dir}/mlb_news_response.json", "w") as f:
         json.dump(news.to_dict(), f, indent=2)
-
-    # Print a summary of the first article for debugging
-    print("First MLB article summary:")
-    print(f"  Headline: {article.headline}")
-    print(f"  Description: {article.description}")
-    print(f"  Published: {article.published}")
-    print(f"  Images: {len(article.images)}")
-    print(f"  Categories: {len(article.categories)}")
-    print(f"  Links: web={getattr(article.links.web, 'href', None)}")
+    logger.info("First MLB article summary:")
+    logger.info(f"  Headline: {article.headline}")
+    logger.info(f"  Description: {article.description}")
+    logger.info(f"  Published: {article.published}")
+    logger.info(f"  Images: {len(article.images)}")
+    logger.info(f"  Categories: {len(article.categories)}")
+    logger.info(f"  Links: web={getattr(article.links.web, 'href', None)}")

@@ -5,13 +5,10 @@ Requires Python 3.10+
 """
 
 import json
-import os
-from pprint import pprint
+import logging
 import traceback
 import pytest
-from typing import Any, Dict, Optional
 
-from models.site_web_api.espn_site_web_api_client import Client as EspnSiteWebApiClient
 from models.site_web_api.espn_site_web_api_client.models.athlete_details import (
     AthleteDetails,
 )
@@ -33,7 +30,7 @@ from models.site_web_api.espn_site_web_api_client.models.career_statistics impor
 from models.site_web_api.espn_site_web_api_client.models.news_item_detailed import (
     NewsItemDetailed,
 )
-from models.site_web_api.espn_site_web_api_client.types import Response, UNSET
+from models.site_web_api.espn_site_web_api_client.types import UNSET
 from models.site_web_api.espn_site_web_api_client.models.sport_enum import SportEnum
 from models.site_web_api.espn_site_web_api_client.models.league_enum import LeagueEnum
 from models.site_web_api.espn_site_web_api_client.api.default.get_general_search_v2 import (
@@ -51,7 +48,6 @@ from models.site_web_api.espn_site_web_api_client.models.scoreboard_header_respo
 )
 from models.site_web_api.espn_site_web_api_client.models import (
     AthleteSplitsResponse,
-    ErrorResponse,
 )
 from models.site_web_api.espn_site_web_api_client.api.nfl_athletes.get_athlete_profile_nfl import (
     sync_detailed as get_athlete_profile_nfl_sync_detailed,
@@ -59,6 +55,9 @@ from models.site_web_api.espn_site_web_api_client.api.nfl_athletes.get_athlete_p
 from models.site_web_api.espn_site_web_api_client.models.athlete_profile_response import (
     AthleteProfileResponse,
 )
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Constants for athlete IDs used in tests
 TEST_ATHLETE_ID_NFL = 4430191  # Skyy Moore
@@ -112,7 +111,7 @@ def format_athlete_overview(data: AthleteOverviewResponse) -> str:
                 if ref_val:
                     output.append(f"  - Team (Reference): {ref_val}")
                 else:
-                    output.append(f"  - Team (Reference): [Could not extract ref URL]")
+                    output.append("  - Team (Reference): [Could not extract ref URL]")
 
             else:
                 output.append("  - Team info in unexpected format")
@@ -170,7 +169,7 @@ def test_get_athlete_overview(
         )
 
         # Display formatted summary
-        print("\n" + format_athlete_overview(result))
+        logger.info("\n" + format_athlete_overview(result))
 
         # Save full response for analysis
         with open(
@@ -178,13 +177,13 @@ def test_get_athlete_overview(
             "w",
         ) as f:
             json.dump(result.to_dict(), f, indent=2)
-        print(
+        logger.info(
             f"✓ Processed response saved to {ensure_json_output_dir}/athlete_{athlete_id}_overview_processed.json"
         )
 
     except Exception as e:
-        print(f"✗ Error during athlete overview test: {e}")
-        print(traceback.format_exc())
+        logger.error(f"✗ Error during athlete overview test: {e}")
+        logger.error(traceback.format_exc())
         pytest.fail(f"Exception during test: {str(e)}")
 
 
@@ -205,26 +204,26 @@ def test_search_v2(site_web_api_client, ensure_json_output_dir):
         "Response should parse to SearchV2Response"
     )
 
-    print(f"Total found: {result.total_found}")
+    logger.info(f"Total found: {result.total_found}")
     if result.results:
         group = result.results[0]
-        print(
+        logger.info(
             f"First group: {getattr(group, 'display_name', '[no display_name]')} (type: {getattr(group, 'type', '[no type]')}, totalFound: {getattr(group, 'total_found', '[no total_found]')})"
         )
         if group.contents:
             item = group.contents[0]
-            print(
+            logger.info(
                 f"First item: {getattr(item, 'display_name', '[no display_name]')} ({getattr(item, 'type', '[no type]')}) - {getattr(item, 'description', '[no description]')}"
             )
             link_web = getattr(getattr(item, "link", None), "web", None)
             image_default = getattr(getattr(item, "image", None), "default", None)
-            print(f"  Link: {link_web}")
-            print(f"  Image: {image_default}")
+            logger.info(f"  Link: {link_web}")
+            logger.info(f"  Image: {image_default}")
 
     # Save processed response
     with open(f"{ensure_json_output_dir}/search_v2_test_processed.json", "w") as f:
         json.dump(result.to_dict(), f, indent=2)
-    print(
+    logger.info(
         f"✓ Processed v2 search response saved to {ensure_json_output_dir}/search_v2_test_processed.json"
     )
 
@@ -252,11 +251,11 @@ def test_get_scoreboard_header(site_web_api_client, ensure_json_output_dir):
         if result.sports:
             sport = result.sports[0]
             assert sport.name, "Sport should have a name"
-            print(f"\nScoreboard Header - Sport: {sport.name}")
+            logger.info(f"\nScoreboard Header - Sport: {sport.name}")
 
             if sport.leagues:
                 league = sport.leagues[0]
-                print(f"League: {league.name} ({league.abbreviation})")
+                logger.info(f"League: {league.name} ({league.abbreviation})")
 
                 # Check if season attribute exists before accessing it
                 if (
@@ -264,7 +263,7 @@ def test_get_scoreboard_header(site_web_api_client, ensure_json_output_dir):
                     and "season" in league.additional_properties
                 ):
                     season = league.additional_properties["season"]
-                    print(
+                    logger.info(
                         f"Season: {season.get('displayName', 'Unknown')} ({season.get('year', 'Unknown')})"
                     )
 
@@ -273,13 +272,13 @@ def test_get_scoreboard_header(site_web_api_client, ensure_json_output_dir):
             f"{ensure_json_output_dir}/scoreboard_header_processed.json", "w"
         ) as f:
             json.dump(result.to_dict(), f, indent=2)
-        print(
+        logger.info(
             f"✓ Processed scoreboard header saved to {ensure_json_output_dir}/scoreboard_header_processed.json"
         )
 
     except Exception as e:
-        print(f"✗ Error during scoreboard header test: {e}")
-        print(traceback.format_exc())
+        logger.error(f"✗ Error during scoreboard header test: {e}")
+        logger.error(traceback.format_exc())
         pytest.fail(f"Exception during test: {str(e)}")
 
 
@@ -304,19 +303,19 @@ def test_nfl_athlete_splits(site_web_api_client, ensure_json_output_dir):
         )
 
         assert result.categories is not None, "Response should have categories data"
-        print(f"\n--- NFL Athlete Splits for athlete ID {athlete_id} ---")
+        logger.info(f"\n--- NFL Athlete Splits for athlete ID {athlete_id} ---")
 
         # Output some basic information about categories
         if result.categories:
             categories = result.categories
-            print(f"Found {len(categories)} categories")
+            logger.info(f"Found {len(categories)} categories")
 
             # Show detail for categories
             for category in categories:
                 category_name = (
                     category.display_name if category.display_name else "Unnamed"
                 )
-                print(f"\nCategory: {category_name}")
+                logger.info(f"\nCategory: {category_name}")
 
                 # Safely check for stats
                 if (
@@ -324,7 +323,7 @@ def test_nfl_athlete_splits(site_web_api_client, ensure_json_output_dir):
                     and "stats" in category.additional_properties
                 ):
                     stats = category.additional_properties["stats"]
-                    print("Statistics:")
+                    logger.info("Statistics:")
                     # Show first few stats in the category
                     for stat in stats[:3]:  # Show first 3 stats
                         if (
@@ -332,20 +331,20 @@ def test_nfl_athlete_splits(site_web_api_client, ensure_json_output_dir):
                             and "name" in stat
                             and "value" in stat
                         ):
-                            print(f"  {stat['name']}: {stat['value']}")
+                            logger.info(f"  {stat['name']}: {stat['value']}")
 
         # Save processed response
         with open(
             f"{ensure_json_output_dir}/athlete_{athlete_id}_splits_processed.json", "w"
         ) as f:
             json.dump(result.to_dict(), f, indent=2)
-        print(
+        logger.info(
             f"✓ Processed athlete splits saved to {ensure_json_output_dir}/athlete_{athlete_id}_splits_processed.json"
         )
 
     except Exception as e:
-        print(f"✗ Error during athlete splits test: {e}")
-        print(traceback.format_exc())
+        logger.error(f"✗ Error during athlete splits test: {e}")
+        logger.error(traceback.format_exc())
         pytest.fail(f"Exception during test: {str(e)}")
 
 
@@ -371,7 +370,7 @@ def test_get_athlete_profile(
         athlete = result.athlete
         assert athlete is not None, "Athlete data should be present"
 
-        print(
+        logger.info(
             f"\n--- NFL Athlete Profile for {athlete.full_name} (ID: {athlete.id}) ---"
         )
         # Print basic athlete info
@@ -380,11 +379,11 @@ def test_get_athlete_profile(
         else:
             position_str = ""
 
-        print(f"Name: {athlete.full_name} {position_str}")
+        logger.info(f"Name: {athlete.full_name} {position_str}")
 
         # Print additional data if available
         if hasattr(athlete, "college") and athlete.college:
-            print(f"College: {athlete.college.name}")
+            logger.info(f"College: {athlete.college.name}")
 
         # Print team info if available
         if (
@@ -392,24 +391,24 @@ def test_get_athlete_profile(
             and hasattr(athlete.team, "display_name")
             and athlete.team.display_name
         ):
-            print(f"Team: {athlete.team.display_name}")
+            logger.info(f"Team: {athlete.team.display_name}")
 
         # Print jersey number if available
         if athlete.jersey:
-            print(f"Jersey: #{athlete.jersey}")
+            logger.info(f"Jersey: #{athlete.jersey}")
 
         # Save processed response
         with open(
             f"{ensure_json_output_dir}/athlete_{athlete_id}_profile_processed.json", "w"
         ) as f:
             json.dump(result.to_dict(), f, indent=2)
-        print(
+        logger.info(
             f"✓ Processed athlete profile saved to {ensure_json_output_dir}/athlete_{athlete_id}_profile_processed.json"
         )
 
     except Exception as e:
-        print(f"✗ Error during athlete profile test: {e}")
-        print(traceback.format_exc())
+        logger.error(f"✗ Error during athlete profile test: {e}")
+        logger.error(traceback.format_exc())
         pytest.fail(f"Exception during test: {str(e)}")
 
 
@@ -439,20 +438,20 @@ def test_athlete_profile_parametrized(
             assert isinstance(result, AthleteProfileResponse), (
                 "Response should parse to AthleteProfileResponse"
             )
-            print(f"✓ Successfully retrieved profile for athlete ID {athlete_id}")
+            logger.info(f"✓ Successfully retrieved profile for athlete ID {athlete_id}")
         else:
             assert response.status_code != 200, (
                 f"Expected non-200 status code, got {response.status_code}"
             )
-            print(
+            logger.info(
                 f"✓ Correctly received error response for invalid athlete ID {athlete_id}"
             )
 
     except Exception as e:
         if not expect_success:
-            print(f"✓ Expected exception for invalid athlete ID: {str(e)}")
+            logger.info(f"✓ Expected exception for invalid athlete ID: {str(e)}")
         else:
-            print(f"✗ Unexpected error: {str(e)}")
+            logger.error(f"✗ Unexpected error: {str(e)}")
             pytest.fail(f"Exception during test: {str(e)}")
 
 
@@ -484,6 +483,6 @@ def test_get_athlete_profile_mlb(site_web_api_client, ensure_json_output_dir):
         import json
 
         json.dump(result.to_dict(), f, indent=2)
-    print(
+    logger.info(
         f"✓ Processed response saved to {ensure_json_output_dir}/mlb_athlete_36071_processed.json"
     )

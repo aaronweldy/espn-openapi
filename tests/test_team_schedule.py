@@ -11,7 +11,6 @@ from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_schedule impor
 from models.site_api.espn_nfl_api_client.models.nfl_team_schedule_response import (
     NFLTeamScheduleResponse,
 )
-from models.site_api.espn_nfl_api_client.types import UNSET
 
 
 @pytest.mark.api

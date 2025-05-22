@@ -1,7 +1,6 @@
 import json
 import logging
 from typing import Dict, Optional
-from datetime import datetime
 
 import pytest
 

@@ -7,7 +7,6 @@ Requires Python 3.10+
 import json
 import logging
 import pytest
-import requests
 
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_teams_list import sync
 from models.site_api.espn_nfl_api_client.api.default.get_mlb_teams_list import (
@@ -19,13 +18,15 @@ from models.site_api.espn_nfl_api_client.models.teams_list_response import (
 )
 from models.site_api.espn_nfl_api_client.types import UNSET
 
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 
 def validate_schema_response(data: TeamsListResponse):
     """Validate if response matches expected schema structure."""
     # Use assertions instead of returning True/False
-    assert hasattr(data, "sports") and data.sports is not UNSET, (
-        "Missing required attribute: sports"
-    )
     assert data.sports, "No sports found or sports list is empty"
 
     sport = data.sports[0]
@@ -96,11 +97,6 @@ def test_teams_list(
     site_api_client, ensure_json_output_dir, sport, get_teams_func, filename
 ):
     """Test the ESPN Teams List API for different sports."""
-    # Set up logging
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-    )
-    logger = logging.getLogger(__name__)
 
     logger.info(f"Fetching {sport} teams list data")
 

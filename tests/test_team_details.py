@@ -8,7 +8,6 @@ import json
 import pytest
 import requests
 
-from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_details import sync
 from models.site_api.espn_nfl_api_client.api.default.get_mlb_team_details import (
     sync as get_mlb_team_details,

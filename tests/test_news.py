@@ -7,12 +7,10 @@ Requires Python 3.10+
 import json
 import pytest
 import requests
-import os
 
 from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_news import sync
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.site_api.espn_nfl_api_client.models.news_response import NewsResponse
 from models.site_api.espn_nfl_api_client.types import UNSET
 from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
     SportNewsAPISchema,
