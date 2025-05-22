@@ -5,6 +5,7 @@ from attrs import field as _attrs_field
 
 from ..models.mlb_statistic_name import MlbStatisticName
 from ..models.nfl_statistic_name import NflStatisticName
+from ..models.nhl_statistic_name import NhlStatisticName
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Statistic")
@@ -14,14 +15,14 @@ T = TypeVar("T", bound="Statistic")
 class Statistic:
     """
     Attributes:
-        name (Union[MlbStatisticName, NflStatisticName, Unset]):
+        name (Union[MlbStatisticName, NflStatisticName, NhlStatisticName, Unset]):
         display_name (Union[Unset, str]):  Example: First Downs.
         short_display_name (Union[Unset, str]):
         display_value (Union[Unset, str]):  Example: 27.
         value (Union[Unset, float]):  Example: 27.
     """
 
-    name: Union[MlbStatisticName, NflStatisticName, Unset] = UNSET
+    name: Union[MlbStatisticName, NflStatisticName, NhlStatisticName, Unset] = UNSET
     display_name: Union[Unset, str] = UNSET
     short_display_name: Union[Unset, str] = UNSET
     display_value: Union[Unset, str] = UNSET
@@ -33,6 +34,8 @@ class Statistic:
         if isinstance(self.name, Unset):
             name = UNSET
         elif isinstance(self.name, NflStatisticName):
+            name = self.name.value
+        elif isinstance(self.name, MlbStatisticName):
             name = self.name.value
         else:
             name = self.name.value
@@ -65,7 +68,7 @@ class Statistic:
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
 
-        def _parse_name(data: object) -> Union[MlbStatisticName, NflStatisticName, Unset]:
+        def _parse_name(data: object) -> Union[MlbStatisticName, NflStatisticName, NhlStatisticName, Unset]:
             if isinstance(data, Unset):
                 return data
             try:
@@ -76,11 +79,19 @@ class Statistic:
                 return name_type_0
             except:  # noqa: E722
                 pass
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                name_type_1 = MlbStatisticName(data)
+
+                return name_type_1
+            except:  # noqa: E722
+                pass
             if not isinstance(data, str):
                 raise TypeError()
-            name_type_1 = MlbStatisticName(data)
+            name_type_2 = NhlStatisticName(data)
 
-            return name_type_1
+            return name_type_2
 
         name = _parse_name(d.pop("name", UNSET))
 

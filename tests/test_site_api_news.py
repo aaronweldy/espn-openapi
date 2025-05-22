@@ -14,6 +14,12 @@ from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
 )
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.news_article import NewsArticle
+from models.site_api.espn_nfl_api_client.models.league_enum import (
+    LeagueEnum,
+)
+from models.site_api.espn_nfl_api_client.models.sport_enum import (
+    SportEnum,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -167,11 +173,16 @@ def test_nfl_news_team_specific(site_api_client, ensure_json_output_dir):
 def test_mlb_news(site_api_client, ensure_json_output_dir):
     """Test retrieving MLB news from the specific endpoint"""
     limit = 5
-    from models.site_api.espn_nfl_api_client.api.default.get_mlb_news import (
-        sync_detailed as get_mlb_news,
+    from models.site_api.espn_nfl_api_client.api.default.get_league_news import (
+        sync_detailed as get_news,
     )
 
-    response = get_mlb_news(client=site_api_client, limit=limit)
+    response = get_news(
+        client=site_api_client,
+        limit=limit,
+        sport=SportEnum("baseball"),
+        league=LeagueEnum("mlb"),
+    )
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )

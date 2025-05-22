@@ -41,6 +41,13 @@ from models.site_api.espn_nfl_api_client.models.sunday_night_football_response i
     SundayNightFootballResponse,
 )
 
+from models.site_api.espn_nfl_api_client.api.default.get_nhl_scoreboard import (
+    sync as get_nhl_scoreboard,
+)
+from models.site_api.espn_nfl_api_client.models.nhl_scoreboard_response import (
+    NhlScoreboardResponse,
+)
+
 
 def validate_schema_response(data: Scoreboard) -> bool:
     """Validate if response matches expected schema structure."""
@@ -328,3 +335,66 @@ def test_sunday_night_football(site_api_client, ensure_json_output_dir):
         print(
             f"✓ Processed SNF data saved to {ensure_json_output_dir}/sunday_night_football_processed.json"
         )
+
+
+@pytest.mark.api
+def test_nhl_scoreboard(site_api_client, ensure_json_output_dir):
+    """Test the NHL scoreboard endpoint and print the full formatted scoreboard for today's games, including active games."""
+    today = datetime.now().strftime("%Y%m%d")
+    response = get_nhl_scoreboard(client=site_api_client, dates=today)
+
+    assert isinstance(response, NhlScoreboardResponse), (
+        "Response should be a NhlScoreboardResponse"
+    )
+
+    # Check for leagues and events
+    assert response.leagues, "Response should have leagues data"
+    assert response.events, "Response should have events data"
+
+    league = response.leagues[0]
+    print(f"League: {getattr(league, 'name', '[no name]')}")
+    print("\n--- NHL Games Today ---")
+
+    game_count = 0
+    for event in response.events:
+        game_count += 1
+        print(f"\nGame: {getattr(event, 'name', '[no name]')}")
+        print(f"Date: {getattr(event, 'date', '[no date]')}")
+
+        if hasattr(event, "competitions") and event.competitions:
+            comp = event.competitions[0]
+            competitors = getattr(comp, "competitors", [])
+            teams = []
+            scores = []
+            for c in competitors:
+                team_name = getattr(
+                    getattr(c, "team", None), "display_name", "[no team]"
+                )
+                score = getattr(c, "score", "?")
+                teams.append(team_name)
+                scores.append(score)
+
+            print(f"Teams: {' vs '.join(teams)} | Scores: {', '.join(scores)}")
+
+            # Print game status
+            status = getattr(comp, "status", None)
+            status_type = getattr(status, "type", None) if status else None
+            state = getattr(status_type, "state", None) if status_type else None
+            desc = getattr(status_type, "description", None) if status_type else None
+            print(f"Status: {desc or '[no status]'}")
+
+            if state == "in":
+                print("  → Game is IN PROGRESS!")
+            elif state == "post":
+                print("  → Game is FINAL.")
+            elif state == "pre":
+                print("  → Game has not started yet.")
+
+    print(f"\nTotal NHL games today: {game_count}")
+
+    # Save processed response
+    with open(f"{ensure_json_output_dir}/nhl_scoreboard_processed.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)
+    print(
+        f"✓ Processed NHL scoreboard saved to {ensure_json_output_dir}/nhl_scoreboard_processed.json"
+    )

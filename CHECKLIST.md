@@ -82,7 +82,7 @@ sports.core.api.espn.com
 site.web.api.espn.com
 IV. NHL Endpoints
 site.api.espn.com/apis/site
-[ ] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
+[x] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
 [ ] /v2/sports/hockey/nhl/news - NHL News
 [ ] /v2/sports/hockey/nhl/teams - NHL Teams List
 [ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}

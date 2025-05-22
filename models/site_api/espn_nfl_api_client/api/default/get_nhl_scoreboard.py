@@ -6,29 +6,23 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.error_response import ErrorResponse
-from ...models.sport_news_api_schema import SportNewsAPISchema
+from ...models.nhl_scoreboard_response import NhlScoreboardResponse
 from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
+    dates: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
-    params["limit"] = limit
-
-    params["offset"] = offset
-
-    params["team"] = team
+    params["dates"] = dates
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": "/sports/baseball/mlb/news",
+        "url": "/sports/hockey/nhl/scoreboard",
         "params": params,
     }
 
@@ -37,9 +31,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
+) -> Optional[Union[ErrorResponse, NhlScoreboardResponse]]:
     if response.status_code == 200:
-        response_200 = SportNewsAPISchema.from_dict(response.json())
+        response_200 = NhlScoreboardResponse.from_dict(response.json())
 
         return response_200
     if response.status_code == 404:
@@ -58,7 +52,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
+) -> Response[Union[ErrorResponse, NhlScoreboardResponse]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -70,31 +64,25 @@ def _build_response(
 def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get MLB News
+    dates: Union[Unset, str] = UNSET,
+) -> Response[Union[ErrorResponse, NhlScoreboardResponse]]:
+    """Get NHL Scoreboard
 
-     Retrieve the latest MLB news articles and headlines
+     Retrieve current NHL scoreboard including game scores, status, and basic information
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 10.
+        dates (Union[Unset, str]):  Example: 20240601.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ErrorResponse, SportNewsAPISchema]]
+        Response[Union[ErrorResponse, NhlScoreboardResponse]]
     """
 
     kwargs = _get_kwargs(
-        limit=limit,
-        offset=offset,
-        team=team,
+        dates=dates,
     )
 
     response = client.get_httpx_client().request(
@@ -107,63 +95,51 @@ def sync_detailed(
 def sync(
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get MLB News
+    dates: Union[Unset, str] = UNSET,
+) -> Optional[Union[ErrorResponse, NhlScoreboardResponse]]:
+    """Get NHL Scoreboard
 
-     Retrieve the latest MLB news articles and headlines
+     Retrieve current NHL scoreboard including game scores, status, and basic information
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 10.
+        dates (Union[Unset, str]):  Example: 20240601.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ErrorResponse, SportNewsAPISchema]
+        Union[ErrorResponse, NhlScoreboardResponse]
     """
 
     return sync_detailed(
         client=client,
-        limit=limit,
-        offset=offset,
-        team=team,
+        dates=dates,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get MLB News
+    dates: Union[Unset, str] = UNSET,
+) -> Response[Union[ErrorResponse, NhlScoreboardResponse]]:
+    """Get NHL Scoreboard
 
-     Retrieve the latest MLB news articles and headlines
+     Retrieve current NHL scoreboard including game scores, status, and basic information
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 10.
+        dates (Union[Unset, str]):  Example: 20240601.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[Union[ErrorResponse, SportNewsAPISchema]]
+        Response[Union[ErrorResponse, NhlScoreboardResponse]]
     """
 
     kwargs = _get_kwargs(
-        limit=limit,
-        offset=offset,
-        team=team,
+        dates=dates,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -174,32 +150,26 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
-    limit: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    team: Union[Unset, int] = UNSET,
-) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
-    """Get MLB News
+    dates: Union[Unset, str] = UNSET,
+) -> Optional[Union[ErrorResponse, NhlScoreboardResponse]]:
+    """Get NHL Scoreboard
 
-     Retrieve the latest MLB news articles and headlines
+     Retrieve current NHL scoreboard including game scores, status, and basic information
 
     Args:
-        limit (Union[Unset, int]):  Example: 10.
-        offset (Union[Unset, int]):
-        team (Union[Unset, int]):  Example: 10.
+        dates (Union[Unset, str]):  Example: 20240601.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Union[ErrorResponse, SportNewsAPISchema]
+        Union[ErrorResponse, NhlScoreboardResponse]
     """
 
     return (
         await asyncio_detailed(
             client=client,
-            limit=limit,
-            offset=offset,
-            team=team,
+            dates=dates,
         )
     ).parsed

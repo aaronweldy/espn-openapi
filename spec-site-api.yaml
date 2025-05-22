@@ -385,52 +385,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  /sports/baseball/mlb/news:
-    get:
-      summary: Get MLB News
-      description: Retrieve the latest MLB news articles and headlines
-      operationId: getMLBNews
-      parameters:
-        - name: limit
-          in: query
-          required: false
-          description: Maximum number of articles to return
-          schema:
-            type: integer
-            example: 10
-        - name: offset
-          in: query
-          required: false
-          description: Number of articles to skip (for pagination)
-          schema:
-            type: integer
-            example: 0
-        - name: team
-          in: query
-          required: false
-          description: Filter news by a specific MLB team ID
-          schema:
-            type: integer
-            example: 10
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SportNewsAPISchema'
-        '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
 
   /sports/baseball/mlb/teams:
     get:
@@ -607,6 +561,39 @@ paths:
                 $ref: '#/components/schemas/MlbGameSummaryResponse'
         '404':
           description: Game not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/hockey/nhl/scoreboard:
+    get:
+      summary: Get NHL Scoreboard
+      description: Retrieve current NHL scoreboard including game scores, status, and basic information
+      operationId: getNHLScoreboard
+      parameters:
+        - name: dates
+          in: query
+          required: false
+          description: Filter by specific dates (format YYYYMMDD)
+          schema:
+            type: string
+            example: "20240601"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NhlScoreboardResponse'
+        '404':
+          description: Not found
           content:
             application/json:
               schema:
@@ -1747,6 +1734,7 @@ components:
           oneOf:
             - $ref: '#/components/schemas/NflStatisticName'
             - $ref: '#/components/schemas/MlbStatisticName'
+            - $ref: '#/components/schemas/NhlStatisticName'
         displayName:
           type: string
           example: "First Downs"
@@ -3974,3 +3962,37 @@ components:
         - firstName
         - lastName
         - experience
+
+    NhlScoreboardResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+      required:
+        - leagues
+        - events
+      description: NHL scoreboard response, including all games for the specified date(s).
+
+    NhlStatisticName:
+      type: string
+      description: Statistic name identifiers used in NHL API responses
+      enum:
+        - saves
+        - savePct
+        - goals
+        - ytdGoals
+        - assists
+        - points
+        - plusMinus
+        - probableStartingGoalie
+        - winningGoalie
+        - losingGoalie
+        - firstStar
+        - secondStar
+        - thirdStar
