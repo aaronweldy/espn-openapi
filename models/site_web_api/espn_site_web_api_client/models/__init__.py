@@ -50,6 +50,20 @@ from .league_enum import LeagueEnum
 from .league_reference import LeagueReference
 from .link import Link
 from .logo import Logo
+from .mlb_athlete_details_athlete import MLBAthleteDetailsAthlete
+from .mlb_athlete_details_athlete_college import MLBAthleteDetailsAthleteCollege
+from .mlb_athlete_details_athlete_headshot import MLBAthleteDetailsAthleteHeadshot
+from .mlb_athlete_details_athlete_position import MLBAthleteDetailsAthletePosition
+from .mlb_athlete_details_athlete_stats_summary import MLBAthleteDetailsAthleteStatsSummary
+from .mlb_athlete_details_athlete_status import MLBAthleteDetailsAthleteStatus
+from .mlb_athlete_details_athlete_team import MLBAthleteDetailsAthleteTeam
+from .mlb_athlete_details_response import MLBAthleteDetailsResponse
+from .mlb_athlete_details_response_league import MLBAthleteDetailsResponseLeague
+from .mlb_athlete_details_response_player_switcher import MLBAthleteDetailsResponsePlayerSwitcher
+from .mlb_athlete_details_response_quicklinks_item import MLBAthleteDetailsResponseQuicklinksItem
+from .mlb_athlete_details_response_season import MLBAthleteDetailsResponseSeason
+from .mlb_athlete_details_response_standings import MLBAthleteDetailsResponseStandings
+from .mlb_athlete_details_response_tickets_info import MLBAthleteDetailsResponseTicketsInfo
 from .mlb_statistic_name import MlbStatisticName
 from .navigation_item import NavigationItem
 from .news_category import NewsCategory
@@ -180,6 +194,20 @@ __all__ = (
     "LeagueReference",
     "Link",
     "Logo",
+    "MLBAthleteDetailsAthlete",
+    "MLBAthleteDetailsAthleteCollege",
+    "MLBAthleteDetailsAthleteHeadshot",
+    "MLBAthleteDetailsAthletePosition",
+    "MLBAthleteDetailsAthleteStatsSummary",
+    "MLBAthleteDetailsAthleteStatus",
+    "MLBAthleteDetailsAthleteTeam",
+    "MLBAthleteDetailsResponse",
+    "MLBAthleteDetailsResponseLeague",
+    "MLBAthleteDetailsResponsePlayerSwitcher",
+    "MLBAthleteDetailsResponseQuicklinksItem",
+    "MLBAthleteDetailsResponseSeason",
+    "MLBAthleteDetailsResponseStandings",
+    "MLBAthleteDetailsResponseTicketsInfo",
     "MlbStatisticName",
     "NavigationItem",
     "NewsCategory",

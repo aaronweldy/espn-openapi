@@ -1024,3 +1024,53 @@ def test_mlb_athlete_details(sports_core_api_client, ensure_json_output_dir):
         f"{ensure_json_output_dir}/mlb_athlete_{athlete_id}_details_processed.json", "w"
     ) as f:
         json.dump(response.to_dict(), f, indent=2)
+
+
+@pytest.mark.api
+@pytest.mark.parametrize(
+    "sport,league",
+    [
+        ("football", "nfl"),
+        ("baseball", "mlb"),
+        ("basketball", "nba"),
+        ("hockey", "nhl"),
+        ("soccer", "uefa.champions"),
+    ],
+)
+def test_positions_list(sports_core_api_client, ensure_json_output_dir, sport, league):
+    """Test fetching and parsing the positions list endpoint for various sports/leagues."""
+    from models.sports_core_api.espn_sports_core_api_client.api.default.get_positions_list import (
+        sync_detailed as get_positions_list_sync_detailed,
+    )
+    from models.sports_core_api.espn_sports_core_api_client.models.positions_list_response import (
+        PositionsListResponse,
+    )
+
+    limit = 10
+    response = get_positions_list_sync_detailed(
+        sport=sport,
+        league=league,
+        client=sports_core_api_client,
+        limit=limit,
+    )
+    if response.status_code != 200:
+        print(f"Status code: {response.status_code}")
+        print(f"Response content: {response.content}")
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}. Response content: {response.content}"
+    )
+    result = response.parsed
+    if not isinstance(result, PositionsListResponse):
+        print(f"Parsed result type: {type(result)}")
+        print(f"Parsed result: {result}")
+    assert isinstance(result, PositionsListResponse), (
+        f"Response should parse to PositionsListResponse, got {type(result)}"
+    )
+
+    # Save processed response for analysis
+    out_path = f"{ensure_json_output_dir}/{sport}_{league}_positions_processed.json"
+    with open(out_path, "w") as f:
+        import json
+
+        json.dump(result.to_dict(), f, indent=2)
+    print(f"✓ Processed response saved to {out_path}")

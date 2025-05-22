@@ -142,6 +142,7 @@ from .play_stat import PlayStat
 from .play_type import PlayType
 from .plays_list_response import PlaysListResponse
 from .position import Position
+from .positions_list_response import PositionsListResponse
 from .reference import Reference
 from .season import Season
 from .sport_enum import SportEnum
@@ -299,6 +300,7 @@ __all__ = (
     "PlayStat",
     "PlayType",
     "Position",
+    "PositionsListResponse",
     "Reference",
     "Season",
     "SportEnum",

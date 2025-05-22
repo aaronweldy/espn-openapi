@@ -76,12 +76,10 @@ site.api.espn.com/apis/site
 [x] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
 [x] /v2/sports/baseball/mlb/summary?event={event_id} - MLB Game Summary. Query Param: event={event_id} (implemented)
 [x] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev}/roster - MLB Team Roster. Path Param: {team_id_or_abbrev}
-[ ] /v2/sports/baseball/mlb/statistics/players - MLB Aggregate Player Statistics
 sports.core.api.espn.com
-[ ] /v2/sports/baseball/leagues/mlb/athletes/{athlete_id} - Detailed MLB athlete information. Path Param: {athlete_id}
-[ ] /v2/sports/baseball/leagues/mlb/athletes/{athlete_id}/statistics - MLB Athlete statistics. Path Param: {athlete_id}
+[x] /v2/sports/baseball/leagues/mlb/athletes/{athlete_id} - Detailed MLB athlete information. Path Param: {athlete_id}
+[x] /apis/common/v3/sports/baseball/mlb/athletes/{athlete_id} - MLB Player Details. Path Param: {athlete_id}
 site.web.api.espn.com
-[ ] /apis/common/v3/sports/baseball/mlb/athletes/{athlete_id} - MLB Player Details. Path Param: {athlete_id}
 IV. NHL Endpoints
 site.api.espn.com/apis/site
 [ ] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)

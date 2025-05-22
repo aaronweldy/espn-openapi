@@ -12,23 +12,6 @@ The project is organized into the following main directories:
 - **`tests/`**: Includes a suite of pytest tests for verifying the functionality of the API clients and data models.
 - **`spec-*.yaml`**: OpenAPI (Swagger) specification files used to generate the API client code in the `models/` directory.
 
-## Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/espn-api-client.git
-    cd espn-api-client
-    ```
-    *(Replace `https://github.com/your-username/espn-api-client.git` with the actual repository URL if different)*
-
-2.  **Install dependencies:**
-    It's recommended to use a virtual environment.
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    pip install -r requirements.txt
-    ```
-
 ## Basic Usage
 
 Here's a simple example of how to use one of the API clients (e.g., the CDN NFL API client):
@@ -39,10 +22,8 @@ from models.cdn_api.espn_cdn_nfl_api_client.api.default import get_schedule
 from models.cdn_api.espn_cdn_nfl_api_client.models import Schedule
 
 # Initialize the client
-# You may need to configure authentication or base URLs depending on the API
-client = Client(base_url="https://site.api.espn.com") # Example base URL, adjust as needed
+client = Client(base_url="https://site.api.espn.com")
 
-# Make an API request (example: get NFL schedule)
 try:
     schedule_response = get_schedule.sync_detailed(client=client)
     schedule_response.raise_for_status()
@@ -88,41 +69,21 @@ This project includes clients for the following ESPN APIs, located in the `model
 
 Each client is generated from an OpenAPI specification and provides typed data models for API responses. You can explore the respective subdirectories for specific API operations and models.
 
-## Running Tests
-
-The project uses `pytest` for testing. To run the tests:
-
-1.  Ensure you have installed the development dependencies (including `pytest`). If `pytest` is not listed in `requirements.txt`, you might need to install it separately:
-    ```bash
-    pip install pytest
-    ```
-    (Or, ideally, add `pytest` to a `requirements-dev.txt` and install from there.)
-
-2.  Navigate to the root directory of the project.
-
-3.  Run pytest:
-    ```bash
-    pytest
-    ```
-    This will discover and run all tests in the `tests/` directory. You should see output indicating the status of each test.
-
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these general steps:
+Contributions are welcome, especially for adding new endpoints! If you'd like to contribute to this project, please follow these general steps:
 
-1.  **Fork the repository.**
-2.  **Create a new branch** for your feature or bug fix:
+1.  **Create a new branch** for your feature or bug fix:
     ```bash
     git checkout -b feature/your-feature-name
     ```
-3.  **Make your changes.** Ensure you add or update tests as appropriate.
-4.  **Run tests** to ensure everything is working correctly.
-5.  **Commit your changes** with a clear and descriptive commit message.
-6.  **Push your branch** to your fork:
+2.  **Make your changes.** Ensure you add or update tests as appropriate.
+3.  **Commit your changes** with a clear and descriptive commit message.
+4.  **Push your branch** to your fork:
     ```bash
     git push origin feature/your-feature-name
     ```
-7.  **Open a pull request** to the main repository.
+5.  **Open a pull request** to the main repository.
 
 Please ensure your code adheres to any existing style guidelines and that all tests pass.
 

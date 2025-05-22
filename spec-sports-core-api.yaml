@@ -1500,6 +1500,50 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/positions:
+    get:
+      summary: List Player Positions
+      description: Retrieve a paginated list of player positions for a given sport and league.
+      operationId: getPositionsList
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport (e.g., football, baseball)
+          schema:
+            type: string
+        - name: league
+          in: path
+          required: true
+          description: The league (e.g., nfl, mlb)
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of positions to return
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PositionsListResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     AthleteDetailsResponse:
@@ -2618,6 +2662,7 @@ components:
         - height
         - alt
         - rel
+        - lastUpdated
 
     NflAthleteInjury:
       type: object
@@ -3240,7 +3285,25 @@ components:
         - ligue-1
         - ucl
         - europa-league
-        - other 
+        - other
+        - uefa.champions
+        - uefa.europa
+        - uefa.europa.conf
+        - esp.copa_del_rey
+        - eng.fa
+        - eng.1
+        - esp.1
+        - ger.1
+        - ger.dfb_pokal
+        - usa.1
+        - concacaf.champions
+        - usa.nwsl.cup
+        - usa.nwsl
+        - mex.1
+        - eng.2
+        - ita.coppa_italia
+        - eng.w.1
+        - por.1
 
     CompetitionDetail:
       type: object
@@ -4379,3 +4442,26 @@ components:
               type: string
             displayValue:
               type: string
+
+    PositionsListResponse:
+      type: object
+      required:
+        - count
+        - items
+        - pageCount
+        - pageIndex
+        - pageSize
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+      description: Paginated list of player positions for a given sport and league.

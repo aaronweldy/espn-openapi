@@ -454,3 +454,36 @@ def test_athlete_profile_parametrized(
         else:
             print(f"✗ Unexpected error: {str(e)}")
             pytest.fail(f"Exception during test: {str(e)}")
+
+
+@pytest.mark.api
+def test_get_athlete_profile_mlb(site_web_api_client, ensure_json_output_dir):
+    """Test fetching and parsing the MLB athlete details endpoint."""
+    from models.site_web_api.espn_site_web_api_client.api.mlb_athletes.get_athlete_profile_mlb import (
+        sync_detailed as get_athlete_profile_mlb_sync_detailed,
+    )
+    from models.site_web_api.espn_site_web_api_client.models.mlb_athlete_details_response import (
+        MLBAthleteDetailsResponse,
+    )
+
+    athlete_id = 36071  # Nick Pivetta
+    response = get_athlete_profile_mlb_sync_detailed(
+        athlete_id=athlete_id,
+        client=site_web_api_client,
+    )
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+    result = response.parsed
+    assert isinstance(result, MLBAthleteDetailsResponse), (
+        "Response should parse to MLBAthleteDetailsResponse"
+    )
+
+    # Save processed response for analysis
+    with open(f"{ensure_json_output_dir}/mlb_athlete_36071_processed.json", "w") as f:
+        import json
+
+        json.dump(result.to_dict(), f, indent=2)
+    print(
+        f"✓ Processed response saved to {ensure_json_output_dir}/mlb_athlete_36071_processed.json"
+    )

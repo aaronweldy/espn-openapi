@@ -253,6 +253,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+  /apis/common/v3/sports/baseball/mlb/athletes/{athleteId}:
+    get:
+      tags:
+        - MLB Athletes
+      summary: Get MLB athlete profile
+      operationId: getAthleteProfileMLB
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: ID of the athlete
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MLBAthleteDetailsResponse'
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
 components:
   schemas:
     Reference:
@@ -2261,3 +2288,138 @@ components:
         - intentionalWalks
         - leftOnBase
         - winPercentage
+
+    MLBAthleteDetailsResponse:
+      type: object
+      required:
+        - athlete
+        - league
+        - links
+        - playerSwitcher
+        - quicklinks
+        - season
+        - standings
+        - ticketsInfo
+      properties:
+        athlete:
+          $ref: '#/components/schemas/MLBAthleteDetailsAthlete'
+        season:
+          type: object
+          additionalProperties: true
+        league:
+          type: object
+          additionalProperties: true
+        playerSwitcher:
+          type: object
+          additionalProperties: true
+        quicklinks:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        ticketsInfo:
+          type: object
+          additionalProperties: true
+        standings:
+          type: object
+          additionalProperties: true
+      description: MLB athlete details response from site.web.api.espn.com
+
+    MLBAthleteDetailsAthlete:
+      type: object
+      required:
+        - active
+        - age
+        - college
+        - debutYear
+        - displayBatsThrows
+        - displayBirthPlace
+        - displayDOB
+        - displayDraft
+        - displayExperience
+        - displayHeight
+        - displayJersey
+        - displayName
+        - displayWeight
+        - firstName
+        - fullName
+        - guid
+        - headshot
+        - id
+        - jersey
+        - lastName
+        - links
+        - position
+        - statsSummary
+        - status
+        - team
+        - type
+        - uid
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+        guid:
+          type: string
+        type:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        displayName:
+          type: string
+        fullName:
+          type: string
+        debutYear:
+          type: integer
+        jersey:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        college:
+          type: object
+          additionalProperties: true
+        headshot:
+          type: object
+          additionalProperties: true
+        position:
+          type: object
+          additionalProperties: true
+        team:
+          type: object
+          additionalProperties: true
+        active:
+          type: boolean
+        status:
+          type: object
+          additionalProperties: true
+        statsSummary:
+          type: object
+          additionalProperties: true
+        displayBirthPlace:
+          type: string
+        displayHeight:
+          type: string
+        displayWeight:
+          type: string
+        displayDOB:
+          type: string
+        age:
+          type: integer
+        displayJersey:
+          type: string
+        displayExperience:
+          type: string
+        displayDraft:
+          type: string
+        displayBatsThrows:
+          type: string
+      description: MLB athlete details (athlete object) from site.web.api.espn.com
