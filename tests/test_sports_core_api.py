@@ -151,6 +151,15 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_mlb_athl
 from models.sports_core_api.espn_sports_core_api_client.models.mlb_athlete_details_response import (
     MlbAthleteDetailsResponse,
 )
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_weekly_talent_picks import (
+    sync as get_weekly_talent_picks,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.get_weekly_talent_picks_seasontype import (
+    GetWeeklyTalentPicksSeasontype,
+)
+from models.sports_core_api.espn_sports_core_api_client.models.weekly_talent_picks_response import (
+    WeeklyTalentPicksResponse,
+)
 
 
 # Example athlete ID for testing
@@ -1074,3 +1083,25 @@ def test_positions_list(sports_core_api_client, ensure_json_output_dir, sport, l
 
         json.dump(result.to_dict(), f, indent=2)
     print(f"✓ Processed response saved to {out_path}")
+
+
+@pytest.mark.api
+def test_weekly_talent_picks(sports_core_api_client, ensure_json_output_dir):
+    """Test fetching weekly talent picks for NFL 2024 week 1."""
+    response = get_weekly_talent_picks(
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        year=2024,
+        seasontype=GetWeeklyTalentPicksSeasontype.VALUE_2,  # Regular season
+        week=1,
+        client=sports_core_api_client,
+        limit=10,
+    )
+    assert isinstance(response, WeeklyTalentPicksResponse), (
+        "Response should parse to WeeklyTalentPicksResponse"
+    )
+    assert response.items, "Response should contain items field"
+    assert response.count > 0, "Talent picks count should be > 0"
+    # Save the processed response
+    with open(f"{ensure_json_output_dir}/talentpicks_nfl_2024_w1.json", "w") as f:
+        json.dump(response.to_dict(), f, indent=2)

@@ -220,8 +220,7 @@ XVI. Utility & Miscellaneous Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit
 [x] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
-[ ] /v2/sports/{sport}/leagues/{league}/talentpicks - General Talent Picks. Path Params: {sport}, {league}
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
 [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement
