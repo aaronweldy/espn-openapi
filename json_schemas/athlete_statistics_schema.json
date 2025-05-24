@@ -1,0 +1,150 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/AthleteStatisticsSchema",
+    "definitions": {
+        "AthleteStatisticsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "splits": {
+                    "$ref": "#/definitions/Splits"
+                }
+            },
+            "required": [
+                "$ref",
+                "athlete",
+                "splits"
+            ],
+            "title": "AthleteStatisticsSchema"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "Splits": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "categories",
+                "id",
+                "name"
+            ],
+            "title": "Splits"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "name",
+                "shortDisplayName",
+                "stats",
+                "summary"
+            ],
+            "title": "Category"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "value"
+            ],
+            "title": "Stat"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,16 +16,18 @@ T = TypeVar("T", bound="AthleteStatisticsResponseSplits")
 class AthleteStatisticsResponseSplits:
     """
     Attributes:
-        id (Union[Unset, str]):  Example: 0.
-        name (Union[Unset, str]):  Example: All Splits.
-        abbreviation (Union[Unset, str]):  Example: Any.
-        categories (Union[Unset, List['StatisticCategory']]):
+        id (str):  Example: 0.
+        name (str):  Example: All Splits.
+        abbreviation (str):  Example: Total.
+        categories (List['StatisticCategory']):
+        type (Union[None, Unset, str]):  Example: total.
     """
 
-    id: Union[Unset, str] = UNSET
-    name: Union[Unset, str] = UNSET
-    abbreviation: Union[Unset, str] = UNSET
-    categories: Union[Unset, List["StatisticCategory"]] = UNSET
+    id: str
+    name: str
+    abbreviation: str
+    categories: List["StatisticCategory"]
+    type: Union[None, Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -35,24 +37,29 @@ class AthleteStatisticsResponseSplits:
 
         abbreviation = self.abbreviation
 
-        categories: Union[Unset, List[Dict[str, Any]]] = UNSET
-        if not isinstance(self.categories, Unset):
-            categories = []
-            for categories_item_data in self.categories:
-                categories_item = categories_item_data.to_dict()
-                categories.append(categories_item)
+        categories = []
+        for categories_item_data in self.categories:
+            categories_item = categories_item_data.to_dict()
+            categories.append(categories_item)
+
+        type: Union[None, Unset, str]
+        if isinstance(self.type, Unset):
+            type = UNSET
+        else:
+            type = self.type
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
-        field_dict.update({})
-        if id is not UNSET:
-            field_dict["id"] = id
-        if name is not UNSET:
-            field_dict["name"] = name
-        if abbreviation is not UNSET:
-            field_dict["abbreviation"] = abbreviation
-        if categories is not UNSET:
-            field_dict["categories"] = categories
+        field_dict.update(
+            {
+                "id": id,
+                "name": name,
+                "abbreviation": abbreviation,
+                "categories": categories,
+            }
+        )
+        if type is not UNSET:
+            field_dict["type"] = type
 
         return field_dict
 
@@ -61,24 +68,34 @@ class AthleteStatisticsResponseSplits:
         from ..models.statistic_category import StatisticCategory
 
         d = src_dict.copy()
-        id = d.pop("id", UNSET)
+        id = d.pop("id")
 
-        name = d.pop("name", UNSET)
+        name = d.pop("name")
 
-        abbreviation = d.pop("abbreviation", UNSET)
+        abbreviation = d.pop("abbreviation")
 
         categories = []
-        _categories = d.pop("categories", UNSET)
-        for categories_item_data in _categories or []:
+        _categories = d.pop("categories")
+        for categories_item_data in _categories:
             categories_item = StatisticCategory.from_dict(categories_item_data)
 
             categories.append(categories_item)
+
+        def _parse_type(data: object) -> Union[None, Unset, str]:
+            if data is None:
+                return data
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
+
+        type = _parse_type(d.pop("type", UNSET))
 
         athlete_statistics_response_splits = cls(
             id=id,
             name=name,
             abbreviation=abbreviation,
             categories=categories,
+            type=type,
         )
 
         athlete_statistics_response_splits.additional_properties = d

@@ -1,7 +1,9 @@
-from typing import Any, Dict, List, Type, TypeVar, cast
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="BroadcastLogo")
 
@@ -15,7 +17,7 @@ class BroadcastLogo:
         height (int):
         alt (str):
         rel (List[str]):
-        last_updated (str):
+        last_updated (Union[Unset, str]):
     """
 
     href: str
@@ -23,7 +25,7 @@ class BroadcastLogo:
     height: int
     alt: str
     rel: List[str]
-    last_updated: str
+    last_updated: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -48,9 +50,10 @@ class BroadcastLogo:
                 "height": height,
                 "alt": alt,
                 "rel": rel,
-                "lastUpdated": last_updated,
             }
         )
+        if last_updated is not UNSET:
+            field_dict["lastUpdated"] = last_updated
 
         return field_dict
 
@@ -67,7 +70,7 @@ class BroadcastLogo:
 
         rel = cast(List[str], d.pop("rel"))
 
-        last_updated = d.pop("lastUpdated")
+        last_updated = d.pop("lastUpdated", UNSET)
 
         broadcast_logo = cls(
             href=href,

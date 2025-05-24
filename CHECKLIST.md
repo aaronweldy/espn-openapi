@@ -28,6 +28,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/officials
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/leaders
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page} - Athlete Statistics. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id}, {athlete_id}, {page}
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
 II. NFL Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/football/nfl/scoreboard - NFL Scoreboard. Query Params: dates, week, seasontype - Already implemented
@@ -221,7 +222,10 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit
 [x] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
-[ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}
+[ ] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
+[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} - NFL Draft Athlete Details. Path Params: {year}, {athlete_id}
+[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/contracts - NFL Draft Athlete Contracts. Path Params: {year}, {athlete_id}
+[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog- NFL Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads

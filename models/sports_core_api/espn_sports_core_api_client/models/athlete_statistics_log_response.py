@@ -18,8 +18,7 @@ class AthleteStatisticsLogResponse:
     """
     Attributes:
         entries (List['StatisticsLogEntry']):
-        ref (Union[Unset, str]):  Example:
-            http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statisticslog?lang=en&region=us.
+        ref (Union[Unset, str]):
         athlete (Union[Unset, AthleteReference]):
     """
 

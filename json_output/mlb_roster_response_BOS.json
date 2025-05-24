@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-22T05:32:00+00:00",
+  "timestamp": "2025-05-24T16:03:40+00:00",
   "status": "success",
   "season": {
     "year": 2025,
@@ -910,6 +910,243 @@
             "city": "Holguin",
             "country": "Cuba",
             "displayText": "Holguin, Cuba"
+          }
+        },
+        {
+          "id": "4326801",
+          "uid": "s:1~l:10~a:4326801",
+          "guid": "efb0e7d9-7ea1-3b12-892b-1305db89ee1c",
+          "firstName": "Cooper",
+          "lastName": "Criswell",
+          "fullName": "Cooper Criswell",
+          "displayName": "Cooper Criswell",
+          "shortName": "C. Criswell",
+          "weight": 200.0,
+          "displayWeight": "200 lbs",
+          "height": 78.0,
+          "displayHeight": "6' 6\"",
+          "age": 28,
+          "dateOfBirth": "1996-07-24T07:00:00+00:00",
+          "links": [
+            {
+              "language": "en-US",
+              "shortText": "Player Card",
+              "href": "https://www.espn.com/mlb/player/_/id/4326801",
+              "text": "Player Card",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Stats",
+              "href": "https://www.espn.com/mlb/player/stats/_/id/4326801/cooper-criswell",
+              "text": "Stats",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Splits",
+              "href": "https://www.espn.com/mlb/player/splits/_/id/4326801/cooper-criswell",
+              "text": "Splits",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Game Log",
+              "href": "https://www.espn.com/mlb/player/gamelog/_/id/4326801/cooper-criswell",
+              "text": "Game Log",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "News",
+              "href": "https://www.espn.com/mlb/player/news/_/id/4326801/cooper-criswell",
+              "text": "News",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bio",
+              "href": "https://www.espn.com/mlb/player/bio/_/id/4326801/cooper-criswell",
+              "text": "Bio",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Overview",
+              "href": "https://www.espn.com/mlb/player/_/id/4326801/cooper-criswell",
+              "text": "Overview",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bat vs Pitch",
+              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/4326801/cooper-criswell",
+              "text": "Bat vs Pitch",
+              "rel": [
+                "batvspitch",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "slug": "cooper-criswell",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4326801.png",
+            "alt": "Cooper Criswell"
+          },
+          "jersey": "64",
+          "position": {
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            }
+          },
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4326801/statistics/128?lang=en&region=us"
+              },
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4326801/statistics/77?lang=en&region=us"
+              },
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            }
+          ],
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 5
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          },
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "alternateIds": {
+            "sdr": "4326801"
+          },
+          "debutYear": 2022,
+          "birthPlace": {
+            "city": "Carrollton",
+            "state": "GA",
+            "country": "United States",
+            "displayText": "Carrollton, GA"
+          },
+          "college": {
+            "id": "153",
+            "guid": "4c4185a8-3d7d-32bf-bbfc-001d46ba6bbf",
+            "mascot": "Tar Heels",
+            "name": "North Carolina",
+            "shortName": "North Carolina",
+            "abbrev": "UNC",
+            "logos": [
+              {
+                "lastUpdated": "2023-02-17T21:15Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ]
+              },
+              {
+                "lastUpdated": "2023-02-17T21:14Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ]
+              }
+            ]
           }
         },
         {
@@ -3353,6 +3590,20 @@
               }
             },
             {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/79?lang=en&region=us"
+              },
+              "id": "3",
+              "name": "First Base",
+              "displayName": "First Baseman",
+              "abbreviation": "1B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              }
+            },
+            {
               "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
               "statistics": {
                 "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/86?lang=en&region=us"
@@ -3567,7 +3818,12 @@
               }
             }
           ],
-          "injuries": [],
+          "injuries": [
+            {
+              "status": "Day-To-Day",
+              "date": "2025-05-24T15:06Z"
+            }
+          ],
           "teams": [
             {
               "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
@@ -3838,7 +4094,7 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 0
+            "years": 1
           },
           "status": {
             "id": "1",
@@ -4667,6 +4923,31 @@
             }
           },
           "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/128?lang=en&region=us"
+              },
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/77?lang=en&region=us"
+              },
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
             {
               "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
               "statistics": {
@@ -5874,8 +6155,8 @@
     "clubhouse": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox",
     "color": "0d2b56",
     "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
-    "recordSummary": "25-26",
+    "recordSummary": "26-26",
     "seasonSummary": "2025",
-    "standingSummary": "3rd in AL East"
+    "standingSummary": "2nd in AL East"
   }
 }

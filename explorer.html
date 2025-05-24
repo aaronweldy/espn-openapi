@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPN API Endpoint Tester</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 80vh;
+        }
+
+        .form-section {
+            padding: 30px;
+            border-right: 1px solid #eee;
+        }
+
+        .result-section {
+            padding: 30px;
+            background: #f8f9fa;
+            overflow: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        select:focus,
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .params-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .param-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .param-label {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-container {
+            background: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 400px;
+            max-height: 80vh;
+            overflow: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            overflow: auto;
+        }
+
+        .result-container pre {
+            white-space: pre;
+            overflow-x: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            color: #e53e3e;
+            background: #fed7d7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .success {
+            color: #38a169;
+            background: #c6f6d5;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .endpoint-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #1565c0;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ESPN API Endpoint Tester</h1>
+            <p>Test ESPN API endpoints with customizable parameters</p>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <form id="apiForm">
+                    <div class="form-group">
+                        <label for="endpoint">Select Endpoint:</label>
+                        <select id="endpoint" required>
+                            <option value="">Choose an endpoint...</option>
+                        </select>
+                    </div>
+
+                    <div id="endpointInfo" class="endpoint-info" style="display: none;"></div>
+
+                    <div class="params-container">
+                        <h3 style="margin-bottom: 15px; color: #333;">Parameters</h3>
+                        <div id="paramFields"></div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Request
+                    </button>
+                </form>
+            </div>
+
+            <div class="result-section">
+                <h3 style="margin-bottom: 20px; color: #333;">Response</h3>
+                <div id="result" class="result-container">
+                    <div class="loading">Select an endpoint and click "Send Request" to see the API response here.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const endpoints = [
+            // General & Cross-Sport Endpoints
+            {
+                category: "General & Cross-Sport",
+                url: "https://site.api.espn.com/apis/site/v2/sports/{sport}/{league}/news",
+                params: ["sport", "league", "limit"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://site.web.api.espn.com/apis/common/v3/search",
+                params: ["query", "limit", "mode"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://site.web.api.espn.com/apis/search/v2",
+                params: ["query", "limit"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://site.web.api.espn.com/apis/v2/scoreboard/header",
+                params: ["sport", "league"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/calendar/ondays",
+                params: ["sport", "league"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/calendar/offdays",
+                params: ["sport", "league"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/venues",
+                params: ["sport", "league", "limit"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/seasons",
+                params: ["sport", "league", "limit"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/seasons/{year}",
+                params: ["sport", "league", "year"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/events",
+                params: ["sport", "league", "dates", "limit"]
+            },
+            {
+                category: "General & Cross-Sport",
+                url: "https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/events/{event_id}",
+                params: ["sport", "league", "event_id"]
+            },
+
+            // NFL Endpoints
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+                params: ["dates", "week", "seasontype"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams",
+                params: []
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team_id}",
+                params: ["team_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary",
+                params: ["event"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news",
+                params: ["limit", "team"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team_id}/roster",
+                params: ["team_id", "enable"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/standings",
+                params: ["season"]
+            },
+            {
+                category: "NFL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team_id}/schedule",
+                params: ["team_id", "season"]
+            },
+            {
+                category: "NFL",
+                url: "https://cdn.espn.com/core/nfl/scoreboard",
+                params: ["xhr", "limit"]
+            },
+            {
+                category: "NFL",
+                url: "https://cdn.espn.com/core/nfl/schedule",
+                params: ["xhr", "year", "week"]
+            },
+            {
+                category: "NFL",
+                url: "https://cdn.espn.com/core/nfl/standings",
+                params: ["xhr", "season"]
+            },
+            {
+                category: "NFL",
+                url: "https://cdn.espn.com/core/nfl/boxscore",
+                params: ["xhr", "gameId"]
+            },
+            {
+                category: "NFL",
+                url: "https://cdn.espn.com/core/nfl/playbyplay",
+                params: ["xhr", "gameId"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v3/sports/football/nfl/athletes",
+                params: ["limit", "active", "page"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/{athlete_id}",
+                params: ["athlete_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/{athlete_id}/statistics",
+                params: ["athlete_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/plays",
+                params: ["event_id", "limit"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/drives",
+                params: ["event_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}",
+                params: ["year", "team_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/{team_id}/injuries",
+                params: ["team_id"]
+            },
+            {
+                category: "NFL",
+                url: "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/{year}/draft",
+                params: ["year"]
+            },
+
+            // MLB Endpoints
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+                params: ["dates"]
+            },
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news",
+                params: []
+            },
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams",
+                params: []
+            },
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/{team_id_or_abbrev}",
+                params: ["team_id_or_abbrev"]
+            },
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/summary",
+                params: ["event"]
+            },
+            {
+                category: "MLB",
+                url: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams/{team_id_or_abbrev}/roster",
+                params: ["team_id_or_abbrev"]
+            },
+            {
+                category: "MLB",
+                url: "https://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/{athlete_id}",
+                params: ["athlete_id"]
+            },
+
+            // NHL Endpoints
+            {
+                category: "NHL",
+                url: "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard",
+                params: ["dates"]
+            },
+
+            // NBA Endpoints
+            {
+                category: "NBA",
+                url: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+                params: ["dates"]
+            },
+            {
+                category: "NBA",
+                url: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news",
+                params: []
+            },
+            {
+                category: "NBA",
+                url: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams",
+                params: []
+            }
+        ];
+
+        const sportOptions = [
+            'football', 'basketball', 'baseball', 'hockey', 'soccer', 'golf', 'racing', 'tennis'
+        ];
+
+        const leagueOptions = [
+            'nfl', 'mlb', 'nba', 'nhl', 'wnba', 'mens-college-basketball', 'womens-college-basketball',
+            'college-football', 'college-baseball', 'pga', 'lpga', 'f1', 'nascar-premier', 'atp', 'wta',
+            'mls', 'epl', 'laliga', 'bundesliga', 'serie-a', 'ligue-1', 'ucl', 'europa-league',
+            'uefa.champions', 'uefa.europa', 'eng.1', 'esp.1', 'ger.1', 'usa.1', 'mex.1'
+        ];
+
+        function populateEndpoints() {
+            const select = document.getElementById('endpoint');
+            let currentCategory = '';
+
+            endpoints.forEach(endpoint => {
+                if (endpoint.category !== currentCategory) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = endpoint.category;
+                    select.appendChild(optgroup);
+                    currentCategory = endpoint.category;
+                }
+
+                const option = document.createElement('option');
+                option.value = JSON.stringify(endpoint);
+                option.textContent = endpoint.url.split('/').pop().replace(/\{.*?\}/g, '{...}');
+                select.lastElementChild.appendChild(option);
+            });
+        }
+
+        function createParamField(paramName) {
+            const div = document.createElement('div');
+            div.className = 'param-row';
+
+            const label = document.createElement('div');
+            label.className = 'param-label';
+            label.textContent = paramName + ':';
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = paramName;
+            input.placeholder = getPlaceholder(paramName);
+
+            // Special handling for sport and league parameters
+            if (paramName === 'sport') {
+                const select = document.createElement('select');
+                select.name = paramName;
+                select.innerHTML = '<option value="">Select sport...</option>';
+                sportOptions.forEach(sport => {
+                    select.innerHTML += `<option value="${sport}">${sport}</option>`;
+                });
+                div.appendChild(label);
+                div.appendChild(select);
+            } else if (paramName === 'league') {
+                const select = document.createElement('select');
+                select.name = paramName;
+                select.innerHTML = '<option value="">Select league...</option>';
+                leagueOptions.forEach(league => {
+                    select.innerHTML += `<option value="${league}">${league}</option>`;
+                });
+                div.appendChild(label);
+                div.appendChild(select);
+            } else {
+                div.appendChild(label);
+                div.appendChild(input);
+            }
+
+            return div;
+        }
+
+        function getPlaceholder(paramName) {
+            const placeholders = {
+                'dates': 'YYYYMMDD or YYYYMMDD-YYYYMMDD',
+                'limit': '50',
+                'week': '1-18',
+                'seasontype': '1=pre, 2=reg, 3=post',
+                'year': '2024',
+                'team_id': 'Team ID or abbreviation',
+                'athlete_id': 'Athlete ID',
+                'event_id': 'Event/Game ID',
+                'query': 'Search query',
+                'mode': 'prefix',
+                'xhr': '1',
+                'gameId': 'Game ID',
+                'event': 'Event ID',
+                'season': '2024',
+                'enable': 'roster,projection,stats',
+                'active': 'true',
+                'page': '1'
+            };
+            return placeholders[paramName] || `Enter ${paramName}`;
+        }
+
+        function updateParamFields() {
+            const endpointSelect = document.getElementById('endpoint');
+            const paramFields = document.getElementById('paramFields');
+            const endpointInfo = document.getElementById('endpointInfo');
+
+            paramFields.innerHTML = '';
+            endpointInfo.style.display = 'none';
+
+            if (endpointSelect.value) {
+                const endpoint = JSON.parse(endpointSelect.value);
+
+                // Show endpoint info
+                endpointInfo.innerHTML = `<strong>URL:</strong> ${endpoint.url}`;
+                endpointInfo.style.display = 'block';
+
+                endpoint.params.forEach(param => {
+                    paramFields.appendChild(createParamField(param));
+                });
+            }
+        }
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            const endpointSelect = document.getElementById('endpoint');
+            const resultDiv = document.getElementById('result');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (!endpointSelect.value) {
+                resultDiv.innerHTML = '<div class="error">Please select an endpoint</div>';
+                return;
+            }
+
+            const endpoint = JSON.parse(endpointSelect.value);
+            let url = endpoint.url;
+            const queryParams = new URLSearchParams();
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Loading...';
+
+            // Show loading
+            resultDiv.innerHTML = '<div class="loading">Sending request...</div>';
+
+            // Get form data
+            const formData = new FormData(e.target);
+
+            // Replace path parameters and build query string
+            endpoint.params.forEach(param => {
+                const value = formData.get(param);
+                if (value) {
+                    if (url.includes(`{${param}}`)) {
+                        url = url.replace(`{${param}}`, value);
+                    } else {
+                        queryParams.append(param, value);
+                    }
+                }
+            });
+
+            // Add query parameters to URL
+            if (queryParams.toString()) {
+                url += '?' + queryParams.toString();
+            }
+
+            try {
+                // Note: This will likely fail due to CORS, but we'll show the attempt
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <div class="success">Request successful! Status: ${response.status}</div>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Request failed:</strong> ${error.message}<br><br>
+                        <strong>Note:</strong> This is likely due to CORS restrictions. 
+                        ESPN's API doesn't allow direct browser requests from other domains. 
+                        To test these endpoints, you would need to:
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>Use a server-side proxy</li>
+                            <li>Use a tool like Postman or curl</li>
+                            <li>Disable CORS in your browser (not recommended)</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <strong>Request URL:</strong><br>
+                        <code style="word-break: break-all; background: #2d3748; color: #e2e8f0; padding: 10px; display: block; border-radius: 4px; margin-top: 5px; white-space: pre-wrap;">${url}</code>
+                    </div>
+                `;
+            }
+
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Request';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            populateEndpoints();
+
+            document.getElementById('endpoint').addEventListener('change', updateParamFields);
+            document.getElementById('apiForm').addEventListener('submit', handleSubmit);
+        });
+    </script>
+</body>
+
+</html>

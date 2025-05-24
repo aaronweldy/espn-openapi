@@ -62,6 +62,7 @@ from .event_detail_season_type_type_1 import EventDetailSeasonTypeType1
 from .event_detail_venues_item_type_1 import EventDetailVenuesItemType1
 from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
+from .get_athlete_statistics_seasontype import GetAthleteStatisticsSeasontype
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
 from .head_to_heads import HeadToHeads
@@ -222,6 +223,7 @@ __all__ = (
     "EventDetailVenuesItemType1",
     "EventDetailWeekType1",
     "EventReference",
+    "GetAthleteStatisticsSeasontype",
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLConferenceStandingsSeasontype",
     "HeadToHeads",

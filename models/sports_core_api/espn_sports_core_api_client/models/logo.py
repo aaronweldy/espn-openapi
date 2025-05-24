@@ -1,9 +1,11 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar, cast
+from typing import Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Logo")
 
@@ -17,7 +19,7 @@ class Logo:
         height (int):
         alt (str):
         rel (List[str]):
-        last_updated (datetime.datetime):
+        last_updated (Union[Unset, datetime.datetime]):
     """
 
     href: str
@@ -25,7 +27,7 @@ class Logo:
     height: int
     alt: str
     rel: List[str]
-    last_updated: datetime.datetime
+    last_updated: Union[Unset, datetime.datetime] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -39,7 +41,9 @@ class Logo:
 
         rel = self.rel
 
-        last_updated = self.last_updated.isoformat()
+        last_updated: Union[Unset, str] = UNSET
+        if not isinstance(self.last_updated, Unset):
+            last_updated = self.last_updated.isoformat()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -50,9 +54,10 @@ class Logo:
                 "height": height,
                 "alt": alt,
                 "rel": rel,
-                "lastUpdated": last_updated,
             }
         )
+        if last_updated is not UNSET:
+            field_dict["lastUpdated"] = last_updated
 
         return field_dict
 
@@ -69,7 +74,12 @@ class Logo:
 
         rel = cast(List[str], d.pop("rel"))
 
-        last_updated = isoparse(d.pop("lastUpdated"))
+        _last_updated = d.pop("lastUpdated", UNSET)
+        last_updated: Union[Unset, datetime.datetime]
+        if isinstance(_last_updated, Unset):
+            last_updated = UNSET
+        else:
+            last_updated = isoparse(_last_updated)
 
         logo = cls(
             href=href,
