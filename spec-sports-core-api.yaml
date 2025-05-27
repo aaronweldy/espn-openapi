@@ -416,6 +416,214 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/groups:
+    get:
+      summary: Get League Season Groups
+      description: Retrieve the list of groups (conferences/divisions) for a given season and season type in a league and sport. Returns a paginated list of group resource references.
+      operationId: getLeagueSeasonGroups
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasonType
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedReferenceListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/corrections:
+    get:
+      summary: Get League Season Stat Corrections
+      description: Retrieve the list of statistical corrections for a given season and season type in a league and sport. Returns a paginated list of stat correction records.
+      operationId: getLeagueSeasonCorrections
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasonType
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatCorrectionsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasonType}/groups/{groupId}:
+    get:
+      summary: Get League Season Group Details
+      description: Retrieve detailed information for a specific group (conference/division) in a given season and season type.
+      operationId: getLeagueSeasonGroupDetails
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasonType
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+        - name: groupId
+          in: path
+          required: true
+          description: The group ID (e.g., 7=NFC, 8=AFC for NFL)
+          schema:
+            type: string
+            example: "7"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupDetailsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/events:
     get:
       summary: Get League Events
@@ -1028,6 +1236,72 @@ paths:
                 $ref: '#/components/schemas/NflDraftRoundsResponse'
         '404':
           description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}:
+    get:
+      summary: Get Draft Athlete Details
+      description: Retrieve details for a specific draft athlete for any supported sport/league (core API). Currently supported for NFL and NBA.
+      operationId: getDraftAthlete
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2023)
+          schema:
+            type: integer
+            example: 2023
+        - name: athlete_id
+          in: path
+          required: true
+          description: The draft athlete ID (e.g., 106308 for NFL, 106535 for NBA)
+          schema:
+            type: string
+            example: "106308"
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DraftAthleteResponse'
+        '404':
+          description: Draft athlete not found or sport/league does not support draft data
           content:
             application/json:
               schema:
@@ -2947,6 +3221,139 @@ components:
       required:
         - $ref
 
+    DraftAthleteResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        guid:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        shortName:
+          type: string
+        weight:
+          type: number
+        displayWeight:
+          type: string
+        height:
+          type: number
+        displayHeight:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        college:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        position:
+          $ref: '#/components/schemas/Position'
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+        team:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DraftAthleteAttribute'
+        analysis:
+          type: array
+          items:
+            $ref: '#/components/schemas/DraftAthleteAnalysis'
+        pick:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        athlete:
+          oneOf:
+            - $ref: '#/components/schemas/Reference'
+        logo:
+          $ref: '#/components/schemas/Logo'
+        headshot:
+          $ref: '#/components/schemas/DraftAthleteHeadshot'
+        leagueAffiliation:
+          type: string
+      required:
+        - $ref
+        - id
+        - guid
+        - firstName
+        - lastName
+        - fullName
+        - displayName
+        - shortName
+        - weight
+        - displayWeight
+        - height
+        - displayHeight
+        - links
+        - position
+        - positions
+        - attributes
+        - analysis
+        - pick
+        - athlete
+        - logo
+
+    DraftAthleteAttribute:
+      type: object
+      properties:
+        type:
+          type: integer
+        name:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        value:
+          type: number
+        displayValue:
+          type: string
+      required:
+        - type
+        - name
+        - displayName
+        - abbreviation
+        - value
+        - displayValue
+
+    DraftAthleteAnalysis:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        text:
+          type: string
+        grade:
+          type: integer
+      required:
+        - id
+        - type
+
+    DraftAthleteHeadshot:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+      required:
+        - href
+
     NflDraftAthleteResponse:
       type: object
       properties:
@@ -4631,3 +5038,202 @@ components:
             type: object
             description: "Transaction object (structure may vary by sport/league, currently empty for NFL)"
       description: Paginated list of transactions for a given sport and league.
+
+    StatCorrectionsResponse:
+      type: object
+      required:
+        - count
+        - items
+        - pageCount
+        - pageIndex
+        - pageSize
+      properties:
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatCorrection'
+      description: Paginated list of statistical corrections for a given sport, league, season, and season type.
+
+    StatCorrection:
+      type: object
+      required:
+        - splitStats
+        - competition
+        - athlete
+        - team
+      properties:
+        splitStats:
+          $ref: '#/components/schemas/SplitStats'
+        competition:
+          $ref: '#/components/schemas/Reference'
+        athlete:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+      description: A statistical correction record for an athlete in a specific competition.
+
+    SplitStats:
+      type: object
+      required:
+        - id
+        - name
+        - abbreviation
+        - categories
+      properties:
+        id:
+          type: string
+          description: The split stats identifier
+        name:
+          type: string
+          description: The name of the split stats type
+          example: "statCorrection"
+        abbreviation:
+          type: string
+          description: The abbreviation for the split stats type
+          example: "Stat Correction"
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatCategory'
+      description: Statistical split information containing categories of stats.
+
+    StatCategory:
+      type: object
+      required:
+        - name
+        - displayName
+        - shortDisplayName
+        - abbreviation
+        - summary
+        - stats
+      properties:
+        name:
+          type: string
+          description: The category name
+          example: "defensive"
+        displayName:
+          type: string
+          description: The display name for the category
+          example: "Defense"
+        shortDisplayName:
+          type: string
+          description: The short display name for the category
+          example: "Defensive"
+        abbreviation:
+          type: string
+          description: The abbreviation for the category
+          example: "def"
+        summary:
+          type: string
+          description: Summary information for the category
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatItem'
+      description: A category of statistics within a split stats object.
+
+    StatItem:
+      type: object
+      required:
+        - name
+        - displayName
+        - shortDisplayName
+        - description
+        - abbreviation
+        - value
+        - displayValue
+      properties:
+        name:
+          type: string
+          description: The stat name
+          example: "soloTackles"
+        displayName:
+          type: string
+          description: The display name for the stat
+          example: "Solo Tackles"
+        shortDisplayName:
+          type: string
+          description: The short display name for the stat
+          example: "SOLO"
+        description:
+          type: string
+          description: Description of what the stat represents
+          example: "The number of times a tackle was made unassisted."
+        abbreviation:
+          type: string
+          description: The abbreviation for the stat
+          example: "SOLO"
+        value:
+          type: number
+          description: The numeric value of the stat correction (can be negative)
+          example: -1
+        displayValue:
+          type: string
+          description: The display value of the stat correction
+          example: "-1"
+      description: An individual statistical item within a category.
+
+    GroupDetailsResponse:
+      type: object
+      required:
+        - $ref
+        - uid
+        - id
+        - name
+        - abbreviation
+        - season
+        - children
+        - parent
+        - standings
+        - isConference
+        - slug
+        - teams
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL to this group resource
+          example: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/7?lang=en&region=us"
+        uid:
+          type: string
+          description: Unique identifier for the group
+          example: "s:20~l:28~g:7"
+        id:
+          type: string
+          description: The group ID
+          example: "7"
+        name:
+          type: string
+          description: The full name of the group
+          example: "National Football Conference"
+        abbreviation:
+          type: string
+          description: The abbreviated name of the group
+          example: "NFC"
+        season:
+          $ref: '#/components/schemas/Reference'
+        children:
+          $ref: '#/components/schemas/Reference'
+        parent:
+          $ref: '#/components/schemas/Reference'
+        standings:
+          $ref: '#/components/schemas/Reference'
+        isConference:
+          type: boolean
+          description: Whether this group represents a conference
+          example: true
+        slug:
+          type: string
+          description: URL-friendly slug for the group
+          example: "national-football-conference"
+        teams:
+          $ref: '#/components/schemas/Reference'
+      description: Detailed information about a specific group (conference/division) in a league season.

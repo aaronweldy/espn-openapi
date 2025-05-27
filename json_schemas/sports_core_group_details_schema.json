@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SportsCoreGroupDetailsSchema",
+    "definitions": {
+        "SportsCoreGroupDetailsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "season": {
+                    "$ref": "#/definitions/Children"
+                },
+                "children": {
+                    "$ref": "#/definitions/Children"
+                },
+                "parent": {
+                    "$ref": "#/definitions/Children"
+                },
+                "standings": {
+                    "$ref": "#/definitions/Children"
+                },
+                "isConference": {
+                    "type": "boolean"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "teams": {
+                    "$ref": "#/definitions/Children"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "children",
+                "id",
+                "isConference",
+                "name",
+                "parent",
+                "season",
+                "slug",
+                "standings",
+                "teams",
+                "uid"
+            ],
+            "title": "SportsCoreGroupDetailsSchema"
+        },
+        "Children": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Children"
+        }
+    }
+}

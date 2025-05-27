@@ -1,0 +1,24 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8?lang=en&region=us",
+  "uid": "s:20~l:28~g:8",
+  "id": "8",
+  "name": "American Football Conference",
+  "abbreviation": "AFC",
+  "season": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+  },
+  "children": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/children?lang=en&region=us"
+  },
+  "parent": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/9?lang=en&region=us"
+  },
+  "standings": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/standings?lang=en&region=us"
+  },
+  "isConference": true,
+  "slug": "american-football-conference",
+  "teams": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups/8/teams?lang=en&region=us"
+  }
+}

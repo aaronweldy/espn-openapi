@@ -1,7 +1,9 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.news_team_links import NewsTeamLinks
@@ -16,12 +18,12 @@ class NewsTeam:
     Attributes:
         id (int): Team identifier Example: 33.
         description (str): Team name Example: Baltimore Ravens.
-        links (NewsTeamLinks):
+        links (Union[Unset, NewsTeamLinks]):
     """
 
     id: int
     description: str
-    links: "NewsTeamLinks"
+    links: Union[Unset, "NewsTeamLinks"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -29,7 +31,9 @@ class NewsTeam:
 
         description = self.description
 
-        links = self.links.to_dict()
+        links: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.links, Unset):
+            links = self.links.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -37,9 +41,10 @@ class NewsTeam:
             {
                 "id": id,
                 "description": description,
-                "links": links,
             }
         )
+        if links is not UNSET:
+            field_dict["links"] = links
 
         return field_dict
 
@@ -52,7 +57,12 @@ class NewsTeam:
 
         description = d.pop("description")
 
-        links = NewsTeamLinks.from_dict(d.pop("links"))
+        _links = d.pop("links", UNSET)
+        links: Union[Unset, NewsTeamLinks]
+        if isinstance(_links, Unset):
+            links = UNSET
+        else:
+            links = NewsTeamLinks.from_dict(_links)
 
         news_team = cls(
             id=id,

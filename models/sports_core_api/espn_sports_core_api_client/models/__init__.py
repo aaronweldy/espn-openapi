@@ -45,6 +45,10 @@ from .competition_status import CompetitionStatus
 from .competition_status_type import CompetitionStatusType
 from .competition_type import CompetitionType
 from .core_nfl_season_team_response import CoreNflSeasonTeamResponse
+from .draft_athlete_analysis import DraftAthleteAnalysis
+from .draft_athlete_attribute import DraftAthleteAttribute
+from .draft_athlete_headshot import DraftAthleteHeadshot
+from .draft_athlete_response import DraftAthleteResponse
 from .drive import Drive
 from .drive_clock import DriveClock
 from .drive_field_position import DriveFieldPosition
@@ -63,8 +67,12 @@ from .event_detail_venues_item_type_1 import EventDetailVenuesItemType1
 from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
 from .get_athlete_statistics_seasontype import GetAthleteStatisticsSeasontype
+from .get_league_season_corrections_season_type import GetLeagueSeasonCorrectionsSeasonType
+from .get_league_season_group_details_season_type import GetLeagueSeasonGroupDetailsSeasonType
+from .get_league_season_groups_season_type import GetLeagueSeasonGroupsSeasonType
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
+from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
 from .last_play_reference import LastPlayReference
 from .league_enum import LeagueEnum
@@ -146,8 +154,13 @@ from .position import Position
 from .positions_list_response import PositionsListResponse
 from .reference import Reference
 from .season import Season
+from .split_stats import SplitStats
 from .sport_enum import SportEnum
 from .spread_record import SpreadRecord
+from .stat_category import StatCategory
+from .stat_correction import StatCorrection
+from .stat_corrections_response import StatCorrectionsResponse
+from .stat_item import StatItem
 from .statistic import Statistic
 from .statistic_category import StatisticCategory
 from .statistics_log_entry import StatisticsLogEntry
@@ -206,6 +219,10 @@ __all__ = (
     "CompetitionStatusType",
     "CompetitionType",
     "CoreNflSeasonTeamResponse",
+    "DraftAthleteAnalysis",
+    "DraftAthleteAttribute",
+    "DraftAthleteHeadshot",
+    "DraftAthleteResponse",
     "Drive",
     "DriveClock",
     "DriveFieldPosition",
@@ -224,8 +241,12 @@ __all__ = (
     "EventDetailWeekType1",
     "EventReference",
     "GetAthleteStatisticsSeasontype",
+    "GetLeagueSeasonCorrectionsSeasonType",
+    "GetLeagueSeasonGroupDetailsSeasonType",
+    "GetLeagueSeasonGroupsSeasonType",
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLConferenceStandingsSeasontype",
+    "GroupDetailsResponse",
     "HeadToHeads",
     "LastPlayReference",
     "LeagueEnum",
@@ -307,13 +328,18 @@ __all__ = (
     "PositionsListResponse",
     "Reference",
     "Season",
+    "SplitStats",
     "SportEnum",
     "SpreadRecord",
+    "StatCategory",
+    "StatCorrection",
+    "StatCorrectionsResponse",
     "Statistic",
     "StatisticCategory",
     "StatisticsLogEntry",
     "StatisticsReference",
     "StatisticsTypeEntry",
+    "StatItem",
     "Team",
     "TeamOdds",
     "TeamReference",

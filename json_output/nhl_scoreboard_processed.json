@@ -293,139 +293,35 @@
   ],
   "events": [
     {
-      "id": "401774290",
-      "date": "2025-05-25T00:00:00+00:00",
+      "id": "401774291",
+      "date": "2025-05-27T00:00:00+00:00",
       "competitions": [
         {
-          "tickets": [
-            {
-              "summary": "Tickets as low as $113",
-              "numberAvailable": 1337,
-              "links": [
-                {
-                  "href": "https://www.vividseats.com/florida-panthers-tickets-amerant-bank-arena-5-23-2025--sports-nhl-hockey/production/5562718?wsUser=717"
-                },
-                {
-                  "href": "https://www.vividseats.com/fla-live-arena-tickets/venue/1171?wsUser=717"
-                }
-              ]
-            }
-          ],
           "series": {
             "type": "playoff",
             "title": "Playoff Series",
-            "summary": "FLA leads series 2-0",
+            "summary": "FLA leads series 3-1",
             "completed": false,
             "totalCompetitions": 7,
             "competitors": [
               {
                 "id": "26",
                 "uid": "s:70~l:90~t:26",
-                "wins": 2,
+                "wins": 3,
                 "ties": 0,
                 "href": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/seasons/2025/teams/26?lang=en&region=us"
               },
               {
                 "id": "7",
                 "uid": "s:70~l:90~t:7",
-                "wins": 0,
+                "wins": 1,
                 "ties": 0,
                 "href": "http://sports.core.api.espn.pvt/v2/sports/hockey/leagues/nhl/seasons/2025/teams/7?lang=en&region=us"
               }
             ]
           },
-          "odds": [
-            {
-              "provider": {
-                "id": "58",
-                "name": "ESPN BET",
-                "priority": 1
-              },
-              "details": "FLA -145",
-              "overUnder": 5.5,
-              "spread": -1.5,
-              "awayTeamOdds": {
-                "favorite": false,
-                "underdog": true,
-                "team": {
-                  "id": "7",
-                  "uid": "s:70~l:90~t:7",
-                  "abbreviation": "CAR",
-                  "name": "Hurricanes",
-                  "displayName": "Carolina Hurricanes",
-                  "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/car.png"
-                }
-              },
-              "homeTeamOdds": {
-                "favorite": true,
-                "underdog": false,
-                "team": {
-                  "id": "26",
-                  "uid": "s:70~l:90~t:26",
-                  "abbreviation": "FLA",
-                  "name": "Panthers",
-                  "displayName": "Florida Panthers",
-                  "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/fla.png"
-                }
-              },
-              "open": {
-                "over": {
-                  "value": 2.05,
-                  "displayValue": "21/20",
-                  "alternateDisplayValue": "+105",
-                  "decimal": 2.05,
-                  "fraction": "21/20",
-                  "american": "+105"
-                },
-                "under": {
-                  "value": 1.8,
-                  "displayValue": "4/5",
-                  "alternateDisplayValue": "-125",
-                  "decimal": 1.8,
-                  "fraction": "4/5",
-                  "american": "-125"
-                },
-                "total": {
-                  "value": 2.05,
-                  "displayValue": "21/20",
-                  "alternateDisplayValue": "5.5",
-                  "decimal": 2.05,
-                  "fraction": "21/20",
-                  "american": "5.5"
-                }
-              },
-              "current": {
-                "over": {
-                  "value": 2.15,
-                  "displayValue": "23/20",
-                  "alternateDisplayValue": "+115",
-                  "decimal": 2.15,
-                  "fraction": "23/20",
-                  "american": "+115",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "under": {
-                  "value": 1.741,
-                  "displayValue": "20/27",
-                  "alternateDisplayValue": "-135",
-                  "decimal": 1.741,
-                  "fraction": "20/27",
-                  "american": "-135",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "total": {
-                  "alternateDisplayValue": "5.5",
-                  "american": "5.5"
-                }
-              }
-            }
-          ],
-          "id": "401774290",
-          "date": "2025-05-25T00:00:00+00:00",
+          "id": "401774291",
+          "date": "2025-05-27T00:00:00+00:00",
           "competitors": [
             {
               "probables": [
@@ -458,10 +354,10 @@
                     }
                   },
                   "status": {
-                    "id": "101",
-                    "name": "Expected",
-                    "type": "expected",
-                    "abbreviation": "Expected"
+                    "id": "102",
+                    "name": "Confirmed",
+                    "type": "confirmed",
+                    "abbreviation": "Confirmed"
                   },
                   "statistics": [],
                   "record": ""
@@ -470,184 +366,7 @@
               "curatedRank": {
                 "current": 99
               },
-              "leaders": [
-                {
-                  "name": "goals",
-                  "displayName": "Goals",
-                  "shortDisplayName": "Goals",
-                  "abbreviation": "G",
-                  "leaders": [
-                    {
-                      "displayValue": "25",
-                      "value": 25.0,
-                      "athlete": {
-                        "id": "3114732",
-                        "fullName": "Sam Bennett",
-                        "displayName": "Sam Bennett",
-                        "shortName": "S. Bennett",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3114732"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3114732.png",
-                        "jersey": "9",
-                        "position": {
-                          "abbreviation": "C"
-                        },
-                        "team": {
-                          "id": "26"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "26"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "assists",
-                  "displayName": "Assists",
-                  "shortDisplayName": "Assists",
-                  "abbreviation": "A",
-                  "leaders": [
-                    {
-                      "displayValue": "51",
-                      "value": 51.0,
-                      "athlete": {
-                        "id": "3041970",
-                        "fullName": "Aleksander Barkov",
-                        "displayName": "Aleksander Barkov",
-                        "shortName": "A. Barkov",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3041970"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3041970.png",
-                        "jersey": "16",
-                        "position": {
-                          "abbreviation": "C"
-                        },
-                        "team": {
-                          "id": "26"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "26"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "points",
-                  "displayName": "Points",
-                  "shortDisplayName": "Points",
-                  "abbreviation": "PTS",
-                  "leaders": [
-                    {
-                      "displayValue": "71",
-                      "value": 71.0,
-                      "athlete": {
-                        "id": "3041970",
-                        "fullName": "Aleksander Barkov",
-                        "displayName": "Aleksander Barkov",
-                        "shortName": "A. Barkov",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3041970"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3041970.png",
-                        "jersey": "16",
-                        "position": {
-                          "abbreviation": "C"
-                        },
-                        "team": {
-                          "id": "26"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "26"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 1.0,
-                          "displayValue": "1"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 20.0,
-                          "displayValue": "20"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 51.0,
-                          "displayValue": "51"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 71.0,
-                          "displayValue": "71"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
+              "record": "3-1",
               "id": "26",
               "order": 0,
               "homeAway": "home",
@@ -727,48 +446,55 @@
               },
               "uid": "s:70~l:90~t:26",
               "type": "team",
+              "winner": false,
               "score": "0",
-              "linescores": [],
+              "linescores": [
+                {
+                  "displayValue": "0",
+                  "period": 1,
+                  "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 2,
+                  "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 3,
+                  "value": 0.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "29th",
                   "name": "saves",
-                  "displayValue": "1925"
+                  "displayValue": "25"
                 },
                 {
                   "abbreviation": "SV%",
-                  "rankDisplayValue": "Tied-9th",
                   "name": "savePct",
-                  "displayValue": ".905"
-                },
-                {
-                  "abbreviation": "+/-",
-                  "name": "plusMinus",
-                  "displayValue": "0"
+                  "displayValue": ".962"
                 },
                 {
                   "abbreviation": "G",
-                  "rankDisplayValue": "15th",
                   "name": "goals",
-                  "displayValue": "246"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "YTDG",
                   "name": "ytdGoals",
-                  "displayValue": "0"
+                  "displayValue": "122"
                 },
                 {
                   "abbreviation": "A",
-                  "rankDisplayValue": "Tied-16th",
                   "name": "assists",
-                  "displayValue": "414"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "PTS",
-                  "rankDisplayValue": "16th",
                   "name": "points",
-                  "displayValue": "660"
+                  "displayValue": "0"
                 }
               ],
               "records": [
@@ -793,49 +519,6 @@
               ]
             },
             {
-              "probables": [
-                {
-                  "name": "probableStartingGoalie",
-                  "displayName": "Probable Starting Goalie",
-                  "shortDisplayName": "Starter",
-                  "abbreviation": "SG",
-                  "playerId": 4565259,
-                  "athlete": {
-                    "id": "4565259",
-                    "fullName": "Pyotr Kochetkov",
-                    "displayName": "Pyotr Kochetkov",
-                    "shortName": "P. Kochetkov",
-                    "links": [
-                      {
-                        "rel": [
-                          "playercard",
-                          "desktop",
-                          "athlete"
-                        ],
-                        "href": "https://www.espn.com/nhl/player/_/id/4565259"
-                      }
-                    ],
-                    "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4565259.png",
-                    "jersey": "52",
-                    "position": "G",
-                    "team": {
-                      "id": "7"
-                    }
-                  },
-                  "status": {
-                    "id": "102",
-                    "name": "Confirmed",
-                    "type": "confirmed",
-                    "abbreviation": "Confirmed"
-                  },
-                  "statistics": [],
-                  "record": ""
-                }
-              ],
-              "curatedRank": {
-                "current": 99
-              },
-              "record": "0-2",
               "leaders": [
                 {
                   "name": "goals",
@@ -844,13 +527,13 @@
                   "abbreviation": "G",
                   "leaders": [
                     {
-                      "displayValue": "32",
-                      "value": 32.0,
+                      "displayValue": "1",
+                      "value": 1.0,
                       "athlete": {
-                        "id": "4697396",
-                        "fullName": "Seth Jarvis",
-                        "displayName": "Seth Jarvis",
-                        "shortName": "S. Jarvis",
+                        "id": "3541",
+                        "fullName": "Jordan Staal",
+                        "displayName": "Jordan Staal",
+                        "shortName": "J. Staal",
                         "links": [
                           {
                             "rel": [
@@ -858,11 +541,75 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/nhl/player/_/id/4697396"
+                            "href": "https://www.espn.com/nhl/player/_/id/3541"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4697396.png",
-                        "jersey": "24",
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3541.png",
+                        "jersey": "11",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    },
+                    {
+                      "displayValue": "1",
+                      "value": 1.0,
+                      "athlete": {
+                        "id": "4874899",
+                        "fullName": "Logan Stankoven",
+                        "displayName": "Logan Stankoven",
+                        "shortName": "L. Stankoven",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/nhl/player/_/id/4874899"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4874899.png",
+                        "jersey": "22",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    },
+                    {
+                      "displayValue": "1",
+                      "value": 1.0,
+                      "athlete": {
+                        "id": "3904173",
+                        "fullName": "Sebastian Aho",
+                        "displayName": "Sebastian Aho",
+                        "shortName": "S. Aho",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/nhl/player/_/id/3904173"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3904173.png",
+                        "jersey": "20",
                         "position": {
                           "abbreviation": "C"
                         },
@@ -884,13 +631,13 @@
                   "abbreviation": "A",
                   "leaders": [
                     {
-                      "displayValue": "45",
-                      "value": 45.0,
+                      "displayValue": "1",
+                      "value": 1.0,
                       "athlete": {
-                        "id": "3904173",
-                        "fullName": "Sebastian Aho",
-                        "displayName": "Sebastian Aho",
-                        "shortName": "S. Aho",
+                        "id": "2300",
+                        "fullName": "Brent Burns",
+                        "displayName": "Brent Burns",
+                        "shortName": "B. Burns",
                         "links": [
                           {
                             "rel": [
@@ -898,13 +645,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3904173"
+                            "href": "https://www.espn.com/nhl/player/_/id/2300"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3904173.png",
-                        "jersey": "20",
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/2300.png",
+                        "jersey": "8",
                         "position": {
-                          "abbreviation": "C"
+                          "abbreviation": "D"
                         },
                         "team": {
                           "id": "7"
@@ -924,13 +671,13 @@
                   "abbreviation": "PTS",
                   "leaders": [
                     {
-                      "displayValue": "74",
-                      "value": 74.0,
+                      "displayValue": "1",
+                      "value": 1.0,
                       "athlete": {
-                        "id": "3904173",
-                        "fullName": "Sebastian Aho",
-                        "displayName": "Sebastian Aho",
-                        "shortName": "S. Aho",
+                        "id": "3541",
+                        "fullName": "Jordan Staal",
+                        "displayName": "Jordan Staal",
+                        "shortName": "J. Staal",
                         "links": [
                           {
                             "rel": [
@@ -938,11 +685,11 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3904173"
+                            "href": "https://www.espn.com/nhl/player/_/id/3541"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3904173.png",
-                        "jersey": "20",
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3541.png",
+                        "jersey": "11",
                         "position": {
                           "abbreviation": "C"
                         },
@@ -953,67 +700,54 @@
                       },
                       "team": {
                         "id": "7"
-                      },
-                      "statistics": [
-                        {
-                          "name": "saves",
-                          "displayName": "Saves",
-                          "shortDisplayName": "Saves",
-                          "description": "Total saves.",
-                          "abbreviation": "SV",
-                          "value": 0.0,
-                          "displayValue": "0"
-                        },
-                        {
-                          "name": "savePct",
-                          "displayName": "Save Percentage",
-                          "shortDisplayName": "Save Percentage",
-                          "description": "Percentage of shots saved.",
-                          "abbreviation": "SV%",
-                          "value": 0.0,
-                          "displayValue": ".000"
-                        },
-                        {
-                          "name": "plusMinus",
-                          "displayName": "Plus/Minus Rating",
-                          "shortDisplayName": "Plus/Minus",
-                          "description": "Plus/Minus Rating",
-                          "abbreviation": "+/-",
-                          "value": 7.0,
-                          "displayValue": "7"
-                        },
-                        {
-                          "name": "goals",
-                          "displayName": "Goals",
-                          "shortDisplayName": "Goals",
-                          "description": "Total goals scored.",
-                          "abbreviation": "G",
-                          "value": 29.0,
-                          "displayValue": "29"
-                        },
-                        {
-                          "name": "assists",
-                          "displayName": "Assists",
-                          "shortDisplayName": "Assists",
-                          "description": "Total goal assists.",
-                          "abbreviation": "A",
-                          "value": 45.0,
-                          "displayValue": "45"
-                        },
-                        {
-                          "name": "points",
-                          "displayName": "Points",
-                          "shortDisplayName": "Points",
-                          "description": "Points",
-                          "abbreviation": "PTS",
-                          "value": 74.0,
-                          "displayValue": "74"
-                        }
-                      ]
+                      }
                     }
                   ]
                 }
               ],
+              "probables": [
+                {
+                  "name": "probableStartingGoalie",
+                  "displayName": "Probable Starting Goalie",
+                  "shortDisplayName": "Starter",
+                  "abbreviation": "SG",
+                  "playerId": 2517899,
+                  "athlete": {
+                    "id": "2517899",
+                    "fullName": "Frederik Andersen",
+                    "displayName": "Frederik Andersen",
+                    "shortName": "F. Andersen",
+                    "links": [
+                      {
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ],
+                        "href": "https://www.espn.com/nhl/player/_/id/2517899"
+                      }
+                    ],
+                    "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/2517899.png",
+                    "jersey": "31",
+                    "position": "G",
+                    "team": {
+                      "id": "7"
+                    }
+                  },
+                  "status": {
+                    "id": "102",
+                    "name": "Confirmed",
+                    "type": "confirmed",
+                    "abbreviation": "Confirmed"
+                  },
+                  "statistics": [],
+                  "record": ""
+                }
+              ],
+              "curatedRank": {
+                "current": 99
+              },
+              "record": "1-3",
               "id": "7",
               "order": 1,
               "homeAway": "away",
@@ -1093,48 +827,55 @@
               },
               "uid": "s:70~l:90~t:7",
               "type": "team",
-              "score": "0",
-              "linescores": [],
+              "winner": true,
+              "score": "3",
+              "linescores": [
+                {
+                  "displayValue": "0",
+                  "period": 1,
+                  "value": 0.0
+                },
+                {
+                  "displayValue": "1",
+                  "period": 2,
+                  "value": 1.0
+                },
+                {
+                  "displayValue": "2",
+                  "period": 3,
+                  "value": 2.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "32nd",
                   "name": "saves",
-                  "displayValue": "1815"
+                  "displayValue": "20"
                 },
                 {
                   "abbreviation": "SV%",
-                  "rankDisplayValue": "26th",
                   "name": "savePct",
-                  "displayValue": ".893"
-                },
-                {
-                  "abbreviation": "+/-",
-                  "name": "plusMinus",
-                  "displayValue": "0"
+                  "displayValue": "1.000"
                 },
                 {
                   "abbreviation": "G",
-                  "rankDisplayValue": "9th",
                   "name": "goals",
-                  "displayValue": "266"
+                  "displayValue": "3"
                 },
                 {
                   "abbreviation": "YTDG",
                   "name": "ytdGoals",
-                  "displayValue": "0"
+                  "displayValue": "76"
                 },
                 {
                   "abbreviation": "A",
-                  "rankDisplayValue": "10th",
                   "name": "assists",
-                  "displayValue": "441"
+                  "displayValue": "4"
                 },
                 {
                   "abbreviation": "PTS",
-                  "rankDisplayValue": "9th",
                   "name": "points",
-                  "displayValue": "707"
+                  "displayValue": "7"
                 }
               ],
               "records": [
@@ -1159,15 +900,15 @@
               ]
             }
           ],
-          "uid": "s:70~l:90~e:401774290~c:401774290",
-          "attendance": 0,
+          "uid": "s:70~l:90~e:401774291~c:401774291",
+          "attendance": 19897,
           "type": {
             "id": "16",
             "abbreviation": "SEMI"
           },
           "timeValid": true,
           "neutralSite": false,
-          "playByPlayAvailable": false,
+          "playByPlayAvailable": true,
           "recent": false,
           "venue": {
             "id": "1840",
@@ -1183,30 +924,377 @@
           "notes": [
             {
               "type": "event",
-              "headline": "East Final - Game 3"
+              "headline": "East Final - Game 4"
             }
           ],
           "status": {
+            "featuredAthletes": [
+              {
+                "name": "winningGoalie",
+                "displayName": "Winning Goalie",
+                "shortDisplayName": "Winning Goalie",
+                "abbreviation": "W",
+                "playerId": 2517899,
+                "athlete": {
+                  "id": "2517899",
+                  "fullName": "Frederik Andersen",
+                  "displayName": "Frederik Andersen",
+                  "shortName": "F. Andersen",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/2517899"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/2517899.png",
+                  "jersey": "31",
+                  "position": "G",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "20"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": "1.000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ]
+              },
+              {
+                "name": "losingGoalie",
+                "displayName": "Losing Goalie",
+                "shortDisplayName": "Losing Goalie",
+                "abbreviation": "L",
+                "playerId": 5571,
+                "athlete": {
+                  "id": "5571",
+                  "fullName": "Sergei Bobrovsky",
+                  "displayName": "Sergei Bobrovsky",
+                  "shortName": "S. Bobrovsky",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/5571"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/5571.png",
+                  "jersey": "72",
+                  "position": "G",
+                  "team": {
+                    "id": "26"
+                  }
+                },
+                "team": {
+                  "id": "26"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "25"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".962"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ]
+              },
+              {
+                "name": "firstStar",
+                "displayName": "First Star",
+                "shortDisplayName": "First Star",
+                "abbreviation": "FS",
+                "playerId": 4874899,
+                "athlete": {
+                  "id": "4874899",
+                  "fullName": "Logan Stankoven",
+                  "displayName": "Logan Stankoven",
+                  "shortName": "L. Stankoven",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/4874899"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4874899.png",
+                  "jersey": "22",
+                  "position": "C",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "2"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "1"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "5"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "1"
+                  }
+                ]
+              },
+              {
+                "name": "secondStar",
+                "displayName": "Second Star",
+                "shortDisplayName": "Second Star",
+                "abbreviation": "SS",
+                "playerId": 2517899,
+                "athlete": {
+                  "id": "2517899",
+                  "fullName": "Frederik Andersen",
+                  "displayName": "Frederik Andersen",
+                  "shortName": "F. Andersen",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/2517899"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/2517899.png",
+                  "jersey": "31",
+                  "position": "G",
+                  "team": {
+                    "id": "7"
+                  }
+                },
+                "team": {
+                  "id": "7"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "20"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": "1.000"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ]
+              },
+              {
+                "name": "thirdStar",
+                "displayName": "Third Star",
+                "shortDisplayName": "Third Star",
+                "abbreviation": "TS",
+                "playerId": 5571,
+                "athlete": {
+                  "id": "5571",
+                  "fullName": "Sergei Bobrovsky",
+                  "displayName": "Sergei Bobrovsky",
+                  "shortName": "S. Bobrovsky",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/nhl/player/_/id/5571"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/5571.png",
+                  "jersey": "72",
+                  "position": "G",
+                  "team": {
+                    "id": "26"
+                  }
+                },
+                "team": {
+                  "id": "26"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "25"
+                  },
+                  {
+                    "name": "savePct",
+                    "abbreviation": "SV%",
+                    "displayValue": ".962"
+                  },
+                  {
+                    "name": "plusMinus",
+                    "abbreviation": "+/-",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "goals",
+                    "abbreviation": "G",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "ytdGoals",
+                    "abbreviation": "YTDG",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "assists",
+                    "abbreviation": "A",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "points",
+                    "abbreviation": "PTS",
+                    "displayValue": "0"
+                  }
+                ]
+              }
+            ],
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Sat, May 24th at 8:00 PM EDT",
-              "shortDetail": "5/24 - 8:00 PM EDT"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 0
+            "period": 3
           },
           "broadcasts": [
             {
               "market": "national",
               "names": [
                 "TNT",
-                "truTV",
-                "Max"
+                "Max",
+                "truTV"
               ]
             }
           ],
@@ -1216,8 +1304,8 @@
               "periods": 3
             }
           },
-          "startDate": "2025-05-25T00:00:00+00:00",
-          "broadcast": "TNT/truTV/Max",
+          "startDate": "2025-05-27T00:00:00+00:00",
+          "broadcast": "TNT/Max/truTV",
           "geoBroadcasts": [
             {
               "type": {
@@ -1236,21 +1324,6 @@
             },
             {
               "type": {
-                "id": "1",
-                "shortName": "TV"
-              },
-              "market": {
-                "id": "1",
-                "type": "National"
-              },
-              "media": {
-                "shortName": "truTV"
-              },
-              "lang": "en",
-              "region": "us"
-            },
-            {
-              "type": {
                 "id": "4",
                 "shortName": "Streaming"
               },
@@ -1263,13 +1336,657 @@
               },
               "lang": "en",
               "region": "us"
+            },
+            {
+              "type": {
+                "id": "1",
+                "shortName": "TV"
+              },
+              "market": {
+                "id": "1",
+                "type": "National"
+              },
+              "media": {
+                "shortName": "truTV"
+              },
+              "lang": "en",
+              "region": "us"
             }
           ],
-          "highlights": [],
-          "headlines": []
+          "highlights": [
+            {
+              "id": 45337360,
+              "cerebroId": "68352749f6eb6317f48ce340",
+              "source": "espn",
+              "headline": "Hurricanes stave off elimination after 2 quick empty-net goals",
+              "description": "Sebastian Aho and Jordan Staal score empty-netters within 26 seconds of each other to seal Game 4 for Carolina.",
+              "lastModified": "2025-05-27T02:52:06Z",
+              "originalPublishDate": "2025-05-27T02:45:23Z",
+              "duration": 62,
+              "timeRestrictions": {
+                "embargoDate": "2025-05-27T02:45:23Z",
+                "expirationDate": "2025-07-31T04:00:00Z"
+              },
+              "deviceRestrictions": {
+                "type": "whitelist",
+                "devices": [
+                  "desktop",
+                  "ipad",
+                  "settop",
+                  "handset",
+                  "tablet"
+                ]
+              },
+              "geoRestrictions": {
+                "type": "whitelist",
+                "countries": [
+                  "NG",
+                  "VC",
+                  "SX",
+                  "AI",
+                  "AO",
+                  "BF",
+                  "NL",
+                  "TT",
+                  "ZW",
+                  "ER",
+                  "VG",
+                  "GW",
+                  "SR",
+                  "BS",
+                  "CO",
+                  "BE",
+                  "MQ",
+                  "TC",
+                  "NA",
+                  "MT",
+                  "MH",
+                  "AR",
+                  "RO",
+                  "ML",
+                  "TG",
+                  "CU",
+                  "BI",
+                  "MW",
+                  "EC",
+                  "CI",
+                  "SL",
+                  "UY",
+                  "GH",
+                  "KE",
+                  "SS",
+                  "BR",
+                  "VA",
+                  "CF",
+                  "FJ",
+                  "ZM",
+                  "CD",
+                  "ET",
+                  "SN",
+                  "FM",
+                  "AU",
+                  "BO",
+                  "MG",
+                  "GY",
+                  "SD",
+                  "LR",
+                  "SM",
+                  "MS",
+                  "LS",
+                  "DJ",
+                  "MU",
+                  "GD",
+                  "US",
+                  "AS",
+                  "GU",
+                  "MP",
+                  "PR",
+                  "VI",
+                  "UM",
+                  "GN",
+                  "PW",
+                  "SO",
+                  "VE",
+                  "NZ",
+                  "AW",
+                  "TR",
+                  "HU",
+                  "UG",
+                  "IT",
+                  "KN",
+                  "SC",
+                  "ES",
+                  "CM",
+                  "BJ",
+                  "MR",
+                  "GF",
+                  "TZ",
+                  "ST",
+                  "KY",
+                  "GR",
+                  "CG",
+                  "GQ",
+                  "SZ",
+                  "BW",
+                  "JM",
+                  "RW",
+                  "GP",
+                  "ZA",
+                  "CL",
+                  "CV",
+                  "LC",
+                  "BB",
+                  "KM",
+                  "PY",
+                  "CY",
+                  "TD",
+                  "BM",
+                  "RE",
+                  "PE",
+                  "BQ",
+                  "MZ",
+                  "GM",
+                  "AG",
+                  "NE",
+                  "GA"
+                ]
+              },
+              "thumbnail": "https://a.espncdn.com/media/motion/2025/0526/ss_20250526_224530271_28682031370/ss_20250526_224530271_28682031370.jpg",
+              "links": {
+                "web": {
+                  "href": "https://www.espn.com/video/clip?id=45337360",
+                  "self": {
+                    "href": "https://www.espn.com/video/clip?id=45337360",
+                    "dsi": {
+                      "href": "https://www.espn.com/video/clip?id=c828a56d993bd"
+                    }
+                  },
+                  "seo": {
+                    "href": "https://www.espn.com/video/clip/_/id/45337360"
+                  }
+                },
+                "mobile": {
+                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3cba9599-b8d1-4dda-bc17-2789c018a288/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45337360",
+                  "source": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203.mp4"
+                  },
+                  "alert": {
+                    "href": "http://m.espn.com/general/video/videoAlert?vid=45337360"
+                  },
+                  "streaming": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3cba9599-b8d1-4dda-bc17-2789c018a288/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45337360"
+                  },
+                  "progressiveDownload": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/3cba9599-b8d1-4dda-bc17-2789c018a288/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45337360"
+                  }
+                },
+                "api": {
+                  "self": {
+                    "href": "https://content.core.api.espn.com/v1/video/clips/45337360"
+                  },
+                  "artwork": {
+                    "href": "https://artwork.api.espn.com/artwork/collections/media/3cba9599-b8d1-4dda-bc17-2789c018a288"
+                  }
+                },
+                "source": {
+                  "href": "https://media.video-cdn.espn.com/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203_360p30_1464k.mp4",
+                  "mezzanine": {
+                    "href": "http://media.video-origin.espn.com/espnvideo/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203.mp4"
+                  },
+                  "flash": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203.smil"
+                  },
+                  "hds": {
+                    "href": "https://hds.video-cdn.espn.com/z/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203_rel.smil/manifest.f4m"
+                  },
+                  "HLS": {
+                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203/playlist.m3u8",
+                    "HD": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203/playlist.m3u8"
+                    },
+                    "cmaf": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203/playlist.m3u8",
+                      "shield": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/media/3cba9599-b8d1-4dda-bc17-2789c018a288/asset"
+                      }
+                    }
+                  },
+                  "HD": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203_720p30_2896k.mp4"
+                  },
+                  "full": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0526/ss_20250526_224530271_2868203/ss_20250526_224530271_2868203_360p30_1464k.mp4"
+                  }
+                },
+                "sportscenter": {
+                  "href": "sportscenter://x-callback-url/showVideo?videoID=45337360&videoDSI=c828a56d993bd"
+                }
+              },
+              "ad": {
+                "sport": "nhl",
+                "bundle": "nhl_oneplays"
+              },
+              "tracking": {
+                "sportName": "nhl",
+                "leagueName": "No League",
+                "coverageType": "Final Game Highlight",
+                "trackingName": "NHL_One-Play (Hurricanes stave off elimination after 2 quick empty-net goals) 2025/05/27 ESHEET",
+                "trackingId": "dm_20250527_NHL_hurricanes_stave_off_elimination_after_2_quick_emptynet_goals"
+              }
+            },
+            {
+              "id": 45338613,
+              "cerebroId": "6835426c21105e0264946e0f",
+              "source": "espn",
+              "headline": "Canes snap 15-game ECF losing streak to stay alive",
+              "description": "The Hurricanes defeat the Panthers in Game 4 to get their first Eastern Conference finals win since 2006.",
+              "lastModified": "2025-05-27T04:42:33Z",
+              "originalPublishDate": "2025-05-27T04:39:19Z",
+              "duration": 80,
+              "timeRestrictions": {
+                "embargoDate": "2025-05-27T04:39:19Z",
+                "expirationDate": "2025-07-31T04:39:19Z"
+              },
+              "deviceRestrictions": {
+                "type": "whitelist",
+                "devices": [
+                  "desktop",
+                  "ipad",
+                  "settop",
+                  "handset",
+                  "tablet"
+                ]
+              },
+              "geoRestrictions": {
+                "type": "whitelist",
+                "countries": [
+                  "ZW",
+                  "BM",
+                  "LC",
+                  "MH",
+                  "VG",
+                  "FJ",
+                  "BE",
+                  "MZ",
+                  "TT",
+                  "RE",
+                  "ST",
+                  "ZA",
+                  "AG",
+                  "PW",
+                  "BI",
+                  "KM",
+                  "BQ",
+                  "AR",
+                  "ET",
+                  "BZ",
+                  "SO",
+                  "UM",
+                  "SS",
+                  "GD",
+                  "LS",
+                  "PR",
+                  "FM",
+                  "KE",
+                  "CM",
+                  "IT",
+                  "MG",
+                  "GM",
+                  "MR",
+                  "BJ",
+                  "JM",
+                  "SX",
+                  "MW",
+                  "GP",
+                  "MP",
+                  "KN",
+                  "GN",
+                  "TD",
+                  "CD",
+                  "AO",
+                  "NG",
+                  "CF",
+                  "UG",
+                  "VC",
+                  "BW",
+                  "AS",
+                  "SC",
+                  "BR",
+                  "AU",
+                  "MQ",
+                  "ES",
+                  "US",
+                  "GU",
+                  "VI",
+                  "LR",
+                  "NZ",
+                  "CG",
+                  "YE",
+                  "SR",
+                  "BF",
+                  "TG",
+                  "GA",
+                  "RW",
+                  "SL",
+                  "ER",
+                  "ML",
+                  "ZM",
+                  "SZ",
+                  "HT",
+                  "BS",
+                  "NE",
+                  "SD",
+                  "SN",
+                  "GF",
+                  "MS",
+                  "NL",
+                  "CV",
+                  "GH",
+                  "AW",
+                  "GQ",
+                  "NA",
+                  "BB",
+                  "MU",
+                  "DJ",
+                  "GW",
+                  "AI",
+                  "GY",
+                  "TC",
+                  "TZ",
+                  "KY",
+                  "CI"
+                ]
+              },
+              "thumbnail": "https://a.espncdn.com/media/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.jpg",
+              "links": {
+                "web": {
+                  "href": "https://www.espn.com/video/clip?id=45338613",
+                  "self": {
+                    "href": "https://www.espn.com/video/clip?id=45338613",
+                    "dsi": {
+                      "href": "https://www.espn.com/video/clip?id=49ccb95ddaea8"
+                    }
+                  },
+                  "seo": {
+                    "href": "https://www.espn.com/video/clip/_/id/45338613"
+                  }
+                },
+                "mobile": {
+                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613",
+                  "source": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.mp4"
+                  },
+                  "alert": {
+                    "href": "http://m.espn.com/general/video/videoAlert?vid=45338613"
+                  },
+                  "streaming": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613"
+                  },
+                  "progressiveDownload": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613"
+                  }
+                },
+                "api": {
+                  "self": {
+                    "href": "https://content.core.api.espn.com/v1/video/clips/45338613"
+                  },
+                  "artwork": {
+                    "href": "https://artwork.api.espn.com/artwork/collections/media/e7dd253b-6a94-4011-b342-e9a67883ab71"
+                  }
+                },
+                "source": {
+                  "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_360p30_1464k.mp4",
+                  "mezzanine": {
+                    "href": "http://media.video-origin.espn.com/espnvideo/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.mp4"
+                  },
+                  "flash": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.smil"
+                  },
+                  "hds": {
+                    "href": "https://hds.video-cdn.espn.com/z/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_rel.smil/manifest.f4m"
+                  },
+                  "HLS": {
+                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8",
+                    "HD": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8"
+                    },
+                    "cmaf": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8",
+                      "shield": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/media/e7dd253b-6a94-4011-b342-e9a67883ab71/asset"
+                      }
+                    }
+                  },
+                  "HD": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_720p30_2896k.mp4"
+                  },
+                  "full": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_360p30_1464k.mp4"
+                  }
+                },
+                "sportscenter": {
+                  "href": "sportscenter://x-callback-url/showVideo?videoID=45338613&videoDSI=49ccb95ddaea8"
+                }
+              },
+              "ad": {
+                "sport": "nhl",
+                "bundle": "sportscenter"
+              },
+              "tracking": {
+                "sportName": "nhl",
+                "leagueName": "No League",
+                "coverageType": "Final Game Highlight",
+                "trackingName": "COM_NHL Highlight (Canes snap 15-game ECF losing streak to stay alive) 2025/05/26 ESHEET SC",
+                "trackingId": "dm_250527_NHL_Highlight_Canes_SC_HL"
+              }
+            }
+          ],
+          "headlines": [
+            {
+              "video": [
+                {
+                  "id": 45338613,
+                  "source": "espn",
+                  "headline": "Canes snap 15-game ECF losing streak to stay alive",
+                  "thumbnail": "https://a.espncdn.com/media/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.jpg",
+                  "duration": 80,
+                  "tracking": {
+                    "sportName": "nhl",
+                    "leagueName": "No League",
+                    "coverageType": "Final Game Highlight",
+                    "trackingName": "COM_NHL Highlight (Canes snap 15-game ECF losing streak to stay alive) 2025/05/26 ESHEET SC",
+                    "trackingId": "dm_250527_NHL_Highlight_Canes_SC_HL"
+                  },
+                  "deviceRestrictions": {
+                    "type": "whitelist",
+                    "devices": [
+                      "desktop",
+                      "ipad",
+                      "settop",
+                      "handset",
+                      "tablet"
+                    ]
+                  },
+                  "geoRestrictions": {
+                    "type": "whitelist",
+                    "countries": [
+                      "ZW",
+                      "BM",
+                      "LC",
+                      "MH",
+                      "VG",
+                      "FJ",
+                      "BE",
+                      "MZ",
+                      "TT",
+                      "RE",
+                      "ST",
+                      "ZA",
+                      "AG",
+                      "PW",
+                      "BI",
+                      "KM",
+                      "BQ",
+                      "AR",
+                      "ET",
+                      "BZ",
+                      "SO",
+                      "UM",
+                      "SS",
+                      "GD",
+                      "LS",
+                      "PR",
+                      "FM",
+                      "KE",
+                      "CM",
+                      "IT",
+                      "MG",
+                      "GM",
+                      "MR",
+                      "BJ",
+                      "JM",
+                      "SX",
+                      "MW",
+                      "GP",
+                      "MP",
+                      "KN",
+                      "GN",
+                      "TD",
+                      "CD",
+                      "AO",
+                      "NG",
+                      "CF",
+                      "UG",
+                      "VC",
+                      "BW",
+                      "AS",
+                      "SC",
+                      "BR",
+                      "AU",
+                      "MQ",
+                      "ES",
+                      "US",
+                      "GU",
+                      "VI",
+                      "LR",
+                      "NZ",
+                      "CG",
+                      "YE",
+                      "SR",
+                      "BF",
+                      "TG",
+                      "GA",
+                      "RW",
+                      "SL",
+                      "ER",
+                      "ML",
+                      "ZM",
+                      "SZ",
+                      "HT",
+                      "BS",
+                      "NE",
+                      "SD",
+                      "SN",
+                      "GF",
+                      "MS",
+                      "NL",
+                      "CV",
+                      "GH",
+                      "AW",
+                      "GQ",
+                      "NA",
+                      "BB",
+                      "MU",
+                      "DJ",
+                      "GW",
+                      "AI",
+                      "GY",
+                      "TC",
+                      "TZ",
+                      "KY",
+                      "CI"
+                    ]
+                  },
+                  "links": {
+                    "web": {
+                      "href": "https://www.espn.com/video/clip?id=45338613",
+                      "self": {
+                        "href": "https://www.espn.com/video/clip?id=45338613",
+                        "dsi": {
+                          "href": "https://www.espn.com/video/clip?id=49ccb95ddaea8"
+                        }
+                      },
+                      "seo": {
+                        "href": "https://www.espn.com/video/clip/_/id/45338613"
+                      }
+                    },
+                    "mobile": {
+                      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613",
+                      "source": {
+                        "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.mp4"
+                      },
+                      "alert": {
+                        "href": "http://m.espn.com/general/video/videoAlert?vid=45338613"
+                      },
+                      "streaming": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613"
+                      },
+                      "progressiveDownload": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e7dd253b-6a94-4011-b342-e9a67883ab71/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45338613"
+                      }
+                    },
+                    "api": {
+                      "self": {
+                        "href": "https://content.core.api.espn.com/v1/video/clips/45338613"
+                      },
+                      "artwork": {
+                        "href": "https://artwork.api.espn.com/artwork/collections/media/e7dd253b-6a94-4011-b342-e9a67883ab71"
+                      }
+                    },
+                    "source": {
+                      "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_360p30_1464k.mp4",
+                      "mezzanine": {
+                        "href": "http://media.video-origin.espn.com/espnvideo/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.mp4"
+                      },
+                      "flash": {
+                        "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL.smil"
+                      },
+                      "hds": {
+                        "href": "https://hds.video-cdn.espn.com/z/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_rel.smil/manifest.f4m"
+                      },
+                      "HLS": {
+                        "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8",
+                        "HD": {
+                          "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8"
+                        },
+                        "cmaf": {
+                          "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL/playlist.m3u8",
+                          "shield": {
+                            "href": "https://watch.auth.api.espn.com/video/auth/media/e7dd253b-6a94-4011-b342-e9a67883ab71/asset"
+                          }
+                        }
+                      },
+                      "HD": {
+                        "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_720p30_2896k.mp4"
+                      },
+                      "full": {
+                        "href": "https://media.video-cdn.espn.com/motion/2025/0527/dm_250527_NHL_Highlight_Canes_SC_HL/dm_250527_NHL_Highlight_Canes_SC_HL_360p30_1464k.mp4"
+                      }
+                    },
+                    "sportscenter": {
+                      "href": "sportscenter://x-callback-url/showVideo?videoID=45338613&videoDSI=49ccb95ddaea8"
+                    }
+                  }
+                }
+              ],
+              "type": "Recap",
+              "description": "\u2014 With their season on the line, the Carolina Hurricanes found a way to play their best hockey.",
+              "shortLinkText": "Hurricanes avoid another sweep, stave off elimination by beating Panthers 3-0 in Game 4"
+            }
+          ]
         }
       ],
-      "uid": "s:70~l:90~e:401774290",
+      "uid": "s:70~l:90~e:401774291",
       "name": "Carolina Hurricanes at Florida Panthers",
       "shortName": "CAR @ FLA",
       "season": {
@@ -1281,10 +1998,61 @@
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/nhl/game/_/gameId/401774290/hurricanes-panthers",
+          "href": "https://www.espn.com/nhl/game/_/gameId/401774291/hurricanes-panthers",
           "text": "Gamecast",
           "rel": [
             "summary",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/nhl/boxscore/_/gameId/401774291",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Highlights",
+          "href": "https://www.espn.com/nhl/video?gameId=401774291",
+          "text": "Highlights",
+          "rel": [
+            "highlights",
+            "desktop"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/nhl/playbyplay/_/gameId/401774291",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Recap",
+          "href": "https://www.espn.com/nhl/recap?gameId=401774291",
+          "text": "Recap",
+          "rel": [
+            "recap",
             "desktop",
             "event"
           ],
@@ -1294,17 +2062,17 @@
       ],
       "status": {
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
-          "completed": false,
-          "description": "Scheduled",
-          "detail": "Sat, May 24th at 8:00 PM EDT",
-          "shortDetail": "5/24 - 8:00 PM EDT"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 0
+        "period": 3
       }
     }
   ]

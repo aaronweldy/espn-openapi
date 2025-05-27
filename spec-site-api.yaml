@@ -2446,7 +2446,7 @@ components:
           type: string
           description: Type of article content
           example: "HeadlineNews"
-          enum: ["HeadlineNews", "Media", "Story", "Recap"]
+          enum: ["HeadlineNews", "Media", "Story", "Recap", "Preview"]
         headline:
           type: string
           description: Article headline
@@ -2687,7 +2687,6 @@ components:
       required:
         - id
         - description
-        - links
 
     NewsTeamLinks:
       type: object

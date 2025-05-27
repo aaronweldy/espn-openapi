@@ -1,0 +1,279 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SportsCoreCorrectionsSchema",
+    "definitions": {
+        "SportsCoreCorrectionsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "SportsCoreCorrectionsSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "splitStats": {
+                    "$ref": "#/definitions/SplitStats"
+                },
+                "competition": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "team": {
+                    "$ref": "#/definitions/Athlete"
+                }
+            },
+            "required": [
+                "athlete",
+                "competition",
+                "splitStats",
+                "team"
+            ],
+            "title": "Item"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "SplitStats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/SplitStatsName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/SplitStatsAbbreviation"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "categories",
+                "id",
+                "name"
+            ],
+            "title": "SplitStats"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/CategoryName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/CategoryDisplayName"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/CategoryShortDisplayName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/CategoryAbbreviation"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "name",
+                "shortDisplayName",
+                "stats",
+                "summary"
+            ],
+            "title": "Category"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/StatName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/StatDisplayName"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/StatShortDisplayName"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/StatAbbreviation"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "value"
+            ],
+            "title": "Stat"
+        },
+        "SplitStatsAbbreviation": {
+            "type": "string",
+            "enum": [
+                "Stat Correction"
+            ],
+            "title": "SplitStatsAbbreviation"
+        },
+        "CategoryAbbreviation": {
+            "type": "string",
+            "enum": [
+                "def",
+                "punt"
+            ],
+            "title": "CategoryAbbreviation"
+        },
+        "CategoryDisplayName": {
+            "type": "string",
+            "enum": [
+                "Defense",
+                "Punting"
+            ],
+            "title": "CategoryDisplayName"
+        },
+        "CategoryName": {
+            "type": "string",
+            "enum": [
+                "defensive",
+                "punting"
+            ],
+            "title": "CategoryName"
+        },
+        "CategoryShortDisplayName": {
+            "type": "string",
+            "enum": [
+                "Defensive",
+                "Punting"
+            ],
+            "title": "CategoryShortDisplayName"
+        },
+        "StatAbbreviation": {
+            "type": "string",
+            "enum": [
+                "AST",
+                "SOLO",
+                "YDS",
+                "PD"
+            ],
+            "title": "StatAbbreviation"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "The number of assists on tackles.",
+                "The number of times a tackle was made unassisted.",
+                "The total amount of yardage of punt returns.",
+                "The total number of passes defended."
+            ],
+            "title": "Description"
+        },
+        "StatDisplayName": {
+            "type": "string",
+            "enum": [
+                "Assist Tackles",
+                "Solo Tackles",
+                "Punt Return Yards",
+                "Passes Defended"
+            ],
+            "title": "StatDisplayName"
+        },
+        "StatName": {
+            "type": "string",
+            "enum": [
+                "assistTackles",
+                "soloTackles",
+                "puntReturnYards",
+                "passesDefended"
+            ],
+            "title": "StatName"
+        },
+        "StatShortDisplayName": {
+            "type": "string",
+            "enum": [
+                "AST",
+                "SOLO",
+                "PRYDS",
+                "Passes Defended"
+            ],
+            "title": "StatShortDisplayName"
+        },
+        "SplitStatsName": {
+            "type": "string",
+            "enum": [
+                "statCorrection"
+            ],
+            "title": "SplitStatsName"
+        }
+    }
+}

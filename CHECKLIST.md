@@ -17,6 +17,9 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year} - Get Season Details. Path Params: {sport}, {league}, {year} - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks - List Weeks for Season. Path Params: {sport}, {league}, {year}, {seasontype} (e.g., 1=pre, 2=reg, 3=post) - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{weeknum} - Get Week Details. Path Params: {sport}, {league}, {year}, {seasontype}, {weeknum} - Implemented
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups - List Groups for Season. Path Params: {sport}, {league}, {year}, {season_type} - Implemented
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections - List Statistical Corrections for Season. Path Params: {sport}, {league}, {year}, {season_type} - Implemented
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id} - Get Group Details. Path Params: {sport}, {league}, {year}, {season_type}, {group_id} - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/events - List Events (Games). Path Params: {sport}, {league}. Query Params: dates (e.g., YYYYMMDD, YYYYMMDD-YYYYMMDD, YYYY), limit - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/events - List Events by Week. Path Params: {sport}, {league}, {year}, {seasontype}, {week} - Implemented
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id} - Get Specific Event. Path Params: {sport}, {league}, {event_id} - Derived from Implemented General Events
@@ -224,6 +227,11 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} -  Draft Athlete Details. Path Params: {year}, {athlete_id}
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups
+[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/weeks
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
+[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/contracts -  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog-  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
