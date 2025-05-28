@@ -605,6 +605,130 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/hockey/nhl/teams:
+    get:
+      summary: Get NHL Teams List
+      description: Retrieve list of all NHL teams with details including names, colors, logos and links
+      operationId: getNHLTeamsList
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamsListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/hockey/nhl/teams/{team_id_or_abbrev}:
+    get:
+      summary: Get NHL Specific Team
+      description: Retrieve detailed information for a specific NHL team by ID or abbreviation
+      operationId: getNHLTeamDetails
+      parameters:
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID or abbreviation (e.g., 1, BOS)
+          schema:
+            type: string
+            example: "1"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamDetailsResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/hockey/nhl/teams/{team_id_or_abbrev}/roster:
+    get:
+      summary: Get NHL Team Roster
+      description: Retrieve the complete roster for a specific NHL team including player details, positions, and statistics
+      operationId: getNHLTeamRoster
+      parameters:
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID or abbreviation (e.g., 1, BOS)
+          schema:
+            type: string
+            example: "1"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NhlTeamRosterResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/hockey/nhl/summary:
+    get:
+      summary: Get NHL Game Summary
+      description: Retrieve comprehensive summary data for a specific NHL game including scores, statistics, and detailed game information
+      operationId: getNHLGameSummary
+      parameters:
+        - name: event
+          in: query
+          required: true
+          description: The event ID of the NHL game
+          schema:
+            type: string
+            example: "401559593"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NhlGameSummaryResponse'
+        '404':
+          description: Game not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     TeamsListResponse:
@@ -3995,3 +4119,258 @@ components:
         - firstStar
         - secondStar
         - thirdStar
+
+    NhlTeamRosterResponse:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/TeamDetail'
+        athletes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NhlAthlete'
+        coaches:
+          type: array
+          items:
+            $ref: '#/components/schemas/NhlCoach'
+      required:
+        - team
+        - athletes
+      description: NHL team roster response with player and coach information
+
+    NhlAthlete:
+      type: object
+      description: NHL athlete information for roster
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+        guid:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        shortName:
+          type: string
+        weight:
+          type: number
+        displayWeight:
+          type: string
+        height:
+          type: number
+        displayHeight:
+          type: string
+        age:
+          type: integer
+        dateOfBirth:
+          type: string
+          format: date-time
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        slug:
+          type: string
+        headshot:
+          $ref: '#/components/schemas/Headshot'
+        jersey:
+          type: string
+        position:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            displayName:
+              type: string
+            abbreviation:
+              type: string
+            leaf:
+              type: boolean
+            parent:
+              type: object
+        positions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              displayName:
+                type: string
+              abbreviation:
+                type: string
+              leaf:
+                type: boolean
+              parent:
+                type: object
+        injuries:
+          type: array
+          items:
+            type: object
+        teams:
+          type: array
+          items:
+            type: object
+            properties:
+              $ref:
+                type: string
+        contracts:
+          type: array
+          items:
+            type: object
+            properties:
+              salary:
+                type: integer
+              season:
+                type: object
+                properties:
+                  year:
+                    type: integer
+                  startDate:
+                    type: string
+                  endDate:
+                    type: string
+        experience:
+          type: object
+          properties:
+            years:
+              type: integer
+        status:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            type:
+              type: string
+            abbreviation:
+              type: string
+        shoots:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [RIGHT, LEFT]
+            abbreviation:
+              type: string
+              enum: [R, L]
+            displayValue:
+              type: string
+              enum: [Right, Left]
+        catches:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [RIGHT, LEFT]
+            abbreviation:
+              type: string
+              enum: [R, L]
+            displayValue:
+              type: string
+              enum: [Right, Left]
+        college:
+          type: object
+          properties:
+            id:
+              type: string
+            guid:
+              type: string
+            mascot:
+              type: string
+            name:
+              type: string
+            shortName:
+              type: string
+            abbrev:
+              type: string
+            logos:
+              type: array
+              items:
+                $ref: '#/components/schemas/Logo'
+      required:
+        - id
+        - uid
+        - guid
+        - firstName
+        - lastName
+        - fullName
+        - displayName
+        - shortName
+        - weight
+        - displayWeight
+        - height
+        - displayHeight
+        - age
+        - dateOfBirth
+        - links
+        - slug
+        - headshot
+        - jersey
+        - position
+        - positions
+        - injuries
+        - teams
+        - contracts
+        - experience
+        - status
+
+    NhlCoach:
+      type: object
+      description: Coach information for NHL team roster
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        experience:
+          type: integer
+      required:
+        - id
+        - firstName
+        - lastName
+        - experience
+
+    NhlGameSummaryResponse:
+      type: object
+      properties:
+        boxscore:
+          type: object
+          description: Game boxscore data
+        gameInfo:
+          type: object
+          description: Game information including venue and officials
+        header:
+          type: object
+          description: Game header information
+        plays:
+          type: array
+          items:
+            type: object
+          description: Game plays data
+        winProbability:
+          type: array
+          items:
+            type: object
+          description: Win probability data
+        standings:
+          type: object
+          description: Standings information
+      required:
+        - boxscore
+        - gameInfo
+        - header
+      description: NHL game summary response with comprehensive game data

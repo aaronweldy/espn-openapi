@@ -1,5 +1,18 @@
 {
   "header": "NFL News",
+  "link": {
+    "language": "en",
+    "rel": [
+      "index",
+      "desktop",
+      "league"
+    ],
+    "href": "https://www.espn.com/nfl/",
+    "text": "All NFL News",
+    "shortText": "All News",
+    "isExternal": false,
+    "isPremium": false
+  },
   "articles": [
     {
       "id": 45333593,
@@ -9,8 +22,8 @@
       "type": "HeadlineNews",
       "headline": "Sources: Raiders, AJ Cole reach four-year, $15.8M extension",
       "description": "The Raiders and All-Pro punter AJ Cole have agreed to a four-year, $15.8 million contract extension with $11 million guaranteed, sources confirmed to ESPN.",
-      "lastModified": "2025-05-26T21:04:54+00:00",
-      "published": "2025-05-26T20:38:00+00:00",
+      "lastModified": "2025-05-26T21:04:54Z",
+      "published": "2025-05-26T20:38:00Z",
       "images": [
         {
           "dataSourceIdentifier": "ef2db9dc16329",
@@ -25,20 +38,20 @@
       ],
       "categories": [
         {
+          "id": 409224,
           "type": "topic",
           "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-          "id": 409224,
           "description": "news",
           "sportId": 0,
           "topicId": 781
         },
         {
-          "type": "athlete",
-          "guid": "1e41e5c0-d32d-89d6-3ee6-205cea91ba8d",
           "id": 381472,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:3686689",
+          "guid": "1e41e5c0-d32d-89d6-3ee6-205cea91ba8d",
           "description": "AJ Cole",
           "sportId": 28,
-          "uid": "s:20~l:28~a:3686689",
           "athleteId": 3686689,
           "athlete": {
             "id": 3686689,
@@ -58,12 +71,12 @@
           }
         },
         {
-          "type": "team",
-          "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
           "id": 2553,
+          "type": "team",
+          "uid": "s:20~l:28~t:13",
+          "guid": "b18540eb-6f2b-534c-e7f9-9bd930518da9",
           "description": "Las Vegas Raiders",
           "sportId": 28,
-          "uid": "s:20~l:28~t:13",
           "teamId": 13,
           "team": {
             "id": 13,
@@ -83,9 +96,9 @@
           }
         },
         {
+          "id": 704689,
           "type": "contributor",
           "guid": "b01f248b-d634-36a1-95d7-36c479b8a8b6",
-          "id": 704689,
           "description": "Ryan McFadden",
           "slug": "ryan-mcfadden",
           "contributor": {
@@ -98,12 +111,12 @@
           }
         },
         {
-          "type": "league",
-          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "description": "NFL",
           "sportId": 28,
-          "uid": "s:20~l:28",
           "leagueId": 28,
           "league": {
             "id": 28,
@@ -173,26 +186,26 @@
       "type": "Media",
       "headline": "Why Tannenbaum is predicting an 'exceptionally good year' for George Pickens",
       "description": "Mike Tannenbaum weighs in on the Cowboys adding wide receiver George Pickens in a contract year.",
-      "lastModified": "2025-05-26T14:43:18+00:00",
-      "published": "2025-05-26T14:21:57+00:00",
+      "lastModified": "2025-05-26T14:43:18Z",
+      "published": "2025-05-26T14:21:57Z",
       "images": [
         {
           "name": "Why Tannenbaum is predicting an 'exceptionally good year' for George Pickens",
+          "caption": "Mike Tannenbaum weighs in on the Cowboys adding wide receiver George Pickens in a contract year.",
+          "alt": "",
           "height": 324,
           "width": 576,
-          "url": "https://a.espncdn.com/media/motion/2025/0526/dm_250526_Why_Tannenbaum_is_predicting_pickens_to_do_well/dm_250526_Why_Tannenbaum_is_predicting_pickens_to_do_well.jpg",
-          "caption": "Mike Tannenbaum weighs in on the Cowboys adding wide receiver George Pickens in a contract year.",
-          "alt": ""
+          "url": "https://a.espncdn.com/media/motion/2025/0526/dm_250526_Why_Tannenbaum_is_predicting_pickens_to_do_well/dm_250526_Why_Tannenbaum_is_predicting_pickens_to_do_well.jpg"
         }
       ],
       "categories": [
         {
-          "type": "athlete",
-          "guid": "ab0fe70b-0fb4-fc8e-55e1-8f5204851a9d",
           "id": 529504,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:4426354",
+          "guid": "ab0fe70b-0fb4-fc8e-55e1-8f5204851a9d",
           "description": "George Pickens",
           "sportId": 28,
-          "uid": "s:20~l:28~a:4426354",
           "athleteId": 4426354,
           "athlete": {
             "id": 4426354,
@@ -212,18 +225,18 @@
           }
         },
         {
+          "id": 664674,
           "type": "editorialindicator",
           "guid": "467e5496-7942-3006-b2f4-a6ef95021dce",
-          "id": 664674,
           "description": "Team Boost"
         },
         {
-          "type": "team",
-          "guid": "b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234",
           "id": 1298,
+          "type": "team",
+          "uid": "s:20~l:28~t:6",
+          "guid": "b0fc8fb7-9dbe-e574-9008-6f0ee7c6b234",
           "description": "Dallas Cowboys",
           "sportId": 28,
-          "uid": "s:20~l:28~t:6",
           "teamId": 6,
           "team": {
             "id": 6,
@@ -243,12 +256,12 @@
           }
         },
         {
-          "type": "league",
-          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "description": "NFL",
           "sportId": 28,
-          "uid": "s:20~l:28",
           "leagueId": 28,
           "league": {
             "id": 28,
@@ -287,10 +300,8 @@
       ],
       "premium": false,
       "links": {
-        "sportscenter": {
-          "href": "sportscenter://x-callback-url/showVideo?videoID=45329652&videoDSI=1200b44f8d45c"
-        },
         "web": {
+          "href": "https://www.espn.com/video/clip?id=45329652",
           "self": {
             "href": "https://www.espn.com/video/clip?id=45329652",
             "dsi": {
@@ -299,16 +310,18 @@
           },
           "seo": {
             "href": "https://www.espn.com/video/clip/_/id/45329652"
-          },
-          "href": "https://www.espn.com/video/clip?id=45329652"
+          }
         },
         "api": {
-          "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/6be2bacf-2b20-4152-aa86-249b2e31b737"
-          },
           "self": {
             "href": "https://content.core.api.espn.com/v1/video/clips/45329652"
+          },
+          "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/6be2bacf-2b20-4152-aa86-249b2e31b737"
           }
+        },
+        "sportscenter": {
+          "href": "sportscenter://x-callback-url/showVideo?videoID=45329652&videoDSI=1200b44f8d45c"
         }
       }
     },
@@ -320,26 +333,26 @@
       "type": "Media",
       "headline": "Dan Graziano: Aaron Rodgers was not markedly better than Mason Rudolph last season",
       "description": "Dan Graziano weighs in on the Steelers' ongoing quarterback saga as they await a decision from Aaron Rodgers.\n",
-      "lastModified": "2025-05-26T13:14:48+00:00",
-      "published": "2025-05-26T12:55:50+00:00",
+      "lastModified": "2025-05-26T13:14:48Z",
+      "published": "2025-05-26T12:55:50Z",
       "images": [
         {
           "name": "Dan Graziano: Aaron Rodgers was not markedly better than Mason Rudolph last season",
+          "caption": "Dan Graziano weighs in on the Steelers' ongoing quarterback saga as they await a decision from Aaron Rodgers.\n",
+          "alt": "",
           "height": 324,
           "width": 576,
-          "url": "https://a.espncdn.com/media/motion/2025/0526/ss_20250526_085552723_2867793/ss_20250526_085552723_2867793.jpg",
-          "caption": "Dan Graziano weighs in on the Steelers' ongoing quarterback saga as they await a decision from Aaron Rodgers.\n",
-          "alt": ""
+          "url": "https://a.espncdn.com/media/motion/2025/0526/ss_20250526_085552723_2867793/ss_20250526_085552723_2867793.jpg"
         }
       ],
       "categories": [
         {
-          "type": "team",
-          "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
           "id": 2776,
+          "type": "team",
+          "uid": "s:20~l:28~t:23",
+          "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
           "description": "Pittsburgh Steelers",
           "sportId": 28,
-          "uid": "s:20~l:28~t:23",
           "teamId": 23,
           "team": {
             "id": 23,
@@ -359,12 +372,12 @@
           }
         },
         {
-          "type": "athlete",
-          "guid": "5fbab03e-2816-55ab-ae10-83b132803d9e",
           "id": 17303,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:8439",
+          "guid": "5fbab03e-2816-55ab-ae10-83b132803d9e",
           "description": "Aaron Rodgers",
           "sportId": 28,
-          "uid": "s:20~l:28~a:8439",
           "athleteId": 8439,
           "athlete": {
             "id": 8439,
@@ -384,12 +397,12 @@
           }
         },
         {
-          "type": "league",
-          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "description": "NFL",
           "sportId": 28,
-          "uid": "s:20~l:28",
           "leagueId": 28,
           "league": {
             "id": 28,
@@ -424,10 +437,8 @@
       ],
       "premium": false,
       "links": {
-        "sportscenter": {
-          "href": "sportscenter://x-callback-url/showVideo?videoID=45328453&videoDSI=28c2391da3e18"
-        },
         "web": {
+          "href": "https://www.espn.com/video/clip?id=45328453",
           "self": {
             "href": "https://www.espn.com/video/clip?id=45328453",
             "dsi": {
@@ -436,16 +447,18 @@
           },
           "seo": {
             "href": "https://www.espn.com/video/clip/_/id/45328453"
-          },
-          "href": "https://www.espn.com/video/clip?id=45328453"
+          }
         },
         "api": {
-          "artwork": {
-            "href": "https://artwork.api.espn.com/artwork/collections/media/0b4c9b17-ae85-4ef2-ac7e-60a1f1180871"
-          },
           "self": {
             "href": "https://content.core.api.espn.com/v1/video/clips/45328453"
+          },
+          "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/0b4c9b17-ae85-4ef2-ac7e-60a1f1180871"
           }
+        },
+        "sportscenter": {
+          "href": "sportscenter://x-callback-url/showVideo?videoID=45328453&videoDSI=28c2391da3e18"
         }
       }
     },
@@ -457,27 +470,27 @@
       "type": "Story",
       "headline": "Eagles rally around Sirianni as coach signs extension",
       "description": "Talk of his evolution became a theme as Nick Sirianni and players reflected on his first four years at the helm.",
-      "lastModified": "2025-05-25T02:58:59+00:00",
-      "published": "2025-05-26T10:00:00+00:00",
+      "lastModified": "2025-05-25T02:58:59Z",
+      "published": "2025-05-26T10:00:00Z",
       "images": [
         {
           "dataSourceIdentifier": "52c1b612bd581",
           "id": 45280648,
           "type": "header",
           "name": "Jalen Hurts and Nick Sirianni [1296x729] - Copy",
+          "caption": "\"Just to see [Nick Sirianni's] evolution and his growth from my perspective and playing quarterback for him his whole entire tenure here, it's been a great experience,\" Eagles QB Jalen Hurts said .",
+          "alt": "Jalen Hurts and Nick Sirianni",
           "credit": "AP Photo/Rick Scuteri",
           "height": 729,
           "width": 1296,
-          "url": "https://a.espncdn.com/photo/2022/1213/r1106138_1296x729_16-9.jpg",
-          "caption": "\"Just to see [Nick Sirianni's] evolution and his growth from my perspective and playing quarterback for him his whole entire tenure here, it's been a great experience,\" Eagles QB Jalen Hurts said .",
-          "alt": "Jalen Hurts and Nick Sirianni"
+          "url": "https://a.espncdn.com/photo/2022/1213/r1106138_1296x729_16-9.jpg"
         }
       ],
       "categories": [
         {
+          "id": 696391,
           "type": "contributor",
           "guid": "e28af6cd-603c-3042-a666-1dfbc724a082",
-          "id": 696391,
           "description": "Tim McManus",
           "slug": "tim-mcmanus",
           "contributor": {
@@ -490,12 +503,12 @@
           }
         },
         {
-          "type": "team",
-          "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
           "id": 1407,
+          "type": "team",
+          "uid": "s:20~l:28~t:21",
+          "guid": "d1a9b001-1df7-fbd7-ae4c-6ca7065286ec",
           "description": "Philadelphia Eagles",
           "sportId": 28,
-          "uid": "s:20~l:28~t:21",
           "teamId": 21,
           "team": {
             "id": 21,
@@ -515,12 +528,12 @@
           }
         },
         {
-          "type": "league",
-          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "description": "NFL",
           "sportId": 28,
-          "uid": "s:20~l:28",
           "leagueId": 28,
           "league": {
             "id": 28,
@@ -582,26 +595,26 @@
       "type": "Story",
       "headline": "Are the odds joshing us? Bills favored in every 2025 game",
       "description": "Twenty-three teams, since 1978, were favored to be favorites in every regular-season game.",
-      "lastModified": "2025-05-25T22:21:18+00:00",
-      "published": "2025-05-26T10:00:00+00:00",
+      "lastModified": "2025-05-25T22:21:18Z",
+      "published": "2025-05-26T10:00:00Z",
       "images": [
         {
           "dataSourceIdentifier": "865d02b479716",
           "id": 45286505,
           "type": "header",
           "name": "Josh Allen [1296x729] - Copy",
+          "caption": "ESPN BET Sportsbook has the Bills favored in all of their 17 games for the 2025 season, the only team to be in such a position.",
           "credit": "Photo by Kathryn Riley/Getty Images",
           "height": 729,
           "width": 1296,
-          "url": "https://a.espncdn.com/photo/2025/0120/r1440968_1296x729_16-9.jpg",
-          "caption": "ESPN BET Sportsbook has the Bills favored in all of their 17 games for the 2025 season, the only team to be in such a position."
+          "url": "https://a.espncdn.com/photo/2025/0120/r1440968_1296x729_16-9.jpg"
         }
       ],
       "categories": [
         {
+          "id": 696277,
           "type": "contributor",
           "guid": "57430903-3d8d-344b-bff7-c49dd5218c65",
-          "id": 696277,
           "description": "Alaina Getzenberg",
           "slug": "alaina-getzenberg",
           "contributor": {
@@ -614,12 +627,12 @@
           }
         },
         {
-          "type": "team",
-          "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
           "id": 2203,
+          "type": "team",
+          "uid": "s:20~l:28~t:2",
+          "guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
           "description": "Buffalo Bills",
           "sportId": 28,
-          "uid": "s:20~l:28~t:2",
           "teamId": 2,
           "team": {
             "id": 2,
@@ -639,12 +652,12 @@
           }
         },
         {
-          "type": "league",
-          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
           "description": "NFL",
           "sportId": 28,
-          "uid": "s:20~l:28",
           "leagueId": 28,
           "league": {
             "id": 28,
@@ -697,19 +710,210 @@
         }
       },
       "byline": "Alaina Getzenberg"
+    },
+    {
+      "id": 45259184,
+      "nowId": "1-45259184",
+      "contentKey": "45259184-1-6-1",
+      "dataSourceIdentifier": "a8e1e95adba88",
+      "type": "Story",
+      "headline": "State of the Patriots: How close are the Patriots to returning to winning?",
+      "description": "The Patriots have revamped their front office, coaching personnel and roster after back-to-back 4-13 seasons in hopes of closing the gap in the AFC East.",
+      "lastModified": "2025-05-24T16:26:15Z",
+      "published": "2025-05-26T10:00:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "1c69d9c9d31ac",
+          "id": 45286511,
+          "type": "header",
+          "name": "State of the Patriots: How close are the Patriots to returning to winning? [1500x844]",
+          "alt": "Robert Kraft, Mike Vrabel, Drake Maye, Josh McDaniels, Stefon Diggs",
+          "credit": "Illustration by ESPN",
+          "height": 844,
+          "width": 1500,
+          "url": "https://a.espncdn.com/photo/2025/0523/nfl_state-of-the-patriots_16x9.jpg"
+        },
+        {
+          "dataSourceIdentifier": "45e3eb0bcc8b3",
+          "id": 45259319,
+          "type": "header",
+          "name": "Mike Vrabel [608x342]",
+          "caption": "Former Patriots linebacker Mike Vrabel was quickly hired after the Patriots fired Jerod Mayo after the last game of the 2024 season.",
+          "credit": "Fred Kfoury III/Icon Sportswire",
+          "height": 342,
+          "width": 608,
+          "url": "https://a.espncdn.com/photo/2025/0521/r1496381_608x342_16-9.jpg"
+        },
+        {
+          "dataSourceIdentifier": "c5c803cd611dc",
+          "id": 45259402,
+          "type": "header",
+          "name": "Drake Maye vs. Bills [608x342]",
+          "caption": "The Patriots are 4-8 against the AFC East since 2023.",
+          "credit": "AP Photo/Robert F. Bukaty",
+          "height": 342,
+          "width": 608,
+          "url": "https://a.espncdn.com/photo/2025/0521/r1496387_608x342_16-9.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 470142,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:4239699",
+          "guid": "b723c7a2-93cd-295c-ea06-cbf0b55d61e0",
+          "description": "Milton Williams",
+          "sportId": 28,
+          "athleteId": 4239699,
+          "athlete": {
+            "id": 4239699,
+            "description": "Milton Williams",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/4239699/milton-williams"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/4239699/milton-williams"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 696440,
+          "type": "contributor",
+          "guid": "bdee10fe-a1a2-3ced-87dd-43089bf47931",
+          "description": "Mike Reiss",
+          "slug": "mike-reiss",
+          "contributor": {
+            "id": 1800,
+            "description": "Mike Reiss",
+            "links": {
+              "web": {},
+              "mobile": {}
+            }
+          }
+        },
+        {
+          "id": 490129,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:4431452",
+          "guid": "2fbd2f9e-624d-3e63-9bb5-9bb965782b68",
+          "description": "Drake Maye",
+          "sportId": 28,
+          "athleteId": 4431452,
+          "athlete": {
+            "id": 4431452,
+            "description": "Drake Maye",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/4431452/drake-maye"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/4431452/drake-maye"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 2321,
+          "type": "team",
+          "uid": "s:20~l:28~t:17",
+          "guid": "0078f353-fe3e-67ed-a42c-43cca0568e21",
+          "description": "New England Patriots",
+          "sportId": 28,
+          "teamId": 17,
+          "team": {
+            "id": 17,
+            "description": "New England Patriots",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+          "description": "NFL",
+          "sportId": 28,
+          "leagueId": 28,
+          "league": {
+            "id": 28,
+            "description": "NFL",
+            "abbreviation": "NFL",
+            "links": {
+              "web": {
+                "leagues": {
+                  "href": "https://www.espn.com/nfl/"
+                }
+              },
+              "mobile": {
+                "leagues": {
+                  "href": "https://www.espn.com/nfl/"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "guid",
+          "guid": "b723c7a2-93cd-295c-ea06-cbf0b55d61e0"
+        },
+        {
+          "type": "guid",
+          "guid": "bdee10fe-a1a2-3ced-87dd-43089bf47931"
+        },
+        {
+          "type": "guid",
+          "guid": "2fbd2f9e-624d-3e63-9bb5-9bb965782b68"
+        },
+        {
+          "type": "guid",
+          "guid": "0078f353-fe3e-67ed-a42c-43cca0568e21"
+        },
+        {
+          "type": "guid",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4"
+        }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/nfl/story/_/id/45259184/how-close-patriots-returning-winning"
+        },
+        "mobile": {
+          "href": "http://m.espn.go.com/nfl/story?storyId=45259184"
+        },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45259184"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45259184"
+          }
+        }
+      },
+      "byline": "Mike Reiss"
     }
-  ],
-  "link": {
-    "href": "https://www.espn.com/nfl/",
-    "language": "en",
-    "rel": [
-      "index",
-      "desktop",
-      "league"
-    ],
-    "text": "All NFL News",
-    "shortText": "All News",
-    "isExternal": false,
-    "isPremium": false
-  }
+  ]
 }

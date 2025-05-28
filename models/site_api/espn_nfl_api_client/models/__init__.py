@@ -147,8 +147,37 @@ from .news_team_links import NewsTeamLinks
 from .news_web_mobile_links import NewsWebMobileLinks
 from .nfl_statistic_name import NflStatisticName
 from .nfl_team_schedule_response import NFLTeamScheduleResponse
+from .nhl_athlete import NhlAthlete
+from .nhl_athlete_catches import NhlAthleteCatches
+from .nhl_athlete_catches_abbreviation import NhlAthleteCatchesAbbreviation
+from .nhl_athlete_catches_display_value import NhlAthleteCatchesDisplayValue
+from .nhl_athlete_catches_type import NhlAthleteCatchesType
+from .nhl_athlete_college import NhlAthleteCollege
+from .nhl_athlete_contracts_item import NhlAthleteContractsItem
+from .nhl_athlete_contracts_item_season import NhlAthleteContractsItemSeason
+from .nhl_athlete_experience import NhlAthleteExperience
+from .nhl_athlete_injuries_item import NhlAthleteInjuriesItem
+from .nhl_athlete_position import NhlAthletePosition
+from .nhl_athlete_position_parent import NhlAthletePositionParent
+from .nhl_athlete_positions_item import NhlAthletePositionsItem
+from .nhl_athlete_positions_item_parent import NhlAthletePositionsItemParent
+from .nhl_athlete_shoots import NhlAthleteShoots
+from .nhl_athlete_shoots_abbreviation import NhlAthleteShootsAbbreviation
+from .nhl_athlete_shoots_display_value import NhlAthleteShootsDisplayValue
+from .nhl_athlete_shoots_type import NhlAthleteShootsType
+from .nhl_athlete_status import NhlAthleteStatus
+from .nhl_athlete_teams_item import NhlAthleteTeamsItem
+from .nhl_coach import NhlCoach
+from .nhl_game_summary_response import NhlGameSummaryResponse
+from .nhl_game_summary_response_boxscore import NhlGameSummaryResponseBoxscore
+from .nhl_game_summary_response_game_info import NhlGameSummaryResponseGameInfo
+from .nhl_game_summary_response_header import NhlGameSummaryResponseHeader
+from .nhl_game_summary_response_plays_item import NhlGameSummaryResponsePlaysItem
+from .nhl_game_summary_response_standings import NhlGameSummaryResponseStandings
+from .nhl_game_summary_response_win_probability_item import NhlGameSummaryResponseWinProbabilityItem
 from .nhl_scoreboard_response import NhlScoreboardResponse
 from .nhl_statistic_name import NhlStatisticName
+from .nhl_team_roster_response import NhlTeamRosterResponse
 from .official import Official
 from .play import Play
 from .play_clock import PlayClock
@@ -359,8 +388,37 @@ __all__ = (
     "NewsWebMobileLinks",
     "NflStatisticName",
     "NFLTeamScheduleResponse",
+    "NhlAthlete",
+    "NhlAthleteCatches",
+    "NhlAthleteCatchesAbbreviation",
+    "NhlAthleteCatchesDisplayValue",
+    "NhlAthleteCatchesType",
+    "NhlAthleteCollege",
+    "NhlAthleteContractsItem",
+    "NhlAthleteContractsItemSeason",
+    "NhlAthleteExperience",
+    "NhlAthleteInjuriesItem",
+    "NhlAthletePosition",
+    "NhlAthletePositionParent",
+    "NhlAthletePositionsItem",
+    "NhlAthletePositionsItemParent",
+    "NhlAthleteShoots",
+    "NhlAthleteShootsAbbreviation",
+    "NhlAthleteShootsDisplayValue",
+    "NhlAthleteShootsType",
+    "NhlAthleteStatus",
+    "NhlAthleteTeamsItem",
+    "NhlCoach",
+    "NhlGameSummaryResponse",
+    "NhlGameSummaryResponseBoxscore",
+    "NhlGameSummaryResponseGameInfo",
+    "NhlGameSummaryResponseHeader",
+    "NhlGameSummaryResponsePlaysItem",
+    "NhlGameSummaryResponseStandings",
+    "NhlGameSummaryResponseWinProbabilityItem",
     "NhlScoreboardResponse",
     "NhlStatisticName",
+    "NhlTeamRosterResponse",
     "Official",
     "Play",
     "PlayClock",
