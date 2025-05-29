@@ -131,6 +131,103 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/contracts:
+    get:
+      summary: Get Athlete Contracts
+      description: Retrieve contract information for a specific athlete. Returns a list of contracts by year.
+      operationId: getAthleteContracts
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "1966"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteContractsResponse'
+        '404':
+          description: Athlete not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/contracts/{year}:
+    get:
+      summary: Get Athlete Contract for Specific Year
+      description: Retrieve detailed contract information for a specific athlete in a specific year.
+      operationId: getAthleteContractByYear
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "1966"
+        - name: year
+          in: path
+          required: true
+          description: The year of the contract
+          schema:
+            type: string
+            example: "2024"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteContract'
+        '404':
+          description: Contract not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/athletes/{athleteId}/statistics:
     get:
       summary: Get NFL Athlete Statistics
@@ -2084,6 +2181,131 @@ components:
         - $ref
         - athlete
         - splits
+
+    AthleteContractsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 20
+        pageIndex:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 25
+        pageCount:
+          type: integer
+          example: 1
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    AthleteContract:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          example: "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/contracts/2024?lang=en&region=us"
+        birdStatus:
+          type: integer
+          example: 0
+        baseYearCompensation:
+          type: object
+          properties:
+            active:
+              type: boolean
+              example: false
+          required:
+            - active
+        poisonPillProvision:
+          type: object
+          properties:
+            active:
+              type: boolean
+              example: false
+          required:
+            - active
+        incomingTradeValue:
+          type: integer
+          example: 47607350
+        outgoingTradeValue:
+          type: integer
+          example: 47607350
+        minimumSalaryException:
+          type: boolean
+          example: false
+        optionType:
+          type: integer
+          example: 0
+        salary:
+          type: integer
+          example: 47607350
+        salaryRemaining:
+          type: integer
+          example: 0
+        yearsRemaining:
+          type: integer
+          example: 2
+        season:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        tradeKicker:
+          type: object
+          properties:
+            active:
+              type: boolean
+              example: false
+            percentage:
+              type: number
+              example: 0
+            value:
+              type: integer
+              example: 0
+            tradeValue:
+              type: integer
+              example: 0
+          required:
+            - active
+            - percentage
+            - value
+            - tradeValue
+        tradeRestriction:
+          type: boolean
+          example: true
+        unsignedForeignPick:
+          type: boolean
+          example: false
+        active:
+          type: boolean
+          example: true
+      required:
+        - $ref
+        - birdStatus
+        - baseYearCompensation
+        - poisonPillProvision
+        - incomingTradeValue
+        - outgoingTradeValue
+        - minimumSalaryException
+        - optionType
+        - salary
+        - salaryRemaining
+        - yearsRemaining
+        - season
+        - team
+        - tradeKicker
+        - tradeRestriction
+        - unsignedForeignPick
+        - active
 
     AthleteStatisticsLogResponse:
       type: object

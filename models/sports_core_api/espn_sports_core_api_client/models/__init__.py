@@ -2,6 +2,11 @@
 
 from .address import Address
 from .alternate_ids import AlternateIDS
+from .athlete_contract import AthleteContract
+from .athlete_contract_base_year_compensation import AthleteContractBaseYearCompensation
+from .athlete_contract_poison_pill_provision import AthleteContractPoisonPillProvision
+from .athlete_contract_trade_kicker import AthleteContractTradeKicker
+from .athlete_contracts_response import AthleteContractsResponse
 from .athlete_details_response import AthleteDetailsResponse
 from .athlete_details_response_alternate_ids import AthleteDetailsResponseAlternateIds
 from .athlete_details_response_experience import AthleteDetailsResponseExperience
@@ -176,6 +181,11 @@ from .venue import Venue
 __all__ = (
     "Address",
     "AlternateIDS",
+    "AthleteContract",
+    "AthleteContractBaseYearCompensation",
+    "AthleteContractPoisonPillProvision",
+    "AthleteContractsResponse",
+    "AthleteContractTradeKicker",
     "AthleteDetailsResponse",
     "AthleteDetailsResponseAlternateIds",
     "AthleteDetailsResponseExperience",

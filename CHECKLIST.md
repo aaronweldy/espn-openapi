@@ -32,6 +32,8 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/leaders
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page} - Athlete Statistics. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id}, {athlete_id}, {page}
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts - Athlete Contracts. Path Params: {sport}, {league}, {athlete_id}
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts/{year} - Athlete Contract by Year. Path Params: {sport}, {league}, {athlete_id}, {year}
 II. NFL Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/football/nfl/scoreboard - NFL Scoreboard. Query Params: dates, week, seasontype - Already implemented
@@ -228,11 +230,10 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} -  Draft Athlete Details. Path Params: {year}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/weeks
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/contracts -  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog-  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}

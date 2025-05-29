@@ -221,6 +221,12 @@
           "isPremium": false
         }
       ],
+      "predictor": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/predictor?lang=en&region=us"
+      },
+      "powerIndexes": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772510/competitions/401772510/powerindex?lang=en&region=us"
+      },
       "format": {
         "regulation": {
           "periods": 4,

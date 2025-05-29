@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-27T05:14:07+00:00",
+  "timestamp": "2025-05-29T03:16:20+00:00",
   "status": "success",
   "season": {
     "year": 2025,
@@ -1355,6 +1355,243 @@
           }
         },
         {
+          "id": "4414243",
+          "uid": "s:1~l:10~a:4414243",
+          "guid": "35e37f4f-a61e-3138-9839-baa9f72e803f",
+          "firstName": "Richard",
+          "lastName": "Fitts",
+          "fullName": "Richard Fitts",
+          "displayName": "Richard Fitts",
+          "shortName": "R. Fitts",
+          "weight": 230.0,
+          "displayWeight": "230 lbs",
+          "height": 75.0,
+          "displayHeight": "6' 3\"",
+          "age": 25,
+          "dateOfBirth": "1999-12-17T08:00:00+00:00",
+          "links": [
+            {
+              "language": "en-US",
+              "shortText": "Player Card",
+              "href": "https://www.espn.com/mlb/player/_/id/4414243",
+              "text": "Player Card",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Stats",
+              "href": "https://www.espn.com/mlb/player/stats/_/id/4414243/richard-fitts",
+              "text": "Stats",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Splits",
+              "href": "https://www.espn.com/mlb/player/splits/_/id/4414243/richard-fitts",
+              "text": "Splits",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Game Log",
+              "href": "https://www.espn.com/mlb/player/gamelog/_/id/4414243/richard-fitts",
+              "text": "Game Log",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "News",
+              "href": "https://www.espn.com/mlb/player/news/_/id/4414243/richard-fitts",
+              "text": "News",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bio",
+              "href": "https://www.espn.com/mlb/player/bio/_/id/4414243/richard-fitts",
+              "text": "Bio",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Overview",
+              "href": "https://www.espn.com/mlb/player/_/id/4414243/richard-fitts",
+              "text": "Overview",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bat vs Pitch",
+              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/4414243/richard-fitts",
+              "text": "Bat vs Pitch",
+              "rel": [
+                "batvspitch",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "slug": "richard-fitts",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4414243.png",
+            "alt": "Richard Fitts"
+          },
+          "jersey": "80",
+          "position": {
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            }
+          },
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/77?lang=en&region=us"
+              },
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/127?lang=en&region=us"
+              },
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              }
+            }
+          ],
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 2
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          },
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "alternateIds": {
+            "sdr": "4414243"
+          },
+          "debutYear": 2024,
+          "birthPlace": {
+            "city": "Helena",
+            "state": "AL",
+            "country": "United States",
+            "displayText": "Helena, AL"
+          },
+          "college": {
+            "id": "2",
+            "guid": "59618d4c-34bc-3c11-a064-c1359b963d27",
+            "mascot": "Tigers",
+            "name": "Auburn",
+            "shortName": "Auburn",
+            "abbrev": "AUB",
+            "logos": [
+              {
+                "lastUpdated": "2023-03-17T13:35Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ]
+              },
+              {
+                "lastUpdated": "2023-03-17T13:36Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ]
+              }
+            ]
+          }
+        },
+        {
           "id": "32697",
           "uid": "s:1~l:10~a:32697",
           "guid": "cbd32ccc-85c8-f37e-5744-98b7e063f654",
@@ -1788,212 +2025,6 @@
             "state": "WA",
             "country": "Australia",
             "displayText": "Perth, Australia"
-          }
-        },
-        {
-          "id": "41569",
-          "uid": "s:1~l:10~a:41569",
-          "guid": "5acc632e-2338-f2cd-3e12-d45badbc23ce",
-          "firstName": "Zack",
-          "lastName": "Kelly",
-          "fullName": "Zack Kelly",
-          "displayName": "Zack Kelly",
-          "shortName": "Z. Kelly",
-          "weight": 231.0,
-          "displayWeight": "231 lbs",
-          "height": 75.0,
-          "displayHeight": "6' 3\"",
-          "age": 30,
-          "dateOfBirth": "1995-03-03T08:00:00+00:00",
-          "links": [
-            {
-              "language": "en-US",
-              "shortText": "Player Card",
-              "href": "https://www.espn.com/mlb/player/_/id/41569",
-              "text": "Player Card",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Stats",
-              "href": "https://www.espn.com/mlb/player/stats/_/id/41569/zack-kelly",
-              "text": "Stats",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Splits",
-              "href": "https://www.espn.com/mlb/player/splits/_/id/41569/zack-kelly",
-              "text": "Splits",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Game Log",
-              "href": "https://www.espn.com/mlb/player/gamelog/_/id/41569/zack-kelly",
-              "text": "Game Log",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "News",
-              "href": "https://www.espn.com/mlb/player/news/_/id/41569/zack-kelly",
-              "text": "News",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bio",
-              "href": "https://www.espn.com/mlb/player/bio/_/id/41569/zack-kelly",
-              "text": "Bio",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Overview",
-              "href": "https://www.espn.com/mlb/player/_/id/41569/zack-kelly",
-              "text": "Overview",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bat vs Pitch",
-              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/41569/zack-kelly",
-              "text": "Bat vs Pitch",
-              "rel": [
-                "batvspitch",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "slug": "zack-kelly",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/41569.png",
-            "alt": "Zack Kelly"
-          },
-          "jersey": "76",
-          "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41569/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41569/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 4
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4416317"
-          },
-          "nickname": "",
-          "debutYear": 2022,
-          "birthPlace": {
-            "city": "Roanoke",
-            "state": "VA",
-            "country": "United States",
-            "displayText": "Roanoke, VA"
           }
         },
         {
@@ -5331,6 +5362,14 @@
               "parent": {
                 "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
               }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
+              "id": "12",
+              "name": "Pinch Runner",
+              "displayName": "Pinch Runner",
+              "abbreviation": "PR",
+              "leaf": true
             }
           ],
           "injuries": [],
@@ -5841,7 +5880,7 @@
     "clubhouse": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox",
     "color": "0d2b56",
     "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
-    "recordSummary": "27-29",
+    "recordSummary": "27-31",
     "seasonSummary": "2025",
     "standingSummary": "4th in AL East"
   }

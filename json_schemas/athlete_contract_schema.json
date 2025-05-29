@@ -1,0 +1,142 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/AthleteContractSchema",
+    "definitions": {
+        "AthleteContractSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "birdStatus": {
+                    "type": "integer"
+                },
+                "baseYearCompensation": {
+                    "$ref": "#/definitions/Ion"
+                },
+                "poisonPillProvision": {
+                    "$ref": "#/definitions/Ion"
+                },
+                "incomingTradeValue": {
+                    "type": "integer"
+                },
+                "outgoingTradeValue": {
+                    "type": "integer"
+                },
+                "minimumSalaryException": {
+                    "type": "boolean"
+                },
+                "optionType": {
+                    "type": "integer"
+                },
+                "salary": {
+                    "type": "integer"
+                },
+                "salaryRemaining": {
+                    "type": "integer"
+                },
+                "yearsRemaining": {
+                    "type": "integer"
+                },
+                "season": {
+                    "$ref": "#/definitions/Season"
+                },
+                "team": {
+                    "$ref": "#/definitions/Season"
+                },
+                "tradeKicker": {
+                    "$ref": "#/definitions/TradeKicker"
+                },
+                "tradeRestriction": {
+                    "type": "boolean"
+                },
+                "unsignedForeignPick": {
+                    "type": "boolean"
+                },
+                "active": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "$ref",
+                "active",
+                "baseYearCompensation",
+                "birdStatus",
+                "incomingTradeValue",
+                "minimumSalaryException",
+                "optionType",
+                "outgoingTradeValue",
+                "poisonPillProvision",
+                "salary",
+                "salaryRemaining",
+                "season",
+                "team",
+                "tradeKicker",
+                "tradeRestriction",
+                "unsignedForeignPick",
+                "yearsRemaining"
+            ],
+            "title": "AthleteContractSchema"
+        },
+        "Ion": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "active"
+            ],
+            "title": "Ion"
+        },
+        "Season": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Season"
+        },
+        "TradeKicker": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "active": {
+                    "type": "boolean"
+                },
+                "percentage": {
+                    "type": "number"
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "tradeValue": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "active",
+                "percentage",
+                "tradeValue",
+                "value"
+            ],
+            "title": "TradeKicker"
+        }
+    }
+}
