@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SiteWebAPISeasonSchema",
+    "definitions": {
+        "SiteWebAPISeasonSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Type"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "endDate",
+                "startDate",
+                "types",
+                "year"
+            ],
+            "title": "SiteWebAPISeasonSchema"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "endDate",
+                "id",
+                "name",
+                "startDate",
+                "type"
+            ],
+            "title": "Type"
+        }
+    }
+}

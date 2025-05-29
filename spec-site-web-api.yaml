@@ -280,6 +280,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+  /apis/common/v3/sports/{sport}/{league}/season:
+    get:
+      summary: Get season information
+      description: Retrieve season information including year, dates, and season types for a specific sport and league
+      operationId: getSeasonInfo
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: Sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: League identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeasonInfoResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     Reference:
@@ -2423,3 +2455,70 @@ components:
         displayBatsThrows:
           type: string
       description: MLB athlete details (athlete object) from site.web.api.espn.com
+
+    SeasonInfoResponse:
+      type: object
+      required:
+        - year
+        - displayName
+        - startDate
+        - endDate
+        - types
+      properties:
+        year:
+          type: integer
+          description: The season year
+          example: 2024
+        displayName:
+          type: string
+          description: Display name for the season
+          example: "2024"
+        startDate:
+          type: string
+          format: date-time
+          description: Season start date in ISO 8601 format
+          example: "2024-08-01T07:00:00.000+00:00"
+        endDate:
+          type: string
+          format: date-time
+          description: Season end date in ISO 8601 format
+          example: "2025-02-15T07:59:00.000+00:00"
+        types:
+          type: array
+          description: Array of season types (preseason, regular, postseason, etc.)
+          items:
+            $ref: '#/components/schemas/SeasonTypeInfo'
+      description: Season information response from site.web.api.espn.com
+
+    SeasonTypeInfo:
+      type: object
+      required:
+        - id
+        - type
+        - name
+        - startDate
+        - endDate
+      properties:
+        id:
+          type: string
+          description: Season type ID as string
+          example: "1"
+        type:
+          type: integer
+          description: Season type as integer (1=preseason, 2=regular, 3=postseason, 4=offseason, 5=play-in)
+          example: 1
+        name:
+          type: string
+          description: Name of the season type
+          example: "Preseason"
+        startDate:
+          type: string
+          format: date-time
+          description: Season type start date in ISO 8601 format
+          example: "2024-08-01T07:00:00.000+00:00"
+        endDate:
+          type: string
+          format: date-time
+          description: Season type end date in ISO 8601 format
+          example: "2024-09-05T06:59:00.000+00:00"
+      description: Season type information (e.g., preseason, regular season, postseason)

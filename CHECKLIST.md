@@ -126,7 +126,7 @@ site.api.espn.com/apis/site/v2
 [ ] /sports/football/college-football/rankings - College Football Rankings (AP, Coaches, CFP)
 [ ] /sports/football/college-football/teams/{team_abbrev_or_id}/roster - College Football Team Roster. Path Param: {team_abbrev_or_id}
 site.api.espn.com/apis/common/v3
-[ ] /sports/football/college-football/season - College Football Season Info (start/end dates, types)
+[x] /sports/football/college-football/season - College Football Season Info (start/end dates, types) - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
 sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/college-football/athletes/{athlete_id} - Detailed College Football athlete. Path Param: {athlete_id}
 [ ] /v2/sports/football/leagues/college-football/athletes/{athlete_id}/statistics - College Football Athlete statistics. Path Param: {athlete_id}
@@ -162,7 +162,7 @@ X. College Baseball Endpoints
 site.api.espn.com/apis/site/v2
 [ ] /sports/baseball/college-baseball/scoreboard - College Baseball Scoreboard. Query Param: dates
 site.api.espn.com/apis/common/v3
-[ ] /sports/baseball/college-baseball/season - College Baseball Season Info
+[x] /sports/baseball/college-baseball/season - College Baseball Season Info - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
 XI. Soccer Endpoints
 site.api.espn.com/apis/site/v2
 [ ] /sports/soccer - List Soccer Leagues (provides slugs)

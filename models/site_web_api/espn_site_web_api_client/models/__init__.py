@@ -122,7 +122,9 @@ from .search_v2_response import SearchV2Response
 from .search_v2_result_group import SearchV2ResultGroup
 from .search_v2_result_type import SearchV2ResultType
 from .season import Season
+from .season_info_response import SeasonInfoResponse
 from .season_type import SeasonType
+from .season_type_info import SeasonTypeInfo
 from .self_link import SelfLink
 from .sport_enum import SportEnum
 from .sport_reference import SportReference
@@ -248,7 +250,9 @@ __all__ = (
     "SearchV2ResultGroup",
     "SearchV2ResultType",
     "Season",
+    "SeasonInfoResponse",
     "SeasonType",
+    "SeasonTypeInfo",
     "SelfLink",
     "SportEnum",
     "SportReference",
