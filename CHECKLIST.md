@@ -31,7 +31,8 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/officials
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/leaders
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster/{athlete_id}/statistics/{page} - Athlete Statistics. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id}, {athlete_id}, {page}
-[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statisticslog - Athlete Statistics Log. Path Params: {sport}, {league}, {athlete_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts - Athlete Contracts. Path Params: {sport}, {league}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts/{year} - Athlete Contract by Year. Path Params: {sport}, {league}, {athlete_id}, {year}
 II. NFL Endpoints
@@ -57,8 +58,8 @@ cdn.espn.com
 sports.core.api.espn.com
 [x] /v3/sports/football/nfl/athletes - List NFL Athletes (v3). Query Params: limit, active=true, page - (Matches broadly with /v2/.../athletes/ from initial checklist which was marked implemented)
 [x] /v2/sports/football/leagues/nfl/athletes/{athlete_id} - Detailed NFL athlete information. Path Param: {athlete_id} - (This is more specific than the list, matches original athletes/ part)
-[x] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statistics - NFL Athlete statistics. Path Param: {athlete_id} - (Matches original athletes//statistics)
-[x] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statisticslog - NFL Athlete statistics log. Path Param: {athlete_id} - (Matches original athletes//statisticslog)
+[x] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statistics - NFL Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics
+[x] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statisticslog - NFL Athlete statistics log. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statisticslog
 [x] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/plays - NFL Game Plays. Path Param: {event_id}. Query Param: limit (e.g., 300+) - (Matches original)
 [x] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/drives - NFL Game Drives. Path Param: {event_id} - (Matches original)
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id} - NFL Get Team (Core API). Path Params: {year}, {team_id}
@@ -108,8 +109,8 @@ site.api.espn.com/apis/site/v2
 [ ] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season
 [ ] /sports/basketball/nba/statistics/players - NBA Aggregate Player Statistics
 sports.core.api.espn.com
-[ ] /v2/sports/basketball/leagues/nba/athletes/{athlete_id} - Detailed NBA athlete information. Path Param: {athlete_id}
-[ ] /v2/sports/basketball/leagues/nba/athletes/{athlete_id}/statistics - NBA Athlete statistics. Path Param: {athlete_id}
+[x] /v2/sports/basketball/leagues/nba/athletes/{athlete_id} - Detailed NBA athlete information. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}
+[x] /v2/sports/basketball/leagues/nba/athletes/{athlete_id}/statistics - NBA Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics
 VI. WNBA Endpoints
 site.api.espn.com/apis/site/v2
 [ ] /sports/basketball/wnba/scoreboard - WNBA Scoreboard. Query Param: dates (YYYYMMDD)
@@ -227,7 +228,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit
 [x] /v2/sports/{sport}/leagues/{league}/transactions - List Transactions. Path Params: {sport}, {league}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/weeks/{week}/talentpicks - Weekly Talent Picks. Path Params & Query: As above, limit
-[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics - Athlete Statistics. Path Params: {sport}, {league}, {athlete_id}. Query params: limit, seasontype, year, week - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id} -  Draft Athlete Details. Path Params: {year}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}

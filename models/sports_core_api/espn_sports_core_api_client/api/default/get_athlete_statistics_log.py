@@ -7,15 +7,19 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.athlete_statistics_log_response import AthleteStatisticsLogResponse
 from ...models.error_response import ErrorResponse
+from ...models.league_enum import LeagueEnum
+from ...models.sport_enum import SportEnum
 from ...types import Response
 
 
 def _get_kwargs(
+    sport: SportEnum,
+    league: LeagueEnum,
     athlete_id: str,
 ) -> Dict[str, Any]:
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": f"/v2/sports/football/leagues/nfl/athletes/{athlete_id}/statisticslog",
+        "url": f"/v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statisticslog",
     }
 
     return _kwargs
@@ -54,15 +58,20 @@ def _build_response(
 
 
 def sync_detailed(
+    sport: SportEnum,
+    league: LeagueEnum,
     athlete_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[AthleteStatisticsLogResponse, ErrorResponse]]:
-    """Get NFL Athlete Statistics Log
+    """Get Athlete Statistics Log
 
-     Retrieve log of statistics for a specific NFL athlete across games/seasons
+     Retrieve log of statistics for a specific athlete across games/seasons in any supported
+    sport/league.
 
     Args:
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         athlete_id (str):  Example: 3139477.
 
     Raises:
@@ -74,6 +83,8 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         athlete_id=athlete_id,
     )
 
@@ -85,15 +96,20 @@ def sync_detailed(
 
 
 def sync(
+    sport: SportEnum,
+    league: LeagueEnum,
     athlete_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[AthleteStatisticsLogResponse, ErrorResponse]]:
-    """Get NFL Athlete Statistics Log
+    """Get Athlete Statistics Log
 
-     Retrieve log of statistics for a specific NFL athlete across games/seasons
+     Retrieve log of statistics for a specific athlete across games/seasons in any supported
+    sport/league.
 
     Args:
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         athlete_id (str):  Example: 3139477.
 
     Raises:
@@ -105,21 +121,28 @@ def sync(
     """
 
     return sync_detailed(
+        sport=sport,
+        league=league,
         athlete_id=athlete_id,
         client=client,
     ).parsed
 
 
 async def asyncio_detailed(
+    sport: SportEnum,
+    league: LeagueEnum,
     athlete_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Response[Union[AthleteStatisticsLogResponse, ErrorResponse]]:
-    """Get NFL Athlete Statistics Log
+    """Get Athlete Statistics Log
 
-     Retrieve log of statistics for a specific NFL athlete across games/seasons
+     Retrieve log of statistics for a specific athlete across games/seasons in any supported
+    sport/league.
 
     Args:
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         athlete_id (str):  Example: 3139477.
 
     Raises:
@@ -131,6 +154,8 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         athlete_id=athlete_id,
     )
 
@@ -140,15 +165,20 @@ async def asyncio_detailed(
 
 
 async def asyncio(
+    sport: SportEnum,
+    league: LeagueEnum,
     athlete_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
 ) -> Optional[Union[AthleteStatisticsLogResponse, ErrorResponse]]:
-    """Get NFL Athlete Statistics Log
+    """Get Athlete Statistics Log
 
-     Retrieve log of statistics for a specific NFL athlete across games/seasons
+     Retrieve log of statistics for a specific athlete across games/seasons in any supported
+    sport/league.
 
     Args:
+        sport (SportEnum): Common sport identifiers used in ESPN APIs.
+        league (LeagueEnum): Common league identifiers used in ESPN APIs.
         athlete_id (str):  Example: 3139477.
 
     Raises:
@@ -161,6 +191,8 @@ async def asyncio(
 
     return (
         await asyncio_detailed(
+            sport=sport,
+            league=league,
             athlete_id=athlete_id,
             client=client,
         )

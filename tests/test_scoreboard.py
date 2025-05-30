@@ -11,9 +11,15 @@ from datetime import datetime
 
 from models.site_api.espn_nfl_api_client.api.default import get_scoreboard
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.site_api.espn_nfl_api_client.models.generic_scoreboard_response import GenericScoreboardResponse
-from models.site_api.espn_nfl_api_client.models.get_scoreboard_sport import GetScoreboardSport
-from models.site_api.espn_nfl_api_client.models.get_scoreboard_seasontype import GetScoreboardSeasontype
+from models.site_api.espn_nfl_api_client.models.generic_scoreboard_response import (
+    GenericScoreboardResponse,
+)
+from models.site_api.espn_nfl_api_client.models.get_scoreboard_sport import (
+    GetScoreboardSport,
+)
+from models.site_api.espn_nfl_api_client.models.get_scoreboard_seasontype import (
+    GetScoreboardSeasontype,
+)
 from models.site_api.espn_nfl_api_client.types import UNSET
 
 from models.site_api.espn_nfl_api_client.api.default.get_monday_night_football import (
@@ -56,10 +62,7 @@ def validate_schema_response(data: GenericScoreboardResponse) -> bool:
         return False
 
     league = leagues[0]
-    if (
-        getattr(league, "id", UNSET) is UNSET
-        or getattr(league, "name", UNSET) is UNSET
-    ):
+    if getattr(league, "id", UNSET) is UNSET or getattr(league, "name", UNSET) is UNSET:
         print("Invalid league structure: missing required keys")
         return False
 
@@ -85,14 +88,14 @@ def format_scoreboard(data: GenericScoreboardResponse, sport: str, league: str) 
         return "Invalid data format: missing leagues or events"
 
     league_obj = data.leagues[0]
-    
+
     output = []
     output.append(f"=== ESPN {league.upper()} Scoreboard ===")
     output.append(f"League: {league_obj.name}")
-    
+
     if data.season:
         output.append(f"Season: {data.season.year} (Type: {data.season.type})")
-    
+
     if data.week:
         output.append(f"Week: {data.week.number}")
 
@@ -144,55 +147,68 @@ def format_scoreboard(data: GenericScoreboardResponse, sport: str, league: str) 
 # Parameterized tests for all sports
 # =============================================================================
 
+
 @pytest.mark.api
-@pytest.mark.parametrize("sport,sport_enum,league,has_week,has_day", [
-    ("football", GetScoreboardSport.FOOTBALL, "nfl", True, False),
-    ("baseball", GetScoreboardSport.BASEBALL, "mlb", False, True),
-    ("basketball", GetScoreboardSport.BASKETBALL, "nba", False, True),
-    ("hockey", GetScoreboardSport.HOCKEY, "nhl", False, False),
-])
-def test_get_scoreboard(site_api_client, ensure_json_output_dir, sport, sport_enum, league, has_week, has_day):
+@pytest.mark.parametrize(
+    "sport,sport_enum,league,has_week,has_day",
+    [
+        ("football", GetScoreboardSport.FOOTBALL, "nfl", True, False),
+        ("baseball", GetScoreboardSport.BASEBALL, "mlb", False, True),
+        ("basketball", GetScoreboardSport.BASKETBALL, "nba", False, True),
+        ("hockey", GetScoreboardSport.HOCKEY, "nhl", False, False),
+    ],
+)
+def test_get_scoreboard(
+    site_api_client,
+    ensure_json_output_dir,
+    sport,
+    sport_enum,
+    league,
+    has_week,
+    has_day,
+):
     """Test the generic scoreboard endpoint for different sports."""
     today = datetime.now().strftime("%Y%m%d")
-    
+
     # Call the generic endpoint
     response = get_scoreboard.sync_detailed(
-        client=site_api_client,
-        sport=sport_enum,
-        league=league,
-        dates=today
+        client=site_api_client, sport=sport_enum, league=league, dates=today
     )
-    
-    assert response.status_code == 200, f"Expected status code 200 for {sport}/{league}, got {response.status_code}"
-    
+
+    assert response.status_code == 200, (
+        f"Expected status code 200 for {sport}/{league}, got {response.status_code}"
+    )
+
     result = response.parsed
-    assert isinstance(result, GenericScoreboardResponse), f"Response should parse to GenericScoreboardResponse for {sport}/{league}"
-    
+    assert isinstance(result, GenericScoreboardResponse), (
+        f"Response should parse to GenericScoreboardResponse for {sport}/{league}"
+    )
+
     # Common validations
     assert result.leagues, f"{sport}/{league} should have leagues"
     assert len(result.leagues) > 0, f"{sport}/{league} should have at least one league"
-    
+
     league_obj = result.leagues[0]
     assert league_obj.name, f"{sport}/{league} league should have a name"
-    
+
     # Sport-specific validations
     if has_week and result.week is not UNSET:
-        week_num = result.week.number if hasattr(result.week, 'number') else 'N/A'
+        week_num = result.week.number if result.week else "N/A"
         logger.info(f"{sport}/{league} - Week: {week_num}")
-    
+
     if has_day and result.day is not UNSET:
-        day_date = result.day.date if hasattr(result.day, 'date') else 'N/A'
+        day_date = result.day.date if result.day else "N/A"
         logger.info(f"{sport}/{league} - Day: {day_date}")
-    
+
     # Check events
     if result.events:
         logger.info(f"{sport}/{league} - Found {len(result.events)} games")
-        
+
         # Log first 3 games
         for event in result.events[:3]:
             if event.name:
                 logger.info(f"  Game: {event.name}")
-            
+
             if event.competitions:
                 comp = event.competitions[0]
                 if comp.competitors:
@@ -202,61 +218,67 @@ def test_get_scoreboard(site_api_client, ensure_json_output_dir, sport, sport_en
                         if c.team and c.team.display_name:
                             teams.append(c.team.display_name)
                             scores.append(str(c.score) if c.score else "0")
-                    
+
                     if teams:
                         logger.info(f"    Teams: {' vs '.join(teams)}")
                         logger.info(f"    Scores: {' - '.join(scores)}")
-                    
+
                     # Check status
                     if comp.status and comp.status.type:
                         status_desc = comp.status.type.description or "Unknown"
                         logger.info(f"    Status: {status_desc}")
     else:
         logger.info(f"{sport}/{league} - No games scheduled for {today}")
-    
+
     # Save the response
     filename = f"{league}_scoreboard_processed.json"
     with open(f"{ensure_json_output_dir}/{filename}", "w") as f:
         json.dump(result.to_dict(), f, indent=2)
-    
+
     logger.info(f"✓ {sport}/{league} scoreboard saved to {filename}")
 
 
 @pytest.mark.api
-@pytest.mark.parametrize("sport,sport_enum,league", [
-    ("football", GetScoreboardSport.FOOTBALL, "college-football"),
-    ("basketball", GetScoreboardSport.BASKETBALL, "mens-college-basketball"),
-    ("basketball", GetScoreboardSport.BASKETBALL, "womens-college-basketball"),
-    ("basketball", GetScoreboardSport.BASKETBALL, "wnba"),
-])
+@pytest.mark.parametrize(
+    "sport,sport_enum,league",
+    [
+        ("football", GetScoreboardSport.FOOTBALL, "college-football"),
+        ("basketball", GetScoreboardSport.BASKETBALL, "mens-college-basketball"),
+        ("basketball", GetScoreboardSport.BASKETBALL, "womens-college-basketball"),
+        ("basketball", GetScoreboardSport.BASKETBALL, "wnba"),
+    ],
+)
 def test_get_other_sports_scoreboard(site_api_client, sport, sport_enum, league):
     """Test scoreboard for other sports/leagues."""
     response = get_scoreboard.sync_detailed(
-        client=site_api_client,
-        sport=sport_enum,
-        league=league
+        client=site_api_client, sport=sport_enum, league=league
     )
-    
-    assert response.status_code == 200, f"Expected status code 200 for {sport}/{league}, got {response.status_code}"
-    
+
+    assert response.status_code == 200, (
+        f"Expected status code 200 for {sport}/{league}, got {response.status_code}"
+    )
+
     result = response.parsed
-    assert isinstance(result, GenericScoreboardResponse), f"Response should parse to GenericScoreboardResponse for {sport}/{league}"
-    
-    logger.info(f"{sport}/{league} - Found {len(result.events) if result.events else 0} games")
+    assert isinstance(result, GenericScoreboardResponse), (
+        f"Response should parse to GenericScoreboardResponse for {sport}/{league}"
+    )
+
+    logger.info(
+        f"{sport}/{league} - Found {len(result.events) if result.events else 0} games"
+    )
 
 
 # =============================================================================
 # Sport-specific detailed tests
 # =============================================================================
 
+
 @pytest.mark.api
 def test_get_nfl_scoreboard(site_api_client, ensure_json_output_dir):
     """Test the ESPN NFL Scoreboard API with detailed output."""
     # Test using the generated client
     scoreboard_data = get_scoreboard.sync(
-        client=site_api_client,
-        sport=GetScoreboardSport.FOOTBALL, 
-        league="nfl"
+        client=site_api_client, sport=GetScoreboardSport.FOOTBALL, league="nfl"
     )
 
     assert not isinstance(scoreboard_data, ErrorResponse), (
@@ -292,20 +314,26 @@ def test_get_nfl_scoreboard_with_week(site_api_client, ensure_json_output_dir):
         sport=GetScoreboardSport.FOOTBALL,
         league="nfl",
         week=1,
-        seasontype=GetScoreboardSeasontype.VALUE_2  # Regular season
+        seasontype=GetScoreboardSeasontype.VALUE_2,  # Regular season
     )
-    
-    assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
-    
+
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+
     result = response.parsed
-    assert isinstance(result, GenericScoreboardResponse), "Response should parse to GenericScoreboardResponse"
-    
+    assert isinstance(result, GenericScoreboardResponse), (
+        "Response should parse to GenericScoreboardResponse"
+    )
+
     # NFL should have week info
     assert result.week, "NFL scoreboard should have week information"
     assert result.season, "NFL scoreboard should have season information"
-    
-    logger.info(f"NFL Week {result.week.number if result.week else 'N/A'} - "
-                f"Found {len(result.events) if result.events else 0} games")
+
+    logger.info(
+        f"NFL Week {result.week.number if result.week else 'N/A'} - "
+        f"Found {len(result.events) if result.events else 0} games"
+    )
 
 
 @pytest.mark.api
@@ -316,7 +344,7 @@ def test_mlb_scoreboard_detailed(site_api_client, ensure_json_output_dir):
         client=site_api_client,
         sport=GetScoreboardSport.BASEBALL,
         league="mlb",
-        dates=today
+        dates=today,
     )
 
     assert isinstance(response, GenericScoreboardResponse), (
@@ -377,7 +405,7 @@ def test_nhl_scoreboard_detailed(site_api_client, ensure_json_output_dir):
         client=site_api_client,
         sport=GetScoreboardSport.HOCKEY,
         league="nhl",
-        dates=today
+        dates=today,
     )
 
     assert isinstance(response, GenericScoreboardResponse), (
@@ -433,6 +461,7 @@ def test_nhl_scoreboard_detailed(site_api_client, ensure_json_output_dir):
 # =============================================================================
 # NFL Night Football specific endpoints
 # =============================================================================
+
 
 @pytest.mark.api
 def test_monday_night_football(site_api_client, ensure_json_output_dir):

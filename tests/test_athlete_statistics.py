@@ -30,6 +30,7 @@ class TestAthleteStatistics:
             ("football", "nfl", "3139477", "Patrick Mahomes"),  # NFL QB
             ("baseball", "mlb", "1759", "MLB Player"),  # MLB Player
             ("basketball", "nba", "6583", "LeBron James"),  # NBA Player
+            ("hockey", "nhl", "3024816", "NHL Player"),  # NHL Player
             ("football", "nfl", "4426502", "Travis Kelce"),  # NFL TE
             ("baseball", "mlb", "33192", "MLB Player 2"),  # Another MLB Player
         ],
@@ -88,6 +89,7 @@ class TestAthleteStatistics:
             ("football", "nfl", "3139477"),  # NFL
             ("baseball", "mlb", "1759"),  # MLB
             ("basketball", "nba", "6583"),  # NBA
+            ("hockey", "nhl", "3024816"),  # NHL
         ],
     )
     def test_get_athlete_statistics_with_query_params(
@@ -188,6 +190,7 @@ class TestAthleteStatistics:
             ("football", "nfl"),
             ("baseball", "mlb"),
             ("basketball", "nba"),
+            ("hockey", "nhl"),
         ],
     )
     def test_get_athlete_statistics_sport_specific_categories(
@@ -199,6 +202,7 @@ class TestAthleteStatistics:
             ("football", "nfl"): "3139477",  # Patrick Mahomes
             ("baseball", "mlb"): "1759",  # MLB player
             ("basketball", "nba"): "6583",  # LeBron James
+            ("hockey", "nhl"): "3024816",  # NHL player
         }
 
         athlete_id = athlete_ids.get((sport, league))

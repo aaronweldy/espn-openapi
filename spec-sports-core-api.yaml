@@ -131,6 +131,51 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/statisticslog:
+    get:
+      summary: Get Athlete Statistics Log
+      description: Retrieve log of statistics for a specific athlete across games/seasons in any supported sport/league.
+      operationId: getAthleteStatisticsLog
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "3139477"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteStatisticsLogResponse'
+        '404':
+          description: Athlete statistics log not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/contracts:
     get:
       summary: Get Athlete Contracts
@@ -217,72 +262,6 @@ paths:
                 $ref: '#/components/schemas/AthleteContract'
         '404':
           description: Contract not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
-  /v2/sports/football/leagues/nfl/athletes/{athleteId}/statistics:
-    get:
-      summary: Get NFL Athlete Statistics
-      description: Retrieve detailed statistics for a specific NFL athlete
-      operationId: getNFLAthleteStatistics
-      parameters:
-        - name: athleteId
-          in: path
-          required: true
-          description: The athlete ID
-          schema:
-            type: string
-            example: "3139477"
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AthleteStatisticsResponse'
-        '404':
-          description: Athlete statistics not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
-  /v2/sports/football/leagues/nfl/athletes/{athleteId}/statisticslog:
-    get:
-      summary: Get NFL Athlete Statistics Log
-      description: Retrieve log of statistics for a specific NFL athlete across games/seasons
-      operationId: getNFLAthleteStatisticsLog
-      parameters:
-        - name: athleteId
-          in: path
-          required: true
-          description: The athlete ID
-          schema:
-            type: string
-            example: "3139477"
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AthleteStatisticsLogResponse'
-        '404':
-          description: Athlete statistics log not found
           content:
             application/json:
               schema:

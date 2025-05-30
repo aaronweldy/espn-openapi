@@ -17,10 +17,10 @@ from models.sports_core_api.espn_sports_core_api_client.models.league_enum impor
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_athlete_details import (
     sync as get_athlete_details,
 )
-from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_athlete_statistics import (
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_athlete_statistics import (
     sync as get_athlete_statistics,
 )
-from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_athlete_statistics_log import (
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_athlete_statistics_log import (
     sync as get_athlete_statistics_log,
 )
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_calendar import (
@@ -430,6 +430,8 @@ def test_athlete_statistics(
 ):
     """Test fetching and parsing NFL athlete statistics."""
     response = get_athlete_statistics(
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
@@ -452,6 +454,8 @@ def test_athlete_statistics_log(
 ):
     """Test fetching and parsing NFL athlete statistics log."""
     response = get_athlete_statistics_log(
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
         athlete_id=athlete_id,
         client=sports_core_api_client,
     )
