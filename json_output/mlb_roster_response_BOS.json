@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-29T03:16:20+00:00",
+  "timestamp": "2025-05-30T02:35:28+00:00",
   "status": "success",
   "season": {
     "year": 2025,
@@ -1291,6 +1291,20 @@
             }
           },
           "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/128?lang=en&region=us"
+              },
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              }
+            },
             {
               "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
               "statistics": {
@@ -3603,7 +3617,7 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 0
+            "years": 1
           },
           "status": {
             "id": "1",
@@ -3783,6 +3797,20 @@
               "name": "Second Base",
               "displayName": "Second Baseman",
               "abbreviation": "2B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/81?lang=en&region=us"
+              },
+              "id": "5",
+              "name": "Third Base",
+              "displayName": "Third Baseman",
+              "abbreviation": "3B",
               "leaf": true,
               "parent": {
                 "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
@@ -4702,7 +4730,7 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 6
+            "years": 7
           },
           "status": {
             "id": "1",

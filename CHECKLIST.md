@@ -92,7 +92,7 @@ site.api.espn.com/apis/site
 [x] /v2/sports/hockey/nhl/teams - NHL Teams List
 [x] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
 [x] /v2/sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
-[ ] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
+[x] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
 [ ] /v2/sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics
 sports.core.api.espn.com
 [ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id} - Detailed NHL athlete information. Path Param: {athlete_id}

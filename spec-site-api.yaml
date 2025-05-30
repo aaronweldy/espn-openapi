@@ -4123,13 +4123,20 @@ components:
     NhlTeamRosterResponse:
       type: object
       properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: string
+        season:
+          $ref: '#/components/schemas/Season'
         team:
           $ref: '#/components/schemas/TeamDetail'
         athletes:
           type: array
           items:
-            $ref: '#/components/schemas/NhlAthlete'
-        coaches:
+            $ref: '#/components/schemas/NhlPositionGroup'
+        coach:
           type: array
           items:
             $ref: '#/components/schemas/NhlCoach'
@@ -4137,6 +4144,23 @@ components:
         - team
         - athletes
       description: NHL team roster response with player and coach information
+
+    NhlPositionGroup:
+      type: object
+      description: Group of NHL athletes by position
+      properties:
+        position:
+          type: string
+          enum:
+            - Centers
+            - Left Wings
+            - Right Wings
+            - Defense
+            - Goalies
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/NhlAthlete'
 
     NhlAthlete:
       type: object
@@ -4301,31 +4325,10 @@ components:
                 $ref: '#/components/schemas/Logo'
       required:
         - id
-        - uid
-        - guid
         - firstName
         - lastName
         - fullName
         - displayName
-        - shortName
-        - weight
-        - displayWeight
-        - height
-        - displayHeight
-        - age
-        - dateOfBirth
-        - links
-        - slug
-        - headshot
-        - jersey
-        - position
-        - positions
-        - injuries
-        - teams
-        - contracts
-        - experience
-        - status
-
     NhlCoach:
       type: object
       description: Coach information for NHL team roster

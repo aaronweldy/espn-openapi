@@ -31,60 +31,60 @@ class NhlAthlete:
 
     Attributes:
         id (str):
-        uid (str):
-        guid (str):
         first_name (str):
         last_name (str):
         full_name (str):
         display_name (str):
-        short_name (str):
-        weight (float):
-        display_weight (str):
-        height (float):
-        display_height (str):
-        age (int):
-        date_of_birth (datetime.datetime):
-        links (List['Link']):
-        slug (str):
-        headshot (Headshot):
-        jersey (str):
-        position (NhlAthletePosition):
-        positions (List['NhlAthletePositionsItem']):
-        injuries (List['NhlAthleteInjuriesItem']):
-        teams (List['NhlAthleteTeamsItem']):
-        contracts (List['NhlAthleteContractsItem']):
-        experience (NhlAthleteExperience):
-        status (NhlAthleteStatus):
+        uid (Union[Unset, str]):
+        guid (Union[Unset, str]):
+        short_name (Union[Unset, str]):
+        weight (Union[Unset, float]):
+        display_weight (Union[Unset, str]):
+        height (Union[Unset, float]):
+        display_height (Union[Unset, str]):
+        age (Union[Unset, int]):
+        date_of_birth (Union[Unset, datetime.datetime]):
+        links (Union[Unset, List['Link']]):
+        slug (Union[Unset, str]):
+        headshot (Union[Unset, Headshot]):
+        jersey (Union[Unset, str]):
+        position (Union[Unset, NhlAthletePosition]):
+        positions (Union[Unset, List['NhlAthletePositionsItem']]):
+        injuries (Union[Unset, List['NhlAthleteInjuriesItem']]):
+        teams (Union[Unset, List['NhlAthleteTeamsItem']]):
+        contracts (Union[Unset, List['NhlAthleteContractsItem']]):
+        experience (Union[Unset, NhlAthleteExperience]):
+        status (Union[Unset, NhlAthleteStatus]):
         shoots (Union[Unset, NhlAthleteShoots]):
         catches (Union[Unset, NhlAthleteCatches]):
         college (Union[Unset, NhlAthleteCollege]):
     """
 
     id: str
-    uid: str
-    guid: str
     first_name: str
     last_name: str
     full_name: str
     display_name: str
-    short_name: str
-    weight: float
-    display_weight: str
-    height: float
-    display_height: str
-    age: int
-    date_of_birth: datetime.datetime
-    links: List["Link"]
-    slug: str
-    headshot: "Headshot"
-    jersey: str
-    position: "NhlAthletePosition"
-    positions: List["NhlAthletePositionsItem"]
-    injuries: List["NhlAthleteInjuriesItem"]
-    teams: List["NhlAthleteTeamsItem"]
-    contracts: List["NhlAthleteContractsItem"]
-    experience: "NhlAthleteExperience"
-    status: "NhlAthleteStatus"
+    uid: Union[Unset, str] = UNSET
+    guid: Union[Unset, str] = UNSET
+    short_name: Union[Unset, str] = UNSET
+    weight: Union[Unset, float] = UNSET
+    display_weight: Union[Unset, str] = UNSET
+    height: Union[Unset, float] = UNSET
+    display_height: Union[Unset, str] = UNSET
+    age: Union[Unset, int] = UNSET
+    date_of_birth: Union[Unset, datetime.datetime] = UNSET
+    links: Union[Unset, List["Link"]] = UNSET
+    slug: Union[Unset, str] = UNSET
+    headshot: Union[Unset, "Headshot"] = UNSET
+    jersey: Union[Unset, str] = UNSET
+    position: Union[Unset, "NhlAthletePosition"] = UNSET
+    positions: Union[Unset, List["NhlAthletePositionsItem"]] = UNSET
+    injuries: Union[Unset, List["NhlAthleteInjuriesItem"]] = UNSET
+    teams: Union[Unset, List["NhlAthleteTeamsItem"]] = UNSET
+    contracts: Union[Unset, List["NhlAthleteContractsItem"]] = UNSET
+    experience: Union[Unset, "NhlAthleteExperience"] = UNSET
+    status: Union[Unset, "NhlAthleteStatus"] = UNSET
     shoots: Union[Unset, "NhlAthleteShoots"] = UNSET
     catches: Union[Unset, "NhlAthleteCatches"] = UNSET
     college: Union[Unset, "NhlAthleteCollege"] = UNSET
@@ -93,10 +93,6 @@ class NhlAthlete:
     def to_dict(self) -> Dict[str, Any]:
         id = self.id
 
-        uid = self.uid
-
-        guid = self.guid
-
         first_name = self.first_name
 
         last_name = self.last_name
@@ -104,6 +100,10 @@ class NhlAthlete:
         full_name = self.full_name
 
         display_name = self.display_name
+
+        uid = self.uid
+
+        guid = self.guid
 
         short_name = self.short_name
 
@@ -117,44 +117,64 @@ class NhlAthlete:
 
         age = self.age
 
-        date_of_birth = self.date_of_birth.isoformat()
+        date_of_birth: Union[Unset, str] = UNSET
+        if not isinstance(self.date_of_birth, Unset):
+            date_of_birth = self.date_of_birth.isoformat()
 
-        links = []
-        for links_item_data in self.links:
-            links_item = links_item_data.to_dict()
-            links.append(links_item)
+        links: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.links, Unset):
+            links = []
+            for links_item_data in self.links:
+                links_item = links_item_data.to_dict()
+                links.append(links_item)
 
         slug = self.slug
 
-        headshot = self.headshot.to_dict()
+        headshot: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.headshot, Unset):
+            headshot = self.headshot.to_dict()
 
         jersey = self.jersey
 
-        position = self.position.to_dict()
+        position: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.position, Unset):
+            position = self.position.to_dict()
 
-        positions = []
-        for positions_item_data in self.positions:
-            positions_item = positions_item_data.to_dict()
-            positions.append(positions_item)
+        positions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.positions, Unset):
+            positions = []
+            for positions_item_data in self.positions:
+                positions_item = positions_item_data.to_dict()
+                positions.append(positions_item)
 
-        injuries = []
-        for injuries_item_data in self.injuries:
-            injuries_item = injuries_item_data.to_dict()
-            injuries.append(injuries_item)
+        injuries: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.injuries, Unset):
+            injuries = []
+            for injuries_item_data in self.injuries:
+                injuries_item = injuries_item_data.to_dict()
+                injuries.append(injuries_item)
 
-        teams = []
-        for teams_item_data in self.teams:
-            teams_item = teams_item_data.to_dict()
-            teams.append(teams_item)
+        teams: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.teams, Unset):
+            teams = []
+            for teams_item_data in self.teams:
+                teams_item = teams_item_data.to_dict()
+                teams.append(teams_item)
 
-        contracts = []
-        for contracts_item_data in self.contracts:
-            contracts_item = contracts_item_data.to_dict()
-            contracts.append(contracts_item)
+        contracts: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.contracts, Unset):
+            contracts = []
+            for contracts_item_data in self.contracts:
+                contracts_item = contracts_item_data.to_dict()
+                contracts.append(contracts_item)
 
-        experience = self.experience.to_dict()
+        experience: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.experience, Unset):
+            experience = self.experience.to_dict()
 
-        status = self.status.to_dict()
+        status: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.status, Unset):
+            status = self.status.to_dict()
 
         shoots: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.shoots, Unset):
@@ -173,32 +193,52 @@ class NhlAthlete:
         field_dict.update(
             {
                 "id": id,
-                "uid": uid,
-                "guid": guid,
                 "firstName": first_name,
                 "lastName": last_name,
                 "fullName": full_name,
                 "displayName": display_name,
-                "shortName": short_name,
-                "weight": weight,
-                "displayWeight": display_weight,
-                "height": height,
-                "displayHeight": display_height,
-                "age": age,
-                "dateOfBirth": date_of_birth,
-                "links": links,
-                "slug": slug,
-                "headshot": headshot,
-                "jersey": jersey,
-                "position": position,
-                "positions": positions,
-                "injuries": injuries,
-                "teams": teams,
-                "contracts": contracts,
-                "experience": experience,
-                "status": status,
             }
         )
+        if uid is not UNSET:
+            field_dict["uid"] = uid
+        if guid is not UNSET:
+            field_dict["guid"] = guid
+        if short_name is not UNSET:
+            field_dict["shortName"] = short_name
+        if weight is not UNSET:
+            field_dict["weight"] = weight
+        if display_weight is not UNSET:
+            field_dict["displayWeight"] = display_weight
+        if height is not UNSET:
+            field_dict["height"] = height
+        if display_height is not UNSET:
+            field_dict["displayHeight"] = display_height
+        if age is not UNSET:
+            field_dict["age"] = age
+        if date_of_birth is not UNSET:
+            field_dict["dateOfBirth"] = date_of_birth
+        if links is not UNSET:
+            field_dict["links"] = links
+        if slug is not UNSET:
+            field_dict["slug"] = slug
+        if headshot is not UNSET:
+            field_dict["headshot"] = headshot
+        if jersey is not UNSET:
+            field_dict["jersey"] = jersey
+        if position is not UNSET:
+            field_dict["position"] = position
+        if positions is not UNSET:
+            field_dict["positions"] = positions
+        if injuries is not UNSET:
+            field_dict["injuries"] = injuries
+        if teams is not UNSET:
+            field_dict["teams"] = teams
+        if contracts is not UNSET:
+            field_dict["contracts"] = contracts
+        if experience is not UNSET:
+            field_dict["experience"] = experience
+        if status is not UNSET:
+            field_dict["status"] = status
         if shoots is not UNSET:
             field_dict["shoots"] = shoots
         if catches is not UNSET:
@@ -226,10 +266,6 @@ class NhlAthlete:
         d = src_dict.copy()
         id = d.pop("id")
 
-        uid = d.pop("uid")
-
-        guid = d.pop("guid")
-
         first_name = d.pop("firstName")
 
         last_name = d.pop("lastName")
@@ -238,66 +274,95 @@ class NhlAthlete:
 
         display_name = d.pop("displayName")
 
-        short_name = d.pop("shortName")
+        uid = d.pop("uid", UNSET)
 
-        weight = d.pop("weight")
+        guid = d.pop("guid", UNSET)
 
-        display_weight = d.pop("displayWeight")
+        short_name = d.pop("shortName", UNSET)
 
-        height = d.pop("height")
+        weight = d.pop("weight", UNSET)
 
-        display_height = d.pop("displayHeight")
+        display_weight = d.pop("displayWeight", UNSET)
 
-        age = d.pop("age")
+        height = d.pop("height", UNSET)
 
-        date_of_birth = isoparse(d.pop("dateOfBirth"))
+        display_height = d.pop("displayHeight", UNSET)
+
+        age = d.pop("age", UNSET)
+
+        _date_of_birth = d.pop("dateOfBirth", UNSET)
+        date_of_birth: Union[Unset, datetime.datetime]
+        if isinstance(_date_of_birth, Unset):
+            date_of_birth = UNSET
+        else:
+            date_of_birth = isoparse(_date_of_birth)
 
         links = []
-        _links = d.pop("links")
-        for links_item_data in _links:
+        _links = d.pop("links", UNSET)
+        for links_item_data in _links or []:
             links_item = Link.from_dict(links_item_data)
 
             links.append(links_item)
 
-        slug = d.pop("slug")
+        slug = d.pop("slug", UNSET)
 
-        headshot = Headshot.from_dict(d.pop("headshot"))
+        _headshot = d.pop("headshot", UNSET)
+        headshot: Union[Unset, Headshot]
+        if isinstance(_headshot, Unset):
+            headshot = UNSET
+        else:
+            headshot = Headshot.from_dict(_headshot)
 
-        jersey = d.pop("jersey")
+        jersey = d.pop("jersey", UNSET)
 
-        position = NhlAthletePosition.from_dict(d.pop("position"))
+        _position = d.pop("position", UNSET)
+        position: Union[Unset, NhlAthletePosition]
+        if isinstance(_position, Unset):
+            position = UNSET
+        else:
+            position = NhlAthletePosition.from_dict(_position)
 
         positions = []
-        _positions = d.pop("positions")
-        for positions_item_data in _positions:
+        _positions = d.pop("positions", UNSET)
+        for positions_item_data in _positions or []:
             positions_item = NhlAthletePositionsItem.from_dict(positions_item_data)
 
             positions.append(positions_item)
 
         injuries = []
-        _injuries = d.pop("injuries")
-        for injuries_item_data in _injuries:
+        _injuries = d.pop("injuries", UNSET)
+        for injuries_item_data in _injuries or []:
             injuries_item = NhlAthleteInjuriesItem.from_dict(injuries_item_data)
 
             injuries.append(injuries_item)
 
         teams = []
-        _teams = d.pop("teams")
-        for teams_item_data in _teams:
+        _teams = d.pop("teams", UNSET)
+        for teams_item_data in _teams or []:
             teams_item = NhlAthleteTeamsItem.from_dict(teams_item_data)
 
             teams.append(teams_item)
 
         contracts = []
-        _contracts = d.pop("contracts")
-        for contracts_item_data in _contracts:
+        _contracts = d.pop("contracts", UNSET)
+        for contracts_item_data in _contracts or []:
             contracts_item = NhlAthleteContractsItem.from_dict(contracts_item_data)
 
             contracts.append(contracts_item)
 
-        experience = NhlAthleteExperience.from_dict(d.pop("experience"))
+        _experience = d.pop("experience", UNSET)
+        experience: Union[Unset, NhlAthleteExperience]
+        if isinstance(_experience, Unset):
+            experience = UNSET
+        else:
+            experience = NhlAthleteExperience.from_dict(_experience)
 
-        status = NhlAthleteStatus.from_dict(d.pop("status"))
+        _status = d.pop("status", UNSET)
+        status: Union[Unset, NhlAthleteStatus]
+        if isinstance(_status, Unset):
+            status = UNSET
+        else:
+            status = NhlAthleteStatus.from_dict(_status)
 
         _shoots = d.pop("shoots", UNSET)
         shoots: Union[Unset, NhlAthleteShoots]
@@ -322,12 +387,12 @@ class NhlAthlete:
 
         nhl_athlete = cls(
             id=id,
-            uid=uid,
-            guid=guid,
             first_name=first_name,
             last_name=last_name,
             full_name=full_name,
             display_name=display_name,
+            uid=uid,
+            guid=guid,
             short_name=short_name,
             weight=weight,
             display_weight=display_weight,

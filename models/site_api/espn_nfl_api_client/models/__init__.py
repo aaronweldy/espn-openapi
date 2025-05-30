@@ -175,6 +175,8 @@ from .nhl_game_summary_response_header import NhlGameSummaryResponseHeader
 from .nhl_game_summary_response_plays_item import NhlGameSummaryResponsePlaysItem
 from .nhl_game_summary_response_standings import NhlGameSummaryResponseStandings
 from .nhl_game_summary_response_win_probability_item import NhlGameSummaryResponseWinProbabilityItem
+from .nhl_position_group import NhlPositionGroup
+from .nhl_position_group_position import NhlPositionGroupPosition
 from .nhl_scoreboard_response import NhlScoreboardResponse
 from .nhl_statistic_name import NhlStatisticName
 from .nhl_team_roster_response import NhlTeamRosterResponse
@@ -416,6 +418,8 @@ __all__ = (
     "NhlGameSummaryResponsePlaysItem",
     "NhlGameSummaryResponseStandings",
     "NhlGameSummaryResponseWinProbabilityItem",
+    "NhlPositionGroup",
+    "NhlPositionGroupPosition",
     "NhlScoreboardResponse",
     "NhlStatisticName",
     "NhlTeamRosterResponse",
