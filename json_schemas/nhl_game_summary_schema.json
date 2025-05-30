@@ -318,7 +318,7 @@
                 "categories": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/VideoCategory"
+                        "$ref": "#/definitions/Category"
                     }
                 },
                 "keywords": {
@@ -334,7 +334,7 @@
                     "type": "boolean"
                 },
                 "links": {
-                    "$ref": "#/definitions/ArticleLinks"
+                    "$ref": "#/definitions/PurpleLinks"
                 },
                 "allowComments": {
                     "type": "boolean"
@@ -376,7 +376,7 @@
             ],
             "title": "NhlGameSummarySchemaArticle"
         },
-        "VideoCategory": {
+        "Category": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -411,6 +411,12 @@
                 "league": {
                     "$ref": "#/definitions/CategoryLeague"
                 },
+                "slug": {
+                    "type": "string"
+                },
+                "contributor": {
+                    "$ref": "#/definitions/Contributor"
+                },
                 "topicId": {
                     "type": "integer"
                 }
@@ -419,7 +425,50 @@
                 "guid",
                 "type"
             ],
-            "title": "VideoCategory"
+            "title": "Category"
+        },
+        "Contributor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/ContributorLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "Contributor"
+        },
+        "ContributorLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/PurpleMobile"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/PurpleMobile"
+                }
+            },
+            "required": [
+                "mobile",
+                "web"
+            ],
+            "title": "ContributorLinks"
+        },
+        "PurpleMobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "PurpleMobile"
         },
         "CategoryLeague": {
             "type": "object",
@@ -451,10 +500,10 @@
             "additionalProperties": false,
             "properties": {
                 "web": {
-                    "$ref": "#/definitions/PurpleMobile"
+                    "$ref": "#/definitions/FluffyMobile"
                 },
                 "mobile": {
-                    "$ref": "#/definitions/PurpleMobile"
+                    "$ref": "#/definitions/FluffyMobile"
                 }
             },
             "required": [
@@ -463,7 +512,7 @@
             ],
             "title": "LeagueLinks"
         },
-        "PurpleMobile": {
+        "FluffyMobile": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -474,7 +523,7 @@
             "required": [
                 "leagues"
             ],
-            "title": "PurpleMobile"
+            "title": "FluffyMobile"
         },
         "SelfClass": {
             "type": "object",
@@ -526,10 +575,10 @@
             "additionalProperties": false,
             "properties": {
                 "web": {
-                    "$ref": "#/definitions/FluffyMobile"
+                    "$ref": "#/definitions/TentacledMobile"
                 },
                 "mobile": {
-                    "$ref": "#/definitions/FluffyMobile"
+                    "$ref": "#/definitions/TentacledMobile"
                 }
             },
             "required": [
@@ -538,7 +587,7 @@
             ],
             "title": "TeamLinks"
         },
-        "FluffyMobile": {
+        "TentacledMobile": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -549,7 +598,7 @@
             "required": [
                 "teams"
             ],
-            "title": "FluffyMobile"
+            "title": "TentacledMobile"
         },
         "PurpleImage": {
             "type": "object",
@@ -591,7 +640,7 @@
             ],
             "title": "PurpleImage"
         },
-        "ArticleLinks": {
+        "PurpleLinks": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -614,7 +663,7 @@
                 "mobile",
                 "web"
             ],
-            "title": "ArticleLinks"
+            "title": "PurpleLinks"
         },
         "PurpleAPI": {
             "type": "object",
@@ -660,7 +709,7 @@
                     "format": "uuid"
                 },
                 "source": {
-                    "type": "string"
+                    "$ref": "#/definitions/SourceEnum"
                 },
                 "headline": {
                     "type": "string"
@@ -728,7 +777,7 @@
                 "categories": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/VideoCategory"
+                        "$ref": "#/definitions/Category"
                     }
                 },
                 "ad": {
@@ -776,10 +825,10 @@
             "additionalProperties": false,
             "properties": {
                 "sport": {
-                    "type": "string"
+                    "$ref": "#/definitions/Slug"
                 },
                 "bundle": {
-                    "type": "string"
+                    "$ref": "#/definitions/Bundle"
                 }
             },
             "required": [
@@ -793,12 +842,12 @@
             "additionalProperties": false,
             "properties": {
                 "type": {
-                    "type": "string"
+                    "$ref": "#/definitions/DeviceRestrictionsType"
                 },
                 "devices": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/definitions/Device"
                     }
                 }
             },
@@ -813,7 +862,7 @@
             "additionalProperties": false,
             "properties": {
                 "type": {
-                    "type": "string"
+                    "$ref": "#/definitions/DeviceRestrictionsType"
                 },
                 "countries": {
                     "type": "array",
@@ -880,13 +929,13 @@
                     "$ref": "#/definitions/Web"
                 },
                 "mobile": {
-                    "$ref": "#/definitions/TentacledMobile"
+                    "$ref": "#/definitions/StickyMobile"
                 },
                 "api": {
                     "$ref": "#/definitions/FluffyAPI"
                 },
                 "source": {
-                    "$ref": "#/definitions/Source"
+                    "$ref": "#/definitions/SourceClass"
                 },
                 "sportscenter": {
                     "$ref": "#/definitions/SelfClass"
@@ -913,12 +962,11 @@
                 }
             },
             "required": [
-                "artwork",
                 "self"
             ],
             "title": "FluffyAPI"
         },
-        "TentacledMobile": {
+        "StickyMobile": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -949,9 +997,9 @@
                 "source",
                 "streaming"
             ],
-            "title": "TentacledMobile"
+            "title": "StickyMobile"
         },
-        "Source": {
+        "SourceClass": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -993,7 +1041,7 @@
                 "href",
                 "mezzanine"
             ],
-            "title": "Source"
+            "title": "SourceClass"
         },
         "HLS": {
             "type": "object",
@@ -1013,7 +1061,7 @@
                     "$ref": "#/definitions/SelfClass"
                 },
                 "cmaf": {
-                    "$ref": "#/definitions/SelfClass"
+                    "$ref": "#/definitions/Cmaf"
                 }
             },
             "required": [
@@ -1023,6 +1071,30 @@
             ],
             "title": "HLS"
         },
+        "Cmaf": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".m3u8"
+                    ]
+                },
+                "shield": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "href",
+                "shield"
+            ],
+            "title": "Cmaf"
+        },
         "Web": {
             "type": "object",
             "additionalProperties": false,
@@ -1031,6 +1103,7 @@
                     "type": "string",
                     "format": "uri",
                     "qt-uri-protocols": [
+                        "http",
                         "https"
                     ]
                 },
@@ -1042,9 +1115,7 @@
                 }
             },
             "required": [
-                "href",
-                "self",
-                "seo"
+                "href"
             ],
             "title": "Web"
         },
@@ -1146,13 +1217,13 @@
             "additionalProperties": false,
             "properties": {
                 "sportName": {
-                    "type": "string"
+                    "$ref": "#/definitions/Slug"
                 },
                 "leagueName": {
-                    "type": "string"
+                    "$ref": "#/definitions/LeagueName"
                 },
                 "coverageType": {
-                    "type": "string"
+                    "$ref": "#/definitions/CoverageType"
                 },
                 "trackingName": {
                     "type": "string"
@@ -1329,7 +1400,6 @@
                 "active",
                 "displayName",
                 "guid",
-                "headshot",
                 "id",
                 "jersey",
                 "lastName",
@@ -2505,24 +2575,21 @@
                     "format": "integer"
                 },
                 "name": {
-                    "$ref": "#/definitions/StatusTypeName"
+                    "type": "string"
                 },
                 "state": {
-                    "$ref": "#/definitions/GameState"
+                    "type": "string"
                 },
                 "completed": {
                     "type": "boolean"
                 },
                 "description": {
-                    "$ref": "#/definitions/DetailEnum"
+                    "type": "string"
                 },
                 "detail": {
-                    "$ref": "#/definitions/DetailEnum"
+                    "type": "string"
                 },
                 "shortDetail": {
-                    "$ref": "#/definitions/DetailEnum"
-                },
-                "altDetail": {
                     "type": "string"
                 }
             },
@@ -2555,7 +2622,7 @@
                     "type": "string"
                 },
                 "slug": {
-                    "type": "string"
+                    "$ref": "#/definitions/Slug"
                 },
                 "isTournament": {
                     "type": "boolean"
@@ -2823,16 +2890,16 @@
                     "format": "integer"
                 },
                 "name": {
-                    "$ref": "#/definitions/WhereaboutsName"
+                    "$ref": "#/definitions/TypeName"
                 },
                 "type": {
-                    "$ref": "#/definitions/TypeType"
+                    "type": "string"
                 },
                 "abbreviation": {
                     "$ref": "#/definitions/WhereaboutsAbbreviation"
                 },
                 "description": {
-                    "$ref": "#/definitions/WhereaboutsDescription"
+                    "$ref": "#/definitions/TypeDescription"
                 }
             },
             "required": [
@@ -2856,6 +2923,9 @@
                     "format": "date"
                 },
                 "detail": {
+                    "type": "string"
+                },
+                "side": {
                     "type": "string"
                 }
             },
@@ -3044,7 +3114,7 @@
                     "format": "date-time"
                 },
                 "gameState": {
-                    "$ref": "#/definitions/GameState"
+                    "type": "string"
                 }
             },
             "required": [
@@ -3123,14 +3193,14 @@
                 "categories": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/PurpleCategory"
+                        "$ref": "#/definitions/Category"
                     }
                 },
                 "premium": {
                     "type": "boolean"
                 },
                 "links": {
-                    "$ref": "#/definitions/ArticleLinks"
+                    "$ref": "#/definitions/FluffyLinks"
                 },
                 "byline": {
                     "type": "string"
@@ -3153,181 +3223,15 @@
             ],
             "title": "ArticleElement"
         },
-        "PurpleCategory": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "integer"
-                },
-                "type": {
-                    "$ref": "#/definitions/CategoryType"
-                },
-                "guid": {
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "sportId": {
-                    "type": "integer"
-                },
-                "topicId": {
-                    "type": "integer"
-                },
-                "uid": {
-                    "type": "string"
-                },
-                "athleteId": {
-                    "type": "integer"
-                },
-                "athlete": {
-                    "$ref": "#/definitions/CategoryAthlete"
-                },
-                "leagueId": {
-                    "type": "integer"
-                },
-                "league": {
-                    "$ref": "#/definitions/CategoryLeague"
-                },
-                "teamId": {
-                    "type": "integer"
-                },
-                "team": {
-                    "$ref": "#/definitions/CategoryTeam"
-                },
-                "slug": {
-                    "type": "string"
-                },
-                "contributor": {
-                    "$ref": "#/definitions/Contributor"
-                }
-            },
-            "required": [
-                "guid",
-                "type"
-            ],
-            "title": "PurpleCategory"
-        },
-        "CategoryAthlete": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "integer"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "links": {
-                    "$ref": "#/definitions/AthleteLinks"
-                }
-            },
-            "required": [
-                "description",
-                "id",
-                "links"
-            ],
-            "title": "CategoryAthlete"
-        },
-        "AthleteLinks": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "web": {
-                    "$ref": "#/definitions/StickyMobile"
-                },
-                "mobile": {
-                    "$ref": "#/definitions/StickyMobile"
-                }
-            },
-            "required": [
-                "mobile",
-                "web"
-            ],
-            "title": "AthleteLinks"
-        },
-        "StickyMobile": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "athletes": {
-                    "$ref": "#/definitions/SelfClass"
-                }
-            },
-            "required": [
-                "athletes"
-            ],
-            "title": "StickyMobile"
-        },
-        "Contributor": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "id": {
-                    "type": "integer"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "links": {
-                    "$ref": "#/definitions/ContributorLinks"
-                }
-            },
-            "required": [
-                "description",
-                "id",
-                "links"
-            ],
-            "title": "Contributor"
-        },
-        "ContributorLinks": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "web": {
-                    "$ref": "#/definitions/IndigoMobile"
-                },
-                "mobile": {
-                    "$ref": "#/definitions/IndigoMobile"
-                }
-            },
-            "required": [
-                "mobile",
-                "web"
-            ],
-            "title": "ContributorLinks"
-        },
-        "IndigoMobile": {
-            "type": "object",
-            "additionalProperties": false,
-            "title": "IndigoMobile"
-        },
         "FluffyImage": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "dataSourceIdentifier": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "integer"
-                },
                 "type": {
                     "$ref": "#/definitions/ImageType"
                 },
                 "name": {
                     "type": "string"
-                },
-                "credit": {
-                    "type": "string"
-                },
-                "height": {
-                    "type": "integer"
-                },
-                "width": {
-                    "type": "integer"
                 },
                 "url": {
                     "type": "string",
@@ -3340,19 +3244,62 @@
                         ".png"
                     ]
                 },
+                "ratio": {
+                    "$ref": "#/definitions/Ratio"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "width": {
+                    "type": "integer"
+                },
                 "caption": {
                     "type": "string"
                 },
-                "ratio": {
-                    "$ref": "#/definitions/Ratio"
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "credit": {
+                    "type": "string"
+                },
+                "alt": {
+                    "type": "string"
                 }
             },
             "required": [
                 "name",
-                "type",
                 "url"
             ],
             "title": "FluffyImage"
+        },
+        "FluffyLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/Web"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/SelfClass"
+                },
+                "api": {
+                    "$ref": "#/definitions/FluffyAPI"
+                },
+                "app": {
+                    "$ref": "#/definitions/App"
+                },
+                "sportscenter": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "api",
+                "web"
+            ],
+            "title": "FluffyLinks"
         },
         "OnIce": {
             "type": "object",
@@ -3530,7 +3477,6 @@
             },
             "required": [
                 "displayName",
-                "headshot",
                 "id",
                 "shortName"
             ],
@@ -3647,7 +3593,7 @@
                     "type": "boolean"
                 },
                 "status": {
-                    "$ref": "#/definitions/GameState"
+                    "type": "string"
                 },
                 "statusType": {
                     "$ref": "#/definitions/StatusTypeClass"
@@ -3779,7 +3725,7 @@
                     "type": "string"
                 },
                 "source": {
-                    "type": "string"
+                    "$ref": "#/definitions/SourceEnum"
                 },
                 "headline": {
                     "type": "string"
@@ -3849,16 +3795,16 @@
         "TeamAbbreviation": {
             "type": "string",
             "enum": [
-                "NYR",
-                "FLA"
+                "FLA",
+                "CAR"
             ],
             "title": "TeamAbbreviation"
         },
         "TeamDisplayName": {
             "type": "string",
             "enum": [
-                "New York Rangers",
-                "Florida Panthers"
+                "Florida Panthers",
+                "Carolina Hurricanes"
             ],
             "title": "TeamDisplayName"
         },
@@ -3875,11 +3821,10 @@
             "type": "string",
             "enum": [
                 "2024-07-02T15:51Z",
-                "2024-07-02T15:46Z",
                 "2018-06-05T12:12Z",
-                "2024-12-03T19:37Z",
-                "2024-12-03T19:39Z",
+                "2024-07-02T15:46Z",
                 "2024-12-03T19:38Z",
+                "2024-12-03T19:37Z",
                 "2024-07-03T19:49Z",
                 "2024-07-03T19:45Z"
             ],
@@ -3907,8 +3852,8 @@
         "Uid": {
             "type": "string",
             "enum": [
-                "s:70~l:90~t:13",
-                "s:70~l:90~t:26"
+                "s:70~l:90~t:26",
+                "s:70~l:90~t:7"
             ],
             "title": "Uid"
         },
@@ -3918,20 +3863,73 @@
                 "team",
                 "league",
                 "guid",
-                "topic",
-                "athlete",
-                "contributor"
+                "contributor",
+                "topic"
             ],
             "title": "CategoryType"
         },
         "ImageType": {
             "type": "string",
             "enum": [
-                "header",
+                "stitcher",
                 "Media",
-                "stitcher"
+                "header"
             ],
             "title": "ImageType"
+        },
+        "Bundle": {
+            "type": "string",
+            "enum": [
+                "sportscenter"
+            ],
+            "title": "Bundle"
+        },
+        "Slug": {
+            "type": "string",
+            "enum": [
+                "nhl"
+            ],
+            "title": "Slug"
+        },
+        "Device": {
+            "type": "string",
+            "enum": [
+                "desktop",
+                "ipad",
+                "settop",
+                "handset",
+                "tablet"
+            ],
+            "title": "Device"
+        },
+        "DeviceRestrictionsType": {
+            "type": "string",
+            "enum": [
+                "whitelist"
+            ],
+            "title": "DeviceRestrictionsType"
+        },
+        "SourceEnum": {
+            "type": "string",
+            "enum": [
+                "espn"
+            ],
+            "title": "SourceEnum"
+        },
+        "CoverageType": {
+            "type": "string",
+            "enum": [
+                "Final Game Highlight",
+                "OnePlay"
+            ],
+            "title": "CoverageType"
+        },
+        "LeagueName": {
+            "type": "string",
+            "enum": [
+                "No League"
+            ],
+            "title": "LeagueName"
         },
         "Lang": {
             "type": "string",
@@ -3946,9 +3944,9 @@
             "enum": [
                 "C",
                 "LW",
-                "RW",
                 "D",
-                "G"
+                "G",
+                "RW"
             ],
             "title": "PositionAbbreviation"
         },
@@ -3957,9 +3955,9 @@
             "enum": [
                 "Center",
                 "Left Wing",
-                "Right Wing",
                 "Defense",
-                "Goaltender"
+                "Goaltender",
+                "Right Wing"
             ],
             "title": "DisplayNameEnum"
         },
@@ -3979,29 +3977,6 @@
                 "athlete"
             ],
             "title": "Rel"
-        },
-        "DetailEnum": {
-            "type": "string",
-            "enum": [
-                "Final",
-                "Final/SO",
-                "Final/OT"
-            ],
-            "title": "DetailEnum"
-        },
-        "StatusTypeName": {
-            "type": "string",
-            "enum": [
-                "STATUS_FINAL"
-            ],
-            "title": "StatusTypeName"
-        },
-        "GameState": {
-            "type": "string",
-            "enum": [
-                "post"
-            ],
-            "title": "GameState"
         },
         "ShortDisplayNameEnum": {
             "type": "string",
@@ -4053,16 +4028,16 @@
             ],
             "title": "WhereaboutsAbbreviation"
         },
-        "WhereaboutsDescription": {
+        "TypeDescription": {
             "type": "string",
             "enum": [
                 "out",
                 "Injured Reserve",
                 "In Play"
             ],
-            "title": "WhereaboutsDescription"
+            "title": "TypeDescription"
         },
-        "WhereaboutsName": {
+        "TypeName": {
             "type": "string",
             "enum": [
                 "Active",
@@ -4070,14 +4045,7 @@
                 "INJURY_STATUS_IR",
                 "ROSTER_WHEREABOUTS_IN_PLAY"
             ],
-            "title": "WhereaboutsName"
-        },
-        "TypeType": {
-            "type": "string",
-            "enum": [
-                "active"
-            ],
-            "title": "TypeType"
+            "title": "TypeName"
         },
         "Ratio": {
             "type": "string",
@@ -4091,9 +4059,10 @@
         "Modified": {
             "type": "string",
             "enum": [
-                "2024-06-02T02:46Z",
-                "2024-06-02T14:24Z",
-                "2024-06-02T14:25Z"
+                "2025-05-29T02:58Z",
+                "2025-05-29T03:20Z",
+                "2025-05-29T03:03Z",
+                "2025-05-29T03:06Z"
             ],
             "title": "Modified"
         },
@@ -4110,20 +4079,21 @@
             "type": "string",
             "enum": [
                 "regular",
+                "empty-net",
                 "even-strength",
                 "short-handed",
                 "power-play",
                 "period-start",
                 "faceoff",
-                "stoppage",
                 "hit",
+                "stoppage",
                 "shot-on-goal",
-                "giveaway",
-                "takeaway",
                 "shot-missed",
                 "shot-blocked",
-                "penalty",
+                "giveaway",
                 "goal",
+                "takeaway",
+                "penalty",
                 "period-end"
             ],
             "title": "ShotInfoAbbreviation"
@@ -4132,20 +4102,21 @@
             "type": "string",
             "enum": [
                 "None",
+                "Empty Net",
                 "Even Strength",
                 "Shorthanded",
                 "Power Play",
                 "Period Start",
                 "Face Off",
-                "Stoppage",
                 "Hit",
+                "Stoppage",
                 "Shot",
-                "Giveaway",
-                "Takeaway",
                 "Missed",
                 "Blocked",
-                "Penalty",
+                "Giveaway",
                 "Goal",
+                "Takeaway",
+                "Penalty",
                 "Period End",
                 "End of Game"
             ],
