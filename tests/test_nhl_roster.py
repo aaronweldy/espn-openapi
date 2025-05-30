@@ -33,9 +33,10 @@ def test_get_nhl_team_roster(site_api_client, ensure_json_output_dir):
     assert len(first_group.items) > 0, "Position group should have at least one athlete"
     
     # Check first athlete in first group has required fields
-    first_athlete = first_group.items[0]
-    assert first_athlete.id, "Athlete should have an ID"
-    assert first_athlete.full_name, "Athlete should have a full name"
+    if first_group.items:  # Type guard for pyright
+        first_athlete = first_group.items[0]
+        assert first_athlete.id, "Athlete should have an ID"
+        assert first_athlete.full_name, "Athlete should have a full name"
     
     # Save response for reference
     with open(f"{ensure_json_output_dir}/nhl_team_roster_test.json", "w") as f:
@@ -44,7 +45,7 @@ def test_get_nhl_team_roster(site_api_client, ensure_json_output_dir):
     print(f"NHL Team Roster for {result.team.display_name}:")
     
     # Count total athletes
-    total_athletes = sum(len(group.items) for group in result.athletes)
+    total_athletes = sum(len(group.items) if group.items else 0 for group in result.athletes)
     print(f"  Total Athletes: {total_athletes}")
     
     if result.coach:
@@ -54,13 +55,14 @@ def test_get_nhl_team_roster(site_api_client, ensure_json_output_dir):
     
     # Show athletes by position
     for group in result.athletes:
-        print(f"\n  {group.position} ({len(group.items)}):")
-        for i, athlete in enumerate(group.items[:3]):  # Show first 3 of each position
-            position_info = ""
-            if athlete.position and athlete.position.display_name:
-                position_info = athlete.position.display_name
-            jersey = athlete.jersey if athlete.jersey else "N/A"
-            print(f"    {i+1}. {athlete.full_name} - {position_info} (#{jersey})")
+        if group.position and group.items:
+            print(f"\n  {group.position} ({len(group.items)}):")
+            for i, athlete in enumerate(group.items[:3]):  # Show first 3 of each position
+                position_info = ""
+                if athlete.position and athlete.position.display_name:
+                    position_info = athlete.position.display_name
+                jersey = athlete.jersey if athlete.jersey else "N/A"
+                print(f"    {i+1}. {athlete.full_name} - {position_info} (#{jersey})")
 
 
 @pytest.mark.api

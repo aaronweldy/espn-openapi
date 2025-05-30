@@ -1,0 +1,492 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/nhl/athletes/3024816/statistics/0?lang=en&region=us",
+  "athlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/nhl/athletes/3024816?lang=en&region=us"
+  },
+  "splits": {
+    "id": "0",
+    "name": "All Splits",
+    "abbreviation": "TOTAL",
+    "type": "total",
+    "categories": [
+      {
+        "name": "defensive",
+        "displayName": "Defensive",
+        "shortDisplayName": "Defensive",
+        "abbreviation": "def",
+        "summary": "",
+        "stats": [
+          {
+            "name": "goalsAgainst",
+            "displayName": "Goals Against",
+            "shortDisplayName": "Goals Against",
+            "description": "Total goals against.",
+            "abbreviation": "GA",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "avgGoalsAgainst",
+            "displayName": "Goals Against Average",
+            "shortDisplayName": "Goals Against Average",
+            "description": "Goals against average.",
+            "abbreviation": "GAA",
+            "value": 0.0,
+            "displayValue": "0.00"
+          },
+          {
+            "name": "shotsAgainst",
+            "displayName": "Shots Against",
+            "shortDisplayName": "Shots Against",
+            "description": "Total shots against.",
+            "abbreviation": "SA",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "avgShotsAgainst",
+            "displayName": "Shots Against per Game",
+            "shortDisplayName": "Shots Against / Game",
+            "description": "Average shots against per game.",
+            "abbreviation": "SA/G",
+            "value": 0.0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "shootoutSaves",
+            "displayName": "Shootout Saves",
+            "shortDisplayName": "Shootout Saves",
+            "description": "Total shootout saves.",
+            "abbreviation": "SOS",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shootoutShotsAgainst",
+            "displayName": "Shootout Shots Against",
+            "shortDisplayName": "Shootout Shots Against",
+            "description": "Total shootout shots against.",
+            "abbreviation": "SOSA",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shootoutSavePct",
+            "displayName": "Shootout Save Percentage",
+            "shortDisplayName": "Shootout Save Percentage",
+            "description": "Percentage of shootout shots saved.",
+            "abbreviation": "SOSPCT",
+            "value": 0.0,
+            "displayValue": ".000"
+          },
+          {
+            "name": "emptyNetGoalsAgainst",
+            "displayName": "Empty Net Goals Against",
+            "shortDisplayName": "Empty Goals Against",
+            "description": "Total empty net goals against.",
+            "abbreviation": "ENGA",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shutouts",
+            "displayName": "Shutouts",
+            "shortDisplayName": "Shutouts",
+            "description": "Total shutouts.",
+            "abbreviation": "SO",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "saves",
+            "displayName": "Saves",
+            "shortDisplayName": "Saves",
+            "description": "Total saves.",
+            "abbreviation": "SV",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "savePct",
+            "displayName": "Save Percentage",
+            "shortDisplayName": "Save Percentage",
+            "description": "Percentage of shots saved.",
+            "abbreviation": "SV%",
+            "value": 0.0,
+            "displayValue": ".000"
+          },
+          {
+            "name": "overtimeLosses",
+            "displayName": "Overtime Losses",
+            "shortDisplayName": "Overtime Losses",
+            "description": "Total games lost in overtime.",
+            "abbreviation": "OTL",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "blockedShots",
+            "displayName": "Blocked Shots",
+            "shortDisplayName": "Blocked Shots",
+            "description": "Total shots blocked.",
+            "abbreviation": "BS",
+            "value": 89.0,
+            "displayValue": "89"
+          },
+          {
+            "name": "hits",
+            "displayName": "Hits",
+            "shortDisplayName": "Hits",
+            "description": "Total hits.",
+            "abbreviation": "HT",
+            "value": 73.0,
+            "displayValue": "73"
+          },
+          {
+            "name": "evenStrengthSaves",
+            "displayName": "Even Strength Saves",
+            "shortDisplayName": "Even Strength Saves",
+            "description": "Saves made at even strength.",
+            "abbreviation": "ESSV",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "powerPlaySaves",
+            "displayName": "Power Play Saves",
+            "shortDisplayName": "Power Play Saves",
+            "description": "Saves made while in a power play.",
+            "abbreviation": "PPSV",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shortHandedSaves",
+            "displayName": "Shorthanded Saves",
+            "shortDisplayName": "Shorthanded Saves",
+            "description": "Saves made while shorthanded",
+            "abbreviation": "SHSV",
+            "value": 0.0,
+            "displayValue": "0"
+          }
+        ]
+      },
+      {
+        "name": "general",
+        "displayName": "General",
+        "shortDisplayName": "General",
+        "abbreviation": "gen",
+        "summary": "",
+        "stats": [
+          {
+            "name": "games",
+            "displayName": "Games Played",
+            "shortDisplayName": "Games",
+            "description": "Total games played.",
+            "abbreviation": "GP",
+            "value": 205.0,
+            "displayValue": "205"
+          },
+          {
+            "name": "gameStarted",
+            "displayName": "Games Started",
+            "shortDisplayName": "Games Started",
+            "description": "Games Started",
+            "abbreviation": "GS",
+            "value": 1.0,
+            "displayValue": "1"
+          },
+          {
+            "name": "teamGamesPlayed",
+            "displayName": "Team Games Played",
+            "shortDisplayName": "G",
+            "description": "The number of games played by a team.",
+            "abbreviation": "G",
+            "type": "teamGamesPlayed",
+            "value": 701.0,
+            "displayValue": "701"
+          },
+          {
+            "name": "wins",
+            "displayName": "Wins",
+            "shortDisplayName": "Wins",
+            "description": "Wins",
+            "abbreviation": "WINS",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "losses",
+            "displayName": "Losses",
+            "shortDisplayName": "Losses",
+            "description": "Losses",
+            "abbreviation": "L",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "ties",
+            "displayName": "Ties",
+            "shortDisplayName": "Ties",
+            "description": "Ties",
+            "abbreviation": "T",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "plusMinus",
+            "displayName": "Plus/Minus Rating",
+            "shortDisplayName": "Plus/Minus",
+            "description": "Plus/Minus Rating",
+            "abbreviation": "+/-",
+            "value": -14.0,
+            "displayValue": "-14"
+          },
+          {
+            "name": "timeOnIce",
+            "displayName": "Time On Ice",
+            "shortDisplayName": "Time On Ice",
+            "description": "Total time on ice.",
+            "abbreviation": "TOI",
+            "value": 137193.0,
+            "displayValue": "2286:33"
+          },
+          {
+            "name": "timeOnIcePerGame",
+            "displayName": "Time On Ice Per Game",
+            "shortDisplayName": "Time On Ice/Game",
+            "description": "Total time on ice per game.",
+            "abbreviation": "TOI/G",
+            "value": 669.2341463414634,
+            "displayValue": "11:09"
+          },
+          {
+            "name": "shifts",
+            "displayName": "Shifts",
+            "shortDisplayName": "Shifts",
+            "description": "Total shifts.",
+            "abbreviation": "SHFT",
+            "value": 3206.0,
+            "displayValue": "3206"
+          },
+          {
+            "name": "production",
+            "displayName": "Production",
+            "shortDisplayName": "Production",
+            "description": "Total production.",
+            "abbreviation": "PROD",
+            "value": 32742.654,
+            "displayValue": "545:42"
+          },
+          {
+            "name": "shotDifferential",
+            "displayName": "Shot Differential",
+            "shortDisplayName": "Shot Differential",
+            "description": "Shot Differential",
+            "abbreviation": "SDIFF",
+            "value": 214.0,
+            "displayValue": "214.0"
+          },
+          {
+            "name": "goalDifferential",
+            "displayName": "Goal Differential",
+            "shortDisplayName": "Goal Differential",
+            "description": "Goal Differential",
+            "abbreviation": "GDIFF",
+            "value": 18.0,
+            "displayValue": "18.00"
+          }
+        ]
+      },
+      {
+        "name": "offensive",
+        "displayName": "Offensive",
+        "shortDisplayName": "Offensive",
+        "abbreviation": "off",
+        "summary": "",
+        "stats": [
+          {
+            "name": "goals",
+            "displayName": "Goals",
+            "shortDisplayName": "Goals",
+            "description": "Total goals scored.",
+            "abbreviation": "G",
+            "value": 18.0,
+            "displayValue": "18"
+          },
+          {
+            "name": "assists",
+            "displayName": "Assists",
+            "shortDisplayName": "Assists",
+            "description": "Total goal assists.",
+            "abbreviation": "A",
+            "value": 33.0,
+            "displayValue": "33"
+          },
+          {
+            "name": "shotsTotal",
+            "displayName": "Shots",
+            "shortDisplayName": "Shots",
+            "description": "Total shots.",
+            "abbreviation": "S",
+            "value": 214.0,
+            "displayValue": "214"
+          },
+          {
+            "name": "points",
+            "displayName": "Points",
+            "shortDisplayName": "Points",
+            "description": "Points",
+            "abbreviation": "PTS",
+            "value": 51.0,
+            "displayValue": "51"
+          },
+          {
+            "name": "powerPlayGoals",
+            "displayName": "Power Play Goals",
+            "shortDisplayName": "Power Play Goals",
+            "description": "Total power play goals.",
+            "abbreviation": "PPG",
+            "value": 1.0,
+            "displayValue": "1"
+          },
+          {
+            "name": "powerPlayAssists",
+            "displayName": "Power Play Assists",
+            "shortDisplayName": "Power Play Assists",
+            "description": "Total power play assists.",
+            "abbreviation": "PPA",
+            "value": 8.0,
+            "displayValue": "8"
+          },
+          {
+            "name": "shortHandedGoals",
+            "displayName": "Short Handed Goals",
+            "shortDisplayName": "Short Handed Goals",
+            "description": "Total short handed goals.",
+            "abbreviation": "SHG",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shortHandedAssists",
+            "displayName": "Short Handed Assists",
+            "shortDisplayName": "Short Handed Assists",
+            "description": "Total short handed assists.",
+            "abbreviation": "SHA",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shootoutAttempts",
+            "displayName": "Shootout Attempts",
+            "shortDisplayName": "Shootout Attempts",
+            "description": "Total shootout attempts.",
+            "abbreviation": "SOA",
+            "value": 1.0,
+            "displayValue": "1"
+          },
+          {
+            "name": "shootoutGoals",
+            "displayName": "Shootout Goals",
+            "shortDisplayName": "Shootout Goals",
+            "description": "Total shootout goals.",
+            "abbreviation": "SOG",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "shootoutShotPct",
+            "displayName": "Shootout Shot Percentage",
+            "shortDisplayName": "Shootout Shot Percentage",
+            "description": "Percentage of shootout goals made.",
+            "abbreviation": "SOPCT",
+            "value": 0.0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "shootingPct",
+            "displayName": "Shooting Percentage",
+            "shortDisplayName": "Shooting Percentage",
+            "description": "Percentage of shots scored.",
+            "abbreviation": "SPCT",
+            "value": 8.411,
+            "displayValue": "8.4"
+          },
+          {
+            "name": "totalFaceOffs",
+            "displayName": "Total Faceoffs",
+            "shortDisplayName": "Faceoffs",
+            "description": "Total faceoffs.",
+            "abbreviation": "FO",
+            "value": 666.0,
+            "displayValue": "666"
+          },
+          {
+            "name": "faceoffsWon",
+            "displayName": "Faceoffs Won",
+            "shortDisplayName": "Faceoffs Won",
+            "description": "Total faceoffs won.",
+            "abbreviation": "FW",
+            "value": 302.0,
+            "displayValue": "302"
+          },
+          {
+            "name": "faceoffsLost",
+            "displayName": "Faceoffs Lost",
+            "shortDisplayName": "Faceoffs Lost",
+            "description": "Total faceoffs lost.",
+            "abbreviation": "FL",
+            "value": 364.0,
+            "displayValue": "364"
+          },
+          {
+            "name": "faceoffPercent",
+            "displayName": "Faceoff Win Percent",
+            "shortDisplayName": "Faceoff Win Percent",
+            "description": "Percentage of faceoffs won.",
+            "abbreviation": "FO%",
+            "value": 363.198,
+            "displayValue": "363.2"
+          },
+          {
+            "name": "gameTyingGoals",
+            "displayName": "Game-Tying Goals",
+            "shortDisplayName": "Game-Tying Goals",
+            "description": "Total game-tying goals",
+            "abbreviation": "GTG",
+            "value": 0.0,
+            "displayValue": "0"
+          },
+          {
+            "name": "gameWinningGoals",
+            "displayName": "Game-Winning Goals",
+            "shortDisplayName": "Game-Winning Goals",
+            "description": "Total game-winning goals",
+            "abbreviation": "GWG",
+            "value": 4.0,
+            "displayValue": "4"
+          }
+        ]
+      },
+      {
+        "name": "penalties",
+        "displayName": "Penalties",
+        "shortDisplayName": "Penalties",
+        "abbreviation": "p",
+        "summary": "",
+        "stats": [
+          {
+            "name": "penaltyMinutes",
+            "displayName": "Penalty Minutes",
+            "shortDisplayName": "Penalty Minutes",
+            "description": "Total penalty minutes.",
+            "abbreviation": "PIM",
+            "value": 40.0,
+            "displayValue": "40"
+          }
+        ]
+      }
+    ]
+  }
+}

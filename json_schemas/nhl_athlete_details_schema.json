@@ -1,0 +1,405 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NhlAthleteDetailsSchema",
+    "definitions": {
+        "NhlAthleteDetailsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "alternateIds": {
+                    "$ref": "#/definitions/AlternateIDS"
+                },
+                "alternateId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "integer"
+                },
+                "displayWeight": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "displayHeight": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "dateOfBirth": {
+                    "type": "string"
+                },
+                "debutYear": {
+                    "type": "integer"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "birthPlace": {
+                    "$ref": "#/definitions/BirthPlace"
+                },
+                "birthCountry": {
+                    "$ref": "#/definitions/BirthCountry"
+                },
+                "college": {
+                    "$ref": "#/definitions/College"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "hand": {
+                    "$ref": "#/definitions/Hand"
+                },
+                "position": {
+                    "$ref": "#/definitions/Position"
+                },
+                "linked": {
+                    "type": "boolean"
+                },
+                "team": {
+                    "$ref": "#/definitions/College"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/College"
+                },
+                "contracts": {
+                    "$ref": "#/definitions/College"
+                },
+                "experience": {
+                    "$ref": "#/definitions/Experience"
+                },
+                "active": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "statisticslog": {
+                    "$ref": "#/definitions/College"
+                }
+            },
+            "required": [
+                "$ref",
+                "active",
+                "age",
+                "alternateId",
+                "alternateIds",
+                "birthCountry",
+                "birthPlace",
+                "college",
+                "contracts",
+                "dateOfBirth",
+                "debutYear",
+                "displayHeight",
+                "displayName",
+                "displayWeight",
+                "experience",
+                "firstName",
+                "fullName",
+                "guid",
+                "hand",
+                "headshot",
+                "height",
+                "id",
+                "jersey",
+                "lastName",
+                "linked",
+                "links",
+                "position",
+                "shortName",
+                "slug",
+                "statistics",
+                "statisticslog",
+                "status",
+                "team",
+                "type",
+                "uid",
+                "weight"
+            ],
+            "title": "NhlAthleteDetailsSchema"
+        },
+        "AlternateIDS": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sdr": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "sdr"
+            ],
+            "title": "AlternateIDS"
+        },
+        "BirthCountry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation"
+            ],
+            "title": "BirthCountry"
+        },
+        "BirthPlace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "country",
+                "state"
+            ],
+            "title": "BirthPlace"
+        },
+        "College": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "College"
+        },
+        "Experience": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "years": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "years"
+            ],
+            "title": "Experience"
+        },
+        "Hand": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayValue",
+                "type"
+            ],
+            "title": "Hand"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "type": "string"
+                },
+                "shortText": {
+                    "type": "string"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Position": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/College"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name",
+                "parent"
+            ],
+            "title": "Position"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name",
+                "type"
+            ],
+            "title": "Status"
+        }
+    }
+}

@@ -93,10 +93,10 @@ site.api.espn.com/apis/site
 [x] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
 [x] /v2/sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
 [x] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev}/roster - NHL Team Roster. Path Param: {team_id_or_abbrev}
-[ ] /v2/sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics
+[x] /v2/sports/hockey/nhl/statistics/players - NHL Aggregate Player Statistics - DOES NOT EXIST
 sports.core.api.espn.com
-[ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id} - Detailed NHL athlete information. Path Param: {athlete_id}
-[ ] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id}/statistics - NHL Athlete statistics. Path Param: {athlete_id}
+[x] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id} - Detailed NHL athlete information. Path Param: {athlete_id} - Covered by generic endpoint
+[x] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id}/statistics - NHL Athlete statistics. Path Param: {athlete_id} - Covered by generic endpoint
 V. NBA Endpoints
 site.api.espn.com/apis/site/v2
 [ ] /sports/basketball/nba/scoreboard - NBA Scoreboard. Query Param: dates (YYYYMMDD)
