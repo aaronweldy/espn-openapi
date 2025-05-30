@@ -36,7 +36,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts/{year} - Athlete Contract by Year. Path Params: {sport}, {league}, {athlete_id}, {year}
 II. NFL Endpoints
 site.api.espn.com/apis/site/v2
-[x] /sports/football/nfl/scoreboard - NFL Scoreboard. Query Params: dates, week, seasontype - Already implemented
+[x] /sports/{sport}/{league}/scoreboard - Generic Scoreboard Endpoint. Path Params: {sport}, {league}. Query Params: dates, week (football only), seasontype (football only) - Implemented as generic endpoint
 [x] /sports/football/nfl/teams - NFL Teams List - Already implemented
 [x] /sports/football/nfl/teams/{team_id} - NFL Specific Team (ID or Abbreviation). Path Param: {team_id} - Already implemented (path refined)
 [x] /sports/football/nfl/summary - NFL Game Summary. Query Param: event={event_id} - Already implemented
@@ -76,7 +76,7 @@ site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/splits - NFL Athlete Splits. Path Param: {athlete_id}
 III. MLB Endpoints
 site.api.espn.com/apis/site
-[x] /v2/sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD)
+[x] /v2/sports/baseball/mlb/scoreboard - MLB Scoreboard. Query Param: dates (YYYYMMDD) - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /v2/sports/baseball/mlb/news - MLB News
 [x] /v2/sports/baseball/mlb/teams - MLB Teams List
 [x] /v2/sports/baseball/mlb/teams/{team_id_or_abbrev} - MLB Specific Team. Path Param: {team_id_or_abbrev}
@@ -88,7 +88,7 @@ sports.core.api.espn.com
 site.web.api.espn.com
 IV. NHL Endpoints
 site.api.espn.com/apis/site
-[x] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD)
+[x] /v2/sports/hockey/nhl/scoreboard - NHL Scoreboard. Query Param: dates (YYYYMMDD) - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /v2/sports/hockey/nhl/teams - NHL Teams List
 [x] /v2/sports/hockey/nhl/teams/{team_id_or_abbrev} - NHL Specific Team. Path Param: {team_id_or_abbrev}
 [x] /v2/sports/hockey/nhl/summary?event={event_id} - NHL Game Summary. Query Param: event={event_id}
@@ -99,7 +99,7 @@ sports.core.api.espn.com
 [x] /v2/sports/hockey/leagues/nhl/athletes/{athlete_id}/statistics - NHL Athlete statistics. Path Param: {athlete_id} - Covered by generic endpoint
 V. NBA Endpoints
 site.api.espn.com/apis/site/v2
-[ ] /sports/basketball/nba/scoreboard - NBA Scoreboard. Query Param: dates (YYYYMMDD)
+[x] /sports/basketball/nba/scoreboard - NBA Scoreboard. Query Param: dates (YYYYMMDD) - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [ ] /sports/basketball/nba/news - NBA News
 [ ] /sports/basketball/nba/teams - NBA Teams List
 [ ] /sports/basketball/nba/teams/{team_id_or_abbrev} - NBA Specific Team. Path Param: {team_id_or_abbrev}

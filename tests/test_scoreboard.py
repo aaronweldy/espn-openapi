@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test ESPN NFL API - Scoreboard Endpoint
+Test ESPN API - Scoreboard Endpoints
 Requires Python 3.10+
 """
 
@@ -8,17 +8,11 @@ import json
 import pytest
 from datetime import datetime
 
-from models.site_api.espn_nfl_api_client.api.default.get_nfl_scoreboard import sync
+from models.site_api.espn_nfl_api_client.api.default import get_scoreboard
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
-from models.site_api.espn_nfl_api_client.models.scoreboard import Scoreboard
+from models.site_api.espn_nfl_api_client.models.generic_scoreboard_response import GenericScoreboardResponse
+from models.site_api.espn_nfl_api_client.models.get_scoreboard_sport import GetScoreboardSport
 from models.site_api.espn_nfl_api_client.types import UNSET
-
-from models.site_api.espn_nfl_api_client.api.default.get_mlb_scoreboard import (
-    sync as get_mlb_scoreboard,
-)
-from models.site_api.espn_nfl_api_client.models.mlb_scoreboard_response import (
-    MlbScoreboardResponse,
-)
 
 from models.site_api.espn_nfl_api_client.api.default.get_monday_night_football import (
     sync as mnf_sync,
@@ -41,17 +35,10 @@ from models.site_api.espn_nfl_api_client.models.sunday_night_football_response i
     SundayNightFootballResponse,
 )
 
-from models.site_api.espn_nfl_api_client.api.default.get_nhl_scoreboard import (
-    sync as get_nhl_scoreboard,
-)
-from models.site_api.espn_nfl_api_client.models.nhl_scoreboard_response import (
-    NhlScoreboardResponse,
-)
 
-
-def validate_schema_response(data: Scoreboard) -> bool:
+def validate_schema_response(data: GenericScoreboardResponse) -> bool:
     """Validate if response matches expected schema structure."""
-    required_attrs = ["leagues", "season", "week", "events"]
+    required_attrs = ["leagues", "events"]
     for attr in required_attrs:
         if getattr(data, attr, UNSET) is UNSET:
             print(f"Missing required attribute: {attr}")
@@ -67,44 +54,42 @@ def validate_schema_response(data: Scoreboard) -> bool:
     if (
         getattr(league, "id", UNSET) is UNSET
         or getattr(league, "name", UNSET) is UNSET
-        or getattr(league, "season", UNSET) is UNSET
     ):
         print("Invalid league structure: missing required keys")
         return False
 
     # Check events
     events = data.events
-    if not events:
-        print("No events found or events list is empty")
-        return False
-
-    # Check at least one event exists
-    event = events[0]
-    if (
-        getattr(event, "id", UNSET) is UNSET
-        or getattr(event, "date", UNSET) is UNSET
-        or getattr(event, "competitions", UNSET) is UNSET
-    ):
-        print("Invalid event structure: missing required keys")
-        return False
+    if events:
+        # Check at least one event exists
+        event = events[0]
+        if (
+            getattr(event, "id", UNSET) is UNSET
+            or getattr(event, "date", UNSET) is UNSET
+            or getattr(event, "competitions", UNSET) is UNSET
+        ):
+            print("Invalid event structure: missing required keys")
+            return False
 
     return True
 
 
-def format_scoreboard(data: Scoreboard) -> str:
+def format_scoreboard(data: GenericScoreboardResponse, sport: str, league: str) -> str:
     """Format scoreboard data for display."""
     if not data.leagues or not data.events:
         return "Invalid data format: missing leagues or events"
 
-    league = data.leagues[0]
-    season_info = data.season
-    week_info = data.week
-
+    league_obj = data.leagues[0]
+    
     output = []
-    output.append("=== ESPN NFL Scoreboard ===")
-    output.append(f"League: {league.name}")
-    output.append(f"Season: {season_info.year} (Type: {season_info.type})")
-    output.append(f"Week: {week_info.number}")
+    output.append(f"=== ESPN {league.upper()} Scoreboard ===")
+    output.append(f"League: {league_obj.name}")
+    
+    if data.season:
+        output.append(f"Season: {data.season.year} (Type: {data.season.type})")
+    
+    if data.week:
+        output.append(f"Week: {data.week.number}")
 
     output.append("\n--- Games ---")
     for event in data.events:
@@ -154,15 +139,20 @@ def format_scoreboard(data: Scoreboard) -> str:
 def test_mlb_scoreboard(site_api_client, ensure_json_output_dir):
     """Test the MLB scoreboard endpoint and print the full formatted scoreboard for today's games, including active games."""
     today = datetime.now().strftime("%Y%m%d")
-    response = get_mlb_scoreboard(client=site_api_client, dates=today)
+    response = get_scoreboard.sync(
+        client=site_api_client,
+        sport=GetScoreboardSport.BASEBALL,
+        league="mlb",
+        dates=today
+    )
 
-    assert isinstance(response, MlbScoreboardResponse), (
-        "Response should be a MlbScoreboardResponse"
+    assert isinstance(response, GenericScoreboardResponse), (
+        "Response should be a GenericScoreboardResponse"
     )
 
     # Check for leagues and events
     assert response.leagues, "Response should have leagues data"
-    assert response.events, "Response should have events data"
+    assert response.events is not None, "Response should have events data"
 
     league = response.leagues[0]
     print(f"League: {getattr(league, 'name', '[no name]')}")
@@ -217,12 +207,16 @@ def test_mlb_scoreboard(site_api_client, ensure_json_output_dir):
 def test_get_nfl_scoreboard(site_api_client, ensure_json_output_dir):
     """Test the ESPN NFL Scoreboard API."""
     # Test using the generated client
-    scoreboard_data = sync(client=site_api_client)
+    scoreboard_data = get_scoreboard.sync(
+        client=site_api_client,
+        sport=GetScoreboardSport.FOOTBALL, 
+        league="nfl"
+    )
 
     assert not isinstance(scoreboard_data, ErrorResponse), (
         f"API returned an error response: {scoreboard_data.error.message if hasattr(scoreboard_data, 'error') and scoreboard_data.error and hasattr(scoreboard_data.error, 'message') else str(scoreboard_data)}"
     )
-    assert isinstance(scoreboard_data, Scoreboard), (
+    assert isinstance(scoreboard_data, GenericScoreboardResponse), (
         "Failed to fetch scoreboard data using client or unexpected response type"
     )
 
@@ -232,7 +226,7 @@ def test_get_nfl_scoreboard(site_api_client, ensure_json_output_dir):
     )
 
     # Display formatted summary
-    print("\n" + format_scoreboard(scoreboard_data))
+    print("\n" + format_scoreboard(scoreboard_data, "football", "nfl"))
 
     # Save full response for analysis
     with open(
@@ -341,15 +335,20 @@ def test_sunday_night_football(site_api_client, ensure_json_output_dir):
 def test_nhl_scoreboard(site_api_client, ensure_json_output_dir):
     """Test the NHL scoreboard endpoint and print the full formatted scoreboard for today's games, including active games."""
     today = datetime.now().strftime("%Y%m%d")
-    response = get_nhl_scoreboard(client=site_api_client, dates=today)
+    response = get_scoreboard.sync(
+        client=site_api_client,
+        sport=GetScoreboardSport.HOCKEY,
+        league="nhl",
+        dates=today
+    )
 
-    assert isinstance(response, NhlScoreboardResponse), (
-        "Response should be a NhlScoreboardResponse"
+    assert isinstance(response, GenericScoreboardResponse), (
+        "Response should be a GenericScoreboardResponse"
     )
 
     # Check for leagues and events
     assert response.leagues, "Response should have leagues data"
-    assert response.events, "Response should have events data"
+    assert response.events is not None, "Response should have events data"
 
     league = response.leagues[0]
     print(f"League: {getattr(league, 'name', '[no name]')}")

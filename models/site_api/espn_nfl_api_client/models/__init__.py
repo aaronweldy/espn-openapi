@@ -48,13 +48,16 @@ from .game_info import GameInfo
 from .game_status import GameStatus
 from .game_summary import GameSummary
 from .game_summary_standings import GameSummaryStandings
+from .generic_scoreboard_response import GenericScoreboardResponse
+from .generic_scoreboard_response_day import GenericScoreboardResponseDay
 from .geo_broadcast import GeoBroadcast
 from .geo_broadcast_market import GeoBroadcastMarket
 from .geo_broadcast_media import GeoBroadcastMedia
 from .geo_broadcast_type import GeoBroadcastType
 from .get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
 from .get_mlb_team_roster_team_id_or_abbrev import GetMLBTeamRosterTeamIdOrAbbrev
-from .get_nfl_scoreboard_seasontype import GetNFLScoreboardSeasontype
+from .get_scoreboard_seasontype import GetScoreboardSeasontype
+from .get_scoreboard_sport import GetScoreboardSport
 from .headline import Headline
 from .headshot import Headshot
 from .image import Image
@@ -122,6 +125,9 @@ from .mlb_team_roster_response_season import MlbTeamRosterResponseSeason
 from .mlb_team_roster_response_team import MlbTeamRosterResponseTeam
 from .mlb_win_probability import MlbWinProbability
 from .monday_night_football_response import MondayNightFootballResponse
+from .nba_scoreboard_response import NbaScoreboardResponse
+from .nba_scoreboard_response_day import NbaScoreboardResponseDay
+from .nba_statistic_name import NbaStatisticName
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
 from .news_article_link import NewsArticleLink
@@ -291,13 +297,16 @@ __all__ = (
     "GameStatus",
     "GameSummary",
     "GameSummaryStandings",
+    "GenericScoreboardResponse",
+    "GenericScoreboardResponseDay",
     "GeoBroadcast",
     "GeoBroadcastMarket",
     "GeoBroadcastMedia",
     "GeoBroadcastType",
     "GetMLBTeamDetailsTeamIdOrAbbrev",
     "GetMLBTeamRosterTeamIdOrAbbrev",
-    "GetNFLScoreboardSeasontype",
+    "GetScoreboardSeasontype",
+    "GetScoreboardSport",
     "Headline",
     "Headshot",
     "Image",
@@ -365,6 +374,9 @@ __all__ = (
     "MlbTeamRosterResponseTeam",
     "MlbWinProbability",
     "MondayNightFootballResponse",
+    "NbaScoreboardResponse",
+    "NbaScoreboardResponseDay",
+    "NbaStatisticName",
     "NewsArticle",
     "NewsArticleImage",
     "NewsArticleLink",

@@ -9,6 +9,69 @@ servers:
     description: ESPN Site API Production Server
 
 paths:
+  /sports/{sport}/{league}/scoreboard:
+    get:
+      summary: Get Scoreboard
+      description: Retrieve current scoreboard for any sport/league including game scores, status, and basic information
+      operationId: getScoreboard
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport (e.g., football, basketball, baseball, hockey)
+          schema:
+            type: string
+            enum: [football, basketball, baseball, hockey]
+            example: "football"
+        - name: league
+          in: path
+          required: true
+          description: The league (e.g., nfl, nba, mlb, nhl, college-football, mens-college-basketball, womens-college-basketball, wnba)
+          schema:
+            type: string
+            example: "nfl"
+        - name: dates
+          in: query
+          required: false
+          description: Filter by specific dates (format YYYYMMDD)
+          schema:
+            type: string
+            example: "20240201"
+        - name: week
+          in: query
+          required: false
+          description: The week number of the season (football sports only)
+          schema:
+            type: integer
+            example: 1
+        - name: seasontype
+          in: query
+          required: false
+          description: Season type (1=preseason, 2=regular, 3=postseason, 4=off-season) - football sports only
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+            example: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericScoreboardResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/football/nfl/summary:
     get:
       summary: Get NFL Game Summary
@@ -31,54 +94,6 @@ paths:
                 $ref: '#/components/schemas/GameSummary'
         '404':
           description: Game not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
-  /sports/football/nfl/scoreboard:
-    get:
-      summary: Get NFL Scoreboard
-      description: Retrieve current NFL scoreboard including game scores, status, and basic information
-      operationId: getNFLScoreboard
-      parameters:
-        - name: dates
-          in: query
-          required: false
-          description: Filter by specific dates (format YYYYMMDD)
-          schema:
-            type: string
-            example: "20240201"
-        - name: week
-          in: query
-          required: false
-          description: The week number of the season
-          schema:
-            type: integer
-            example: 1
-        - name: seasontype
-          in: query
-          required: false
-          description: Season type (1=preseason, 2=regular, 3=postseason, 4=off-season)
-          schema:
-            type: integer
-            enum: [1, 2, 3, 4]
-            example: 2
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Scoreboard'
-        '404':
-          description: Not found
           content:
             application/json:
               schema:
@@ -352,40 +367,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/SundayNightFootballResponse'
 
-  /sports/baseball/mlb/scoreboard:
-    get:
-      summary: Get MLB Scoreboard
-      description: Retrieve current MLB scoreboard including game scores, status, and basic information
-      operationId: getMLBScoreboard
-      parameters:
-        - name: dates
-          in: query
-          required: false
-          description: Filter by specific dates (format YYYYMMDD)
-          schema:
-            type: string
-            example: "20240401"
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MlbScoreboardResponse'
-        '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
-
   /sports/baseball/mlb/teams:
     get:
       summary: Get MLB Teams List
@@ -572,39 +553,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  /sports/hockey/nhl/scoreboard:
-    get:
-      summary: Get NHL Scoreboard
-      description: Retrieve current NHL scoreboard including game scores, status, and basic information
-      operationId: getNHLScoreboard
-      parameters:
-        - name: dates
-          in: query
-          required: false
-          description: Filter by specific dates (format YYYYMMDD)
-          schema:
-            type: string
-            example: "20240601"
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NhlScoreboardResponse'
-        '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
   /sports/hockey/nhl/teams:
     get:
       summary: Get NHL Teams List
@@ -731,6 +679,34 @@ paths:
 
 components:
   schemas:
+    GenericScoreboardResponse:
+      type: object
+      description: Generic scoreboard response that works across all sports
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+          description: Season information (present in most sports)
+        week:
+          $ref: '#/components/schemas/WeekInfo'
+          description: Week information (present in football sports)
+        day:
+          type: object
+          description: Day information (present in baseball and basketball)
+          properties:
+            date:
+              type: string
+      required:
+        - leagues
+        - events
+
     TeamsListResponse:
       type: object
       properties:
@@ -1859,6 +1835,7 @@ components:
             - $ref: '#/components/schemas/NflStatisticName'
             - $ref: '#/components/schemas/MlbStatisticName'
             - $ref: '#/components/schemas/NhlStatisticName'
+            - $ref: '#/components/schemas/NbaStatisticName'
         displayName:
           type: string
           example: "First Downs"
@@ -4102,6 +4079,32 @@ components:
         - events
       description: NHL scoreboard response, including all games for the specified date(s).
 
+    NbaScoreboardResponse:
+      type: object
+      properties:
+        leagues:
+          type: array
+          items:
+            $ref: '#/components/schemas/League'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+        day:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+          required:
+            - date
+        season:
+          $ref: '#/components/schemas/SeasonInfo'
+      required:
+        - leagues
+        - events
+      description: NBA scoreboard response, including all games for the specified date(s).
+
     NhlStatisticName:
       type: string
       description: Statistic name identifiers used in NHL API responses
@@ -4113,12 +4116,28 @@ components:
         - assists
         - points
         - plusMinus
-        - probableStartingGoalie
-        - winningGoalie
-        - losingGoalie
-        - firstStar
-        - secondStar
-        - thirdStar
+
+    NbaStatisticName:
+      type: string
+      description: Statistic name identifiers used in NBA API responses
+      enum:
+        - rebounds
+        - avgRebounds
+        - assists
+        - fieldGoalsAttempted
+        - fieldGoalsMade
+        - fieldGoalPct
+        - freeThrowPct
+        - freeThrowsAttempted
+        - freeThrowsMade
+        - points
+        - threePointPct
+        - threePointFieldGoalsAttempted
+        - threePointFieldGoalsMade
+        - threePointFieldGoalPct
+        - avgPoints
+        - avgAssists
+        - threesMade
 
     NhlTeamRosterResponse:
       type: object
