@@ -27,14 +27,14 @@ class NewsArticle:
         data_source_identifier (str): Data source identifier Example: 7be1db4ba2243.
         type (NewsArticleType): Type of article content Example: HeadlineNews.
         headline (str): Article headline Example: Ravens sign veteran nose tackle John Jenkins.
-        description (str): Brief summary of the article Example: The Ravens on Friday signed journeyman nose tackle John
-            Jenkins, who most recently played two seasons for the Raiders..
         last_modified (datetime.datetime): Last time the article was modified Example: 2025-05-17T01:27:10Z.
         published (datetime.datetime): When the article was published Example: 2025-05-17T01:03:00Z.
         images (List['NewsArticleImage']): Images associated with the article
         categories (List['NewsCategory']): Categories the article belongs to
         premium (bool): Whether the article is premium content
         links (NewsArticleLinks):
+        description (Union[Unset, str]): Brief summary of the article Example: The Ravens on Friday signed journeyman
+            nose tackle John Jenkins, who most recently played two seasons for the Raiders..
         byline (Union[Unset, str]): Author of the article Example: Jamison Hensley.
     """
 
@@ -44,13 +44,13 @@ class NewsArticle:
     data_source_identifier: str
     type: NewsArticleType
     headline: str
-    description: str
     last_modified: datetime.datetime
     published: datetime.datetime
     images: List["NewsArticleImage"]
     categories: List["NewsCategory"]
     premium: bool
     links: "NewsArticleLinks"
+    description: Union[Unset, str] = UNSET
     byline: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -66,8 +66,6 @@ class NewsArticle:
         type = self.type.value
 
         headline = self.headline
-
-        description = self.description
 
         last_modified = self.last_modified.isoformat()
 
@@ -87,6 +85,8 @@ class NewsArticle:
 
         links = self.links.to_dict()
 
+        description = self.description
+
         byline = self.byline
 
         field_dict: Dict[str, Any] = {}
@@ -99,7 +99,6 @@ class NewsArticle:
                 "dataSourceIdentifier": data_source_identifier,
                 "type": type,
                 "headline": headline,
-                "description": description,
                 "lastModified": last_modified,
                 "published": published,
                 "images": images,
@@ -108,6 +107,8 @@ class NewsArticle:
                 "links": links,
             }
         )
+        if description is not UNSET:
+            field_dict["description"] = description
         if byline is not UNSET:
             field_dict["byline"] = byline
 
@@ -132,8 +133,6 @@ class NewsArticle:
 
         headline = d.pop("headline")
 
-        description = d.pop("description")
-
         last_modified = isoparse(d.pop("lastModified"))
 
         published = isoparse(d.pop("published"))
@@ -156,6 +155,8 @@ class NewsArticle:
 
         links = NewsArticleLinks.from_dict(d.pop("links"))
 
+        description = d.pop("description", UNSET)
+
         byline = d.pop("byline", UNSET)
 
         news_article = cls(
@@ -165,13 +166,13 @@ class NewsArticle:
             data_source_identifier=data_source_identifier,
             type=type,
             headline=headline,
-            description=description,
             last_modified=last_modified,
             published=published,
             images=images,
             categories=categories,
             premium=premium,
             links=links,
+            description=description,
             byline=byline,
         )
 

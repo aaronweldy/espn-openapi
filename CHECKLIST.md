@@ -55,7 +55,7 @@ cdn.espn.com
 [x] /core/nfl/standings - NFL Standings (CDN). Params: xhr=1, season ✓ (original had season, README table has xhr=1 only) - Note: Initial checklist param season might be for site.api, CDN version shows xhr=1 in README table.
 [x] /core/nfl/boxscore - NFL Game Boxscore (CDN). Params: xhr=1, gameId={event_id} ✓
 [x] /core/nfl/playbyplay - NFL Game Play-by-Play (CDN). Params: xhr=1, gameId={event_id} ✓
-[ ] /core/nfl/recap - NFL Game Recap (CDN). Params: xhr=1, gameId={event_id}
+[x] /core/nfl/recap - NFL Game Recap (CDN). Params: xhr=1, gameId={event_id}
 [ ] /core/nfl/game - NFL Game Details (CDN). Params: xhr=1, gameId={event_id}
 [ ] /core/nfl/matchup - NFL Game Matchup (CDN). Params: xhr=1, gameId={event_id}
 sports.core.api.espn.com
@@ -110,7 +110,6 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/nba/summary?event={event_id} - NBA Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
 [x] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster endpoint
 [x] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season - Implemented as generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule
-[ ] /sports/basketball/nba/statistics/players - NBA Aggregate Player Statistics
 sports.core.api.espn.com
 [x] /v2/sports/basketball/leagues/nba/athletes/{athlete_id} - Detailed NBA athlete information. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}
 [x] /v2/sports/basketball/leagues/nba/athletes/{athlete_id}/statistics - NBA Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics

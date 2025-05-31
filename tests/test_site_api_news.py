@@ -5,9 +5,7 @@ import json
 import logging
 from datetime import datetime
 
-from models.site_api.espn_nfl_api_client.api.default.get_nfl_news import (
-    sync_detailed as get_nfl_news,
-)
+from models.site_api.espn_nfl_api_client.api.default import get_league_news
 from models.site_api.espn_nfl_api_client.types import UNSET
 from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
     SportNewsAPISchema,
@@ -29,7 +27,7 @@ logger = logging.getLogger(__name__)
 def test_nfl_news(site_api_client, ensure_json_output_dir):
     """Test retrieving NFL news from the specific endpoint"""
     limit = 5
-    response = get_nfl_news(client=site_api_client, limit=limit)
+    response = get_league_news.sync_detailed(client=site_api_client, sport="football", league="nfl", limit=limit)
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )
@@ -127,7 +125,7 @@ def test_nfl_news_team_specific(site_api_client, ensure_json_output_dir):
     """Test retrieving NFL news filtered by team (Kansas City Chiefs, team=12)"""
     limit = 5
     team_id = 12
-    response = get_nfl_news(client=site_api_client, limit=limit, team=team_id)
+    response = get_league_news.sync_detailed(client=site_api_client, sport="football", league="nfl", limit=limit, team=team_id)
     assert response.status_code == 200, (
         f"Expected status code 200, got {response.status_code}"
     )

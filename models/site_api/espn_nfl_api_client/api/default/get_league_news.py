@@ -17,10 +17,13 @@ def _get_kwargs(
     league: LeagueEnum,
     *,
     limit: Union[Unset, int] = UNSET,
+    team: Union[Unset, int] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
     params["limit"] = limit
+
+    params["team"] = team
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -71,6 +74,7 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
+    team: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
     """Get League News
 
@@ -80,6 +84,7 @@ def sync_detailed(
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
+        team (Union[Unset, int]):  Example: 12.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -93,6 +98,7 @@ def sync_detailed(
         sport=sport,
         league=league,
         limit=limit,
+        team=team,
     )
 
     response = client.get_httpx_client().request(
@@ -108,6 +114,7 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
+    team: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
     """Get League News
 
@@ -117,6 +124,7 @@ def sync(
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
+        team (Union[Unset, int]):  Example: 12.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -131,6 +139,7 @@ def sync(
         league=league,
         client=client,
         limit=limit,
+        team=team,
     ).parsed
 
 
@@ -140,6 +149,7 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
+    team: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, SportNewsAPISchema]]:
     """Get League News
 
@@ -149,6 +159,7 @@ async def asyncio_detailed(
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
+        team (Union[Unset, int]):  Example: 12.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -162,6 +173,7 @@ async def asyncio_detailed(
         sport=sport,
         league=league,
         limit=limit,
+        team=team,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -175,6 +187,7 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
     limit: Union[Unset, int] = UNSET,
+    team: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, SportNewsAPISchema]]:
     """Get League News
 
@@ -184,6 +197,7 @@ async def asyncio(
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
         limit (Union[Unset, int]):  Example: 10.
+        team (Union[Unset, int]):  Example: 12.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -199,5 +213,6 @@ async def asyncio(
             league=league,
             client=client,
             limit=limit,
+            team=team,
         )
     ).parsed

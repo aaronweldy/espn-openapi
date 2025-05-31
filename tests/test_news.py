@@ -9,7 +9,7 @@ import pytest
 import requests
 
 from models.site_api.espn_nfl_api_client import Client
-from models.site_api.espn_nfl_api_client.api.default.get_nfl_news import sync
+from models.site_api.espn_nfl_api_client.api.default import get_league_news
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.types import UNSET
 from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
@@ -108,7 +108,7 @@ def test_fetch_news_with_client(site_api_client, ensure_json_output_dir):
         # The site_api_client fixture sets its base_url to "https://site.api.espn.com"
         # Let's recreate the client with the correct full base URL
         client = Client(base_url="https://site.api.espn.com/apis/site/v2")
-        news_data = sync(client=client)
+        news_data = get_league_news.sync(client=client, sport="football", league="nfl")
 
         assert news_data is not None, "API returned None response"
         assert not isinstance(news_data, ErrorResponse), (

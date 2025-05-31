@@ -130,6 +130,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NflPlayByPlayResponse'
+  /core/nfl/recap:
+    get:
+      summary: NFL Game Recap
+      description: Get the NFL game recap data.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: gameId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflRecapResponse'
 components:
   schemas:
     NflScoreboardResponse:
@@ -1036,6 +1059,60 @@ components:
       type: object
       description: TODO - Flesh out based on /core/nfl/playbyplay JSON structure
       additionalProperties: true 
+    NflRecapResponse:
+      type: object
+      description: NFL game recap response with article, news, and game details
+      properties:
+        gameId:
+          type: integer
+          description: The game ID
+        gamepackageJSON:
+          type: object
+          description: Game package data including article, news, standings
+          properties:
+            article:
+              type: object
+            broadcasts:
+              type: array
+              items:
+                type: object
+            header:
+              type: object
+            news:
+              type: object
+            standings:
+              type: object
+            winprobability:
+              type: array
+              items:
+                type: object
+        customStyleSheet:
+          type: string
+        type:
+          type: string
+        content:
+          type: object
+        __gamepackage__:
+          type: boolean
+        analytics:
+          type: object
+        ads:
+          type: object
+        targeting:
+          type: object
+        meta:
+          type: object
+        nowFeedSupported:
+          type: boolean
+        customNav:
+          type: string
+        sport:
+          type: array
+          items:
+            type: string
+        tier2Nav:
+          type: object
+      additionalProperties: true
     SportEnum:
       type: string
       description: Common sport identifiers used in ESPN APIs.

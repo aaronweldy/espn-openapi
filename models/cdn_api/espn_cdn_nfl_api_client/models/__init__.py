@@ -1,7 +1,22 @@
 """Contains all the data models used in inputs/outputs"""
 
+from .league_enum import LeagueEnum
 from .nfl_boxscore_response import NflBoxscoreResponse
 from .nfl_play_by_play_response import NflPlayByPlayResponse
+from .nfl_recap_response import NflRecapResponse
+from .nfl_recap_response_ads import NflRecapResponseAds
+from .nfl_recap_response_analytics import NflRecapResponseAnalytics
+from .nfl_recap_response_content import NflRecapResponseContent
+from .nfl_recap_response_gamepackage_json import NflRecapResponseGamepackageJSON
+from .nfl_recap_response_gamepackage_json_article import NflRecapResponseGamepackageJSONArticle
+from .nfl_recap_response_gamepackage_json_broadcasts_item import NflRecapResponseGamepackageJSONBroadcastsItem
+from .nfl_recap_response_gamepackage_json_header import NflRecapResponseGamepackageJSONHeader
+from .nfl_recap_response_gamepackage_json_news import NflRecapResponseGamepackageJSONNews
+from .nfl_recap_response_gamepackage_json_standings import NflRecapResponseGamepackageJSONStandings
+from .nfl_recap_response_gamepackage_json_winprobability_item import NflRecapResponseGamepackageJSONWinprobabilityItem
+from .nfl_recap_response_meta import NflRecapResponseMeta
+from .nfl_recap_response_targeting import NflRecapResponseTargeting
+from .nfl_recap_response_tier_2_nav import NflRecapResponseTier2Nav
 from .nfl_schedule_content import NflScheduleContent
 from .nfl_schedule_content_defaults import NflScheduleContentDefaults
 from .nfl_schedule_content_parameters import NflScheduleContentParameters
@@ -81,10 +96,26 @@ from .scoreboard_ticket import ScoreboardTicket
 from .scoreboard_venue import ScoreboardVenue
 from .scoreboard_venue_address import ScoreboardVenueAddress
 from .scoreboard_week import ScoreboardWeek
+from .sport_enum import SportEnum
 
 __all__ = (
+    "LeagueEnum",
     "NflBoxscoreResponse",
     "NflPlayByPlayResponse",
+    "NflRecapResponse",
+    "NflRecapResponseAds",
+    "NflRecapResponseAnalytics",
+    "NflRecapResponseContent",
+    "NflRecapResponseGamepackageJSON",
+    "NflRecapResponseGamepackageJSONArticle",
+    "NflRecapResponseGamepackageJSONBroadcastsItem",
+    "NflRecapResponseGamepackageJSONHeader",
+    "NflRecapResponseGamepackageJSONNews",
+    "NflRecapResponseGamepackageJSONStandings",
+    "NflRecapResponseGamepackageJSONWinprobabilityItem",
+    "NflRecapResponseMeta",
+    "NflRecapResponseTargeting",
+    "NflRecapResponseTier2Nav",
     "NflScheduleContent",
     "NflScheduleContentDefaults",
     "NflScheduleContentParameters",
@@ -164,4 +195,5 @@ __all__ = (
     "ScoreboardVenue",
     "ScoreboardVenueAddress",
     "ScoreboardWeek",
+    "SportEnum",
 )
