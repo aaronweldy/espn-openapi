@@ -120,6 +120,7 @@ from .mlb_scoreboard_response_day import MlbScoreboardResponseDay
 from .mlb_season_series import MlbSeasonSeries
 from .mlb_standings import MlbStandings
 from .mlb_statistic_name import MlbStatisticName
+from .mlb_team_abbreviation import MLBTeamAbbreviation
 from .mlb_team_roster_response import MlbTeamRosterResponse
 from .mlb_team_roster_response_season import MlbTeamRosterResponseSeason
 from .mlb_team_roster_response_team import MlbTeamRosterResponseTeam
@@ -128,6 +129,7 @@ from .monday_night_football_response import MondayNightFootballResponse
 from .nba_scoreboard_response import NbaScoreboardResponse
 from .nba_scoreboard_response_day import NbaScoreboardResponseDay
 from .nba_statistic_name import NbaStatisticName
+from .nba_team_abbreviation import NBATeamAbbreviation
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
 from .news_article_link import NewsArticleLink
@@ -152,6 +154,7 @@ from .news_team import NewsTeam
 from .news_team_links import NewsTeamLinks
 from .news_web_mobile_links import NewsWebMobileLinks
 from .nfl_statistic_name import NflStatisticName
+from .nfl_team_abbreviation import NFLTeamAbbreviation
 from .nfl_team_schedule_response import NFLTeamScheduleResponse
 from .nhl_athlete import NhlAthlete
 from .nhl_athlete_catches import NhlAthleteCatches
@@ -185,6 +188,7 @@ from .nhl_position_group import NhlPositionGroup
 from .nhl_position_group_position import NhlPositionGroupPosition
 from .nhl_scoreboard_response import NhlScoreboardResponse
 from .nhl_statistic_name import NhlStatisticName
+from .nhl_team_abbreviation import NHLTeamAbbreviation
 from .nhl_team_roster_response import NhlTeamRosterResponse
 from .official import Official
 from .play import Play
@@ -247,6 +251,7 @@ from .venue_image import VenueImage
 from .weather import Weather
 from .web_mobile_links import WebMobileLinks
 from .week_info import WeekInfo
+from .wnba_team_abbreviation import WNBATeamAbbreviation
 
 __all__ = (
     "Address",
@@ -369,6 +374,7 @@ __all__ = (
     "MlbSeasonSeries",
     "MlbStandings",
     "MlbStatisticName",
+    "MLBTeamAbbreviation",
     "MlbTeamRosterResponse",
     "MlbTeamRosterResponseSeason",
     "MlbTeamRosterResponseTeam",
@@ -377,6 +383,7 @@ __all__ = (
     "NbaScoreboardResponse",
     "NbaScoreboardResponseDay",
     "NbaStatisticName",
+    "NBATeamAbbreviation",
     "NewsArticle",
     "NewsArticleImage",
     "NewsArticleLink",
@@ -401,6 +408,7 @@ __all__ = (
     "NewsTeamLinks",
     "NewsWebMobileLinks",
     "NflStatisticName",
+    "NFLTeamAbbreviation",
     "NFLTeamScheduleResponse",
     "NhlAthlete",
     "NhlAthleteCatches",
@@ -434,6 +442,7 @@ __all__ = (
     "NhlPositionGroupPosition",
     "NhlScoreboardResponse",
     "NhlStatisticName",
+    "NHLTeamAbbreviation",
     "NhlTeamRosterResponse",
     "Official",
     "Play",
@@ -496,4 +505,5 @@ __all__ = (
     "Weather",
     "WebMobileLinks",
     "WeekInfo",
+    "WNBATeamAbbreviation",
 )

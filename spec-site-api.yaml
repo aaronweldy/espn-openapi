@@ -366,6 +366,58 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/{sport}/{league}/teams/{team_id_or_abbrev}:
+    get:
+      summary: Get Team Details
+      description: Retrieve detailed information for a specific team by ID or abbreviation
+      operationId: getTeamDetails
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID (numeric string) or abbreviation
+          schema:
+            oneOf:
+              - type: string
+                pattern: '^\d+$'
+                description: Numeric team ID
+              - $ref: '#/components/schemas/NFLTeamAbbreviation'
+              - $ref: '#/components/schemas/NBATeamAbbreviation'
+              - $ref: '#/components/schemas/MLBTeamAbbreviation'
+              - $ref: '#/components/schemas/NHLTeamAbbreviation'
+              - $ref: '#/components/schemas/WNBATeamAbbreviation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamDetailsResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /mondaynightfootball:
     get:
       summary: Get Monday Night Football schedule and games
@@ -3510,6 +3562,169 @@ components:
         - ucl
         - europa-league
         - other
+    
+    NFLTeamAbbreviation:
+      type: string
+      description: NFL team abbreviations
+      enum:
+        - ARI
+        - ATL
+        - BAL
+        - BUF
+        - CAR
+        - CHI
+        - CIN
+        - CLE
+        - DAL
+        - DEN
+        - DET
+        - GB
+        - HOU
+        - IND
+        - JAX
+        - KC
+        - LAC
+        - LAR
+        - LV
+        - MIA
+        - MIN
+        - NE
+        - NO
+        - NYG
+        - NYJ
+        - PHI
+        - PIT
+        - SEA
+        - SF
+        - TB
+        - TEN
+        - WSH
+    
+    NBATeamAbbreviation:
+      type: string
+      description: NBA team abbreviations
+      enum:
+        - ATL
+        - BKN
+        - BOS
+        - CHA
+        - CHI
+        - CLE
+        - DAL
+        - DEN
+        - DET
+        - GS
+        - HOU
+        - IND
+        - LAC
+        - LAL
+        - MEM
+        - MIA
+        - MIL
+        - MIN
+        - NO
+        - NY
+        - OKC
+        - ORL
+        - PHI
+        - PHX
+        - POR
+        - SA
+        - SAC
+        - TOR
+        - UTAH
+        - WSH
+    
+    MLBTeamAbbreviation:
+      type: string
+      description: MLB team abbreviations
+      enum:
+        - ARI
+        - ATH
+        - ATL
+        - BAL
+        - BOS
+        - CHC
+        - CHW
+        - CIN
+        - CLE
+        - COL
+        - DET
+        - HOU
+        - KC
+        - LAA
+        - LAD
+        - MIA
+        - MIL
+        - MIN
+        - NYM
+        - NYY
+        - PHI
+        - PIT
+        - SD
+        - SEA
+        - SF
+        - STL
+        - TB
+        - TEX
+        - TOR
+        - WSH
+    
+    NHLTeamAbbreviation:
+      type: string
+      description: NHL team abbreviations
+      enum:
+        - ANA
+        - BOS
+        - BUF
+        - CAR
+        - CBJ
+        - CGY
+        - CHI
+        - COL
+        - DAL
+        - DET
+        - EDM
+        - FLA
+        - LA
+        - MIN
+        - MTL
+        - NJ
+        - NSH
+        - NYI
+        - NYR
+        - OTT
+        - PHI
+        - PIT
+        - SEA
+        - SJ
+        - STL
+        - TB
+        - TOR
+        - UTAH
+        - VAN
+        - VGK
+        - WPG
+        - WSH
+    
+    WNBATeamAbbreviation:
+      type: string
+      description: WNBA team abbreviations
+      enum:
+        - ATL
+        - CHI
+        - CONN
+        - DAL
+        - GS
+        - IND
+        - LA
+        - LV
+        - MIN
+        - NY
+        - PHX
+        - SEA
+        - TOY
+        - WSH
     
     MlbStatisticName:
       type: string

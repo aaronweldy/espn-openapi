@@ -103,7 +103,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/nba/scoreboard - NBA Scoreboard. Query Param: dates (YYYYMMDD) - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/basketball/nba/news - NBA News - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/basketball/nba/teams - NBA Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/basketball/nba/teams/{team_id_or_abbrev} - NBA Specific Team. Path Param: {team_id_or_abbrev}
+[x] /sports/basketball/nba/teams/{team_id_or_abbrev} - NBA Specific Team. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [ ] /sports/basketball/nba/summary?event={event_id} - NBA Game Summary. Query Param: event={event_id}
 [ ] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev}
 [ ] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season
@@ -116,13 +116,13 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/wnba/scoreboard - WNBA Scoreboard. Query Param: dates (YYYYMMDD) - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/basketball/wnba/news - WNBA News - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/basketball/wnba/teams - WNBA Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/basketball/wnba/teams/{team_id_or_abbrev} - WNBA Specific Team. Path Param: {team_id_or_abbrev}
+[x] /sports/basketball/wnba/teams/{team_id_or_abbrev} - WNBA Specific Team. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 VII. College Football Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/football/college-football/scoreboard - College Football Scoreboard. Query Params: dates, groups (Conference ID), week - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/football/college-football/news - College Football News - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/football/college-football/teams - College Football Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/football/college-football/teams/{team_abbrev_or_id} - College Football Specific Team. Path Param: {team_abbrev_or_id}
+[x] /sports/football/college-football/teams/{team_abbrev_or_id} - College Football Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [ ] /sports/football/college-football/summary?event={event_id} - College Football Game Summary. Query Param: event={event_id}
 [ ] /sports/football/college-football/rankings - College Football Rankings (AP, Coaches, CFP)
 [ ] /sports/football/college-football/teams/{team_abbrev_or_id}/roster - College Football Team Roster. Path Param: {team_abbrev_or_id}
@@ -137,7 +137,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/mens-college-basketball/scoreboard - Men's College Basketball Scoreboard. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/basketball/mens-college-basketball/news - Men's College Basketball News - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/basketball/mens-college-basketball/teams - Men's College Basketball Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id} - Men's College Basketball Specific Team. Path Param: {team_abbrev_or_id}
+[x] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id} - Men's College Basketball Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [ ] /sports/basketball/mens-college-basketball/summary?event={event_id} - Men's College Basketball Game Summary. Query Param: event={event_id}
 [ ] /sports/basketball/mens-college-basketball/rankings - Men's College Basketball Rankings
 [ ] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id}/roster - Men's College Basketball Team Roster. Path Param: {team_abbrev_or_id}
@@ -152,7 +152,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/womens-college-basketball/scoreboard - Women's College Basketball Scoreboard. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/basketball/womens-college-basketball/news - Women's College Basketball News - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/basketball/womens-college-basketball/teams - Women's College Basketball Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id} - Women's College Basketball Specific Team. Path Param: {team_abbrev_or_id}
+[x] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id} - Women's College Basketball Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [ ] /sports/basketball/womens-college-basketball/summary?event={event_id} - Women's College Basketball Game Summary. Query Param: event={event_id}
 [ ] /sports/basketball/womens-college-basketball/rankings - Women's College Basketball Rankings
 [ ] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id}/roster - Women's College Basketball Team Roster. Path Param: {team_abbrev_or_id}
