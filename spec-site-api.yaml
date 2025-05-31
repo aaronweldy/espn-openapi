@@ -595,6 +595,42 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/basketball/nba/teams/{team_id_or_abbrev}/roster:
+    get:
+      summary: Get NBA Team Roster
+      description: Retrieve detailed roster information for a specific NBA team including player details
+      operationId: getNBATeamRoster
+      parameters:
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID (numeric string) or abbreviation
+          schema:
+            oneOf:
+              - type: string
+                pattern: '^\d+$'
+                description: Numeric team ID
+              - $ref: '#/components/schemas/NBATeamAbbreviation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NBATeamRosterResponse'
+        '404':
+          description: Team not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/baseball/mlb/teams/{team_id_or_abbrev}/roster:
     get:
       summary: Get MLB Team Roster
@@ -1114,6 +1150,58 @@ components:
       required:
         - id
         - displayName
+
+    NBATeamRosterResponse:
+      type: object
+      description: Response for NBA team roster
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: The timestamp of when the data was generated
+        status:
+          type: string
+          description: The status of the response
+        season:
+          type: object
+          properties:
+            year:
+              type: integer
+            displayName:
+              type: string
+            type:
+              type: integer
+            name:
+              type: string
+        athletes:
+          type: array
+          description: List of players on the roster
+          items:
+            $ref: '#/components/schemas/RosterAthlete'
+        coach:
+          type: array
+          description: List of coaches for the team
+          items:
+            $ref: '#/components/schemas/Coach'
+        team:
+          type: object
+          properties:
+            id:
+              type: string
+            abbreviation:
+              type: string
+            location:
+              type: string
+            name:
+              type: string
+            displayName:
+              type: string
+            shortDisplayName:
+              type: string
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/Link'
 
     TeamRecord:
       type: object
@@ -2138,29 +2226,17 @@ components:
         id:
           type: string
         name:
+          oneOf:
+            - $ref: '#/components/schemas/NFLPositionName'
+            - $ref: '#/components/schemas/NBAPositionName'
+            - $ref: '#/components/schemas/MLBPositionName'
+            - $ref: '#/components/schemas/NHLPositionName'
+        displayName:
           type: string
-          enum:
-            - Quarterback
-            - Running Back
-            - Wide Receiver
-            - Tight End
-            - Fullback
-            - Offensive Tackle
-            - Offensive Guard
-            - Guard
-            - Center
-            - Defensive End
-            - Defensive Tackle
-            - Inside Linebacker
-            - Outside Linebacker
-            - Linebacker
-            - Cornerback
-            - Safety
-            - Defensive Back
-            - Long Snapper
-            - Place kicker
-            - Punter
-          description: The position category name (e.g., offense, defense, special teams)
+          description: Display name of the position
+        abbreviation:
+          type: string
+          description: Position abbreviation
         items:
           type: array
           description: List of athletes in this position category
@@ -2569,6 +2645,20 @@ components:
       required:
         - web
         - mobile
+
+    Coach:
+      type: object
+      description: Coach information
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        experience:
+          type: integer
+          description: Years of experience
 
     WebMobileLinks:
       type: object
@@ -3244,32 +3334,7 @@ components:
       properties:
         position:
           type: string
-          enum:
-            - Quarterback
-            - Running Back
-            - Wide Receiver
-            - Tight End
-            - Fullback
-            - Offensive Tackle
-            - Offensive Guard
-            - Guard
-            - Center
-            - Defensive End
-            - Defensive Tackle
-            - Inside Linebacker
-            - Outside Linebacker
-            - Cornerback
-            - Safety
-            - Long Snapper
-            - Place Kicker
-            - Punter
-            - offense
-            - defense
-            - specialTeam
-            - injuredReserveOrOut
-            - suspended
-            - practiceSquad
-          description: The position category name (e.g., offense, defense, special teams)
+          description: Position category name (e.g., offense, defense, Pitcher, Forward)
         items:
           type: array
           description: List of athletes in this position category
@@ -3364,7 +3429,10 @@ components:
           type: string
           description: Athlete's jersey number
         position:
-          $ref: '#/components/schemas/Position'
+          oneOf:
+            - type: string
+              description: Position category (e.g., offense, defense)
+            - $ref: '#/components/schemas/Position'
         injuries:
           type: array
           description: Current injuries for the athlete
@@ -3774,6 +3842,79 @@ components:
         - SEA
         - TOY
         - WSH
+    
+    NFLPositionName:
+      type: string
+      description: NFL position names
+      enum:
+        - Quarterback
+        - Running Back
+        - Wide Receiver
+        - Tight End
+        - Fullback
+        - Offensive Tackle
+        - Offensive Guard
+        - Guard
+        - Center
+        - Defensive End
+        - Defensive Tackle
+        - Inside Linebacker
+        - Outside Linebacker
+        - Linebacker
+        - Cornerback
+        - Safety
+        - Defensive Back
+        - Long Snapper
+        - Place kicker
+        - Punter
+    
+    NBAPositionName:
+      type: string
+      description: NBA position names
+      enum:
+        - Point Guard
+        - Shooting Guard
+        - Small Forward
+        - Power Forward
+        - Center
+        - Guard
+        - Forward
+        - Guard-Forward
+        - Forward-Center
+    
+    MLBPositionName:
+      type: string
+      description: MLB position names
+      enum:
+        - Pitcher
+        - Catcher
+        - First Base
+        - Second Base
+        - Third Base
+        - Shortstop
+        - Left Field
+        - Center Field
+        - Right Field
+        - Designated Hitter
+        - Starting Pitcher
+        - Relief Pitcher
+        - Closer
+        - Infielder
+        - Outfielder
+        - Utility
+    
+    NHLPositionName:
+      type: string
+      description: NHL position names
+      enum:
+        - Center
+        - Left Wing
+        - Right Wing
+        - Defenseman
+        - Goaltender
+        - Forward
+        - Defense
+        - Goalie
     
     MlbStatisticName:
       type: string

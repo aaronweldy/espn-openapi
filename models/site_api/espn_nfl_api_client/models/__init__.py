@@ -18,6 +18,7 @@ from .calendar_entry import CalendarEntry
 from .calendar_item import CalendarItem
 from .category import Category
 from .category_type import CategoryType
+from .coach import Coach
 from .college import College
 from .competition import Competition
 from .competition_leader import CompetitionLeader
@@ -91,6 +92,7 @@ from .mlb_pickcenter import MlbPickcenter
 from .mlb_play import MlbPlay
 from .mlb_plays_map import MlbPlaysMap
 from .mlb_position_group import MlbPositionGroup
+from .mlb_position_name import MLBPositionName
 from .mlb_roster import MlbRoster
 from .mlb_roster_athlete import MlbRosterAthlete
 from .mlb_roster_athlete_alternate_ids import MlbRosterAthleteAlternateIds
@@ -146,10 +148,14 @@ from .nba_game_summary_response_standings import NbaGameSummaryResponseStandings
 from .nba_game_summary_response_tickets_info import NbaGameSummaryResponseTicketsInfo
 from .nba_game_summary_response_videos_item import NbaGameSummaryResponseVideosItem
 from .nba_game_summary_response_win_probability_item import NbaGameSummaryResponseWinProbabilityItem
+from .nba_position_name import NBAPositionName
 from .nba_scoreboard_response import NbaScoreboardResponse
 from .nba_scoreboard_response_day import NbaScoreboardResponseDay
 from .nba_statistic_name import NbaStatisticName
 from .nba_team_abbreviation import NBATeamAbbreviation
+from .nba_team_roster_response import NBATeamRosterResponse
+from .nba_team_roster_response_season import NBATeamRosterResponseSeason
+from .nba_team_roster_response_team import NBATeamRosterResponseTeam
 from .news_article import NewsArticle
 from .news_article_image import NewsArticleImage
 from .news_article_link import NewsArticleLink
@@ -173,6 +179,7 @@ from .news_response import NewsResponse
 from .news_team import NewsTeam
 from .news_team_links import NewsTeamLinks
 from .news_web_mobile_links import NewsWebMobileLinks
+from .nfl_position_name import NFLPositionName
 from .nfl_statistic_name import NflStatisticName
 from .nfl_team_abbreviation import NFLTeamAbbreviation
 from .nfl_team_schedule_response import NFLTeamScheduleResponse
@@ -206,6 +213,7 @@ from .nhl_game_summary_response_standings import NhlGameSummaryResponseStandings
 from .nhl_game_summary_response_win_probability_item import NhlGameSummaryResponseWinProbabilityItem
 from .nhl_position_group import NhlPositionGroup
 from .nhl_position_group_position import NhlPositionGroupPosition
+from .nhl_position_name import NHLPositionName
 from .nhl_scoreboard_response import NhlScoreboardResponse
 from .nhl_statistic_name import NhlStatisticName
 from .nhl_team_abbreviation import NHLTeamAbbreviation
@@ -219,8 +227,6 @@ from .player_stats import PlayerStats
 from .player_stats_stats import PlayerStatsStats
 from .position import Position
 from .position_group import PositionGroup
-from .position_group_position import PositionGroupPosition
-from .position_name import PositionName
 from .record import Record
 from .roster_athlete import RosterAthlete
 from .roster_athlete_alternate_ids import RosterAthleteAlternateIds
@@ -292,6 +298,7 @@ __all__ = (
     "CalendarItem",
     "Category",
     "CategoryType",
+    "Coach",
     "College",
     "Competition",
     "CompetitionLeader",
@@ -365,6 +372,7 @@ __all__ = (
     "MlbPlay",
     "MlbPlaysMap",
     "MlbPositionGroup",
+    "MLBPositionName",
     "MlbRoster",
     "MlbRosterAthlete",
     "MlbRosterAthleteAlternateIds",
@@ -420,10 +428,14 @@ __all__ = (
     "NbaGameSummaryResponseTicketsInfo",
     "NbaGameSummaryResponseVideosItem",
     "NbaGameSummaryResponseWinProbabilityItem",
+    "NBAPositionName",
     "NbaScoreboardResponse",
     "NbaScoreboardResponseDay",
     "NbaStatisticName",
     "NBATeamAbbreviation",
+    "NBATeamRosterResponse",
+    "NBATeamRosterResponseSeason",
+    "NBATeamRosterResponseTeam",
     "NewsArticle",
     "NewsArticleImage",
     "NewsArticleLink",
@@ -447,6 +459,7 @@ __all__ = (
     "NewsTeam",
     "NewsTeamLinks",
     "NewsWebMobileLinks",
+    "NFLPositionName",
     "NflStatisticName",
     "NFLTeamAbbreviation",
     "NFLTeamScheduleResponse",
@@ -480,6 +493,7 @@ __all__ = (
     "NhlGameSummaryResponseWinProbabilityItem",
     "NhlPositionGroup",
     "NhlPositionGroupPosition",
+    "NHLPositionName",
     "NhlScoreboardResponse",
     "NhlStatisticName",
     "NHLTeamAbbreviation",
@@ -493,8 +507,6 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionGroup",
-    "PositionGroupPosition",
-    "PositionName",
     "Record",
     "RosterAthlete",
     "RosterAthleteAlternateIds",

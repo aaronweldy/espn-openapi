@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class PositionName(str, Enum):
+class NFLPositionName(str, Enum):
     CENTER = "Center"
     CORNERBACK = "Cornerback"
     DEFENSIVE_BACK = "Defensive Back"

@@ -105,7 +105,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/nba/teams - NBA Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
 [x] /sports/basketball/nba/teams/{team_id_or_abbrev} - NBA Specific Team. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [x] /sports/basketball/nba/summary?event={event_id} - NBA Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
-[ ] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev}
+[x] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster endpoint
 [ ] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season
 [ ] /sports/basketball/nba/statistics/players - NBA Aggregate Player Statistics
 sports.core.api.espn.com

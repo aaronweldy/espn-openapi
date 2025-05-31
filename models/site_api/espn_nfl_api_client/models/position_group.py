@@ -3,7 +3,6 @@ from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.position_group_position import PositionGroupPosition
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -18,19 +17,16 @@ class PositionGroup:
     """Group of athletes by position category
 
     Attributes:
-        position (Union[Unset, PositionGroupPosition]): The position category name (e.g., offense, defense, special
-            teams)
+        position (Union[Unset, str]): Position category name (e.g., offense, defense, Pitcher, Forward)
         items (Union[Unset, List['RosterAthlete']]): List of athletes in this position category
     """
 
-    position: Union[Unset, PositionGroupPosition] = UNSET
+    position: Union[Unset, str] = UNSET
     items: Union[Unset, List["RosterAthlete"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        position: Union[Unset, str] = UNSET
-        if not isinstance(self.position, Unset):
-            position = self.position.value
+        position = self.position
 
         items: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.items, Unset):
@@ -54,12 +50,7 @@ class PositionGroup:
         from ..models.roster_athlete import RosterAthlete
 
         d = src_dict.copy()
-        _position = d.pop("position", UNSET)
-        position: Union[Unset, PositionGroupPosition]
-        if isinstance(_position, Unset):
-            position = UNSET
-        else:
-            position = PositionGroupPosition(_position)
+        position = d.pop("position", UNSET)
 
         items = []
         _items = d.pop("items", UNSET)

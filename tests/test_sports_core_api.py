@@ -100,9 +100,6 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_competit
 from models.sports_core_api.espn_sports_core_api_client.models.competition_detail import (
     CompetitionDetail,
 )
-from models.sports_core_api.espn_sports_core_api_client.models.error_response import (
-    ErrorResponse,
-)
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_competition_situation import (
     sync as get_competition_situation,
 )

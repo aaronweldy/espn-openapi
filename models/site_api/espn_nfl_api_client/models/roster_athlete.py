@@ -1,5 +1,5 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -50,7 +50,7 @@ class RosterAthlete:
         slug (Union[Unset, str]): URL slug for the athlete
         headshot (Union[Unset, RosterAthleteHeadshot]):
         jersey (Union[Unset, str]): Athlete's jersey number
-        position (Union[Unset, Position]):
+        position (Union['Position', Unset, str]):
         injuries (Union[Unset, List['Injury']]): Current injuries for the athlete
         teams (Union[Unset, List['RosterAthleteTeamsItem']]): Teams associated with the athlete
         contracts (Union[Unset, List['RosterAthleteContractsItem']]): Contract information
@@ -79,7 +79,7 @@ class RosterAthlete:
     slug: Union[Unset, str] = UNSET
     headshot: Union[Unset, "RosterAthleteHeadshot"] = UNSET
     jersey: Union[Unset, str] = UNSET
-    position: Union[Unset, "Position"] = UNSET
+    position: Union["Position", Unset, str] = UNSET
     injuries: Union[Unset, List["Injury"]] = UNSET
     teams: Union[Unset, List["RosterAthleteTeamsItem"]] = UNSET
     contracts: Union[Unset, List["RosterAthleteContractsItem"]] = UNSET
@@ -88,6 +88,8 @@ class RosterAthlete:
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        from ..models.position import Position
+
         id = self.id
 
         uid = self.uid
@@ -145,9 +147,13 @@ class RosterAthlete:
 
         jersey = self.jersey
 
-        position: Union[Unset, Dict[str, Any]] = UNSET
-        if not isinstance(self.position, Unset):
+        position: Union[Dict[str, Any], Unset, str]
+        if isinstance(self.position, Unset):
+            position = UNSET
+        elif isinstance(self.position, Position):
             position = self.position.to_dict()
+        else:
+            position = self.position
 
         injuries: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.injuries, Unset):
@@ -325,12 +331,20 @@ class RosterAthlete:
 
         jersey = d.pop("jersey", UNSET)
 
-        _position = d.pop("position", UNSET)
-        position: Union[Unset, Position]
-        if isinstance(_position, Unset):
-            position = UNSET
-        else:
-            position = Position.from_dict(_position)
+        def _parse_position(data: object) -> Union["Position", Unset, str]:
+            if isinstance(data, Unset):
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                position_type_1 = Position.from_dict(data)
+
+                return position_type_1
+            except:  # noqa: E722
+                pass
+            return cast(Union["Position", Unset, str], data)
+
+        position = _parse_position(d.pop("position", UNSET))
 
         injuries = []
         _injuries = d.pop("injuries", UNSET)
