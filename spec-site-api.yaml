@@ -328,6 +328,44 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/{sport}/{league}/teams:
+    get:
+      summary: Get Teams List
+      description: Retrieve a list of teams for a specified sport and league
+      operationId: getTeamsList
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamsListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /mondaynightfootball:
     get:
       summary: Get Monday Night Football schedule and games

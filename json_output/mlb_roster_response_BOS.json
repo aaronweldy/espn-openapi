@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-05-30T03:16:08+00:00",
+  "timestamp": "2025-05-31T02:10:13+00:00",
   "status": "success",
   "season": {
     "year": 2025,
@@ -647,6 +647,243 @@
               {
                 "lastUpdated": "2022-04-28T14:30Z",
                 "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/238.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "33728",
+          "uid": "s:1~l:10~a:33728",
+          "guid": "5b4450ca-d46b-6c10-ca8d-c7665f1ff1ab",
+          "firstName": "Nick",
+          "lastName": "Burdi",
+          "fullName": "Nick Burdi",
+          "displayName": "Nick Burdi",
+          "shortName": "N. Burdi",
+          "weight": 225.0,
+          "displayWeight": "225 lbs",
+          "height": 75.0,
+          "displayHeight": "6' 3\"",
+          "age": 32,
+          "dateOfBirth": "1993-01-19T08:00:00+00:00",
+          "links": [
+            {
+              "language": "en-US",
+              "shortText": "Player Card",
+              "href": "https://www.espn.com/mlb/player/_/id/33728",
+              "text": "Player Card",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Stats",
+              "href": "https://www.espn.com/mlb/player/stats/_/id/33728/nick-burdi",
+              "text": "Stats",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Splits",
+              "href": "https://www.espn.com/mlb/player/splits/_/id/33728/nick-burdi",
+              "text": "Splits",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Game Log",
+              "href": "https://www.espn.com/mlb/player/gamelog/_/id/33728/nick-burdi",
+              "text": "Game Log",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "News",
+              "href": "https://www.espn.com/mlb/player/news/_/id/33728/nick-burdi",
+              "text": "News",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bio",
+              "href": "https://www.espn.com/mlb/player/bio/_/id/33728/nick-burdi",
+              "text": "Bio",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Overview",
+              "href": "https://www.espn.com/mlb/player/_/id/33728/nick-burdi",
+              "text": "Overview",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bat vs Pitch",
+              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/33728/nick-burdi",
+              "text": "Bat vs Pitch",
+              "rel": [
+                "batvspitch",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "slug": "nick-burdi",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33728.png",
+            "alt": "Nick Burdi"
+          },
+          "jersey": "68",
+          "position": {
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            }
+          },
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/128?lang=en&region=us"
+              },
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/77?lang=en&region=us"
+              },
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            }
+          ],
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 5
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          },
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "alternateIds": {
+            "sdr": "3033716"
+          },
+          "debutYear": 2018,
+          "birthPlace": {
+            "city": "Hinsdale",
+            "state": "IL",
+            "country": "United States",
+            "displayText": "Hinsdale, IL"
+          },
+          "college": {
+            "id": "97",
+            "guid": "03c688de-c23e-3fc3-95aa-4b03a2b9d0df",
+            "mascot": "Cardinals",
+            "name": "Louisville",
+            "shortName": "Louisville",
+            "abbrev": "LOU",
+            "logos": [
+              {
+                "lastUpdated": "2023-03-01T14:17Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ]
+              },
+              {
+                "lastUpdated": "2023-03-01T14:18Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/97.png",
                 "width": 500,
                 "height": 500,
                 "alt": "",
@@ -1808,237 +2045,6 @@
             "state": "CA",
             "country": "United States",
             "displayText": "Santa Monica, CA"
-          }
-        },
-        {
-          "id": "31755",
-          "uid": "s:1~l:10~a:31755",
-          "guid": "bd6cbe95-5704-4b2f-cb14-2473fda781d8",
-          "firstName": "Liam",
-          "lastName": "Hendriks",
-          "fullName": "Liam Hendriks",
-          "displayName": "Liam Hendriks",
-          "shortName": "L. Hendriks",
-          "weight": 235.0,
-          "displayWeight": "235 lbs",
-          "height": 72.0,
-          "displayHeight": "6' 0\"",
-          "age": 36,
-          "dateOfBirth": "1989-02-10T08:00:00+00:00",
-          "links": [
-            {
-              "language": "en-US",
-              "shortText": "Player Card",
-              "href": "https://www.espn.com/mlb/player/_/id/31755",
-              "text": "Player Card",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Stats",
-              "href": "https://www.espn.com/mlb/player/stats/_/id/31755/liam-hendriks",
-              "text": "Stats",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Splits",
-              "href": "https://www.espn.com/mlb/player/splits/_/id/31755/liam-hendriks",
-              "text": "Splits",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Game Log",
-              "href": "https://www.espn.com/mlb/player/gamelog/_/id/31755/liam-hendriks",
-              "text": "Game Log",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "News",
-              "href": "https://www.espn.com/mlb/player/news/_/id/31755/liam-hendriks",
-              "text": "News",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bio",
-              "href": "https://www.espn.com/mlb/player/bio/_/id/31755/liam-hendriks",
-              "text": "Bio",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Overview",
-              "href": "https://www.espn.com/mlb/player/_/id/31755/liam-hendriks",
-              "text": "Overview",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bat vs Pitch",
-              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/31755/liam-hendriks",
-              "text": "Bat vs Pitch",
-              "rel": [
-                "batvspitch",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "slug": "liam-hendriks",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/31755.png",
-            "alt": "Liam Hendriks"
-          },
-          "jersey": "31",
-          "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31755/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31755/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [
-            {
-              "salary": 518400,
-              "season": {
-                "year": 2015,
-                "startDate": "2015-02-28T08:00Z",
-                "endDate": "2015-11-05T19:59Z"
-              }
-            },
-            {
-              "salary": 495000,
-              "season": {
-                "year": 2013,
-                "startDate": "2013-02-21T08:00Z",
-                "endDate": "2013-11-01T06:59Z"
-              }
-            },
-            {
-              "salary": 480000,
-              "season": {
-                "year": 2012,
-                "startDate": "2012-02-28T08:00Z",
-                "endDate": "2012-11-04T06:59Z"
-              }
-            }
-          ],
-          "experience": {
-            "years": 14
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "2308327"
-          },
-          "nickname": "",
-          "debutYear": 2011,
-          "birthPlace": {
-            "city": "Perth",
-            "state": "WA",
-            "country": "Australia",
-            "displayText": "Perth, Australia"
           }
         },
         {
