@@ -23,6 +23,25 @@ from .nfl_game_response_gamepackage_json_winprobability_item import NflGameRespo
 from .nfl_game_response_meta import NflGameResponseMeta
 from .nfl_game_response_targeting import NflGameResponseTargeting
 from .nfl_game_response_tier_2_nav import NflGameResponseTier2Nav
+from .nfl_matchup_response import NflMatchupResponse
+from .nfl_matchup_response_ads import NflMatchupResponseAds
+from .nfl_matchup_response_analytics import NflMatchupResponseAnalytics
+from .nfl_matchup_response_content import NflMatchupResponseContent
+from .nfl_matchup_response_gamepackage_json import NflMatchupResponseGamepackageJSON
+from .nfl_matchup_response_gamepackage_json_boxscore import NflMatchupResponseGamepackageJSONBoxscore
+from .nfl_matchup_response_gamepackage_json_broadcasts_item import NflMatchupResponseGamepackageJSONBroadcastsItem
+from .nfl_matchup_response_gamepackage_json_game_info import NflMatchupResponseGamepackageJSONGameInfo
+from .nfl_matchup_response_gamepackage_json_header import NflMatchupResponseGamepackageJSONHeader
+from .nfl_matchup_response_gamepackage_json_leaders_item import NflMatchupResponseGamepackageJSONLeadersItem
+from .nfl_matchup_response_gamepackage_json_news import NflMatchupResponseGamepackageJSONNews
+from .nfl_matchup_response_gamepackage_json_pickcenter_item import NflMatchupResponseGamepackageJSONPickcenterItem
+from .nfl_matchup_response_gamepackage_json_standings import NflMatchupResponseGamepackageJSONStandings
+from .nfl_matchup_response_gamepackage_json_winprobability_item import (
+    NflMatchupResponseGamepackageJSONWinprobabilityItem,
+)
+from .nfl_matchup_response_meta import NflMatchupResponseMeta
+from .nfl_matchup_response_targeting import NflMatchupResponseTargeting
+from .nfl_matchup_response_tier_2_nav import NflMatchupResponseTier2Nav
 from .nfl_play_by_play_response import NflPlayByPlayResponse
 from .nfl_recap_response import NflRecapResponse
 from .nfl_recap_response_ads import NflRecapResponseAds
@@ -143,6 +162,23 @@ __all__ = (
     "NflGameResponseMeta",
     "NflGameResponseTargeting",
     "NflGameResponseTier2Nav",
+    "NflMatchupResponse",
+    "NflMatchupResponseAds",
+    "NflMatchupResponseAnalytics",
+    "NflMatchupResponseContent",
+    "NflMatchupResponseGamepackageJSON",
+    "NflMatchupResponseGamepackageJSONBoxscore",
+    "NflMatchupResponseGamepackageJSONBroadcastsItem",
+    "NflMatchupResponseGamepackageJSONGameInfo",
+    "NflMatchupResponseGamepackageJSONHeader",
+    "NflMatchupResponseGamepackageJSONLeadersItem",
+    "NflMatchupResponseGamepackageJSONNews",
+    "NflMatchupResponseGamepackageJSONPickcenterItem",
+    "NflMatchupResponseGamepackageJSONStandings",
+    "NflMatchupResponseGamepackageJSONWinprobabilityItem",
+    "NflMatchupResponseMeta",
+    "NflMatchupResponseTargeting",
+    "NflMatchupResponseTier2Nav",
     "NflPlayByPlayResponse",
     "NflRecapResponse",
     "NflRecapResponseAds",

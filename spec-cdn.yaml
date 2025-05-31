@@ -176,6 +176,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NflGameResponse'
+  /core/nfl/matchup:
+    get:
+      summary: NFL Game Matchup
+      description: Get the NFL game matchup data.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: gameId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflMatchupResponse'
 components:
   schemas:
     NflScoreboardResponse:
@@ -1181,6 +1204,70 @@ components:
               type: array
               items:
                 type: object
+            winprobability:
+              type: array
+              items:
+                type: object
+        customStyleSheet:
+          type: string
+        type:
+          type: string
+        content:
+          type: object
+        __gamepackage__:
+          type: boolean
+        analytics:
+          type: object
+        ads:
+          type: object
+        targeting:
+          type: object
+        meta:
+          type: object
+        nowFeedSupported:
+          type: boolean
+        customNav:
+          type: string
+        sport:
+          type: array
+          items:
+            type: string
+        tier2Nav:
+          type: object
+      additionalProperties: true
+    NflMatchupResponse:
+      type: object
+      description: NFL game matchup response with boxscore, leaders, and matchup data
+      properties:
+        gameId:
+          type: integer
+          description: The game ID
+        gamepackageJSON:
+          type: object
+          description: Game package data for matchup including boxscore, leaders, etc.
+          properties:
+            boxscore:
+              type: object
+            broadcasts:
+              type: array
+              items:
+                type: object
+            gameInfo:
+              type: object
+            header:
+              type: object
+            leaders:
+              type: array
+              items:
+                type: object
+            news:
+              type: object
+            pickcenter:
+              type: array
+              items:
+                type: object
+            standings:
+              type: object
             winprobability:
               type: array
               items:

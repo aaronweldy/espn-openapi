@@ -57,7 +57,7 @@ cdn.espn.com
 [x] /core/nfl/playbyplay - NFL Game Play-by-Play (CDN). Params: xhr=1, gameId={event_id} ✓
 [x] /core/nfl/recap - NFL Game Recap (CDN). Params: xhr=1, gameId={event_id}
 [x] /core/nfl/game - NFL Game Details (CDN). Params: xhr=1, gameId={event_id}
-[ ] /core/nfl/matchup - NFL Game Matchup (CDN). Params: xhr=1, gameId={event_id}
+[x] /core/nfl/matchup - NFL Game Matchup (CDN). Params: xhr=1, gameId={event_id}
 sports.core.api.espn.com
 [x] /v3/sports/football/nfl/athletes - List NFL Athletes (v3). Query Params: limit, active=true, page - (Matches broadly with /v2/.../athletes/ from initial checklist which was marked implemented)
 [x] /v2/sports/football/leagues/nfl/athletes/{athlete_id} - Detailed NFL athlete information. Path Param: {athlete_id} - (This is more specific than the list, matches original athletes/ part)
