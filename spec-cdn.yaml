@@ -153,6 +153,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NflRecapResponse'
+  /core/nfl/game:
+    get:
+      summary: NFL Game Details
+      description: Get the NFL game details data.
+      parameters:
+        - in: query
+          name: xhr
+          schema:
+            type: integer
+          required: true
+          example: 1
+        - in: query
+          name: gameId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NflGameResponse'
 components:
   schemas:
     NflScoreboardResponse:
@@ -1082,6 +1105,82 @@ components:
               type: object
             standings:
               type: object
+            winprobability:
+              type: array
+              items:
+                type: object
+        customStyleSheet:
+          type: string
+        type:
+          type: string
+        content:
+          type: object
+        __gamepackage__:
+          type: boolean
+        analytics:
+          type: object
+        ads:
+          type: object
+        targeting:
+          type: object
+        meta:
+          type: object
+        nowFeedSupported:
+          type: boolean
+        customNav:
+          type: string
+        sport:
+          type: array
+          items:
+            type: string
+        tier2Nav:
+          type: object
+      additionalProperties: true
+    NflGameResponse:
+      type: object
+      description: NFL game details response with boxscore, drives, leaders, and more
+      properties:
+        gameId:
+          type: integer
+          description: The game ID
+        gamepackageJSON:
+          type: object
+          description: Game package data including boxscore, drives, leaders, etc.
+          properties:
+            article:
+              type: object
+            boxscore:
+              type: object
+            broadcasts:
+              type: array
+              items:
+                type: object
+            drives:
+              type: object
+            gameInfo:
+              type: object
+            header:
+              type: object
+            leaders:
+              type: array
+              items:
+                type: object
+            news:
+              type: object
+            pickcenter:
+              type: array
+              items:
+                type: object
+            scoringPlays:
+              type: array
+              items:
+                type: object
+            standings:
+              type: object
+            videos:
+              type: array
+              items:
+                type: object
             winprobability:
               type: array
               items:
