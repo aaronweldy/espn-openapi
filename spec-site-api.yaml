@@ -467,6 +467,58 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule:
+    get:
+      summary: Get Team Schedule
+      description: Retrieve the full schedule for a specific team, including all games for the season
+      operationId: getTeamSchedule
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID or abbreviation
+          schema:
+            type: string
+            example: "LAL"
+        - name: season
+          in: query
+          required: false
+          description: The season year to retrieve the schedule for
+          schema:
+            type: integer
+            example: 2024
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamScheduleResponse'
+        '404':
+          description: Team or schedule not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /mondaynightfootball:
     get:
       summary: Get Monday Night Football schedule and games
@@ -1840,6 +1892,17 @@ components:
         slug:
           type: string
           example: "post-season"
+        name:
+          type: string
+          description: Season name (e.g., "Regular Season", "Postseason")
+          example: "Postseason"
+        displayName:
+          type: string
+          description: Display name of the season (e.g., "2024-25")
+          example: "2024-25"
+        half:
+          type: integer
+          description: Season half (1 or 2, primarily for basketball)
 
     Competition:
       type: object
@@ -3558,6 +3621,35 @@ components:
         - requestedSeason
         - byeWeek
       description: NFL team schedule response, including all games for the team in the specified season.
+
+    TeamScheduleResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        status:
+          type: string
+        season:
+          $ref: '#/components/schemas/Season'
+        team:
+          $ref: '#/components/schemas/TeamDetailsFull'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+        requestedSeason:
+          $ref: '#/components/schemas/Season'
+        byeWeek:
+          type: integer
+          description: Week number of the team's bye week (NFL only)
+      required:
+        - timestamp
+        - status
+        - season
+        - team
+        - events
+      description: Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only present for NFL teams.
 
     MondayNightFootballResponse:
       type: object

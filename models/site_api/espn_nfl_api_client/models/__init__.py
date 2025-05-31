@@ -269,6 +269,7 @@ from .team_record import TeamRecord
 from .team_record_item import TeamRecordItem
 from .team_record_stat import TeamRecordStat
 from .team_roster_response import TeamRosterResponse
+from .team_schedule_response import TeamScheduleResponse
 from .team_venue import TeamVenue
 from .teams_list_response import TeamsListResponse
 from .thursday_night_football_response import ThursdayNightFootballResponse
@@ -549,6 +550,7 @@ __all__ = (
     "TeamRecordItem",
     "TeamRecordStat",
     "TeamRosterResponse",
+    "TeamScheduleResponse",
     "TeamsListResponse",
     "TeamVenue",
     "ThursdayNightFootballResponse",

@@ -8,6 +8,7 @@ import pytest
 
 from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_roster import sync
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
+from models.site_api.espn_nfl_api_client.models.position import Position
 from models.site_api.espn_nfl_api_client.models.team_roster_response import (
     TeamRosterResponse,
 )
@@ -133,7 +134,11 @@ def format_roster_data(data: TeamRosterResponse) -> str:
                 position = player.position
 
             if position:
-                position_str = f" ({position.name})"
+                position_str = (
+                    f" ({position.name})"
+                    if isinstance(position, Position)
+                    else f" ({position})"
+                )
 
             # Add college information
             college_str = ""
@@ -302,5 +307,6 @@ def test_get_mlb_team_roster(site_api_client, ensure_json_output_dir):
             jersey = getattr(player, "jersey", "")
             pos = getattr(player, "position", None)
             pos_name = pos.name if pos and hasattr(pos, "name") else ""
+            logging.info(f"Player {i}: {name} ({pos_name})")
             total_players += 1
     logging.info(f"Total players returned: {total_players}")

@@ -1,115 +1,117 @@
-#!/usr/bin/env python3
-"""
-Test ESPN NFL API - Team Schedule Endpoint
-"""
-
+import pytest
 import json
 import logging
-import pytest
+from models.site_api.espn_nfl_api_client.api.default import get_team_schedule
+from models.site_api.espn_nfl_api_client.models.team_schedule_response import TeamScheduleResponse
+from models.site_api.espn_nfl_api_client.models.sport_enum import SportEnum
+from models.site_api.espn_nfl_api_client.models.league_enum import LeagueEnum
+from models.site_api.espn_nfl_api_client.types import UNSET
 
-from models.site_api.espn_nfl_api_client.api.default.get_nfl_team_schedule import sync
-from models.site_api.espn_nfl_api_client.models.nfl_team_schedule_response import (
-    NFLTeamScheduleResponse,
-)
+logging.basicConfig(level=logging.INFO)
 
 
 @pytest.mark.api
-def test_get_nfl_team_schedule(site_api_client, ensure_json_output_dir):
-    """Test fetching an NFL team's schedule."""
-    # Set up logging
-    logging.basicConfig(
-        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+@pytest.mark.parametrize("sport,league,team_id", [
+    (SportEnum.BASKETBALL, LeagueEnum.NBA, "LAL"),
+    (SportEnum.FOOTBALL, LeagueEnum.NFL, "KC"),
+    (SportEnum.BASEBALL, LeagueEnum.MLB, "NYY"),
+    (SportEnum.HOCKEY, LeagueEnum.NHL, "TOR"),
+    (SportEnum.BASKETBALL, LeagueEnum.WNBA, "LA"),
+    (SportEnum.FOOTBALL, LeagueEnum.COLLEGE_FOOTBALL, "MICH"),
+    (SportEnum.BASKETBALL, LeagueEnum.MENS_COLLEGE_BASKETBALL, "DUKE"),
+    (SportEnum.BASKETBALL, LeagueEnum.WOMENS_COLLEGE_BASKETBALL, "2"),  # Use numeric ID for Auburn
+])
+def test_get_team_schedule(site_api_client, ensure_json_output_dir, sport, league, team_id):
+    """Test fetching team schedules across different sports."""
+    response = get_team_schedule.sync_detailed(
+        client=site_api_client,
+        sport=sport,
+        league=league,
+        team_id_or_abbrev=team_id
     )
-    logger = logging.getLogger(__name__)
-
-    team_id = "12"  # Kansas City Chiefs
-    logger.info(f"Fetching schedule for team ID: {team_id}")
-
-    response = sync(team_id=team_id, client=site_api_client)
-    logger.info(f"Received response for team: {team_id}")
-
-    # Validate response type
-    assert isinstance(response, NFLTeamScheduleResponse), (
-        "Response should be an NFLTeamScheduleResponse"
-    )
-
-    # Validate required fields
-    assert response.timestamp, "Response should have a timestamp"
-    assert response.status, "Response should have a status"
-    assert response.team, "Response should have team data"
-    assert response.team.display_name, "Team should have a display name"
-    assert response.season, "Response should have season data"
-    assert response.season.year, "Season should have a year"
-    assert response.events is not None, (
-        "Response should have events list (even if empty)"
-    )
-
-    # Log useful information about the response
-    logger.info(f"Response timestamp: {response.timestamp}")
-    logger.info(f"Response status: {response.status}")
-    logger.info(f"Team name: {response.team.display_name}")
-    logger.info(f"Season year: {response.season.year}")
-    logger.info(f"Total events: {len(response.events)} games")
-
-    # Log details about the schedule
-    home_games = 0
-    away_games = 0
-    completed_games = 0
-
-    for event in response.events:
-        if event.competitions and event.competitions[0].competitors:
-            for competitor in event.competitions[0].competitors:
-                if (
-                    competitor.team
-                    and competitor.team.id == team_id
-                    and competitor.home_away == "home"
-                ):
-                    home_games += 1
-                elif (
-                    competitor.team
-                    and competitor.team.id == team_id
-                    and competitor.home_away == "away"
-                ):
-                    away_games += 1
-
-        if (
-            event.competitions
-            and event.competitions[0].status
-            and event.competitions[0].status.type
-            and event.competitions[0].status.type.completed
-        ):
-            completed_games += 1
-
-    logger.info(f"Home games: {home_games}")
-    logger.info(f"Away games: {away_games}")
-    logger.info(f"Completed games: {completed_games}")
-    logger.info(f"Upcoming games: {len(response.events) - completed_games}")
-
-    if response.events:
-        logger.info(
-            f"First event: {response.events[0].name} on {response.events[0].date}"
-        )
-        # Validate event structure for the first event
-        first_event = response.events[0]
-        assert first_event.id, "Event should have an ID"
-        assert first_event.name, "Event should have a name"
-        assert first_event.date, "Event should have a date"
-
-        # Log information about the first event
-        logger.info(f"First event ID: {first_event.id}")
-        if first_event.competitions and first_event.competitions[0].venue:
-            venue = first_event.competitions[0].venue
-            venue_name = venue.full_name if venue.full_name else "Unknown"
-            logger.info(f"First event venue: {venue_name}")
-
-    if response.bye_week:
-        logger.info(f"Bye week: {response.bye_week}")
+    
+    assert response.status_code == 200, f"Expected status code 200, got {response.status_code} for {sport.value}/{league.value}/{team_id}"
+    
+    result = response.parsed
+    assert isinstance(result, TeamScheduleResponse), f"Response should parse to TeamScheduleResponse for {sport.value}/{league.value}"
+    
+    # Common fields present in all sports
+    assert result.timestamp, "timestamp field should be present"
+    assert result.status == "success", f"status should be 'success', got {result.status}"
+    assert result.season, "season field should be present"
+    assert result.team, "team field should be present"
+    assert result.events is not None, "events field should be present (can be empty array)"
+    
+    # Team verification (only check if team_id is not numeric)
+    if not team_id.isdigit():
+        assert result.team.abbreviation == team_id, f"Team abbreviation should match requested team {team_id}"
+    
+    # Log some interesting info
+    logging.info(f"{sport.value.upper()} - {result.team.display_name} Schedule:")
+    if result.season:
+        season_info = result.season.display_name if result.season.display_name else f"{result.season.year}"
     else:
-        logger.info("No bye week information available")
+        season_info = 'N/A'
+    logging.info(f"  Season: {season_info}")
+    logging.info(f"  Number of events: {len(result.events)}")
+    if result.bye_week is not UNSET and sport == SportEnum.FOOTBALL:
+        logging.info(f"  Bye week: {result.bye_week}")
+    
+    # Sport-specific assertions
+    if sport == SportEnum.FOOTBALL and league == LeagueEnum.NFL:
+        # NFL teams should have bye week info
+        assert result.bye_week is not UNSET, "NFL teams should have bye week information"
+    else:
+        # Other sports typically don't have bye weeks
+        if result.bye_week is not UNSET:
+            logging.info(f"  Note: {sport.value} has bye_week field set to {result.bye_week}")
+    
+    # Save response for analysis
+    output_file = f"{ensure_json_output_dir}/team_schedule_{sport.value}_{league.value}_{team_id}.json"
+    with open(output_file, "w") as f:
+        json.dump(result.to_dict(), f, indent=2, default=str)
+    
+    logging.info(f"  Response saved to {output_file}")
 
-    # Save the response data to a file without logging the content
-    output_path = f"{ensure_json_output_dir}/nfl_team_schedule_response_processed.json"
-    with open(output_path, "w") as f:
-        json.dump(response.to_dict(), f, indent=2)
 
-    logger.info(f"Schedule response saved to {output_path}")
+@pytest.mark.api
+def test_get_team_schedule_with_season(site_api_client, ensure_json_output_dir):
+    """Test fetching team schedule for a specific season."""
+    response = get_team_schedule.sync_detailed(
+        client=site_api_client,
+        sport=SportEnum.BASKETBALL,
+        league=LeagueEnum.NBA,
+        team_id_or_abbrev="LAL",
+        season=2023
+    )
+    
+    assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
+    
+    result = response.parsed
+    assert isinstance(result, TeamScheduleResponse), "Response should parse to TeamScheduleResponse"
+    
+    # Verify we got the requested season
+    if result.requested_season:
+        assert result.requested_season.year == 2023, f"Requested season should be 2023, got {result.requested_season.year}"
+    
+    logging.info("NBA Lakers 2023 Schedule:")
+    logging.info(f"  Number of events: {len(result.events)}")
+    
+    # Save response
+    output_file = f"{ensure_json_output_dir}/team_schedule_nba_LAL_2023.json"
+    with open(output_file, "w") as f:
+        json.dump(result.to_dict(), f, indent=2, default=str)
+
+
+@pytest.mark.api
+def test_get_team_schedule_invalid_team(site_api_client):
+    """Test fetching schedule for an invalid team."""
+    response = get_team_schedule.sync_detailed(
+        client=site_api_client,
+        sport=SportEnum.BASKETBALL,
+        league=LeagueEnum.NBA,
+        team_id_or_abbrev="INVALID"
+    )
+    
+    # ESPN typically returns 400 for invalid teams
+    assert response.status_code in [400, 404], f"Expected error status code, got {response.status_code}"

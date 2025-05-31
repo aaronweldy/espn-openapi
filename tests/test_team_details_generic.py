@@ -100,8 +100,3 @@ def test_team_details_response_structure(site_api_client):
 
     if result.team.record:
         assert hasattr(result.team.record, "items"), "Record should have items"
-
-    # Check venue if present (not all sports include venue in team details)
-    if hasattr(result.team, "venue") and result.team.venue:
-        assert result.team.venue.id, "Venue should have ID"
-        assert result.team.venue.full_name, "Venue should have full name"

@@ -6,31 +6,19 @@ Requires Python 3.10+
 
 import json
 import pytest
-from typing import cast, Dict, Any, List
-import httpx
-from datetime import datetime
+from typing import cast
 import logging
 
-from models.site_api.espn_nfl_api_client import Client
-from models.site_api.espn_nfl_api_client.api.default.get_nfl_game_summary import sync
-from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.game_summary import GameSummary
 from models.site_api.espn_nfl_api_client.types import UNSET
 
 from models.site_web_api.espn_site_web_api_client.api.default.get_nfl_athlete_game_log import (
     sync_detailed as get_athlete_gamelog,
 )
-from models.site_web_api.espn_site_web_api_client.client import (
-    Client as SiteWebApiClient,
-)
 from models.site_web_api.espn_site_web_api_client.models.athlete_game_log_response import (
     AthleteGameLogResponse,
 )
-from models.site_web_api.espn_site_web_api_client.models.game_event import GameEvent
 
-from models.sports_core_api.espn_sports_core_api_client.client import (
-    Client as CoreApiClient,
-)
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_competition_drives import (
     sync as get_nfl_competition_drives,
 )

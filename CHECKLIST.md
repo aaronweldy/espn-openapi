@@ -45,7 +45,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/football/nfl/news?team={team_id} - NFL News (Team Specific). Query Params: team={team_id}
 [x] /sports/football/nfl/teams/{team_id}/roster - NFL Team Roster. Path Param: {team_id}. Query Params: enable=roster,projection,stats - Implemented (path refined)
 [x] /sports/football/nfl/standings - NFL Standings. Query Param: season - Implemented
-[x] /sports/football/nfl/teams/{team_id}/schedule - NFL Team Schedule. Path Param: {team_id}. Query Param: season
+[x] /sports/football/nfl/teams/{team_id}/schedule - NFL Team Schedule. Path Param: {team_id}. Query Param: season - Implemented as generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule
 [x] /apis/site/v2/mondaynightfootball - Specific Night Football
 [x] /apis/site/v2/thursdaynightfootball - Specific Night Football
 [x] /apis/site/v2/sundaynightfootball - Specific Night Football
@@ -106,7 +106,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/nba/teams/{team_id_or_abbrev} - NBA Specific Team. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [x] /sports/basketball/nba/summary?event={event_id} - NBA Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
 [x] /sports/basketball/nba/teams/{team_id_or_abbrev}/roster - NBA Team Roster. Path Param: {team_id_or_abbrev} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster endpoint
-[ ] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season
+[x] /sports/basketball/nba/{team_id_or_abbrev}/schedule - NBA Team Schedule. Path Param: {team_id_or_abbrev}. Query Param: season - Implemented as generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule
 [ ] /sports/basketball/nba/statistics/players - NBA Aggregate Player Statistics
 sports.core.api.espn.com
 [x] /v2/sports/basketball/leagues/nba/athletes/{athlete_id} - Detailed NBA athlete information. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}

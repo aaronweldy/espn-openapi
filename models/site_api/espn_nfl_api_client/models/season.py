@@ -15,11 +15,17 @@ class Season:
         year (int):  Example: 2023.
         type (int): Season type (1=preseason, 2=regular, 3=postseason) Example: 3.
         slug (Union[Unset, str]):  Example: post-season.
+        name (Union[Unset, str]): Season name (e.g., "Regular Season", "Postseason") Example: Postseason.
+        display_name (Union[Unset, str]): Display name of the season (e.g., "2024-25") Example: 2024-25.
+        half (Union[Unset, int]): Season half (1 or 2, primarily for basketball)
     """
 
     year: int
     type: int
     slug: Union[Unset, str] = UNSET
+    name: Union[Unset, str] = UNSET
+    display_name: Union[Unset, str] = UNSET
+    half: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -28,6 +34,12 @@ class Season:
         type = self.type
 
         slug = self.slug
+
+        name = self.name
+
+        display_name = self.display_name
+
+        half = self.half
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -39,6 +51,12 @@ class Season:
         )
         if slug is not UNSET:
             field_dict["slug"] = slug
+        if name is not UNSET:
+            field_dict["name"] = name
+        if display_name is not UNSET:
+            field_dict["displayName"] = display_name
+        if half is not UNSET:
+            field_dict["half"] = half
 
         return field_dict
 
@@ -51,10 +69,19 @@ class Season:
 
         slug = d.pop("slug", UNSET)
 
+        name = d.pop("name", UNSET)
+
+        display_name = d.pop("displayName", UNSET)
+
+        half = d.pop("half", UNSET)
+
         season = cls(
             year=year,
             type=type,
             slug=slug,
+            name=name,
+            display_name=display_name,
+            half=half,
         )
 
         season.additional_properties = d
