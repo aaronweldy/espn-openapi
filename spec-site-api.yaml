@@ -196,93 +196,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  /sports/football/nfl/teams/{teamId}/schedule:
-    get:
-      summary: Get NFL Team Schedule
-      description: Retrieve the full schedule for a specific NFL team, including all games for the season.
-      operationId: getNFLTeamSchedule
-      parameters:
-        - name: teamId
-          in: path
-          required: true
-          description: The ID of the NFL team
-          schema:
-            type: string
-            example: "12"
-        - name: season
-          in: query
-          required: false
-          description: The season year to retrieve the schedule for
-          schema:
-            type: integer
-            example: 2024
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NFLTeamScheduleResponse'
-        '404':
-          description: Team or schedule not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
-  /sports/football/nfl/news:
-    get:
-      summary: Get NFL News
-      description: Retrieve the latest NFL news articles and headlines
-      operationId: getNFLNews
-      parameters:
-        - name: limit
-          in: query
-          required: false
-          description: Maximum number of articles to return
-          schema:
-            type: integer
-            example: 10
-        - name: offset
-          in: query
-          required: false
-          description: Number of articles to skip (for pagination)
-          schema:
-            type: integer
-            example: 0
-        - name: team
-          in: query
-          required: false
-          description: Filter news by a specific NFL team ID
-          schema:
-            type: integer
-            example: 12
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SportNewsAPISchema'
-        '404':
-          description: Not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '400':
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
   /sports/{sport}/{league}/news:
     get:
       summary: Get League News
@@ -308,6 +221,13 @@ paths:
           schema:
             type: integer
             example: 10
+        - name: team
+          in: query
+          required: false
+          description: Filter news by team ID
+          schema:
+            type: integer
+            example: 12
       responses:
         '200':
           description: Successful response
@@ -508,6 +428,62 @@ paths:
                 $ref: '#/components/schemas/TeamScheduleResponse'
         '404':
           description: Team or schedule not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sports/{sport}/{league}/rankings:
+    get:
+      summary: Get Rankings
+      description: Retrieve current rankings/polls for college sports (AP Top 25, Coaches Poll, etc.). Only available for college sports.
+      operationId: getRankings
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (currently only college sports supported)
+          schema:
+            type: string
+            enum: [football, basketball]
+            example: "football"
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (college-football, mens-college-basketball, womens-college-basketball)
+          schema:
+            type: string
+            enum: [college-football, mens-college-basketball, womens-college-basketball]
+            example: "college-football"
+        - name: season
+          in: query
+          required: false
+          description: The season year
+          schema:
+            type: integer
+            example: 2024
+        - name: week
+          in: query
+          required: false
+          description: The week number
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RankingsResponse'
+        '404':
+          description: Rankings not available for this sport/league
           content:
             application/json:
               schema:
@@ -2885,7 +2861,6 @@ components:
         - dataSourceIdentifier
         - type
         - headline
-        - description
         - lastModified
         - published
         - images
@@ -5015,3 +4990,231 @@ components:
         - gameInfo
         - header
       description: NBA game summary response with comprehensive game data
+
+    RankingsResponse:
+      type: object
+      properties:
+        rankings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ranking'
+          description: Array of different ranking systems (AP Poll, Coaches Poll, etc.)
+        availableRankings:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: Unique identifier for the ranking type
+              name:
+                type: string
+                description: Display name of the ranking
+          description: List of available ranking types
+        latestSeason:
+          type: object
+          properties:
+            year:
+              type: integer
+              description: The year of the season
+            season:
+              type: string
+              description: Season identifier
+          description: Information about the latest season
+        latestWeek:
+          type: object
+          properties:
+            number:
+              type: integer
+              description: Week number
+            text:
+              type: string
+              description: Week display text
+          description: Information about the latest week
+        requestedSeason:
+          type: object
+          properties:
+            year:
+              type: integer
+              description: The requested season year
+          description: The season that was requested
+        weeks:
+          type: array
+          items:
+            type: object
+          description: Available weeks for rankings
+        weekCounts:
+          type: object
+          description: Week count information
+        sports:
+          type: array
+          items:
+            type: object
+          description: Sports information
+        leagues:
+          type: array
+          items:
+            type: object
+          description: League information
+      description: College sports rankings response
+
+    Ranking:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Full name of the ranking (e.g., "AP Top 25")
+        shortName:
+          type: string
+          description: Short name of the ranking (e.g., "AP Poll")
+        recordType:
+          type: string
+          nullable: true
+          description: Type of record used for ranking
+        current:
+          type: boolean
+          nullable: true
+          description: Whether this is the current ranking
+        ranks:
+          type: array
+          items:
+            $ref: '#/components/schemas/RankingEntry'
+          description: List of ranked teams
+        droppedOut:
+          type: array
+          items:
+            $ref: '#/components/schemas/DroppedOutTeam'
+          description: Teams that dropped out of the rankings
+        others:
+          type: array
+          items:
+            $ref: '#/components/schemas/OthersReceivingVotes'
+          description: Teams receiving votes but not in top 25
+        occurrence:
+          type: object
+          properties:
+            type:
+              type: string
+              description: Type of occurrence (e.g., "weekly")
+            weekNumber:
+              type: integer
+              description: Week number
+          description: When this ranking occurred
+      description: Individual ranking system (AP, Coaches, etc.)
+
+    RankingEntry:
+      type: object
+      properties:
+        current:
+          type: integer
+          description: Current rank
+        previous:
+          type: integer
+          description: Previous rank
+        points:
+          type: integer
+          description: Total points received
+        firstPlaceVotes:
+          type: integer
+          description: Number of first place votes
+        trend:
+          type: string
+          description: Trend indicator (up, down, or "-")
+        team:
+          $ref: '#/components/schemas/RankedTeam'
+        date:
+          type: string
+          format: date-time
+          description: Date of the ranking
+        lastUpdated:
+          type: string
+          format: date-time
+          description: When the ranking was last updated
+        recordSummary:
+          type: string
+          description: Team's record summary (e.g., "14-2")
+      description: Individual team ranking entry
+
+    RankedTeam:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Team ID
+        uid:
+          type: string
+          description: Unique team identifier
+        location:
+          type: string
+          description: Team location/city
+        name:
+          type: string
+          description: Team name
+        nickname:
+          type: string
+          description: Team nickname
+        abbreviation:
+          type: string
+          description: Team abbreviation
+        color:
+          type: string
+          description: Team primary color (hex)
+        logo:
+          type: string
+          description: URL to team logo
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+          description: Array of team logos
+        groups:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Conference/group ID
+            shortName:
+              type: string
+              description: Conference short name
+            parent:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: Parent group ID
+                shortName:
+                  type: string
+                  description: Parent group short name
+                isConference:
+                  type: boolean
+                  description: Whether parent is a conference
+            isConference:
+              type: boolean
+              description: Whether this is a conference
+          description: Conference/group information
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+          description: Related links
+      description: Team information in rankings
+
+    DroppedOutTeam:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/RankedTeam'
+        previous:
+          type: integer
+          description: Previous ranking before dropping out
+      description: Team that dropped out of rankings
+
+    OthersReceivingVotes:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/RankedTeam'
+        points:
+          type: integer
+          description: Points received
+      description: Team receiving votes but not in top 25

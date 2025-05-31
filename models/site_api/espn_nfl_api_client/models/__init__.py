@@ -33,6 +33,7 @@ from .contributor_links_web import ContributorLinksWeb
 from .detailed_venue import DetailedVenue
 from .drive import Drive
 from .drive_time_of_possession import DriveTimeOfPossession
+from .dropped_out_team import DroppedOutTeam
 from .error_response import ErrorResponse
 from .error_response_error import ErrorResponseError
 from .event import Event
@@ -57,6 +58,8 @@ from .geo_broadcast_media import GeoBroadcastMedia
 from .geo_broadcast_type import GeoBroadcastType
 from .get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
 from .get_mlb_team_roster_team_id_or_abbrev import GetMLBTeamRosterTeamIdOrAbbrev
+from .get_rankings_league import GetRankingsLeague
+from .get_rankings_sport import GetRankingsSport
 from .get_scoreboard_seasontype import GetScoreboardSeasontype
 from .get_scoreboard_sport import GetScoreboardSport
 from .headline import Headline
@@ -219,6 +222,7 @@ from .nhl_statistic_name import NhlStatisticName
 from .nhl_team_abbreviation import NHLTeamAbbreviation
 from .nhl_team_roster_response import NhlTeamRosterResponse
 from .official import Official
+from .others_receiving_votes import OthersReceivingVotes
 from .play import Play
 from .play_clock import PlayClock
 from .play_period import PlayPeriod
@@ -227,6 +231,21 @@ from .player_stats import PlayerStats
 from .player_stats_stats import PlayerStatsStats
 from .position import Position
 from .position_group import PositionGroup
+from .ranked_team import RankedTeam
+from .ranked_team_groups import RankedTeamGroups
+from .ranked_team_groups_parent import RankedTeamGroupsParent
+from .ranking import Ranking
+from .ranking_entry import RankingEntry
+from .ranking_occurrence import RankingOccurrence
+from .rankings_response import RankingsResponse
+from .rankings_response_available_rankings_item import RankingsResponseAvailableRankingsItem
+from .rankings_response_latest_season import RankingsResponseLatestSeason
+from .rankings_response_latest_week import RankingsResponseLatestWeek
+from .rankings_response_leagues_item import RankingsResponseLeaguesItem
+from .rankings_response_requested_season import RankingsResponseRequestedSeason
+from .rankings_response_sports_item import RankingsResponseSportsItem
+from .rankings_response_week_counts import RankingsResponseWeekCounts
+from .rankings_response_weeks_item import RankingsResponseWeeksItem
 from .record import Record
 from .roster_athlete import RosterAthlete
 from .roster_athlete_alternate_ids import RosterAthleteAlternateIds
@@ -314,6 +333,7 @@ __all__ = (
     "DetailedVenue",
     "Drive",
     "DriveTimeOfPossession",
+    "DroppedOutTeam",
     "ErrorResponse",
     "ErrorResponseError",
     "Event",
@@ -338,6 +358,8 @@ __all__ = (
     "GeoBroadcastType",
     "GetMLBTeamDetailsTeamIdOrAbbrev",
     "GetMLBTeamRosterTeamIdOrAbbrev",
+    "GetRankingsLeague",
+    "GetRankingsSport",
     "GetScoreboardSeasontype",
     "GetScoreboardSport",
     "Headline",
@@ -500,6 +522,7 @@ __all__ = (
     "NHLTeamAbbreviation",
     "NhlTeamRosterResponse",
     "Official",
+    "OthersReceivingVotes",
     "Play",
     "PlayClock",
     "PlayerStats",
@@ -508,6 +531,21 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionGroup",
+    "RankedTeam",
+    "RankedTeamGroups",
+    "RankedTeamGroupsParent",
+    "Ranking",
+    "RankingEntry",
+    "RankingOccurrence",
+    "RankingsResponse",
+    "RankingsResponseAvailableRankingsItem",
+    "RankingsResponseLatestSeason",
+    "RankingsResponseLatestWeek",
+    "RankingsResponseLeaguesItem",
+    "RankingsResponseRequestedSeason",
+    "RankingsResponseSportsItem",
+    "RankingsResponseWeekCounts",
+    "RankingsResponseWeeksItem",
     "Record",
     "RosterAthlete",
     "RosterAthleteAlternateIds",

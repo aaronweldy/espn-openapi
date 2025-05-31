@@ -1,0 +1,803 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/CollegeFootballRankingsSchema",
+    "definitions": {
+        "CollegeFootballRankingsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sports": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Sport"
+                    }
+                },
+                "leagues": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/League"
+                    }
+                },
+                "rankings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Ranking"
+                    }
+                },
+                "latestSeason": {
+                    "$ref": "#/definitions/LatestSeason"
+                },
+                "latestWeek": {
+                    "$ref": "#/definitions/LatestWeek"
+                },
+                "weekCounts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WeekCount"
+                    }
+                },
+                "weeks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Week"
+                    }
+                },
+                "requestedSeason": {
+                    "$ref": "#/definitions/RequestedSeason"
+                },
+                "availableRankings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AvailableRanking"
+                    }
+                }
+            },
+            "required": [
+                "availableRankings",
+                "latestSeason",
+                "latestWeek",
+                "leagues",
+                "rankings",
+                "requestedSeason",
+                "sports",
+                "weekCounts",
+                "weeks"
+            ],
+            "title": "CollegeFootballRankingsSchema"
+        },
+        "AvailableRanking": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "week": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "seasonType": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "seasonType",
+                "shortName",
+                "week"
+            ],
+            "title": "AvailableRanking"
+        },
+        "LatestSeason": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/LatestSeasonType"
+                }
+            },
+            "required": [
+                "endDate",
+                "startDate",
+                "type",
+                "year"
+            ],
+            "title": "LatestSeason"
+        },
+        "LatestSeasonType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "name",
+                "type"
+            ],
+            "title": "LatestSeasonType"
+        },
+        "LatestWeek": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "number": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "displayValue",
+                "last",
+                "number",
+                "type",
+                "value"
+            ],
+            "title": "LatestWeek"
+        },
+        "League": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "midsizeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "$ref",
+                "abbreviation",
+                "id",
+                "midsizeName",
+                "name",
+                "shortName",
+                "uid"
+            ],
+            "title": "League"
+        },
+        "Ranking": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "occurrence": {
+                    "$ref": "#/definitions/LatestWeek"
+                },
+                "date": {
+                    "$ref": "#/definitions/Date"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "shortHeadline": {
+                    "type": "string"
+                },
+                "season": {
+                    "$ref": "#/definitions/Season"
+                },
+                "lastUpdated": {
+                    "$ref": "#/definitions/LastUpdated"
+                },
+                "ranks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DroppedOut"
+                    }
+                },
+                "others": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DroppedOut"
+                    }
+                },
+                "availability": {
+                    "$ref": "#/definitions/Availability"
+                },
+                "showConferences": {
+                    "type": "boolean"
+                },
+                "droppedOut": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DroppedOut"
+                    }
+                },
+                "firstOccurrence": {
+                    "$ref": "#/definitions/FirstOccurrence"
+                }
+            },
+            "required": [
+                "$ref",
+                "availability",
+                "date",
+                "droppedOut",
+                "firstOccurrence",
+                "headline",
+                "id",
+                "lastUpdated",
+                "name",
+                "occurrence",
+                "others",
+                "ranks",
+                "season",
+                "shortHeadline",
+                "shortName",
+                "showConferences",
+                "type"
+            ],
+            "title": "Ranking"
+        },
+        "Availability": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Availability"
+        },
+        "DroppedOut": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "current": {
+                    "type": "integer"
+                },
+                "previous": {
+                    "type": "integer"
+                },
+                "points": {
+                    "type": "number"
+                },
+                "firstPlaceVotes": {
+                    "type": "integer"
+                },
+                "trend": {
+                    "$ref": "#/definitions/Trend"
+                },
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "date": {
+                    "$ref": "#/definitions/Date"
+                },
+                "lastUpdated": {
+                    "$ref": "#/definitions/LastUpdated"
+                },
+                "recordSummary": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "current",
+                "date",
+                "firstPlaceVotes",
+                "lastUpdated",
+                "points",
+                "previous",
+                "recordSummary",
+                "team",
+                "trend"
+            ],
+            "title": "DroppedOut"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                },
+                "groups": {
+                    "$ref": "#/definitions/Groups"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "logo": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
+            },
+            "required": [
+                "abbreviation",
+                "groups",
+                "id",
+                "links",
+                "location",
+                "logo",
+                "logos",
+                "name",
+                "nickname",
+                "uid"
+            ],
+            "title": "Team"
+        },
+        "Groups": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "parent": {
+                    "$ref": "#/definitions/Groups"
+                },
+                "isConference": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "id",
+                "isConference",
+                "shortName"
+            ],
+            "title": "Groups"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/Text"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkRel"
+                    }
+                }
+            },
+            "required": [
+                "href",
+                "rel",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Logo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoRel"
+                    }
+                },
+                "lastUpdated": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "rel",
+                "width"
+            ],
+            "title": "Logo"
+        },
+        "FirstOccurrence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "type",
+                "value"
+            ],
+            "title": "FirstOccurrence"
+        },
+        "Season": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/LatestSeasonType"
+                },
+                "athletes": {
+                    "$ref": "#/definitions/Athletes"
+                },
+                "awards": {
+                    "$ref": "#/definitions/Athletes"
+                },
+                "futures": {
+                    "$ref": "#/definitions/Athletes"
+                },
+                "leaders": {
+                    "$ref": "#/definitions/Athletes"
+                }
+            },
+            "required": [
+                "athletes",
+                "awards",
+                "displayName",
+                "endDate",
+                "futures",
+                "leaders",
+                "startDate",
+                "type",
+                "year"
+            ],
+            "title": "Season"
+        },
+        "Athletes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athletes"
+        },
+        "RequestedSeason": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/RequestedSeasonType"
+                },
+                "week": {
+                    "$ref": "#/definitions/LatestWeek"
+                }
+            },
+            "required": [
+                "displayName",
+                "type",
+                "week",
+                "year"
+            ],
+            "title": "RequestedSeason"
+        },
+        "RequestedSeasonType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "title": "RequestedSeasonType"
+        },
+        "Sport": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                }
+            },
+            "required": [
+                "$ref",
+                "displayName",
+                "guid",
+                "id",
+                "logos",
+                "name",
+                "slug",
+                "uid"
+            ],
+            "title": "Sport"
+        },
+        "WeekCount": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "weekCount": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "type",
+                "weekCount"
+            ],
+            "title": "WeekCount"
+        },
+        "Week": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "display": {
+                    "type": "string"
+                },
+                "week": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "display",
+                "type",
+                "week"
+            ],
+            "title": "Week"
+        },
+        "Date": {
+            "type": "string",
+            "enum": [
+                "2025-01-07T08:00Z",
+                "2024-12-23T08:00Z",
+                "2025-01-06T08:00Z",
+                "2025-01-21T08:00Z"
+            ],
+            "title": "Date"
+        },
+        "LastUpdated": {
+            "type": "string",
+            "enum": [
+                "2025-01-07T23:07Z",
+                "2024-12-23T19:30Z",
+                "2025-01-06T21:31Z",
+                "2025-01-21T18:19Z",
+                "2025-01-22T01:10Z",
+                "2025-01-22T01:07Z",
+                "2024-12-23T19:27Z",
+                "2025-01-06T21:25Z"
+            ],
+            "title": "LastUpdated"
+        },
+        "LinkRel": {
+            "type": "string",
+            "enum": [
+                "clubhouse",
+                "desktop",
+                "team"
+            ],
+            "title": "LinkRel"
+        },
+        "Text": {
+            "type": "string",
+            "enum": [
+                "Clubhouse"
+            ],
+            "title": "Text"
+        },
+        "LogoRel": {
+            "type": "string",
+            "enum": [
+                "full",
+                "default",
+                "dark",
+                "primary_logo_on_white_color",
+                "primary_logo_on_black_color",
+                "primary_logo_on_primary_color",
+                "primary_logo_on_secondary_color",
+                "secondary_logo_on_white_color",
+                "secondary_logo_on_black_color",
+                "secondary_logo_on_primary_color",
+                "secondary_logo_on_secondary_color"
+            ],
+            "title": "LogoRel"
+        },
+        "Trend": {
+            "type": "string",
+            "enum": [
+                "-"
+            ],
+            "title": "Trend"
+        }
+    }
+}

@@ -55,6 +55,9 @@ cdn.espn.com
 [x] /core/nfl/standings - NFL Standings (CDN). Params: xhr=1, season ✓ (original had season, README table has xhr=1 only) - Note: Initial checklist param season might be for site.api, CDN version shows xhr=1 in README table.
 [x] /core/nfl/boxscore - NFL Game Boxscore (CDN). Params: xhr=1, gameId={event_id} ✓
 [x] /core/nfl/playbyplay - NFL Game Play-by-Play (CDN). Params: xhr=1, gameId={event_id} ✓
+[ ] /core/nfl/recap - NFL Game Recap (CDN). Params: xhr=1, gameId={event_id}
+[ ] /core/nfl/game - NFL Game Details (CDN). Params: xhr=1, gameId={event_id}
+[ ] /core/nfl/matchup - NFL Game Matchup (CDN). Params: xhr=1, gameId={event_id}
 sports.core.api.espn.com
 [x] /v3/sports/football/nfl/athletes - List NFL Athletes (v3). Query Params: limit, active=true, page - (Matches broadly with /v2/.../athletes/ from initial checklist which was marked implemented)
 [x] /v2/sports/football/leagues/nfl/athletes/{athlete_id} - Detailed NFL athlete information. Path Param: {athlete_id} - (This is more specific than the list, matches original athletes/ part)
@@ -124,7 +127,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/football/college-football/teams - College Football Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
 [x] /sports/football/college-football/teams/{team_abbrev_or_id} - College Football Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [x] /sports/football/college-football/summary?event={event_id} - College Football Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
-[ ] /sports/football/college-football/rankings - College Football Rankings (AP, Coaches, CFP)
+[x] /sports/football/college-football/rankings - College Football Rankings (AP, Coaches, CFP) - Implemented as generic /sports/{sport}/{league}/rankings
 [ ] /sports/football/college-football/teams/{team_abbrev_or_id}/roster - College Football Team Roster. Path Param: {team_abbrev_or_id}
 site.api.espn.com/apis/common/v3
 [x] /sports/football/college-football/season - College Football Season Info (start/end dates, types) - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
@@ -139,7 +142,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/mens-college-basketball/teams - Men's College Basketball Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
 [x] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id} - Men's College Basketball Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [x] /sports/basketball/mens-college-basketball/summary?event={event_id} - Men's College Basketball Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
-[ ] /sports/basketball/mens-college-basketball/rankings - Men's College Basketball Rankings
+[x] /sports/basketball/mens-college-basketball/rankings - Men's College Basketball Rankings - Implemented as generic /sports/{sport}/{league}/rankings
 [ ] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id}/roster - Men's College Basketball Team Roster. Path Param: {team_abbrev_or_id}
 sports.core.api.espn.com
 [ ] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id} - Detailed Men's College Basketball athlete. Path Param: {athlete_id}
@@ -154,7 +157,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/womens-college-basketball/teams - Women's College Basketball Teams List - Covered by generic /sports/{sport}/{league}/teams endpoint
 [x] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id} - Women's College Basketball Specific Team. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev} endpoint
 [x] /sports/basketball/womens-college-basketball/summary?event={event_id} - Women's College Basketball Game Summary. Query Param: event={event_id} - Covered by generic /sports/{sport}/{league}/summary endpoint
-[ ] /sports/basketball/womens-college-basketball/rankings - Women's College Basketball Rankings
+[x] /sports/basketball/womens-college-basketball/rankings - Women's College Basketball Rankings - Implemented as generic /sports/{sport}/{league}/rankings
 [ ] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id}/roster - Women's College Basketball Team Roster. Path Param: {team_abbrev_or_id}
 sports.core.api.espn.com
 [ ] /v2/sports/basketball/leagues/womens-college-basketball/athletes/{athlete_id} - Detailed Women's College Basketball athlete. Path Param: {athlete_id}
@@ -242,3 +245,44 @@ sports.core.api.espn.com
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors
 [ ] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances
+XVII. Additional Endpoints from ESPN API Documentation
+site.api.espn.com
+[ ] /apis/site/v3/sports/football/nfl/leaders - NFL Leaders (Site API v3). Query Params: season
+site.web.api.espn.com  
+[ ] /apis/site/v3/sports/football/nfl/teamleaders - NFL Team Leaders (Site API v3)
+[ ] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/bio - NFL Athlete Bio
+[ ] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/stats - NFL Athlete Stats
+sports.core.api.espn.com
+[ ] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statistics/0 - NFL Athlete Statistics (Specific Category)
+[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores - NFL Game Linescores
+[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records - NFL Team Records for Event
+[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics - NFL Team Statistics for Event
+[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/notes - NFL Athlete Season Notes
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/status - NFL Draft Status
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/attendance - NFL Team Attendance
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/leaders - NFL Team Leaders
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/record - NFL Team Record
+[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/weeks/{week}/qbr/10000 - NFL Weekly QBR
+[ ] /v2/sports/football/leagues/nfl/providers - NFL Betting Providers List
+[ ] /v2/sports/football/leagues/nfl/providers/{provider_id} - NFL Betting Provider Details
+now.core.api.espn.com
+[ ] /v1/sports/news - ESPN News API. Query Params: limit, sport
+XVIII. Golf Endpoints
+site.api.espn.com
+[ ] /apis/site/v2/sports/golf/pga/scoreboard - PGA Tournament Scoreboard
+site.web.api.espn.com
+[ ] /apis/common/v3/sports/golf/athletes/{playerId}/stats - Golf Player Stats. Query Params: season
+sports.core.api.espn.com
+[ ] /v2/sports/golf/leagues/pga/seasons/{year}/athletes/{playerId}/eventlog - Golf Player Event Log
+XIX. Additional Soccer Endpoints
+sports.core.api.espn.com
+[ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/types/1/standings - Soccer League Standings
+[ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/teams/{teamId}/athletes?active=true - Soccer Team Active Players
+XX. Other Sports Endpoints
+site.web.api.espn.com
+[ ] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard
+sports.core.api.espn.com
+[ ] /v2/sports/basketball/leagues/mens-college-basketball/events?dates={startDate}-{endDate} - College Basketball Events by Date Range
