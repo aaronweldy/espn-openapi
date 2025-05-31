@@ -418,6 +418,55 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/{sport}/{league}/summary:
+    get:
+      summary: Get Game Summary
+      description: Retrieve comprehensive summary data for a specific game including scores, statistics, and detailed game information
+      operationId: getGameSummary
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event
+          in: query
+          required: true
+          description: The event ID of the game
+          schema:
+            type: string
+            example: "401547417"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/GameSummary'
+                  - $ref: '#/components/schemas/MlbGameSummaryResponse'
+                  - $ref: '#/components/schemas/NhlGameSummaryResponse'
+                  - $ref: '#/components/schemas/NbaGameSummaryResponse'
+        '404':
+          description: Game not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /mondaynightfootball:
     get:
       summary: Get Monday Night Football schedule and games
@@ -4649,3 +4698,87 @@ components:
         - gameInfo
         - header
       description: NHL game summary response with comprehensive game data
+
+    NbaGameSummaryResponse:
+      type: object
+      properties:
+        boxscore:
+          type: object
+          description: Game boxscore data with team and player statistics
+        gameInfo:
+          type: object
+          description: Game information including venue, attendance, and officials
+        header:
+          type: object
+          description: Game header information with scores and game status
+        againstTheSpread:
+          type: array
+          items:
+            type: object
+          description: Against the spread records for teams
+        article:
+          type: object
+          description: Related article content
+        broadcasts:
+          type: array
+          items:
+            type: object
+          description: Broadcast information
+        format:
+          type: object
+          description: Game format details
+        injuries:
+          type: array
+          items:
+            type: object
+          description: Injury report for both teams
+        lastFiveGames:
+          type: array
+          items:
+            type: object
+          description: Last five games performance for both teams
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Statistical leaders for the game
+        news:
+          type: object
+          description: Related news articles
+        odds:
+          type: array
+          items:
+            type: object
+          description: Betting odds information
+        pickcenter:
+          type: array
+          items:
+            type: object
+          description: Pick center predictions
+        predictor:
+          type: object
+          description: Game predictor information
+        seasonseries:
+          type: object
+          description: Season series information between teams
+        standings:
+          type: object
+          description: Current standings information
+        ticketsInfo:
+          type: object
+          description: Ticket availability information
+        videos:
+          type: array
+          items:
+            type: object
+          description: Related video content
+        winProbability:
+          type: array
+          items:
+            type: object
+          description: Win probability throughout the game
+      required:
+        - boxscore
+        - gameInfo
+        - header
+      description: NBA game summary response with comprehensive game data

@@ -1,0 +1,3137 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NbaGameSummarySchema",
+    "definitions": {
+        "NbaGameSummarySchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "boxscore": {
+                    "$ref": "#/definitions/Boxscore"
+                },
+                "format": {
+                    "$ref": "#/definitions/Format"
+                },
+                "gameInfo": {
+                    "$ref": "#/definitions/GameInfo"
+                },
+                "lastFiveGames": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LastFiveGame"
+                    }
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NbaGameSummarySchemaLeader"
+                    }
+                },
+                "seasonseries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Seasonsery"
+                    }
+                },
+                "injuries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NbaGameSummarySchemaInjury"
+                    }
+                },
+                "broadcasts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/NbaGameSummarySchemaBroadcast"
+                    }
+                },
+                "pickcenter": {
+                    "type": "array",
+                    "items": {}
+                },
+                "againstTheSpread": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgainstTheSpread"
+                    }
+                },
+                "odds": {
+                    "type": "array",
+                    "items": {}
+                },
+                "header": {
+                    "$ref": "#/definitions/Header"
+                },
+                "article": {
+                    "$ref": "#/definitions/NbaGameSummarySchemaArticle"
+                },
+                "videos": {
+                    "type": "array",
+                    "items": {}
+                },
+                "wallclockAvailable": {
+                    "type": "boolean"
+                },
+                "meta": {
+                    "$ref": "#/definitions/Meta"
+                },
+                "winprobability": {
+                    "type": "array",
+                    "items": {}
+                },
+                "predictor": {
+                    "$ref": "#/definitions/Predictor"
+                },
+                "news": {
+                    "$ref": "#/definitions/News"
+                },
+                "ticketsInfo": {
+                    "$ref": "#/definitions/TicketsInfo"
+                },
+                "standings": {
+                    "$ref": "#/definitions/NbaGameSummarySchemaStandings"
+                }
+            },
+            "required": [
+                "againstTheSpread",
+                "article",
+                "boxscore",
+                "broadcasts",
+                "format",
+                "gameInfo",
+                "header",
+                "injuries",
+                "lastFiveGames",
+                "leaders",
+                "meta",
+                "news",
+                "odds",
+                "pickcenter",
+                "predictor",
+                "seasonseries",
+                "standings",
+                "ticketsInfo",
+                "videos",
+                "wallclockAvailable",
+                "winprobability"
+            ],
+            "title": "NbaGameSummarySchema"
+        },
+        "AgainstTheSpread": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "records": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "records",
+                "team"
+            ],
+            "title": "AgainstTheSpread"
+        },
+        "OpponentClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "$ref": "#/definitions/Uid"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/TeamAbbreviation"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FullViewLinkElement"
+                    }
+                },
+                "logo": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoElement"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "id",
+                "links",
+                "logo",
+                "logos",
+                "uid"
+            ],
+            "title": "OpponentClass"
+        },
+        "FullViewLinkElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/FullViewLinkText"
+                }
+            },
+            "required": [
+                "href",
+                "text"
+            ],
+            "title": "FullViewLinkElement"
+        },
+        "LogoElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg",
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Rel"
+                    }
+                },
+                "lastUpdated": {
+                    "$ref": "#/definitions/LastUpdated"
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "rel",
+                "width"
+            ],
+            "title": "LogoElement"
+        },
+        "NbaGameSummarySchemaArticle": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "nowId": {
+                    "type": "string"
+                },
+                "contentKey": {
+                    "type": "string"
+                },
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "publishedkey": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/ShortTextEnum"
+                },
+                "gameId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "linkText": {
+                    "type": "string"
+                },
+                "categorized": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "originallyPosted": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "root": {
+                    "type": "string"
+                },
+                "section": {
+                    "$ref": "#/definitions/Tion"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {}
+                },
+                "video": {
+                    "type": "array",
+                    "items": {}
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleCategory"
+                    }
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "story": {
+                    "type": "string"
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "$ref": "#/definitions/PurpleLinks"
+                },
+                "allowSearch": {
+                    "type": "boolean"
+                },
+                "allowContentReactions": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "allowContentReactions",
+                "allowSearch",
+                "categories",
+                "categorized",
+                "contentKey",
+                "dataSourceIdentifier",
+                "description",
+                "gameId",
+                "headline",
+                "id",
+                "images",
+                "keywords",
+                "lastModified",
+                "linkText",
+                "links",
+                "nowId",
+                "originallyPosted",
+                "premium",
+                "published",
+                "publishedkey",
+                "root",
+                "section",
+                "source",
+                "story",
+                "title",
+                "type",
+                "video"
+            ],
+            "title": "NbaGameSummarySchemaArticle"
+        },
+        "PurpleCategory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/CategoryType"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "sportId": {
+                    "type": "integer"
+                },
+                "teamId": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/CategoryTeam"
+                },
+                "leagueId": {
+                    "type": "integer"
+                },
+                "league": {
+                    "$ref": "#/definitions/CategoryLeague"
+                }
+            },
+            "required": [
+                "guid",
+                "type"
+            ],
+            "title": "PurpleCategory"
+        },
+        "CategoryLeague": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "$ref": "#/definitions/Tion"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Tion"
+                },
+                "links": {
+                    "$ref": "#/definitions/LeagueLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id"
+            ],
+            "title": "CategoryLeague"
+        },
+        "LeagueLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/PurpleMobile"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/PurpleMobile"
+                }
+            },
+            "required": [
+                "mobile",
+                "web"
+            ],
+            "title": "LeagueLinks"
+        },
+        "PurpleMobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "leagues": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [],
+            "title": "PurpleMobile"
+        },
+        "SelfClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "href"
+            ],
+            "title": "SelfClass"
+        },
+        "CategoryTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/TeamLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "CategoryTeam"
+        },
+        "TeamLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/FluffyMobile"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/FluffyMobile"
+                }
+            },
+            "required": [
+                "mobile",
+                "web"
+            ],
+            "title": "TeamLinks"
+        },
+        "FluffyMobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "teams": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "teams"
+            ],
+            "title": "FluffyMobile"
+        },
+        "PurpleLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/SelfClass"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/SelfClass"
+                },
+                "api": {
+                    "$ref": "#/definitions/PurpleAPI"
+                },
+                "app": {
+                    "$ref": "#/definitions/App"
+                }
+            },
+            "required": [
+                "api",
+                "app",
+                "mobile",
+                "web"
+            ],
+            "title": "PurpleLinks"
+        },
+        "PurpleAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "self"
+            ],
+            "title": "PurpleAPI"
+        },
+        "App": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sportscenter": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "sportscenter"
+            ],
+            "title": "App"
+        },
+        "Boxscore": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "teams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TeamElement"
+                    }
+                }
+            },
+            "required": [
+                "teams"
+            ],
+            "title": "Boxscore"
+        },
+        "TeamElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/TeamTeam"
+                },
+                "statistics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Statistic"
+                    }
+                },
+                "displayOrder": {
+                    "type": "integer"
+                },
+                "homeAway": {
+                    "$ref": "#/definitions/HomeAway"
+                }
+            },
+            "required": [
+                "displayOrder",
+                "homeAway",
+                "statistics",
+                "team"
+            ],
+            "title": "TeamElement"
+        },
+        "Statistic": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayValue": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayValue",
+                "label",
+                "name"
+            ],
+            "title": "Statistic"
+        },
+        "TeamTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "$ref": "#/definitions/Uid"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/TeamAbbreviation"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "alternateColor": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                }
+            },
+            "required": [
+                "abbreviation",
+                "alternateColor",
+                "color",
+                "displayName",
+                "id",
+                "location",
+                "logo",
+                "name",
+                "shortDisplayName",
+                "slug",
+                "uid"
+            ],
+            "title": "TeamTeam"
+        },
+        "NbaGameSummarySchemaBroadcast": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/PurpleType"
+                },
+                "station": {
+                    "type": "string"
+                },
+                "market": {
+                    "$ref": "#/definitions/Market"
+                },
+                "media": {
+                    "$ref": "#/definitions/PurpleMedia"
+                },
+                "lang": {
+                    "$ref": "#/definitions/Lang"
+                },
+                "region": {
+                    "$ref": "#/definitions/Region"
+                },
+                "isNational": {
+                    "type": "boolean"
+                },
+                "stationKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "isNational",
+                "lang",
+                "market",
+                "media",
+                "region",
+                "station",
+                "type"
+            ],
+            "title": "NbaGameSummarySchemaBroadcast"
+        },
+        "Market": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/MarketType"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "Market"
+        },
+        "PurpleMedia": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "callLetters": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "callLetters",
+                "name",
+                "shortName"
+            ],
+            "title": "PurpleMedia"
+        },
+        "PurpleType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "shortName": {
+                    "$ref": "#/definitions/Name"
+                },
+                "longName": {
+                    "$ref": "#/definitions/Name"
+                },
+                "slug": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "longName",
+                "shortName",
+                "slug"
+            ],
+            "title": "PurpleType"
+        },
+        "Format": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "regulation": {
+                    "$ref": "#/definitions/Regulation"
+                },
+                "overtime": {
+                    "$ref": "#/definitions/Overtime"
+                }
+            },
+            "required": [
+                "overtime",
+                "regulation"
+            ],
+            "title": "Format"
+        },
+        "Overtime": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "clock": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "clock"
+            ],
+            "title": "Overtime"
+        },
+        "Regulation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "periods": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "clock": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "clock",
+                "displayName",
+                "periods",
+                "slug"
+            ],
+            "title": "Regulation"
+        },
+        "GameInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "venue": {
+                    "$ref": "#/definitions/Venue"
+                }
+            },
+            "required": [
+                "venue"
+            ],
+            "title": "GameInfo"
+        },
+        "Venue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/Address"
+                },
+                "grass": {
+                    "type": "boolean"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoElement"
+                    }
+                }
+            },
+            "required": [
+                "address",
+                "fullName",
+                "grass",
+                "id",
+                "images",
+                "shortName"
+            ],
+            "title": "Venue"
+        },
+        "Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "state"
+            ],
+            "title": "Address"
+        },
+        "Header": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "season": {
+                    "$ref": "#/definitions/Season"
+                },
+                "timeValid": {
+                    "type": "boolean"
+                },
+                "competitions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Competition"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeaderLink"
+                    }
+                },
+                "league": {
+                    "$ref": "#/definitions/HeaderLeague"
+                },
+                "gameNote": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "competitions",
+                "gameNote",
+                "id",
+                "league",
+                "links",
+                "season",
+                "timeValid",
+                "uid"
+            ],
+            "title": "Header"
+        },
+        "Competition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "neutralSite": {
+                    "type": "boolean"
+                },
+                "conferenceCompetition": {
+                    "type": "boolean"
+                },
+                "boxscoreAvailable": {
+                    "type": "boolean"
+                },
+                "commentaryAvailable": {
+                    "type": "boolean"
+                },
+                "liveAvailable": {
+                    "type": "boolean"
+                },
+                "onWatchESPN": {
+                    "type": "boolean"
+                },
+                "recent": {
+                    "type": "boolean"
+                },
+                "wallclockAvailable": {
+                    "type": "boolean"
+                },
+                "boxscoreSource": {
+                    "type": "string"
+                },
+                "playByPlaySource": {
+                    "type": "string"
+                },
+                "competitors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CompetitionCompetitor"
+                    }
+                },
+                "status": {
+                    "$ref": "#/definitions/Status"
+                },
+                "broadcasts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CompetitionBroadcast"
+                    }
+                },
+                "series": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Series"
+                    }
+                },
+                "boxscoreMinutes": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "boxscoreAvailable",
+                "boxscoreMinutes",
+                "boxscoreSource",
+                "broadcasts",
+                "commentaryAvailable",
+                "competitors",
+                "conferenceCompetition",
+                "date",
+                "id",
+                "liveAvailable",
+                "neutralSite",
+                "onWatchESPN",
+                "playByPlaySource",
+                "recent",
+                "series",
+                "status",
+                "uid",
+                "wallclockAvailable"
+            ],
+            "title": "Competition"
+        },
+        "CompetitionBroadcast": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/FluffyType"
+                },
+                "market": {
+                    "$ref": "#/definitions/Market"
+                },
+                "media": {
+                    "$ref": "#/definitions/FluffyMedia"
+                },
+                "lang": {
+                    "$ref": "#/definitions/Lang"
+                },
+                "region": {
+                    "$ref": "#/definitions/Region"
+                },
+                "isNational": {
+                    "type": "boolean"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "lang",
+                "market",
+                "media",
+                "region",
+                "type"
+            ],
+            "title": "CompetitionBroadcast"
+        },
+        "FluffyMedia": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "shortName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "shortName"
+            ],
+            "title": "FluffyMedia"
+        },
+        "FluffyType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "shortName": {
+                    "$ref": "#/definitions/Name"
+                }
+            },
+            "required": [
+                "id",
+                "shortName"
+            ],
+            "title": "FluffyType"
+        },
+        "CompetitionCompetitor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "$ref": "#/definitions/Uid"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "homeAway": {
+                    "$ref": "#/definitions/HomeAway"
+                },
+                "team": {
+                    "$ref": "#/definitions/PurpleTeam"
+                },
+                "record": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Record"
+                    }
+                },
+                "possession": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "homeAway",
+                "id",
+                "order",
+                "possession",
+                "record",
+                "team",
+                "uid"
+            ],
+            "title": "CompetitionCompetitor"
+        },
+        "Record": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "displayValue",
+                "summary",
+                "type"
+            ],
+            "title": "Record"
+        },
+        "PurpleTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "uid": {
+                    "$ref": "#/definitions/Uid"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/TeamAbbreviation"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "alternateColor": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoElement"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LeagueLink"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "alternateColor",
+                "color",
+                "displayName",
+                "guid",
+                "id",
+                "links",
+                "location",
+                "logos",
+                "name",
+                "uid"
+            ],
+            "title": "PurpleTeam"
+        },
+        "LeagueLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "href",
+                "rel",
+                "text"
+            ],
+            "title": "LeagueLink"
+        },
+        "Series": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "completed": {
+                    "type": "boolean"
+                },
+                "totalCompetitions": {
+                    "type": "integer"
+                },
+                "competitors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SeriesCompetitor"
+                    }
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SeriesEvent"
+                    }
+                },
+                "startDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "competitors",
+                "completed",
+                "description",
+                "events",
+                "startDate",
+                "summary",
+                "title",
+                "totalCompetitions",
+                "type"
+            ],
+            "title": "Series"
+        },
+        "SeriesCompetitor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "$ref": "#/definitions/Uid"
+                },
+                "wins": {
+                    "type": "integer"
+                },
+                "ties": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/CollegeAthlete"
+                }
+            },
+            "required": [
+                "id",
+                "team",
+                "ties",
+                "uid",
+                "wins"
+            ],
+            "title": "SeriesCompetitor"
+        },
+        "CollegeAthlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "CollegeAthlete"
+        },
+        "SeriesEvent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "$ref",
+                "id"
+            ],
+            "title": "SeriesEvent"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/StatusTypeClass"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Status"
+        },
+        "StatusTypeClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/StatusTypeName"
+                },
+                "state": {
+                    "$ref": "#/definitions/GameState"
+                },
+                "completed": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "shortDetail": {
+                    "type": "string"
+                },
+                "altDetail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "completed",
+                "description",
+                "detail",
+                "id",
+                "name",
+                "shortDetail",
+                "state"
+            ],
+            "title": "StatusTypeClass"
+        },
+        "HeaderLeague": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/definitions/LeagueNameEnum"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Tion"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "isTournament": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LeagueLink"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "isTournament",
+                "links",
+                "name",
+                "slug",
+                "uid"
+            ],
+            "title": "HeaderLeague"
+        },
+        "HeaderLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/PurpleText"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/ShortTextEnum"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                },
+                "language": {
+                    "$ref": "#/definitions/Lang"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "HeaderLink"
+        },
+        "Season": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "type",
+                "year"
+            ],
+            "title": "Season"
+        },
+        "NbaGameSummarySchemaInjury": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "injuries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/InjuryInjury"
+                    }
+                }
+            },
+            "required": [
+                "injuries",
+                "team"
+            ],
+            "title": "NbaGameSummarySchemaInjury"
+        },
+        "InjuryInjury": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/InjuryAthlete"
+                },
+                "type": {
+                    "$ref": "#/definitions/StatusClass"
+                },
+                "details": {
+                    "$ref": "#/definitions/Details"
+                }
+            },
+            "required": [
+                "athlete",
+                "date",
+                "details",
+                "status",
+                "type"
+            ],
+            "title": "InjuryInjury"
+        },
+        "InjuryAthlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LeagueLink"
+                    }
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "position": {
+                    "$ref": "#/definitions/PurplePosition"
+                },
+                "collegeAthlete": {
+                    "$ref": "#/definitions/CollegeAthlete"
+                },
+                "status": {
+                    "$ref": "#/definitions/StatusClass"
+                }
+            },
+            "required": [
+                "collegeAthlete",
+                "displayName",
+                "fullName",
+                "guid",
+                "headshot",
+                "id",
+                "jersey",
+                "lastName",
+                "links",
+                "position",
+                "shortName",
+                "status",
+                "uid"
+            ],
+            "title": "InjuryAthlete"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "PurplePosition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "name"
+            ],
+            "title": "PurplePosition"
+        },
+        "StatusClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/StatusName"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/TypeAbbreviation"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name"
+            ],
+            "title": "StatusClass"
+        },
+        "Details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fantasyStatus": {
+                    "$ref": "#/definitions/FantasyStatus"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "detail": {
+                    "type": "string"
+                },
+                "side": {
+                    "type": "string"
+                },
+                "returnDate": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "detail",
+                "fantasyStatus",
+                "location",
+                "returnDate",
+                "side",
+                "type"
+            ],
+            "title": "Details"
+        },
+        "FantasyStatus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description"
+            ],
+            "title": "FantasyStatus"
+        },
+        "LastFiveGame": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayOrder": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LastFiveGameEvent"
+                    }
+                }
+            },
+            "required": [
+                "displayOrder",
+                "events",
+                "team"
+            ],
+            "title": "LastFiveGame"
+        },
+        "LastFiveGameEvent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FullViewLinkElement"
+                    }
+                },
+                "atVs": {
+                    "$ref": "#/definitions/AtVs"
+                },
+                "gameDate": {
+                    "type": "string"
+                },
+                "score": {
+                    "type": "string"
+                },
+                "homeTeamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "awayTeamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "homeTeamScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "awayTeamScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "homeAggregateScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "awayAggregateScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "homeShootoutScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "awayShootoutScore": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "gameResult": {
+                    "$ref": "#/definitions/GameResult"
+                },
+                "opponent": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "opponentLogo": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "leagueName": {
+                    "$ref": "#/definitions/LeagueNameEnum"
+                },
+                "leagueAbbreviation": {
+                    "$ref": "#/definitions/Tion"
+                }
+            },
+            "required": [
+                "atVs",
+                "awayAggregateScore",
+                "awayShootoutScore",
+                "awayTeamId",
+                "awayTeamScore",
+                "gameDate",
+                "gameResult",
+                "homeAggregateScore",
+                "homeShootoutScore",
+                "homeTeamId",
+                "homeTeamScore",
+                "id",
+                "leagueAbbreviation",
+                "leagueName",
+                "links",
+                "opponent",
+                "opponentLogo",
+                "score"
+            ],
+            "title": "LastFiveGameEvent"
+        },
+        "NbaGameSummarySchemaLeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PurpleLeader"
+                    }
+                }
+            },
+            "required": [
+                "leaders",
+                "team"
+            ],
+            "title": "NbaGameSummarySchemaLeader"
+        },
+        "PurpleLeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FluffyLeader"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "leaders",
+                "name"
+            ],
+            "title": "PurpleLeader"
+        },
+        "FluffyLeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayValue": {
+                    "type": "string"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/LeaderAthlete"
+                },
+                "statistics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                }
+            },
+            "required": [
+                "athlete",
+                "displayValue",
+                "statistics"
+            ],
+            "title": "FluffyLeader"
+        },
+        "LeaderAthlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LeagueLink"
+                    }
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "position": {
+                    "$ref": "#/definitions/FluffyPosition"
+                },
+                "status": {
+                    "$ref": "#/definitions/StatusClass"
+                }
+            },
+            "required": [
+                "displayName",
+                "fullName",
+                "guid",
+                "headshot",
+                "id",
+                "jersey",
+                "lastName",
+                "links",
+                "position",
+                "shortName",
+                "status",
+                "uid"
+            ],
+            "title": "LeaderAthlete"
+        },
+        "FluffyPosition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation"
+            ],
+            "title": "FluffyPosition"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/StatisticType"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "value"
+            ],
+            "title": "Stat"
+        },
+        "Meta": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "gp_topic": {
+                    "type": "string"
+                },
+                "picker_topic": {
+                    "type": "string"
+                },
+                "gameState": {
+                    "$ref": "#/definitions/GameState"
+                }
+            },
+            "required": [
+                "gameState",
+                "gp_topic",
+                "picker_topic"
+            ],
+            "title": "Meta"
+        },
+        "News": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": {
+                    "type": "string"
+                },
+                "link": {
+                    "$ref": "#/definitions/HeaderLink"
+                },
+                "articles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ArticleElement"
+                    }
+                }
+            },
+            "required": [
+                "articles",
+                "header",
+                "link"
+            ],
+            "title": "News"
+        },
+        "ArticleElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "nowId": {
+                    "type": "string"
+                },
+                "contentKey": {
+                    "type": "string"
+                },
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ArticleImage"
+                    }
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FluffyCategory"
+                    }
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "$ref": "#/definitions/FluffyLinks"
+                },
+                "byline": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "categories",
+                "contentKey",
+                "dataSourceIdentifier",
+                "description",
+                "headline",
+                "id",
+                "images",
+                "lastModified",
+                "links",
+                "nowId",
+                "premium",
+                "published",
+                "type"
+            ],
+            "title": "ArticleElement"
+        },
+        "FluffyCategory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/CategoryType"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "sportId": {
+                    "type": "integer"
+                },
+                "athleteId": {
+                    "type": "integer"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/CategoryAthlete"
+                },
+                "teamId": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/CategoryTeam"
+                },
+                "leagueId": {
+                    "type": "integer"
+                },
+                "league": {
+                    "$ref": "#/definitions/CategoryLeague"
+                },
+                "topicId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "guid",
+                "type"
+            ],
+            "title": "FluffyCategory"
+        },
+        "CategoryAthlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/AthleteLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "CategoryAthlete"
+        },
+        "AthleteLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/TentacledMobile"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/TentacledMobile"
+                }
+            },
+            "required": [
+                "mobile",
+                "web"
+            ],
+            "title": "AthleteLinks"
+        },
+        "TentacledMobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "athletes": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "athletes"
+            ],
+            "title": "TentacledMobile"
+        },
+        "ArticleImage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/ImageType"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "credit": {
+                    "type": "string"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg",
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "ratio": {
+                    "$ref": "#/definitions/Ratio"
+                }
+            },
+            "required": [
+                "name",
+                "url"
+            ],
+            "title": "ArticleImage"
+        },
+        "FluffyLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "web": {
+                    "$ref": "#/definitions/Web"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/SelfClass"
+                },
+                "api": {
+                    "$ref": "#/definitions/FluffyAPI"
+                },
+                "app": {
+                    "$ref": "#/definitions/App"
+                },
+                "sportscenter": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "api",
+                "web"
+            ],
+            "title": "FluffyLinks"
+        },
+        "FluffyAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/SelfClass"
+                },
+                "artwork": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "self"
+            ],
+            "title": "FluffyAPI"
+        },
+        "Web": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "self": {
+                    "$ref": "#/definitions/Self"
+                },
+                "seo": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "href"
+            ],
+            "title": "Web"
+        },
+        "Self": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "dsi": {
+                    "$ref": "#/definitions/SelfClass"
+                }
+            },
+            "required": [
+                "dsi",
+                "href"
+            ],
+            "title": "Self"
+        },
+        "Predictor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "header": {
+                    "type": "string"
+                },
+                "homeTeam": {
+                    "$ref": "#/definitions/HomeTeam"
+                },
+                "awayTeam": {
+                    "$ref": "#/definitions/AwayTeam"
+                }
+            },
+            "required": [
+                "awayTeam",
+                "header",
+                "homeTeam"
+            ],
+            "title": "Predictor"
+        },
+        "AwayTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "gameProjection": {
+                    "type": "string"
+                },
+                "teamChanceLoss": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "gameProjection",
+                "id",
+                "teamChanceLoss"
+            ],
+            "title": "AwayTeam"
+        },
+        "HomeTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "HomeTeam"
+        },
+        "Seasonsery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "completed": {
+                    "type": "boolean"
+                },
+                "totalCompetitions": {
+                    "type": "integer"
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SeasonseryEvent"
+                    }
+                }
+            },
+            "required": [
+                "completed",
+                "description",
+                "events",
+                "summary",
+                "title",
+                "totalCompetitions",
+                "type"
+            ],
+            "title": "Seasonsery"
+        },
+        "SeasonseryEvent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "timeValid": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "$ref": "#/definitions/GameState"
+                },
+                "statusType": {
+                    "$ref": "#/definitions/StatusTypeClass"
+                },
+                "competitors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/EventCompetitor"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeaderLink"
+                    }
+                },
+                "broadcasts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CompetitionBroadcast"
+                    }
+                }
+            },
+            "required": [
+                "competitors",
+                "date",
+                "id",
+                "links",
+                "status",
+                "statusType",
+                "timeValid",
+                "uid"
+            ],
+            "title": "SeasonseryEvent"
+        },
+        "EventCompetitor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "homeAway": {
+                    "$ref": "#/definitions/HomeAway"
+                },
+                "winner": {
+                    "type": "boolean"
+                },
+                "team": {
+                    "$ref": "#/definitions/OpponentClass"
+                },
+                "score": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "homeAway",
+                "score",
+                "team"
+            ],
+            "title": "EventCompetitor"
+        },
+        "NbaGameSummarySchemaStandings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fullViewLink": {
+                    "$ref": "#/definitions/FullViewLinkElement"
+                },
+                "header": {
+                    "type": "string"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    }
+                }
+            },
+            "required": [
+                "fullViewLink",
+                "groups",
+                "header"
+            ],
+            "title": "NbaGameSummarySchemaStandings"
+        },
+        "Group": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "standings": {
+                    "$ref": "#/definitions/GroupStandings"
+                },
+                "header": {
+                    "type": "string"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "header",
+                "href",
+                "standings"
+            ],
+            "title": "Group"
+        },
+        "GroupStandings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Entry"
+                    }
+                }
+            },
+            "required": [
+                "entries"
+            ],
+            "title": "GroupStandings"
+        },
+        "Entry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                },
+                "logo": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoElement"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "link",
+                "logo",
+                "stats",
+                "team",
+                "uid"
+            ],
+            "title": "Entry"
+        },
+        "TicketsInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tickets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Ticket"
+                    }
+                },
+                "seatSituation": {
+                    "$ref": "#/definitions/SeatSituation"
+                }
+            },
+            "required": [
+                "seatSituation",
+                "tickets"
+            ],
+            "title": "TicketsInfo"
+        },
+        "SeatSituation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "opponentTeamName": {
+                    "type": "string"
+                },
+                "currentTeamName": {
+                    "type": "string"
+                },
+                "venueName": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateShort": {
+                    "type": "string"
+                },
+                "dateDay": {
+                    "type": "string"
+                },
+                "homeAway": {
+                    "$ref": "#/definitions/HomeAway"
+                },
+                "eventLink": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "venueLink": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "genericLink": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "teamLink": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "currentTeamName",
+                "date",
+                "dateDay",
+                "dateShort",
+                "eventLink",
+                "genericLink",
+                "homeAway",
+                "opponentTeamName",
+                "summary",
+                "teamLink",
+                "venueLink",
+                "venueName"
+            ],
+            "title": "SeatSituation"
+        },
+        "Ticket": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ticketName": {
+                    "type": "string"
+                },
+                "ticketLink": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ticketLink",
+                "ticketName",
+                "type"
+            ],
+            "title": "Ticket"
+        },
+        "TeamAbbreviation": {
+            "type": "string",
+            "enum": [
+                "NY",
+                "IND"
+            ],
+            "title": "TeamAbbreviation"
+        },
+        "DisplayName": {
+            "type": "string",
+            "enum": [
+                "New York Knicks",
+                "Indiana Pacers"
+            ],
+            "title": "DisplayName"
+        },
+        "FullViewLinkText": {
+            "type": "string",
+            "enum": [
+                "Clubhouse",
+                "Schedule",
+                "Gamecast",
+                "Full Standings"
+            ],
+            "title": "FullViewLinkText"
+        },
+        "LastUpdated": {
+            "type": "string",
+            "enum": [
+                "2024-06-25T21:17Z",
+                "2024-06-25T21:13Z",
+                "2024-06-25T21:18Z",
+                "2024-06-25T21:14Z",
+                "2024-12-03T19:29Z",
+                "2024-12-03T19:33Z",
+                "2024-12-03T19:32Z",
+                "2025-01-22T15:28Z"
+            ],
+            "title": "LastUpdated"
+        },
+        "Rel": {
+            "type": "string",
+            "enum": [
+                "full",
+                "default",
+                "dark",
+                "scoreboard",
+                "day",
+                "primary_logo_on_white_color",
+                "primary_logo_on_black_color",
+                "primary_logo_on_primary_color",
+                "primary_logo_on_secondary_color",
+                "secondary_logo_on_white_color",
+                "secondary_logo_on_black_color",
+                "secondary_logo_on_primary_color",
+                "secondary_logo_on_secondary_color"
+            ],
+            "title": "Rel"
+        },
+        "Uid": {
+            "type": "string",
+            "enum": [
+                "s:40~l:46~t:18",
+                "s:40~l:46~t:11"
+            ],
+            "title": "Uid"
+        },
+        "Tion": {
+            "type": "string",
+            "enum": [
+                "NBA",
+                "Fantasy NBA",
+                "Sports Betting"
+            ],
+            "title": "Tion"
+        },
+        "CategoryType": {
+            "type": "string",
+            "enum": [
+                "athlete",
+                "team",
+                "league",
+                "guid",
+                "topic"
+            ],
+            "title": "CategoryType"
+        },
+        "ShortTextEnum": {
+            "type": "string",
+            "enum": [
+                "Summary",
+                "Preview",
+                "Tickets",
+                "All News"
+            ],
+            "title": "ShortTextEnum"
+        },
+        "HomeAway": {
+            "type": "string",
+            "enum": [
+                "home",
+                "away"
+            ],
+            "title": "HomeAway"
+        },
+        "Lang": {
+            "type": "string",
+            "enum": [
+                "en",
+                "en-US"
+            ],
+            "title": "Lang"
+        },
+        "MarketType": {
+            "type": "string",
+            "enum": [
+                "National"
+            ],
+            "title": "MarketType"
+        },
+        "Region": {
+            "type": "string",
+            "enum": [
+                "us"
+            ],
+            "title": "Region"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "TV",
+                "Streaming",
+                "Radio"
+            ],
+            "title": "Name"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "Scheduled",
+                "Final"
+            ],
+            "title": "Description"
+        },
+        "StatusTypeName": {
+            "type": "string",
+            "enum": [
+                "STATUS_SCHEDULED",
+                "STATUS_FINAL"
+            ],
+            "title": "StatusTypeName"
+        },
+        "GameState": {
+            "type": "string",
+            "enum": [
+                "pre",
+                "post"
+            ],
+            "title": "GameState"
+        },
+        "LeagueNameEnum": {
+            "type": "string",
+            "enum": [
+                "National Basketball Association"
+            ],
+            "title": "LeagueNameEnum"
+        },
+        "PurpleText": {
+            "type": "string",
+            "enum": [
+                "Gamecast",
+                "Preview",
+                "Tickets",
+                "All NBA News"
+            ],
+            "title": "PurpleText"
+        },
+        "TypeAbbreviation": {
+            "type": "string",
+            "enum": [
+                "Active",
+                "DD",
+                "O"
+            ],
+            "title": "TypeAbbreviation"
+        },
+        "StatusName": {
+            "type": "string",
+            "enum": [
+                "Active",
+                "INJURY_STATUS_DAYTODAY",
+                "INJURY_STATUS_OUT"
+            ],
+            "title": "StatusName"
+        },
+        "AtVs": {
+            "type": "string",
+            "enum": [
+                "@",
+                "vs"
+            ],
+            "title": "AtVs"
+        },
+        "GameResult": {
+            "type": "string",
+            "enum": [
+                "W",
+                "L"
+            ],
+            "title": "GameResult"
+        },
+        "StatisticType": {
+            "type": "string",
+            "enum": [
+                "gamesbehind",
+                "losses",
+                "streak",
+                "winpercent",
+                "wins"
+            ],
+            "title": "StatisticType"
+        },
+        "Ratio": {
+            "type": "string",
+            "enum": [
+                "16x9",
+                "1x1",
+                "5x2"
+            ],
+            "title": "Ratio"
+        },
+        "ImageType": {
+            "type": "string",
+            "enum": [
+                "header",
+                "Media",
+                "stitcher"
+            ],
+            "title": "ImageType"
+        }
+    }
+}

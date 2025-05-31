@@ -126,6 +126,26 @@ from .mlb_team_roster_response_season import MlbTeamRosterResponseSeason
 from .mlb_team_roster_response_team import MlbTeamRosterResponseTeam
 from .mlb_win_probability import MlbWinProbability
 from .monday_night_football_response import MondayNightFootballResponse
+from .nba_game_summary_response import NbaGameSummaryResponse
+from .nba_game_summary_response_against_the_spread_item import NbaGameSummaryResponseAgainstTheSpreadItem
+from .nba_game_summary_response_article import NbaGameSummaryResponseArticle
+from .nba_game_summary_response_boxscore import NbaGameSummaryResponseBoxscore
+from .nba_game_summary_response_broadcasts_item import NbaGameSummaryResponseBroadcastsItem
+from .nba_game_summary_response_format import NbaGameSummaryResponseFormat
+from .nba_game_summary_response_game_info import NbaGameSummaryResponseGameInfo
+from .nba_game_summary_response_header import NbaGameSummaryResponseHeader
+from .nba_game_summary_response_injuries_item import NbaGameSummaryResponseInjuriesItem
+from .nba_game_summary_response_last_five_games_item import NbaGameSummaryResponseLastFiveGamesItem
+from .nba_game_summary_response_leaders_item import NbaGameSummaryResponseLeadersItem
+from .nba_game_summary_response_news import NbaGameSummaryResponseNews
+from .nba_game_summary_response_odds_item import NbaGameSummaryResponseOddsItem
+from .nba_game_summary_response_pickcenter_item import NbaGameSummaryResponsePickcenterItem
+from .nba_game_summary_response_predictor import NbaGameSummaryResponsePredictor
+from .nba_game_summary_response_seasonseries import NbaGameSummaryResponseSeasonseries
+from .nba_game_summary_response_standings import NbaGameSummaryResponseStandings
+from .nba_game_summary_response_tickets_info import NbaGameSummaryResponseTicketsInfo
+from .nba_game_summary_response_videos_item import NbaGameSummaryResponseVideosItem
+from .nba_game_summary_response_win_probability_item import NbaGameSummaryResponseWinProbabilityItem
 from .nba_scoreboard_response import NbaScoreboardResponse
 from .nba_scoreboard_response_day import NbaScoreboardResponseDay
 from .nba_statistic_name import NbaStatisticName
@@ -380,6 +400,26 @@ __all__ = (
     "MlbTeamRosterResponseTeam",
     "MlbWinProbability",
     "MondayNightFootballResponse",
+    "NbaGameSummaryResponse",
+    "NbaGameSummaryResponseAgainstTheSpreadItem",
+    "NbaGameSummaryResponseArticle",
+    "NbaGameSummaryResponseBoxscore",
+    "NbaGameSummaryResponseBroadcastsItem",
+    "NbaGameSummaryResponseFormat",
+    "NbaGameSummaryResponseGameInfo",
+    "NbaGameSummaryResponseHeader",
+    "NbaGameSummaryResponseInjuriesItem",
+    "NbaGameSummaryResponseLastFiveGamesItem",
+    "NbaGameSummaryResponseLeadersItem",
+    "NbaGameSummaryResponseNews",
+    "NbaGameSummaryResponseOddsItem",
+    "NbaGameSummaryResponsePickcenterItem",
+    "NbaGameSummaryResponsePredictor",
+    "NbaGameSummaryResponseSeasonseries",
+    "NbaGameSummaryResponseStandings",
+    "NbaGameSummaryResponseTicketsInfo",
+    "NbaGameSummaryResponseVideosItem",
+    "NbaGameSummaryResponseWinProbabilityItem",
     "NbaScoreboardResponse",
     "NbaScoreboardResponseDay",
     "NbaStatisticName",
