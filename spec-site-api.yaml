@@ -792,6 +792,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /fantasy/v2/games/ffl/news/players:
+    get:
+      tags:
+        - Fantasy Football
+      summary: Get Fantasy Football Player News
+      description: Retrieve fantasy football news articles for players. Can be filtered by player ID.
+      operationId: getFantasyPlayerNews
+      servers:
+        - url: https://site.api.espn.com/apis
+          description: ESPN Site API Base Server
+      parameters:
+        - name: playerId
+          in: query
+          required: false
+          description: Filter news by specific player ID
+          schema:
+            type: integer
+            example: 3139477
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of news items to return
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasyPlayerNewsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     GenericScoreboardResponse:
@@ -5142,3 +5183,136 @@ components:
           type: integer
           description: Points received
       description: Team receiving votes but not in top 25
+
+    FantasyPlayerNewsResponse:
+      type: object
+      required:
+        - feed
+        - resultsCount
+        - resultsLimit
+        - resultsOffset
+        - status
+        - timestamp
+      properties:
+        feed:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyPlayerNewsItem'
+          description: Array of news items
+        resultsCount:
+          type: integer
+          description: Total number of results
+        resultsLimit:
+          type: integer
+          description: Maximum results per page
+        resultsOffset:
+          type: integer
+          description: Offset for pagination
+        status:
+          type: string
+          description: Response status
+        timestamp:
+          type: string
+          format: date-time
+          description: Response timestamp
+      description: Fantasy player news response
+
+    FantasyPlayerNewsItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: News item ID
+        headline:
+          type: string
+          description: News headline
+        description:
+          type: string
+          description: Brief description of the news
+        story:
+          type: string
+          description: Full news story content
+        published:
+          type: string
+          format: date-time
+          description: Publication date
+        lastModified:
+          type: string
+          format: date-time
+          description: Last modification date
+        premium:
+          type: boolean
+          description: Whether this is premium content
+        type:
+          type: string
+          description: Type of news item
+        playerId:
+          type: integer
+          description: Associated player ID
+        nowId:
+          type: string
+          description: NOW platform ID
+        contentKey:
+          type: string
+          description: Content key information
+        dataSourceIdentifier:
+          type: string
+          description: Data source identifier
+        allowContentReactions:
+          type: boolean
+          description: Whether reactions are allowed
+        allowSearch:
+          type: boolean
+          description: Whether item is searchable
+        categorized:
+          type: boolean
+          description: Whether item is categorized
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyNewsImage'
+          description: Associated images
+        links:
+          type: object
+          properties:
+            api:
+              $ref: '#/components/schemas/FantasyNewsLink'
+            web:
+              $ref: '#/components/schemas/FantasyNewsLink'
+            mobile:
+              $ref: '#/components/schemas/FantasyNewsLink'
+          description: Links to different platforms
+      description: Individual fantasy news item
+
+    FantasyNewsImage:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          description: Image URL
+        alt:
+          type: string
+          description: Alt text for image
+        caption:
+          type: string
+          description: Image caption
+        credit:
+          type: string
+          description: Image credit
+        height:
+          type: integer
+          description: Image height
+        width:
+          type: integer
+          description: Image width
+      description: Fantasy news image
+
+    FantasyNewsLink:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+          description: Link URL
+      description: Fantasy news link

@@ -1,0 +1,176 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/FantasyFflNewsPlayersSchema",
+    "definitions": {
+        "FantasyFflNewsPlayersSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "resultsOffset": {
+                    "type": "integer"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "resultsLimit": {
+                    "type": "integer"
+                },
+                "resultsCount": {
+                    "type": "integer"
+                },
+                "feed": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Feed"
+                    }
+                }
+            },
+            "required": [
+                "feed",
+                "resultsCount",
+                "resultsLimit",
+                "resultsOffset",
+                "status",
+                "timestamp"
+            ],
+            "title": "FantasyFflNewsPlayersSchema"
+        },
+        "Feed": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "nowId": {
+                    "type": "string"
+                },
+                "contentKey": {
+                    "type": "string"
+                },
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "categorized": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {}
+                },
+                "story": {
+                    "type": "string"
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "$ref": "#/definitions/Links"
+                },
+                "allowSearch": {
+                    "type": "boolean"
+                },
+                "allowContentReactions": {
+                    "type": "boolean"
+                },
+                "playerId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "allowContentReactions",
+                "allowSearch",
+                "categorized",
+                "contentKey",
+                "dataSourceIdentifier",
+                "description",
+                "headline",
+                "id",
+                "images",
+                "lastModified",
+                "links",
+                "nowId",
+                "playerId",
+                "premium",
+                "published",
+                "story",
+                "type"
+            ],
+            "title": "Feed"
+        },
+        "Links": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "mobile": {
+                    "$ref": "#/definitions/Mobile"
+                },
+                "api": {
+                    "$ref": "#/definitions/API"
+                }
+            },
+            "required": [
+                "api",
+                "mobile"
+            ],
+            "title": "Links"
+        },
+        "API": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/Self"
+                }
+            },
+            "required": [
+                "self"
+            ],
+            "title": "API"
+        },
+        "Self": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Self"
+        },
+        "Mobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "href"
+            ],
+            "title": "Mobile"
+        }
+    }
+}

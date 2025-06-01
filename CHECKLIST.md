@@ -196,7 +196,7 @@ fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/teams/{team_id} (Likely view=mTeam or similar on league endpoint)
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/players/available (Likely player list with filters)
 site.api.espn.com
-[ ] /apis/fantasy/v2/games/ffl/news/players - Fantasy Player News. Query Params: playerId={athlete_id}, limit
+[x] /apis/fantasy/v2/games/ffl/news/players - Fantasy Player News. Query Params: playerId={athlete_id}, limit - Implemented
 site.web.api.espn.com
 [x] /apis/fantasy/v2/games/ffl/games - Fantasy Games List. Query Params: dates (YYYYMMDD or YYYYMMDD-YYYYMMDD) - Implemented
 gambit-api.fantasy.espn.com
