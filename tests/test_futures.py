@@ -3,7 +3,7 @@
 import json
 import logging
 import pytest
-from models.sports_core_api.espn_sports_core_api_client.api.default import get_season_futures
+from models.sports_core_api.espn_sports_core_api_client.api.default import get_season_futures, get_athlete_details, get_nfl_season_team
 from models.sports_core_api.espn_sports_core_api_client.models import (
     FuturesResponse,
     FutureItem,
@@ -18,6 +18,115 @@ from models.sports_core_api.espn_sports_core_api_client.types import UNSET
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+def get_entity_name(ref_url, client):
+    """Fetch the actual name of an athlete or team from their reference URL."""
+    if not ref_url:
+        return "Unknown"
+    
+    try:
+        # Parse the URL to extract sport, league, and ID
+        # URL format: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/3139477
+        # or: http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/12
+        parts = ref_url.split('/')
+        
+        # Find sport and league
+        if 'sports' in parts:
+            sport_idx = parts.index('sports')
+            if sport_idx + 3 < len(parts):
+                sport = parts[sport_idx + 1]
+                league = parts[sport_idx + 3]
+                
+                # Handle athletes
+                if 'athletes' in parts:
+                    athlete_idx = parts.index('athletes')
+                    if athlete_idx + 1 < len(parts):
+                        athlete_id = parts[athlete_idx + 1].split('?')[0]
+                        
+                        # Make API call to get athlete details
+                        response = get_athlete_details.sync_detailed(
+                            client=client,
+                            sport=sport,
+                            league=league,
+                            athlete_id=athlete_id
+                        )
+                        
+                        if response.status_code == 200 and response.parsed:
+                            athlete = response.parsed
+                            full_name = f"{athlete.first_name} {athlete.last_name}"
+                            return full_name
+                
+                # Handle teams
+                elif 'teams' in parts:
+                    team_idx = parts.index('teams')
+                    if team_idx + 1 < len(parts):
+                        team_id = parts[team_idx + 1].split('?')[0]
+                        
+                        # Try to get team name based on sport
+                        if sport == 'football' and league == 'nfl':
+                            # Extract year from URL if available
+                            year = 2024  # Default
+                            if 'seasons' in parts:
+                                season_idx = parts.index('seasons')
+                                if season_idx + 1 < len(parts):
+                                    year = int(parts[season_idx + 1])
+                            
+                            # Get NFL team details
+                            response = get_nfl_season_team.sync_detailed(
+                                client=client,
+                                year=year,
+                                team_id=team_id
+                            )
+                            
+                            if response.status_code == 200 and response.parsed:
+                                team = response.parsed
+                                if hasattr(team, 'display_name'):
+                                    return team.display_name
+                                elif hasattr(team, 'name'):
+                                    return team.name
+                        
+                        # Fallback: Use a simple mapping for common teams
+                        team_names = {
+                            '1': 'Atlanta Falcons',
+                            '2': 'Boston Celtics',
+                            '3': 'Dallas Mavericks',
+                            '4': 'Chicago Bears',
+                            '5': 'Cleveland Cavaliers',
+                            '6': 'Dallas Cowboys',
+                            '7': 'Oklahoma City Thunder',
+                            '8': 'Detroit Lions',
+                            '9': 'Denver Nuggets',
+                            '10': 'Jacksonville Jaguars',
+                            '12': 'Kansas City Chiefs',
+                            '13': 'Los Angeles Lakers',
+                            '14': 'Miami Heat',
+                            '15': 'Milwaukee Bucks',
+                            '16': 'Minnesota Timberwolves',
+                            '17': 'New England Patriots',
+                            '18': 'Miami Dolphins',
+                            '19': 'New York Jets',
+                            '20': 'Philadelphia 76ers',
+                            '21': 'Phoenix Suns',
+                            '22': 'Utah Jazz',
+                            '23': 'Sacramento Kings',
+                            '24': 'Philadelphia Eagles',
+                            '25': 'Orlando Magic',
+                            '26': 'San Francisco 49ers',
+                            '27': 'Tampa Bay Buccaneers',
+                            '28': 'Washington Commanders',
+                            '29': 'Memphis Grizzlies',
+                            '30': 'Washington Wizards',
+                            '33': 'Baltimore Ravens',
+                            '34': 'Buffalo Bills',
+                        }
+                        
+                        return team_names.get(team_id, f"Team {team_id}")
+    
+    except Exception as e:
+        logger.debug(f"Error fetching entity name: {e}")
+    
+    return "Unknown"
 
 
 @pytest.mark.api
@@ -393,10 +502,13 @@ def test_get_season_futures_favorites_analysis(sports_core_api_client):
                         else:
                             odds_value = int(odds_str.replace('-', ''))
                         
+                        team_name = get_entity_name(book.team.ref if book.team else None, sports_core_api_client)
+                        
                         teams_odds.append({
                             'odds_value': odds_value,
                             'odds_str': book.value,
-                            'is_favorite': odds_str.startswith('-') or odds_value < 1000
+                            'is_favorite': odds_str.startswith('-') or odds_value < 1000,
+                            'team_name': team_name
                         })
                     except:
                         continue
@@ -405,8 +517,8 @@ def test_get_season_futures_favorites_analysis(sports_core_api_client):
             teams_odds.sort(key=lambda x: (not x['is_favorite'], x['odds_value']))
             
             # Log top 10
-            for i, team in enumerate(teams_odds[:10]):
-                logger.info(f"{i+1}. Team @ {team['odds_str']}")
+            for i, team_data in enumerate(teams_odds[:10]):
+                logger.info(f"{i+1}. {team_data['team_name']} @ {team_data['odds_str']}")
     
     # Analyze division winners
     if division_futures:
@@ -432,12 +544,13 @@ def test_get_season_futures_favorites_analysis(sports_core_api_client):
                                 odds_value = int(odds_str[1:])
                                 if odds_value < favorite_odds:
                                     favorite_odds = odds_value
-                                    favorite = {'odds': odds_str}
+                                    team_name = get_entity_name(book.team.ref if book.team else None, sports_core_api_client)
+                                    favorite = {'odds': odds_str, 'team': team_name}
                         except:
                             continue
                 
                 if favorite:
-                    logger.info(f"  Favorite: Team @ {favorite['odds']}")
+                    logger.info(f"  Favorite: {favorite['team']} @ {favorite['odds']}")
     
     # Get NBA futures
     response = get_season_futures.sync_detailed(
@@ -481,11 +594,12 @@ def test_get_season_futures_favorites_analysis(sports_core_api_client):
                 teams_odds = []
                 for book in provider_data.books[:10]:  # Top 10 only
                     if book.team is not UNSET:
-                        teams_odds.append(book.value)
+                        team_name = get_entity_name(book.team.ref if book.team else None, sports_core_api_client)
+                        teams_odds.append({'name': team_name, 'odds': book.value})
                 
                 # Log top teams
-                for i, odds in enumerate(teams_odds):
-                    logger.info(f"{i+1}. Team @ {odds}")
+                for i, team_data in enumerate(teams_odds):
+                    logger.info(f"{i+1}. {team_data['name']} @ {team_data['odds']}")
     
     # Analyze player props
     logger.info(f"\n{'='*80}")
@@ -535,4 +649,5 @@ def test_get_season_futures_favorites_analysis(sports_core_api_client):
                 # Get top 3 favorites
                 for i, book in enumerate(provider_data.books[:3]):
                     if book.athlete is not UNSET:
-                        logger.info(f"{i+1}. Athlete @ {book.value}")
+                        athlete_name = get_entity_name(book.athlete.ref if book.athlete else None, sports_core_api_client)
+                        logger.info(f"{i+1}. {athlete_name} @ {book.value}")
