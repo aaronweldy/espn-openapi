@@ -238,7 +238,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog-  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads
@@ -258,7 +258,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics - NFL Team Statistics for Event
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/notes - NFL Athlete Season Notes
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/status - NFL Draft Status
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/attendance - NFL Team Attendance
