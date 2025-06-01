@@ -159,83 +159,23 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957890699990058",
+              "id": "4016957890703070005",
               "type": {
-                "id": "58",
-                "text": "End Inning",
-                "type": "end-inning"
+                "id": "5",
+                "text": "Ball",
+                "abbreviation": "B",
+                "alternativeText": "Walk",
+                "type": "ball"
               },
-              "text": "Middle of the 4th inning",
+              "text": "Pitch 6 : Ball 3",
               "scoreValue": 0,
               "team": {
                 "id": "24"
               },
-              "atBatId": "4016957890605"
-            },
-            "balls": 0,
-            "strikes": 0,
-            "outs": 0,
-            "dueUp": [
-              {
-                "playerId": 39882,
-                "period": 4,
-                "athlete": {
-                  "id": "39882",
-                  "fullName": "Jake Burger",
-                  "displayName": "Jake Burger",
-                  "shortName": "J. Burger",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/39882"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39882.png",
-                  "jersey": "21",
-                  "position": "1B",
-                  "team": {
-                    "id": "13"
-                  }
-                },
-                "batOrder": 6,
-                "summary": "0-1, K"
-              },
-              {
-                "playerId": 33842,
-                "period": 4,
-                "athlete": {
-                  "id": "33842",
-                  "fullName": "Jonah Heim",
-                  "displayName": "Jonah Heim",
-                  "shortName": "J. Heim",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/33842"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33842.png",
-                  "jersey": "28",
-                  "position": "C",
-                  "team": {
-                    "id": "13"
-                  }
-                },
-                "batOrder": 7,
-                "summary": "0-1"
-              },
-              {
-                "playerId": 32146,
-                "period": 4,
-                "athlete": {
+              "atBatId": "4016957890703",
+              "summaryType": "P",
+              "athletesInvolved": [
+                {
                   "id": "32146",
                   "fullName": "Marcus Semien",
                   "displayName": "Marcus Semien",
@@ -256,16 +196,69 @@
                   "team": {
                     "id": "13"
                   }
-                },
-                "batOrder": 8,
-                "summary": "1-1, R, SB"
+                }
+              ]
+            },
+            "balls": 3,
+            "strikes": 2,
+            "outs": 2,
+            "pitcher": {
+              "playerId": 33793,
+              "period": 4,
+              "athlete": {
+                "id": "33793",
+                "fullName": "Erick Fedde",
+                "displayName": "Erick Fedde",
+                "shortName": "E. Fedde",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/33793"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33793.png",
+                "jersey": "12",
+                "position": "SP",
+                "team": {
+                  "id": "24"
+                }
               }
-            ],
+            },
+            "batter": {
+              "playerId": 32146,
+              "period": 4,
+              "athlete": {
+                "id": "32146",
+                "fullName": "Marcus Semien",
+                "displayName": "Marcus Semien",
+                "shortName": "M. Semien",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/32146"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32146.png",
+                "jersey": "2",
+                "position": "2B",
+                "team": {
+                  "id": "13"
+                }
+              }
+            },
             "onFirst": false,
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "2 Outs",
           "id": "401695789",
           "date": "2025-06-01T17:05:00+00:00",
           "competitors": [
@@ -619,6 +612,11 @@
                   "displayValue": "0",
                   "period": 3,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 4,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -635,7 +633,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".250"
+                  "displayValue": ".214"
                 },
                 {
                   "abbreviation": "SV",
@@ -1075,7 +1073,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "6.00"
+                  "displayValue": "4.91"
                 },
                 {
                   "abbreviation": "E",
@@ -1134,8 +1132,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Middle 4th",
-              "shortDetail": "Mid 4th"
+              "detail": "Bottom 4th",
+              "shortDetail": "Bot 4th"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -1330,8 +1328,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Middle 4th",
-          "shortDetail": "Mid 4th"
+          "detail": "Bottom 4th",
+          "shortDetail": "Bot 4th"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -1340,10 +1338,10 @@
     },
     {
       "weather": {
-        "displayValue": "3",
-        "temperature": 80,
-        "highTemperature": 80,
-        "conditionId": "Partly sunny",
+        "displayValue": "6",
+        "temperature": 78,
+        "highTemperature": 78,
+        "conditionId": "Mostly cloudy",
         "link": {
           "language": "en-US",
           "rel": [
@@ -1363,34 +1361,33 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957810402010001",
+              "id": "4016957810502010001",
               "type": {
                 "id": "1",
                 "text": "Start Batter/Pitcher",
                 "alternativeText": "Now at bat",
                 "type": "start-batterpitcher"
               },
-              "text": "Bryce Elder pitches to Wilyer Abreu",
+              "text": "Garrett Crochet pitches to Nick Allen",
               "scoreValue": 0,
               "team": {
-                "id": "2"
+                "id": "15"
               },
-              "atBatId": "4016957810402",
+              "atBatId": "4016957810502",
               "summaryType": "A",
               "athletesInvolved": []
             },
             "balls": 0,
             "strikes": 0,
-            "outs": 0,
-            "onFirst": true,
+            "outs": 1,
             "pitcher": {
-              "playerId": 4301067,
+              "playerId": 4297835,
               "period": 3,
               "athlete": {
-                "id": "4301067",
-                "fullName": "Bryce Elder",
-                "displayName": "Bryce Elder",
-                "shortName": "B. Elder",
+                "id": "4297835",
+                "fullName": "Garrett Crochet",
+                "displayName": "Garrett Crochet",
+                "shortName": "G. Crochet",
                 "links": [
                   {
                     "rel": [
@@ -1398,49 +1395,50 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4301067"
+                    "href": "https://www.espn.com/mlb/player/_/id/4297835"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4301067.png",
-                "jersey": "55",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4297835.png",
+                "jersey": "35",
                 "position": "SP",
-                "team": {
-                  "id": "15"
-                }
-              },
-              "summary": "2.0 IP, 3 ER, 3 H, 2 K, BB"
-            },
-            "batter": {
-              "playerId": 4990055,
-              "period": 3,
-              "athlete": {
-                "id": "4990055",
-                "fullName": "Wilyer Abreu",
-                "displayName": "Wilyer Abreu",
-                "shortName": "W. Abreu",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4990055"
-                  }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4990055.png",
-                "jersey": "52",
-                "position": "RF",
                 "team": {
                   "id": "2"
                 }
               },
-              "summary": "0-1, K"
+              "summary": "2.1 IP, ER, H, 4 K, 0 BB"
             },
+            "batter": {
+              "playerId": 40338,
+              "period": 3,
+              "athlete": {
+                "id": "40338",
+                "fullName": "Nick Allen",
+                "displayName": "Nick Allen",
+                "shortName": "N. Allen",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/40338"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40338.png",
+                "jersey": "2",
+                "position": "SS",
+                "team": {
+                  "id": "15"
+                }
+              },
+              "summary": "0-0"
+            },
+            "onFirst": false,
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "1 Out",
           "id": "401695781",
           "date": "2025-06-01T17:35:00+00:00",
           "competitors": [
@@ -1788,6 +1786,11 @@
                   "displayValue": "0",
                   "period": 2,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 3,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -1804,7 +1807,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".143"
+                  "displayValue": ".125"
                 },
                 {
                   "abbreviation": "SV",
@@ -1824,7 +1827,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "13.50"
+                  "displayValue": "9.00"
                 },
                 {
                   "abbreviation": "E",
@@ -2219,7 +2222,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".333"
+                  "displayValue": ".250"
                 },
                 {
                   "abbreviation": "SV",
@@ -2239,7 +2242,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "4.50"
+                  "displayValue": "3.86"
                 },
                 {
                   "abbreviation": "E",
@@ -2298,8 +2301,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Top 3rd",
-              "shortDetail": "Top 3rd"
+              "detail": "Bottom 3rd",
+              "shortDetail": "Bot 3rd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -2547,8 +2550,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Top 3rd",
-          "shortDetail": "Top 3rd"
+          "detail": "Bottom 3rd",
+          "shortDetail": "Bot 3rd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -2580,31 +2583,31 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957820399990058",
+              "id": "4016957820499990058",
               "type": {
                 "id": "58",
                 "text": "End Inning",
                 "type": "end-inning"
               },
-              "text": "End of the 2nd inning",
+              "text": "Middle of the 3rd inning",
               "scoreValue": 0,
               "team": {
-                "id": "1"
+                "id": "4"
               },
-              "atBatId": "4016957820303"
+              "atBatId": "4016957820404"
             },
             "balls": 0,
             "strikes": 0,
             "outs": 0,
             "dueUp": [
               {
-                "playerId": 40718,
-                "period": 2,
+                "playerId": 42801,
+                "period": 3,
                 "athlete": {
-                  "id": "40718",
-                  "fullName": "Josh Rojas",
-                  "displayName": "Josh Rojas",
-                  "shortName": "J. Rojas",
+                  "id": "42801",
+                  "fullName": "Maverick Handley",
+                  "displayName": "Maverick Handley",
+                  "shortName": "M. Handley",
                   "links": [
                     {
                       "rel": [
@@ -2612,27 +2615,27 @@
                         "desktop",
                         "athlete"
                       ],
-                      "href": "https://www.espn.com/mlb/player/_/id/40718"
+                      "href": "https://www.espn.com/mlb/player/_/id/42801"
                     }
                   ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40718.png",
-                  "jersey": "5",
-                  "position": "3B",
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42801.png",
+                  "jersey": "98",
+                  "position": "C",
                   "team": {
-                    "id": "4"
+                    "id": "1"
                   }
                 },
                 "batOrder": 9,
                 "summary": "0-0"
               },
               {
-                "playerId": 5136929,
-                "period": 2,
+                "playerId": 5080633,
+                "period": 3,
                 "athlete": {
-                  "id": "5136929",
-                  "fullName": "Chase Meidroth",
-                  "displayName": "Chase Meidroth",
-                  "shortName": "C. Meidroth",
+                  "id": "5080633",
+                  "fullName": "Jackson Holliday",
+                  "displayName": "Jackson Holliday",
+                  "shortName": "J. Holliday",
                   "links": [
                     {
                       "rel": [
@@ -2640,27 +2643,27 @@
                         "desktop",
                         "athlete"
                       ],
-                      "href": "https://www.espn.com/mlb/player/_/id/5136929"
+                      "href": "https://www.espn.com/mlb/player/_/id/5080633"
                     }
                   ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5136929.png",
-                  "jersey": "10",
-                  "position": "SS",
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080633.png",
+                  "jersey": "7",
+                  "position": "2B",
                   "team": {
-                    "id": "4"
+                    "id": "1"
                   }
                 },
                 "batOrder": 1,
-                "summary": "1-1"
+                "summary": "0-1"
               },
               {
-                "playerId": 33956,
-                "period": 2,
+                "playerId": 40610,
+                "period": 3,
                 "athlete": {
-                  "id": "33956",
-                  "fullName": "Mike Tauchman",
-                  "displayName": "Mike Tauchman",
-                  "shortName": "M. Tauchman",
+                  "id": "40610",
+                  "fullName": "Ramon Urias",
+                  "displayName": "Ramon Urias",
+                  "shortName": "R. Urias",
                   "links": [
                     {
                       "rel": [
@@ -2668,18 +2671,18 @@
                         "desktop",
                         "athlete"
                       ],
-                      "href": "https://www.espn.com/mlb/player/_/id/33956"
+                      "href": "https://www.espn.com/mlb/player/_/id/40610"
                     }
                   ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33956.png",
-                  "jersey": "18",
-                  "position": "RF",
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40610.png",
+                  "jersey": "29",
+                  "position": "3B",
                   "team": {
-                    "id": "4"
+                    "id": "1"
                   }
                 },
                 "batOrder": 2,
-                "summary": "0-1"
+                "summary": "1-1"
               }
             ],
             "onFirst": false,
@@ -3148,7 +3151,7 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
+                      "displayValue": "0-2, K",
                       "value": 0.0,
                       "athlete": {
                         "id": "33956",
@@ -3188,7 +3191,7 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "0-1",
+                      "displayValue": "0-2, K",
                       "value": 0.0,
                       "athlete": {
                         "id": "33956",
@@ -3228,13 +3231,13 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "1-1",
-                      "value": 61.0,
+                      "displayValue": "2-2",
+                      "value": 63.0,
                       "athlete": {
-                        "id": "34986",
-                        "fullName": "Andrew Benintendi",
-                        "displayName": "Andrew Benintendi",
-                        "shortName": "A. Benintendi",
+                        "id": "5136929",
+                        "fullName": "Chase Meidroth",
+                        "displayName": "Chase Meidroth",
+                        "shortName": "C. Meidroth",
                         "links": [
                           {
                             "rel": [
@@ -3242,13 +3245,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/34986"
+                            "href": "https://www.espn.com/mlb/player/_/id/5136929"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/34986.png",
-                        "jersey": "23",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5136929.png",
+                        "jersey": "10",
                         "position": {
-                          "abbreviation": "LF"
+                          "abbreviation": "SS"
                         },
                         "team": {
                           "id": "4"
@@ -3268,13 +3271,13 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "1-1",
-                      "value": 61.0,
+                      "displayValue": "2-2",
+                      "value": 63.0,
                       "athlete": {
-                        "id": "34986",
-                        "fullName": "Andrew Benintendi",
-                        "displayName": "Andrew Benintendi",
-                        "shortName": "A. Benintendi",
+                        "id": "5136929",
+                        "fullName": "Chase Meidroth",
+                        "displayName": "Chase Meidroth",
+                        "shortName": "C. Meidroth",
                         "links": [
                           {
                             "rel": [
@@ -3282,13 +3285,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/34986"
+                            "href": "https://www.espn.com/mlb/player/_/id/5136929"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/34986.png",
-                        "jersey": "23",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5136929.png",
+                        "jersey": "10",
                         "position": {
-                          "abbreviation": "LF"
+                          "abbreviation": "SS"
                         },
                         "team": {
                           "id": "4"
@@ -3365,7 +3368,7 @@
                   "record": "(1-0, 0.00)"
                 }
               ],
-              "hits": 2,
+              "hits": 3,
               "errors": 0,
               "id": "4",
               "order": 1,
@@ -3443,13 +3446,18 @@
                   "displayValue": "0",
                   "period": 2,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 3,
+                  "value": 0.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "H",
                   "name": "hits",
-                  "displayValue": "2"
+                  "displayValue": "3"
                 },
                 {
                   "abbreviation": "R",
@@ -3459,7 +3467,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".286"
+                  "displayValue": ".273"
                 },
                 {
                   "abbreviation": "SV",
@@ -3538,12 +3546,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "End 2nd",
-              "shortDetail": "End 2nd"
+              "detail": "Middle 3rd",
+              "shortDetail": "Mid 3rd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 2
+            "period": 3
           },
           "broadcasts": [
             {
@@ -3567,6 +3575,40 @@
               "displayName": "MLB Rating",
               "leaders": [
                 {
+                  "displayValue": "2-2",
+                  "value": 63.0,
+                  "athlete": {
+                    "fullName": "Chase Meidroth",
+                    "displayName": "Chase Meidroth",
+                    "shortName": "C. Meidroth",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5136929.png",
+                    "jersey": "10",
+                    "position": {
+                      "abbreviation": "SS"
+                    },
+                    "team": {
+                      "id": "4"
+                    },
+                    "active": true,
+                    "id": "5136929",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/5136929",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "4",
+                    "logos": [],
+                    "links": []
+                  }
+                },
+                {
                   "displayValue": "1-1",
                   "value": 61.0,
                   "athlete": {
@@ -3586,40 +3628,6 @@
                     "links": [
                       {
                         "href": "https://www.espn.com/mlb/player/_/id/40610",
-                        "rel": [
-                          "playercard",
-                          "desktop",
-                          "athlete"
-                        ]
-                      }
-                    ]
-                  },
-                  "team": {
-                    "id": "1",
-                    "logos": [],
-                    "links": []
-                  }
-                },
-                {
-                  "displayValue": "1-1",
-                  "value": 61.0,
-                  "athlete": {
-                    "fullName": "Gunnar Henderson",
-                    "displayName": "Gunnar Henderson",
-                    "shortName": "G. Henderson",
-                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42507.png",
-                    "jersey": "2",
-                    "position": {
-                      "abbreviation": "SS"
-                    },
-                    "team": {
-                      "id": "1"
-                    },
-                    "active": true,
-                    "id": "42507",
-                    "links": [
-                      {
-                        "href": "https://www.espn.com/mlb/player/_/id/42507",
                         "rel": [
                           "playercard",
                           "desktop",
@@ -3766,20 +3774,20 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "End 2nd",
-          "shortDetail": "End 2nd"
+          "detail": "Middle 3rd",
+          "shortDetail": "Mid 3rd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 2
+        "period": 3
       }
     },
     {
       "weather": {
-        "displayValue": "2",
-        "temperature": 68,
-        "highTemperature": 68,
-        "conditionId": "Mostly sunny",
+        "displayValue": "3",
+        "temperature": 67,
+        "highTemperature": 67,
+        "conditionId": "Partly sunny",
         "link": {
           "language": "en-US",
           "rel": [
@@ -3799,113 +3807,84 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957840299990058",
+              "id": "4016957840304010001",
               "type": {
-                "id": "58",
-                "text": "End Inning",
-                "type": "end-inning"
+                "id": "1",
+                "text": "Start Batter/Pitcher",
+                "alternativeText": "Now at bat",
+                "type": "start-batterpitcher"
               },
-              "text": "Middle of the 2nd inning",
+              "text": "Jose Quintana pitches to Trea Turner",
               "scoreValue": 0,
               "team": {
-                "id": "8"
+                "id": "22"
               },
-              "atBatId": "4016957840204"
+              "atBatId": "4016957840304",
+              "summaryType": "A",
+              "athletesInvolved": []
             },
             "balls": 0,
             "strikes": 0,
-            "outs": 0,
-            "dueUp": [
-              {
-                "playerId": 38682,
-                "period": 2,
-                "athlete": {
-                  "id": "38682",
-                  "fullName": "Weston Wilson",
-                  "displayName": "Weston Wilson",
-                  "shortName": "W. Wilson",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/38682"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/38682.png",
-                  "jersey": "37",
-                  "position": "LF",
-                  "team": {
-                    "id": "22"
+            "outs": 1,
+            "onFirst": true,
+            "onSecond": true,
+            "pitcher": {
+              "playerId": 32106,
+              "period": 2,
+              "athlete": {
+                "id": "32106",
+                "fullName": "Jose Quintana",
+                "displayName": "Jose Quintana",
+                "shortName": "J. Quintana",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/32106"
                   }
-                },
-                "batOrder": 7,
-                "summary": "0-0"
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32106.png",
+                "jersey": "62",
+                "position": "SP",
+                "team": {
+                  "id": "8"
+                }
               },
-              {
-                "playerId": 42417,
-                "period": 2,
-                "athlete": {
-                  "id": "42417",
-                  "fullName": "Bryson Stott",
-                  "displayName": "Bryson Stott",
-                  "shortName": "B. Stott",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/42417"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42417.png",
-                  "jersey": "5",
-                  "position": "2B",
-                  "team": {
-                    "id": "22"
+              "summary": "1.1 IP, ER, H, 3 K, 4 BB"
+            },
+            "batter": {
+              "playerId": 33710,
+              "period": 2,
+              "athlete": {
+                "id": "33710",
+                "fullName": "Trea Turner",
+                "displayName": "Trea Turner",
+                "shortName": "T. Turner",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/33710"
                   }
-                },
-                "batOrder": 8,
-                "summary": "0-0"
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33710.png",
+                "jersey": "7",
+                "position": "SS",
+                "team": {
+                  "id": "22"
+                }
               },
-              {
-                "playerId": 42829,
-                "period": 2,
-                "athlete": {
-                  "id": "42829",
-                  "fullName": "Johan Rojas",
-                  "displayName": "Johan Rojas",
-                  "shortName": "J. Rojas",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/42829"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42829.png",
-                  "jersey": "23",
-                  "position": "CF",
-                  "team": {
-                    "id": "22"
-                  }
-                },
-                "batOrder": 9,
-                "summary": "0-0"
-              }
-            ],
-            "onFirst": false,
-            "onSecond": false,
+              "summary": "0-0, R, BB, 2 SB"
+            },
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "1 Out",
           "id": "401695784",
           "date": "2025-06-01T17:35:00+00:00",
           "competitors": [
@@ -4248,6 +4227,11 @@
                   "displayValue": "1",
                   "period": 1,
                   "value": 1.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 2,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -4264,7 +4248,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".250"
+                  "displayValue": ".200"
                 },
                 {
                   "abbreviation": "SV",
@@ -4693,7 +4677,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "9.00"
+                  "displayValue": "6.75"
                 },
                 {
                   "abbreviation": "E",
@@ -4752,8 +4736,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Middle 2nd",
-              "shortDetail": "Mid 2nd"
+              "detail": "Bottom 2nd",
+              "shortDetail": "Bot 2nd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -4964,8 +4948,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Middle 2nd",
-          "shortDetail": "Mid 2nd"
+          "detail": "Bottom 2nd",
+          "shortDetail": "Bot 2nd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -4980,27 +4964,27 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957850204020036",
+              "id": "4016957850302050005",
               "type": {
-                "id": "36",
-                "text": "Strike Looking",
-                "abbreviation": "SL",
-                "alternativeText": "Strikeout",
-                "type": "strike-looking"
+                "id": "5",
+                "text": "Ball",
+                "abbreviation": "B",
+                "alternativeText": "Walk",
+                "type": "ball"
               },
-              "text": "Pitch 1 : Strike 1 Looking",
+              "text": "Pitch 4 : Ball 2",
               "scoreValue": 0,
               "team": {
-                "id": "14"
+                "id": "11"
               },
-              "atBatId": "4016957850204",
+              "atBatId": "4016957850302",
               "summaryType": "P",
               "athletesInvolved": [
                 {
-                  "id": "4918085",
-                  "fullName": "Denzel Clarke",
-                  "displayName": "Denzel Clarke",
-                  "shortName": "D. Clarke",
+                  "id": "41287",
+                  "fullName": "Ernie Clement",
+                  "displayName": "Ernie Clement",
+                  "shortName": "E. Clement",
                   "links": [
                     {
                       "rel": [
@@ -5008,31 +4992,29 @@
                         "desktop",
                         "athlete"
                       ],
-                      "href": "https://www.espn.com/mlb/player/_/id/4918085"
+                      "href": "https://www.espn.com/mlb/player/_/id/41287"
                     }
                   ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4918085.png",
-                  "jersey": "1",
-                  "position": "CF",
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41287.png",
+                  "jersey": "22",
+                  "position": "3B",
                   "team": {
-                    "id": "11"
+                    "id": "14"
                   }
                 }
               ]
             },
-            "balls": 0,
-            "strikes": 1,
+            "balls": 2,
+            "strikes": 2,
             "outs": 1,
-            "onFirst": true,
-            "onSecond": true,
             "pitcher": {
-              "playerId": 32667,
+              "playerId": 39818,
               "period": 2,
               "athlete": {
-                "id": "32667",
-                "fullName": "Kevin Gausman",
-                "displayName": "Kevin Gausman",
-                "shortName": "K. Gausman",
+                "id": "39818",
+                "fullName": "JP Sears",
+                "displayName": "JP Sears",
+                "shortName": "J. Sears",
                 "links": [
                   {
                     "rel": [
@@ -5040,43 +5022,45 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/32667"
+                    "href": "https://www.espn.com/mlb/player/_/id/39818"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32667.png",
-                "jersey": "34",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39818.png",
+                "jersey": "38",
                 "position": "SP",
-                "team": {
-                  "id": "14"
-                }
-              }
-            },
-            "batter": {
-              "playerId": 4918085,
-              "period": 2,
-              "athlete": {
-                "id": "4918085",
-                "fullName": "Denzel Clarke",
-                "displayName": "Denzel Clarke",
-                "shortName": "D. Clarke",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4918085"
-                  }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4918085.png",
-                "jersey": "1",
-                "position": "CF",
                 "team": {
                   "id": "11"
                 }
               }
             },
+            "batter": {
+              "playerId": 41287,
+              "period": 2,
+              "athlete": {
+                "id": "41287",
+                "fullName": "Ernie Clement",
+                "displayName": "Ernie Clement",
+                "shortName": "E. Clement",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/41287"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41287.png",
+                "jersey": "22",
+                "position": "3B",
+                "team": {
+                  "id": "14"
+                }
+              }
+            },
+            "onFirst": false,
+            "onSecond": false,
             "onThird": false
           },
           "outsText": "1 Out",
@@ -5423,6 +5407,11 @@
                   "displayValue": "0",
                   "period": 1,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 2,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -5439,7 +5428,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".250"
+                  "displayValue": ".200"
                 },
                 {
                   "abbreviation": "SV",
@@ -5459,7 +5448,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "6.75"
+                  "displayValue": "4.50"
                 },
                 {
                   "abbreviation": "E",
@@ -5848,7 +5837,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".429"
+                  "displayValue": ".333"
                 },
                 {
                   "abbreviation": "SV",
@@ -5927,8 +5916,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Top 2nd",
-              "shortDetail": "Top 2nd"
+              "detail": "Bottom 2nd",
+              "shortDetail": "Bot 2nd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -6155,8 +6144,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Top 2nd",
-          "shortDetail": "Top 2nd"
+          "detail": "Bottom 2nd",
+          "shortDetail": "Bot 2nd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -6166,8 +6155,8 @@
     {
       "weather": {
         "displayValue": "2",
-        "temperature": 57,
-        "highTemperature": 57,
+        "temperature": 59,
+        "highTemperature": 59,
         "conditionId": "Mostly sunny",
         "link": {
           "language": "en-US",
@@ -6188,57 +6177,33 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957800303040005",
+              "id": "4016957800403010001",
               "type": {
-                "id": "5",
-                "text": "Ball",
-                "abbreviation": "B",
-                "alternativeText": "Walk",
-                "type": "ball"
+                "id": "1",
+                "text": "Start Batter/Pitcher",
+                "alternativeText": "Now at bat",
+                "type": "start-batterpitcher"
               },
-              "text": "Pitch 3 : Ball 1",
+              "text": "Gavin Williams pitches to Scott Kingery",
               "scoreValue": 0,
               "team": {
                 "id": "3"
               },
-              "atBatId": "4016957800303",
-              "summaryType": "P",
-              "athletesInvolved": [
-                {
-                  "id": "41183",
-                  "fullName": "Bo Naylor",
-                  "displayName": "Bo Naylor",
-                  "shortName": "B. Naylor",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/mlb/player/_/id/41183"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41183.png",
-                  "jersey": "23",
-                  "position": "C",
-                  "team": {
-                    "id": "5"
-                  }
-                }
-              ]
+              "atBatId": "4016957800403",
+              "summaryType": "A",
+              "athletesInvolved": []
             },
-            "balls": 1,
-            "strikes": 2,
+            "balls": 0,
+            "strikes": 0,
             "outs": 2,
             "pitcher": {
-              "playerId": 4917819,
-              "period": 2,
+              "playerId": 4345076,
+              "period": 3,
               "athlete": {
-                "id": "4917819",
-                "fullName": "Jack Kochanowicz",
-                "displayName": "Jack Kochanowicz",
-                "shortName": "J. Kochanowicz",
+                "id": "4345076",
+                "fullName": "Gavin Williams",
+                "displayName": "Gavin Williams",
+                "shortName": "G. Williams",
                 "links": [
                   {
                     "rel": [
@@ -6246,42 +6211,44 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4917819"
+                    "href": "https://www.espn.com/mlb/player/_/id/4345076"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4917819.png",
-                "jersey": "41",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4345076.png",
+                "jersey": "32",
                 "position": "SP",
-                "team": {
-                  "id": "3"
-                }
-              }
-            },
-            "batter": {
-              "playerId": 41183,
-              "period": 2,
-              "athlete": {
-                "id": "41183",
-                "fullName": "Bo Naylor",
-                "displayName": "Bo Naylor",
-                "shortName": "B. Naylor",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/41183"
-                  }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41183.png",
-                "jersey": "23",
-                "position": "C",
                 "team": {
                   "id": "5"
                 }
-              }
+              },
+              "summary": "2.2 IP, 0 ER, 0 H, 2 K, BB"
+            },
+            "batter": {
+              "playerId": 35276,
+              "period": 3,
+              "athlete": {
+                "id": "35276",
+                "fullName": "Scott Kingery",
+                "displayName": "Scott Kingery",
+                "shortName": "S. Kingery",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/35276"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/35276.png",
+                "jersey": "13",
+                "position": "SS",
+                "team": {
+                  "id": "3"
+                }
+              },
+              "summary": "0-0"
             },
             "onFirst": false,
             "onSecond": false,
@@ -6651,7 +6618,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".167"
+                  "displayValue": ".143"
                 },
                 {
                   "abbreviation": "SV",
@@ -7045,6 +7012,11 @@
                   "displayValue": "0",
                   "period": 2,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 3,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -7140,12 +7112,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Bottom 2nd",
-              "shortDetail": "Bot 2nd"
+              "detail": "Top 3rd",
+              "shortDetail": "Top 3rd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 2
+            "period": 3
           },
           "broadcasts": [
             {
@@ -7352,20 +7324,20 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Bottom 2nd",
-          "shortDetail": "Bot 2nd"
+          "detail": "Top 3rd",
+          "shortDetail": "Top 3rd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 2
+        "period": 3
       }
     },
     {
       "weather": {
-        "displayValue": "7",
-        "temperature": 65,
-        "highTemperature": 65,
-        "conditionId": "Cloudy",
+        "displayValue": "6",
+        "temperature": 66,
+        "highTemperature": 66,
+        "conditionId": "Mostly cloudy",
         "link": {
           "language": "en-US",
           "rel": [
@@ -7385,79 +7357,108 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957830401010001",
+              "id": "4016957830499990058",
               "type": {
-                "id": "1",
-                "text": "Start Batter/Pitcher",
-                "alternativeText": "Now at bat",
-                "type": "start-batterpitcher"
+                "id": "58",
+                "text": "End Inning",
+                "type": "end-inning"
               },
-              "text": "Clay Holmes pitches to Orlando Arcia",
+              "text": "Middle of the 3rd inning",
               "scoreValue": 0,
               "team": {
                 "id": "27"
               },
-              "atBatId": "4016957830401",
-              "summaryType": "A",
-              "athletesInvolved": []
+              "atBatId": "4016957830404"
             },
             "balls": 0,
             "strikes": 0,
             "outs": 0,
-            "pitcher": {
-              "playerId": 32827,
-              "period": 3,
-              "athlete": {
-                "id": "32827",
-                "fullName": "Clay Holmes",
-                "displayName": "Clay Holmes",
-                "shortName": "C. Holmes",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/32827"
+            "dueUp": [
+              {
+                "playerId": 41034,
+                "period": 3,
+                "athlete": {
+                  "id": "41034",
+                  "fullName": "Mark Vientos",
+                  "displayName": "Mark Vientos",
+                  "shortName": "M. Vientos",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/41034"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41034.png",
+                  "jersey": "27",
+                  "position": "3B",
+                  "team": {
+                    "id": "21"
                   }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32827.png",
-                "jersey": "35",
-                "position": "SP",
-                "team": {
-                  "id": "21"
-                }
+                },
+                "batOrder": 7,
+                "summary": "0-0"
               },
-              "summary": "2.0 IP, 0 ER, H, K, 0 BB"
-            },
-            "batter": {
-              "playerId": 32530,
-              "period": 3,
-              "athlete": {
-                "id": "32530",
-                "fullName": "Orlando Arcia",
-                "displayName": "Orlando Arcia",
-                "shortName": "O. Arcia",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/32530"
+              {
+                "playerId": 32783,
+                "period": 3,
+                "athlete": {
+                  "id": "32783",
+                  "fullName": "Tyrone Taylor",
+                  "displayName": "Tyrone Taylor",
+                  "shortName": "T. Taylor",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/32783"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32783.png",
+                  "jersey": "15",
+                  "position": "CF",
+                  "team": {
+                    "id": "21"
                   }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32530.png",
-                "jersey": "8",
-                "position": "SS",
-                "team": {
-                  "id": "27"
-                }
+                },
+                "batOrder": 8,
+                "summary": "0-0"
               },
-              "summary": "0-0"
-            },
+              {
+                "playerId": 42411,
+                "period": 3,
+                "athlete": {
+                  "id": "42411",
+                  "fullName": "Luisangel Acuna",
+                  "displayName": "Luisangel Acuna",
+                  "shortName": "L. Acuna",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/42411"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42411.png",
+                  "jersey": "2",
+                  "position": "2B",
+                  "team": {
+                    "id": "21"
+                  }
+                },
+                "batOrder": 9,
+                "summary": "0-0"
+              }
+            ],
             "onFirst": false,
             "onSecond": false,
             "onThird": false
@@ -7847,7 +7848,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "0.00"
+                  "displayValue": "3.00"
                 },
                 {
                   "abbreviation": "E",
@@ -7885,13 +7886,13 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": "1-1",
+                      "displayValue": "1-1, HR, RBI, R",
                       "value": 1.0,
                       "athlete": {
-                        "id": "35831",
-                        "fullName": "Sam Hilliard",
-                        "displayName": "Sam Hilliard",
-                        "shortName": "S. Hilliard",
+                        "id": "32530",
+                        "fullName": "Orlando Arcia",
+                        "displayName": "Orlando Arcia",
+                        "shortName": "O. Arcia",
                         "links": [
                           {
                             "rel": [
@@ -7899,13 +7900,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/35831"
+                            "href": "https://www.espn.com/mlb/player/_/id/32530"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/35831.png",
-                        "jersey": "16",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32530.png",
+                        "jersey": "8",
                         "position": {
-                          "abbreviation": "LF"
+                          "abbreviation": "SS"
                         },
                         "team": {
                           "id": "27"
@@ -7925,8 +7926,8 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "0-0",
-                      "value": 0.0,
+                      "displayValue": "1-1, HR, RBI, R",
+                      "value": 1.0,
                       "athlete": {
                         "id": "32530",
                         "fullName": "Orlando Arcia",
@@ -7965,8 +7966,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "0-0",
-                      "value": 0.0,
+                      "displayValue": "1-1, HR, RBI, R",
+                      "value": 1.0,
                       "athlete": {
                         "id": "32530",
                         "fullName": "Orlando Arcia",
@@ -8005,13 +8006,13 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "1-1",
-                      "value": 61.0,
+                      "displayValue": "1-1, HR, RBI, R",
+                      "value": 66.0,
                       "athlete": {
-                        "id": "35831",
-                        "fullName": "Sam Hilliard",
-                        "displayName": "Sam Hilliard",
-                        "shortName": "S. Hilliard",
+                        "id": "32530",
+                        "fullName": "Orlando Arcia",
+                        "displayName": "Orlando Arcia",
+                        "shortName": "O. Arcia",
                         "links": [
                           {
                             "rel": [
@@ -8019,13 +8020,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/35831"
+                            "href": "https://www.espn.com/mlb/player/_/id/32530"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/35831.png",
-                        "jersey": "16",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32530.png",
+                        "jersey": "8",
                         "position": {
-                          "abbreviation": "LF"
+                          "abbreviation": "SS"
                         },
                         "team": {
                           "id": "27"
@@ -8045,13 +8046,13 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "1-1",
-                      "value": 61.0,
+                      "displayValue": "1-1, HR, RBI, R",
+                      "value": 66.0,
                       "athlete": {
-                        "id": "35831",
-                        "fullName": "Sam Hilliard",
-                        "displayName": "Sam Hilliard",
-                        "shortName": "S. Hilliard",
+                        "id": "32530",
+                        "fullName": "Orlando Arcia",
+                        "displayName": "Orlando Arcia",
+                        "shortName": "O. Arcia",
                         "links": [
                           {
                             "rel": [
@@ -8059,13 +8060,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/35831"
+                            "href": "https://www.espn.com/mlb/player/_/id/32530"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/35831.png",
-                        "jersey": "16",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32530.png",
+                        "jersey": "8",
                         "position": {
-                          "abbreviation": "LF"
+                          "abbreviation": "SS"
                         },
                         "team": {
                           "id": "27"
@@ -8141,7 +8142,7 @@
                   "record": "(0-3, 8.78)"
                 }
               ],
-              "hits": 1,
+              "hits": 2,
               "errors": 0,
               "id": "27",
               "order": 1,
@@ -8208,7 +8209,7 @@
               },
               "uid": "s:1~l:10~t:27",
               "type": "team",
-              "score": "0",
+              "score": "1",
               "linescores": [
                 {
                   "displayValue": "0",
@@ -8221,26 +8222,26 @@
                   "value": 0.0
                 },
                 {
-                  "displayValue": "0",
+                  "displayValue": "1",
                   "period": 3,
-                  "value": 0.0
+                  "value": 1.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "H",
                   "name": "hits",
-                  "displayValue": "1"
+                  "displayValue": "2"
                 },
                 {
                   "abbreviation": "R",
                   "name": "runs",
-                  "displayValue": "0"
+                  "displayValue": "1"
                 },
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".167"
+                  "displayValue": ".200"
                 },
                 {
                   "abbreviation": "SV",
@@ -8319,8 +8320,8 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Top 3rd",
-              "shortDetail": "Top 3rd"
+              "detail": "Middle 3rd",
+              "shortDetail": "Mid 3rd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -8347,6 +8348,40 @@
               "displayName": "MLB Rating",
               "leaders": [
                 {
+                  "displayValue": "1-1, HR, RBI, R",
+                  "value": 66.0,
+                  "athlete": {
+                    "fullName": "Orlando Arcia",
+                    "displayName": "Orlando Arcia",
+                    "shortName": "O. Arcia",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32530.png",
+                    "jersey": "8",
+                    "position": {
+                      "abbreviation": "SS"
+                    },
+                    "team": {
+                      "id": "27"
+                    },
+                    "active": true,
+                    "id": "32530",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/32530",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "27",
+                    "logos": [],
+                    "links": []
+                  }
+                },
+                {
                   "displayValue": "1-1",
                   "value": 61.0,
                   "athlete": {
@@ -8366,39 +8401,6 @@
                     "links": [
                       {
                         "href": "https://www.espn.com/mlb/player/_/id/35831",
-                        "rel": [
-                          "playercard",
-                          "desktop",
-                          "athlete"
-                        ]
-                      }
-                    ]
-                  },
-                  "team": {
-                    "id": "27",
-                    "logos": [],
-                    "links": []
-                  }
-                },
-                {
-                  "displayValue": "2.0 IP, 0 ER, 0 H, 5 K, 0 BB",
-                  "value": 61.0,
-                  "athlete": {
-                    "fullName": "Carson Palmquist",
-                    "displayName": "Carson Palmquist",
-                    "shortName": "C. Palmquist",
-                    "jersey": "45",
-                    "position": {
-                      "abbreviation": "SP"
-                    },
-                    "team": {
-                      "id": "27"
-                    },
-                    "active": true,
-                    "id": "4621424",
-                    "links": [
-                      {
-                        "href": "https://www.espn.com/mlb/player/_/id/4621424",
                         "rel": [
                           "playercard",
                           "desktop",
@@ -8530,8 +8532,8 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Top 3rd",
-          "shortDetail": "Top 3rd"
+          "detail": "Middle 3rd",
+          "shortDetail": "Mid 3rd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -8541,8 +8543,8 @@
     {
       "weather": {
         "displayValue": "7",
-        "temperature": 79,
-        "highTemperature": 79,
+        "temperature": 81,
+        "highTemperature": 81,
         "conditionId": "Cloudy",
         "link": {
           "language": "en-US",
@@ -8563,7 +8565,7 @@
           "wasSuspended": false,
           "situation": {
             "lastPlay": {
-              "id": "4016957860301060005",
+              "id": "4016957860402040005",
               "type": {
                 "id": "5",
                 "text": "Ball",
@@ -8571,19 +8573,19 @@
                 "alternativeText": "Walk",
                 "type": "ball"
               },
-              "text": "Pitch 5 : Ball 3",
+              "text": "Pitch 3 : Ball 1",
               "scoreValue": 0,
               "team": {
-                "id": "26"
+                "id": "28"
               },
-              "atBatId": "4016957860301",
+              "atBatId": "4016957860402",
               "summaryType": "P",
               "athletesInvolved": [
                 {
-                  "id": "42796",
-                  "fullName": "Kyle Stowers",
-                  "displayName": "Kyle Stowers",
-                  "shortName": "K. Stowers",
+                  "id": "39642",
+                  "fullName": "Heliot Ramos",
+                  "displayName": "Heliot Ramos",
+                  "shortName": "H. Ramos",
                   "links": [
                     {
                       "rel": [
@@ -8591,29 +8593,29 @@
                         "desktop",
                         "athlete"
                       ],
-                      "href": "https://www.espn.com/mlb/player/_/id/42796"
+                      "href": "https://www.espn.com/mlb/player/_/id/39642"
                     }
                   ],
-                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42796.png",
-                  "jersey": "28",
-                  "position": "RF",
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39642.png",
+                  "jersey": "17",
+                  "position": "LF",
                   "team": {
-                    "id": "28"
+                    "id": "26"
                   }
                 }
               ]
             },
-            "balls": 3,
+            "balls": 1,
             "strikes": 2,
-            "outs": 0,
+            "outs": 1,
             "pitcher": {
-              "playerId": 5197166,
-              "period": 2,
+              "playerId": 41178,
+              "period": 3,
               "athlete": {
-                "id": "5197166",
-                "fullName": "Hayden Birdsong",
-                "displayName": "Hayden Birdsong",
-                "shortName": "H. Birdsong",
+                "id": "41178",
+                "fullName": "Ryan Weathers",
+                "displayName": "Ryan Weathers",
+                "shortName": "R. Weathers",
                 "links": [
                   {
                     "rel": [
@@ -8621,25 +8623,25 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/5197166"
+                    "href": "https://www.espn.com/mlb/player/_/id/41178"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5197166.png",
-                "jersey": "60",
-                "position": "RP",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41178.png",
+                "jersey": "35",
+                "position": "SP",
                 "team": {
-                  "id": "26"
+                  "id": "28"
                 }
               }
             },
             "batter": {
-              "playerId": 42796,
-              "period": 2,
+              "playerId": 39642,
+              "period": 3,
               "athlete": {
-                "id": "42796",
-                "fullName": "Kyle Stowers",
-                "displayName": "Kyle Stowers",
-                "shortName": "K. Stowers",
+                "id": "39642",
+                "fullName": "Heliot Ramos",
+                "displayName": "Heliot Ramos",
+                "shortName": "H. Ramos",
                 "links": [
                   {
                     "rel": [
@@ -8647,14 +8649,14 @@
                       "desktop",
                       "athlete"
                     ],
-                    "href": "https://www.espn.com/mlb/player/_/id/42796"
+                    "href": "https://www.espn.com/mlb/player/_/id/39642"
                   }
                 ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42796.png",
-                "jersey": "28",
-                "position": "RF",
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39642.png",
+                "jersey": "17",
+                "position": "LF",
                 "team": {
-                  "id": "28"
+                  "id": "26"
                 }
               }
             },
@@ -8662,7 +8664,7 @@
             "onSecond": false,
             "onThird": false
           },
-          "outsText": "0 Outs",
+          "outsText": "1 Out",
           "id": "401695786",
           "date": "2025-06-01T17:40:00+00:00",
           "competitors": [
@@ -9026,7 +9028,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".250"
+                  "displayValue": ".143"
                 },
                 {
                   "abbreviation": "SV",
@@ -9419,6 +9421,11 @@
                   "displayValue": "0",
                   "period": 2,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 3,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -9435,7 +9442,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".143"
+                  "displayValue": ".125"
                 },
                 {
                   "abbreviation": "SV",
@@ -9514,12 +9521,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "Bottom 2nd",
-              "shortDetail": "Bot 2nd"
+              "detail": "Top 3rd",
+              "shortDetail": "Top 3rd"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 2
+            "period": 3
           },
           "broadcasts": [
             {
@@ -9726,26 +9733,26 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "Bottom 2nd",
-          "shortDetail": "Bot 2nd"
+          "detail": "Top 3rd",
+          "shortDetail": "Top 3rd"
         },
         "clock": 0.0,
         "displayClock": "0:00",
-        "period": 2
+        "period": 3
       }
     },
     {
       "weather": {
-        "displayValue": "Hazy sunshine",
+        "displayValue": "1",
         "temperature": 86,
         "highTemperature": 86,
-        "conditionId": "5",
+        "conditionId": "Sunny",
         "link": {
           "language": "en-US",
           "rel": [
             "64129"
           ],
-          "href": "http://www.accuweather.com/en/us/kauffman-stadium-mo/64106/hourly-weather-forecast/43033_poi?day=1&hbhhour=13&lang=en-us",
+          "href": "http://www.accuweather.com/en/us/kauffman-stadium-mo/64106/current-weather/43033_poi?lang=en-us",
           "text": "Weather",
           "shortText": "Weather",
           "isExternal": true,
@@ -9757,130 +9764,292 @@
       "competitions": [
         {
           "wasSuspended": false,
-          "tickets": [
-            {
-              "summary": "Tickets as low as $2",
-              "numberAvailable": 1251,
-              "links": [
-                {
-                  "href": "https://www.vividseats.com/kansas-city-royals-tickets-kauffman-stadium-6-1-2025--sports-mlb-baseball/production/5098689?wsUser=717"
-                },
-                {
-                  "href": "https://www.vividseats.com/kauffman-stadium-tickets/venue/841?wsUser=717"
-                }
-              ]
-            }
-          ],
-          "odds": [
-            {
-              "provider": {
-                "id": "58",
-                "name": "ESPN BET",
-                "priority": 1
+          "situation": {
+            "lastPlay": {
+              "id": "4016957880002010001",
+              "type": {
+                "id": "1",
+                "text": "Start Batter/Pitcher",
+                "alternativeText": "Now at bat",
+                "type": "start-batterpitcher"
               },
-              "details": "KC -160",
-              "overUnder": 8.5,
-              "spread": -1.5,
-              "awayTeamOdds": {
-                "favorite": false,
-                "underdog": true,
-                "close": {
-                  "pointSpread": {
-                    "alternateDisplayValue": "EVEN",
-                    "american": "EVEN"
+              "text": "Kris Bubic pitches to Gleyber Torres",
+              "scoreValue": 0,
+              "team": {
+                "id": "6"
+              },
+              "atBatId": "4016957880002",
+              "summaryType": "A",
+              "athletesInvolved": []
+            },
+            "balls": 0,
+            "strikes": 0,
+            "outs": 0,
+            "onFirst": true,
+            "pitcher": {
+              "playerId": 41201,
+              "period": 1,
+              "athlete": {
+                "id": "41201",
+                "fullName": "Kris Bubic",
+                "displayName": "Kris Bubic",
+                "shortName": "K. Bubic",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/41201"
                   }
-                },
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41201.png",
+                "jersey": "50",
+                "position": "SP",
                 "team": {
-                  "id": "6",
-                  "uid": "s:1~l:10~t:6",
-                  "abbreviation": "DET",
-                  "name": "Tigers",
-                  "displayName": "Detroit Tigers",
-                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png"
+                  "id": "7"
                 }
               },
-              "homeTeamOdds": {
-                "favorite": true,
-                "underdog": false,
-                "close": {
-                  "pointSpread": {
-                    "value": 0.0,
-                    "alternateDisplayValue": "EVEN",
-                    "decimal": 0.0,
-                    "american": "EVEN"
+              "summary": "0.0 IP, 0 ER, 0 H, BB"
+            },
+            "batter": {
+              "playerId": 33804,
+              "period": 1,
+              "athlete": {
+                "id": "33804",
+                "fullName": "Gleyber Torres",
+                "displayName": "Gleyber Torres",
+                "shortName": "G. Torres",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/33804"
                   }
-                },
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33804.png",
+                "jersey": "25",
+                "position": "2B",
                 "team": {
-                  "id": "7",
-                  "uid": "s:1~l:10~t:7",
-                  "abbreviation": "KC",
-                  "name": "Royals",
-                  "displayName": "Kansas City Royals",
-                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/kc.png"
+                  "id": "6"
                 }
               },
-              "open": {
-                "over": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "-105",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "-105"
-                },
-                "under": {
-                  "value": 1.87,
-                  "displayValue": "20/23",
-                  "alternateDisplayValue": "-115",
-                  "decimal": 1.87,
-                  "fraction": "20/23",
-                  "american": "-115"
-                },
-                "total": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "8.5",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "8.5"
-                }
-              },
-              "current": {
-                "over": {
-                  "value": 2.0,
-                  "displayValue": "1/1",
-                  "alternateDisplayValue": "EVEN",
-                  "decimal": 2.0,
-                  "fraction": "1/1",
-                  "american": "EVEN",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "under": {
-                  "value": 1.833,
-                  "displayValue": "5/6",
-                  "alternateDisplayValue": "-120",
-                  "decimal": 1.833,
-                  "fraction": "5/6",
-                  "american": "-120",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "total": {
-                  "value": 0.0,
-                  "alternateDisplayValue": "8.5",
-                  "decimal": 0.0,
-                  "american": "8.5"
-                }
-              }
-            }
-          ],
+              "summary": "0-0"
+            },
+            "onSecond": false,
+            "onThird": false
+          },
+          "outsText": "0 Outs",
           "id": "401695788",
           "date": "2025-06-01T18:10:00+00:00",
           "competitors": [
             {
+              "leaders": [
+                {
+                  "name": "avg",
+                  "displayName": "Batting Average",
+                  "shortDisplayName": "BA",
+                  "abbreviation": "AVG",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31127",
+                        "fullName": "Salvador Perez",
+                        "displayName": "Salvador Perez",
+                        "shortName": "S. Perez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31127.png",
+                        "jersey": "13",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "homeRuns",
+                  "displayName": "Home Runs",
+                  "shortDisplayName": "HR",
+                  "abbreviation": "HR",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31127",
+                        "fullName": "Salvador Perez",
+                        "displayName": "Salvador Perez",
+                        "shortName": "S. Perez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31127.png",
+                        "jersey": "13",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "RBIs",
+                  "displayName": "Runs Batted In",
+                  "shortDisplayName": "RBI",
+                  "abbreviation": "RBI",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31127",
+                        "fullName": "Salvador Perez",
+                        "displayName": "Salvador Perez",
+                        "shortName": "S. Perez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31127.png",
+                        "jersey": "13",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "RAT",
+                  "abbreviation": "RAT",
+                  "leaders": [
+                    {
+                      "displayValue": "0.0 IP, 0 ER, 0 H, BB",
+                      "value": 49.0,
+                      "athlete": {
+                        "id": "41201",
+                        "fullName": "Kris Bubic",
+                        "displayName": "Kris Bubic",
+                        "shortName": "K. Bubic",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/41201"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41201.png",
+                        "jersey": "50",
+                        "position": {
+                          "abbreviation": "SP"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31127",
+                        "fullName": "Salvador Perez",
+                        "displayName": "Salvador Perez",
+                        "shortName": "S. Perez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31127.png",
+                        "jersey": "13",
+                        "position": {
+                          "abbreviation": "C"
+                        },
+                        "team": {
+                          "id": "7"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "7"
+                      }
+                    }
+                  ]
+                }
+              ],
               "probables": [
                 {
                   "name": "probableStartingPitcher",
@@ -9947,168 +10116,6 @@
               ],
               "hits": 0,
               "errors": 0,
-              "leaders": [
-                {
-                  "name": "avg",
-                  "displayName": "Batting Average",
-                  "shortDisplayName": "BA",
-                  "abbreviation": "AVG",
-                  "leaders": [
-                    {
-                      "displayValue": ".316",
-                      "value": 0.3157894015312195,
-                      "athlete": {
-                        "id": "4905884",
-                        "fullName": "Maikel Garcia",
-                        "displayName": "Maikel Garcia",
-                        "shortName": "M. Garcia",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4905884"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905884.png",
-                        "jersey": "11",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "7"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "7"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "homeRuns",
-                  "displayName": "Home Runs",
-                  "shortDisplayName": "HR",
-                  "abbreviation": "HR",
-                  "leaders": [
-                    {
-                      "displayValue": "8",
-                      "value": 8.0,
-                      "athlete": {
-                        "id": "4109109",
-                        "fullName": "Vinnie Pasquantino",
-                        "displayName": "Vinnie Pasquantino",
-                        "shortName": "V. Pasquantino",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4109109"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4109109.png",
-                        "jersey": "9",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "7"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "7"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "RBIs",
-                  "displayName": "Runs Batted In",
-                  "shortDisplayName": "RBI",
-                  "abbreviation": "RBI",
-                  "leaders": [
-                    {
-                      "displayValue": "31",
-                      "value": 31.0,
-                      "athlete": {
-                        "id": "42403",
-                        "fullName": "Bobby Witt Jr.",
-                        "displayName": "Bobby Witt Jr.",
-                        "shortName": "B. Witt Jr.",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/42403"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42403.png",
-                        "jersey": "7",
-                        "position": {
-                          "abbreviation": "SS"
-                        },
-                        "team": {
-                          "id": "7"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "7"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "253.2",
-                      "value": 253.25,
-                      "athlete": {
-                        "id": "42403",
-                        "fullName": "Bobby Witt Jr.",
-                        "displayName": "Bobby Witt Jr.",
-                        "shortName": "B. Witt Jr.",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/42403"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42403.png",
-                        "jersey": "7",
-                        "position": {
-                          "abbreviation": "SS"
-                        },
-                        "team": {
-                          "id": "7"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "7"
-                      }
-                    }
-                  ]
-                }
-              ],
               "id": "7",
               "order": 0,
               "homeAway": "home",
@@ -10179,51 +10186,43 @@
               "statistics": [
                 {
                   "abbreviation": "H",
-                  "rankDisplayValue": "13th",
                   "name": "hits",
-                  "displayValue": "485"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "R",
-                  "rankDisplayValue": "28th",
                   "name": "runs",
-                  "displayValue": "194"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "AVG",
-                  "rankDisplayValue": "17th",
                   "name": "avg",
-                  "displayValue": ".246"
+                  "displayValue": ".000"
                 },
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "3rd",
                   "name": "saves",
-                  "displayValue": "19"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "L",
-                  "rankDisplayValue": "Tied-14th",
                   "name": "losses",
-                  "displayValue": "28"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "W",
-                  "rankDisplayValue": "Tied-10th",
                   "name": "wins",
-                  "displayValue": "31"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "ERA",
-                  "rankDisplayValue": "4th",
                   "name": "ERA",
-                  "displayValue": "3.16"
+                  "displayValue": "---"
                 },
                 {
                   "abbreviation": "E",
-                  "rankDisplayValue": "Tied-5th",
                   "name": "errors",
-                  "displayValue": "24"
+                  "displayValue": "0"
                 }
               ],
               "records": [
@@ -10248,6 +10247,208 @@
               ]
             },
             {
+              "leaders": [
+                {
+                  "name": "avg",
+                  "displayName": "Batting Average",
+                  "shortDisplayName": "BA",
+                  "abbreviation": "AVG",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "32127",
+                        "fullName": "Javier Baez",
+                        "displayName": "Javier Baez",
+                        "shortName": "J. Baez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/32127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32127.png",
+                        "jersey": "28",
+                        "position": {
+                          "abbreviation": "CF"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "homeRuns",
+                  "displayName": "Home Runs",
+                  "shortDisplayName": "HR",
+                  "abbreviation": "HR",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "32127",
+                        "fullName": "Javier Baez",
+                        "displayName": "Javier Baez",
+                        "shortName": "J. Baez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/32127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32127.png",
+                        "jersey": "28",
+                        "position": {
+                          "abbreviation": "CF"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "RBIs",
+                  "displayName": "Runs Batted In",
+                  "shortDisplayName": "RBI",
+                  "abbreviation": "RBI",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "32127",
+                        "fullName": "Javier Baez",
+                        "displayName": "Javier Baez",
+                        "shortName": "J. Baez",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/32127"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32127.png",
+                        "jersey": "28",
+                        "position": {
+                          "abbreviation": "CF"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "RAT",
+                  "abbreviation": "RAT",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0, BB",
+                      "value": 59.25,
+                      "athlete": {
+                        "id": "4718623",
+                        "fullName": "Justyn-Henry Malloy",
+                        "displayName": "Justyn-Henry Malloy",
+                        "shortName": "J. Malloy",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/4718623"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4718623.png",
+                        "jersey": "44",
+                        "position": {
+                          "abbreviation": "RF"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0, BB",
+                      "value": 59.25,
+                      "athlete": {
+                        "id": "4718623",
+                        "fullName": "Justyn-Henry Malloy",
+                        "displayName": "Justyn-Henry Malloy",
+                        "shortName": "J. Malloy",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/4718623"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4718623.png",
+                        "jersey": "44",
+                        "position": {
+                          "abbreviation": "RF"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      }
+                    }
+                  ]
+                }
+              ],
               "probables": [
                 {
                   "name": "probableStartingPitcher",
@@ -10313,208 +10514,6 @@
               ],
               "hits": 0,
               "errors": 0,
-              "leaders": [
-                {
-                  "name": "avg",
-                  "displayName": "Batting Average",
-                  "shortDisplayName": "BA",
-                  "abbreviation": "AVG",
-                  "leaders": [
-                    {
-                      "displayValue": ".274",
-                      "value": 0.27439019083976746,
-                      "athlete": {
-                        "id": "33804",
-                        "fullName": "Gleyber Torres",
-                        "displayName": "Gleyber Torres",
-                        "shortName": "G. Torres",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/33804"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33804.png",
-                        "jersey": "25",
-                        "position": {
-                          "abbreviation": "2B"
-                        },
-                        "team": {
-                          "id": "6"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "6"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "homeRuns",
-                  "displayName": "Home Runs",
-                  "shortDisplayName": "HR",
-                  "abbreviation": "HR",
-                  "leaders": [
-                    {
-                      "displayValue": "14",
-                      "value": 14.0,
-                      "athlete": {
-                        "id": "4424286",
-                        "fullName": "Spencer Torkelson",
-                        "displayName": "Spencer Torkelson",
-                        "shortName": "S. Torkelson",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4424286"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4424286.png",
-                        "jersey": "20",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "6"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "6"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "RBIs",
-                  "displayName": "Runs Batted In",
-                  "shortDisplayName": "RBI",
-                  "abbreviation": "RBI",
-                  "leaders": [
-                    {
-                      "displayValue": "42",
-                      "value": 42.0,
-                      "athlete": {
-                        "id": "4424286",
-                        "fullName": "Spencer Torkelson",
-                        "displayName": "Spencer Torkelson",
-                        "shortName": "S. Torkelson",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4424286"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4424286.png",
-                        "jersey": "20",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "6"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "6"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "244.5",
-                      "value": 244.5,
-                      "athlete": {
-                        "id": "4424286",
-                        "fullName": "Spencer Torkelson",
-                        "displayName": "Spencer Torkelson",
-                        "shortName": "S. Torkelson",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4424286"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4424286.png",
-                        "jersey": "20",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "6"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "6"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "244.5",
-                      "value": 244.5,
-                      "athlete": {
-                        "id": "4424286",
-                        "fullName": "Spencer Torkelson",
-                        "displayName": "Spencer Torkelson",
-                        "shortName": "S. Torkelson",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4424286"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4424286.png",
-                        "jersey": "20",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "6"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "6"
-                      }
-                    }
-                  ]
-                }
-              ],
               "id": "6",
               "order": 1,
               "homeAway": "away",
@@ -10581,55 +10580,53 @@
               "uid": "s:1~l:10~t:6",
               "type": "team",
               "score": "0",
-              "linescores": [],
+              "linescores": [
+                {
+                  "displayValue": "0",
+                  "period": 1,
+                  "value": 0.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "H",
-                  "rankDisplayValue": "9th",
                   "name": "hits",
-                  "displayValue": "498"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "R",
-                  "rankDisplayValue": "4th",
                   "name": "runs",
-                  "displayValue": "295"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "AVG",
-                  "rankDisplayValue": "11th",
                   "name": "avg",
-                  "displayValue": ".250"
+                  "displayValue": ".000"
                 },
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "Tied-4th",
                   "name": "saves",
-                  "displayValue": "18"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "L",
-                  "rankDisplayValue": "1st",
                   "name": "losses",
-                  "displayValue": "21"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "W",
-                  "rankDisplayValue": "1st",
                   "name": "wins",
-                  "displayValue": "38"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "ERA",
-                  "rankDisplayValue": "5th",
                   "name": "ERA",
-                  "displayValue": "3.22"
+                  "displayValue": "---"
                 },
                 {
                   "abbreviation": "E",
-                  "rankDisplayValue": "Tied-5th",
                   "name": "errors",
-                  "displayValue": "24"
+                  "displayValue": "0"
                 }
               ],
               "records": [
@@ -10663,7 +10660,7 @@
           "timeValid": true,
           "neutralSite": false,
           "conferenceCompetition": false,
-          "playByPlayAvailable": false,
+          "playByPlayAvailable": true,
           "recent": true,
           "venue": {
             "id": "7",
@@ -10678,13 +10675,13 @@
           "notes": [],
           "status": {
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Scheduled",
-              "shortDetail": "6/1 - 2:10 PM EDT"
+              "description": "In Progress",
+              "detail": "Top 1st",
+              "shortDetail": "Top 1st"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -10706,7 +10703,84 @@
               ]
             }
           ],
-          "leaders": [],
+          "leaders": [
+            {
+              "name": "MLBRating",
+              "displayName": "MLB Rating",
+              "leaders": [
+                {
+                  "displayValue": "0-0, BB",
+                  "value": 59.25,
+                  "athlete": {
+                    "fullName": "Justyn-Henry Malloy",
+                    "displayName": "Justyn-Henry Malloy",
+                    "shortName": "J. Malloy",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4718623.png",
+                    "jersey": "44",
+                    "position": {
+                      "abbreviation": "RF"
+                    },
+                    "team": {
+                      "id": "6"
+                    },
+                    "active": true,
+                    "id": "4718623",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/4718623",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "6",
+                    "logos": [],
+                    "links": []
+                  }
+                },
+                {
+                  "displayValue": "0-0",
+                  "value": 59.0,
+                  "athlete": {
+                    "fullName": "Gleyber Torres",
+                    "displayName": "Gleyber Torres",
+                    "shortName": "G. Torres",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33804.png",
+                    "jersey": "25",
+                    "position": {
+                      "abbreviation": "2B"
+                    },
+                    "team": {
+                      "id": "6"
+                    },
+                    "active": true,
+                    "id": "33804",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/33804",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "6",
+                    "logos": [],
+                    "links": []
+                  }
+                }
+              ],
+              "shortDisplayName": "RAT",
+              "abbreviation": "RAT"
+            }
+          ],
           "format": {
             "regulation": {
               "periods": 9
@@ -10762,13 +10836,7 @@
             }
           ],
           "highlights": [],
-          "headlines": [
-            {
-              "type": "Preview",
-              "description": "Detroit Tigers (38-21, first in the AL Central) vs. Kansas City Royals (31-28, fourth in the AL Central)",
-              "shortLinkText": "Royals and Tigers meet in series rubber match"
-            }
-          ]
+          "headlines": []
         }
       ],
       "uid": "s:1~l:10~e:401695788",
@@ -10783,10 +10851,10 @@
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/mlb/game/_/gameId/401695788/tigers-royals",
+          "href": "https://www.espn.com/mlb/game/_/gameId/401695788",
           "text": "Gamecast",
           "rel": [
-            "summary",
+            "gamecast",
             "desktop",
             "event"
           ],
@@ -10795,11 +10863,37 @@
         },
         {
           "language": "en-US",
-          "shortText": "Preview",
-          "href": "https://www.espn.com/mlb/preview/_/gameId/401695788",
-          "text": "Preview",
+          "shortText": "Gamecast",
+          "href": "https://www.espn.com/mlb/game/_/gameId/401695788",
+          "text": "Gamecast",
           "rel": [
-            "preview",
+            "live",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/mlb/boxscore/_/gameId/401695788",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/mlb/playbyplay/_/gameId/401695788",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
             "desktop",
             "event"
           ],
@@ -10809,13 +10903,13 @@
       ],
       "status": {
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Scheduled",
-          "shortDetail": "6/1 - 2:10 PM EDT"
+          "description": "In Progress",
+          "detail": "Top 1st",
+          "shortDetail": "Top 1st"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -10824,16 +10918,16 @@
     },
     {
       "weather": {
-        "displayValue": "Intermittent clouds",
+        "displayValue": "6",
         "temperature": 90,
         "highTemperature": 90,
-        "conditionId": "4",
+        "conditionId": "Mostly cloudy",
         "link": {
           "language": "en-US",
           "rel": [
             "77002"
           ],
-          "href": "http://www.accuweather.com/en/us/daikin-park-tx/77002/hourly-weather-forecast/53651_poi?day=1&hbhhour=13&lang=en-us",
+          "href": "http://www.accuweather.com/en/us/daikin-park-tx/77002/current-weather/53651_poi?lang=en-us",
           "text": "Weather",
           "shortText": "Weather",
           "isExternal": true,
@@ -10845,130 +10939,314 @@
       "competitions": [
         {
           "wasSuspended": false,
-          "tickets": [
-            {
-              "summary": "Tickets as low as $18",
-              "numberAvailable": 658,
-              "links": [
+          "situation": {
+            "lastPlay": {
+              "id": "4016957900002060037",
+              "type": {
+                "id": "37",
+                "text": "Strike Swinging",
+                "abbreviation": "SS",
+                "alternativeText": "Strikeout",
+                "type": "strike-swinging"
+              },
+              "text": "Pitch 5 : Strike 2 Swinging",
+              "scoreValue": 0,
+              "team": {
+                "id": "18"
+              },
+              "atBatId": "4016957900002",
+              "summaryType": "P",
+              "athletesInvolved": [
                 {
-                  "href": "https://www.vividseats.com/houston-astros-tickets-minute-maid-park-6-1-2025--sports-mlb-baseball/production/5099673?wsUser=717"
-                },
-                {
-                  "href": "https://www.vividseats.com/minute-maid-park-tickets/venue/515?wsUser=717"
+                  "id": "39961",
+                  "fullName": "Brandon Lowe",
+                  "displayName": "Brandon Lowe",
+                  "shortName": "B. Lowe",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/39961"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39961.png",
+                  "jersey": "8",
+                  "position": "2B",
+                  "team": {
+                    "id": "30"
+                  }
                 }
               ]
-            }
-          ],
-          "odds": [
-            {
-              "provider": {
-                "id": "58",
-                "name": "ESPN BET",
-                "priority": 1
-              },
-              "details": "HOU -165",
-              "overUnder": 7.5,
-              "spread": -1.5,
-              "awayTeamOdds": {
-                "favorite": false,
-                "underdog": true,
-                "close": {
-                  "pointSpread": {
-                    "alternateDisplayValue": "EVEN",
-                    "american": "EVEN"
+            },
+            "balls": 3,
+            "strikes": 2,
+            "outs": 1,
+            "pitcher": {
+              "playerId": 4717803,
+              "period": 1,
+              "athlete": {
+                "id": "4717803",
+                "fullName": "Hunter Brown",
+                "displayName": "Hunter Brown",
+                "shortName": "H. Brown",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/4717803"
                   }
-                },
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4717803.png",
+                "jersey": "58",
+                "position": "SP",
                 "team": {
-                  "id": "30",
-                  "uid": "s:1~l:10~t:30",
-                  "abbreviation": "TB",
-                  "name": "Rays",
-                  "displayName": "Tampa Bay Rays",
-                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png"
-                }
-              },
-              "homeTeamOdds": {
-                "favorite": true,
-                "underdog": false,
-                "close": {
-                  "pointSpread": {
-                    "value": 0.0,
-                    "alternateDisplayValue": "EVEN",
-                    "decimal": 0.0,
-                    "american": "EVEN"
-                  }
-                },
-                "team": {
-                  "id": "18",
-                  "uid": "s:1~l:10~t:18",
-                  "abbreviation": "HOU",
-                  "name": "Astros",
-                  "displayName": "Houston Astros",
-                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/hou.png"
-                }
-              },
-              "open": {
-                "over": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "-110",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "-110"
-                },
-                "under": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "-110",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "-110"
-                },
-                "total": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "7.5",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "7.5"
-                }
-              },
-              "current": {
-                "over": {
-                  "value": 1.87,
-                  "displayValue": "20/23",
-                  "alternateDisplayValue": "-115",
-                  "decimal": 1.87,
-                  "fraction": "20/23",
-                  "american": "-115",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "under": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "-105",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "-105",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "total": {
-                  "value": 0.0,
-                  "alternateDisplayValue": "7.5",
-                  "decimal": 0.0,
-                  "american": "7.5"
+                  "id": "18"
                 }
               }
-            }
-          ],
+            },
+            "batter": {
+              "playerId": 39961,
+              "period": 1,
+              "athlete": {
+                "id": "39961",
+                "fullName": "Brandon Lowe",
+                "displayName": "Brandon Lowe",
+                "shortName": "B. Lowe",
+                "links": [
+                  {
+                    "rel": [
+                      "playercard",
+                      "desktop",
+                      "athlete"
+                    ],
+                    "href": "https://www.espn.com/mlb/player/_/id/39961"
+                  }
+                ],
+                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39961.png",
+                "jersey": "8",
+                "position": "2B",
+                "team": {
+                  "id": "30"
+                }
+              }
+            },
+            "onFirst": false,
+            "onSecond": false,
+            "onThird": false
+          },
+          "outsText": "1 Out",
           "id": "401695790",
           "date": "2025-06-01T18:10:00+00:00",
           "competitors": [
             {
+              "leaders": [
+                {
+                  "name": "avg",
+                  "displayName": "Batting Average",
+                  "shortDisplayName": "BA",
+                  "abbreviation": "AVG",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31662",
+                        "fullName": "Jose Altuve",
+                        "displayName": "Jose Altuve",
+                        "shortName": "J. Altuve",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31662"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31662.png",
+                        "jersey": "27",
+                        "position": {
+                          "abbreviation": "LF"
+                        },
+                        "team": {
+                          "id": "18"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "18"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "homeRuns",
+                  "displayName": "Home Runs",
+                  "shortDisplayName": "HR",
+                  "abbreviation": "HR",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31662",
+                        "fullName": "Jose Altuve",
+                        "displayName": "Jose Altuve",
+                        "shortName": "J. Altuve",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31662"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31662.png",
+                        "jersey": "27",
+                        "position": {
+                          "abbreviation": "LF"
+                        },
+                        "team": {
+                          "id": "18"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "18"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "RBIs",
+                  "displayName": "Runs Batted In",
+                  "shortDisplayName": "RBI",
+                  "abbreviation": "RBI",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31662",
+                        "fullName": "Jose Altuve",
+                        "displayName": "Jose Altuve",
+                        "shortName": "J. Altuve",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31662"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31662.png",
+                        "jersey": "27",
+                        "position": {
+                          "abbreviation": "LF"
+                        },
+                        "team": {
+                          "id": "18"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "18"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "RAT",
+                  "abbreviation": "RAT",
+                  "leaders": [
+                    {
+                      "displayValue": "0.1 IP, 0 ER, 0 H, K, 0 BB",
+                      "value": 52.0,
+                      "athlete": {
+                        "id": "4717803",
+                        "fullName": "Hunter Brown",
+                        "displayName": "Hunter Brown",
+                        "shortName": "H. Brown",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/4717803"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4717803.png",
+                        "jersey": "58",
+                        "position": {
+                          "abbreviation": "SP"
+                        },
+                        "team": {
+                          "id": "18"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "18"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "31662",
+                        "fullName": "Jose Altuve",
+                        "displayName": "Jose Altuve",
+                        "shortName": "J. Altuve",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/31662"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/31662.png",
+                        "jersey": "27",
+                        "position": {
+                          "abbreviation": "LF"
+                        },
+                        "team": {
+                          "id": "18"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "18"
+                      }
+                    }
+                  ]
+                }
+              ],
               "probables": [
                 {
                   "name": "probableStartingPitcher",
@@ -11035,168 +11313,6 @@
               ],
               "hits": 0,
               "errors": 0,
-              "leaders": [
-                {
-                  "name": "avg",
-                  "displayName": "Batting Average",
-                  "shortDisplayName": "BA",
-                  "abbreviation": "AVG",
-                  "leaders": [
-                    {
-                      "displayValue": ".305",
-                      "value": 0.30454540252685547,
-                      "athlete": {
-                        "id": "41273",
-                        "fullName": "Jeremy Pena",
-                        "displayName": "Jeremy Pena",
-                        "shortName": "J. Pena",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/41273"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41273.png",
-                        "jersey": "3",
-                        "position": {
-                          "abbreviation": "SS"
-                        },
-                        "team": {
-                          "id": "18"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "18"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "homeRuns",
-                  "displayName": "Home Runs",
-                  "shortDisplayName": "HR",
-                  "abbreviation": "HR",
-                  "leaders": [
-                    {
-                      "displayValue": "11",
-                      "value": 11.0,
-                      "athlete": {
-                        "id": "39706",
-                        "fullName": "Isaac Paredes",
-                        "displayName": "Isaac Paredes",
-                        "shortName": "I. Paredes",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/39706"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39706.png",
-                        "jersey": "15",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "18"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "18"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "RBIs",
-                  "displayName": "Runs Batted In",
-                  "shortDisplayName": "RBI",
-                  "abbreviation": "RBI",
-                  "leaders": [
-                    {
-                      "displayValue": "32",
-                      "value": 32.0,
-                      "athlete": {
-                        "id": "39706",
-                        "fullName": "Isaac Paredes",
-                        "displayName": "Isaac Paredes",
-                        "shortName": "I. Paredes",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/39706"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39706.png",
-                        "jersey": "15",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "18"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "18"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "252.8",
-                      "value": 252.75,
-                      "athlete": {
-                        "id": "41273",
-                        "fullName": "Jeremy Pena",
-                        "displayName": "Jeremy Pena",
-                        "shortName": "J. Pena",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/41273"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/41273.png",
-                        "jersey": "3",
-                        "position": {
-                          "abbreviation": "SS"
-                        },
-                        "team": {
-                          "id": "18"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "18"
-                      }
-                    }
-                  ]
-                }
-              ],
               "id": "18",
               "order": 0,
               "homeAway": "home",
@@ -11267,51 +11383,43 @@
               "statistics": [
                 {
                   "abbreviation": "H",
-                  "rankDisplayValue": "10th",
                   "name": "hits",
-                  "displayValue": "493"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "R",
-                  "rankDisplayValue": "18th",
                   "name": "runs",
-                  "displayValue": "238"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "AVG",
-                  "rankDisplayValue": "7th",
                   "name": "avg",
-                  "displayValue": ".255"
+                  "displayValue": ".000"
                 },
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "Tied-17th",
                   "name": "saves",
-                  "displayValue": "15"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "L",
-                  "rankDisplayValue": "13th",
                   "name": "losses",
-                  "displayValue": "27"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "W",
-                  "rankDisplayValue": "Tied-10th",
                   "name": "wins",
-                  "displayValue": "31"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "ERA",
-                  "rankDisplayValue": "11th",
                   "name": "ERA",
-                  "displayValue": "3.72"
+                  "displayValue": "0.00"
                 },
                 {
                   "abbreviation": "E",
-                  "rankDisplayValue": "Tied-5th",
                   "name": "errors",
-                  "displayValue": "24"
+                  "displayValue": "0"
                 }
               ],
               "records": [
@@ -11336,6 +11444,208 @@
               ]
             },
             {
+              "leaders": [
+                {
+                  "name": "avg",
+                  "displayName": "Batting Average",
+                  "shortDisplayName": "BA",
+                  "abbreviation": "AVG",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "33481",
+                        "fullName": "Yandy Diaz",
+                        "displayName": "Yandy Diaz",
+                        "shortName": "Y. Diaz",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/33481"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33481.png",
+                        "jersey": "2",
+                        "position": {
+                          "abbreviation": "1B"
+                        },
+                        "team": {
+                          "id": "30"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "30"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "homeRuns",
+                  "displayName": "Home Runs",
+                  "shortDisplayName": "HR",
+                  "abbreviation": "HR",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "33481",
+                        "fullName": "Yandy Diaz",
+                        "displayName": "Yandy Diaz",
+                        "shortName": "Y. Diaz",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/33481"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33481.png",
+                        "jersey": "2",
+                        "position": {
+                          "abbreviation": "1B"
+                        },
+                        "team": {
+                          "id": "30"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "30"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "RBIs",
+                  "displayName": "Runs Batted In",
+                  "shortDisplayName": "RBI",
+                  "abbreviation": "RBI",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 0.0,
+                      "athlete": {
+                        "id": "33481",
+                        "fullName": "Yandy Diaz",
+                        "displayName": "Yandy Diaz",
+                        "shortName": "Y. Diaz",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/33481"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33481.png",
+                        "jersey": "2",
+                        "position": {
+                          "abbreviation": "1B"
+                        },
+                        "team": {
+                          "id": "30"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "30"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "RAT",
+                  "abbreviation": "RAT",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 59.0,
+                      "athlete": {
+                        "id": "39961",
+                        "fullName": "Brandon Lowe",
+                        "displayName": "Brandon Lowe",
+                        "shortName": "B. Lowe",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/39961"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39961.png",
+                        "jersey": "8",
+                        "position": {
+                          "abbreviation": "2B"
+                        },
+                        "team": {
+                          "id": "30"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "30"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "0-0",
+                      "value": 59.0,
+                      "athlete": {
+                        "id": "39961",
+                        "fullName": "Brandon Lowe",
+                        "displayName": "Brandon Lowe",
+                        "shortName": "B. Lowe",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/39961"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39961.png",
+                        "jersey": "8",
+                        "position": {
+                          "abbreviation": "2B"
+                        },
+                        "team": {
+                          "id": "30"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "30"
+                      }
+                    }
+                  ]
+                }
+              ],
               "probables": [
                 {
                   "name": "probableStartingPitcher",
@@ -11402,168 +11712,6 @@
               ],
               "hits": 0,
               "errors": 0,
-              "leaders": [
-                {
-                  "name": "avg",
-                  "displayName": "Batting Average",
-                  "shortDisplayName": "BA",
-                  "abbreviation": "AVG",
-                  "leaders": [
-                    {
-                      "displayValue": ".320",
-                      "value": 0.31976738572120667,
-                      "athlete": {
-                        "id": "40810",
-                        "fullName": "Jonathan Aranda",
-                        "displayName": "Jonathan Aranda",
-                        "shortName": "J. Aranda",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/40810"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40810.png",
-                        "jersey": "62",
-                        "position": {
-                          "abbreviation": "1B"
-                        },
-                        "team": {
-                          "id": "30"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "30"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "homeRuns",
-                  "displayName": "Home Runs",
-                  "shortDisplayName": "HR",
-                  "abbreviation": "HR",
-                  "leaders": [
-                    {
-                      "displayValue": "13",
-                      "value": 13.0,
-                      "athlete": {
-                        "id": "4905921",
-                        "fullName": "Junior Caminero",
-                        "displayName": "Junior Caminero",
-                        "shortName": "J. Caminero",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4905921"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905921.png",
-                        "jersey": "13",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "30"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "30"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "RBIs",
-                  "displayName": "Runs Batted In",
-                  "shortDisplayName": "RBI",
-                  "abbreviation": "RBI",
-                  "leaders": [
-                    {
-                      "displayValue": "37",
-                      "value": 37.0,
-                      "athlete": {
-                        "id": "4905921",
-                        "fullName": "Junior Caminero",
-                        "displayName": "Junior Caminero",
-                        "shortName": "J. Caminero",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4905921"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905921.png",
-                        "jersey": "13",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "30"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "30"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "244.2",
-                      "value": 244.25,
-                      "athlete": {
-                        "id": "4905921",
-                        "fullName": "Junior Caminero",
-                        "displayName": "Junior Caminero",
-                        "shortName": "J. Caminero",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4905921"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905921.png",
-                        "jersey": "13",
-                        "position": {
-                          "abbreviation": "3B"
-                        },
-                        "team": {
-                          "id": "30"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "30"
-                      }
-                    }
-                  ]
-                }
-              ],
               "id": "30",
               "order": 1,
               "homeAway": "away",
@@ -11630,55 +11778,53 @@
               "uid": "s:1~l:10~t:30",
               "type": "team",
               "score": "0",
-              "linescores": [],
+              "linescores": [
+                {
+                  "displayValue": "0",
+                  "period": 1,
+                  "value": 0.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "H",
-                  "rankDisplayValue": "14th",
                   "name": "hits",
-                  "displayValue": "483"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "R",
-                  "rankDisplayValue": "13th",
                   "name": "runs",
-                  "displayValue": "256"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "AVG",
-                  "rankDisplayValue": "13th",
                   "name": "avg",
-                  "displayValue": ".248"
+                  "displayValue": ".000"
                 },
                 {
                   "abbreviation": "SV",
-                  "rankDisplayValue": "Tied-19th",
                   "name": "saves",
-                  "displayValue": "14"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "L",
-                  "rankDisplayValue": "Tied-14th",
                   "name": "losses",
-                  "displayValue": "28"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "W",
-                  "rankDisplayValue": "Tied-16th",
                   "name": "wins",
-                  "displayValue": "30"
+                  "displayValue": "0"
                 },
                 {
                   "abbreviation": "ERA",
-                  "rankDisplayValue": "7th",
                   "name": "ERA",
-                  "displayValue": "3.54"
+                  "displayValue": "---"
                 },
                 {
                   "abbreviation": "E",
-                  "rankDisplayValue": "Tied-5th",
                   "name": "errors",
-                  "displayValue": "24"
+                  "displayValue": "0"
                 }
               ],
               "records": [
@@ -11712,7 +11858,7 @@
           "timeValid": true,
           "neutralSite": false,
           "conferenceCompetition": false,
-          "playByPlayAvailable": false,
+          "playByPlayAvailable": true,
           "recent": true,
           "venue": {
             "id": "44",
@@ -11727,13 +11873,13 @@
           "notes": [],
           "status": {
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
               "completed": false,
-              "description": "Scheduled",
-              "detail": "Scheduled",
-              "shortDetail": "6/1 - 2:10 PM EDT"
+              "description": "In Progress",
+              "detail": "Top 1st",
+              "shortDetail": "Top 1st"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -11754,7 +11900,84 @@
               ]
             }
           ],
-          "leaders": [],
+          "leaders": [
+            {
+              "name": "MLBRating",
+              "displayName": "MLB Rating",
+              "leaders": [
+                {
+                  "displayValue": "0-0",
+                  "value": 59.0,
+                  "athlete": {
+                    "fullName": "Brandon Lowe",
+                    "displayName": "Brandon Lowe",
+                    "shortName": "B. Lowe",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39961.png",
+                    "jersey": "8",
+                    "position": {
+                      "abbreviation": "2B"
+                    },
+                    "team": {
+                      "id": "30"
+                    },
+                    "active": true,
+                    "id": "39961",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/39961",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "30",
+                    "logos": [],
+                    "links": []
+                  }
+                },
+                {
+                  "displayValue": "0-1, K",
+                  "value": 58.5,
+                  "athlete": {
+                    "fullName": "Josh Lowe",
+                    "displayName": "Josh Lowe",
+                    "shortName": "J. Lowe",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/40557.png",
+                    "jersey": "15",
+                    "position": {
+                      "abbreviation": "RF"
+                    },
+                    "team": {
+                      "id": "30"
+                    },
+                    "active": true,
+                    "id": "40557",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/40557",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "30",
+                    "logos": [],
+                    "links": []
+                  }
+                }
+              ],
+              "shortDisplayName": "RAT",
+              "abbreviation": "RAT"
+            }
+          ],
           "format": {
             "regulation": {
               "periods": 9
@@ -11795,13 +12018,7 @@
             }
           ],
           "highlights": [],
-          "headlines": [
-            {
-              "type": "Preview",
-              "description": "Tampa Bay Rays (30-28, second in the AL East) vs. Houston Astros (31-27, second in the AL West)",
-              "shortLinkText": "Rays play the Astros after Caminero's 4-hit game"
-            }
-          ]
+          "headlines": []
         }
       ],
       "uid": "s:1~l:10~e:401695790",
@@ -11816,10 +12033,10 @@
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/mlb/game/_/gameId/401695790/rays-astros",
+          "href": "https://www.espn.com/mlb/game/_/gameId/401695790",
           "text": "Gamecast",
           "rel": [
-            "summary",
+            "gamecast",
             "desktop",
             "event"
           ],
@@ -11828,11 +12045,37 @@
         },
         {
           "language": "en-US",
-          "shortText": "Preview",
-          "href": "https://www.espn.com/mlb/preview/_/gameId/401695790",
-          "text": "Preview",
+          "shortText": "Gamecast",
+          "href": "https://www.espn.com/mlb/game/_/gameId/401695790",
+          "text": "Gamecast",
           "rel": [
-            "preview",
+            "live",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/mlb/boxscore/_/gameId/401695790",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/mlb/playbyplay/_/gameId/401695790",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
             "desktop",
             "event"
           ],
@@ -11842,13 +12085,13 @@
       ],
       "status": {
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
+          "state": "in",
           "completed": false,
-          "description": "Scheduled",
-          "detail": "Scheduled",
-          "shortDetail": "6/1 - 2:10 PM EDT"
+          "description": "In Progress",
+          "detail": "Top 1st",
+          "shortDetail": "Top 1st"
         },
         "clock": 0.0,
         "displayClock": "0:00",
@@ -11880,8 +12123,8 @@
           "wasSuspended": false,
           "tickets": [
             {
-              "summary": "Tickets as low as $40",
-              "numberAvailable": 264,
+              "summary": "Tickets as low as $46",
+              "numberAvailable": 160,
               "links": [
                 {
                   "href": "https://www.vividseats.com/chicago-cubs-tickets-wrigley-field-6-1-2025--sports-mlb-baseball/production/5097494?wsUser=717"
@@ -12515,6 +12758,46 @@
                     {
                       "displayValue": "40",
                       "value": 40.0,
+                      "athlete": {
+                        "id": "4917694",
+                        "fullName": "Elly De La Cruz",
+                        "displayName": "Elly De La Cruz",
+                        "shortName": "E. De La Cruz",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/4917694"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4917694.png",
+                        "jersey": "44",
+                        "position": {
+                          "abbreviation": "SS"
+                        },
+                        "team": {
+                          "id": "17"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "17"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "249.5",
+                      "value": 249.5,
                       "athlete": {
                         "id": "4917694",
                         "fullName": "Elly De La Cruz",
@@ -13936,8 +14219,8 @@
           "wasSuspended": false,
           "tickets": [
             {
-              "summary": "Tickets as low as $4",
-              "numberAvailable": 914,
+              "summary": "Tickets as low as $5",
+              "numberAvailable": 607,
               "links": [
                 {
                   "href": "https://www.vividseats.com/arizona-diamondbacks-tickets-chase-field-6-1-2025--sports-mlb-baseball/production/5100151?wsUser=717"
@@ -14233,6 +14516,46 @@
                         "jersey": "28",
                         "position": {
                           "abbreviation": "3B"
+                        },
+                        "team": {
+                          "id": "29"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "29"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "278.0",
+                      "value": 278.0,
+                      "athlete": {
+                        "id": "42404",
+                        "fullName": "Corbin Carroll",
+                        "displayName": "Corbin Carroll",
+                        "shortName": "C. Carroll",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/42404"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42404.png",
+                        "jersey": "7",
+                        "position": {
+                          "abbreviation": "RF"
                         },
                         "team": {
                           "id": "29"
@@ -15991,8 +16314,8 @@
           "wasSuspended": false,
           "tickets": [
             {
-              "summary": "Tickets as low as $63",
-              "numberAvailable": 1936,
+              "summary": "Tickets as low as $60",
+              "numberAvailable": 1476,
               "links": [
                 {
                   "href": "https://www.vividseats.com/los-angeles-dodgers-tickets-dodger-stadium-6-1-2025--sports-mlb-baseball/production/5098137?wsUser=717"

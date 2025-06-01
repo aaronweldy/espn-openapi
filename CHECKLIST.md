@@ -232,8 +232,6 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/weeks
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
-[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog-  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
@@ -249,7 +247,7 @@ site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/bio - NFL Athlete Bio - Implemented as generic /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/bio
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/stats - NFL Athlete Stats - Implemented as generic /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/stats
 sports.core.api.espn.com
-[ ] /v2/sports/football/leagues/nfl/athletes/{athlete_id}/statistics/0 - NFL Athlete Statistics (Specific Category)
+[x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics/{category_id} - Athlete Statistics by Category. Path Params: {sport}, {league}, {athlete_id}, {category_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores - NFL Game Linescores
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records - NFL Team Records for Event
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics - NFL Team Statistics for Event

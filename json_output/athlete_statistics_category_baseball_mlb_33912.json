@@ -1,0 +1,877 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33912/statistics/0?lang=en&region=us",
+  "athlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/athletes/33912?lang=en&region=us"
+  },
+  "splits": {
+    "id": "0",
+    "name": "All Splits",
+    "categories": [
+      {
+        "name": "batting",
+        "displayName": "Batting",
+        "stats": [
+          {
+            "name": "gamesPlayed",
+            "value": 1057.0,
+            "displayName": "Games Played",
+            "shortDisplayName": "GP",
+            "description": "Games Played",
+            "abbreviation": "GP",
+            "displayValue": "1057"
+          },
+          {
+            "name": "teamGamesPlayed",
+            "value": 1252.0,
+            "displayName": "Team Games Played",
+            "shortDisplayName": "G",
+            "description": "The number of games played by a team.",
+            "abbreviation": "G",
+            "displayValue": "1252"
+          },
+          {
+            "name": "hitByPitch",
+            "value": 18.0,
+            "displayName": "Hit By Pitch",
+            "shortDisplayName": "HBP",
+            "description": "The number of times a player has been by a pitch.",
+            "abbreviation": "HBP",
+            "displayValue": "18"
+          },
+          {
+            "name": "groundBalls",
+            "value": 1071.0,
+            "displayName": "Ground Balls",
+            "shortDisplayName": "GO",
+            "description": "The number of ground outs made by a player or team.",
+            "abbreviation": "GO",
+            "displayValue": "1071"
+          },
+          {
+            "name": "strikeouts",
+            "value": 905.0,
+            "displayName": "Strikeouts",
+            "shortDisplayName": "K",
+            "description": "The number of times a player strikes out.",
+            "abbreviation": "SO",
+            "displayValue": "905"
+          },
+          {
+            "name": "RBIs",
+            "value": 629.0,
+            "displayName": "Runs Batted In",
+            "shortDisplayName": "RBI",
+            "description": "The number of runs scored by a batter's play.",
+            "abbreviation": "RBI",
+            "displayValue": "629"
+          },
+          {
+            "name": "sacHits",
+            "value": 0.0,
+            "displayName": "Sacrifice Hit",
+            "shortDisplayName": "SH",
+            "description": "The number of sacrifice bunts that allow baserunners to advance",
+            "abbreviation": "SH",
+            "displayValue": "0"
+          },
+          {
+            "name": "hits",
+            "value": 991.0,
+            "displayName": "Hits",
+            "shortDisplayName": "H",
+            "description": "The number of hits.",
+            "abbreviation": "H",
+            "displayValue": "991"
+          },
+          {
+            "name": "stolenBases",
+            "value": 95.0,
+            "displayName": "Stolen Bases",
+            "shortDisplayName": "SB",
+            "description": "The number of bases stolen.",
+            "abbreviation": "SB",
+            "displayValue": "95"
+          },
+          {
+            "name": "walks",
+            "value": 435.0,
+            "displayName": "Walks",
+            "shortDisplayName": "BB",
+            "description": "The number of times a batter reaches base on four balls",
+            "abbreviation": "BB",
+            "displayValue": "435"
+          },
+          {
+            "name": "catcherInterference",
+            "value": 0.0,
+            "displayName": "Catcher Interference",
+            "shortDisplayName": "CI",
+            "description": "Catcher Interference",
+            "abbreviation": "CI",
+            "displayValue": "0"
+          },
+          {
+            "name": "runs",
+            "value": 630.0,
+            "displayName": "Runs",
+            "shortDisplayName": "R",
+            "description": "The number of runs scored.",
+            "abbreviation": "R",
+            "displayValue": "630"
+          },
+          {
+            "name": "GIDPs",
+            "value": 54.0,
+            "displayName": "Ground Into Double Play",
+            "shortDisplayName": "GIDP",
+            "description": "The number of times a batter grounds into a double play.",
+            "abbreviation": "GIDP",
+            "displayValue": "54"
+          },
+          {
+            "name": "sacFlies",
+            "value": 41.0,
+            "displayName": "Sacrifice Flies",
+            "shortDisplayName": "SF",
+            "description": "The number of times a batter advances a runner with a fly out.",
+            "abbreviation": "SF",
+            "displayValue": "41"
+          },
+          {
+            "name": "atBats",
+            "value": 3836.0,
+            "displayName": "At Bats",
+            "shortDisplayName": "AB",
+            "description": "The number of times a batter comes up to bat not counting walks and sacrifices.",
+            "abbreviation": "AB",
+            "displayValue": "3836"
+          },
+          {
+            "name": "homeRuns",
+            "value": 204.0,
+            "displayName": "Home Runs",
+            "shortDisplayName": "HR",
+            "description": "The number of hits that allowed the batter to round the bases and score without the aid of an error of the defense.",
+            "abbreviation": "HR",
+            "displayValue": "204"
+          },
+          {
+            "name": "grandSlamHomeRuns",
+            "value": 9.0,
+            "displayName": "Grand Slam Home Runs",
+            "shortDisplayName": "GSHR",
+            "description": "The number of hits that allowed the batter and 3 of his teammates to round the bases and score without the aid of an error of the defense.",
+            "abbreviation": "GSHR",
+            "displayValue": "9"
+          },
+          {
+            "name": "runnersLeftOnBase",
+            "value": 0.0,
+            "displayName": "Runners Left On Base",
+            "shortDisplayName": "LOB",
+            "description": "The number runners remain on base after the batter makes an out at the plate.",
+            "abbreviation": "LOB",
+            "displayValue": "0"
+          },
+          {
+            "name": "triples",
+            "value": 25.0,
+            "displayName": "Triples",
+            "shortDisplayName": "3B",
+            "description": "The number of hits that result in the batter reaching 3rd base without the aid of an error.",
+            "abbreviation": "3B",
+            "displayValue": "25"
+          },
+          {
+            "name": "gameWinningRBIs",
+            "value": 83.0,
+            "displayName": "Game Winning RBIs",
+            "shortDisplayName": "GW RBI",
+            "description": "The number of times a batter has a RBI that results in the batter's team winning the game.",
+            "abbreviation": "GW RBI",
+            "displayValue": "83"
+          },
+          {
+            "name": "intentionalWalks",
+            "value": 58.0,
+            "displayName": "Intentional Walks",
+            "shortDisplayName": "IBB",
+            "description": "The number of times that a batter is walked by four intentionally thrown balls by the pitcher.",
+            "abbreviation": "IBB",
+            "displayValue": "58"
+          },
+          {
+            "name": "doubles",
+            "value": 195.0,
+            "displayName": "Doubles",
+            "shortDisplayName": "2B",
+            "description": "The number of times that a batter reaches second base as the result of a hit without an error being committed.",
+            "abbreviation": "2B",
+            "displayValue": "195"
+          },
+          {
+            "name": "flyBalls",
+            "value": 1902.0,
+            "displayName": "Fly Balls",
+            "shortDisplayName": "FO",
+            "description": "The number of time a batter flies out.",
+            "abbreviation": "FO",
+            "displayValue": "1902"
+          },
+          {
+            "name": "caughtStealing",
+            "value": 24.0,
+            "displayName": "Caught Stealing",
+            "shortDisplayName": "CS",
+            "description": "The number of times that a baserunner attempts to steal a base but is thrown out.",
+            "abbreviation": "CS",
+            "displayValue": "24"
+          },
+          {
+            "name": "pitches",
+            "value": 17395.0,
+            "displayName": "Pitches",
+            "shortDisplayName": "P",
+            "description": "The number of pitches faced.",
+            "abbreviation": "P",
+            "displayValue": "17395"
+          },
+          {
+            "name": "gamesStarted",
+            "value": 863.0,
+            "displayName": "Games Started",
+            "shortDisplayName": "GS",
+            "description": "The number of games that a batter starts.",
+            "abbreviation": "GS",
+            "displayValue": "863"
+          },
+          {
+            "name": "pinchAtBats",
+            "value": 30.0,
+            "displayName": "Pinch At Bats",
+            "shortDisplayName": "PAB",
+            "description": "The number of times a batter has come in off the bench to pinch hit for another batter.",
+            "abbreviation": "PAB",
+            "displayValue": "30"
+          },
+          {
+            "name": "pinchHits",
+            "value": 4.0,
+            "displayName": "Pinch Hits",
+            "shortDisplayName": "PH",
+            "description": "The number of times a batter has in off the bench to pinch hit for another batter and gotten a hit.",
+            "abbreviation": "PH",
+            "displayValue": "4"
+          },
+          {
+            "name": "playerRating",
+            "value": 0.0,
+            "displayName": "Player Rating",
+            "shortDisplayName": "RTG",
+            "description": "Player Rating",
+            "abbreviation": "RTG",
+            "displayValue": "0.0"
+          },
+          {
+            "name": "isQualified",
+            "value": 1.0,
+            "displayName": "Is Qualified",
+            "shortDisplayName": "QUAL",
+            "description": "Whether a batter is qualified in terms of at bats",
+            "abbreviation": "QUAL",
+            "displayValue": "1"
+          },
+          {
+            "name": "isQualifiedSteals",
+            "value": 1.0,
+            "displayName": "Is Qualified In Steals",
+            "shortDisplayName": "QUAL STL",
+            "description": "Whether a player is qualified in number of stolen base attempts.",
+            "abbreviation": "QUAL STL",
+            "displayValue": "1"
+          },
+          {
+            "name": "totalBases",
+            "value": 1848.0,
+            "displayName": "Total Bases",
+            "shortDisplayName": "TB",
+            "description": "The number of bases calculated as 1 for a 1B, 2 for a 2B, 3 for a 3B and 4 for a HR.",
+            "abbreviation": "TB",
+            "displayValue": "1848"
+          },
+          {
+            "name": "plateAppearances",
+            "value": 4330.0,
+            "displayName": "Plate Appearances",
+            "shortDisplayName": "PA",
+            "description": "The number of times a batter comes up to bat.",
+            "abbreviation": "PA",
+            "displayValue": "4330"
+          },
+          {
+            "name": "projectedHomeRuns",
+            "value": 26.0,
+            "displayName": "Projected Home Runs",
+            "shortDisplayName": "PROJ HR",
+            "description": "The number of home runs is expected to accumulate.",
+            "abbreviation": "PROJ HR",
+            "displayValue": "26.0"
+          },
+          {
+            "name": "extraBaseHits",
+            "value": 424.0,
+            "displayName": "Extra Base Hits",
+            "shortDisplayName": "XBH",
+            "description": "The number of hits that are greater than singles.",
+            "abbreviation": "XBH",
+            "displayValue": "424"
+          },
+          {
+            "name": "runsCreated",
+            "value": 632.15625,
+            "displayName": "Runs Created",
+            "shortDisplayName": "RC",
+            "description": "The estimate of how many runs a player has created.",
+            "abbreviation": "RC",
+            "displayValue": "632.2"
+          },
+          {
+            "name": "avg",
+            "value": 0.25834203,
+            "displayName": "Batting Average",
+            "shortDisplayName": "AVG",
+            "description": "The average number of times the batter reached successfully on base due to a hit: hits / atBats",
+            "abbreviation": "AVG",
+            "displayValue": ".258"
+          },
+          {
+            "name": "pinchAvg",
+            "value": 0.13333334,
+            "displayName": "Pinch Hit Average",
+            "shortDisplayName": "PH%",
+            "description": "The batting when a batter pinch hits.",
+            "abbreviation": "PH%",
+            "displayValue": ".133"
+          },
+          {
+            "name": "slugAvg",
+            "value": 0.48175183,
+            "displayName": "Slugging Percentage",
+            "shortDisplayName": "SLG",
+            "description": "Slugging percentage is a metric that is meant to measuring how many bases the hitter safely advances to after making contact with the ball: (totalBases / atBats)",
+            "abbreviation": "SLG",
+            "displayValue": ".482"
+          },
+          {
+            "name": "secondaryAvg",
+            "value": 0.35531804,
+            "displayName": "Secondary Average",
+            "shortDisplayName": "SECA",
+            "description": "The average of extra bases gained via hits, walks and stolen bases versus at bats.",
+            "abbreviation": "SECA",
+            "displayValue": ".355"
+          },
+          {
+            "name": "onBasePct",
+            "value": 0.3334873,
+            "displayName": "On Base Percentage",
+            "shortDisplayName": "OBP",
+            "description": "The ratio of the number of times the batter reached base per plate appearnce: (hits + walks + hbp / plateAppearances)",
+            "abbreviation": "OBP",
+            "displayValue": ".333"
+          },
+          {
+            "name": "OPS",
+            "value": 0.81523913,
+            "displayName": "OBP Pct + SLG Pct",
+            "shortDisplayName": "OPS",
+            "description": "The average calculated by adding up on-base percentage and slugging percentage.",
+            "abbreviation": "OPS",
+            "displayValue": ".815"
+          },
+          {
+            "name": "groundToFlyRatio",
+            "value": 0.56309146,
+            "displayName": "Ground To Fly Ball Ratio",
+            "shortDisplayName": "GO/FO",
+            "description": "The ratio of ground outs to fly outs.",
+            "abbreviation": "GO/FO",
+            "displayValue": "0.6"
+          },
+          {
+            "name": "runsCreatedPer27Outs",
+            "value": 5.758508,
+            "displayName": "Runs Created Per 27 Outs",
+            "shortDisplayName": "RC/27",
+            "description": "The estimated number of runs created per 27 outs played.",
+            "abbreviation": "RC/27",
+            "displayValue": "5.8"
+          },
+          {
+            "name": "batterRating",
+            "value": 4668.5,
+            "displayName": "Batter Rating",
+            "shortDisplayName": "RTG",
+            "description": "Batter Rating",
+            "abbreviation": "RTG",
+            "displayValue": "4668.5"
+          },
+          {
+            "name": "atBatsPerHomeRun",
+            "value": 18.80392,
+            "displayName": "At Bats Per Home Run",
+            "shortDisplayName": "AB/HR",
+            "description": "The ratio of at bats per home run hit.",
+            "abbreviation": "AB/HR",
+            "displayValue": "18.8"
+          },
+          {
+            "name": "stolenBasePct",
+            "value": 0.79831934,
+            "displayName": "Stolen Base Percentage",
+            "shortDisplayName": "SB%",
+            "description": "The percentage of stolen bases successfully stolen by a baserunner.",
+            "abbreviation": "SB%",
+            "displayValue": "0.80"
+          },
+          {
+            "name": "pitchesPerPlateAppearance",
+            "value": 4.017321,
+            "displayName": "Pitches Per Plate Appearance",
+            "shortDisplayName": "P/PA",
+            "description": "The average number of pitches a batter sees per plate appearance.",
+            "abbreviation": "P/PA",
+            "displayValue": "4.02"
+          },
+          {
+            "name": "isolatedPower",
+            "value": 0.2234098,
+            "displayName": "Isolated Power",
+            "shortDisplayName": "ISOP",
+            "description": "The measure of a batter's ability to hit for extra bases, calculated by subtracting batting average from slugging percentage.",
+            "abbreviation": "ISOP",
+            "displayValue": ".223"
+          },
+          {
+            "name": "walkToStrikeoutRatio",
+            "value": 0.48066297,
+            "displayName": "Walk To Strikeout Ratio",
+            "shortDisplayName": "BB/K",
+            "description": "The number of walks to the number of strikeouts by a batter.",
+            "abbreviation": "BB/K",
+            "displayValue": "0.48"
+          },
+          {
+            "name": "walksPerPlateAppearance",
+            "value": 0.10046189,
+            "displayName": "Walks Per Plate Appearance",
+            "shortDisplayName": "BB/PA",
+            "description": "The ratio of walks to plate appearances for a batter.",
+            "abbreviation": "BB/PA",
+            "displayValue": ".100"
+          },
+          {
+            "name": "secondaryAvgMinusBA",
+            "value": 0.09697601,
+            "displayName": "Secondary Average Minus Batting Average",
+            "shortDisplayName": "SECMBA",
+            "description": "The metric calculated by subtracting batitng average from secondary average.",
+            "abbreviation": "SECMBA",
+            "displayValue": ".097"
+          },
+          {
+            "name": "runsProduced",
+            "value": 1259.0,
+            "displayName": "Runs Produced",
+            "shortDisplayName": "RP",
+            "description": "The estimation of how many runs a batter has contributed.",
+            "abbreviation": "RP",
+            "displayValue": "1259.0"
+          },
+          {
+            "name": "runsRatio",
+            "value": 0.99841267,
+            "displayName": "Runs Ratio",
+            "shortDisplayName": "RR",
+            "description": "The ratio of runs scored to plate appearances by a batter.",
+            "abbreviation": "RR",
+            "displayValue": "1.0"
+          },
+          {
+            "name": "patienceRatio",
+            "value": 0.5568971,
+            "displayName": "Patience Ratio",
+            "shortDisplayName": "PR",
+            "description": "The metric that attempts to measure a batter's patience.",
+            "abbreviation": "PR",
+            "displayValue": "0.6"
+          },
+          {
+            "name": "BIPA",
+            "value": 0.28859553,
+            "displayName": "Balls In Play Average",
+            "shortDisplayName": "BIPA",
+            "description": "The average of a batter when the ball is put in play or batting average without factoring at bats that result in a home run or a strikeout.",
+            "abbreviation": "BIPA",
+            "displayValue": "0.3"
+          },
+          {
+            "name": "MLBRating",
+            "value": 3360.75,
+            "displayName": "MLB Rating",
+            "shortDisplayName": "MLB",
+            "description": "The MLB rating.",
+            "abbreviation": "MLB",
+            "displayValue": "3360.8"
+          },
+          {
+            "name": "offWARBR",
+            "value": 0.0,
+            "displayName": "Offensive Wins Above Replacement",
+            "shortDisplayName": "OWAR",
+            "description": "Offensive Wins Above Replacement.",
+            "abbreviation": "OWAR",
+            "displayValue": "0.0"
+          },
+          {
+            "name": "WARBR",
+            "value": 0.0,
+            "displayName": "Wins Above Replacement",
+            "shortDisplayName": "WAR",
+            "description": "Wins Above Replacement.",
+            "abbreviation": "WAR",
+            "displayValue": "0.0"
+          }
+        ],
+        "shortDisplayName": "Batting",
+        "abbreviation": "b",
+        "summary": "991-3836, 204 HR, 25 3B, 195 2B, 629 RBI, 630 R, 435 BB, 95 SB, 905 K"
+      },
+      {
+        "name": "fielding",
+        "displayName": "Fielding",
+        "stats": [
+          {
+            "name": "gamesPlayed",
+            "value": 993.0,
+            "displayName": "Games Played",
+            "shortDisplayName": "GP",
+            "description": "Games Played",
+            "abbreviation": "GP",
+            "displayValue": "993"
+          },
+          {
+            "name": "teamGamesPlayed",
+            "value": 1090.0,
+            "displayName": "Team Games Played",
+            "shortDisplayName": "G",
+            "description": "The number of games played by a team.",
+            "abbreviation": "G",
+            "displayValue": "1090"
+          },
+          {
+            "name": "doublePlays",
+            "value": 161.0,
+            "displayName": "Double Plays",
+            "shortDisplayName": "DP",
+            "description": "The number of double plays a fielder has been a part of as either the assister or putouter.",
+            "abbreviation": "DP",
+            "displayValue": "161"
+          },
+          {
+            "name": "opportunities",
+            "value": 0.0,
+            "displayName": "Opportunities",
+            "shortDisplayName": "OPP",
+            "description": "The number of opportunites",
+            "abbreviation": "OPP",
+            "displayValue": "0"
+          },
+          {
+            "name": "errors",
+            "value": 24.0,
+            "displayName": "Errors",
+            "shortDisplayName": "E",
+            "description": "The number of times a fielder fails to make the play they are expected to make.",
+            "abbreviation": "E",
+            "displayValue": "24"
+          },
+          {
+            "name": "passedBalls",
+            "value": 0.0,
+            "displayName": "Passed Balls",
+            "shortDisplayName": "PB",
+            "description": "The number of times the ball is dropped or passes by the catcher.",
+            "abbreviation": "PB",
+            "displayValue": "0"
+          },
+          {
+            "name": "assists",
+            "value": 100.0,
+            "displayName": "Assists",
+            "shortDisplayName": "A",
+            "description": "The number of times a fielder is involved in an out when the fielder is not the putouter.",
+            "abbreviation": "A",
+            "displayValue": "100"
+          },
+          {
+            "name": "outfieldAssists",
+            "value": 21.0,
+            "displayName": "Outfield Assists",
+            "shortDisplayName": "OA",
+            "description": "The number of times an outfielder fielder is involved in an out when the fielder is not the putouter.",
+            "abbreviation": "OA",
+            "displayValue": "21"
+          },
+          {
+            "name": "pickoffs",
+            "value": 0.0,
+            "displayName": "Pickoffs",
+            "shortDisplayName": "PO",
+            "description": "The number of times that a pitcher or catcher throws over and picks off a baserunner.",
+            "abbreviation": "PO",
+            "displayValue": "0"
+          },
+          {
+            "name": "putouts",
+            "value": 3201.0,
+            "displayName": "Putouts",
+            "shortDisplayName": "PO",
+            "description": "The number of times the fielder tags or forces the out of a baserunner.",
+            "abbreviation": "PO",
+            "displayValue": "3201"
+          },
+          {
+            "name": "outsOnField",
+            "value": 22561.0,
+            "displayName": "Outs On Field",
+            "shortDisplayName": "OOF",
+            "description": "The number of outs on field.",
+            "abbreviation": "OOF",
+            "displayValue": "22561"
+          },
+          {
+            "name": "triplePlays",
+            "value": 0.0,
+            "displayName": "TP",
+            "shortDisplayName": "TP",
+            "description": "The number of times that a fielder is involved in a triple play.",
+            "abbreviation": "TP",
+            "displayValue": "0"
+          },
+          {
+            "name": "ballsInZone",
+            "value": 768.0,
+            "displayName": "Balls In Zone",
+            "shortDisplayName": "BIZ",
+            "description": "The number of balls that were batted into a fielder's zone.",
+            "abbreviation": "BIZ",
+            "displayValue": "768"
+          },
+          {
+            "name": "extraBases",
+            "value": 0.0,
+            "displayName": "Extra Bases",
+            "shortDisplayName": "XB",
+            "description": "The number of extra base hits allowed.",
+            "abbreviation": "XB",
+            "displayValue": "0"
+          },
+          {
+            "name": "outsMade",
+            "value": 3204.0,
+            "displayName": "Outs Made",
+            "shortDisplayName": "OM",
+            "description": "The number of outs made by a fielder.",
+            "abbreviation": "OM",
+            "displayValue": "3204"
+          },
+          {
+            "name": "hits",
+            "value": 0.0,
+            "displayName": "Hits",
+            "shortDisplayName": "H",
+            "description": "The number of hits surrendered.",
+            "abbreviation": "H",
+            "displayValue": "0"
+          },
+          {
+            "name": "totalBases",
+            "value": 0.0,
+            "displayName": "Total Bases",
+            "shortDisplayName": "TB",
+            "description": "The number of bases allowed.",
+            "abbreviation": "TB",
+            "displayValue": "0"
+          },
+          {
+            "name": "gamesStarted",
+            "value": 836.0,
+            "displayName": "Games Started",
+            "shortDisplayName": "GS",
+            "description": "The number of games started by a fielder.",
+            "abbreviation": "GS",
+            "displayValue": "836"
+          },
+          {
+            "name": "catcherThirdInningsPlayed",
+            "value": 0.0,
+            "displayName": "Third Innings Played",
+            "shortDisplayName": "TIP",
+            "description": "The number of third innings played by a catcher.",
+            "abbreviation": "TIP",
+            "displayValue": "0.0"
+          },
+          {
+            "name": "catcherCaughtStealing",
+            "value": 0.0,
+            "displayName": "Caught Stealing",
+            "shortDisplayName": "CS",
+            "description": "The number of times a catcher throws a baserunner trying to steal a base.",
+            "abbreviation": "CS",
+            "displayValue": "0"
+          },
+          {
+            "name": "catcherStolenBasesAllowed",
+            "value": 0.0,
+            "displayName": "Stolen Bases Allowed",
+            "shortDisplayName": "SBA",
+            "description": "The number of stolen bases that a catcher allows.",
+            "abbreviation": "SBA",
+            "displayValue": "0"
+          },
+          {
+            "name": "catcherEarnedRuns",
+            "value": 0.0,
+            "displayName": "Earned Runs",
+            "shortDisplayName": "ER",
+            "description": "The number of runs allowed by the catcher that aren't the result of an error or passed ball.",
+            "abbreviation": "ER",
+            "displayValue": "0"
+          },
+          {
+            "name": "isQualified",
+            "value": 1.0,
+            "displayName": "Qualified",
+            "shortDisplayName": "QUAL",
+            "description": "Whether a player is qualified as a fielder.",
+            "abbreviation": "QUAL",
+            "displayValue": "1"
+          },
+          {
+            "name": "isQualifiedCatcher",
+            "value": 1.0,
+            "displayName": "Qualified Catcher",
+            "shortDisplayName": "QUAL",
+            "description": "Whether a player qualifies a catcher.",
+            "abbreviation": "QUAL",
+            "displayValue": "1"
+          },
+          {
+            "name": "isQualifiedPitcher",
+            "value": 1.0,
+            "displayName": "Qualified Pitcher",
+            "shortDisplayName": "QUAL",
+            "description": "Whether a player qualifies as a pitcher.",
+            "abbreviation": "QUAL",
+            "displayValue": "1"
+          },
+          {
+            "name": "successfulChances",
+            "value": 3301.0,
+            "displayName": "Successful Chances",
+            "shortDisplayName": "SC",
+            "description": "The number of outs involved in calculated by assists plus putouts.",
+            "abbreviation": "SC",
+            "displayValue": "3301"
+          },
+          {
+            "name": "totalChances",
+            "value": 3325.0,
+            "displayName": "Total Chances",
+            "shortDisplayName": "TC",
+            "description": "The number of chances a fielder has to make an out calculated by assists plus putouts plus errors.",
+            "abbreviation": "TC",
+            "displayValue": "3325"
+          },
+          {
+            "name": "fullInningsPlayed",
+            "value": 7520.3335,
+            "displayName": "Full Innings",
+            "shortDisplayName": "FIP",
+            "description": "The number of fully completed innings by a fielder.",
+            "abbreviation": "FIP",
+            "displayValue": "7520"
+          },
+          {
+            "name": "partInningsPlayed",
+            "value": 1.0,
+            "displayName": "Part Innings Played",
+            "shortDisplayName": "PIP",
+            "description": "The number of at least partial innings played by a fielder.",
+            "abbreviation": "PIP",
+            "displayValue": "1"
+          },
+          {
+            "name": "fieldingPct",
+            "value": 0.99278194,
+            "displayName": "Fielding Percentage",
+            "shortDisplayName": "FP",
+            "description": "The percentage of plays made by a fielder given the total number of chances.",
+            "abbreviation": "FP",
+            "displayValue": "0.993"
+          },
+          {
+            "name": "rangeFactor",
+            "value": 3.9504898,
+            "displayName": "Range Factor",
+            "shortDisplayName": "RF",
+            "description": "The estimation of how much field a fielder can cover.",
+            "abbreviation": "RF",
+            "displayValue": "4.0"
+          },
+          {
+            "name": "zoneRating",
+            "value": 4.171875,
+            "displayName": "Zone Rating",
+            "shortDisplayName": "ZR",
+            "description": "The metric used to estimate the ability of a fielder to defend a zone on the field.",
+            "abbreviation": "ZR",
+            "displayValue": "4.2"
+          },
+          {
+            "name": "catcherCaughtStealingPct",
+            "value": 0.0,
+            "displayName": "Caught Stealing Percentage",
+            "shortDisplayName": "CS%",
+            "description": "The percentage of baserunners caught by the catcher given the total number of steal attempts.",
+            "abbreviation": "CS%",
+            "displayValue": "0.000"
+          },
+          {
+            "name": "catcherERA",
+            "value": 0.0,
+            "displayName": "Earned Run Average",
+            "shortDisplayName": "ERA",
+            "description": "The number of earned runs multipled by 9 divided by the number of innings caught.",
+            "abbreviation": "ERA",
+            "displayValue": "0.0"
+          },
+          {
+            "name": "defWARBR",
+            "value": 0.0,
+            "displayName": "Defensive Wins Above Replacement",
+            "shortDisplayName": "DWAR",
+            "description": "Defensive Wins Above Replacement.",
+            "abbreviation": "DWAR",
+            "displayValue": "0.0"
+          }
+        ],
+        "shortDisplayName": "Fielding",
+        "abbreviation": "f",
+        "summary": ""
+      }
+    ],
+    "abbreviation": "Total"
+  }
+}
