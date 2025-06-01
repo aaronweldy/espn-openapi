@@ -146,9 +146,6 @@ site.api.espn.com/apis/site/v2
 sports.core.api.espn.com
 [x] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id} - Detailed Men's College Basketball athlete. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}
 [x] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id}/statistics - Men's College Basketball Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/statistics
-[ ] /v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/{season}/bracketology - Men's Bracketology (Historical). Path Param: {season}
-fcast.espncdn.com
-[ ] /FastcastService/pubsub/profiles/12000/topic/bracket-basketball-mens-college-basketball-22-en/message/24624/checkpoint - Men's Bracket Fastcast (Observed)
 IX. College Basketball Endpoints (Women's)
 site.api.espn.com/apis/site/v2
 [x] /sports/basketball/womens-college-basketball/scoreboard - Women's College Basketball Scoreboard. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint

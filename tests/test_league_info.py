@@ -71,8 +71,8 @@ def test_get_college_football_league_info(sports_core_api_client, ensure_json_ou
     ("hockey", "nhl", "National Hockey League"),
     ("basketball", "wnba", "Women's National Basketball Association"),
     ("football", "college-football", "NCAA - Football"),
-    ("basketball", "mens-college-basketball", "NCAA - Men's Basketball"),
-    ("basketball", "womens-college-basketball", "NCAA - Women's Basketball"),
+    ("basketball", "mens-college-basketball", "NCAA Men's Basketball"),
+    ("basketball", "womens-college-basketball", "NCAA Women's Basketball"),
 ])
 def test_get_multiple_leagues_info(sports_core_api_client, sport, league, expected_name):
     """Test getting information for multiple leagues."""
