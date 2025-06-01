@@ -24,6 +24,8 @@ class TeamOdds:
         team (HeadToHeads):
         money_line (Union[Unset, int]):
         spread_odds (Union[Unset, float]):
+        open_ (Union[Unset, OddsTeamCurrent]):
+        close (Union[Unset, OddsTeamCurrent]):
         win_percentage (Union[Unset, float]):
         average_score (Union[Unset, float]):
         money_line_odds (Union[Unset, float]):
@@ -40,6 +42,8 @@ class TeamOdds:
     team: "HeadToHeads"
     money_line: Union[Unset, int] = UNSET
     spread_odds: Union[Unset, float] = UNSET
+    open_: Union[Unset, "OddsTeamCurrent"] = UNSET
+    close: Union[Unset, "OddsTeamCurrent"] = UNSET
     win_percentage: Union[Unset, float] = UNSET
     average_score: Union[Unset, float] = UNSET
     money_line_odds: Union[Unset, float] = UNSET
@@ -62,6 +66,14 @@ class TeamOdds:
         money_line = self.money_line
 
         spread_odds = self.spread_odds
+
+        open_: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.open_, Unset):
+            open_ = self.open_.to_dict()
+
+        close: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.close, Unset):
+            close = self.close.to_dict()
 
         win_percentage = self.win_percentage
 
@@ -99,6 +111,10 @@ class TeamOdds:
             field_dict["moneyLine"] = money_line
         if spread_odds is not UNSET:
             field_dict["spreadOdds"] = spread_odds
+        if open_ is not UNSET:
+            field_dict["open"] = open_
+        if close is not UNSET:
+            field_dict["close"] = close
         if win_percentage is not UNSET:
             field_dict["winPercentage"] = win_percentage
         if average_score is not UNSET:
@@ -136,6 +152,20 @@ class TeamOdds:
         money_line = d.pop("moneyLine", UNSET)
 
         spread_odds = d.pop("spreadOdds", UNSET)
+
+        _open_ = d.pop("open", UNSET)
+        open_: Union[Unset, OddsTeamCurrent]
+        if isinstance(_open_, Unset):
+            open_ = UNSET
+        else:
+            open_ = OddsTeamCurrent.from_dict(_open_)
+
+        _close = d.pop("close", UNSET)
+        close: Union[Unset, OddsTeamCurrent]
+        if isinstance(_close, Unset):
+            close = UNSET
+        else:
+            close = OddsTeamCurrent.from_dict(_close)
 
         win_percentage = d.pop("winPercentage", UNSET)
 
@@ -175,6 +205,8 @@ class TeamOdds:
             team=team,
             money_line=money_line,
             spread_odds=spread_odds,
+            open_=open_,
+            close=close,
             win_percentage=win_percentage,
             average_score=average_score,
             money_line_odds=money_line_odds,

@@ -212,8 +212,8 @@ site.api.espn.com
 XV. Betting & Odds Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities - Game Win Probabilities. Path Params: {sport}, {league}, {event_id}. Query Param: limit
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds - List Odds Providers for Game. Path Params: {sport}, {league}, {event_id}
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id} - Odds from Specific Provider. Path Params: {sport}, {league}, {event_id}, {provider_id}
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds - List Odds Providers for Game. Path Params: {sport}, {league}, {event_id} - Already implemented
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id} - Odds from Specific Provider. Path Params: {sport}, {league}, {event_id}, {provider_id} - Implemented as generic endpoint
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/history/0/movement - Odds History/Movement. Path Params & Query: As above, limit
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/head-to-heads - Head-to-Head Odds. Path Params: As above.
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/futures - Futures Bets. Path Params: {sport}, {league}, {year}

@@ -2,52 +2,29 @@
   "header": "MLB News",
   "articles": [
     {
-      "id": 45421330,
-      "nowId": "1-45421330",
-      "contentKey": "45421330-1-5-1",
-      "dataSourceIdentifier": "b24e4343cd16d",
+      "id": 45422019,
+      "nowId": "1-45422019",
+      "contentKey": "45422019-1-5-1",
+      "dataSourceIdentifier": "d7d4b99aea892",
       "type": "HeadlineNews",
-      "headline": "Blue Jays' Daulton Varsho on 10-day IL with hamstring injury",
-      "lastModified": "2025-06-01T16:59:07+00:00",
-      "published": "2025-06-01T16:29:00+00:00",
+      "headline": "Adolis Garc\u00eda sits again as Rangers seek 'mechanical changes'",
+      "lastModified": "2025-06-01T17:50:15+00:00",
+      "published": "2025-06-01T17:40:00+00:00",
       "images": [
         {
-          "dataSourceIdentifier": "548e68fac1d36",
-          "id": 45409491,
+          "dataSourceIdentifier": "6b316331ad25f",
+          "id": 38730215,
           "type": "header",
-          "name": "Daulton Varsho  [1296x729]",
-          "credit": "Jon Blacker/The Canadian Press via AP",
+          "name": "Rangers [1296x729]",
+          "credit": "AP Photo/Godofredo A. V\u00c3\u00a1squez",
           "height": 729,
           "width": 1296,
-          "url": "https://a.espncdn.com/photo/2025/0531/r1500851_1296x729_16-9.jpg"
+          "url": "https://a.espncdn.com/photo/2023/1024/r1242735_1296x729_16-9.jpg",
+          "caption": "With four hits and two home runs, Adolis Garc\u00eda had a memorable ALCS Game 7 performance.",
+          "alt": "Texas Rangers' Adolis Garcia reacts after hitting a home run"
         }
       ],
       "categories": [
-        {
-          "type": "athlete",
-          "guid": "d32459fa-2633-7e19-f4e2-41b289c252ec",
-          "id": 194782,
-          "description": "Daulton Varsho",
-          "sportId": 10,
-          "uid": "s:1~l:10~a:40963",
-          "athleteId": 40963,
-          "athlete": {
-            "id": 40963,
-            "description": "Daulton Varsho",
-            "links": {
-              "web": {
-                "athletes": {
-                  "href": "https://www.espn.com/mlb/player/_/id/40963"
-                }
-              },
-              "mobile": {
-                "athletes": {
-                  "href": "https://www.espn.com/mlb/player/_/id/40963"
-                }
-              }
-            }
-          }
-        },
         {
           "type": "topic",
           "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
@@ -55,6 +32,31 @@
           "description": "news",
           "sportId": 0,
           "topicId": 781
+        },
+        {
+          "type": "team",
+          "guid": "4fa2cf46-09fc-255f-74a1-2a8857b0e671",
+          "id": 367,
+          "description": "Texas Rangers",
+          "sportId": 10,
+          "uid": "s:1~l:10~t:13",
+          "teamId": 13,
+          "team": {
+            "id": 13,
+            "description": "Texas Rangers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/mlb/team/_/name/tex/texas-rangers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/mlb/team/_/name/tex/texas-rangers"
+                }
+              }
+            }
+          }
         },
         {
           "type": "league",
@@ -83,118 +85,107 @@
           }
         },
         {
+          "type": "guid",
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe"
+        },
+        {
+          "type": "guid",
+          "guid": "4fa2cf46-09fc-255f-74a1-2a8857b0e671"
+        },
+        {
+          "type": "guid",
+          "guid": "b38f959b-7865-31ac-8841-b88355519e10"
+        }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/mlb/story/_/id/45422019/adolis-garcia-sits-again-rangers-seek-mechanical-changes"
+        },
+        "mobile": {
+          "href": "http://m.espn.go.com/mlb/story?storyId=45422019"
+        },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45422019"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45422019"
+          }
+        }
+      },
+      "description": "Slumping Rangers slugger Adolis Garc\u00eda was held out of Texas' lineup for the third consecutive day, with president of baseball operations Chris Young saying the club wants the 2023 ALCS MVP to make some mechanical changes."
+    },
+    {
+      "id": 45422047,
+      "nowId": "1-45422047",
+      "contentKey": "45422047-1-5-1",
+      "dataSourceIdentifier": "8c357f526e90d",
+      "type": "HeadlineNews",
+      "headline": "Wade Miley opts out of deal with Reds, becomes free agent",
+      "lastModified": "2025-06-01T17:39:28+00:00",
+      "published": "2025-06-01T17:39:30+00:00",
+      "images": [
+        {
+          "dataSourceIdentifier": "1b7a784cd442d",
+          "id": 14053873,
+          "type": "header",
+          "name": "Reds_Hat 151104 [1296x729]",
+          "credit": "Justin K. Aller/Getty Images",
+          "height": 729,
+          "width": 1296,
+          "url": "https://a.espncdn.com/photo/2015/1104/r22911_1296x729_16-9.jpg",
+          "alt": "Reds Hat"
+        }
+      ],
+      "categories": [
+        {
           "type": "team",
-          "guid": "0151aed9-9f11-ceae-195d-180ca603b64a",
-          "id": 88,
-          "description": "Toronto Blue Jays",
+          "guid": "04b65a0b-3cca-d795-0e21-23606470418a",
+          "id": 581,
+          "description": "Cincinnati Reds",
           "sportId": 10,
-          "uid": "s:1~l:10~t:14",
-          "teamId": 14,
+          "uid": "s:1~l:10~t:17",
+          "teamId": 17,
           "team": {
-            "id": 14,
-            "description": "Toronto Blue Jays",
+            "id": 17,
+            "description": "Cincinnati Reds",
             "links": {
               "web": {
                 "teams": {
-                  "href": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays"
+                  "href": "https://www.espn.com/mlb/team/_/name/cin/cincinnati-reds"
                 }
               },
               "mobile": {
                 "teams": {
-                  "href": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays"
+                  "href": "https://www.espn.com/mlb/team/_/name/cin/cincinnati-reds"
                 }
               }
             }
           }
         },
         {
-          "type": "guid",
-          "guid": "d32459fa-2633-7e19-f4e2-41b289c252ec"
-        },
-        {
-          "type": "guid",
-          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe"
-        },
-        {
-          "type": "guid",
-          "guid": "b38f959b-7865-31ac-8841-b88355519e10"
-        },
-        {
-          "type": "guid",
-          "guid": "0151aed9-9f11-ceae-195d-180ca603b64a"
-        }
-      ],
-      "premium": false,
-      "links": {
-        "web": {
-          "href": "https://www.espn.com/mlb/story/_/id/45421330/blue-jays-daulton-varsho-10-day-il-hamstring-injury"
-        },
-        "mobile": {
-          "href": "http://m.espn.go.com/mlb/story?storyId=45421330"
-        },
-        "api": {
-          "self": {
-            "href": "https://content.core.api.espn.com/v1/sports/news/45421330"
-          }
-        },
-        "app": {
-          "sportscenter": {
-            "href": "sportscenter://x-callback-url/showStory?uid=45421330"
-          }
-        }
-      },
-      "description": "Blue Jays outfielder Daulton Varsho, who suffered a left hamstring injury while trying to leg out a triple on Saturday, was placed on the 10-day injured list."
-    },
-    {
-      "id": 45420495,
-      "nowId": "1-45420495",
-      "contentKey": "45420495-1-5-1",
-      "dataSourceIdentifier": "ce9efcfe91e1f",
-      "type": "HeadlineNews",
-      "headline": "Jose Quintana rejoins Brewers rotation after IL stint",
-      "lastModified": "2025-06-01T15:57:13+00:00",
-      "published": "2025-06-01T14:54:00+00:00",
-      "images": [
-        {
-          "dataSourceIdentifier": "25f1861596d5d",
-          "id": 44890956,
-          "type": "header",
-          "name": "250427 Jose Quintana [1296x729]",
-          "credit": "AP Photo/Scott Kane",
-          "height": 729,
-          "width": 1296,
-          "url": "https://a.espncdn.com/photo/2025/0427/r1484942_1296x729_16-9.jpg"
-        }
-      ],
-      "categories": [
-        {
-          "type": "topic",
-          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-          "id": 409224,
-          "description": "news",
-          "sportId": 0,
-          "topicId": 781
-        },
-        {
           "type": "team",
-          "guid": "4750d73d-d92e-b390-758c-2c7b44a810db",
-          "id": 527,
-          "description": "Milwaukee Brewers",
+          "guid": "5cda5067-7075-66b1-4b94-2333ab8d9807",
+          "id": 555,
+          "description": "Chicago Cubs",
           "sportId": 10,
-          "uid": "s:1~l:10~t:8",
-          "teamId": 8,
+          "uid": "s:1~l:10~t:16",
+          "teamId": 16,
           "team": {
-            "id": 8,
-            "description": "Milwaukee Brewers",
+            "id": 16,
+            "description": "Chicago Cubs",
             "links": {
               "web": {
                 "teams": {
-                  "href": "https://www.espn.com/mlb/team/_/name/mil/milwaukee-brewers"
+                  "href": "https://www.espn.com/mlb/team/_/name/chc/chicago-cubs"
                 }
               },
               "mobile": {
                 "teams": {
-                  "href": "https://www.espn.com/mlb/team/_/name/mil/milwaukee-brewers"
+                  "href": "https://www.espn.com/mlb/team/_/name/chc/chicago-cubs"
                 }
               }
             }
@@ -228,24 +219,24 @@
         },
         {
           "type": "athlete",
-          "guid": "799067c0-7173-3a04-9e55-89171a4613b0",
-          "id": 99255,
-          "description": "Jose Quintana",
+          "guid": "c9663c5a-5d02-b4a9-d9df-e08944fc9361",
+          "id": 102296,
+          "description": "Jeimer Candelario",
           "sportId": 10,
-          "uid": "s:1~l:10~a:32106",
-          "athleteId": 32106,
+          "uid": "s:1~l:10~a:32531",
+          "athleteId": 32531,
           "athlete": {
-            "id": 32106,
-            "description": "Jose Quintana",
+            "id": 32531,
+            "description": "Jeimer Candelario",
             "links": {
               "web": {
                 "athletes": {
-                  "href": "https://www.espn.com/mlb/player/_/id/32106"
+                  "href": "https://www.espn.com/mlb/player/_/id/32531"
                 }
               },
               "mobile": {
                 "athletes": {
-                  "href": "https://www.espn.com/mlb/player/_/id/32106"
+                  "href": "https://www.espn.com/mlb/player/_/id/32531"
                 }
               }
             }
@@ -253,11 +244,11 @@
         },
         {
           "type": "guid",
-          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe"
+          "guid": "04b65a0b-3cca-d795-0e21-23606470418a"
         },
         {
           "type": "guid",
-          "guid": "4750d73d-d92e-b390-758c-2c7b44a810db"
+          "guid": "5cda5067-7075-66b1-4b94-2333ab8d9807"
         },
         {
           "type": "guid",
@@ -265,77 +256,134 @@
         },
         {
           "type": "guid",
-          "guid": "799067c0-7173-3a04-9e55-89171a4613b0"
+          "guid": "c9663c5a-5d02-b4a9-d9df-e08944fc9361"
         }
       ],
       "premium": false,
       "links": {
         "web": {
-          "href": "https://www.espn.com/mlb/story/_/id/45420495/jose-quintana-rejoins-brewers-rotation-il-stint"
+          "href": "https://www.espn.com/mlb/story/_/id/45422047/wade-miley-opts-deal-reds-becomes-free-agent"
         },
         "mobile": {
-          "href": "http://m.espn.go.com/mlb/story?storyId=45420495"
+          "href": "http://m.espn.go.com/mlb/story?storyId=45422047"
         },
         "api": {
           "self": {
-            "href": "https://content.core.api.espn.com/v1/sports/news/45420495"
+            "href": "https://content.core.api.espn.com/v1/sports/news/45422047"
           }
         },
         "app": {
           "sportscenter": {
-            "href": "sportscenter://x-callback-url/showStory?uid=45420495"
+            "href": "sportscenter://x-callback-url/showStory?uid=45422047"
           }
         }
       },
-      "description": "The Brewers have reinstated left-hander Jose Quintana from the 15-day injured list to start the series finale against the Phillies."
+      "description": "- Wade Miley has opted out of his minor league contract with the Cincinnati Reds, making the veteran left-hander a free agent."
     },
     {
-      "id": 31165089,
-      "nowId": "1-31165089",
-      "contentKey": "31165089-1-6-1",
-      "dataSourceIdentifier": "fbe6ef33fece2",
-      "type": "Story",
-      "headline": "Fantasy baseball forecaster: Team hitting ratings",
-      "lastModified": "2025-06-01T14:13:51+00:00",
-      "published": "2025-06-01T14:13:00+00:00",
+      "id": 45421865,
+      "nowId": "1-45421865",
+      "contentKey": "45421865-1-5-1",
+      "dataSourceIdentifier": "f50d283c21310",
+      "type": "HeadlineNews",
+      "headline": "Red Sox put reliever Justin Slaten on IL in series of moves",
+      "lastModified": "2025-06-01T17:36:25+00:00",
+      "published": "2025-06-01T17:29:00+00:00",
       "images": [
         {
-          "dataSourceIdentifier": "33fa69cf4cb17",
-          "id": 33684980,
+          "dataSourceIdentifier": "6bead61a80d37",
+          "id": 45421933,
           "type": "header",
-          "name": "Freddie Freeman [576x324]",
-          "credit": "Kirby Lee-USA TODAY Sports",
-          "height": 324,
-          "width": 576,
-          "url": "https://a.espncdn.com/photo/2022/0406/r996173_576x324_16-9.jpg",
-          "caption": "Which lineups have the best matchups this coming week? Which ones should be avoided? Check here daily to find out.",
-          "alt": "Los Angeles Dodgers first baseman Freddie Freeman (5) rounds third base to score in the third inning against the Los Angeles Angels at Dodger Stadium."
+          "name": "Justin Slaten (June 1, 2025) [1296x729]",
+          "credit": "Maddie Malhotra/Boston Red Sox/Getty Images",
+          "height": 729,
+          "width": 1296,
+          "url": "https://a.espncdn.com/photo/2025/0601/r1501165_1296x729_16-9.jpg"
         }
       ],
       "categories": [
         {
           "type": "topic",
-          "guid": "7f5ac95b-94a5-72a1-7013-83b7c7e1eeb0",
-          "id": 129404,
-          "description": "news - mlb",
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+          "id": 409224,
+          "description": "news",
           "sportId": 0,
-          "topicId": 123
+          "topicId": 781
         },
         {
-          "type": "topic",
-          "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d",
-          "id": 409228,
-          "description": "fantasy",
-          "sportId": 0,
-          "topicId": 785
+          "type": "athlete",
+          "guid": "5e62a310-55bd-3688-95fc-0d0385b3132a",
+          "id": 522267,
+          "description": "Justin Slaten",
+          "sportId": 10,
+          "uid": "s:1~l:10~a:4917925",
+          "athleteId": 4917925,
+          "athlete": {
+            "id": 4917925,
+            "description": "Justin Slaten",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/4917925"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/4917925"
+                }
+              }
+            }
+          }
         },
         {
-          "type": "topic",
-          "guid": "93a81859-174c-d041-59a2-38ca0f8d1c00",
-          "id": 152379,
-          "description": "news - fantasy baseball",
-          "sportId": 0,
-          "topicId": 399
+          "type": "team",
+          "guid": "c6df06f6-785d-3900-4935-5fd13742e2ee",
+          "id": 35,
+          "description": "Boston Red Sox",
+          "sportId": 10,
+          "uid": "s:1~l:10~t:2",
+          "teamId": 2,
+          "team": {
+            "id": 2,
+            "description": "Boston Red Sox",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "athlete",
+          "guid": "cd1a6588-e009-3d1a-8ff0-1bdc455fc52b",
+          "id": 578798,
+          "description": "Blake Sabol",
+          "sportId": 10,
+          "uid": "s:1~l:10~a:5120296",
+          "athleteId": 5120296,
+          "athlete": {
+            "id": 5120296,
+            "description": "Blake Sabol",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/5120296"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/5120296"
+                }
+              }
+            }
+          }
         },
         {
           "type": "league",
@@ -364,32 +412,70 @@
           }
         },
         {
-          "type": "league",
-          "guid": "486b53e9-9924-4652-82e3-1542a5849276",
-          "id": 12023,
-          "description": "Fantasy MLB",
-          "sportId": 0,
-          "leagueId": 3070,
-          "league": {
-            "id": 3070,
-            "description": "Fantasy MLB",
+          "type": "athlete",
+          "guid": "b35ff3ce-75fe-3bc2-b8fc-77cea5ef015f",
+          "id": 584701,
+          "description": "Luis Guerrero",
+          "sportId": 10,
+          "uid": "s:1~l:10~a:5132025",
+          "athleteId": 5132025,
+          "athlete": {
+            "id": 5132025,
+            "description": "Luis Guerrero",
             "links": {
-              "web": {},
-              "mobile": {}
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/5132025"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/5132025"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "athlete",
+          "guid": "bbbfe7c0-329c-30ae-845b-7b9e17f02db6",
+          "id": 464034,
+          "description": "Nick Sogard",
+          "sportId": 10,
+          "uid": "s:1~l:10~a:42979",
+          "athleteId": 42979,
+          "athlete": {
+            "id": 42979,
+            "description": "Nick Sogard",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/42979"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/mlb/player/_/id/42979"
+                }
+              }
             }
           }
         },
         {
           "type": "guid",
-          "guid": "7f5ac95b-94a5-72a1-7013-83b7c7e1eeb0"
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe"
         },
         {
           "type": "guid",
-          "guid": "3d170ccb-7b75-54f1-78c4-cfbf3ee3322d"
+          "guid": "5e62a310-55bd-3688-95fc-0d0385b3132a"
         },
         {
           "type": "guid",
-          "guid": "93a81859-174c-d041-59a2-38ca0f8d1c00"
+          "guid": "c6df06f6-785d-3900-4935-5fd13742e2ee"
+        },
+        {
+          "type": "guid",
+          "guid": "cd1a6588-e009-3d1a-8ff0-1bdc455fc52b"
         },
         {
           "type": "guid",
@@ -397,30 +483,34 @@
         },
         {
           "type": "guid",
-          "guid": "486b53e9-9924-4652-82e3-1542a5849276"
+          "guid": "b35ff3ce-75fe-3bc2-b8fc-77cea5ef015f"
+        },
+        {
+          "type": "guid",
+          "guid": "bbbfe7c0-329c-30ae-845b-7b9e17f02db6"
         }
       ],
       "premium": false,
       "links": {
         "web": {
-          "href": "https://www.espn.com/fantasy/baseball/story/_/id/31165089/fantasy-baseball-forecaster-team-hitting-stolen-base-ratings-platoon-matchups-daily-weekly-leagues"
+          "href": "https://www.espn.com/mlb/story/_/id/45421865/red-sox-put-reliever-justin-slaten-il-series-moves"
         },
         "mobile": {
-          "href": "http://m.espn.go.com/wireless/story?storyId=31165089"
+          "href": "http://m.espn.go.com/mlb/story?storyId=45421865"
         },
         "api": {
           "self": {
-            "href": "https://content.core.api.espn.com/v1/sports/news/31165089"
+            "href": "https://content.core.api.espn.com/v1/sports/news/45421865"
           }
         },
         "app": {
           "sportscenter": {
-            "href": "sportscenter://x-callback-url/showStory?uid=31165089"
+            "href": "sportscenter://x-callback-url/showStory?uid=45421865"
           }
         }
       },
-      "description": "Stay ahead of the game and optimize your fantasy baseball hitters with our forecaster, which provides a rolling 10-day outlook of every team's hitting matchups as well as the potential for stolen bases.",
-      "byline": "Tristan H. Cockcroft"
+      "description": "The Red Sox put right-handed reliever Justin Slaten on the 15-day injured list due to shoulder inflammation.",
+      "byline": "Field Level Media"
     }
   ],
   "link": {

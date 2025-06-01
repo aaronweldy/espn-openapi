@@ -167,129 +167,25 @@
       "date": "2025-06-01T19:00:00+00:00",
       "competitions": [
         {
-          "tickets": [
-            {
-              "summary": "Tickets as low as $24",
-              "numberAvailable": 378,
-              "links": [
-                {
-                  "href": "https://www.vividseats.com/new-york-liberty-tickets-barclays-center-6-1-2025--sports-wnba/production/5393450?wsUser=717"
-                },
-                {
-                  "href": "https://www.vividseats.com/barclays-center-tickets/venue/9671?wsUser=717"
-                }
-              ]
-            }
-          ],
-          "odds": [
-            {
-              "provider": {
-                "id": "58",
-                "name": "ESPN BET",
-                "priority": 1
-              },
-              "details": "NY -18.5",
-              "overUnder": 164.5,
-              "spread": -18.5,
-              "awayTeamOdds": {
-                "favorite": false,
-                "underdog": true,
-                "team": {
-                  "id": "18",
-                  "uid": "s:40~l:59~t:18",
-                  "abbreviation": "CONN",
-                  "name": "Sun",
-                  "displayName": "Connecticut Sun",
-                  "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/conn.png"
-                }
-              },
-              "homeTeamOdds": {
-                "favorite": true,
-                "underdog": false,
-                "team": {
-                  "id": "9",
-                  "uid": "s:40~l:59~t:9",
-                  "abbreviation": "NY",
-                  "name": "Liberty",
-                  "displayName": "New York Liberty",
-                  "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png"
-                }
-              },
-              "open": {
-                "over": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "-110",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "-110"
-                },
-                "under": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "-110",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "-110"
-                },
-                "total": {
-                  "value": 1.909,
-                  "displayValue": "10/11",
-                  "alternateDisplayValue": "161.5",
-                  "decimal": 1.909,
-                  "fraction": "10/11",
-                  "american": "161.5"
-                }
-              },
-              "current": {
-                "over": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "-105",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "-105",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "under": {
-                  "value": 1.87,
-                  "displayValue": "20/23",
-                  "alternateDisplayValue": "-115",
-                  "decimal": 1.87,
-                  "fraction": "20/23",
-                  "american": "-115",
-                  "outcome": {
-                    "type": "pending"
-                  }
-                },
-                "total": {
-                  "alternateDisplayValue": "164.5",
-                  "american": "164.5"
-                }
-              }
-            }
-          ],
           "id": "401736152",
           "date": "2025-06-01T19:00:00+00:00",
           "competitors": [
             {
               "leaders": [
                 {
-                  "name": "pointsPerGame",
-                  "displayName": "Points Per Game",
-                  "shortDisplayName": "PPG",
-                  "abbreviation": "PTS",
+                  "name": "points",
+                  "displayName": "Points",
+                  "shortDisplayName": "Pts",
+                  "abbreviation": "Pts",
                   "leaders": [
                     {
-                      "displayValue": "19.0",
-                      "value": 19.0,
+                      "displayValue": "18",
+                      "value": 18.0,
                       "athlete": {
-                        "id": "2998928",
-                        "fullName": "Breanna Stewart",
-                        "displayName": "Breanna Stewart",
-                        "shortName": "B. Stewart",
+                        "id": "4066533",
+                        "fullName": "Sabrina Ionescu",
+                        "displayName": "Sabrina Ionescu",
+                        "shortName": "S. Ionescu",
                         "links": [
                           {
                             "rel": [
@@ -297,13 +193,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/2998928/breanna-stewart"
+                            "href": "https://www.espn.com/wnba/player/_/id/4066533/sabrina-ionescu"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/2998928.png",
-                        "jersey": "30",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4066533.png",
+                        "jersey": "20",
                         "position": {
-                          "abbreviation": "F"
+                          "abbreviation": "G"
                         },
                         "team": {
                           "id": "9"
@@ -317,14 +213,14 @@
                   ]
                 },
                 {
-                  "name": "reboundsPerGame",
-                  "displayName": "Rebounds Per Game",
-                  "shortDisplayName": "RPG",
-                  "abbreviation": "REB",
+                  "name": "rebounds",
+                  "displayName": "Rebounds",
+                  "shortDisplayName": "Reb",
+                  "abbreviation": "Reb",
                   "leaders": [
                     {
-                      "displayValue": "11.4",
-                      "value": 11.399999618530273,
+                      "displayValue": "11",
+                      "value": 11.0,
                       "athlete": {
                         "id": "2999101",
                         "fullName": "Jonquel Jones",
@@ -357,14 +253,14 @@
                   ]
                 },
                 {
-                  "name": "assistsPerGame",
-                  "displayName": "Assists Per Game",
-                  "shortDisplayName": "APG",
-                  "abbreviation": "AST",
+                  "name": "assists",
+                  "displayName": "Assists",
+                  "shortDisplayName": "Ast",
+                  "abbreviation": "Ast",
                   "leaders": [
                     {
-                      "displayValue": "6.8",
-                      "value": 6.833333492279053,
+                      "displayValue": "7",
+                      "value": 7.0,
                       "athlete": {
                         "id": "2529137",
                         "fullName": "Natasha Cloud",
@@ -403,13 +299,13 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "16.2 PPG, 11.4 RPG, 3.6 APG, 0.8 SPG, 1.8 BPG",
-                      "value": 35.459999084472656,
+                      "displayValue": "18 PTS",
+                      "value": 33.70000076293945,
                       "athlete": {
-                        "id": "2999101",
-                        "fullName": "Jonquel Jones",
-                        "displayName": "Jonquel Jones",
-                        "shortName": "J. Jones",
+                        "id": "4066533",
+                        "fullName": "Sabrina Ionescu",
+                        "displayName": "Sabrina Ionescu",
+                        "shortName": "S. Ionescu",
                         "links": [
                           {
                             "rel": [
@@ -417,13 +313,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/2999101/jonquel-jones"
+                            "href": "https://www.espn.com/wnba/player/_/id/4066533/sabrina-ionescu"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/2999101.png",
-                        "jersey": "35",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4066533.png",
+                        "jersey": "20",
                         "position": {
-                          "abbreviation": "C"
+                          "abbreviation": "G"
                         },
                         "team": {
                           "id": "9"
@@ -516,114 +412,123 @@
               },
               "uid": "s:40~l:59~t:9",
               "type": "team",
-              "score": "0",
-              "linescores": [],
+              "winner": true,
+              "score": "100",
+              "linescores": [
+                {
+                  "displayValue": "31",
+                  "period": 1,
+                  "value": 31.0
+                },
+                {
+                  "displayValue": "29",
+                  "period": 2,
+                  "value": 29.0
+                },
+                {
+                  "displayValue": "30",
+                  "period": 3,
+                  "value": 30.0
+                },
+                {
+                  "displayValue": "10",
+                  "period": 4,
+                  "value": 10.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "REB",
-                  "rankDisplayValue": "Tied-8th",
                   "name": "rebounds",
-                  "displayValue": "224"
+                  "displayValue": "32"
                 },
                 {
                   "abbreviation": "REB",
                   "name": "avgRebounds",
-                  "displayValue": "37.3"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "AST",
-                  "rankDisplayValue": "2nd",
                   "name": "assists",
-                  "displayValue": "141"
+                  "displayValue": "29"
                 },
                 {
                   "abbreviation": "FGA",
-                  "rankDisplayValue": "10th",
                   "name": "fieldGoalsAttempted",
-                  "displayValue": "396"
+                  "displayValue": "53"
                 },
                 {
                   "abbreviation": "FGM",
-                  "rankDisplayValue": "Tied-4th",
                   "name": "fieldGoalsMade",
-                  "displayValue": "185"
+                  "displayValue": "33"
                 },
                 {
                   "abbreviation": "FG%",
-                  "rankDisplayValue": "1st",
                   "name": "fieldGoalPct",
-                  "displayValue": "46.7"
+                  "displayValue": "62.3"
                 },
                 {
                   "abbreviation": "FT%",
-                  "rankDisplayValue": "2nd",
                   "name": "freeThrowPct",
-                  "displayValue": "81.5"
+                  "displayValue": "88.2"
                 },
                 {
                   "abbreviation": "FTA",
-                  "rankDisplayValue": "5th",
                   "name": "freeThrowsAttempted",
-                  "displayValue": "130"
+                  "displayValue": "17"
                 },
                 {
                   "abbreviation": "FTM",
-                  "rankDisplayValue": "5th",
                   "name": "freeThrowsMade",
-                  "displayValue": "106"
+                  "displayValue": "15"
                 },
                 {
                   "abbreviation": "PTS",
-                  "rankDisplayValue": "4th",
                   "name": "points",
-                  "displayValue": "543"
+                  "displayValue": "100"
                 },
                 {
                   "abbreviation": "3P%",
-                  "rankDisplayValue": "4th",
                   "name": "threePointPct",
-                  "displayValue": "35.1"
+                  "displayValue": "59.4"
                 },
                 {
                   "abbreviation": "3PA",
-                  "rankDisplayValue": "2nd",
                   "name": "threePointFieldGoalsAttempted",
-                  "displayValue": "191"
+                  "displayValue": "32"
                 },
                 {
                   "abbreviation": "3PM",
-                  "rankDisplayValue": "2nd",
                   "name": "threePointFieldGoalsMade",
-                  "displayValue": "67"
+                  "displayValue": "19"
                 },
                 {
                   "abbreviation": "PTS",
                   "name": "avgPoints",
-                  "displayValue": "90.5"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "AST",
                   "name": "avgAssists",
-                  "displayValue": "23.5"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "3P%",
-                  "rankDisplayValue": "1st",
                   "name": "threePointFieldGoalPct",
-                  "displayValue": "35.1"
+                  "displayValue": "59.4"
                 }
               ],
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Total",
+                  "abbreviation": "Game",
                   "type": "total",
-                  "summary": "6-0"
+                  "summary": "7-0"
                 },
                 {
                   "name": "Home",
                   "type": "home",
-                  "summary": "3-0"
+                  "summary": "4-0"
                 },
                 {
                   "name": "Road",
@@ -635,19 +540,19 @@
             {
               "leaders": [
                 {
-                  "name": "pointsPerGame",
-                  "displayName": "Points Per Game",
-                  "shortDisplayName": "PPG",
-                  "abbreviation": "PTS",
+                  "name": "points",
+                  "displayName": "Points",
+                  "shortDisplayName": "Pts",
+                  "abbreviation": "Pts",
                   "leaders": [
                     {
-                      "displayValue": "17.2",
-                      "value": 17.16666603088379,
+                      "displayValue": "10",
+                      "value": 10.0,
                       "athlete": {
-                        "id": "918",
-                        "fullName": "Tina Charles",
-                        "displayName": "Tina Charles",
-                        "shortName": "T. Charles",
+                        "id": "4432865",
+                        "fullName": "Jacy Sheldon",
+                        "displayName": "Jacy Sheldon",
+                        "shortName": "J. Sheldon",
                         "links": [
                           {
                             "rel": [
@@ -655,13 +560,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/918/tina-charles"
+                            "href": "https://www.espn.com/wnba/player/_/id/4432865/jacy-sheldon"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/918.png",
-                        "jersey": "31",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4432865.png",
+                        "jersey": "4",
                         "position": {
-                          "abbreviation": "C"
+                          "abbreviation": "G"
                         },
                         "team": {
                           "id": "18"
@@ -675,14 +580,14 @@
                   ]
                 },
                 {
-                  "name": "reboundsPerGame",
-                  "displayName": "Rebounds Per Game",
-                  "shortDisplayName": "RPG",
-                  "abbreviation": "REB",
+                  "name": "rebounds",
+                  "displayName": "Rebounds",
+                  "shortDisplayName": "Reb",
+                  "abbreviation": "Reb",
                   "leaders": [
                     {
-                      "displayValue": "6.7",
-                      "value": 6.666666507720947,
+                      "displayValue": "5",
+                      "value": 5.0,
                       "athlete": {
                         "id": "4398966",
                         "fullName": "Olivia Nelson-Ododa",
@@ -715,19 +620,19 @@
                   ]
                 },
                 {
-                  "name": "assistsPerGame",
-                  "displayName": "Assists Per Game",
-                  "shortDisplayName": "APG",
-                  "abbreviation": "AST",
+                  "name": "assists",
+                  "displayName": "Assists",
+                  "shortDisplayName": "Ast",
+                  "abbreviation": "Ast",
                   "leaders": [
                     {
-                      "displayValue": "3.5",
-                      "value": 3.5,
+                      "displayValue": "3",
+                      "value": 3.0,
                       "athlete": {
-                        "id": "3904576",
-                        "fullName": "Marina Mabrey",
-                        "displayName": "Marina Mabrey",
-                        "shortName": "M. Mabrey",
+                        "id": "2529125",
+                        "fullName": "Haley Peters",
+                        "displayName": "Haley Peters",
+                        "shortName": "H. Peters",
                         "links": [
                           {
                             "rel": [
@@ -735,13 +640,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/3904576/marina-mabrey"
+                            "href": "https://www.espn.com/wnba/player/_/id/2529125/haley-peters"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/3904576.png",
-                        "jersey": "3",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/2529125.png",
+                        "jersey": "7",
                         "position": {
-                          "abbreviation": "G"
+                          "abbreviation": "F"
                         },
                         "team": {
                           "id": "18"
@@ -761,13 +666,13 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "17.2 PPG, 5.8 RPG, 2.0 APG, 0.8 SPG, 0.3 BPG",
-                      "value": 25.28333282470703,
+                      "displayValue": "10 PTS",
+                      "value": 18.75,
                       "athlete": {
-                        "id": "918",
-                        "fullName": "Tina Charles",
-                        "displayName": "Tina Charles",
-                        "shortName": "T. Charles",
+                        "id": "4432865",
+                        "fullName": "Jacy Sheldon",
+                        "displayName": "Jacy Sheldon",
+                        "shortName": "J. Sheldon",
                         "links": [
                           {
                             "rel": [
@@ -775,13 +680,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/918/tina-charles"
+                            "href": "https://www.espn.com/wnba/player/_/id/4432865/jacy-sheldon"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/918.png",
-                        "jersey": "31",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4432865.png",
+                        "jersey": "4",
                         "position": {
-                          "abbreviation": "C"
+                          "abbreviation": "G"
                         },
                         "team": {
                           "id": "18"
@@ -874,109 +779,118 @@
               },
               "uid": "s:40~l:59~t:18",
               "type": "team",
-              "score": "0",
-              "linescores": [],
+              "winner": false,
+              "score": "52",
+              "linescores": [
+                {
+                  "displayValue": "13",
+                  "period": 1,
+                  "value": 13.0
+                },
+                {
+                  "displayValue": "15",
+                  "period": 2,
+                  "value": 15.0
+                },
+                {
+                  "displayValue": "8",
+                  "period": 3,
+                  "value": 8.0
+                },
+                {
+                  "displayValue": "16",
+                  "period": 4,
+                  "value": 16.0
+                }
+              ],
               "statistics": [
                 {
                   "abbreviation": "REB",
-                  "rankDisplayValue": "3rd",
                   "name": "rebounds",
-                  "displayValue": "193"
+                  "displayValue": "26"
                 },
                 {
                   "abbreviation": "REB",
                   "name": "avgRebounds",
-                  "displayValue": "32.2"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "AST",
-                  "rankDisplayValue": "11th",
                   "name": "assists",
-                  "displayValue": "108"
+                  "displayValue": "11"
                 },
                 {
                   "abbreviation": "FGA",
-                  "rankDisplayValue": "11th",
                   "name": "fieldGoalsAttempted",
-                  "displayValue": "374"
+                  "displayValue": "61"
                 },
                 {
                   "abbreviation": "FGM",
-                  "rankDisplayValue": "11th",
                   "name": "fieldGoalsMade",
-                  "displayValue": "147"
+                  "displayValue": "19"
                 },
                 {
                   "abbreviation": "FG%",
-                  "rankDisplayValue": "11th",
                   "name": "fieldGoalPct",
-                  "displayValue": "39.3"
+                  "displayValue": "31.1"
                 },
                 {
                   "abbreviation": "FT%",
-                  "rankDisplayValue": "6th",
                   "name": "freeThrowPct",
-                  "displayValue": "78.6"
+                  "displayValue": "88.9"
                 },
                 {
                   "abbreviation": "FTA",
-                  "rankDisplayValue": "9th",
                   "name": "freeThrowsAttempted",
-                  "displayValue": "117"
+                  "displayValue": "9"
                 },
                 {
                   "abbreviation": "FTM",
-                  "rankDisplayValue": "7th",
                   "name": "freeThrowsMade",
-                  "displayValue": "92"
+                  "displayValue": "8"
                 },
                 {
                   "abbreviation": "PTS",
-                  "rankDisplayValue": "11th",
                   "name": "points",
-                  "displayValue": "444"
+                  "displayValue": "52"
                 },
                 {
                   "abbreviation": "3P%",
-                  "rankDisplayValue": "10th",
                   "name": "threePointPct",
-                  "displayValue": "31.7"
+                  "displayValue": "21.4"
                 },
                 {
                   "abbreviation": "3PA",
-                  "rankDisplayValue": "12th",
                   "name": "threePointFieldGoalsAttempted",
-                  "displayValue": "120"
+                  "displayValue": "28"
                 },
                 {
                   "abbreviation": "3PM",
-                  "rankDisplayValue": "12th",
                   "name": "threePointFieldGoalsMade",
-                  "displayValue": "38"
+                  "displayValue": "6"
                 },
                 {
                   "abbreviation": "PTS",
                   "name": "avgPoints",
-                  "displayValue": "74.0"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "AST",
                   "name": "avgAssists",
-                  "displayValue": "18.0"
+                  "displayValue": "0.0"
                 },
                 {
                   "abbreviation": "3P%",
-                  "rankDisplayValue": "1st",
                   "name": "threePointFieldGoalPct",
-                  "displayValue": "31.7"
+                  "displayValue": "21.4"
                 }
               ],
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Total",
+                  "abbreviation": "Game",
                   "type": "total",
-                  "summary": "1-5"
+                  "summary": "1-6"
                 },
                 {
                   "name": "Home",
@@ -986,13 +900,13 @@
                 {
                   "name": "Road",
                   "type": "road",
-                  "summary": "1-2"
+                  "summary": "1-3"
                 }
               ]
             }
           ],
           "uid": "s:40~l:59~e:401736152~c:401736152",
-          "attendance": 0,
+          "attendance": 17415,
           "type": {
             "id": "1",
             "abbreviation": "STD"
@@ -1000,7 +914,7 @@
           "timeValid": true,
           "neutralSite": false,
           "conferenceCompetition": false,
-          "playByPlayAvailable": false,
+          "playByPlayAvailable": true,
           "recent": true,
           "venue": {
             "id": "3559",
@@ -1020,17 +934,17 @@
           ],
           "status": {
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, June 1st at 3:00 PM EDT",
-              "shortDetail": "6/1 - 3:00 PM EDT"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
             "clock": 0.0,
             "displayClock": "0.0",
-            "period": 0
+            "period": 4
           },
           "broadcasts": [
             {
@@ -1103,7 +1017,225 @@
               "region": "us"
             }
           ],
-          "highlights": [],
+          "highlights": [
+            {
+              "id": 45423707,
+              "cerebroId": "683cae5a4c762f5be9c0f716",
+              "source": "espn",
+              "headline": "Breanna Stewart drills a 3 for Liberty",
+              "description": "Breanna Stewart cashes a pull-up 3 for the Liberty vs. the Sun.",
+              "lastModified": "2025-06-01T19:49:37Z",
+              "originalPublishDate": "2025-06-01T19:47:30Z",
+              "duration": 16,
+              "timeRestrictions": {
+                "embargoDate": "2025-06-01T19:47:30Z",
+                "expirationDate": "2025-11-30T05:00:00Z"
+              },
+              "deviceRestrictions": {
+                "type": "whitelist",
+                "devices": [
+                  "desktop",
+                  "ipad",
+                  "settop",
+                  "handset",
+                  "tablet"
+                ]
+              },
+              "geoRestrictions": {
+                "type": "whitelist",
+                "countries": [
+                  "KN",
+                  "AO",
+                  "TG",
+                  "SX",
+                  "ET",
+                  "VI",
+                  "BR",
+                  "ER",
+                  "BO",
+                  "ZA",
+                  "AW",
+                  "DO",
+                  "MW",
+                  "UM",
+                  "BW",
+                  "NG",
+                  "PY",
+                  "MX",
+                  "CM",
+                  "VC",
+                  "GD",
+                  "CD",
+                  "GM",
+                  "KY",
+                  "FJ",
+                  "MH",
+                  "GQ",
+                  "PR",
+                  "CF",
+                  "LC",
+                  "AR",
+                  "LS",
+                  "VG",
+                  "SC",
+                  "PA",
+                  "BB",
+                  "SV",
+                  "UG",
+                  "FM",
+                  "AS",
+                  "BS",
+                  "KM",
+                  "GH",
+                  "GF",
+                  "SL",
+                  "BQ",
+                  "BF",
+                  "AM",
+                  "GB",
+                  "UK",
+                  "US",
+                  "GU",
+                  "MP",
+                  "HT",
+                  "NI",
+                  "BM",
+                  "HN",
+                  "NA",
+                  "GA",
+                  "MU",
+                  "GY",
+                  "GW",
+                  "MS",
+                  "CO",
+                  "GP",
+                  "BI",
+                  "CV",
+                  "EC",
+                  "CI",
+                  "MF",
+                  "BZ",
+                  "TC",
+                  "GT",
+                  "CL",
+                  "CR",
+                  "CG",
+                  "MQ",
+                  "NZ",
+                  "ST",
+                  "ZW",
+                  "SN",
+                  "AU",
+                  "SR",
+                  "PE",
+                  "JM",
+                  "TT",
+                  "NE",
+                  "ML",
+                  "AG",
+                  "MZ",
+                  "PW",
+                  "BJ",
+                  "TZ",
+                  "VE",
+                  "AI",
+                  "MG",
+                  "RE",
+                  "SZ",
+                  "GN",
+                  "UY",
+                  "ZM",
+                  "SS",
+                  "KE",
+                  "LR",
+                  "CU",
+                  "RW"
+                ]
+              },
+              "thumbnail": "https://a.espncdn.com/media/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000.jpg",
+              "links": {
+                "web": {
+                  "href": "https://www.espn.com/video/clip?id=45423707",
+                  "self": {
+                    "href": "https://www.espn.com/video/clip?id=45423707",
+                    "dsi": {
+                      "href": "https://www.espn.com/video/clip?id=c2a5e20041e36"
+                    }
+                  },
+                  "seo": {
+                    "href": "https://www.espn.com/video/clip/_/id/45423707"
+                  }
+                },
+                "mobile": {
+                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/160ce3ab-d594-45a0-8e92-36f722c78a4d/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45423707",
+                  "source": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000.mp4"
+                  },
+                  "alert": {
+                    "href": "http://m.espn.com/general/video/videoAlert?vid=45423707"
+                  },
+                  "streaming": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/160ce3ab-d594-45a0-8e92-36f722c78a4d/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45423707"
+                  },
+                  "progressiveDownload": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/160ce3ab-d594-45a0-8e92-36f722c78a4d/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45423707"
+                  }
+                },
+                "api": {
+                  "self": {
+                    "href": "https://content.core.api.espn.com/v1/video/clips/45423707"
+                  },
+                  "artwork": {
+                    "href": "https://artwork.api.espn.com/artwork/collections/media/160ce3ab-d594-45a0-8e92-36f722c78a4d"
+                  }
+                },
+                "source": {
+                  "href": "https://media.video-cdn.espn.com/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000_360p30_1464k.mp4",
+                  "mezzanine": {
+                    "href": "http://media.video-origin.espn.com/espnvideo/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000.mp4"
+                  },
+                  "flash": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000.smil"
+                  },
+                  "hds": {
+                    "href": "https://hds.video-cdn.espn.com/z/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000_rel.smil/manifest.f4m"
+                  },
+                  "HLS": {
+                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000/playlist.m3u8",
+                    "HD": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000/playlist.m3u8"
+                    },
+                    "cmaf": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000/playlist.m3u8",
+                      "shield": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/media/160ce3ab-d594-45a0-8e92-36f722c78a4d/asset"
+                      }
+                    }
+                  },
+                  "HD": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000_720p30_2896k.mp4"
+                  },
+                  "full": {
+                    "href": "https://media.video-cdn.espn.com/motion/2025/0601/ss_20250601_154739793_2872000/ss_20250601_154739793_2872000_360p30_1464k.mp4"
+                  }
+                },
+                "sportscenter": {
+                  "href": "sportscenter://x-callback-url/showVideo?videoID=45423707&videoDSI=c2a5e20041e36"
+                }
+              },
+              "ad": {
+                "sport": "wnba",
+                "bundle": "wnba_top_plays_highlights"
+              },
+              "tracking": {
+                "sportName": "wnba",
+                "leagueName": "No League",
+                "coverageType": "Final Game Highlight",
+                "trackingName": "WNBA_One-Play (Breanna Stewart drills a 3 for Liberty) 2025/06/01 ESHEET",
+                "trackingId": "dm_20250601_WNBA_breanna_stewart_drills_a_3_for_liberty"
+              }
+            }
+          ],
           "headlines": []
         }
       ],
@@ -1128,21 +1260,59 @@
           ],
           "isExternal": false,
           "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/wnba/boxscore/_/gameId/401736152",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Highlights",
+          "href": "https://www.espn.com/wnba/video?gameId=401736152",
+          "text": "Highlights",
+          "rel": [
+            "highlights",
+            "desktop"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/wnba/playbyplay/_/gameId/401736152",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
         }
       ],
       "status": {
         "type": {
-          "id": "1",
-          "name": "STATUS_SCHEDULED",
-          "state": "pre",
-          "completed": false,
-          "description": "Scheduled",
-          "detail": "Sun, June 1st at 3:00 PM EDT",
-          "shortDetail": "6/1 - 3:00 PM EDT"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         },
         "clock": 0.0,
         "displayClock": "0.0",
-        "period": 0
+        "period": 4
       }
     },
     {
@@ -1152,8 +1322,8 @@
         {
           "tickets": [
             {
-              "summary": "Tickets as low as $5",
-              "numberAvailable": 987,
+              "summary": "Tickets as low as $8",
+              "numberAvailable": 833,
               "links": [
                 {
                   "href": "https://www.vividseats.com/los-angeles-sparks-tickets-cryptocom-arena-6-1-2025--sports-wnba/production/5393518?wsUser=717"
@@ -1226,23 +1396,23 @@
               },
               "current": {
                 "over": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "-105",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "-105",
+                  "value": 1.909,
+                  "displayValue": "10/11",
+                  "alternateDisplayValue": "-110",
+                  "decimal": 1.909,
+                  "fraction": "10/11",
+                  "american": "-110",
                   "outcome": {
                     "type": "pending"
                   }
                 },
                 "under": {
-                  "value": 1.87,
-                  "displayValue": "20/23",
-                  "alternateDisplayValue": "-115",
-                  "decimal": 1.87,
-                  "fraction": "20/23",
-                  "american": "-115",
+                  "value": 1.909,
+                  "displayValue": "10/11",
+                  "alternateDisplayValue": "-110",
+                  "decimal": 1.909,
+                  "fraction": "10/11",
+                  "american": "-110",
                   "outcome": {
                     "type": "pending"
                   }
@@ -1983,7 +2153,7 @@
           "neutralSite": false,
           "conferenceCompetition": false,
           "playByPlayAvailable": false,
-          "recent": false,
+          "recent": true,
           "venue": {
             "id": "1841",
             "fullName": "crypto.com Arena",
@@ -2118,8 +2288,8 @@
         {
           "tickets": [
             {
-              "summary": "Tickets as low as $6",
-              "numberAvailable": 1180,
+              "summary": "Tickets as low as $3",
+              "numberAvailable": 1141,
               "links": [
                 {
                   "href": "https://www.vividseats.com/seattle-storm-tickets-climate-pledge-arena-6-1-2025--sports-wnba/production/5393655?wsUser=717"
@@ -2949,7 +3119,7 @@
           "neutralSite": false,
           "conferenceCompetition": false,
           "playByPlayAvailable": false,
-          "recent": false,
+          "recent": true,
           "venue": {
             "id": "7224",
             "fullName": "Climate Pledge Arena",
@@ -3084,8 +3254,8 @@
         {
           "tickets": [
             {
-              "summary": "Tickets as low as $17",
-              "numberAvailable": 397,
+              "summary": "Tickets as low as $13",
+              "numberAvailable": 629,
               "links": [
                 {
                   "href": "https://www.vividseats.com/golden-state-valkyries-tickets-chase-center-6-1-2025--sports-wnba/production/5393393?wsUser=717"
@@ -3158,23 +3328,23 @@
               },
               "current": {
                 "over": {
-                  "value": 1.87,
-                  "displayValue": "20/23",
-                  "alternateDisplayValue": "-115",
-                  "decimal": 1.87,
-                  "fraction": "20/23",
-                  "american": "-115",
+                  "value": 1.909,
+                  "displayValue": "10/11",
+                  "alternateDisplayValue": "-110",
+                  "decimal": 1.909,
+                  "fraction": "10/11",
+                  "american": "-110",
                   "outcome": {
                     "type": "pending"
                   }
                 },
                 "under": {
-                  "value": 1.952,
-                  "displayValue": "20/21",
-                  "alternateDisplayValue": "-105",
-                  "decimal": 1.952,
-                  "fraction": "20/21",
-                  "american": "-105",
+                  "value": 1.909,
+                  "displayValue": "10/11",
+                  "alternateDisplayValue": "-110",
+                  "decimal": 1.909,
+                  "fraction": "10/11",
+                  "american": "-110",
                   "outcome": {
                     "type": "pending"
                   }

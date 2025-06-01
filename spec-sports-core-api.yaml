@@ -1947,6 +1947,62 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}:
+    get:
+      summary: Get Competition Odds from Specific Provider
+      description: Retrieve betting odds from a specific provider for a competition within an event for a given sport and league.
+      operationId: getCompetitionOddsProvider
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+        - name: provider_id
+          in: path
+          required: true
+          description: The odds provider ID (e.g., 58 for ESPN BET)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OddsItem'
+        '404':
+          description: Odds not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts:
     get:
       summary: Get Competition Broadcasts
@@ -5163,6 +5219,10 @@ components:
           $ref: '#/components/schemas/TeamOdds'
         current:
           $ref: '#/components/schemas/OddsItemCurrent'
+        open:
+          $ref: '#/components/schemas/OddsItemCurrent'
+        close:
+          $ref: '#/components/schemas/OddsItemCurrent'
         headToHeads:
           $ref: '#/components/schemas/HeadToHeads'
         predictors:
@@ -5248,6 +5308,10 @@ components:
           type: number
         current:
           $ref: '#/components/schemas/OddsTeamCurrent'
+        open:
+          $ref: '#/components/schemas/OddsTeamCurrent'
+        close:
+          $ref: '#/components/schemas/OddsTeamCurrent'
         team:
           $ref: '#/components/schemas/HeadToHeads'
         winPercentage:
@@ -5285,7 +5349,15 @@ components:
     OddsValue:
       type: object
       properties:
+        value:
+          type: number
+        displayValue:
+          type: string
         alternateDisplayValue:
+          type: string
+        decimal:
+          type: number
+        fraction:
           type: string
         american:
           type: string
@@ -5297,11 +5369,23 @@ components:
       type: object
       properties:
         over:
-          $ref: '#/components/schemas/OddsValue'
+          $ref: '#/components/schemas/OddsValueWithOutcome'
         under:
-          $ref: '#/components/schemas/OddsValue'
+          $ref: '#/components/schemas/OddsValueWithOutcome'
         total:
           $ref: '#/components/schemas/OddsValue'
+
+    OddsValueWithOutcome:
+      allOf:
+        - $ref: '#/components/schemas/OddsValue'
+        - type: object
+          properties:
+            outcome:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum: ['pending', 'won', 'lost']
 
     HeadToHeads:
       type: object

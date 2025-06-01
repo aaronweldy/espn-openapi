@@ -33,6 +33,8 @@ class OddsItem:
         away_team_odds (Union[Unset, TeamOdds]):
         home_team_odds (Union[Unset, TeamOdds]):
         current (Union[Unset, OddsItemCurrent]):
+        open_ (Union[Unset, OddsItemCurrent]):
+        close (Union[Unset, OddsItemCurrent]):
         head_to_heads (Union[Unset, HeadToHeads]):
         predictors (Union[Unset, HeadToHeads]):
         money_line_history (Union[Unset, HeadToHeads]):
@@ -53,6 +55,8 @@ class OddsItem:
     away_team_odds: Union[Unset, "TeamOdds"] = UNSET
     home_team_odds: Union[Unset, "TeamOdds"] = UNSET
     current: Union[Unset, "OddsItemCurrent"] = UNSET
+    open_: Union[Unset, "OddsItemCurrent"] = UNSET
+    close: Union[Unset, "OddsItemCurrent"] = UNSET
     head_to_heads: Union[Unset, "HeadToHeads"] = UNSET
     predictors: Union[Unset, "HeadToHeads"] = UNSET
     money_line_history: Union[Unset, "HeadToHeads"] = UNSET
@@ -94,6 +98,14 @@ class OddsItem:
         current: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.current, Unset):
             current = self.current.to_dict()
+
+        open_: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.open_, Unset):
+            open_ = self.open_.to_dict()
+
+        close: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.close, Unset):
+            close = self.close.to_dict()
 
         head_to_heads: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.head_to_heads, Unset):
@@ -143,6 +155,10 @@ class OddsItem:
             field_dict["homeTeamOdds"] = home_team_odds
         if current is not UNSET:
             field_dict["current"] = current
+        if open_ is not UNSET:
+            field_dict["open"] = open_
+        if close is not UNSET:
+            field_dict["close"] = close
         if head_to_heads is not UNSET:
             field_dict["headToHeads"] = head_to_heads
         if predictors is not UNSET:
@@ -211,6 +227,20 @@ class OddsItem:
         else:
             current = OddsItemCurrent.from_dict(_current)
 
+        _open_ = d.pop("open", UNSET)
+        open_: Union[Unset, OddsItemCurrent]
+        if isinstance(_open_, Unset):
+            open_ = UNSET
+        else:
+            open_ = OddsItemCurrent.from_dict(_open_)
+
+        _close = d.pop("close", UNSET)
+        close: Union[Unset, OddsItemCurrent]
+        if isinstance(_close, Unset):
+            close = UNSET
+        else:
+            close = OddsItemCurrent.from_dict(_close)
+
         _head_to_heads = d.pop("headToHeads", UNSET)
         head_to_heads: Union[Unset, HeadToHeads]
         if isinstance(_head_to_heads, Unset):
@@ -260,6 +290,8 @@ class OddsItem:
             away_team_odds=away_team_odds,
             home_team_odds=home_team_odds,
             current=current,
+            open_=open_,
+            close=close,
             head_to_heads=head_to_heads,
             predictors=predictors,
             money_line_history=money_line_history,

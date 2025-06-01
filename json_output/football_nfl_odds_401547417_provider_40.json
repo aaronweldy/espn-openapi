@@ -1,0 +1,76 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/odds/40?lang=en&region=us",
+  "provider": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/providers/40?lang=en&region=us",
+    "id": "40",
+    "name": "DraftKings",
+    "priority": 0
+  },
+  "moneylineWinner": false,
+  "spreadWinner": false,
+  "details": "ATL -3",
+  "overUnder": 40.5,
+  "spread": -3.0,
+  "overOdds": -110.0,
+  "underOdds": -110.0,
+  "awayTeamOdds": {
+    "favorite": false,
+    "underdog": true,
+    "current": {
+      "pointSpread": {
+        "alternateDisplayValue": "+3",
+        "american": "+3"
+      },
+      "spread": {
+        "alternateDisplayValue": "-115",
+        "american": "-115"
+      },
+      "moneyLine": {
+        "alternateDisplayValue": "+124",
+        "american": "+124"
+      }
+    },
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+    },
+    "moneyLine": 124,
+    "spreadOdds": -115.0
+  },
+  "homeTeamOdds": {
+    "favorite": true,
+    "underdog": false,
+    "current": {
+      "pointSpread": {
+        "alternateDisplayValue": "-3",
+        "american": "-3"
+      },
+      "spread": {
+        "alternateDisplayValue": "-105",
+        "american": "-105"
+      },
+      "moneyLine": {
+        "alternateDisplayValue": "-148",
+        "american": "-148"
+      }
+    },
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/1?lang=en&region=us"
+    },
+    "moneyLine": -148,
+    "spreadOdds": -105.0
+  },
+  "current": {
+    "over": {
+      "alternateDisplayValue": "-110",
+      "american": "-110"
+    },
+    "under": {
+      "alternateDisplayValue": "-110",
+      "american": "-110"
+    },
+    "total": {
+      "alternateDisplayValue": "40.5",
+      "american": "40.5"
+    }
+  }
+}

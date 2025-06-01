@@ -7,6 +7,7 @@ from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.odds_value import OddsValue
+    from ..models.odds_value_with_outcome import OddsValueWithOutcome
 
 
 T = TypeVar("T", bound="OddsItemCurrent")
@@ -16,13 +17,13 @@ T = TypeVar("T", bound="OddsItemCurrent")
 class OddsItemCurrent:
     """
     Attributes:
-        over (Union[Unset, OddsValue]):
-        under (Union[Unset, OddsValue]):
+        over (Union[Unset, OddsValueWithOutcome]):
+        under (Union[Unset, OddsValueWithOutcome]):
         total (Union[Unset, OddsValue]):
     """
 
-    over: Union[Unset, "OddsValue"] = UNSET
-    under: Union[Unset, "OddsValue"] = UNSET
+    over: Union[Unset, "OddsValueWithOutcome"] = UNSET
+    under: Union[Unset, "OddsValueWithOutcome"] = UNSET
     total: Union[Unset, "OddsValue"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -54,21 +55,22 @@ class OddsItemCurrent:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         from ..models.odds_value import OddsValue
+        from ..models.odds_value_with_outcome import OddsValueWithOutcome
 
         d = src_dict.copy()
         _over = d.pop("over", UNSET)
-        over: Union[Unset, OddsValue]
+        over: Union[Unset, OddsValueWithOutcome]
         if isinstance(_over, Unset):
             over = UNSET
         else:
-            over = OddsValue.from_dict(_over)
+            over = OddsValueWithOutcome.from_dict(_over)
 
         _under = d.pop("under", UNSET)
-        under: Union[Unset, OddsValue]
+        under: Union[Unset, OddsValueWithOutcome]
         if isinstance(_under, Unset):
             under = UNSET
         else:
-            under = OddsValue.from_dict(_under)
+            under = OddsValueWithOutcome.from_dict(_under)
 
         _total = d.pop("total", UNSET)
         total: Union[Unset, OddsValue]

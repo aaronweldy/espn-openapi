@@ -165,6 +165,9 @@ from .odds_provider import OddsProvider
 from .odds_response import OddsResponse
 from .odds_team_current import OddsTeamCurrent
 from .odds_value import OddsValue
+from .odds_value_with_outcome import OddsValueWithOutcome
+from .odds_value_with_outcome_outcome import OddsValueWithOutcomeOutcome
+from .odds_value_with_outcome_outcome_type import OddsValueWithOutcomeOutcomeType
 from .official_position import OfficialPosition
 from .paginated_reference_list_response import PaginatedReferenceListResponse
 from .play import Play
@@ -374,6 +377,9 @@ __all__ = (
     "OddsResponse",
     "OddsTeamCurrent",
     "OddsValue",
+    "OddsValueWithOutcome",
+    "OddsValueWithOutcomeOutcome",
+    "OddsValueWithOutcomeOutcomeType",
     "OfficialPosition",
     "PaginatedReferenceListResponse",
     "Play",
