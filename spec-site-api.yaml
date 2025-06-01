@@ -439,6 +439,51 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster:
+    get:
+      summary: Get Team Roster
+      description: Retrieve the complete roster for a specific team including player details, positions, and coaches
+      operationId: getTeamRoster
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier (e.g., nfl, nba, mlb, nhl, college-football, mens-college-basketball, womens-college-basketball)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: team_id_or_abbrev
+          in: path
+          required: true
+          description: The team ID or abbreviation
+          schema:
+            type: string
+            example: "KC"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamRosterResponse'
+        '404':
+          description: Team or roster not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /sports/{sport}/{league}/rankings:
     get:
       summary: Get Rankings
@@ -3360,15 +3405,27 @@ components:
           description: The status of the response
         season:
           $ref: '#/components/schemas/Season'
+        team:
+          $ref: '#/components/schemas/Team'
+        coach:
+          type: array
+          description: List of coaches for the team
+          items:
+            $ref: '#/components/schemas/Coach'
         athletes:
           type: array
-          description: List of roster position groups
+          description: List of athletes or position groups depending on sport
           items:
-            $ref: '#/components/schemas/PositionGroup'
+            oneOf:
+              - $ref: '#/components/schemas/PositionGroup'
+              - $ref: '#/components/schemas/RosterAthlete'
 
     PositionGroup:
       type: object
       description: Group of athletes by position category
+      required:
+        - position
+        - items
       properties:
         position:
           type: string
