@@ -1,6 +1,7 @@
 """Tests for season futures endpoints."""
 
 import json
+import logging
 import pytest
 from models.sports_core_api.espn_sports_core_api_client.api.default import get_season_futures
 from models.sports_core_api.espn_sports_core_api_client.models import (
@@ -13,6 +14,10 @@ from models.sports_core_api.espn_sports_core_api_client.models import (
     SportEnum,
 )
 from models.sports_core_api.espn_sports_core_api_client.types import UNSET
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 @pytest.mark.api
@@ -50,19 +55,37 @@ def test_get_season_futures(sports_core_api_client, ensure_json_output_dir, spor
     assert result.page_count >= 0, "Page count should be non-negative"
     assert len(result.items) >= expected_min_items, f"Expected at least {expected_min_items} future items"
     
+    # Log futures summary
+    logger.info(f"\n{'='*60}")
+    logger.info(f"{sport.value.upper()} {league.value.upper()} FUTURES - {year}")
+    logger.info(f"{'='*60}")
+    logger.info(f"Total futures: {result.count}")
+    logger.info(f"Page {result.page_index} of {result.page_count} (size: {result.page_size})")
+    logger.info(f"Futures on this page: {len(result.items)}")
+    logger.info(f"{'-'*60}")
+    
     # Validate future items
-    for future_item in result.items:
+    for i, future_item in enumerate(result.items):
         assert isinstance(future_item, FutureItem), "Each item should be a FutureItem"
         assert future_item.id, "Future item should have an ID"
         assert future_item.name, "Future item should have a name"
         assert len(future_item.futures) > 0, "Future item should have at least one provider"
+        
+        # Log future details
+        logger.info(f"\n{i+1}. {future_item.name}")
+        if future_item.display_name and future_item.display_name != future_item.name:
+            logger.info(f"   Display: {future_item.display_name}")
+        if future_item.type:
+            logger.info(f"   Type: {future_item.type}")
+        logger.info(f"   ID: {future_item.id}")
+        logger.info(f"   Providers: {len(future_item.futures)}")
         
         # Check if type is set (not all futures have a type)
         if future_item.type:
             assert future_item.type in ["winLeague", "winDivision", "winConference", "playerProp", "teamProp"]
         
         # Validate providers and books
-        for provider_future in future_item.futures:
+        for j, provider_future in enumerate(future_item.futures):
             assert isinstance(provider_future, FutureProvider), "Should be FutureProvider"
             assert isinstance(provider_future.provider, BettingProvider), "Should have BettingProvider"
             assert provider_future.provider.id, "Provider should have ID"
@@ -70,6 +93,22 @@ def test_get_season_futures(sports_core_api_client, ensure_json_output_dir, spor
             
             assert len(provider_future.books) > 0, "Provider should have at least one book"
             
+            # Log provider info
+            if j == 0:  # Only log first provider to avoid too much output
+                logger.info(f"   Provider: {provider_future.provider.name} (ID: {provider_future.provider.id})")
+                logger.info(f"   Books: {len(provider_future.books)}")
+                
+                # Log sample books (first 3)
+                for k, book in enumerate(provider_future.books[:3]):
+                    if book.athlete is not UNSET:
+                        logger.info(f"     - Athlete: {book.value}")
+                    elif book.team is not UNSET:
+                        logger.info(f"     - Team: {book.value}")
+                
+                if len(provider_future.books) > 3:
+                    logger.info(f"     ... and {len(provider_future.books) - 3} more")
+            
+            # Validate all books
             for book in provider_future.books:
                 assert isinstance(book, FutureBook), "Should be FutureBook"
                 assert book.value, "Book should have a value"
@@ -163,9 +202,17 @@ def test_get_season_futures_future_types(sports_core_api_client, sport, league, 
                 if book.team is not UNSET:
                     has_team_futures = True
     
-    print(f"\n{sport.value} {league.value} future types found: {future_types}")
-    print(f"Has player futures: {has_player_futures}")
-    print(f"Has team futures: {has_team_futures}")
+    logger.info(f"\n{'='*60}")
+    logger.info(f"FUTURE TYPES ANALYSIS - {sport.value.upper()} {league.value.upper()}")
+    logger.info(f"{'='*60}")
+    logger.info(f"Future types found: {future_types}")
+    logger.info(f"Has player futures: {has_player_futures}")
+    logger.info(f"Has team futures: {has_team_futures}")
+    
+    # Log some example futures
+    logger.info(f"\nExample futures:")
+    for i, future_item in enumerate(result.items[:5]):
+        logger.info(f"{i+1}. {future_item.name} (Type: {future_item.type or 'None'})")
     
     # Verify we have at least one type of future (player or team)
     assert has_player_futures or has_team_futures, f"{sport.value} {league.value} should have either player or team futures"
@@ -200,9 +247,10 @@ def test_get_season_futures_pagination(sports_core_api_client):
         
         # Note: The API doesn't seem to support page parameter in the URL
         # so we can't test actual pagination navigation
-        print(f"\nTotal futures: {result1.count}")
-        print(f"Page count: {result1.page_count}")
-        print(f"Items on first page: {len(result1.items)}")
+        logger.info(f"\nPAGINATION INFO:")
+        logger.info(f"Total futures: {result1.count}")
+        logger.info(f"Page count: {result1.page_count}")
+        logger.info(f"Items on first page: {len(result1.items)}")
 
 
 @pytest.mark.api
@@ -223,6 +271,15 @@ def test_get_season_futures_sport_specific(sports_core_api_client):
     # Look for NFL-specific future names
     future_names = [item.name for item in result.items]
     
+    # Log NFL futures
+    logger.info(f"\n{'='*60}")
+    logger.info("NFL FUTURES FOUND:")
+    logger.info(f"{'='*60}")
+    for i, name in enumerate(future_names[:10]):
+        logger.info(f"{i+1}. {name}")
+    if len(future_names) > 10:
+        logger.info(f"... and {len(future_names) - 10} more")
+    
     # NFL should have Super Bowl winner
     assert any("super bowl" in name.lower() for name in future_names), "NFL should have Super Bowl futures"
     
@@ -241,6 +298,15 @@ def test_get_season_futures_sport_specific(sports_core_api_client):
     if response.status_code == 200:
         result = response.parsed
         future_names = [item.name for item in result.items]
+        
+        # Log NBA futures
+        logger.info(f"\n{'='*60}")
+        logger.info("NBA FUTURES FOUND:")
+        logger.info(f"{'='*60}")
+        for i, name in enumerate(future_names[:10]):
+            logger.info(f"{i+1}. {name}")
+        if len(future_names) > 10:
+            logger.info(f"... and {len(future_names) - 10} more")
         
         # NBA should have championship/finals winner
         assert any("winner" in name.lower() or "champion" in name.lower() for name in future_names), "NBA should have championship futures"
