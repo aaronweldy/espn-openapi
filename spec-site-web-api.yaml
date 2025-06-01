@@ -312,6 +312,88 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/bio:
+    get:
+      summary: Get athlete biography
+      description: Retrieve biographical information including team history and awards for a specific athlete
+      operationId: getAthleteBio
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: Sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: League identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: athleteId
+          in: path
+          required: true
+          description: Athlete ID
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteBioResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/stats:
+    get:
+      summary: Get athlete statistics
+      description: Retrieve detailed career statistics for a specific athlete
+      operationId: getAthleteStats
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: Sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: League identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: athleteId
+          in: path
+          required: true
+          description: Athlete ID
+          schema:
+            type: integer
+        - name: season
+          in: query
+          required: false
+          description: Season year
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteStatsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /apis/site/v3/sports/{sport}/{league}/leaders:
     get:
       summary: Get League Leaders
@@ -2764,6 +2846,170 @@ components:
         slug:
           type: string
           description: URL slug
+
+    AthleteBioResponse:
+      type: object
+      properties:
+        teamHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamHistoryEntry'
+          description: History of teams the athlete has played for
+        awards:
+          type: array
+          items:
+            $ref: '#/components/schemas/AwardEntry'
+          description: Awards and achievements (optional, not all athletes have awards)
+      description: Athlete biographical information response
+
+    TeamHistoryEntry:
+      type: object
+      required:
+        - id
+        - displayName
+        - seasons
+      properties:
+        id:
+          type: string
+          description: Team ID
+        uid:
+          type: string
+          description: Unique identifier
+        slug:
+          type: string
+          description: URL slug
+        displayName:
+          type: string
+          description: Full team name
+        logo:
+          type: string
+          description: Team logo URL
+        seasons:
+          type: string
+          description: Seasons played (e.g., "2017-CURRENT" or "2015-2017")
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        seasonCount:
+          type: string
+          description: Number of seasons with team
+        isActive:
+          type: boolean
+          description: Whether currently on this team
+
+    AwardEntry:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          description: Award ID
+        league:
+          type: string
+          description: League abbreviation
+        name:
+          type: string
+          description: Award name
+        displayCount:
+          type: string
+          description: Display string for count (e.g., "4x")
+        seasons:
+          type: array
+          items:
+            type: integer
+          description: Years won
+
+    AthleteStatsResponse:
+      type: object
+      required:
+        - filters
+        - teams
+        - categories
+        - glossary
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatsFilter'
+          description: Available filters for statistics
+        teams:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/StatsTeam'
+          description: Teams the athlete has played for
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatsCategory'
+          description: Statistical categories
+        glossary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GlossaryEntry'
+          description: Definitions for abbreviations
+
+    StatsFilter:
+      type: object
+      required:
+        - displayName
+        - name
+        - value
+        - options
+      properties:
+        displayName:
+          type: string
+          description: Display name for filter
+        name:
+          type: string
+          description: Filter parameter name
+        value:
+          type: string
+          description: Current filter value
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterOption'
+
+    FilterOption:
+      type: object
+      required:
+        - value
+        - displayValue
+      properties:
+        value:
+          type: string
+          description: Option value
+        displayValue:
+          type: string
+          description: Display text
+        shortDisplayName:
+          type: string
+          description: Short display name
+
+    StatsTeam:
+      type: object
+      required:
+        - id
+        - displayName
+      properties:
+        id:
+          type: string
+          description: Team ID
+        uid:
+          type: string
+          description: Unique identifier
+        guid:
+          type: string
+          description: Global unique identifier
+        slug:
+          type: string
+          description: URL slug
+        location:
+          type: string
+          description: Team location
         name:
           type: string
           description: Team name
@@ -2785,6 +3031,12 @@ components:
         alternateColor:
           type: string
           description: Alternate team color
+        isActive:
+          type: boolean
+          description: Whether team is active
+        isAllStar:
+          type: boolean
+          description: Whether this is an all-star team
         logos:
           type: array
           items:
@@ -2793,6 +3045,150 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Link'
+        venue:
+          $ref: '#/components/schemas/StatsVenue'
+        record:
+          type: object
+          description: Team record
+        againstTheSpreadRecords:
+          type: object
+          description: ATS records
+        ranks:
+          type: object
+          description: Team rankings
+        franchise:
+          type: object
+          description: Franchise information
+        coaches:
+          type: object
+          description: Coaching staff
+        groups:
+          type: object
+          description: Groups/divisions
+
+    StatsVenue:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Venue ID
+        fullName:
+          type: string
+          description: Full venue name
+        address:
+          $ref: '#/components/schemas/Address'
+        grass:
+          type: boolean
+          description: Whether field is grass
+        indoor:
+          type: boolean
+          description: Whether venue is indoor
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageLink'
+
+    StatsCategory:
+      type: object
+      required:
+        - name
+        - displayName
+        - labels
+        - statistics
+      properties:
+        name:
+          type: string
+          description: Category name
+        displayName:
+          type: string
+          description: Display name
+        labels:
+          type: array
+          items:
+            type: string
+          description: Column labels
+        names:
+          type: array
+          items:
+            type: string
+          description: Field names
+        displayNames:
+          type: array
+          items:
+            type: string
+          description: Field display names
+        descriptions:
+          type: array
+          items:
+            type: string
+          description: Field descriptions
+        statistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/SeasonStatistics'
+        totals:
+          type: array
+          items:
+            type: string
+          description: Career totals
+        sortKey:
+          type: string
+          description: Sort key for category
+
+    SeasonStatistics:
+      type: object
+      required:
+        - teamId
+        - season
+        - stats
+      properties:
+        teamId:
+          type: string
+          description: Team ID
+        teamSlug:
+          type: string
+          description: Team slug
+        season:
+          $ref: '#/components/schemas/StatsSeason'
+        stats:
+          type: array
+          items:
+            type: string
+          description: Statistical values
+        position:
+          type: string
+          description: Player position
+        seasonTotals:
+          type: array
+          items:
+            type: string
+          description: Season totals
+
+    StatsSeason:
+      type: object
+      required:
+        - year
+        - displayName
+      properties:
+        year:
+          type: integer
+          description: Season year
+        displayName:
+          type: string
+          description: Display name
+
+    GlossaryEntry:
+      type: object
+      required:
+        - abbreviation
+        - displayName
+      properties:
+        abbreviation:
+          type: string
+          description: Statistical abbreviation
+        displayName:
+          type: string
+          description: Full description
 
     LeadersLeague:
       type: object
@@ -2812,3 +3208,19 @@ components:
         slug:
           type: string
           description: URL slug
+
+    Address:
+        type: object
+        properties:
+          city:
+            type: string
+            example: "Los Angeles"
+          state:
+            type: string
+            example: "CA"
+          zipCode:
+            type: string
+            example: "90037"
+          country:
+            type: string
+            example: "USA"

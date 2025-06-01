@@ -1,5 +1,7 @@
 """Contains all the data models used in inputs/outputs"""
 
+from .address import Address
+from .athlete_bio_response import AthleteBioResponse
 from .athlete_details import AthleteDetails
 from .athlete_details_alternate_ids import AthleteDetailsAlternateIds
 from .athlete_details_college import AthleteDetailsCollege
@@ -16,9 +18,12 @@ from .athlete_splits_option import AthleteSplitsOption
 from .athlete_splits_response import AthleteSplitsResponse
 from .athlete_splits_split import AthleteSplitsSplit
 from .athlete_splits_split_category import AthleteSplitsSplitCategory
+from .athlete_stats_response import AthleteStatsResponse
+from .athlete_stats_response_teams import AthleteStatsResponseTeams
 from .athlete_status import AthleteStatus
 from .author import Author
 from .author_links_type_0 import AuthorLinksType0
+from .award_entry import AwardEntry
 from .birth_place import BirthPlace
 from .career_statistics import CareerStatistics
 from .career_statistics_categories_item import CareerStatisticsCategoriesItem
@@ -30,6 +35,7 @@ from .error_response import ErrorResponse
 from .event_status import EventStatus
 from .event_status_state import EventStatusState
 from .experience import Experience
+from .filter_option import FilterOption
 from .flag_type_0 import FlagType0
 from .game_event import GameEvent
 from .game_event_at_vs import GameEventAtVs
@@ -39,6 +45,7 @@ from .game_log_season import GameLogSeason
 from .get_general_search_mode import GetGeneralSearchMode
 from .get_league_leaders_sport import GetLeagueLeadersSport
 from .get_nfl_athlete_game_log_seasontype import GetNFLAthleteGameLogSeasontype
+from .glossary_entry import GlossaryEntry
 from .hand_type_0 import HandType0
 from .headshot import Headshot
 from .href_link import HrefLink
@@ -135,14 +142,27 @@ from .search_v2_result_group import SearchV2ResultGroup
 from .search_v2_result_type import SearchV2ResultType
 from .season import Season
 from .season_info_response import SeasonInfoResponse
+from .season_statistics import SeasonStatistics
 from .season_type import SeasonType
 from .season_type_info import SeasonTypeInfo
 from .self_link import SelfLink
 from .sport_enum import SportEnum
 from .sport_reference import SportReference
 from .stat_category import StatCategory
+from .stats_category import StatsCategory
+from .stats_filter import StatsFilter
+from .stats_season import StatsSeason
+from .stats_team import StatsTeam
+from .stats_team_against_the_spread_records import StatsTeamAgainstTheSpreadRecords
+from .stats_team_coaches import StatsTeamCoaches
+from .stats_team_franchise import StatsTeamFranchise
+from .stats_team_groups import StatsTeamGroups
+from .stats_team_ranks import StatsTeamRanks
+from .stats_team_record import StatsTeamRecord
+from .stats_venue import StatsVenue
 from .status import Status
 from .team import Team
+from .team_history_entry import TeamHistoryEntry
 from .team_reference import TeamReference
 from .video_ad_details import VideoAdDetails
 from .video_device_restrictions import VideoDeviceRestrictions
@@ -158,6 +178,8 @@ from .video_time_restrictions import VideoTimeRestrictions
 from .video_tracking_details import VideoTrackingDetails
 
 __all__ = (
+    "Address",
+    "AthleteBioResponse",
     "AthleteDetails",
     "AthleteDetailsAlternateIds",
     "AthleteDetailsCollege",
@@ -174,9 +196,12 @@ __all__ = (
     "AthleteSplitsResponse",
     "AthleteSplitsSplit",
     "AthleteSplitsSplitCategory",
+    "AthleteStatsResponse",
+    "AthleteStatsResponseTeams",
     "AthleteStatus",
     "Author",
     "AuthorLinksType0",
+    "AwardEntry",
     "BirthPlace",
     "CareerStatistics",
     "CareerStatisticsCategoriesItem",
@@ -188,6 +213,7 @@ __all__ = (
     "EventStatus",
     "EventStatusState",
     "Experience",
+    "FilterOption",
     "FlagType0",
     "GameEvent",
     "GameEventAtVs",
@@ -197,6 +223,7 @@ __all__ = (
     "GetGeneralSearchMode",
     "GetLeagueLeadersSport",
     "GetNFLAthleteGameLogSeasontype",
+    "GlossaryEntry",
     "HandType0",
     "Headshot",
     "HrefLink",
@@ -275,14 +302,27 @@ __all__ = (
     "SearchV2ResultType",
     "Season",
     "SeasonInfoResponse",
+    "SeasonStatistics",
     "SeasonType",
     "SeasonTypeInfo",
     "SelfLink",
     "SportEnum",
     "SportReference",
     "StatCategory",
+    "StatsCategory",
+    "StatsFilter",
+    "StatsSeason",
+    "StatsTeam",
+    "StatsTeamAgainstTheSpreadRecords",
+    "StatsTeamCoaches",
+    "StatsTeamFranchise",
+    "StatsTeamGroups",
+    "StatsTeamRanks",
+    "StatsTeamRecord",
+    "StatsVenue",
     "Status",
     "Team",
+    "TeamHistoryEntry",
     "TeamReference",
     "VideoAdDetails",
     "VideoDeviceRestrictions",

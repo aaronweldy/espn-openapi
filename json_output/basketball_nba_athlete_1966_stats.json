@@ -1,0 +1,4001 @@
+{
+  "filters": [
+    {
+      "displayName": "League",
+      "name": "league",
+      "value": "nba",
+      "options": [
+        {
+          "value": "nba",
+          "displayValue": "National Basketball Association",
+          "shortDisplayName": "NBA"
+        }
+      ]
+    },
+    {
+      "displayName": "Season",
+      "name": "seasontype",
+      "value": "2",
+      "options": [
+        {
+          "value": "2",
+          "displayValue": "Regular Season"
+        },
+        {
+          "value": "3",
+          "displayValue": "Postseason"
+        }
+      ]
+    }
+  ],
+  "teams": {
+    "cleveland-cavaliers": {
+      "id": "5",
+      "displayName": "Cleveland Cavaliers",
+      "uid": "s:40~l:46~t:5",
+      "guid": "ec79ad1f-e6d2-7762-a2db-7fe97d35126b",
+      "slug": "cleveland-cavaliers",
+      "location": "Cleveland",
+      "name": "Cavaliers",
+      "abbreviation": "CLE",
+      "shortDisplayName": "Cavaliers",
+      "color": "061642",
+      "alternateColor": "bc945c",
+      "isActive": true,
+      "isAllStar": false,
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/primary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_secondary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/ec79ad1f-e6d2-7762-a2db-7fe97d35126b/logos/secondary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_secondary_color"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "roster",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers",
+          "text": "Roster",
+          "shortText": "Roster",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "stats",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/stats/_/name/cle/cleveland-cavaliers",
+          "text": "Statistics",
+          "shortText": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "schedule",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/schedule/_/name/cle",
+          "text": "Schedule",
+          "shortText": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "photos",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/photos/_/name/cle",
+          "text": "photos",
+          "shortText": "photos",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "tickets",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.vividseats.com/cleveland-cavaliers-tickets--sports-nba-basketball/performer/182?wsUser=717",
+          "text": "Tickets",
+          "shortText": "Tickets",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "draftpicks",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/draft/teams/_/name/cle/cleveland-cavaliers",
+          "text": "Draft Picks",
+          "shortText": "Draft Picks",
+          "isExternal": false,
+          "isPremium": true
+        },
+        {
+          "language": "en",
+          "rel": [
+            "transactions",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/transactions/_/name/cle",
+          "text": "Transactions",
+          "shortText": "Transactions",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "injuries",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/injuries/_/name/cle",
+          "text": "Injuries",
+          "shortText": "Injuries",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "depthchart",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/depth/_/name/cle",
+          "text": "Depth Chart",
+          "shortText": "Depth Chart",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "record": {},
+      "againstTheSpreadRecords": {},
+      "ranks": {},
+      "franchise": {},
+      "coaches": {},
+      "groups": {}
+    },
+    "miami-heat": {
+      "id": "14",
+      "displayName": "Miami Heat",
+      "uid": "s:40~l:46~t:14",
+      "guid": "81e3212c-30ef-9b1b-5edb-453b13ff265a",
+      "slug": "miami-heat",
+      "location": "Miami",
+      "name": "Heat",
+      "abbreviation": "MIA",
+      "shortDisplayName": "Heat",
+      "color": "000000",
+      "alternateColor": "000000",
+      "isActive": true,
+      "isAllStar": false,
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/primary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_secondary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/81e3212c-30ef-9b1b-5edb-453b13ff265a/logos/secondary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_secondary_color"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "roster",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/roster/_/name/mia/miami-heat",
+          "text": "Roster",
+          "shortText": "Roster",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "stats",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/stats/_/name/mia/miami-heat",
+          "text": "Statistics",
+          "shortText": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "schedule",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/schedule/_/name/mia",
+          "text": "Schedule",
+          "shortText": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "photos",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/photos/_/name/mia",
+          "text": "photos",
+          "shortText": "photos",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "tickets",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.vividseats.com/miami-heat-tickets--sports-nba-basketball/performer/533?wsUser=717",
+          "text": "Tickets",
+          "shortText": "Tickets",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "draftpicks",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/draft/teams/_/name/mia/miami-heat",
+          "text": "Draft Picks",
+          "shortText": "Draft Picks",
+          "isExternal": false,
+          "isPremium": true
+        },
+        {
+          "language": "en",
+          "rel": [
+            "transactions",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/transactions/_/name/mia",
+          "text": "Transactions",
+          "shortText": "Transactions",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "injuries",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/injuries/_/name/mia",
+          "text": "Injuries",
+          "shortText": "Injuries",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "depthchart",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/depth/_/name/mia",
+          "text": "Depth Chart",
+          "shortText": "Depth Chart",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "venue": {
+        "shortName": "AmericanAirlines Are",
+        "id": "3438",
+        "fullName": "Kaseya Center",
+        "address": {
+          "city": "Miami",
+          "state": "FL"
+        },
+        "grass": false,
+        "indoor": true,
+        "images": [
+          {
+            "href": "https://a.espncdn.com/i/venues/nba/day/3438.jpg",
+            "width": 2000,
+            "height": 1125,
+            "rel": [
+              "full",
+              "day"
+            ]
+          }
+        ]
+      },
+      "record": {},
+      "againstTheSpreadRecords": {},
+      "ranks": {},
+      "franchise": {},
+      "coaches": {},
+      "groups": {}
+    },
+    "los-angeles-lakers": {
+      "id": "13",
+      "displayName": "Los Angeles Lakers",
+      "uid": "s:40~l:46~t:13",
+      "guid": "2876e98b-b9bc-2920-4319-46e6943f8be4",
+      "slug": "los-angeles-lakers",
+      "location": "Los Angeles",
+      "name": "Lakers",
+      "abbreviation": "LAL",
+      "shortDisplayName": "Lakers",
+      "color": "542582",
+      "alternateColor": "fdb927",
+      "isActive": true,
+      "isAllStar": false,
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/lal.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/lal.png",
+          "width": 500,
+          "height": 500,
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/primary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/primary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/primary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/primary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "primary_logo_on_secondary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/secondary_logo_on_white_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_white_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/secondary_logo_on_black_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_black_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/secondary_logo_on_primary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_primary_color"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/guid/2876e98b-b9bc-2920-4319-46e6943f8be4/logos/secondary_logo_on_secondary_color.png",
+          "width": 4096,
+          "height": 4096,
+          "rel": [
+            "full",
+            "secondary_logo_on_secondary_color"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/lal/los-angeles-lakers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "roster",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/roster/_/name/lal/los-angeles-lakers",
+          "text": "Roster",
+          "shortText": "Roster",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "stats",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/stats/_/name/lal/los-angeles-lakers",
+          "text": "Statistics",
+          "shortText": "Statistics",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "schedule",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/schedule/_/name/lal",
+          "text": "Schedule",
+          "shortText": "Schedule",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "photos",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/photos/_/name/lal",
+          "text": "photos",
+          "shortText": "photos",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "tickets",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.vividseats.com/los-angeles-lakers-tickets--sports-nba-basketball/performer/483?wsUser=717",
+          "text": "Tickets",
+          "shortText": "Tickets",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "draftpicks",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/draft/teams/_/name/lal/los-angeles-lakers",
+          "text": "Draft Picks",
+          "shortText": "Draft Picks",
+          "isExternal": false,
+          "isPremium": true
+        },
+        {
+          "language": "en",
+          "rel": [
+            "transactions",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/transactions/_/name/lal",
+          "text": "Transactions",
+          "shortText": "Transactions",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "injuries",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/injuries/_/name/lal",
+          "text": "Injuries",
+          "shortText": "Injuries",
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en",
+          "rel": [
+            "depthchart",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/depth/_/name/lal",
+          "text": "Depth Chart",
+          "shortText": "Depth Chart",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ],
+      "venue": {
+        "shortName": "Staples Center",
+        "id": "1841",
+        "fullName": "crypto.com Arena",
+        "address": {
+          "city": "Los Angeles",
+          "state": "CA"
+        },
+        "grass": false,
+        "indoor": true,
+        "images": [
+          {
+            "href": "https://a.espncdn.com/i/venues/nba/day/1841.jpg",
+            "width": 2000,
+            "height": 1125,
+            "rel": [
+              "full",
+              "day"
+            ]
+          }
+        ]
+      },
+      "record": {},
+      "againstTheSpreadRecords": {},
+      "ranks": {},
+      "franchise": {},
+      "coaches": {},
+      "groups": {}
+    }
+  },
+  "categories": [
+    {
+      "name": "averages",
+      "displayName": "Regular Season Averages",
+      "labels": [
+        "GP",
+        "GS",
+        "MIN",
+        "FG",
+        "FG%",
+        "3PT",
+        "3P%",
+        "FT",
+        "FT%",
+        "OR",
+        "DR",
+        "REB",
+        "AST",
+        "BLK",
+        "STL",
+        "PF",
+        "TO",
+        "PTS"
+      ],
+      "statistics": [
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2004,
+            "displayName": "2003-04"
+          },
+          "stats": [
+            "79",
+            "79",
+            "39.5",
+            "7.9-18.9",
+            "41.7",
+            "0.8-2.7",
+            "29.0",
+            "4.4-5.8",
+            "75.4",
+            "1.3",
+            "4.2",
+            "5.5",
+            "5.9",
+            "0.7",
+            "1.6",
+            "1.9",
+            "3.5",
+            "20.9"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "79",
+            "79",
+            "39.5",
+            "7.9-18.9",
+            "41.7",
+            "0.8-2.7",
+            "29.0",
+            "4.4-5.8",
+            "75.4",
+            "1.3",
+            "4.2",
+            "5.5",
+            "5.9",
+            "0.7",
+            "1.6",
+            "1.9",
+            "3.5",
+            "20.9"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2005,
+            "displayName": "2004-05"
+          },
+          "stats": [
+            "80",
+            "80",
+            "42.4",
+            "9.9-21.1",
+            "47.2",
+            "1.4-3.9",
+            "35.1",
+            "6.0-8.0",
+            "75.0",
+            "1.4",
+            "6.0",
+            "7.4",
+            "7.2",
+            "0.7",
+            "2.2",
+            "1.8",
+            "3.3",
+            "27.2"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "80",
+            "80",
+            "42.4",
+            "9.9-21.1",
+            "47.2",
+            "1.4-3.9",
+            "35.1",
+            "6.0-8.0",
+            "75.0",
+            "1.4",
+            "6.0",
+            "7.4",
+            "7.2",
+            "0.7",
+            "2.2",
+            "1.8",
+            "3.3",
+            "27.2"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2006,
+            "displayName": "2005-06"
+          },
+          "stats": [
+            "79",
+            "79",
+            "42.5",
+            "11.1-23.1",
+            "48.0",
+            "1.6-4.8",
+            "33.5",
+            "7.6-10.3",
+            "73.8",
+            "0.9",
+            "6.1",
+            "7.0",
+            "6.6",
+            "0.8",
+            "1.6",
+            "2.3",
+            "3.3",
+            "31.4"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "79",
+            "79",
+            "42.5",
+            "11.1-23.1",
+            "48.0",
+            "1.6-4.8",
+            "33.5",
+            "7.6-10.3",
+            "73.8",
+            "0.9",
+            "6.1",
+            "7.0",
+            "6.6",
+            "0.8",
+            "1.6",
+            "2.3",
+            "3.3",
+            "31.4"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2007,
+            "displayName": "2006-07"
+          },
+          "stats": [
+            "78",
+            "78",
+            "40.9",
+            "9.9-20.8",
+            "47.6",
+            "1.3-4.0",
+            "31.9",
+            "6.3-9.0",
+            "69.8",
+            "1.1",
+            "5.7",
+            "6.7",
+            "6.0",
+            "0.7",
+            "1.6",
+            "2.2",
+            "3.2",
+            "27.3"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "78",
+            "78",
+            "40.9",
+            "9.9-20.8",
+            "47.6",
+            "1.3-4.0",
+            "31.9",
+            "6.3-9.0",
+            "69.8",
+            "1.1",
+            "5.7",
+            "6.7",
+            "6.0",
+            "0.7",
+            "1.6",
+            "2.2",
+            "3.2",
+            "27.3"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2008,
+            "displayName": "2007-08"
+          },
+          "stats": [
+            "75",
+            "74",
+            "40.4",
+            "10.6-21.9",
+            "48.4",
+            "1.5-4.8",
+            "31.5",
+            "7.3-10.3",
+            "71.2",
+            "1.8",
+            "6.1",
+            "7.9",
+            "7.2",
+            "1.1",
+            "1.8",
+            "2.2",
+            "3.4",
+            "30.0"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "75",
+            "74",
+            "40.4",
+            "10.6-21.9",
+            "48.4",
+            "1.5-4.8",
+            "31.5",
+            "7.3-10.3",
+            "71.2",
+            "1.8",
+            "6.1",
+            "7.9",
+            "7.2",
+            "1.1",
+            "1.8",
+            "2.2",
+            "3.4",
+            "30.0"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2009,
+            "displayName": "2008-09"
+          },
+          "stats": [
+            "81",
+            "81",
+            "37.7",
+            "9.7-19.9",
+            "48.9",
+            "1.6-4.7",
+            "34.4",
+            "7.3-9.4",
+            "78.0",
+            "1.3",
+            "6.3",
+            "7.6",
+            "7.2",
+            "1.1",
+            "1.7",
+            "1.7",
+            "3.0",
+            "28.4"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "81",
+            "81",
+            "37.7",
+            "9.7-19.9",
+            "48.9",
+            "1.6-4.7",
+            "34.4",
+            "7.3-9.4",
+            "78.0",
+            "1.3",
+            "6.3",
+            "7.6",
+            "7.2",
+            "1.1",
+            "1.7",
+            "1.7",
+            "3.0",
+            "28.4"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2010,
+            "displayName": "2009-10"
+          },
+          "stats": [
+            "76",
+            "76",
+            "39.0",
+            "10.1-20.1",
+            "50.3",
+            "1.7-5.1",
+            "33.3",
+            "7.8-10.2",
+            "76.7",
+            "0.9",
+            "6.4",
+            "7.3",
+            "8.6",
+            "1.0",
+            "1.6",
+            "1.6",
+            "3.4",
+            "29.7"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "76",
+            "76",
+            "39.0",
+            "10.1-20.1",
+            "50.3",
+            "1.7-5.1",
+            "33.3",
+            "7.8-10.2",
+            "76.7",
+            "0.9",
+            "6.4",
+            "7.3",
+            "8.6",
+            "1.0",
+            "1.6",
+            "1.6",
+            "3.4",
+            "29.7"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2011,
+            "displayName": "2010-11"
+          },
+          "stats": [
+            "79",
+            "79",
+            "38.8",
+            "9.6-18.8",
+            "51.0",
+            "1.2-3.5",
+            "33.0",
+            "6.4-8.4",
+            "75.9",
+            "1.0",
+            "6.5",
+            "7.5",
+            "7.0",
+            "0.6",
+            "1.6",
+            "2.1",
+            "3.6",
+            "26.7"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "79",
+            "79",
+            "38.8",
+            "9.6-18.8",
+            "51.0",
+            "1.2-3.5",
+            "33.0",
+            "6.4-8.4",
+            "75.9",
+            "1.0",
+            "6.5",
+            "7.5",
+            "7.0",
+            "0.6",
+            "1.6",
+            "2.1",
+            "3.6",
+            "26.7"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2012,
+            "displayName": "2011-12"
+          },
+          "stats": [
+            "62",
+            "62",
+            "37.5",
+            "10.0-18.9",
+            "53.1",
+            "0.9-2.4",
+            "36.2",
+            "6.2-8.1",
+            "77.1",
+            "1.5",
+            "6.4",
+            "7.9",
+            "6.2",
+            "0.8",
+            "1.9",
+            "1.5",
+            "3.4",
+            "27.1"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "62",
+            "62",
+            "37.5",
+            "10.0-18.9",
+            "53.1",
+            "0.9-2.4",
+            "36.2",
+            "6.2-8.1",
+            "77.1",
+            "1.5",
+            "6.4",
+            "7.9",
+            "6.2",
+            "0.8",
+            "1.9",
+            "1.5",
+            "3.4",
+            "27.1"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2013,
+            "displayName": "2012-13"
+          },
+          "stats": [
+            "76",
+            "76",
+            "37.9",
+            "10.1-17.8",
+            "56.5",
+            "1.4-3.3",
+            "40.6",
+            "5.3-7.0",
+            "75.3",
+            "1.3",
+            "6.8",
+            "8.0",
+            "7.3",
+            "0.9",
+            "1.7",
+            "1.4",
+            "3.0",
+            "26.8"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "76",
+            "76",
+            "37.9",
+            "10.1-17.8",
+            "56.5",
+            "1.4-3.3",
+            "40.6",
+            "5.3-7.0",
+            "75.3",
+            "1.3",
+            "6.8",
+            "8.0",
+            "7.3",
+            "0.9",
+            "1.7",
+            "1.4",
+            "3.0",
+            "26.8"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2014,
+            "displayName": "2013-14"
+          },
+          "stats": [
+            "77",
+            "77",
+            "37.7",
+            "10.0-17.6",
+            "56.7",
+            "1.5-4.0",
+            "37.9",
+            "5.7-7.6",
+            "75.0",
+            "1.1",
+            "5.9",
+            "6.9",
+            "6.3",
+            "0.3",
+            "1.6",
+            "1.6",
+            "3.5",
+            "27.1"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "77",
+            "77",
+            "37.7",
+            "10.0-17.6",
+            "56.7",
+            "1.5-4.0",
+            "37.9",
+            "5.7-7.6",
+            "75.0",
+            "1.1",
+            "5.9",
+            "6.9",
+            "6.4",
+            "0.3",
+            "1.6",
+            "1.6",
+            "3.5",
+            "27.1"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2015,
+            "displayName": "2014-15"
+          },
+          "stats": [
+            "69",
+            "69",
+            "36.1",
+            "9.0-18.5",
+            "48.8",
+            "1.7-4.9",
+            "35.4",
+            "5.4-7.7",
+            "71.0",
+            "0.7",
+            "5.3",
+            "6.0",
+            "7.4",
+            "0.7",
+            "1.6",
+            "2.0",
+            "3.9",
+            "25.3"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "69",
+            "69",
+            "36.1",
+            "9.0-18.5",
+            "48.8",
+            "1.7-4.9",
+            "35.4",
+            "5.4-7.7",
+            "71.0",
+            "0.7",
+            "5.3",
+            "6.0",
+            "7.4",
+            "0.7",
+            "1.6",
+            "2.0",
+            "3.9",
+            "25.3"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2016,
+            "displayName": "2015-16"
+          },
+          "stats": [
+            "76",
+            "76",
+            "35.6",
+            "9.7-18.6",
+            "52.0",
+            "1.1-3.7",
+            "30.9",
+            "4.7-6.5",
+            "73.1",
+            "1.5",
+            "6.0",
+            "7.4",
+            "6.8",
+            "0.6",
+            "1.4",
+            "1.9",
+            "3.3",
+            "25.3"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "76",
+            "76",
+            "35.6",
+            "9.7-18.6",
+            "52.0",
+            "1.1-3.7",
+            "30.9",
+            "4.7-6.5",
+            "73.1",
+            "1.5",
+            "6.0",
+            "7.4",
+            "6.8",
+            "0.6",
+            "1.4",
+            "1.9",
+            "3.3",
+            "25.3"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2017,
+            "displayName": "2016-17"
+          },
+          "stats": [
+            "74",
+            "74",
+            "37.8",
+            "9.9-18.2",
+            "54.8",
+            "1.7-4.6",
+            "36.3",
+            "4.8-7.2",
+            "67.4",
+            "1.3",
+            "7.3",
+            "8.6",
+            "8.7",
+            "0.6",
+            "1.2",
+            "1.8",
+            "4.1",
+            "26.4"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "74",
+            "74",
+            "37.8",
+            "9.9-18.2",
+            "54.8",
+            "1.7-4.6",
+            "36.3",
+            "4.8-7.2",
+            "67.4",
+            "1.3",
+            "7.3",
+            "8.6",
+            "8.7",
+            "0.6",
+            "1.2",
+            "1.8",
+            "4.1",
+            "26.4"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2018,
+            "displayName": "2017-18"
+          },
+          "stats": [
+            "82",
+            "82",
+            "36.9",
+            "10.5-19.3",
+            "54.2",
+            "1.8-5.0",
+            "36.7",
+            "4.7-6.5",
+            "73.1",
+            "1.2",
+            "7.5",
+            "8.6",
+            "9.1",
+            "0.9",
+            "1.4",
+            "1.7",
+            "4.2",
+            "27.5"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "82",
+            "82",
+            "36.9",
+            "10.5-19.3",
+            "54.2",
+            "1.8-5.0",
+            "36.7",
+            "4.7-6.5",
+            "73.1",
+            "1.2",
+            "7.5",
+            "8.6",
+            "9.1",
+            "0.9",
+            "1.4",
+            "1.7",
+            "4.2",
+            "27.5"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2019,
+            "displayName": "2018-19"
+          },
+          "stats": [
+            "55",
+            "55",
+            "35.2",
+            "10.1-19.9",
+            "51.0",
+            "2.0-5.9",
+            "33.9",
+            "5.1-7.6",
+            "66.5",
+            "1.0",
+            "7.4",
+            "8.5",
+            "8.3",
+            "0.6",
+            "1.3",
+            "1.7",
+            "3.6",
+            "27.4"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "55",
+            "55",
+            "35.2",
+            "10.1-19.9",
+            "51.0",
+            "2.0-5.9",
+            "33.9",
+            "5.1-7.6",
+            "66.5",
+            "1.0",
+            "7.4",
+            "8.5",
+            "8.3",
+            "0.6",
+            "1.3",
+            "1.7",
+            "3.6",
+            "27.4"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2020,
+            "displayName": "2019-20"
+          },
+          "stats": [
+            "67",
+            "67",
+            "34.6",
+            "9.6-19.4",
+            "49.3",
+            "2.2-6.3",
+            "34.8",
+            "3.9-5.7",
+            "69.3",
+            "1.0",
+            "6.9",
+            "7.8",
+            "10.2",
+            "0.5",
+            "1.2",
+            "1.8",
+            "3.9",
+            "25.3"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "67",
+            "67",
+            "34.6",
+            "9.6-19.4",
+            "49.3",
+            "2.2-6.3",
+            "34.8",
+            "3.9-5.7",
+            "69.3",
+            "1.0",
+            "6.9",
+            "7.8",
+            "10.2",
+            "0.5",
+            "1.2",
+            "1.8",
+            "3.9",
+            "25.3"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2021,
+            "displayName": "2020-21"
+          },
+          "stats": [
+            "45",
+            "45",
+            "33.4",
+            "9.4-18.3",
+            "51.3",
+            "2.3-6.3",
+            "36.5",
+            "4.0-5.7",
+            "69.8",
+            "0.6",
+            "7.0",
+            "7.7",
+            "7.8",
+            "0.6",
+            "1.1",
+            "1.6",
+            "3.7",
+            "25.0"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "45",
+            "45",
+            "33.4",
+            "9.4-18.3",
+            "51.3",
+            "2.3-6.3",
+            "36.5",
+            "4.0-5.7",
+            "69.8",
+            "0.6",
+            "7.0",
+            "7.7",
+            "7.8",
+            "0.6",
+            "1.1",
+            "1.6",
+            "3.7",
+            "25.0"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2022,
+            "displayName": "2021-22"
+          },
+          "stats": [
+            "56",
+            "56",
+            "37.2",
+            "11.4-21.8",
+            "52.4",
+            "2.9-8.0",
+            "35.9",
+            "4.5-6.0",
+            "75.6",
+            "1.1",
+            "7.1",
+            "8.2",
+            "6.2",
+            "1.1",
+            "1.3",
+            "2.2",
+            "3.5",
+            "30.3"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "56",
+            "56",
+            "37.2",
+            "11.4-21.8",
+            "52.4",
+            "2.9-8.0",
+            "35.9",
+            "4.5-6.0",
+            "75.6",
+            "1.1",
+            "7.1",
+            "8.2",
+            "6.2",
+            "1.1",
+            "1.3",
+            "2.2",
+            "3.5",
+            "30.3"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2023,
+            "displayName": "2022-23"
+          },
+          "stats": [
+            "55",
+            "54",
+            "35.5",
+            "11.1-22.2",
+            "50.0",
+            "2.2-6.9",
+            "32.1",
+            "4.6-5.9",
+            "76.8",
+            "1.2",
+            "7.1",
+            "8.3",
+            "6.8",
+            "0.6",
+            "0.9",
+            "1.6",
+            "3.2",
+            "28.9"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "55",
+            "54",
+            "35.5",
+            "11.1-22.2",
+            "50.0",
+            "2.2-6.9",
+            "32.1",
+            "4.6-5.9",
+            "76.8",
+            "1.2",
+            "7.1",
+            "8.3",
+            "6.8",
+            "0.6",
+            "0.9",
+            "1.6",
+            "3.2",
+            "28.9"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2024,
+            "displayName": "2023-24"
+          },
+          "stats": [
+            "71",
+            "71",
+            "35.3",
+            "9.6-17.9",
+            "54.0",
+            "2.1-5.1",
+            "41.0",
+            "4.3-5.7",
+            "75.0",
+            "0.9",
+            "6.4",
+            "7.3",
+            "8.3",
+            "0.5",
+            "1.3",
+            "1.1",
+            "3.5",
+            "25.7"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "71",
+            "71",
+            "35.3",
+            "9.6-17.9",
+            "54.0",
+            "2.1-5.1",
+            "41.0",
+            "4.3-5.7",
+            "75.0",
+            "0.9",
+            "6.4",
+            "7.3",
+            "8.3",
+            "0.5",
+            "1.3",
+            "1.1",
+            "3.5",
+            "25.7"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2025,
+            "displayName": "2024-25"
+          },
+          "stats": [
+            "70",
+            "70",
+            "34.9",
+            "9.3-18.1",
+            "51.3",
+            "2.1-5.7",
+            "37.6",
+            "3.7-4.7",
+            "78.2",
+            "1.0",
+            "6.8",
+            "7.8",
+            "8.2",
+            "0.6",
+            "1.0",
+            "1.4",
+            "3.7",
+            "24.4"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "70",
+            "70",
+            "34.9",
+            "9.3-18.1",
+            "51.3",
+            "2.1-5.7",
+            "37.6",
+            "3.7-4.7",
+            "78.2",
+            "1.0",
+            "6.8",
+            "7.8",
+            "8.2",
+            "0.6",
+            "1.0",
+            "1.4",
+            "3.7",
+            "24.4"
+          ]
+        }
+      ],
+      "names": [
+        "gamesPlayed",
+        "gamesStarted",
+        "avgMinutes",
+        "avgFieldGoalsMade-avgFieldGoalsAttempted",
+        "fieldGoalPct",
+        "avgThreePointFieldGoalsMade-avgThreePointFieldGoalsAttempted",
+        "threePointFieldGoalPct",
+        "avgFreeThrowsMade-avgFreeThrowsAttempted",
+        "freeThrowPct",
+        "avgOffensiveRebounds",
+        "avgDefensiveRebounds",
+        "avgRebounds",
+        "avgAssists",
+        "avgBlocks",
+        "avgSteals",
+        "avgFouls",
+        "avgTurnovers",
+        "avgPoints"
+      ],
+      "displayNames": [
+        "Games Played",
+        "Games Started",
+        "Minutes Per Game",
+        "Field Goals Made-Attempted Per Game",
+        "Field Goal Percentage",
+        "3-Point Field Goals Made-Attempted Per Game",
+        "3-Point Field Goal Percentage",
+        "Free Throws Made-Attempted Per Game",
+        "Free Throw Percentage",
+        "Offensive Rebounds Per Game",
+        "Defensive Rebounds Per Game",
+        "Rebounds Per Game",
+        "Assists Per Game",
+        "Blocks Per Game",
+        "Steals Per Game",
+        "Fouls Per Game",
+        "Turnovers Per Game",
+        "Points Per Game"
+      ],
+      "descriptions": [
+        "Games Played",
+        "The number of games started by an athlete.",
+        "The average number of minutes per game.",
+        "The average field goals made per game.-The average field goals attempted per game.",
+        "The ratio of field goals made to field goals attempted: FGM / FGA",
+        "The average three point field goals made per game.-The average three point field goals attempted per game.",
+        "The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.",
+        "The average free throw shots made per game.-The average free throw shots attempted per game.",
+        "The ratio of free throws made to free throws attempted: FTM / FTA",
+        "The average offensive rebounds per game.",
+        "The average defensive rebounds per game.",
+        "The average rebounds per game.",
+        "The average assists per game.",
+        "The average blocks per game.",
+        "The average steals per game.",
+        "The average fouls committed per game.",
+        "The average turnovers committed per game.",
+        "The average number of points scored per game."
+      ],
+      "totals": [
+        "1562",
+        "1560",
+        "37.8",
+        "9.9-19.6",
+        "50.6",
+        "1.6-4.7",
+        "34.9",
+        "5.5-7.5",
+        "73.7",
+        "1.2",
+        "6.4",
+        "7.5",
+        "7.4",
+        "0.7",
+        "1.5",
+        "1.8",
+        "3.5",
+        "27.0"
+      ],
+      "sortKey": "averages"
+    },
+    {
+      "name": "totals",
+      "displayName": "Regular Season Totals",
+      "labels": [
+        "FG",
+        "FG%",
+        "3PT",
+        "3P%",
+        "FT",
+        "FT%",
+        "OR",
+        "DR",
+        "REB",
+        "AST",
+        "BLK",
+        "STL",
+        "PF",
+        "TO",
+        "PTS"
+      ],
+      "statistics": [
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2004,
+            "displayName": "2003-04"
+          },
+          "stats": [
+            "622-1492",
+            "41.7",
+            "63-217",
+            "29.0",
+            "347-460",
+            "75.4",
+            "99",
+            "333",
+            "432",
+            "465",
+            "58",
+            "130",
+            "149",
+            "273",
+            "1654"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "622-1492",
+            "41.7",
+            "63-217",
+            "29.0",
+            "347-460",
+            "75.4",
+            "99",
+            "333",
+            "432",
+            "465",
+            "58",
+            "130",
+            "149",
+            "273",
+            "1654"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2005,
+            "displayName": "2004-05"
+          },
+          "stats": [
+            "795-1684",
+            "47.2",
+            "108-308",
+            "35.1",
+            "477-636",
+            "75.0",
+            "111",
+            "477",
+            "588",
+            "577",
+            "52",
+            "177",
+            "146",
+            "262",
+            "2175"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "795-1684",
+            "47.2",
+            "108-308",
+            "35.1",
+            "477-636",
+            "75.0",
+            "111",
+            "477",
+            "588",
+            "577",
+            "52",
+            "177",
+            "146",
+            "262",
+            "2175"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2006,
+            "displayName": "2005-06"
+          },
+          "stats": [
+            "875-1823",
+            "48.0",
+            "127-379",
+            "33.5",
+            "601-814",
+            "73.8",
+            "75",
+            "481",
+            "556",
+            "521",
+            "66",
+            "123",
+            "181",
+            "260",
+            "2478"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "875-1823",
+            "48.0",
+            "127-379",
+            "33.5",
+            "601-814",
+            "73.8",
+            "75",
+            "481",
+            "556",
+            "521",
+            "66",
+            "123",
+            "181",
+            "260",
+            "2478"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2007,
+            "displayName": "2006-07"
+          },
+          "stats": [
+            "772-1621",
+            "47.6",
+            "99-310",
+            "31.9",
+            "489-701",
+            "69.8",
+            "83",
+            "443",
+            "526",
+            "470",
+            "55",
+            "125",
+            "171",
+            "250",
+            "2132"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "772-1621",
+            "47.6",
+            "99-310",
+            "31.9",
+            "489-701",
+            "69.8",
+            "83",
+            "443",
+            "526",
+            "470",
+            "55",
+            "125",
+            "171",
+            "250",
+            "2132"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2008,
+            "displayName": "2007-08"
+          },
+          "stats": [
+            "794-1642",
+            "48.4",
+            "113-359",
+            "31.5",
+            "549-771",
+            "71.2",
+            "133",
+            "459",
+            "592",
+            "539",
+            "81",
+            "138",
+            "165",
+            "255",
+            "2250"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "794-1642",
+            "48.4",
+            "113-359",
+            "31.5",
+            "549-771",
+            "71.2",
+            "133",
+            "459",
+            "592",
+            "539",
+            "81",
+            "138",
+            "165",
+            "255",
+            "2250"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2009,
+            "displayName": "2008-09"
+          },
+          "stats": [
+            "789-1613",
+            "48.9",
+            "132-384",
+            "34.4",
+            "594-762",
+            "78.0",
+            "106",
+            "507",
+            "613",
+            "587",
+            "93",
+            "137",
+            "139",
+            "241",
+            "2304"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "789-1613",
+            "48.9",
+            "132-384",
+            "34.4",
+            "594-762",
+            "78.0",
+            "106",
+            "507",
+            "613",
+            "587",
+            "93",
+            "137",
+            "139",
+            "241",
+            "2304"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2010,
+            "displayName": "2009-10"
+          },
+          "stats": [
+            "768-1528",
+            "50.3",
+            "129-387",
+            "33.3",
+            "593-773",
+            "76.7",
+            "71",
+            "483",
+            "554",
+            "651",
+            "77",
+            "125",
+            "119",
+            "261",
+            "2258"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "768-1528",
+            "50.3",
+            "129-387",
+            "33.3",
+            "593-773",
+            "76.7",
+            "71",
+            "483",
+            "554",
+            "651",
+            "77",
+            "125",
+            "119",
+            "261",
+            "2258"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2011,
+            "displayName": "2010-11"
+          },
+          "stats": [
+            "758-1485",
+            "51.0",
+            "92-279",
+            "33.0",
+            "503-663",
+            "75.9",
+            "80",
+            "510",
+            "590",
+            "554",
+            "50",
+            "124",
+            "163",
+            "284",
+            "2111"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "758-1485",
+            "51.0",
+            "92-279",
+            "33.0",
+            "503-663",
+            "75.9",
+            "80",
+            "510",
+            "590",
+            "554",
+            "50",
+            "124",
+            "163",
+            "284",
+            "2111"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2012,
+            "displayName": "2011-12"
+          },
+          "stats": [
+            "621-1169",
+            "53.1",
+            "54-149",
+            "36.2",
+            "387-502",
+            "77.1",
+            "94",
+            "398",
+            "492",
+            "387",
+            "50",
+            "115",
+            "96",
+            "213",
+            "1683"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "621-1169",
+            "53.1",
+            "54-149",
+            "36.2",
+            "387-502",
+            "77.1",
+            "94",
+            "398",
+            "492",
+            "387",
+            "50",
+            "115",
+            "96",
+            "213",
+            "1683"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2013,
+            "displayName": "2012-13"
+          },
+          "stats": [
+            "765-1354",
+            "56.5",
+            "103-254",
+            "40.6",
+            "403-535",
+            "75.3",
+            "97",
+            "513",
+            "610",
+            "551",
+            "67",
+            "129",
+            "110",
+            "226",
+            "2036"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "765-1354",
+            "56.5",
+            "103-254",
+            "40.6",
+            "403-535",
+            "75.3",
+            "97",
+            "513",
+            "610",
+            "551",
+            "67",
+            "129",
+            "110",
+            "226",
+            "2036"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2014,
+            "displayName": "2013-14"
+          },
+          "stats": [
+            "767-1353",
+            "56.7",
+            "116-306",
+            "37.9",
+            "439-585",
+            "75.0",
+            "81",
+            "452",
+            "533",
+            "488",
+            "26",
+            "121",
+            "126",
+            "270",
+            "2089"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "767-1353",
+            "56.7",
+            "116-306",
+            "37.9",
+            "439-585",
+            "75.0",
+            "81",
+            "452",
+            "533",
+            "489",
+            "26",
+            "121",
+            "126",
+            "270",
+            "2089"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2015,
+            "displayName": "2014-15"
+          },
+          "stats": [
+            "624-1279",
+            "48.8",
+            "120-339",
+            "35.4",
+            "375-528",
+            "71.0",
+            "51",
+            "365",
+            "416",
+            "511",
+            "49",
+            "109",
+            "135",
+            "272",
+            "1743"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "624-1279",
+            "48.8",
+            "120-339",
+            "35.4",
+            "375-528",
+            "71.0",
+            "51",
+            "365",
+            "416",
+            "511",
+            "49",
+            "109",
+            "135",
+            "272",
+            "1743"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2016,
+            "displayName": "2015-16"
+          },
+          "stats": [
+            "737-1416",
+            "52.0",
+            "87-282",
+            "30.9",
+            "359-491",
+            "73.1",
+            "111",
+            "454",
+            "565",
+            "514",
+            "49",
+            "104",
+            "143",
+            "249",
+            "1920"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "737-1416",
+            "52.0",
+            "87-282",
+            "30.9",
+            "359-491",
+            "73.1",
+            "111",
+            "454",
+            "565",
+            "514",
+            "49",
+            "104",
+            "143",
+            "249",
+            "1920"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2017,
+            "displayName": "2016-17"
+          },
+          "stats": [
+            "736-1344",
+            "54.8",
+            "124-342",
+            "36.3",
+            "358-531",
+            "67.4",
+            "97",
+            "542",
+            "639",
+            "646",
+            "44",
+            "92",
+            "134",
+            "303",
+            "1954"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "736-1344",
+            "54.8",
+            "124-342",
+            "36.3",
+            "358-531",
+            "67.4",
+            "97",
+            "542",
+            "639",
+            "646",
+            "44",
+            "92",
+            "134",
+            "303",
+            "1954"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2018,
+            "displayName": "2017-18"
+          },
+          "stats": [
+            "857-1580",
+            "54.2",
+            "149-406",
+            "36.7",
+            "388-531",
+            "73.1",
+            "97",
+            "612",
+            "709",
+            "747",
+            "71",
+            "116",
+            "136",
+            "347",
+            "2251"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "857-1580",
+            "54.2",
+            "149-406",
+            "36.7",
+            "388-531",
+            "73.1",
+            "97",
+            "612",
+            "709",
+            "747",
+            "71",
+            "116",
+            "136",
+            "347",
+            "2251"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2019,
+            "displayName": "2018-19"
+          },
+          "stats": [
+            "558-1095",
+            "51.0",
+            "111-327",
+            "33.9",
+            "278-418",
+            "66.5",
+            "57",
+            "408",
+            "465",
+            "454",
+            "33",
+            "72",
+            "94",
+            "197",
+            "1505"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "558-1095",
+            "51.0",
+            "111-327",
+            "33.9",
+            "278-418",
+            "66.5",
+            "57",
+            "408",
+            "465",
+            "454",
+            "33",
+            "72",
+            "94",
+            "197",
+            "1505"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2020,
+            "displayName": "2019-20"
+          },
+          "stats": [
+            "643-1303",
+            "49.3",
+            "148-425",
+            "34.8",
+            "264-381",
+            "69.3",
+            "66",
+            "459",
+            "525",
+            "684",
+            "36",
+            "78",
+            "118",
+            "261",
+            "1698"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "643-1303",
+            "49.3",
+            "148-425",
+            "34.8",
+            "264-381",
+            "69.3",
+            "66",
+            "459",
+            "525",
+            "684",
+            "36",
+            "78",
+            "118",
+            "261",
+            "1698"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2021,
+            "displayName": "2020-21"
+          },
+          "stats": [
+            "422-823",
+            "51.3",
+            "104-285",
+            "36.5",
+            "178-255",
+            "69.8",
+            "29",
+            "317",
+            "346",
+            "350",
+            "25",
+            "48",
+            "70",
+            "168",
+            "1126"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "422-823",
+            "51.3",
+            "104-285",
+            "36.5",
+            "178-255",
+            "69.8",
+            "29",
+            "317",
+            "346",
+            "350",
+            "25",
+            "48",
+            "70",
+            "168",
+            "1126"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2022,
+            "displayName": "2021-22"
+          },
+          "stats": [
+            "640-1221",
+            "52.4",
+            "161-448",
+            "35.9",
+            "254-336",
+            "75.6",
+            "63",
+            "396",
+            "459",
+            "349",
+            "59",
+            "73",
+            "121",
+            "196",
+            "1695"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "640-1221",
+            "52.4",
+            "161-448",
+            "35.9",
+            "254-336",
+            "75.6",
+            "63",
+            "396",
+            "459",
+            "349",
+            "59",
+            "73",
+            "121",
+            "196",
+            "1695"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2023,
+            "displayName": "2022-23"
+          },
+          "stats": [
+            "609-1219",
+            "50.0",
+            "121-377",
+            "32.1",
+            "251-327",
+            "76.8",
+            "65",
+            "392",
+            "457",
+            "375",
+            "32",
+            "50",
+            "88",
+            "178",
+            "1590"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "609-1219",
+            "50.0",
+            "121-377",
+            "32.1",
+            "251-327",
+            "76.8",
+            "65",
+            "392",
+            "457",
+            "375",
+            "32",
+            "50",
+            "88",
+            "178",
+            "1590"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2024,
+            "displayName": "2023-24"
+          },
+          "stats": [
+            "685-1269",
+            "54.0",
+            "149-363",
+            "41.0",
+            "303-404",
+            "75.0",
+            "61",
+            "457",
+            "518",
+            "589",
+            "38",
+            "89",
+            "78",
+            "245",
+            "1822"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "685-1269",
+            "54.0",
+            "149-363",
+            "41.0",
+            "303-404",
+            "75.0",
+            "61",
+            "457",
+            "518",
+            "589",
+            "38",
+            "89",
+            "78",
+            "245",
+            "1822"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2025,
+            "displayName": "2024-25"
+          },
+          "stats": [
+            "651-1270",
+            "51.3",
+            "149-396",
+            "37.6",
+            "259-331",
+            "78.2",
+            "72",
+            "474",
+            "546",
+            "575",
+            "39",
+            "70",
+            "99",
+            "260",
+            "1710"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "651-1270",
+            "51.3",
+            "149-396",
+            "37.6",
+            "259-331",
+            "78.2",
+            "72",
+            "474",
+            "546",
+            "575",
+            "39",
+            "70",
+            "99",
+            "260",
+            "1710"
+          ]
+        }
+      ],
+      "names": [
+        "fieldGoalsMade-fieldGoalsAttempted",
+        "fieldGoalPct",
+        "threePointFieldGoalsMade-threePointFieldGoalsAttempted",
+        "threePointFieldGoalPct",
+        "freeThrowsMade-freeThrowsAttempted",
+        "freeThrowPct",
+        "offensiveRebounds",
+        "defensiveRebounds",
+        "totalRebounds",
+        "assists",
+        "blocks",
+        "steals",
+        "fouls",
+        "turnovers",
+        "points"
+      ],
+      "displayNames": [
+        "Field Goals Made-Attempted",
+        "Field Goal Percentage",
+        "3-Point Field Goals Made-Attempted",
+        "3-Point Field Goal Percentage",
+        "Free Throws Made-Attempted",
+        "Free Throw Percentage",
+        "Offensive Rebounds",
+        "Defensive Rebounds",
+        "Rebounds",
+        "Assists",
+        "Blocks",
+        "Steals",
+        "Fouls",
+        "Turnovers",
+        "Points"
+      ],
+      "descriptions": [
+        "The number of times a 2pt field goal was made.-The number of times a 2pt field goal was attempted.",
+        "The ratio of field goals made to field goals attempted: FGM / FGA",
+        "The number of times a 3pt field goal was made.-The number of times a 3pt field goal was attempted.",
+        "The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA.",
+        "The number of times a free throw was made.-The number of times a free throw was attempted.",
+        "The ratio of free throws made to free throws attempted: FTM / FTA",
+        "The number of times when the offense obtains the possession of the ball after a missed shot.",
+        "The number of times when the defense obtains the possession of the ball after a missed shot by the offense.",
+        "The total number of rebounds for a team or player",
+        "The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was \"assisting\" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist.",
+        "Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player.",
+        "The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player.",
+        "The number of times a player had illegal contact with the opponent.",
+        "The number of times a player loses possession to the other team.",
+        "The number of points scored."
+      ],
+      "totals": [
+        "15488-30583",
+        "50.6",
+        "2559-7322",
+        "34.9",
+        "8649-11735",
+        "73.7",
+        "1799",
+        "9932",
+        "11731",
+        "11584",
+        "1150",
+        "2345",
+        "2781",
+        "5471",
+        "42184"
+      ],
+      "sortKey": "totals"
+    },
+    {
+      "name": "miscellaneous",
+      "displayName": "Regular Season Misc Totals",
+      "labels": [
+        "DD2",
+        "TD3",
+        "DQ",
+        "EJECT",
+        "TECH",
+        "FLAG",
+        "AST/TO",
+        "STL/TO",
+        "SC-EFF",
+        "SH-EFF"
+      ],
+      "statistics": [
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2004,
+            "displayName": "2003-04"
+          },
+          "stats": [
+            "12",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0",
+            "1.7",
+            "0.5",
+            "1.109",
+            "0.44"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "12",
+            "0",
+            "0",
+            "0",
+            "2",
+            "0",
+            "1.7",
+            "0.5",
+            "1.109",
+            "0.44"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2005,
+            "displayName": "2004-05"
+          },
+          "stats": [
+            "25",
+            "4",
+            "1",
+            "0",
+            "4",
+            "0",
+            "2.2",
+            "0.7",
+            "1.292",
+            "0.50"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "25",
+            "4",
+            "1",
+            "0",
+            "4",
+            "0",
+            "2.2",
+            "0.7",
+            "1.292",
+            "0.50"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2006,
+            "displayName": "2005-06"
+          },
+          "stats": [
+            "21",
+            "5",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2.0",
+            "0.5",
+            "1.359",
+            "0.51"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "21",
+            "5",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2.0",
+            "0.5",
+            "1.359",
+            "0.51"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2007,
+            "displayName": "2006-07"
+          },
+          "stats": [
+            "16",
+            "1",
+            "1",
+            "0",
+            "2",
+            "2",
+            "1.9",
+            "0.5",
+            "1.315",
+            "0.51"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "16",
+            "1",
+            "1",
+            "0",
+            "2",
+            "2",
+            "1.9",
+            "0.5",
+            "1.315",
+            "0.51"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2008,
+            "displayName": "2007-08"
+          },
+          "stats": [
+            "31",
+            "7",
+            "1",
+            "0",
+            "2",
+            "0",
+            "2.1",
+            "0.5",
+            "1.370",
+            "0.52"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "31",
+            "7",
+            "1",
+            "0",
+            "2",
+            "0",
+            "2.1",
+            "0.5",
+            "1.370",
+            "0.52"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2009,
+            "displayName": "2008-09"
+          },
+          "stats": [
+            "29",
+            "7",
+            "0",
+            "0",
+            "10",
+            "0",
+            "2.4",
+            "0.6",
+            "1.428",
+            "0.53"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "29",
+            "7",
+            "0",
+            "0",
+            "10",
+            "0",
+            "2.4",
+            "0.6",
+            "1.428",
+            "0.53"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2010,
+            "displayName": "2009-10"
+          },
+          "stats": [
+            "31",
+            "4",
+            "0",
+            "0",
+            "4",
+            "0",
+            "2.5",
+            "0.5",
+            "1.478",
+            "0.54"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "31",
+            "4",
+            "0",
+            "0",
+            "4",
+            "0",
+            "2.5",
+            "0.5",
+            "1.478",
+            "0.54"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2011,
+            "displayName": "2010-11"
+          },
+          "stats": [
+            "31",
+            "4",
+            "0",
+            "0",
+            "7",
+            "0",
+            "2.0",
+            "0.4",
+            "1.422",
+            "0.54"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "31",
+            "4",
+            "0",
+            "0",
+            "7",
+            "0",
+            "2.0",
+            "0.4",
+            "1.422",
+            "0.54"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2012,
+            "displayName": "2011-12"
+          },
+          "stats": [
+            "23",
+            "0",
+            "0",
+            "0",
+            "3",
+            "0",
+            "1.8",
+            "0.5",
+            "1.440",
+            "0.55"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "23",
+            "0",
+            "0",
+            "0",
+            "3",
+            "0",
+            "1.8",
+            "0.5",
+            "1.440",
+            "0.55"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2013,
+            "displayName": "2012-13"
+          },
+          "stats": [
+            "36",
+            "4",
+            "0",
+            "0",
+            "6",
+            "1",
+            "2.4",
+            "0.6",
+            "1.504",
+            "0.60"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "36",
+            "4",
+            "0",
+            "0",
+            "6",
+            "1",
+            "2.4",
+            "0.6",
+            "1.504",
+            "0.60"
+          ]
+        },
+        {
+          "teamId": "14",
+          "season": {
+            "year": 2014,
+            "displayName": "2013-14"
+          },
+          "stats": [
+            "12",
+            "1",
+            "1",
+            "0",
+            "5",
+            "1",
+            "1.8",
+            "0.4",
+            "1.544",
+            "0.61"
+          ],
+          "teamSlug": "miami-heat",
+          "position": "SF",
+          "seasonTotals": [
+            "12",
+            "1",
+            "1",
+            "0",
+            "5",
+            "1",
+            "1.8",
+            "0.4",
+            "1.544",
+            "0.61"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2015,
+            "displayName": "2014-15"
+          },
+          "stats": [
+            "22",
+            "2",
+            "0",
+            "0",
+            "5",
+            "1",
+            "1.9",
+            "0.4",
+            "1.363",
+            "0.53"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "22",
+            "2",
+            "0",
+            "0",
+            "5",
+            "1",
+            "1.9",
+            "0.4",
+            "1.363",
+            "0.53"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2016,
+            "displayName": "2015-16"
+          },
+          "stats": [
+            "28",
+            "3",
+            "0",
+            "0",
+            "4",
+            "0",
+            "2.1",
+            "0.4",
+            "1.356",
+            "0.55"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "28",
+            "3",
+            "0",
+            "0",
+            "4",
+            "0",
+            "2.1",
+            "0.4",
+            "1.356",
+            "0.55"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2017,
+            "displayName": "2016-17"
+          },
+          "stats": [
+            "42",
+            "13",
+            "2",
+            "0",
+            "4",
+            "0",
+            "2.1",
+            "0.3",
+            "1.454",
+            "0.59"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "42",
+            "13",
+            "2",
+            "0",
+            "4",
+            "0",
+            "2.1",
+            "0.3",
+            "1.454",
+            "0.59"
+          ]
+        },
+        {
+          "teamId": "5",
+          "season": {
+            "year": 2018,
+            "displayName": "2017-18"
+          },
+          "stats": [
+            "52",
+            "18",
+            "0",
+            "1",
+            "5",
+            "0",
+            "2.2",
+            "0.3",
+            "1.425",
+            "0.59"
+          ],
+          "teamSlug": "cleveland-cavaliers",
+          "position": "SF",
+          "seasonTotals": [
+            "52",
+            "18",
+            "0",
+            "1",
+            "5",
+            "0",
+            "2.2",
+            "0.3",
+            "1.425",
+            "0.59"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2019,
+            "displayName": "2018-19"
+          },
+          "stats": [
+            "32",
+            "8",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2.3",
+            "0.4",
+            "1.374",
+            "0.56"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "32",
+            "8",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2.3",
+            "0.4",
+            "1.374",
+            "0.56"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2020,
+            "displayName": "2019-20"
+          },
+          "stats": [
+            "46",
+            "13",
+            "0",
+            "0",
+            "2",
+            "0",
+            "2.6",
+            "0.3",
+            "1.303",
+            "0.55"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "46",
+            "13",
+            "0",
+            "0",
+            "2",
+            "0",
+            "2.6",
+            "0.3",
+            "1.303",
+            "0.55"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2021,
+            "displayName": "2020-21"
+          },
+          "stats": [
+            "18",
+            "5",
+            "0",
+            "0",
+            "2",
+            "1",
+            "2.1",
+            "0.3",
+            "1.368",
+            "0.58"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "18",
+            "5",
+            "0",
+            "0",
+            "2",
+            "1",
+            "2.1",
+            "0.3",
+            "1.368",
+            "0.58"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2022,
+            "displayName": "2021-22"
+          },
+          "stats": [
+            "21",
+            "6",
+            "0",
+            "1",
+            "1",
+            "2",
+            "1.8",
+            "0.4",
+            "1.388",
+            "0.59"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "21",
+            "6",
+            "0",
+            "1",
+            "1",
+            "2",
+            "1.8",
+            "0.4",
+            "1.388",
+            "0.59"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2023,
+            "displayName": "2022-23"
+          },
+          "stats": [
+            "18",
+            "2",
+            "0",
+            "0",
+            "1",
+            "0",
+            "2.1",
+            "0.3",
+            "1.304",
+            "0.55"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "18",
+            "2",
+            "0",
+            "0",
+            "1",
+            "0",
+            "2.1",
+            "0.3",
+            "1.304",
+            "0.55"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2024,
+            "displayName": "2023-24"
+          },
+          "stats": [
+            "27",
+            "5",
+            "0",
+            "0",
+            "4",
+            "1",
+            "2.4",
+            "0.4",
+            "1.436",
+            "0.60"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "27",
+            "5",
+            "0",
+            "0",
+            "4",
+            "1",
+            "2.4",
+            "0.4",
+            "1.436",
+            "0.60"
+          ]
+        },
+        {
+          "teamId": "13",
+          "season": {
+            "year": 2025,
+            "displayName": "2024-25"
+          },
+          "stats": [
+            "32",
+            "10",
+            "0",
+            "0",
+            "1",
+            "0",
+            "2.2",
+            "0.3",
+            "1.346",
+            "0.57"
+          ],
+          "teamSlug": "los-angeles-lakers",
+          "position": "SF",
+          "seasonTotals": [
+            "32",
+            "10",
+            "0",
+            "0",
+            "1",
+            "0",
+            "2.2",
+            "0.3",
+            "1.346",
+            "0.57"
+          ]
+        }
+      ],
+      "names": [
+        "doubleDouble",
+        "tripleDouble",
+        "disqualifications",
+        "ejections",
+        "technicalFouls",
+        "flagrantFouls",
+        "assistTurnoverRatio",
+        "stealTurnoverRatio",
+        "scoringEfficiency",
+        "shootingEfficiency"
+      ],
+      "displayNames": [
+        "Double Double",
+        "Triple Double",
+        "Disqualifications",
+        "Ejections",
+        "Technical Fouls",
+        "Flagrant Fouls",
+        "Assist To Turnover Ratio",
+        "Steal To Turnover Ratio",
+        "Scoring Efficiency",
+        "Shooting Efficiency"
+      ],
+      "descriptions": [
+        "The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots",
+        "The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots",
+        "The number of times a player reached the foul limit.",
+        "The number of times a player or coach is removed from the game as a result of a serious offense.",
+        "The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations).",
+        "The number of fouls that the officials thought were unnecessary or excessive.",
+        "The average number of assists a player or team records per turnover",
+        "The number of steals per turnover",
+        "The efficiency with which a team or player scores the basketball.",
+        "The efficiency with which a team or player shoots the basketball."
+      ],
+      "totals": [
+        "605",
+        "122",
+        "6",
+        "2",
+        "74",
+        "9",
+        "2.1",
+        "0.4",
+        "1.379",
+        "0.55"
+      ],
+      "sortKey": "miscellaneous"
+    }
+  ],
+  "glossary": [
+    {
+      "abbreviation": "3P%",
+      "displayName": "3-Point Field Goal Percentage"
+    },
+    {
+      "abbreviation": "3PT",
+      "displayName": "3-Point Field Goals Made-Attempted Per Game"
+    },
+    {
+      "abbreviation": "AST",
+      "displayName": "Assists Per Game"
+    },
+    {
+      "abbreviation": "AST/TO",
+      "displayName": "Assist To Turnover Ratio"
+    },
+    {
+      "abbreviation": "BLK",
+      "displayName": "Blocks Per Game"
+    },
+    {
+      "abbreviation": "DD2",
+      "displayName": "Double Double"
+    },
+    {
+      "abbreviation": "DQ",
+      "displayName": "Disqualifications"
+    },
+    {
+      "abbreviation": "DR",
+      "displayName": "Defensive Rebounds Per Game"
+    },
+    {
+      "abbreviation": "EJECT",
+      "displayName": "Ejections"
+    },
+    {
+      "abbreviation": "FG",
+      "displayName": "Field Goals Made-Attempted Per Game"
+    },
+    {
+      "abbreviation": "FG%",
+      "displayName": "Field Goal Percentage"
+    },
+    {
+      "abbreviation": "FLAG",
+      "displayName": "Flagrant Fouls"
+    },
+    {
+      "abbreviation": "FT",
+      "displayName": "Free Throws Made-Attempted Per Game"
+    },
+    {
+      "abbreviation": "FT%",
+      "displayName": "Free Throw Percentage"
+    },
+    {
+      "abbreviation": "GP",
+      "displayName": "Games Played"
+    },
+    {
+      "abbreviation": "GS",
+      "displayName": "Games Started"
+    },
+    {
+      "abbreviation": "MIN",
+      "displayName": "Minutes Per Game"
+    },
+    {
+      "abbreviation": "OR",
+      "displayName": "Offensive Rebounds Per Game"
+    },
+    {
+      "abbreviation": "PF",
+      "displayName": "Fouls Per Game"
+    },
+    {
+      "abbreviation": "PTS",
+      "displayName": "Points Per Game"
+    },
+    {
+      "abbreviation": "REB",
+      "displayName": "Rebounds Per Game"
+    },
+    {
+      "abbreviation": "SC-EFF",
+      "displayName": "Scoring Efficiency"
+    },
+    {
+      "abbreviation": "SH-EFF",
+      "displayName": "Shooting Efficiency"
+    },
+    {
+      "abbreviation": "STL",
+      "displayName": "Steals Per Game"
+    },
+    {
+      "abbreviation": "STL/TO",
+      "displayName": "Steal To Turnover Ratio"
+    },
+    {
+      "abbreviation": "TD3",
+      "displayName": "Triple Double"
+    },
+    {
+      "abbreviation": "TECH",
+      "displayName": "Technical Fouls"
+    },
+    {
+      "abbreviation": "TO",
+      "displayName": "Turnovers Per Game"
+    }
+  ]
+}
