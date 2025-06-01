@@ -103,6 +103,22 @@ from .mlb_athlete_details_response_statisticslog import MlbAthleteDetailsRespons
 from .mlb_athlete_details_response_status import MlbAthleteDetailsResponseStatus
 from .mlb_athlete_details_response_team import MlbAthleteDetailsResponseTeam
 from .mlb_athlete_details_response_throws import MlbAthleteDetailsResponseThrows
+from .news_category import NewsCategory
+from .news_headline import NewsHeadline
+from .news_image import NewsImage
+from .news_link_amp import NewsLinkAmp
+from .news_link_api import NewsLinkApi
+from .news_link_item import NewsLinkItem
+from .news_link_mobile import NewsLinkMobile
+from .news_link_web import NewsLinkWeb
+from .news_links import NewsLinks
+from .news_metric import NewsMetric
+from .news_related import NewsRelated
+from .news_related_links import NewsRelatedLinks
+from .news_response import NewsResponse
+from .news_video import NewsVideo
+from .news_video_ad import NewsVideoAd
+from .news_video_links import NewsVideoLinks
 from .nfl_athlete_eventlog_response import NflAthleteEventlogResponse
 from .nfl_athlete_eventlog_response_events import NflAthleteEventlogResponseEvents
 from .nfl_athlete_eventlog_response_events_items_item import NflAthleteEventlogResponseEventsItemsItem
@@ -290,6 +306,22 @@ __all__ = (
     "MlbAthleteDetailsResponseStatus",
     "MlbAthleteDetailsResponseTeam",
     "MlbAthleteDetailsResponseThrows",
+    "NewsCategory",
+    "NewsHeadline",
+    "NewsImage",
+    "NewsLinkAmp",
+    "NewsLinkApi",
+    "NewsLinkItem",
+    "NewsLinkMobile",
+    "NewsLinks",
+    "NewsLinkWeb",
+    "NewsMetric",
+    "NewsRelated",
+    "NewsRelatedLinks",
+    "NewsResponse",
+    "NewsVideo",
+    "NewsVideoAd",
+    "NewsVideoLinks",
     "NflAthleteEventlogResponse",
     "NflAthleteEventlogResponseEvents",
     "NflAthleteEventlogResponseEventsItemsItem",

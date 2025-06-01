@@ -168,7 +168,6 @@ site.api.espn.com/apis/common/v3
 [x] /sports/baseball/college-baseball/season - College Baseball Season Info - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
 XI. Soccer Endpoints
 site.api.espn.com/apis/site/v2
-[ ] /sports/soccer - List Soccer Leagues (provides slugs)
 [ ] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates
 [ ] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
 [ ] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug}
@@ -269,7 +268,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/nfl/providers - NFL Betting Providers List
 [ ] /v2/sports/football/leagues/nfl/providers/{provider_id} - NFL Betting Provider Details
 now.core.api.espn.com
-[ ] /v1/sports/news - ESPN News API. Query Params: limit, sport
+[x] /v1/sports/news - ESPN News API. Query Params: limit, sport - Implemented
 XVIII. Golf Endpoints
 site.api.espn.com
 [ ] /apis/site/v2/sports/golf/pga/scoreboard - PGA Tournament Scoreboard

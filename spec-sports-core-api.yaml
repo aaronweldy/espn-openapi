@@ -7,6 +7,8 @@ info:
 servers:
   - url: https://sports.core.api.espn.com
     description: ESPN Sports Core API Production Server
+  - url: https://now.core.api.espn.com
+    description: ESPN Now Core API Production Server
 
 paths:
   /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}:
@@ -2184,6 +2186,53 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/sports/news:
+    get:
+      summary: Get Sports News
+      description: Retrieve sports news headlines. Can be filtered by sport.
+      operationId: getSportsNews
+      servers:
+        - url: https://now.core.api.espn.com
+          description: ESPN Now Core API Production Server
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: Number of headlines to return
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 1000
+        - name: sport
+          in: query
+          required: false
+          description: Filter news by sport (e.g., football, basketball, baseball)
+          schema:
+            type: string
+            example: football
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsResponse'
         '400':
           description: Bad request
           content:
@@ -5925,3 +5974,282 @@ components:
           type: string
           description: Source state
           example: "full"
+
+    NewsResponse:
+      type: object
+      required:
+        - headlines
+        - resultsCount
+        - resultsLimit
+        - resultsOffset
+        - status
+        - timestamp
+      properties:
+        headlines:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsHeadline'
+        resultsCount:
+          type: integer
+          description: Total number of results available
+        resultsLimit:
+          type: integer
+          description: Maximum number of results returned
+        resultsOffset:
+          type: integer
+          description: Offset for pagination
+        status:
+          type: string
+          description: Response status
+          example: "success"
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the response
+
+    NewsHeadline:
+      type: object
+      required:
+        - id
+        - headline
+        - type
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the headline
+        headline:
+          type: string
+          description: The headline text
+        title:
+          type: string
+          description: The article title
+        description:
+          type: string
+          description: Brief description of the article
+        type:
+          type: string
+          description: Type of content
+          example: "story"
+        published:
+          type: string
+          format: date-time
+          description: Publication date
+        lastModified:
+          type: string
+          format: date-time
+          description: Last modification date
+        originallyPosted:
+          type: string
+          format: date-time
+          description: Original posting date
+        premium:
+          type: boolean
+          description: Whether this is premium content
+        links:
+          $ref: '#/components/schemas/NewsLinks'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsImage'
+        video:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsVideo'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsCategory'
+        related:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsRelated'
+        keywords:
+          type: array
+          items:
+            type: string
+        allowSearch:
+          type: boolean
+        allowAMP:
+          type: boolean
+        allowAds:
+          type: boolean
+        allowComments:
+          type: boolean
+        allowCommerce:
+          type: boolean
+        allowContentReactions:
+          type: boolean
+        linkText:
+          type: string
+        source:
+          type: string
+        nowId:
+          type: string
+        dataSourceIdentifier:
+          type: string
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsMetric'
+        story:
+          type: string
+          description: Full story text
+
+    NewsLinks:
+      type: object
+      properties:
+        api:
+          $ref: '#/components/schemas/NewsLinkApi'
+        web:
+          $ref: '#/components/schemas/NewsLinkWeb'
+        mobile:
+          $ref: '#/components/schemas/NewsLinkMobile'
+        amp:
+          $ref: '#/components/schemas/NewsLinkAmp'
+
+    NewsLinkApi:
+      type: object
+      properties:
+        news:
+          $ref: '#/components/schemas/NewsLinkItem'
+        self:
+          $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsLinkWeb:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        short:
+          $ref: '#/components/schemas/NewsLinkItem'
+        self:
+          $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsLinkMobile:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        alert:
+          $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsLinkAmp:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+
+    NewsLinkItem:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+
+    NewsImage:
+      type: object
+      properties:
+        id:
+          type: integer
+        url:
+          type: string
+          format: uri
+        alt:
+          type: string
+        caption:
+          type: string
+        credit:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        type:
+          type: string
+
+    NewsVideo:
+      type: object
+      properties:
+        id:
+          type: integer
+        source:
+          type: string
+        headline:
+          type: string
+        caption:
+          type: string
+        description:
+          type: string
+        premium:
+          type: boolean
+        ad:
+          type: object
+          properties:
+            sport:
+              type: string
+            bundle:
+              type: string
+        duration:
+          type: integer
+        thumbnail:
+          type: string
+          format: uri
+        links:
+          type: object
+          properties:
+            web:
+              $ref: '#/components/schemas/NewsLinkItem'
+            mobile:
+              $ref: '#/components/schemas/NewsLinkItem'
+            api:
+              $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+        uid:
+          type: string
+        type:
+          type: string
+        description:
+          type: string
+        sportId:
+          type: integer
+        leagueId:
+          type: integer
+        teamId:
+          type: integer
+        athleteId:
+          type: integer
+
+    NewsRelated:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        links:
+          type: object
+          properties:
+            web:
+              $ref: '#/components/schemas/NewsLinkItem'
+            mobile:
+              $ref: '#/components/schemas/NewsLinkItem'
+            api:
+              $ref: '#/components/schemas/NewsLinkItem'
+
+    NewsMetric:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of metric (e.g., views, fShares, tweets)
+        count:
+          type: integer
+          description: Count for this metric

@@ -1,0 +1,1187 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/EspnNewsAPIV1Schema",
+    "definitions": {
+        "EspnNewsAPIV1Schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "resultsOffset": {
+                    "type": "integer"
+                },
+                "resultsCount": {
+                    "type": "integer"
+                },
+                "headlines": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Headline"
+                    }
+                },
+                "resultsLimit": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "headlines",
+                "resultsCount",
+                "resultsLimit",
+                "resultsOffset",
+                "status",
+                "timestamp"
+            ],
+            "title": "EspnNewsAPIV1Schema"
+        },
+        "Headline": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {}
+                },
+                "description": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "video": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Video"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "nowId": {
+                    "type": "string"
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "related": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Related"
+                    }
+                },
+                "allowSearch": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "$ref": "#/definitions/HeadlineLinks"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeadlineCategory"
+                    }
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "originallyPosted": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeadlineImage"
+                    }
+                },
+                "allowCommerce": {
+                    "type": "boolean"
+                },
+                "linkText": {
+                    "type": "string"
+                },
+                "allowAMP": {
+                    "type": "boolean"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "allowContentReactions": {
+                    "type": "boolean"
+                },
+                "allowComments": {
+                    "type": "boolean"
+                },
+                "allowAds": {
+                    "type": "boolean"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "metrics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Metric"
+                    }
+                },
+                "story": {
+                    "type": "string"
+                },
+                "byline": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "allowAMP",
+                "allowAds",
+                "allowComments",
+                "allowCommerce",
+                "allowContentReactions",
+                "allowSearch",
+                "categories",
+                "dataSourceIdentifier",
+                "description",
+                "headline",
+                "id",
+                "images",
+                "keywords",
+                "lastModified",
+                "linkText",
+                "links",
+                "metrics",
+                "nowId",
+                "originallyPosted",
+                "premium",
+                "published",
+                "related",
+                "story",
+                "title",
+                "type",
+                "video"
+            ],
+            "title": "Headline"
+        },
+        "HeadlineCategory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/CategoryType"
+                },
+                "sportId": {
+                    "type": "integer"
+                },
+                "leagueId": {
+                    "type": "integer"
+                },
+                "league": {
+                    "$ref": "#/definitions/League"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "teamId": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "athleteId": {
+                    "type": "integer"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "topicId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "sportId",
+                "type"
+            ],
+            "title": "HeadlineCategory"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/AthleteLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "Athlete"
+        },
+        "AthleteLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "$ref": "#/definitions/PurpleAPI"
+                },
+                "web": {
+                    "$ref": "#/definitions/PurpleAPI"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/PurpleAPI"
+                }
+            },
+            "required": [
+                "api",
+                "mobile",
+                "web"
+            ],
+            "title": "AthleteLinks"
+        },
+        "PurpleAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "athletes": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "athletes"
+            ],
+            "title": "PurpleAPI"
+        },
+        "WebClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".1",
+                        ".champions",
+                        ".f4m",
+                        ".jpg",
+                        ".m3u8",
+                        ".mp4",
+                        ".smil"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "WebClass"
+        },
+        "League": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/LeagueLinks"
+                },
+                "abbreviation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "League"
+        },
+        "LeagueLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "$ref": "#/definitions/FluffyAPI"
+                },
+                "web": {
+                    "$ref": "#/definitions/FluffyAPI"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/FluffyAPI"
+                }
+            },
+            "required": [
+                "api",
+                "mobile",
+                "web"
+            ],
+            "title": "LeagueLinks"
+        },
+        "FluffyAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "leagues": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "leagues"
+            ],
+            "title": "FluffyAPI"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "links": {
+                    "$ref": "#/definitions/TeamLinks"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "links"
+            ],
+            "title": "Team"
+        },
+        "TeamLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "$ref": "#/definitions/TentacledAPI"
+                },
+                "web": {
+                    "$ref": "#/definitions/TentacledAPI"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/TentacledAPI"
+                }
+            },
+            "required": [
+                "api",
+                "mobile",
+                "web"
+            ],
+            "title": "TeamLinks"
+        },
+        "TentacledAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "teams": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "teams"
+            ],
+            "title": "TentacledAPI"
+        },
+        "HeadlineImage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "credit": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/ImageType"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "height",
+                "name",
+                "url",
+                "width"
+            ],
+            "title": "HeadlineImage"
+        },
+        "HeadlineLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "$ref": "#/definitions/StickyAPI"
+                },
+                "web": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "app": {
+                    "$ref": "#/definitions/App"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "api",
+                "mobile",
+                "web"
+            ],
+            "title": "HeadlineLinks"
+        },
+        "StickyAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "news": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "news"
+            ],
+            "title": "StickyAPI"
+        },
+        "App": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sportscenter": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "sportscenter"
+            ],
+            "title": "App"
+        },
+        "Metric": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "count",
+                "type"
+            ],
+            "title": "Metric"
+        },
+        "Related": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HeadlineImage"
+                    }
+                },
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "linkText": {
+                    "type": "string"
+                },
+                "published": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "links": {
+                    "$ref": "#/definitions/HeadlineLinks"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "byline": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dataSourceIdentifier",
+                "description",
+                "headline",
+                "id",
+                "images",
+                "lastModified",
+                "linkText",
+                "links",
+                "premium",
+                "published",
+                "title",
+                "type"
+            ],
+            "title": "Related"
+        },
+        "Video": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "source": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "dataSourceIdentifier": {
+                    "type": "string"
+                },
+                "videoRatio": {
+                    "type": "string"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "premium": {
+                    "type": "boolean"
+                },
+                "ad": {
+                    "$ref": "#/definitions/Ad"
+                },
+                "tracking": {
+                    "$ref": "#/definitions/Tracking"
+                },
+                "cerebroId": {
+                    "type": "string"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "originalPublishDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "timeRestrictions": {
+                    "$ref": "#/definitions/TimeRestrictions"
+                },
+                "deviceRestrictions": {
+                    "$ref": "#/definitions/DeviceRestrictions"
+                },
+                "geoRestrictions": {
+                    "$ref": "#/definitions/GeoRestrictions"
+                },
+                "syndicatable": {
+                    "type": "boolean"
+                },
+                "duration": {
+                    "type": "integer"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VideoCategory"
+                    }
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {}
+                },
+                "posterImages": {
+                    "$ref": "#/definitions/PosterImages"
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/VideoImage"
+                    }
+                },
+                "thumbnail": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "links": {
+                    "$ref": "#/definitions/VideoLinks"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ad",
+                "caption",
+                "categories",
+                "cerebroId",
+                "dataSourceIdentifier",
+                "description",
+                "deviceRestrictions",
+                "duration",
+                "headline",
+                "id",
+                "images",
+                "keywords",
+                "lastModified",
+                "links",
+                "originalPublishDate",
+                "posterImages",
+                "premium",
+                "source",
+                "syndicatable",
+                "thumbnail",
+                "timeRestrictions",
+                "title",
+                "tracking",
+                "videoRatio"
+            ],
+            "title": "Video"
+        },
+        "Ad": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sport": {
+                    "type": "string"
+                },
+                "bundle": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bundle",
+                "sport"
+            ],
+            "title": "Ad"
+        },
+        "VideoCategory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/CategoryType"
+                },
+                "sportId": {
+                    "type": "integer"
+                },
+                "leagueId": {
+                    "type": "integer"
+                },
+                "league": {
+                    "$ref": "#/definitions/League"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "athleteId": {
+                    "type": "integer"
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "teamId": {
+                    "type": "integer"
+                },
+                "team": {
+                    "$ref": "#/definitions/Team"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "sportId",
+                "type",
+                "uid"
+            ],
+            "title": "VideoCategory"
+        },
+        "DeviceRestrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "devices": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "devices",
+                "type"
+            ],
+            "title": "DeviceRestrictions"
+        },
+        "GeoRestrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "countries": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "countries",
+                "type"
+            ],
+            "title": "GeoRestrictions"
+        },
+        "VideoImage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "credit": {
+                    "type": "string"
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "alt",
+                "caption",
+                "credit",
+                "height",
+                "name",
+                "url",
+                "width"
+            ],
+            "title": "VideoImage"
+        },
+        "VideoLinks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "api": {
+                    "$ref": "#/definitions/IndigoAPI"
+                },
+                "web": {
+                    "$ref": "#/definitions/Web"
+                },
+                "source": {
+                    "$ref": "#/definitions/Source"
+                },
+                "mobile": {
+                    "$ref": "#/definitions/PurpleMobile"
+                }
+            },
+            "required": [
+                "api",
+                "mobile",
+                "source",
+                "web"
+            ],
+            "title": "VideoLinks"
+        },
+        "IndigoAPI": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "self": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "artwork": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "artwork",
+                "self"
+            ],
+            "title": "IndigoAPI"
+        },
+        "PurpleMobile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "alert": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "source": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "streaming": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "progressiveDownload": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "alert",
+                "href",
+                "progressiveDownload",
+                "source",
+                "streaming"
+            ],
+            "title": "PurpleMobile"
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "mezzanine": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "flash": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "hds": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "HLS": {
+                    "$ref": "#/definitions/HLS"
+                },
+                "HD": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "full": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".mp4"
+                    ]
+                }
+            },
+            "required": [
+                "HD",
+                "HLS",
+                "flash",
+                "full",
+                "hds",
+                "href",
+                "mezzanine"
+            ],
+            "title": "Source"
+        },
+        "HLS": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".m3u8"
+                    ]
+                },
+                "HD": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "cmaf": {
+                    "$ref": "#/definitions/Cmaf"
+                }
+            },
+            "required": [
+                "HD",
+                "cmaf",
+                "href"
+            ],
+            "title": "HLS"
+        },
+        "Cmaf": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".m3u8"
+                    ]
+                },
+                "shield": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "href",
+                "shield"
+            ],
+            "title": "Cmaf"
+        },
+        "Web": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "self": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "href",
+                "self"
+            ],
+            "title": "Web"
+        },
+        "PosterImages": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "default": {
+                    "$ref": "#/definitions/Default"
+                },
+                "full": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "wide": {
+                    "$ref": "#/definitions/WebClass"
+                },
+                "square": {
+                    "$ref": "#/definitions/WebClass"
+                }
+            },
+            "required": [
+                "default",
+                "full",
+                "square",
+                "wide"
+            ],
+            "title": "PosterImages"
+        },
+        "Default": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".jpg"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "height",
+                "href",
+                "width"
+            ],
+            "title": "Default"
+        },
+        "TimeRestrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "embargoDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "embargoDate",
+                "expirationDate"
+            ],
+            "title": "TimeRestrictions"
+        },
+        "Tracking": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "sportName": {
+                    "type": "string"
+                },
+                "leagueName": {
+                    "type": "string"
+                },
+                "coverageType": {
+                    "type": "string"
+                },
+                "trackingName": {
+                    "type": "string"
+                },
+                "trackingId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "coverageType",
+                "leagueName",
+                "sportName",
+                "trackingId",
+                "trackingName"
+            ],
+            "title": "Tracking"
+        },
+        "CategoryType": {
+            "type": "string",
+            "enum": [
+                "league",
+                "team",
+                "athlete",
+                "topic"
+            ],
+            "title": "CategoryType"
+        },
+        "ImageType": {
+            "type": "string",
+            "enum": [
+                "header",
+                "inline"
+            ],
+            "title": "ImageType"
+        }
+    }
+}
