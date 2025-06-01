@@ -98,15 +98,40 @@ def test_get_season_futures(sports_core_api_client, ensure_json_output_dir, spor
                 logger.info(f"   Provider: {provider_future.provider.name} (ID: {provider_future.provider.id})")
                 logger.info(f"   Books: {len(provider_future.books)}")
                 
-                # Log sample books (first 3)
-                for k, book in enumerate(provider_future.books[:3]):
-                    if book.athlete is not UNSET:
-                        logger.info(f"     - Athlete: {book.value}")
-                    elif book.team is not UNSET:
-                        logger.info(f"     - Team: {book.value}")
+                # Find favorites (most negative odds or lowest positive odds)
+                favorites = []
+                for book in provider_future.books:
+                    try:
+                        # Parse odds value
+                        odds_str = book.value.strip()
+                        if odds_str.startswith('+'):
+                            odds_value = int(odds_str[1:])
+                        elif odds_str.startswith('-'):
+                            odds_value = -int(odds_str[1:])
+                        else:
+                            odds_value = int(odds_str)
+                        
+                        favorites.append({
+                            'odds': odds_value,
+                            'odds_str': book.value,
+                            'is_athlete': book.athlete is not UNSET,
+                            'is_team': book.team is not UNSET,
+                            'ref': book.athlete if book.athlete is not UNSET else book.team
+                        })
+                    except (ValueError, AttributeError):
+                        continue
                 
-                if len(provider_future.books) > 3:
-                    logger.info(f"     ... and {len(provider_future.books) - 3} more")
+                # Sort by odds (most negative first, then lowest positive)
+                favorites.sort(key=lambda x: x['odds'])
+                
+                # Log top 3 favorites
+                logger.info(f"     Top favorites:")
+                for k, fav in enumerate(favorites[:3]):
+                    entity_type = "Athlete" if fav['is_athlete'] else "Team"
+                    logger.info(f"       {k+1}. {entity_type}: {fav['odds_str']}")
+                
+                if len(favorites) > 3:
+                    logger.info(f"     ... and {len(favorites) - 3} more options")
             
             # Validate all books
             for book in provider_future.books:
@@ -310,3 +335,204 @@ def test_get_season_futures_sport_specific(sports_core_api_client):
         
         # NBA should have championship/finals winner
         assert any("winner" in name.lower() or "champion" in name.lower() for name in future_names), "NBA should have championship futures"
+
+
+@pytest.mark.api
+def test_get_season_futures_favorites_analysis(sports_core_api_client):
+    """Analyze and log the favorites for major futures."""
+    # Get NFL futures
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        year=2024,
+        limit=50,
+    )
+    
+    assert response.status_code == 200
+    result = response.parsed
+    
+    logger.info(f"\n{'='*80}")
+    logger.info("NFL FUTURES FAVORITES ANALYSIS")
+    logger.info(f"{'='*80}")
+    
+    # Find Super Bowl future
+    super_bowl_future = None
+    mvp_future = None
+    division_futures = []
+    
+    for future in result.items:
+        if "super bowl" in future.name.lower():
+            super_bowl_future = future
+        elif "mvp" in future.name.lower():
+            mvp_future = future
+        elif "division" in future.name.lower() and future.type == "winDivision":
+            division_futures.append(future)
+    
+    # Analyze Super Bowl favorites
+    if super_bowl_future:
+        logger.info("\nSUPER BOWL FAVORITES:")
+        logger.info("-" * 40)
+        
+        # Get ESPN BET or first provider
+        provider_data = None
+        for prov in super_bowl_future.futures:
+            if prov.provider.name == "ESPN BET" or not provider_data:
+                provider_data = prov
+                break
+        
+        if provider_data:
+            # Parse all odds
+            teams_odds = []
+            for book in provider_data.books:
+                if book.team is not UNSET:
+                    try:
+                        odds_str = book.value.strip()
+                        if odds_str.startswith('+'):
+                            odds_value = int(odds_str[1:])
+                        else:
+                            odds_value = int(odds_str.replace('-', ''))
+                        
+                        teams_odds.append({
+                            'odds_value': odds_value,
+                            'odds_str': book.value,
+                            'is_favorite': odds_str.startswith('-') or odds_value < 1000
+                        })
+                    except:
+                        continue
+            
+            # Sort by odds
+            teams_odds.sort(key=lambda x: (not x['is_favorite'], x['odds_value']))
+            
+            # Log top 10
+            for i, team in enumerate(teams_odds[:10]):
+                logger.info(f"{i+1}. Team @ {team['odds_str']}")
+    
+    # Analyze division winners
+    if division_futures:
+        logger.info("\nDIVISION WINNER FAVORITES:")
+        logger.info("-" * 40)
+        
+        for div_future in division_futures[:4]:  # First 4 divisions
+            logger.info(f"\n{div_future.display_name or div_future.name}:")
+            
+            # Get first provider
+            if div_future.futures:
+                provider_data = div_future.futures[0]
+                
+                # Find the favorite (most negative odds)
+                favorite = None
+                favorite_odds = 99999
+                
+                for book in provider_data.books:
+                    if book.team is not UNSET:
+                        try:
+                            odds_str = book.value.strip()
+                            if odds_str.startswith('-'):
+                                odds_value = int(odds_str[1:])
+                                if odds_value < favorite_odds:
+                                    favorite_odds = odds_value
+                                    favorite = {'odds': odds_str}
+                        except:
+                            continue
+                
+                if favorite:
+                    logger.info(f"  Favorite: Team @ {favorite['odds']}")
+    
+    # Get NBA futures
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.BASKETBALL,
+        league=LeagueEnum.NBA,
+        year=2024,
+        limit=50,
+    )
+    
+    if response.status_code == 200:
+        result = response.parsed
+        
+        logger.info(f"\n{'='*80}")
+        logger.info("NBA FUTURES FAVORITES ANALYSIS")
+        logger.info(f"{'='*80}")
+        
+        # Find championship future
+        championship_future = None
+        
+        for future in result.items:
+            if "winner" in future.name.lower() and future.type == "winLeague":
+                championship_future = future
+                break
+        
+        if championship_future:
+            logger.info("\nNBA CHAMPIONSHIP FAVORITES:")
+            logger.info("-" * 40)
+            
+            # Get first provider with data
+            provider_data = None
+            for prov in championship_future.futures:
+                if prov.books:
+                    provider_data = prov
+                    break
+            
+            if provider_data:
+                logger.info(f"(via {provider_data.provider.name})")
+                
+                # Parse all odds
+                teams_odds = []
+                for book in provider_data.books[:10]:  # Top 10 only
+                    if book.team is not UNSET:
+                        teams_odds.append(book.value)
+                
+                # Log top teams
+                for i, odds in enumerate(teams_odds):
+                    logger.info(f"{i+1}. Team @ {odds}")
+    
+    # Analyze player props
+    logger.info(f"\n{'='*80}")
+    logger.info("NFL PLAYER PROP FAVORITES")
+    logger.info(f"{'='*80}")
+    
+    # Get NFL futures again for player props
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        year=2024,
+        limit=50,
+    )
+    
+    if response.status_code == 200:
+        result = response.parsed
+        
+        # Find interesting player futures
+        player_futures = {
+            'passing_yards': None,
+            'rushing_yards': None,
+            'receiving_yards': None,
+            'mvp': None,
+        }
+        
+        for future in result.items:
+            name_lower = future.name.lower()
+            if "most regular season passing yards" in name_lower:
+                player_futures['passing_yards'] = future
+            elif "most regular season rushing yards" in name_lower:
+                player_futures['rushing_yards'] = future
+            elif "most regular season receiving yards" in name_lower:
+                player_futures['receiving_yards'] = future
+            elif "mvp" in name_lower:
+                player_futures['mvp'] = future
+        
+        # Log favorites for each category
+        for category, future in player_futures.items():
+            if future and future.futures:
+                logger.info(f"\n{future.name}:")
+                logger.info("-" * 40)
+                
+                # Get first provider
+                provider_data = future.futures[0]
+                
+                # Get top 3 favorites
+                for i, book in enumerate(provider_data.books[:3]):
+                    if book.athlete is not UNSET:
+                        logger.info(f"{i+1}. Athlete @ {book.value}")
