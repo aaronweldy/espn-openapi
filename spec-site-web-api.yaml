@@ -312,6 +312,45 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/site/v3/sports/{sport}/{league}/leaders:
+    get:
+      summary: Get League Leaders
+      description: Get statistical leaders for a specific sport and league (NFL, NHL, college sports, etc.)
+      operationId: getLeagueLeaders
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport (e.g., football, basketball, hockey)
+          schema:
+            type: string
+            enum: [football, basketball, hockey, baseball]
+        - name: league
+          in: path
+          required: true
+          description: The league (e.g., nfl, nhl, mens-college-basketball)
+          schema:
+            type: string
+        - name: season
+          in: query
+          required: false
+          description: The season year
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeadersResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     Reference:
@@ -2522,3 +2561,254 @@ components:
           description: Season type end date in ISO 8601 format
           example: "2024-09-05T06:59:00.000+00:00"
       description: Season type information (e.g., preseason, regular season, postseason)
+
+    LeadersResponse:
+      type: object
+      required:
+        - currentSeason
+        - requestedSeason
+        - leaders
+        - league
+      properties:
+        currentSeason:
+          $ref: '#/components/schemas/LeadersSeason'
+        requestedSeason:
+          $ref: '#/components/schemas/LeadersSeason'
+        leaders:
+          $ref: '#/components/schemas/LeadersContainer'
+        league:
+          $ref: '#/components/schemas/LeadersLeague'
+      description: Response containing statistical leaders for a sport/league
+
+    LeadersSeason:
+      type: object
+      required:
+        - year
+        - displayName
+        - startDate
+        - endDate
+        - type
+      properties:
+        year:
+          type: integer
+          description: The season year
+        displayName:
+          type: string
+          description: Display name for the season (usually the year as string)
+        startDate:
+          type: string
+          format: date-time
+          description: Season start date
+        endDate:
+          type: string
+          format: date-time
+          description: Season end date
+        type:
+          $ref: '#/components/schemas/LeadersSeasonType'
+
+    LeadersSeasonType:
+      type: object
+      required:
+        - id
+        - type
+        - name
+        - startDate
+        - endDate
+      properties:
+        id:
+          type: string
+          description: Season type ID
+        type:
+          type: integer
+          description: Season type number
+        name:
+          type: string
+          description: Season type name (e.g., "Off Season", "Regular Season")
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        week:
+          type: object
+          description: Week information (may be empty)
+
+    LeadersContainer:
+      type: object
+      required:
+        - id
+        - name
+        - abbreviation
+        - categories
+      properties:
+        id:
+          type: string
+          description: Leaders container ID
+        name:
+          type: string
+          description: Leaders container name
+        abbreviation:
+          type: string
+          description: Leaders container abbreviation
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderCategory'
+
+    LeaderCategory:
+      type: object
+      required:
+        - name
+        - displayName
+        - abbreviation
+        - leaders
+      properties:
+        name:
+          type: string
+          description: Category name (e.g., "passingYards")
+        displayName:
+          type: string
+          description: Display name (e.g., "Passing Yards")
+        abbreviation:
+          type: string
+          description: Category abbreviation (e.g., "YDS")
+        leaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderEntry'
+
+    LeaderEntry:
+      type: object
+      required:
+        - displayValue
+        - value
+        - athlete
+      properties:
+        displayValue:
+          type: string
+          description: Formatted display value of the statistic
+        value:
+          type: number
+          description: Numeric value of the statistic
+        rel:
+          type: array
+          items:
+            type: string
+          description: Relationship types
+        athlete:
+          $ref: '#/components/schemas/LeaderAthlete'
+        statistics:
+          type: object
+          description: Additional statistics (may be empty)
+        team:
+          $ref: '#/components/schemas/LeaderTeam'
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderTeam'
+
+    LeaderAthlete:
+      type: object
+      required:
+        - id
+        - displayName
+      properties:
+        id:
+          type: string
+          description: Athlete ID
+        uid:
+          type: string
+          description: Unique identifier
+        guid:
+          type: string
+          description: Global unique identifier
+        firstName:
+          type: string
+          description: First name
+        lastName:
+          type: string
+          description: Last name
+        displayName:
+          type: string
+          description: Display name
+        fullName:
+          type: string
+          description: Full name
+        shortName:
+          type: string
+          description: Short name
+        jersey:
+          type: string
+          description: Jersey number
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        headshot:
+          $ref: '#/components/schemas/Headshot'
+        position:
+          $ref: '#/components/schemas/Position'
+        birthPlace:
+          $ref: '#/components/schemas/BirthPlace'
+
+    LeaderTeam:
+      type: object
+      required:
+        - id
+        - displayName
+      properties:
+        id:
+          type: string
+          description: Team ID
+        slug:
+          type: string
+          description: URL slug
+        name:
+          type: string
+          description: Team name
+        nickname:
+          type: string
+          description: Team nickname
+        abbreviation:
+          type: string
+          description: Team abbreviation
+        displayName:
+          type: string
+          description: Full team name
+        shortDisplayName:
+          type: string
+          description: Short display name
+        color:
+          type: string
+          description: Primary team color
+        alternateColor:
+          type: string
+          description: Alternate team color
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+
+    LeadersLeague:
+      type: object
+      properties:
+        id:
+          type: string
+          description: League ID
+        name:
+          type: string
+          description: League name
+        abbreviation:
+          type: string
+          description: League abbreviation
+        displayName:
+          type: string
+          description: League display name
+        slug:
+          type: string
+          description: URL slug

@@ -1,0 +1,667 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SiteV3LeadersSchema",
+    "definitions": {
+        "SiteV3LeadersSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "currentSeason": {
+                    "$ref": "#/definitions/Season"
+                },
+                "requestedSeason": {
+                    "$ref": "#/definitions/Season"
+                },
+                "leaders": {
+                    "$ref": "#/definitions/Leaders"
+                },
+                "league": {
+                    "$ref": "#/definitions/League"
+                }
+            },
+            "required": [
+                "currentSeason",
+                "leaders",
+                "league",
+                "requestedSeason"
+            ],
+            "title": "SiteV3LeadersSchema"
+        },
+        "Season": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "displayName": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "type": {
+                    "$ref": "#/definitions/Type"
+                }
+            },
+            "required": [
+                "displayName",
+                "endDate",
+                "startDate",
+                "type",
+                "year"
+            ],
+            "title": "Season"
+        },
+        "Type": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "week": {
+                    "$ref": "#/definitions/Week"
+                }
+            },
+            "required": [
+                "endDate",
+                "id",
+                "name",
+                "startDate",
+                "type",
+                "week"
+            ],
+            "title": "Type"
+        },
+        "Week": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Week"
+        },
+        "Leaders": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "categories",
+                "id",
+                "name"
+            ],
+            "title": "Leaders"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "leaders": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Leader"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "leaders",
+                "name"
+            ],
+            "title": "Category"
+        },
+        "Leader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "displayValue": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkRel"
+                    }
+                },
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "statistics": {
+                    "$ref": "#/definitions/Week"
+                },
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "teams": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Team"
+                    }
+                }
+            },
+            "required": [
+                "athlete",
+                "displayValue",
+                "rel",
+                "statistics",
+                "team",
+                "teams",
+                "value"
+            ],
+            "title": "Leader"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "fullName": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                },
+                "jersey": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "headshot": {
+                    "$ref": "#/definitions/Headshot"
+                },
+                "position": {
+                    "$ref": "#/definitions/Position"
+                },
+                "birthPlace": {
+                    "$ref": "#/definitions/BirthPlace"
+                }
+            },
+            "required": [
+                "birthPlace",
+                "displayName",
+                "firstName",
+                "fullName",
+                "guid",
+                "headshot",
+                "id",
+                "lastName",
+                "links",
+                "position",
+                "shortName",
+                "uid"
+            ],
+            "title": "Athlete"
+        },
+        "BirthPlace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country"
+                }
+            },
+            "required": [],
+            "title": "BirthPlace"
+        },
+        "Headshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "alt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "alt",
+                "href"
+            ],
+            "title": "Headshot"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkRel"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/Text"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/Text"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Position": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/Name"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Abbreviation"
+                },
+                "leaf": {
+                    "type": "boolean"
+                },
+                "parent": {
+                    "$ref": "#/definitions/Parent"
+                },
+                "slug": {
+                    "$ref": "#/definitions/Slug"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "id",
+                "leaf",
+                "name",
+                "parent",
+                "slug"
+            ],
+            "title": "Position"
+        },
+        "Parent": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "leaf": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "leaf"
+            ],
+            "title": "Parent"
+        },
+        "Logo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoRel"
+                    }
+                }
+            },
+            "required": [
+                "height",
+                "href",
+                "rel",
+                "width"
+            ],
+            "title": "Logo"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "alternateColor": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "alternateColor",
+                "color",
+                "displayName",
+                "id",
+                "links",
+                "logos",
+                "name",
+                "nickname",
+                "shortDisplayName",
+                "slug"
+            ],
+            "title": "Team"
+        },
+        "League": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "slug": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name",
+                "shortName",
+                "slug",
+                "uid"
+            ],
+            "title": "League"
+        },
+        "Country": {
+            "type": "string",
+            "enum": [
+                "USA",
+                "Canada",
+                "Australia"
+            ],
+            "title": "Country"
+        },
+        "Language": {
+            "type": "string",
+            "enum": [
+                "en"
+            ],
+            "title": "Language"
+        },
+        "LinkRel": {
+            "type": "string",
+            "enum": [
+                "playercard",
+                "desktop",
+                "athlete",
+                "stats",
+                "splits",
+                "gamelog",
+                "news",
+                "bio",
+                "overview",
+                "clubhouse",
+                "team",
+                "roster",
+                "schedule",
+                "photos",
+                "tickets",
+                "draftpicks",
+                "transactions",
+                "injuries",
+                "depthchart"
+            ],
+            "title": "LinkRel"
+        },
+        "Text": {
+            "type": "string",
+            "enum": [
+                "Player Card",
+                "Stats",
+                "Splits",
+                "Game Log",
+                "News",
+                "Bio",
+                "Overview",
+                "Clubhouse",
+                "Roster",
+                "Statistics",
+                "Schedule",
+                "photos",
+                "Tickets",
+                "Draft Picks",
+                "Transactions",
+                "Injuries",
+                "Depth Chart"
+            ],
+            "title": "Text"
+        },
+        "Abbreviation": {
+            "type": "string",
+            "enum": [
+                "QB",
+                "RB",
+                "WR",
+                "TE",
+                "LB",
+                "S",
+                "DE",
+                "PK",
+                "P",
+                "CB"
+            ],
+            "title": "Abbreviation"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "Quarterback",
+                "Running Back",
+                "Wide Receiver",
+                "Tight End",
+                "Linebacker",
+                "Safety",
+                "Defensive End",
+                "Place Kicker",
+                "Punter",
+                "Cornerback",
+                "Place kicker"
+            ],
+            "title": "Name"
+        },
+        "Slug": {
+            "type": "string",
+            "enum": [
+                "quarterback",
+                "running-back",
+                "wide-receiver",
+                "tight-end",
+                "linebacker",
+                "safety",
+                "defensive-end",
+                "place-kicker",
+                "punter",
+                "cornerback"
+            ],
+            "title": "Slug"
+        },
+        "LogoRel": {
+            "type": "string",
+            "enum": [
+                "full",
+                "default",
+                "dark",
+                "scoreboard",
+                "primary_logo_on_white_color",
+                "primary_logo_on_black_color",
+                "primary_logo_on_primary_color",
+                "primary_logo_on_secondary_color",
+                "secondary_logo_on_white_color",
+                "secondary_logo_on_black_color",
+                "secondary_logo_on_primary_color",
+                "secondary_logo_on_secondary_color"
+            ],
+            "title": "LogoRel"
+        }
+    }
+}

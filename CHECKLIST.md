@@ -247,7 +247,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances
 XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
-[ ] /apis/site/v3/sports/football/nfl/leaders - NFL Leaders (Site API v3). Query Params: season
+[x] /apis/site/v3/sports/{sport}/{league}/leaders - League Leaders (Site API v3). Path Params: {sport}, {league}. Query Params: season - Implemented as generic endpoint (supports NFL, NHL, NBA, MLB, college sports)
 site.web.api.espn.com  
 [ ] /apis/site/v3/sports/football/nfl/teamleaders - NFL Team Leaders (Site API v3)
 [ ] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/bio - NFL Athlete Bio
