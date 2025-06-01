@@ -1649,6 +1649,60 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/futures:
+    get:
+      summary: Get Season Futures
+      description: Retrieve betting futures for a specific season including championship winners, division winners, player props, and more.
+      operationId: getSeasonFutures
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2024
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 25
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FuturesResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/seasons/{year}/draft/athletes/{athlete_id}:
     get:
       summary: Get NFL Draft Athlete Details
@@ -6622,3 +6676,116 @@ components:
         - id
         - firstName
         - lastName
+
+    FuturesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of futures available
+          example: 30
+        pageIndex:
+          type: integer
+          description: Current page index
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 2
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/FutureItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    FutureItem:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: API reference URL for this future
+        id:
+          type: integer
+          description: Unique identifier for this future
+          example: 1200
+        name:
+          type: string
+          description: Name of the future bet
+          example: "Total Regular Season Passing Yards"
+        displayName:
+          type: string
+          description: Display name of the future bet
+          example: "Total Regular Season Passing Yards"
+        type:
+          type: string
+          description: Type of future bet
+          enum: [winLeague, winDivision, winConference, playerProp, teamProp]
+          example: winDivision
+        futures:
+          type: array
+          items:
+            $ref: '#/components/schemas/FutureProvider'
+      required:
+        - id
+        - name
+        - futures
+
+    FutureProvider:
+      type: object
+      properties:
+        provider:
+          $ref: '#/components/schemas/BettingProvider'
+        books:
+          type: array
+          items:
+            $ref: '#/components/schemas/FutureBook'
+      required:
+        - provider
+        - books
+
+    FutureBook:
+      type: object
+      properties:
+        athlete:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        value:
+          type: string
+          description: Betting odds value (e.g., "+135", "-120")
+          example: "-135"
+      required:
+        - value
+
+    BettingProvider:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Provider identifier
+          example: "58"
+        name:
+          type: string
+          description: Provider name
+          example: "ESPN BET"
+        active:
+          type: integer
+          description: Active status (1 = active)
+          example: 1
+        priority:
+          type: integer
+          description: Display priority
+          example: 1
+      required:
+        - id
+        - name

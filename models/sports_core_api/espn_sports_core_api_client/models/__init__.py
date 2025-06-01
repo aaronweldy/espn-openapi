@@ -20,6 +20,7 @@ from .athlete_status import AthleteStatus
 from .athletes_list_response import AthletesListResponse
 from .betting_odds import BettingOdds
 from .betting_odds_team_odds import BettingOddsTeamOdds
+from .betting_provider import BettingProvider
 from .broadcast_logo import BroadcastLogo
 from .broadcast_market import BroadcastMarket
 from .broadcast_media import BroadcastMedia
@@ -77,6 +78,11 @@ from .event_detail_season_type_type_1 import EventDetailSeasonTypeType1
 from .event_detail_venues_item_type_1 import EventDetailVenuesItemType1
 from .event_detail_week_type_1 import EventDetailWeekType1
 from .event_reference import EventReference
+from .future_book import FutureBook
+from .future_item import FutureItem
+from .future_item_type import FutureItemType
+from .future_provider import FutureProvider
+from .futures_response import FuturesResponse
 from .get_athlete_statistics_seasontype import GetAthleteStatisticsSeasontype
 from .get_league_season_corrections_season_type import GetLeagueSeasonCorrectionsSeasonType
 from .get_league_season_group_details_season_type import GetLeagueSeasonGroupDetailsSeasonType
@@ -232,6 +238,7 @@ __all__ = (
     "AthleteStatus",
     "BettingOdds",
     "BettingOddsTeamOdds",
+    "BettingProvider",
     "BroadcastLogo",
     "BroadcastMarket",
     "BroadcastMedia",
@@ -289,6 +296,11 @@ __all__ = (
     "EventDetailVenuesItemType1",
     "EventDetailWeekType1",
     "EventReference",
+    "FutureBook",
+    "FutureItem",
+    "FutureItemType",
+    "FutureProvider",
+    "FuturesResponse",
     "GetAthleteStatisticsSeasontype",
     "GetLeagueSeasonCorrectionsSeasonType",
     "GetLeagueSeasonGroupDetailsSeasonType",
