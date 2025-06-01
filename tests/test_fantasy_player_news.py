@@ -1,20 +1,16 @@
 import pytest
 import json
 import logging
-from models.site_api.espn_nfl_api_client import Client
 from models.site_api.espn_nfl_api_client.api.fantasy_football import get_fantasy_player_news
 
 logging.basicConfig(level=logging.INFO)
 
 
 @pytest.mark.api
-def test_get_fantasy_player_news_no_filter(ensure_json_output_dir):
+def test_get_fantasy_player_news_no_filter(site_api_fantasy_client, ensure_json_output_dir):
     """Test getting fantasy player news without player filter."""
-    # Create a custom client with the correct base URL for fantasy endpoints
-    fantasy_client = Client(base_url="https://site.api.espn.com/apis")
-    
     response = get_fantasy_player_news.sync_detailed(
-        client=fantasy_client,
+        client=site_api_fantasy_client,
         limit=5
     )
     
@@ -43,16 +39,13 @@ def test_get_fantasy_player_news_no_filter(ensure_json_output_dir):
 
 
 @pytest.mark.api
-def test_get_fantasy_player_news_with_player_id(ensure_json_output_dir):
+def test_get_fantasy_player_news_with_player_id(site_api_fantasy_client, ensure_json_output_dir):
     """Test getting fantasy player news for specific player."""
-    # Create a custom client with the correct base URL for fantasy endpoints
-    fantasy_client = Client(base_url="https://site.api.espn.com/apis")
-    
     # Use Patrick Mahomes as test player
     player_id = 3139477
     
     response = get_fantasy_player_news.sync_detailed(
-        client=fantasy_client,
+        client=site_api_fantasy_client,
         player_id=player_id,
         limit=10
     )
@@ -92,13 +85,10 @@ def test_get_fantasy_player_news_with_player_id(ensure_json_output_dir):
     (4241479, "Amon-Ra St. Brown"),
     (4360310, "Kenneth Walker III"),
 ])
-def test_get_fantasy_player_news_multiple_players(player_id, player_name):
+def test_get_fantasy_player_news_multiple_players(site_api_fantasy_client, player_id, player_name):
     """Test getting news for multiple players."""
-    # Create a custom client with the correct base URL for fantasy endpoints
-    fantasy_client = Client(base_url="https://site.api.espn.com/apis")
-    
     response = get_fantasy_player_news.sync_detailed(
-        client=fantasy_client,
+        client=site_api_fantasy_client,
         player_id=player_id,
         limit=3
     )

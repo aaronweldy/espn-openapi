@@ -45,6 +45,16 @@ def fantasy_api_client():
 
 
 @pytest.fixture(scope="session")
+def site_api_fantasy_client():
+    """Fixture for ESPN site API client with fantasy base URL.
+    
+    This is used for fantasy endpoints that are under site.api.espn.com/apis/fantasy/
+    instead of the regular site.api.espn.com/apis/site/v2/
+    """
+    return SiteApiClient(base_url="https://site.api.espn.com/apis")
+
+
+@pytest.fixture(scope="session")
 def ensure_json_output_dir():
     """Ensure the json_output directory exists."""
     os.makedirs("json_output", exist_ok=True)
