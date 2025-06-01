@@ -21,6 +21,12 @@ from models.sports_core_api.espn_sports_core_api_client.types import UNSET
     [
         (SportEnum.FOOTBALL, LeagueEnum.NFL, 2024, 10),  # NFL futures
         (SportEnum.BASKETBALL, LeagueEnum.NBA, 2024, 5),  # NBA futures
+        (SportEnum.BASEBALL, LeagueEnum.MLB, 2024, 3),  # MLB futures
+        (SportEnum.HOCKEY, LeagueEnum.NHL, 2024, 3),  # NHL futures
+        (SportEnum.FOOTBALL, LeagueEnum.COLLEGE_FOOTBALL, 2024, 5),  # College Football futures
+        (SportEnum.BASKETBALL, LeagueEnum.MENS_COLLEGE_BASKETBALL, 2024, 3),  # Men's College Basketball
+        (SportEnum.BASKETBALL, LeagueEnum.WNBA, 2024, 2),  # WNBA futures
+        pytest.param(SportEnum.SOCCER, LeagueEnum.ENG_1, 2024, 1, marks=pytest.mark.xfail(reason="Soccer futures might not be available")),  # Premier League
     ],
 )
 def test_get_season_futures(sports_core_api_client, ensure_json_output_dir, sport, league, year, expected_min_items):
@@ -116,3 +122,125 @@ def test_get_season_futures_invalid_year(sports_core_api_client):
         result = response.parsed
         assert isinstance(result, FuturesResponse), "Response should parse to FuturesResponse"
         assert result.count == 0, "Should have no futures for invalid year"
+
+
+@pytest.mark.api
+@pytest.mark.parametrize(
+    "sport,league,year",
+    [
+        (SportEnum.FOOTBALL, LeagueEnum.NFL, 2024),
+        (SportEnum.BASKETBALL, LeagueEnum.NBA, 2024),
+    ],
+)
+def test_get_season_futures_future_types(sports_core_api_client, sport, league, year):
+    """Test that futures contain different types (player props, team props, etc)."""
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=sport,
+        league=league,
+        year=year,
+    )
+    
+    assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
+    
+    result = response.parsed
+    assert isinstance(result, FuturesResponse), "Response should parse to FuturesResponse"
+    
+    # Collect future types
+    future_types = set()
+    has_player_futures = False
+    has_team_futures = False
+    
+    for future_item in result.items:
+        if future_item.type:
+            future_types.add(future_item.type)
+        
+        # Check if this is a player or team future based on the books
+        for provider_future in future_item.futures:
+            for book in provider_future.books:
+                if book.athlete is not UNSET:
+                    has_player_futures = True
+                if book.team is not UNSET:
+                    has_team_futures = True
+    
+    print(f"\n{sport.value} {league.value} future types found: {future_types}")
+    print(f"Has player futures: {has_player_futures}")
+    print(f"Has team futures: {has_team_futures}")
+    
+    # Verify we have at least one type of future (player or team)
+    assert has_player_futures or has_team_futures, f"{sport.value} {league.value} should have either player or team futures"
+    
+    # NFL typically has both, NBA might only show team futures on first page
+    if sport == SportEnum.FOOTBALL and league == LeagueEnum.NFL:
+        assert has_player_futures and has_team_futures, "NFL should have both player and team futures"
+    
+    # Verify we have different types
+    assert len(future_types) >= 1, f"{sport.value} {league.value} should have at least one typed future"
+
+
+@pytest.mark.api
+def test_get_season_futures_pagination(sports_core_api_client):
+    """Test pagination for futures endpoint."""
+    # First request
+    response1 = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        year=2024,
+        limit=5,
+    )
+    
+    assert response1.status_code == 200
+    result1 = response1.parsed
+    
+    # Check if there are more pages
+    if result1.page_count > 1:
+        assert result1.count > 5, "Should have more items than page size"
+        assert len(result1.items) == 5, "Should return exactly 5 items"
+        
+        # Note: The API doesn't seem to support page parameter in the URL
+        # so we can't test actual pagination navigation
+        print(f"\nTotal futures: {result1.count}")
+        print(f"Page count: {result1.page_count}")
+        print(f"Items on first page: {len(result1.items)}")
+
+
+@pytest.mark.api
+def test_get_season_futures_sport_specific(sports_core_api_client):
+    """Test sport-specific futures content."""
+    # Test NFL specific futures
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        year=2024,
+        limit=50,  # Get more to ensure we see various types
+    )
+    
+    assert response.status_code == 200
+    result = response.parsed
+    
+    # Look for NFL-specific future names
+    future_names = [item.name for item in result.items]
+    
+    # NFL should have Super Bowl winner
+    assert any("super bowl" in name.lower() for name in future_names), "NFL should have Super Bowl futures"
+    
+    # NFL should have division winners
+    assert any("division" in name.lower() for name in future_names), "NFL should have division winner futures"
+    
+    # Test NBA specific futures  
+    response = get_season_futures.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.BASKETBALL,
+        league=LeagueEnum.NBA,
+        year=2024,
+        limit=50,
+    )
+    
+    if response.status_code == 200:
+        result = response.parsed
+        future_names = [item.name for item in result.items]
+        
+        # NBA should have championship/finals winner
+        assert any("winner" in name.lower() or "champion" in name.lower() for name in future_names), "NBA should have championship futures"

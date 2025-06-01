@@ -1,0 +1,942 @@
+{
+  "count": 2,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 1,
+  "items": [
+    {
+      "id": 8146,
+      "name": "WNBA - Winner",
+      "futures": [
+        {
+          "provider": {
+            "id": "36",
+            "name": "Unibet",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "-110",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+900",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+6000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+10000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "40",
+            "name": "DraftKings",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+250",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+6000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+10000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "41",
+            "name": "SugarHouse",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "-110",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "57",
+            "name": "Caesars Sportsbook (Tennessee)",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+240",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+800",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "1001",
+            "name": "Bet365",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+250",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+6000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "45",
+            "name": "Caesars Sportsbook (New Jersey)",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+240",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+800",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "47",
+            "name": "MGM",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+230",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+6600",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "48",
+            "name": "PointsBet",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+110",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+260",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1700",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "50",
+            "name": "BetfairSportsbook",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+230",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+900",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+6000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+10000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "52",
+            "name": "Caesars Sportsbook (Colorado)",
+            "active": 1,
+            "priority": 0
+          },
+          "books": [
+            {
+              "value": "+100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+240",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+800",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1400",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+2200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+3000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+4000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+5500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            }
+          ]
+        },
+        {
+          "provider": {
+            "id": "58",
+            "name": "ESPN BET",
+            "active": 1,
+            "priority": 1
+          },
+          "books": [
+            {
+              "value": "+525",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1200",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+7500",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+8000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+40000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+100000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+500000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+500000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            }
+          ]
+        }
+      ],
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/futures/8146?lang=en&region=us",
+      "displayName": "WNBA - Winner"
+    },
+    {
+      "id": 255294,
+      "name": "WNBA - Commissioner's Cup Winner",
+      "futures": [
+        {
+          "provider": {
+            "id": "58",
+            "name": "ESPN BET",
+            "active": 1,
+            "priority": 1
+          },
+          "books": [
+            {
+              "value": "-350",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/14?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+450",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/8?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+900",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/17?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+1100",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/11?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/20?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/19?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/18?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/16?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/9?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/6?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/5?lang=en&region=us"
+              }
+            },
+            {
+              "value": "+50000",
+              "team": {
+                "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/teams/3?lang=en&region=us"
+              }
+            }
+          ]
+        }
+      ],
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba/seasons/2024/futures/255294?lang=en&region=us",
+      "displayName": "WNBA - Commissioner's Cup Winner"
+    }
+  ]
+}
