@@ -2342,6 +2342,50 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/predictor:
+    get:
+      summary: Get Game Predictor Metrics
+      description: Retrieve ESPN Predictor metrics for a specific game including win probabilities, efficiency ratings, and predicted outcomes.
+      operationId: getGamePredictor
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401547602"
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID (usually the same as event_id)
+          schema:
+            type: string
+            example: "401547602"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictorResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Game or predictor data not found
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -6789,3 +6833,80 @@ components:
       required:
         - id
         - name
+
+    PredictorResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL to this predictor data
+        name:
+          type: string
+          description: Full name of the game
+          example: "Baltimore Ravens at Jacksonville Jaguars"
+        shortName:
+          type: string
+          description: Short name of the game
+          example: "BAL @ JAX"
+        lastModified:
+          type: string
+          format: date-time
+          description: Last modification timestamp
+        homeTeam:
+          $ref: '#/components/schemas/PredictorTeam'
+        awayTeam:
+          $ref: '#/components/schemas/PredictorTeam'
+      required:
+        - name
+        - shortName
+        - homeTeam
+        - awayTeam
+
+    PredictorTeam:
+      type: object
+      properties:
+        team:
+          $ref: '#/components/schemas/Reference'
+        statistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredictorStatistic'
+      required:
+        - team
+
+    PredictorStatistic:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Statistic identifier
+          example: "gameProjection"
+        displayName:
+          type: string
+          description: Display name for the statistic
+          example: "WIN PROB"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "GP"
+        description:
+          type: string
+          description: Description of the statistic
+          example: "Team's predicted win percentage in this game at time of given BPI run"
+        abbreviation:
+          type: string
+          description: Abbreviation for the statistic
+          example: "GP"
+        value:
+          type: number
+          description: Numeric value of the statistic
+          example: 63.552
+        displayValue:
+          type: string
+          description: Display-formatted value
+          example: "63.6"
+      required:
+        - name
+        - value
+        - displayValue

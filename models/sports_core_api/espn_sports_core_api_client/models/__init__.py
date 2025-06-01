@@ -190,6 +190,9 @@ from .play_type import PlayType
 from .plays_list_response import PlaysListResponse
 from .position import Position
 from .positions_list_response import PositionsListResponse
+from .predictor_response import PredictorResponse
+from .predictor_statistic import PredictorStatistic
+from .predictor_team import PredictorTeam
 from .probabilities_list_response import ProbabilitiesListResponse
 from .probability_item import ProbabilityItem
 from .probability_source import ProbabilitySource
@@ -408,6 +411,9 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionsListResponse",
+    "PredictorResponse",
+    "PredictorStatistic",
+    "PredictorTeam",
     "ProbabilitiesListResponse",
     "ProbabilityItem",
     "ProbabilitySource",

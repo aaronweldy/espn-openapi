@@ -1,0 +1,146 @@
+{
+  "name": "Cleveland Guardians at Pittsburgh Pirates",
+  "shortName": "CLE @ PIT",
+  "homeTeam": {
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2023/teams/23?lang=en&region=us"
+    },
+    "statistics": [
+      {
+        "name": "gameProjection",
+        "value": 44.82153548,
+        "displayValue": "44.8",
+        "displayName": "WIN PROB",
+        "shortDisplayName": "GP",
+        "description": "Team's predicted win percentage in this game at time of given BPI run",
+        "abbreviation": "GP"
+      },
+      {
+        "name": "teamChanceLoss",
+        "value": 55.17846451999999,
+        "displayValue": "55.2",
+        "displayName": "Team Chance Loss",
+        "shortDisplayName": "Chance Loss",
+        "description": "",
+        "abbreviation": "TCL"
+      },
+      {
+        "name": "winProbability",
+        "value": 44.82153548,
+        "displayValue": "44.8",
+        "displayName": "Win Probability",
+        "shortDisplayName": "WP",
+        "description": "Team's predicted win percentage in this game at time of given BPI run.",
+        "abbreviation": "WP"
+      },
+      {
+        "name": "starterAdjustment",
+        "value": 4.6392727183,
+        "displayValue": "4.6",
+        "displayName": "Starter Adjustment",
+        "shortDisplayName": "SA",
+        "description": "Value by which to adjust the team's rating based on the team's starting pitcher.",
+        "abbreviation": "SA"
+      },
+      {
+        "name": "bullpenAdjustment",
+        "value": 4.342575371,
+        "displayValue": "4.3",
+        "displayName": "Bullpen Adjustment",
+        "shortDisplayName": "BPA",
+        "description": "Value by which to adjust the team's rating based on the team's bullpen.",
+        "abbreviation": "BPA"
+      },
+      {
+        "name": "battingAdjustment",
+        "value": 4.1346787425,
+        "displayValue": "4.1",
+        "displayName": "Batting Adjustment",
+        "shortDisplayName": "BA",
+        "description": "Value by which to adjust the team's rating based on the team's batting.",
+        "abbreviation": "BA"
+      },
+      {
+        "name": "parkAdjustment",
+        "value": -9.3883244,
+        "displayValue": "-9.4",
+        "displayName": "Park Adjustment",
+        "shortDisplayName": "PA",
+        "description": "Value by which to adjust the team's rating based on the park where the game is being played.",
+        "abbreviation": "PA"
+      }
+    ]
+  },
+  "awayTeam": {
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2023/teams/5?lang=en&region=us"
+    },
+    "statistics": [
+      {
+        "name": "gameProjection",
+        "value": 55.178464520000006,
+        "displayValue": "55.2",
+        "displayName": "WIN PROB",
+        "shortDisplayName": "GP",
+        "description": "Team's predicted win percentage in this game at time of given BPI run",
+        "abbreviation": "GP"
+      },
+      {
+        "name": "teamChanceLoss",
+        "value": 44.821535479999994,
+        "displayValue": "44.8",
+        "displayName": "Team Chance Loss",
+        "shortDisplayName": "Chance Loss",
+        "description": "",
+        "abbreviation": "TCL"
+      },
+      {
+        "name": "winProbability",
+        "value": 55.178464520000006,
+        "displayValue": "55.2",
+        "displayName": "Win Probability",
+        "shortDisplayName": "WP",
+        "description": "Team's predicted win percentage in this game at time of given BPI run.",
+        "abbreviation": "WP"
+      },
+      {
+        "name": "starterAdjustment",
+        "value": 3.8551303186,
+        "displayValue": "3.9",
+        "displayName": "Starter Adjustment",
+        "shortDisplayName": "SA",
+        "description": "Value by which to adjust the team's rating based on the team's starting pitcher.",
+        "abbreviation": "SA"
+      },
+      {
+        "name": "bullpenAdjustment",
+        "value": 3.4777995449,
+        "displayValue": "3.5",
+        "displayName": "Bullpen Adjustment",
+        "shortDisplayName": "BPA",
+        "description": "Value by which to adjust the team's rating based on the team's bullpen.",
+        "abbreviation": "BPA"
+      },
+      {
+        "name": "battingAdjustment",
+        "value": 4.2282031385,
+        "displayValue": "4.2",
+        "displayName": "Batting Adjustment",
+        "shortDisplayName": "BA",
+        "description": "Value by which to adjust the team's rating based on the team's batting.",
+        "abbreviation": "BA"
+      },
+      {
+        "name": "parkAdjustment",
+        "value": -9.3883244,
+        "displayValue": "-9.4",
+        "displayName": "Park Adjustment",
+        "shortDisplayName": "PA",
+        "description": "Value by which to adjust the team's rating based on the park where the game is being played.",
+        "abbreviation": "PA"
+      }
+    ]
+  },
+  "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events/401472463/competitions/401472463/predictor?lang=en&region=us",
+  "lastModified": "2023-07-19T11:11:00+00:00"
+}

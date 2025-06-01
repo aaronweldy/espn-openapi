@@ -220,7 +220,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/ats - Team ATS Records. Path Params: {sport}, {league}, {year}, {seasontype}, {team_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/0/teams/{team_id}/odds-records - Team Odds Records. Path Params: As above (type often 0)
 [ ] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances - Team Past Performance vs Odds. Path Params & Query: As above, limit
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor - ESPN Predictor Metrics. Path Params: As above.
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor - ESPN Predictor Metrics. Path Params: As above. - Implemented as generic endpoint
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/powerindex/{team_id} - ESPN Power Index for Game. Path Params: As above.
 XVI. Utility & Miscellaneous Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com

@@ -1,0 +1,73 @@
+{
+  "name": "Detroit Pistons at Milwaukee Bucks",
+  "shortName": "DET @ MIL",
+  "homeTeam": {
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/teams/15?lang=en&region=us"
+    },
+    "statistics": []
+  },
+  "awayTeam": {
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/teams/8?lang=en&region=us"
+    },
+    "statistics": [
+      {
+        "name": "gameProjection",
+        "value": 15.928,
+        "displayValue": "15.9",
+        "displayName": "WIN PROB",
+        "shortDisplayName": "GP",
+        "description": "Team's predicted win percentage in this game at time of given BPI run",
+        "abbreviation": "GP"
+      },
+      {
+        "name": "matchupQuality",
+        "value": 22.121,
+        "displayValue": "22.121",
+        "displayName": "Matchup Quality",
+        "shortDisplayName": "MQ",
+        "description": "A measure of projected competitiveness and excitement in the game, using a 0 to 100 scale, with 100 as the most exciting",
+        "abbreviation": "MQ"
+      },
+      {
+        "name": "teamChanceLoss",
+        "value": 84.072,
+        "displayValue": "84.1",
+        "displayName": "Team Chance Loss",
+        "shortDisplayName": "Chance Loss",
+        "description": "",
+        "abbreviation": "TCL"
+      },
+      {
+        "name": "teamPredPtDiff",
+        "value": -11.39,
+        "displayValue": "-11.390",
+        "displayName": "Team Pred Pt Diff",
+        "shortDisplayName": "Pred Pt Diff",
+        "description": "",
+        "abbreviation": "TPPD"
+      },
+      {
+        "name": "teamExpectedPts",
+        "value": 110.783,
+        "displayValue": "110.783",
+        "displayName": "Team Expected Pts",
+        "shortDisplayName": "Expected Pts",
+        "description": "",
+        "abbreviation": "TEP"
+      },
+      {
+        "name": "oppExpectedPts",
+        "value": 122.173,
+        "displayValue": "122.173",
+        "displayName": "Opp Expected Pts",
+        "shortDisplayName": "Opp Expected Pts",
+        "description": "",
+        "abbreviation": "OEP"
+      }
+    ]
+  },
+  "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401584793/competitions/401584793/predictor?lang=en&region=us",
+  "lastModified": "2024-06-28T05:09:00+00:00"
+}
