@@ -131,9 +131,9 @@ site.api.espn.com/apis/site/v2
 site.api.espn.com/apis/common/v3
 [x] /sports/football/college-football/season - College Football Season Info (start/end dates, types) - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
 sports.core.api.espn.com
-[ ] /v2/sports/football/leagues/college-football/athletes/{athlete_id} - Detailed College Football athlete. Path Param: {athlete_id}
-[ ] /v2/sports/football/leagues/college-football/athletes/{athlete_id}/statistics - College Football Athlete statistics. Path Param: {athlete_id}
-[ ] /v2/sports/football/leagues/college-football/ - Core College Football League Info (root endpoint)
+[x] /v2/sports/football/leagues/college-football/athletes/{athlete_id} - Detailed College Football athlete. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}
+[x] /v2/sports/football/leagues/college-football/athletes/{athlete_id}/statistics - College Football Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/statistics
+[x] /v2/sports/football/leagues/college-football/ - Core College Football League Info (root endpoint) - Implemented as generic /v2/sports/{sport}/leagues/{league}
 VIII. College Basketball Endpoints (Men's)
 site.api.espn.com/apis/site/v2
 [x] /sports/basketball/mens-college-basketball/scoreboard - Men's College Basketball Scoreboard. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
@@ -144,8 +144,8 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/mens-college-basketball/rankings - Men's College Basketball Rankings - Implemented as generic /sports/{sport}/{league}/rankings
 [x] /sports/basketball/mens-college-basketball/teams/{team_abbrev_or_id}/roster - Men's College Basketball Team Roster. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster endpoint
 sports.core.api.espn.com
-[ ] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id} - Detailed Men's College Basketball athlete. Path Param: {athlete_id}
-[ ] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id}/statistics - Men's College Basketball Athlete statistics. Path Param: {athlete_id}
+[x] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id} - Detailed Men's College Basketball athlete. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}
+[x] /v2/sports/basketball/leagues/mens-college-basketball/athletes/{athlete_id}/statistics - Men's College Basketball Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/statistics
 [ ] /v2/sports/basketball/leagues/mens-college-basketball/tournaments/22/seasons/{season}/bracketology - Men's Bracketology (Historical). Path Param: {season}
 fcast.espncdn.com
 [ ] /FastcastService/pubsub/profiles/12000/topic/bracket-basketball-mens-college-basketball-22-en/message/24624/checkpoint - Men's Bracket Fastcast (Observed)
@@ -159,8 +159,8 @@ site.api.espn.com/apis/site/v2
 [x] /sports/basketball/womens-college-basketball/rankings - Women's College Basketball Rankings - Implemented as generic /sports/{sport}/{league}/rankings
 [x] /sports/basketball/womens-college-basketball/teams/{team_abbrev_or_id}/roster - Women's College Basketball Team Roster. Path Param: {team_abbrev_or_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/roster endpoint
 sports.core.api.espn.com
-[ ] /v2/sports/basketball/leagues/womens-college-basketball/athletes/{athlete_id} - Detailed Women's College Basketball athlete. Path Param: {athlete_id}
-[ ] /v2/sports/basketball/leagues/womens-college-basketball/athletes/{athlete_id}/statistics - Women's College Basketball Athlete statistics. Path Param: {athlete_id}
+[x] /v2/sports/basketball/leagues/womens-college-basketball/athletes/{athlete_id} - Detailed Women's College Basketball athlete. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}
+[x] /v2/sports/basketball/leagues/womens-college-basketball/athletes/{athlete_id}/statistics - Women's College Basketball Athlete statistics. Path Param: {athlete_id} - Covered by generic /v2/sports/{sport}/leagues/{league}/athletes/{athleteId}/statistics
 X. College Baseball Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/baseball/college-baseball/scoreboard - College Baseball Scoreboard. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint

@@ -81,6 +81,8 @@ from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
 from .last_play_reference import LastPlayReference
 from .league_enum import LeagueEnum
+from .league_info_response import LeagueInfoResponse
+from .league_season import LeagueSeason
 from .link import Link
 from .logo import Logo
 from .mlb_athlete_details_response import MlbAthleteDetailsResponse
@@ -162,6 +164,9 @@ from .probability_item import ProbabilityItem
 from .probability_source import ProbabilitySource
 from .reference import Reference
 from .season import Season
+from .season_type import SeasonType
+from .season_types_list import SeasonTypesList
+from .season_week import SeasonWeek
 from .split_stats import SplitStats
 from .sport_enum import SportEnum
 from .spread_record import SpreadRecord
@@ -263,6 +268,8 @@ __all__ = (
     "HeadToHeads",
     "LastPlayReference",
     "LeagueEnum",
+    "LeagueInfoResponse",
+    "LeagueSeason",
     "Link",
     "Logo",
     "MlbAthleteDetailsResponse",
@@ -344,6 +351,9 @@ __all__ = (
     "ProbabilitySource",
     "Reference",
     "Season",
+    "SeasonType",
+    "SeasonTypesList",
+    "SeasonWeek",
     "SplitStats",
     "SportEnum",
     "SpreadRecord",

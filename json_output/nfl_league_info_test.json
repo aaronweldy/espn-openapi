@@ -1,0 +1,446 @@
+{
+  "id": "28",
+  "name": "National Football League",
+  "displayName": "NFL",
+  "abbreviation": "NFL",
+  "slug": "nfl",
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl?lang=en&region=us",
+  "uid": "s:20~l:28",
+  "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+  "shortName": "NFL",
+  "isTournament": false,
+  "gender": "MALE",
+  "season": {
+    "year": 2024,
+    "startDate": "2024-08-01T07:00:00+00:00",
+    "endDate": "2025-02-15T07:59:00+00:00",
+    "displayName": "2024",
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us",
+    "type": {
+      "id": "4",
+      "type": 4,
+      "name": "Off Season",
+      "abbreviation": "off",
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4?lang=en&region=us",
+      "year": 2024,
+      "startDate": "2025-02-15T08:00:00+00:00",
+      "endDate": "2025-07-31T06:59:00+00:00",
+      "hasGroups": false,
+      "hasStandings": false,
+      "hasLegs": false,
+      "groups": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/groups?lang=en&region=us"
+      },
+      "weeks": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/weeks?lang=en&region=us"
+      },
+      "slug": "off-season"
+    },
+    "types": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types?lang=en&region=us",
+      "count": 4,
+      "pageIndex": 1,
+      "pageSize": 4,
+      "pageCount": 1,
+      "items": [
+        {
+          "id": "1",
+          "type": 1,
+          "name": "Preseason",
+          "abbreviation": "pre",
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/1?lang=en&region=us",
+          "year": 2024,
+          "startDate": "2024-08-01T07:00:00+00:00",
+          "endDate": "2024-09-05T06:59:00+00:00",
+          "hasGroups": false,
+          "hasStandings": true,
+          "hasLegs": false,
+          "groups": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/1/groups?lang=en&region=us"
+          },
+          "weeks": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/1/weeks?lang=en&region=us"
+          },
+          "corrections": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/1/corrections?lang=en&region=us"
+          },
+          "leaders": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/1/leaders?lang=en&region=us"
+          },
+          "slug": "preseason"
+        },
+        {
+          "id": "2",
+          "type": 2,
+          "name": "Regular Season",
+          "abbreviation": "reg",
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2?lang=en&region=us",
+          "year": 2024,
+          "startDate": "2024-09-05T07:00:00+00:00",
+          "endDate": "2025-01-09T07:59:00+00:00",
+          "hasGroups": false,
+          "hasStandings": true,
+          "hasLegs": false,
+          "groups": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/groups?lang=en&region=us"
+          },
+          "weeks": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/weeks?lang=en&region=us"
+          },
+          "corrections": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/corrections?lang=en&region=us"
+          },
+          "leaders": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/leaders?lang=en&region=us"
+          },
+          "slug": "regular-season"
+        },
+        {
+          "id": "3",
+          "type": 3,
+          "name": "Postseason",
+          "abbreviation": "post",
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3?lang=en&region=us",
+          "year": 2024,
+          "startDate": "2025-01-08T08:00:00+00:00",
+          "endDate": "2025-02-15T07:59:00+00:00",
+          "hasGroups": false,
+          "hasStandings": false,
+          "hasLegs": false,
+          "groups": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3/groups?lang=en&region=us"
+          },
+          "weeks": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3/weeks?lang=en&region=us"
+          },
+          "corrections": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3/corrections?lang=en&region=us"
+          },
+          "leaders": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3/leaders?lang=en&region=us"
+          },
+          "slug": "post-season"
+        },
+        {
+          "id": "4",
+          "type": 4,
+          "name": "Off Season",
+          "abbreviation": "off",
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4?lang=en&region=us",
+          "year": 2024,
+          "startDate": "2025-02-15T08:00:00+00:00",
+          "endDate": "2025-07-31T06:59:00+00:00",
+          "hasGroups": false,
+          "hasStandings": false,
+          "hasLegs": false,
+          "groups": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/groups?lang=en&region=us"
+          },
+          "weeks": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/weeks?lang=en&region=us"
+          },
+          "slug": "off-season"
+        }
+      ]
+    },
+    "rankings": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/rankings?lang=en&region=us"
+    },
+    "athletes": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes?lang=en&region=us"
+    },
+    "futures": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/futures?lang=en&region=us"
+    },
+    "leaders": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/3/leaders?lang=en&region=us"
+    },
+    "coaches": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/coaches?lang=en&region=us"
+    }
+  },
+  "seasons": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons?lang=en&region=us"
+  },
+  "franchises": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/franchises?lang=en&region=us"
+  },
+  "teams": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams?lang=en&region=us"
+  },
+  "group": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/groups/9?lang=en&region=us"
+  },
+  "groups": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/4/groups?lang=en&region=us"
+  },
+  "events": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events?lang=en&region=us"
+  },
+  "notes": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/notes?lang=en&region=us"
+  },
+  "rankings": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/rankings?lang=en&region=us"
+  },
+  "calendar": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/calendar?lang=en&region=us"
+  },
+  "transactions": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/transactions?lang=en&region=us"
+  },
+  "draft": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/draft?lang=en&region=us"
+  },
+  "leaders": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/leaders?lang=en&region=us"
+  },
+  "athletes": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes?lang=en&region=us"
+  },
+  "freeAgents": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/freeagents?lang=en&region=us"
+  },
+  "talentPicks": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/talentpicks?lang=en&region=us"
+  },
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Index",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/",
+      "rel": [
+        "index",
+        "desktop",
+        "league"
+      ],
+      "text": "Index"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Index",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28",
+      "rel": [
+        "index",
+        "sportscenter",
+        "app",
+        "league"
+      ],
+      "text": "Index"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Schedule",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/schedule",
+      "rel": [
+        "schedule",
+        "desktop",
+        "league"
+      ],
+      "text": "Schedule"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Schedule",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+      "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "league"
+      ],
+      "text": "Schedule"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Standings",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/standings",
+      "rel": [
+        "standings",
+        "desktop",
+        "league"
+      ],
+      "text": "Standings"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Standings",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=standings",
+      "rel": [
+        "standings",
+        "sportscenter",
+        "app",
+        "league"
+      ],
+      "text": "Standings"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Power Rankings",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/powerrankings",
+      "rel": [
+        "rankings",
+        "desktop",
+        "league"
+      ],
+      "text": "Power Rankings"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Scores",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/scoreboard",
+      "rel": [
+        "scores",
+        "desktop",
+        "league"
+      ],
+      "text": "Scores"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Scores",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=scores",
+      "rel": [
+        "scores",
+        "sportscenter",
+        "app",
+        "league"
+      ],
+      "text": "Scores"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/stats",
+      "rel": [
+        "stats",
+        "desktop",
+        "league"
+      ],
+      "text": "Stats"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Teams",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/teams",
+      "rel": [
+        "teams",
+        "desktop",
+        "league"
+      ],
+      "text": "Teams"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Players",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/players",
+      "rel": [
+        "athletes",
+        "desktop",
+        "league"
+      ],
+      "text": "Players"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Injuries",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/injuries",
+      "rel": [
+        "injuries",
+        "desktop",
+        "league"
+      ],
+      "text": "Injuries"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Odds",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nfl/odds",
+      "rel": [
+        "odds",
+        "desktop",
+        "league"
+      ],
+      "text": "Odds"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Odds",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28&section=odds",
+      "rel": [
+        "odds",
+        "sportscenter",
+        "app",
+        "league"
+      ],
+      "text": "Odds"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Freeagency",
+      "isExternal": false,
+      "isPremium": true,
+      "href": "https://insider.espn.com/nfl/freeagency/",
+      "rel": [
+        "freeagency",
+        "desktop",
+        "league"
+      ],
+      "text": "Freeagency"
+    }
+  ],
+  "logos": [
+    {
+      "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nfl.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "default"
+      ],
+      "lastUpdated": "2018-06-05T12:07:00+00:00"
+    },
+    {
+      "href": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500-dark/nfl.png&w=500&h=500&transparent=true",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "dark"
+      ],
+      "lastUpdated": "2025-06-01T15:27:00+00:00"
+    }
+  ]
+}

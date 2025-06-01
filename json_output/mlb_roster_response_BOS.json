@@ -1,20 +1,84 @@
 {
-  "timestamp": "2025-06-01T05:50:38+00:00",
+  "timestamp": "2025-06-01T15:43:48+00:00",
   "status": "success",
   "season": {
     "year": 2025,
-    "displayName": "2025",
     "type": 2,
-    "name": "Regular Season"
+    "name": "Regular Season",
+    "displayName": "2025"
   },
+  "team": {
+    "clubhouse": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox",
+    "recordSummary": "28-32",
+    "seasonSummary": "2025",
+    "standingSummary": "4th in AL East",
+    "id": "2",
+    "location": "Boston",
+    "name": "Red Sox",
+    "abbreviation": "BOS",
+    "displayName": "Boston Red Sox",
+    "color": "0d2b56",
+    "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
+    "logos": [],
+    "links": []
+  },
+  "coach": [
+    {
+      "id": "160",
+      "firstName": "Alex",
+      "lastName": "Cora",
+      "experience": 8
+    }
+  ],
   "athletes": [
     {
       "position": "Pitchers",
       "items": [
         {
+          "debutYear": 2022,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4720856/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4720856/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "4720856",
           "uid": "s:1~l:10~a:4720856",
           "guid": "a9362008-8539-37fd-8b58-ca052db35e76",
+          "alternateIds": {
+            "sdr": "4720856"
+          },
           "firstName": "Brayan",
           "lastName": "Bello",
           "fullName": "Brayan Bello",
@@ -26,6 +90,11 @@
           "displayHeight": "6' 1\"",
           "age": 26,
           "dateOfBirth": "1999-05-17T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Santa Barbara de Samana, Dominican Republic",
+            "city": "Santa Barbara de Samana",
+            "country": "Dominican Republic"
+          },
           "links": [
             {
               "language": "en-US",
@@ -139,10 +208,6 @@
           },
           "jersey": "66",
           "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -150,35 +215,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4720856/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4720856/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -194,31 +237,54 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4720856"
-          },
-          "debutYear": 2022,
-          "birthPlace": {
-            "city": "Santa Barbara de Samana",
-            "country": "Dominican Republic",
-            "displayText": "Santa Barbara de Samana, Dominican Republic"
           }
         },
         {
+          "nickname": "",
+          "debutYear": 2022,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/35876/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/35876/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
           "id": "35876",
           "uid": "s:1~l:10~a:35876",
           "guid": "6a873449-78c5-e6c4-d79c-255c31ff5f1e",
+          "alternateIds": {
+            "sdr": "3995843"
+          },
           "firstName": "Brennan",
           "lastName": "Bernardino",
           "fullName": "Brennan Bernardino",
@@ -230,6 +296,12 @@
           "displayHeight": "6' 4\"",
           "age": 33,
           "dateOfBirth": "1992-01-15T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Valencia, CA",
+            "city": "Valencia",
+            "state": "CA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -343,10 +415,6 @@
           },
           "jersey": "83",
           "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -354,35 +422,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/35876/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/35876/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -398,33 +444,53 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "alternateIds": {
-            "sdr": "3995843"
-          },
-          "nickname": "",
-          "debutYear": 2022,
-          "birthPlace": {
-            "city": "Valencia",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Valencia, CA"
           }
         },
         {
+          "debutYear": 2017,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39251/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39251/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "39251",
           "uid": "s:1~l:10~a:39251",
           "guid": "4f3a9a2c-768f-e9fe-0ae2-175d62644ea4",
+          "alternateIds": {
+            "sdr": "3034077"
+          },
           "firstName": "Walker",
           "lastName": "Buehler",
           "fullName": "Walker Buehler",
@@ -436,6 +502,12 @@
           "displayHeight": "6' 2\"",
           "age": 30,
           "dateOfBirth": "1994-07-28T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Lexington, KY",
+            "city": "Lexington",
+            "state": "KY",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -542,92 +614,9 @@
               "isPremium": false
             }
           ],
-          "slug": "walker-buehler",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/39251.png",
-            "alt": "Walker Buehler"
-          },
-          "jersey": "0",
-          "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39251/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39251/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 8
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "3034077"
-          },
-          "debutYear": 2017,
-          "birthPlace": {
-            "city": "Lexington",
-            "state": "KY",
-            "country": "United States",
-            "displayText": "Lexington, KY"
-          },
           "college": {
-            "id": "238",
             "guid": "16289c7a-8f0e-33d7-8027-833c67cb0482",
+            "id": "238",
             "mascot": "Commodores",
             "name": "Vanderbilt",
             "shortName": "Vanderbilt",
@@ -656,12 +645,90 @@
                 ]
               }
             ]
+          },
+          "slug": "walker-buehler",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/39251.png",
+            "alt": "Walker Buehler"
+          },
+          "jersey": "0",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 8
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "debutYear": 2018,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "33728",
           "uid": "s:1~l:10~a:33728",
           "guid": "5b4450ca-d46b-6c10-ca8d-c7665f1ff1ab",
+          "alternateIds": {
+            "sdr": "3033716"
+          },
           "firstName": "Nick",
           "lastName": "Burdi",
           "fullName": "Nick Burdi",
@@ -673,6 +740,12 @@
           "displayHeight": "6' 3\"",
           "age": 32,
           "dateOfBirth": "1993-01-19T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Hinsdale, IL",
+            "city": "Hinsdale",
+            "state": "IL",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -779,92 +852,9 @@
               "isPremium": false
             }
           ],
-          "slug": "nick-burdi",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33728.png",
-            "alt": "Nick Burdi"
-          },
-          "jersey": "68",
-          "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33728/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 6
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "3033716"
-          },
-          "debutYear": 2018,
-          "birthPlace": {
-            "city": "Hinsdale",
-            "state": "IL",
-            "country": "United States",
-            "displayText": "Hinsdale, IL"
-          },
           "college": {
-            "id": "97",
             "guid": "03c688de-c23e-3fc3-95aa-4b03a2b9d0df",
+            "id": "97",
             "mascot": "Cardinals",
             "name": "Louisville",
             "shortName": "Louisville",
@@ -893,12 +883,91 @@
                 ]
               }
             ]
+          },
+          "slug": "nick-burdi",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33728.png",
+            "alt": "Nick Burdi"
+          },
+          "jersey": "68",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 6
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "nickname": "",
+          "debutYear": 2010,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/30442/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/30442/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
           "id": "30442",
           "uid": "s:1~l:10~a:30442",
           "guid": "1c3e51f0-e619-be48-8aac-443cc62d5b44",
+          "alternateIds": {
+            "sdr": "2334553"
+          },
           "firstName": "Aroldis",
           "lastName": "Chapman",
           "fullName": "Aroldis Chapman",
@@ -910,6 +979,11 @@
           "displayHeight": "6' 4\"",
           "age": 37,
           "dateOfBirth": "1988-02-28T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Holguin, Cuba",
+            "city": "Holguin",
+            "country": "Cuba"
+          },
           "links": [
             {
               "language": "en-US",
@@ -1023,10 +1097,6 @@
           },
           "jersey": "44",
           "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -1034,35 +1104,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/30442/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/30442/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -1127,7 +1175,37 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2020,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4297835/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4297835/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "LEFT",
             "abbreviation": "L",
@@ -1138,21 +1216,12 @@
             "abbreviation": "L",
             "displayValue": "Left"
           },
-          "alternateIds": {
-            "sdr": "2334553"
-          },
-          "nickname": "",
-          "debutYear": 2010,
-          "birthPlace": {
-            "city": "Holguin",
-            "country": "Cuba",
-            "displayText": "Holguin, Cuba"
-          }
-        },
-        {
           "id": "4297835",
           "uid": "s:1~l:10~a:4297835",
           "guid": "758d4fc6-a046-3dc0-9280-c6279357128c",
+          "alternateIds": {
+            "sdr": "4297835"
+          },
           "firstName": "Garrett",
           "lastName": "Crochet",
           "fullName": "Garrett Crochet",
@@ -1164,6 +1233,12 @@
           "displayHeight": "6' 6\"",
           "age": 25,
           "dateOfBirth": "1999-06-21T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Ocean Springs, MS",
+            "city": "Ocean Springs",
+            "state": "MS",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -1270,92 +1345,9 @@
               "isPremium": false
             }
           ],
-          "slug": "garrett-crochet",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4297835.png",
-            "alt": "Garrett Crochet"
-          },
-          "jersey": "35",
-          "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4297835/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4297835/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 5
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "alternateIds": {
-            "sdr": "4297835"
-          },
-          "debutYear": 2020,
-          "birthPlace": {
-            "city": "Ocean Springs",
-            "state": "MS",
-            "country": "United States",
-            "displayText": "Ocean Springs, MS"
-          },
           "college": {
-            "id": "2633",
             "guid": "ff43c27b-3b2b-3a29-b1b9-4920b47b1c69",
+            "id": "2633",
             "mascot": "Volunteers",
             "name": "Tennessee",
             "shortName": "Tennessee",
@@ -1384,12 +1376,104 @@
                 ]
               }
             ]
+          },
+          "slug": "garrett-crochet",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4297835.png",
+            "alt": "Garrett Crochet"
+          },
+          "jersey": "35",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 5
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "debutYear": 2025,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "4415836",
           "uid": "s:1~l:10~a:4415836",
           "guid": "751afbf1-ebe8-31fd-b0a1-5dec0c6f03a5",
+          "alternateIds": {
+            "sdr": "4415836"
+          },
           "firstName": "Hunter",
           "lastName": "Dobbins",
           "fullName": "Hunter Dobbins",
@@ -1401,6 +1485,12 @@
           "displayHeight": "6' 2\"",
           "age": 25,
           "dateOfBirth": "1999-08-30T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Bryan, TX",
+            "city": "Bryan",
+            "state": "TX",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -1514,10 +1604,6 @@
           },
           "jersey": "73",
           "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -1525,49 +1611,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
+            },
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
           },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4415836/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
           "injuries": [],
           "teams": [
             {
@@ -1583,7 +1633,37 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2024,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -1594,21 +1674,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "4415836"
-          },
-          "debutYear": 2025,
-          "birthPlace": {
-            "city": "Bryan",
-            "state": "TX",
-            "country": "United States",
-            "displayText": "Bryan, TX"
-          }
-        },
-        {
           "id": "4414243",
           "uid": "s:1~l:10~a:4414243",
           "guid": "35e37f4f-a61e-3138-9839-baa9f72e803f",
+          "alternateIds": {
+            "sdr": "4414243"
+          },
           "firstName": "Richard",
           "lastName": "Fitts",
           "fullName": "Richard Fitts",
@@ -1620,6 +1691,12 @@
           "displayHeight": "6' 3\"",
           "age": 25,
           "dateOfBirth": "1999-12-17T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Helena, AL",
+            "city": "Helena",
+            "state": "AL",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -1726,92 +1803,9 @@
               "isPremium": false
             }
           ],
-          "slug": "richard-fitts",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4414243.png",
-            "alt": "Richard Fitts"
-          },
-          "jersey": "80",
-          "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4414243/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 2
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4414243"
-          },
-          "debutYear": 2024,
-          "birthPlace": {
-            "city": "Helena",
-            "state": "AL",
-            "country": "United States",
-            "displayText": "Helena, AL"
-          },
           "college": {
-            "id": "2",
             "guid": "59618d4c-34bc-3c11-a064-c1359b963d27",
+            "id": "2",
             "mascot": "Tigers",
             "name": "Auburn",
             "shortName": "Auburn",
@@ -1840,12 +1834,90 @@
                 ]
               }
             ]
+          },
+          "slug": "richard-fitts",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4414243.png",
+            "alt": "Richard Fitts"
+          },
+          "jersey": "80",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 2
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "debutYear": 2016,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32697/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
+              "id": "15",
+              "name": "Starting Pitcher",
+              "displayName": "Starting Pitcher",
+              "abbreviation": "SP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32697/statistics/127?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "32697",
           "uid": "s:1~l:10~a:32697",
           "guid": "cbd32ccc-85c8-f37e-5744-98b7e063f654",
+          "alternateIds": {
+            "sdr": "3022991"
+          },
           "firstName": "Lucas",
           "lastName": "Giolito",
           "fullName": "Lucas Giolito",
@@ -1857,6 +1929,12 @@
           "displayHeight": "6' 6\"",
           "age": 30,
           "dateOfBirth": "1994-07-14T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Santa Monica, CA",
+            "city": "Santa Monica",
+            "state": "CA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -1970,10 +2048,6 @@
           },
           "jersey": "54",
           "position": {
-            "id": "15",
-            "name": "Starting Pitcher",
-            "displayName": "Starting Pitcher",
-            "abbreviation": "SP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -1981,35 +2055,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32697/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/15?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32697/statistics/127?lang=en&region=us"
-              },
-              "id": "15",
-              "name": "Starting Pitcher",
-              "displayName": "Starting Pitcher",
-              "abbreviation": "SP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            }
-          ],
+            "id": "15",
+            "name": "Starting Pitcher",
+            "displayName": "Starting Pitcher",
+            "abbreviation": "SP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -2025,7 +2077,37 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2024,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5132025/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5132025/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -2036,37 +2118,33 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
+          "id": "5132025",
+          "uid": "s:1~l:10~a:5132025",
+          "guid": "b35ff3ce-75fe-3bc2-b8fc-77cea5ef015f",
           "alternateIds": {
-            "sdr": "3022991"
+            "sdr": "5132025"
           },
-          "debutYear": 2016,
+          "firstName": "Luis",
+          "lastName": "Guerrero",
+          "fullName": "Luis Guerrero",
+          "displayName": "Luis Guerrero",
+          "shortName": "L. Guerrero",
+          "weight": 215.0,
+          "displayWeight": "215 lbs",
+          "height": 72.0,
+          "displayHeight": "6' 0\"",
+          "age": 24,
+          "dateOfBirth": "2000-08-05T07:00:00+00:00",
           "birthPlace": {
-            "city": "Santa Monica",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Santa Monica, CA"
-          }
-        },
-        {
-          "id": "4917925",
-          "uid": "s:1~l:10~a:4917925",
-          "guid": "5e62a310-55bd-3688-95fc-0d0385b3132a",
-          "firstName": "Justin",
-          "lastName": "Slaten",
-          "fullName": "Justin Slaten",
-          "displayName": "Justin Slaten",
-          "shortName": "J. Slaten",
-          "weight": 222.0,
-          "displayWeight": "222 lbs",
-          "height": 76.0,
-          "displayHeight": "6' 4\"",
-          "age": 27,
-          "dateOfBirth": "1997-09-15T07:00:00+00:00",
+            "displayText": "Bani, Dominican Republic",
+            "city": "Bani",
+            "country": "Dominican Republic"
+          },
           "links": [
             {
               "language": "en-US",
               "shortText": "Player Card",
-              "href": "https://www.espn.com/mlb/player/_/id/4917925",
+              "href": "https://www.espn.com/mlb/player/_/id/5132025",
               "text": "Player Card",
               "rel": [
                 "playercard",
@@ -2079,7 +2157,7 @@
             {
               "language": "en-US",
               "shortText": "Stats",
-              "href": "https://www.espn.com/mlb/player/stats/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/stats/_/id/5132025/luis-guerrero",
               "text": "Stats",
               "rel": [
                 "stats",
@@ -2092,7 +2170,7 @@
             {
               "language": "en-US",
               "shortText": "Splits",
-              "href": "https://www.espn.com/mlb/player/splits/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/splits/_/id/5132025/luis-guerrero",
               "text": "Splits",
               "rel": [
                 "splits",
@@ -2105,7 +2183,7 @@
             {
               "language": "en-US",
               "shortText": "Game Log",
-              "href": "https://www.espn.com/mlb/player/gamelog/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/gamelog/_/id/5132025/luis-guerrero",
               "text": "Game Log",
               "rel": [
                 "gamelog",
@@ -2118,7 +2196,7 @@
             {
               "language": "en-US",
               "shortText": "News",
-              "href": "https://www.espn.com/mlb/player/news/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/news/_/id/5132025/luis-guerrero",
               "text": "News",
               "rel": [
                 "news",
@@ -2131,7 +2209,7 @@
             {
               "language": "en-US",
               "shortText": "Bio",
-              "href": "https://www.espn.com/mlb/player/bio/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/bio/_/id/5132025/luis-guerrero",
               "text": "Bio",
               "rel": [
                 "bio",
@@ -2144,7 +2222,7 @@
             {
               "language": "en-US",
               "shortText": "Overview",
-              "href": "https://www.espn.com/mlb/player/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/_/id/5132025/luis-guerrero",
               "text": "Overview",
               "rel": [
                 "overview",
@@ -2157,7 +2235,7 @@
             {
               "language": "en-US",
               "shortText": "Bat vs Pitch",
-              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/4917925/justin-slaten",
+              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/5132025/luis-guerrero",
               "text": "Bat vs Pitch",
               "rel": [
                 "batvspitch",
@@ -2168,17 +2246,13 @@
               "isPremium": false
             }
           ],
-          "slug": "justin-slaten",
+          "slug": "luis-guerrero",
           "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/4917925.png",
-            "alt": "Justin Slaten"
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/5132025.png",
+            "alt": "Luis Guerrero"
           },
-          "jersey": "63",
+          "jersey": "99",
           "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -2186,35 +2260,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4917925/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4917925/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -2223,14 +2275,45 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 2
+            "years": 0
           },
           "status": {
             "id": "1",
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "nickname": "",
+          "debutYear": 2022,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41485/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41485/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -2241,53 +2324,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "4917925"
-          },
-          "debutYear": 2024,
-          "birthPlace": {
-            "city": "Longview",
-            "state": "TX",
-            "country": "United States",
-            "displayText": "Longview, TX"
-          },
-          "college": {
-            "id": "167",
-            "guid": "e459d089-5349-3586-94b8-794ba4b038e2",
-            "mascot": "Lobos",
-            "name": "New Mexico",
-            "shortName": "New Mexico",
-            "abbrev": "UNM",
-            "logos": [
-              {
-                "lastUpdated": "2024-01-26T23:19Z",
-                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/167.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ]
-              },
-              {
-                "lastUpdated": "2024-01-26T23:24Z",
-                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/167.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ]
-              }
-            ]
-          }
-        },
-        {
           "id": "41485",
           "uid": "s:1~l:10~a:41485",
           "guid": "b1c7da42-7903-83eb-3622-b16762da2bd4",
+          "alternateIds": {
+            "sdr": "3965055"
+          },
           "firstName": "Greg",
           "lastName": "Weissert",
           "fullName": "Greg Weissert",
@@ -2299,6 +2341,12 @@
           "displayHeight": "6' 2\"",
           "age": 30,
           "dateOfBirth": "1995-02-04T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Bay Shore, NY",
+            "city": "Bay Shore",
+            "state": "NY",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -2412,10 +2460,6 @@
           },
           "jersey": "57",
           "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -2423,35 +2467,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41485/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41485/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -2467,7 +2489,37 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2021,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39674/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39674/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -2478,22 +2530,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "3965055"
-          },
-          "nickname": "",
-          "debutYear": 2022,
-          "birthPlace": {
-            "city": "Bay Shore",
-            "state": "NY",
-            "country": "United States",
-            "displayText": "Bay Shore, NY"
-          }
-        },
-        {
           "id": "39674",
           "uid": "s:1~l:10~a:39674",
           "guid": "df772eb0-dc8f-9e58-565c-2ae7f2e92283",
+          "alternateIds": {
+            "sdr": "4151065"
+          },
           "firstName": "Garrett",
           "lastName": "Whitlock",
           "fullName": "Garrett Whitlock",
@@ -2505,6 +2547,12 @@
           "displayHeight": "6' 5\"",
           "age": 28,
           "dateOfBirth": "1996-06-11T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Snellville, GA",
+            "city": "Snellville",
+            "state": "GA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -2611,92 +2659,9 @@
               "isPremium": false
             }
           ],
-          "slug": "garrett-whitlock",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/39674.png",
-            "alt": "Garrett Whitlock"
-          },
-          "jersey": "22",
-          "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
-            "leaf": true,
-            "parent": {
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39674/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/39674/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 5
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4151065"
-          },
-          "debutYear": 2021,
-          "birthPlace": {
-            "city": "Snellville",
-            "state": "GA",
-            "country": "United States",
-            "displayText": "Snellville, GA"
-          },
           "college": {
-            "id": "5",
             "guid": "e66f7388-8fbd-3c5a-8059-e7ebf6116a17",
+            "id": "5",
             "mascot": "Blazers",
             "name": "UAB",
             "shortName": "UAB",
@@ -2725,12 +2690,91 @@
                 ]
               }
             ]
+          },
+          "slug": "garrett-whitlock",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/39674.png",
+            "alt": "Garrett Whitlock"
+          },
+          "jersey": "22",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false
+            },
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 5
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "nickname": "",
+          "debutYear": 2012,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31026/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31026/statistics/77?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
           "id": "31026",
           "uid": "s:1~l:10~a:31026",
           "guid": "1ff641c7-ac4b-93f3-d8de-bf59ff518c9c",
+          "alternateIds": {
+            "sdr": "2306107"
+          },
           "firstName": "Justin",
           "lastName": "Wilson",
           "fullName": "Justin Wilson",
@@ -2742,6 +2786,12 @@
           "displayHeight": "6' 2\"",
           "age": 37,
           "dateOfBirth": "1987-08-18T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Anaheim, CA",
+            "city": "Anaheim",
+            "state": "CA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -2848,6 +2898,38 @@
               "isPremium": false
             }
           ],
+          "college": {
+            "guid": "63107bde-7921-3e0a-9cee-2710ff7af79b",
+            "id": "278",
+            "mascot": "Bulldogs",
+            "name": "Fresno State",
+            "shortName": "Fresno State",
+            "abbrev": "FRES",
+            "logos": [
+              {
+                "lastUpdated": "2023-10-06T14:34Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/278.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "default"
+                ]
+              },
+              {
+                "lastUpdated": "2023-10-06T14:35Z",
+                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/278.png",
+                "width": 500,
+                "height": 500,
+                "alt": "",
+                "rel": [
+                  "full",
+                  "dark"
+                ]
+              }
+            ]
+          },
           "slug": "justin-wilson",
           "headshot": {
             "href": "https://a.espncdn.com/i/headshots/mlb/players/full/31026.png",
@@ -2855,10 +2937,6 @@
           },
           "jersey": "32",
           "position": {
-            "id": "0",
-            "name": "Relief Pitcher",
-            "displayName": "Relief Pitcher",
-            "abbreviation": "RP",
             "leaf": true,
             "parent": {
               "id": "1",
@@ -2866,35 +2944,13 @@
               "displayName": "Pitcher",
               "abbreviation": "P",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31026/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/31026/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            }
-          ],
+            "id": "0",
+            "name": "Relief Pitcher",
+            "displayName": "Relief Pitcher",
+            "abbreviation": "RP",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -2935,59 +2991,6 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "alternateIds": {
-            "sdr": "2306107"
-          },
-          "nickname": "",
-          "debutYear": 2012,
-          "birthPlace": {
-            "city": "Anaheim",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Anaheim, CA"
-          },
-          "college": {
-            "id": "278",
-            "guid": "63107bde-7921-3e0a-9cee-2710ff7af79b",
-            "mascot": "Bulldogs",
-            "name": "Fresno State",
-            "shortName": "Fresno State",
-            "abbrev": "FRES",
-            "logos": [
-              {
-                "lastUpdated": "2023-10-06T14:34Z",
-                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/278.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "default"
-                ]
-              },
-              {
-                "lastUpdated": "2023-10-06T14:35Z",
-                "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/278.png",
-                "width": 500,
-                "height": 500,
-                "alt": "",
-                "rel": [
-                  "full",
-                  "dark"
-                ]
-              }
-            ]
           }
         }
       ]
@@ -2996,9 +2999,53 @@
       "position": "Catchers",
       "items": [
         {
+          "debutYear": 2024,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/2?lang=en&region=us",
+              "id": "2",
+              "name": "Catcher",
+              "displayName": "Catcher",
+              "abbreviation": "C",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5012120/statistics/78?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
+              "id": "10",
+              "name": "Designated Hitter",
+              "displayName": "Designated Hitter",
+              "abbreviation": "DH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5012120/statistics/86?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "5012120",
           "uid": "s:1~l:10~a:5012120",
           "guid": "ec3efeaa-14f5-3935-be93-805a36276ce2",
+          "alternateIds": {
+            "sdr": "5012120"
+          },
           "firstName": "Carlos",
           "lastName": "Narvaez",
           "fullName": "Carlos Narvaez",
@@ -3010,6 +3057,11 @@
           "displayHeight": "6' 0\"",
           "age": 26,
           "dateOfBirth": "1998-11-26T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Maracay, Venezuela",
+            "city": "Maracay",
+            "country": "Venezuela"
+          },
           "links": [
             {
               "language": "en-US",
@@ -3123,10 +3175,6 @@
           },
           "jersey": "75",
           "position": {
-            "id": "2",
-            "name": "Catcher",
-            "displayName": "Catcher",
-            "abbreviation": "C",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -3134,38 +3182,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/2?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5012120/statistics/78?lang=en&region=us"
-              },
-              "id": "2",
-              "name": "Catcher",
-              "displayName": "Catcher",
-              "abbreviation": "C",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5012120/statistics/86?lang=en&region=us"
-              },
-              "id": "10",
-              "name": "Designated Hitter",
-              "displayName": "Designated Hitter",
-              "abbreviation": "DH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
+            "id": "2",
+            "name": "Catcher",
+            "displayName": "Catcher",
+            "abbreviation": "C",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -3181,7 +3204,55 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "nickname": "",
+          "debutYear": 2021,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/2?lang=en&region=us",
+              "id": "2",
+              "name": "Catcher",
+              "displayName": "Catcher",
+              "abbreviation": "C",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/78?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
+              "id": "3",
+              "name": "First Base",
+              "displayName": "First Baseman",
+              "abbreviation": "1B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/79?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
+              "id": "10",
+              "name": "Designated Hitter",
+              "displayName": "Designated Hitter",
+              "abbreviation": "DH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/86?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -3192,20 +3263,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "5012120"
-          },
-          "debutYear": 2024,
-          "birthPlace": {
-            "city": "Maracay",
-            "country": "Venezuela",
-            "displayText": "Maracay, Venezuela"
-          }
-        },
-        {
           "id": "40086",
           "uid": "s:1~l:10~a:40086",
           "guid": "c1d98c1d-0288-2462-776b-c6e80679452c",
+          "alternateIds": {
+            "sdr": "3173127"
+          },
           "firstName": "Connor",
           "lastName": "Wong",
           "fullName": "Connor Wong",
@@ -3217,6 +3280,12 @@
           "displayHeight": "5' 10\"",
           "age": 29,
           "dateOfBirth": "1996-05-19T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Houston, TX",
+            "city": "Houston",
+            "state": "TX",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -3330,10 +3399,6 @@
           },
           "jersey": "12",
           "position": {
-            "id": "2",
-            "name": "Catcher",
-            "displayName": "Catcher",
-            "abbreviation": "C",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -3341,52 +3406,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
+            },
+            "id": "2",
+            "name": "Catcher",
+            "displayName": "Catcher",
+            "abbreviation": "C",
+            "items": []
           },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/2?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/78?lang=en&region=us"
-              },
-              "id": "2",
-              "name": "Catcher",
-              "displayName": "Catcher",
-              "abbreviation": "C",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/79?lang=en&region=us"
-              },
-              "id": "3",
-              "name": "First Base",
-              "displayName": "First Baseman",
-              "abbreviation": "1B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40086/statistics/86?lang=en&region=us"
-              },
-              "id": "10",
-              "name": "Designated Hitter",
-              "displayName": "Designated Hitter",
-              "abbreviation": "DH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
           "injuries": [],
           "teams": [
             {
@@ -3402,7 +3428,59 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        }
+      ]
+    },
+    {
+      "position": "Infielders",
+      "items": [
+        {
+          "debutYear": 2025,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/4?lang=en&region=us",
+              "id": "4",
+              "name": "Second Base",
+              "displayName": "Second Baseman",
+              "abbreviation": "2B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/80?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
+              "id": "7",
+              "name": "Left Field",
+              "displayName": "Left Fielder",
+              "abbreviation": "LF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/83?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
+              "id": "8",
+              "name": "Center Field",
+              "displayName": "Center Fielder",
+              "abbreviation": "CF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/84?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -3413,27 +3491,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "3173127"
-          },
-          "nickname": "",
-          "debutYear": 2021,
-          "birthPlace": {
-            "city": "Houston",
-            "state": "TX",
-            "country": "United States",
-            "displayText": "Houston, TX"
-          }
-        }
-      ]
-    },
-    {
-      "position": "Infielders",
-      "items": [
-        {
           "id": "5201569",
           "uid": "s:1~l:10~a:5201569",
           "guid": "d5ca2809-2534-3435-b266-dc93bf302b93",
+          "alternateIds": {
+            "sdr": "5201569"
+          },
           "firstName": "Kristian",
           "lastName": "Campbell",
           "fullName": "Kristian Campbell",
@@ -3445,6 +3508,12 @@
           "displayHeight": "6' 3\"",
           "age": 22,
           "dateOfBirth": "2002-06-28T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Chattanooga, TN",
+            "city": "Chattanooga",
+            "state": "TN",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -3558,10 +3627,6 @@
           },
           "jersey": "28",
           "position": {
-            "id": "4",
-            "name": "Second Base",
-            "displayName": "Second Baseman",
-            "abbreviation": "2B",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -3569,52 +3634,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
+            },
+            "id": "4",
+            "name": "Second Base",
+            "displayName": "Second Baseman",
+            "abbreviation": "2B",
+            "items": []
           },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/4?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/80?lang=en&region=us"
-              },
-              "id": "4",
-              "name": "Second Base",
-              "displayName": "Second Baseman",
-              "abbreviation": "2B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/83?lang=en&region=us"
-              },
-              "id": "7",
-              "name": "Left Field",
-              "displayName": "Left Fielder",
-              "abbreviation": "LF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/5201569/statistics/84?lang=en&region=us"
-              },
-              "id": "8",
-              "name": "Center Field",
-              "displayName": "Center Fielder",
-              "abbreviation": "CF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            }
-          ],
           "injuries": [],
           "teams": [
             {
@@ -3623,39 +3649,85 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 0
+            "years": 1
           },
           "status": {
             "id": "1",
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2023,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/4?lang=en&region=us",
+              "id": "4",
+              "name": "Second Base",
+              "displayName": "Second Baseman",
+              "abbreviation": "2B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/80?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
+              "id": "5",
+              "name": "Third Base",
+              "displayName": "Third Baseman",
+              "abbreviation": "3B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/81?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
+              "id": "6",
+              "name": "Shortstop",
+              "displayName": "Shortstop",
+              "abbreviation": "SS",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/82?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
+              "id": "12",
+              "name": "Pinch Runner",
+              "displayName": "Pinch Runner",
+              "abbreviation": "PR",
+              "leaf": true
+            }
+          ],
           "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
           },
           "throws": {
             "type": "RIGHT",
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "5201569"
-          },
-          "debutYear": 2025,
-          "birthPlace": {
-            "city": "Chattanooga",
-            "state": "TN",
-            "country": "United States",
-            "displayText": "Chattanooga, TN"
-          }
-        },
-        {
           "id": "42987",
           "uid": "s:1~l:10~a:42987",
           "guid": "494a9418-ed19-3e38-80e3-c8e01a97882b",
+          "alternateIds": {
+            "sdr": "4081411"
+          },
           "firstName": "David",
           "lastName": "Hamilton",
           "fullName": "David Hamilton",
@@ -3667,6 +3739,12 @@
           "displayHeight": "5' 11\"",
           "age": 27,
           "dateOfBirth": "1997-09-29T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "San Marcos, TX",
+            "city": "San Marcos",
+            "state": "TX",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -3773,117 +3851,9 @@
               "isPremium": false
             }
           ],
-          "slug": "david-hamilton",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/42987.png",
-            "alt": "David Hamilton"
-          },
-          "jersey": "17",
-          "position": {
-            "id": "4",
-            "name": "Second Base",
-            "displayName": "Second Baseman",
-            "abbreviation": "2B",
-            "leaf": true,
-            "parent": {
-              "id": "13",
-              "name": "Infielder",
-              "displayName": "Infielder",
-              "abbreviation": "IF",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/4?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/80?lang=en&region=us"
-              },
-              "id": "4",
-              "name": "Second Base",
-              "displayName": "Second Baseman",
-              "abbreviation": "2B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/81?lang=en&region=us"
-              },
-              "id": "5",
-              "name": "Third Base",
-              "displayName": "Third Baseman",
-              "abbreviation": "3B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42987/statistics/82?lang=en&region=us"
-              },
-              "id": "6",
-              "name": "Shortstop",
-              "displayName": "Shortstop",
-              "abbreviation": "SS",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
-              "id": "12",
-              "name": "Pinch Runner",
-              "displayName": "Pinch Runner",
-              "abbreviation": "PR",
-              "leaf": true
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 3
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4081411"
-          },
-          "debutYear": 2023,
-          "birthPlace": {
-            "city": "San Marcos",
-            "state": "TX",
-            "country": "United States",
-            "displayText": "San Marcos, TX"
-          },
           "college": {
-            "id": "251",
             "guid": "a5881f63-e491-3e48-9064-916de4a4849a",
+            "id": "251",
             "mascot": "Longhorns",
             "name": "Texas",
             "shortName": "Texas",
@@ -3912,12 +3882,93 @@
                 ]
               }
             ]
+          },
+          "slug": "david-hamilton",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/42987.png",
+            "alt": "David Hamilton"
+          },
+          "jersey": "17",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "13",
+              "name": "Infielder",
+              "displayName": "Infielder",
+              "abbreviation": "IF",
+              "leaf": false
+            },
+            "id": "4",
+            "name": "Second Base",
+            "displayName": "Second Baseman",
+            "abbreviation": "2B",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 3
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "debutYear": 2025,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
+              "id": "5",
+              "name": "Third Base",
+              "displayName": "Third Baseman",
+              "abbreviation": "3B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4872648/statistics/81?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
+              "id": "6",
+              "name": "Shortstop",
+              "displayName": "Shortstop",
+              "abbreviation": "SS",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4872648/statistics/82?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "4872648",
           "uid": "s:1~l:10~a:4872648",
           "guid": "0355c8cb-47f0-3606-adb0-219939582115",
+          "alternateIds": {
+            "sdr": "4872648"
+          },
           "firstName": "Marcelo",
           "lastName": "Mayer",
           "fullName": "Marcelo Mayer",
@@ -3929,6 +3980,12 @@
           "displayHeight": "6' 3\"",
           "age": 22,
           "dateOfBirth": "2002-12-12T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Chula Vista, CA",
+            "city": "Chula Vista",
+            "state": "CA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -4042,10 +4099,6 @@
           },
           "jersey": "39",
           "position": {
-            "id": "6",
-            "name": "Shortstop",
-            "displayName": "Shortstop",
-            "abbreviation": "SS",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -4053,38 +4106,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4872648/statistics/81?lang=en&region=us"
-              },
-              "id": "5",
-              "name": "Third Base",
-              "displayName": "Third Baseman",
-              "abbreviation": "3B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4872648/statistics/82?lang=en&region=us"
-              },
-              "id": "6",
-              "name": "Shortstop",
-              "displayName": "Shortstop",
-              "abbreviation": "SS",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            }
-          ],
+            "id": "6",
+            "name": "Shortstop",
+            "displayName": "Shortstop",
+            "abbreviation": "SS",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -4100,240 +4128,50 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4872648"
-          },
-          "debutYear": 2025,
-          "birthPlace": {
-            "city": "Chula Vista",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Chula Vista, CA"
           }
         },
         {
-          "id": "42979",
-          "uid": "s:1~l:10~a:42979",
-          "guid": "bbbfe7c0-329c-30ae-845b-7b9e17f02db6",
-          "firstName": "Nick",
-          "lastName": "Sogard",
-          "fullName": "Nick Sogard",
-          "displayName": "Nick Sogard",
-          "shortName": "N. Sogard",
-          "weight": 189.0,
-          "displayWeight": "189 lbs",
-          "height": 73.0,
-          "displayHeight": "6' 1\"",
-          "age": 27,
-          "dateOfBirth": "1997-09-09T07:00:00+00:00",
-          "links": [
-            {
-              "language": "en-US",
-              "shortText": "Player Card",
-              "href": "https://www.espn.com/mlb/player/_/id/42979",
-              "text": "Player Card",
-              "rel": [
-                "playercard",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Stats",
-              "href": "https://www.espn.com/mlb/player/stats/_/id/42979/nick-sogard",
-              "text": "Stats",
-              "rel": [
-                "stats",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Splits",
-              "href": "https://www.espn.com/mlb/player/splits/_/id/42979/nick-sogard",
-              "text": "Splits",
-              "rel": [
-                "splits",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Game Log",
-              "href": "https://www.espn.com/mlb/player/gamelog/_/id/42979/nick-sogard",
-              "text": "Game Log",
-              "rel": [
-                "gamelog",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "News",
-              "href": "https://www.espn.com/mlb/player/news/_/id/42979/nick-sogard",
-              "text": "News",
-              "rel": [
-                "news",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bio",
-              "href": "https://www.espn.com/mlb/player/bio/_/id/42979/nick-sogard",
-              "text": "Bio",
-              "rel": [
-                "bio",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Overview",
-              "href": "https://www.espn.com/mlb/player/_/id/42979/nick-sogard",
-              "text": "Overview",
-              "rel": [
-                "overview",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            },
-            {
-              "language": "en-US",
-              "shortText": "Bat vs Pitch",
-              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/42979/nick-sogard",
-              "text": "Bat vs Pitch",
-              "rel": [
-                "batvspitch",
-                "desktop",
-                "athlete"
-              ],
-              "isExternal": false,
-              "isPremium": false
-            }
-          ],
-          "slug": "nick-sogard",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/42979.png",
-            "alt": "Nick Sogard"
-          },
-          "jersey": "20",
-          "position": {
-            "id": "3",
-            "name": "First Base",
-            "displayName": "First Baseman",
-            "abbreviation": "1B",
-            "leaf": true,
-            "parent": {
-              "id": "13",
-              "name": "Infielder",
-              "displayName": "Infielder",
-              "abbreviation": "IF",
-              "leaf": false
-            }
-          },
+          "debutYear": 2016,
           "positions": [
             {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42979/statistics/79?lang=en&region=us"
-              },
-              "id": "3",
-              "name": "First Base",
-              "displayName": "First Baseman",
-              "abbreviation": "1B",
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
+              "id": "6",
+              "name": "Shortstop",
+              "displayName": "Shortstop",
+              "abbreviation": "SS",
               "leaf": true,
               "parent": {
                 "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32150/statistics/82?lang=en&region=us"
               }
             },
             {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/5?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/42979/statistics/81?lang=en&region=us"
-              },
-              "id": "5",
-              "name": "Third Base",
-              "displayName": "Third Baseman",
-              "abbreviation": "3B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
+              "id": "12",
+              "name": "Pinch Runner",
+              "displayName": "Pinch Runner",
+              "abbreviation": "PR",
+              "leaf": true
             }
           ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 2
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
           "bats": {
-            "type": "BOTH",
-            "abbreviation": "B",
-            "displayValue": "Both"
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
           },
           "throws": {
             "type": "RIGHT",
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "4425104"
-          },
-          "debutYear": 2024,
-          "birthPlace": {
-            "city": "Los Angeles",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Los Angeles, CA"
-          }
-        },
-        {
           "id": "32150",
           "uid": "s:1~l:10~a:32150",
           "guid": "7b86c936-8027-3486-082c-f189e53b3e16",
+          "alternateIds": {
+            "sdr": "2617756"
+          },
           "firstName": "Trevor",
           "lastName": "Story",
           "fullName": "Trevor Story",
@@ -4345,6 +4183,12 @@
           "displayHeight": "6' 1\"",
           "age": 32,
           "dateOfBirth": "1992-11-15T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Irving, TX",
+            "city": "Irving",
+            "state": "TX",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -4458,10 +4302,6 @@
           },
           "jersey": "10",
           "position": {
-            "id": "6",
-            "name": "Shortstop",
-            "displayName": "Shortstop",
-            "abbreviation": "SS",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -4469,32 +4309,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/6?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/32150/statistics/82?lang=en&region=us"
-              },
-              "id": "6",
-              "name": "Shortstop",
-              "displayName": "Shortstop",
-              "abbreviation": "SS",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
-              "id": "12",
-              "name": "Pinch Runner",
-              "displayName": "Pinch Runner",
-              "abbreviation": "PR",
-              "leaf": true
-            }
-          ],
+            "id": "6",
+            "name": "Shortstop",
+            "displayName": "Shortstop",
+            "abbreviation": "SS",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -4510,32 +4331,81 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2019,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
+              "id": "0",
+              "name": "Relief Pitcher",
+              "displayName": "Relief Pitcher",
+              "abbreviation": "RP",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/128?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
+              "id": "1",
+              "name": "Pitcher",
+              "displayName": "Pitcher",
+              "abbreviation": "P",
+              "leaf": false,
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/77?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
+              "id": "3",
+              "name": "First Base",
+              "displayName": "First Baseman",
+              "abbreviation": "1B",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/79?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
+              "id": "11",
+              "name": "Pinch Hitter",
+              "displayName": "Pinch Hitter",
+              "abbreviation": "PH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/87?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
+            "type": "BOTH",
+            "abbreviation": "B",
+            "displayValue": "Both"
           },
           "throws": {
             "type": "RIGHT",
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "2617756"
-          },
-          "debutYear": 2016,
-          "birthPlace": {
-            "city": "Irving",
-            "state": "TX",
-            "country": "United States",
-            "displayText": "Irving, TX"
-          }
-        },
-        {
           "id": "40754",
           "uid": "s:1~l:10~a:40754",
           "guid": "1ab282fd-0698-41d7-35a0-be879e8a676a",
+          "alternateIds": {
+            "sdr": "4321720"
+          },
           "firstName": "Abraham",
           "lastName": "Toro",
           "fullName": "Abraham Toro",
@@ -4547,6 +4417,12 @@
           "displayHeight": "6' 0\"",
           "age": 28,
           "dateOfBirth": "1996-12-20T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Longueuil, Canada",
+            "city": "Longueuil",
+            "state": "PQ",
+            "country": "Canada"
+          },
           "links": [
             {
               "language": "en-US",
@@ -4653,6 +4529,15 @@
               "isPremium": false
             }
           ],
+          "college": {
+            "guid": "9d4c6b85-685b-3f81-92ef-66fc166817bb",
+            "id": "110389",
+            "mascot": "Trojans",
+            "name": "Seminole State (OK)",
+            "shortName": "Seminole State (OK)",
+            "abbrev": "SEMIN",
+            "logos": []
+          },
           "slug": "abraham-toro",
           "headshot": {
             "href": "https://a.espncdn.com/i/headshots/mlb/players/full/40754.png",
@@ -4660,10 +4545,6 @@
           },
           "jersey": "29",
           "position": {
-            "id": "3",
-            "name": "First Base",
-            "displayName": "First Baseman",
-            "abbreviation": "1B",
             "leaf": true,
             "parent": {
               "id": "13",
@@ -4671,63 +4552,13 @@
               "displayName": "Infielder",
               "abbreviation": "IF",
               "leaf": false
-            }
+            },
+            "id": "3",
+            "name": "First Base",
+            "displayName": "First Baseman",
+            "abbreviation": "1B",
+            "items": []
           },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/0?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/128?lang=en&region=us"
-              },
-              "id": "0",
-              "name": "Relief Pitcher",
-              "displayName": "Relief Pitcher",
-              "abbreviation": "RP",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/1?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/77?lang=en&region=us"
-              },
-              "id": "1",
-              "name": "Pitcher",
-              "displayName": "Pitcher",
-              "abbreviation": "P",
-              "leaf": false
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/3?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/79?lang=en&region=us"
-              },
-              "id": "3",
-              "name": "First Base",
-              "displayName": "First Baseman",
-              "abbreviation": "1B",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/13?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/40754/statistics/87?lang=en&region=us"
-              },
-              "id": "11",
-              "name": "Pinch Hitter",
-              "displayName": "Pinch Hitter",
-              "abbreviation": "PH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
           "injuries": [],
           "teams": [
             {
@@ -4736,42 +4567,13 @@
           ],
           "contracts": [],
           "experience": {
-            "years": 6
+            "years": 7
           },
           "status": {
             "id": "1",
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "BOTH",
-            "abbreviation": "B",
-            "displayValue": "Both"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4321720"
-          },
-          "debutYear": 2019,
-          "birthPlace": {
-            "city": "Longueuil",
-            "state": "PQ",
-            "country": "Canada",
-            "displayText": "Longueuil, Canada"
-          },
-          "college": {
-            "id": "110389",
-            "guid": "9d4c6b85-685b-3f81-92ef-66fc166817bb",
-            "mascot": "Trojans",
-            "name": "Seminole State (OK)",
-            "shortName": "Seminole State (OK)",
-            "abbrev": "SEMIN",
-            "logos": []
           }
         }
       ]
@@ -4780,9 +4582,53 @@
       "position": "Outfielders",
       "items": [
         {
+          "debutYear": 2023,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
+              "id": "9",
+              "name": "Right Field",
+              "displayName": "Right Fielder",
+              "abbreviation": "RF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4990055/statistics/85?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
+              "id": "11",
+              "name": "Pinch Hitter",
+              "displayName": "Pinch Hitter",
+              "abbreviation": "PH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4990055/statistics/87?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
           "id": "4990055",
           "uid": "s:1~l:10~a:4990055",
           "guid": "c01c2305-33d5-3753-8529-79086533e04d",
+          "alternateIds": {
+            "sdr": "4990055"
+          },
           "firstName": "Wilyer",
           "lastName": "Abreu",
           "fullName": "Wilyer Abreu",
@@ -4794,6 +4640,11 @@
           "displayHeight": "5' 10\"",
           "age": 25,
           "dateOfBirth": "1999-06-24T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Maracaibo, Venezuela",
+            "city": "Maracaibo",
+            "country": "Venezuela"
+          },
           "links": [
             {
               "language": "en-US",
@@ -4907,10 +4758,6 @@
           },
           "jersey": "52",
           "position": {
-            "id": "9",
-            "name": "Right Field",
-            "displayName": "Right Fielder",
-            "abbreviation": "RF",
             "leaf": true,
             "parent": {
               "id": "14",
@@ -4918,38 +4765,13 @@
               "displayName": "Outfielder",
               "abbreviation": "OF",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4990055/statistics/85?lang=en&region=us"
-              },
-              "id": "9",
-              "name": "Right Field",
-              "displayName": "Right Fielder",
-              "abbreviation": "RF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4990055/statistics/87?lang=en&region=us"
-              },
-              "id": "11",
-              "name": "Pinch Hitter",
-              "displayName": "Pinch Hitter",
-              "abbreviation": "PH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
+            "id": "9",
+            "name": "Right Field",
+            "displayName": "Right Fielder",
+            "abbreviation": "RF",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -4965,31 +4787,71 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "nickname": "",
+          "debutYear": 2021,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
+              "id": "7",
+              "name": "Left Field",
+              "displayName": "Left Fielder",
+              "abbreviation": "LF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/83?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
+              "id": "8",
+              "name": "Center Field",
+              "displayName": "Center Fielder",
+              "abbreviation": "CF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/84?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
+              "id": "9",
+              "name": "Right Field",
+              "displayName": "Right Fielder",
+              "abbreviation": "RF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/85?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "LEFT",
             "abbreviation": "L",
             "displayValue": "Left"
           },
           "throws": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "4990055"
-          },
-          "debutYear": 2023,
-          "birthPlace": {
-            "city": "Maracaibo",
-            "country": "Venezuela",
-            "displayText": "Maracaibo, Venezuela"
-          }
-        },
-        {
           "id": "41610",
           "uid": "s:1~l:10~a:41610",
           "guid": "e2897bf5-e89b-aaca-a7de-7e5dc498352a",
+          "alternateIds": {
+            "sdr": "4019882"
+          },
           "firstName": "Jarren",
           "lastName": "Duran",
           "fullName": "Jarren Duran",
@@ -5001,6 +4863,12 @@
           "displayHeight": "6' 1\"",
           "age": 28,
           "dateOfBirth": "1996-09-05T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Corona, CA",
+            "city": "Corona",
+            "state": "CA",
+            "country": "United States"
+          },
           "links": [
             {
               "language": "en-US",
@@ -5107,110 +4975,9 @@
               "isPremium": false
             }
           ],
-          "slug": "jarren-duran",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/41610.png",
-            "alt": "Jarren Duran"
-          },
-          "jersey": "16",
-          "position": {
-            "id": "7",
-            "name": "Left Field",
-            "displayName": "Left Fielder",
-            "abbreviation": "LF",
-            "leaf": true,
-            "parent": {
-              "id": "14",
-              "name": "Outfielder",
-              "displayName": "Outfielder",
-              "abbreviation": "OF",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/83?lang=en&region=us"
-              },
-              "id": "7",
-              "name": "Left Field",
-              "displayName": "Left Fielder",
-              "abbreviation": "LF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/84?lang=en&region=us"
-              },
-              "id": "8",
-              "name": "Center Field",
-              "displayName": "Center Fielder",
-              "abbreviation": "CF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/41610/statistics/85?lang=en&region=us"
-              },
-              "id": "9",
-              "name": "Right Field",
-              "displayName": "Right Fielder",
-              "abbreviation": "RF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 5
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "4019882"
-          },
-          "nickname": "",
-          "debutYear": 2021,
-          "birthPlace": {
-            "city": "Corona",
-            "state": "CA",
-            "country": "United States",
-            "displayText": "Corona, CA"
-          },
           "college": {
-            "id": "299",
             "guid": "17768512-e9bf-3563-8a4b-2922729600dc",
+            "id": "299",
             "mascot": "Beach",
             "name": "Long Beach State",
             "shortName": "Long Beach State",
@@ -5239,12 +5006,262 @@
                 ]
               }
             ]
+          },
+          "slug": "jarren-duran",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/41610.png",
+            "alt": "Jarren Duran"
+          },
+          "jersey": "16",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "14",
+              "name": "Outfielder",
+              "displayName": "Outfielder",
+              "abbreviation": "OF",
+              "leaf": false
+            },
+            "id": "7",
+            "name": "Left Field",
+            "displayName": "Left Fielder",
+            "abbreviation": "LF",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 5
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         },
         {
+          "debutYear": 2022,
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "id": "42845",
+          "uid": "s:1~l:10~a:42845",
+          "guid": "7b16fcb2-4c55-3cf1-acb2-4c9632a56582",
+          "alternateIds": {
+            "sdr": "4298391"
+          },
+          "firstName": "Nate",
+          "lastName": "Eaton",
+          "fullName": "Nate Eaton",
+          "displayName": "Nate Eaton",
+          "shortName": "N. Eaton",
+          "weight": 200.0,
+          "displayWeight": "200 lbs",
+          "height": 71.0,
+          "displayHeight": "5' 11\"",
+          "age": 28,
+          "dateOfBirth": "1996-12-22T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Chester, VA",
+            "city": "Chester",
+            "state": "VA",
+            "country": "United States"
+          },
+          "links": [
+            {
+              "language": "en-US",
+              "shortText": "Player Card",
+              "href": "https://www.espn.com/mlb/player/_/id/42845",
+              "text": "Player Card",
+              "rel": [
+                "playercard",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Stats",
+              "href": "https://www.espn.com/mlb/player/stats/_/id/42845/nate-eaton",
+              "text": "Stats",
+              "rel": [
+                "stats",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Splits",
+              "href": "https://www.espn.com/mlb/player/splits/_/id/42845/nate-eaton",
+              "text": "Splits",
+              "rel": [
+                "splits",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Game Log",
+              "href": "https://www.espn.com/mlb/player/gamelog/_/id/42845/nate-eaton",
+              "text": "Game Log",
+              "rel": [
+                "gamelog",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "News",
+              "href": "https://www.espn.com/mlb/player/news/_/id/42845/nate-eaton",
+              "text": "News",
+              "rel": [
+                "news",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bio",
+              "href": "https://www.espn.com/mlb/player/bio/_/id/42845/nate-eaton",
+              "text": "Bio",
+              "rel": [
+                "bio",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Overview",
+              "href": "https://www.espn.com/mlb/player/_/id/42845/nate-eaton",
+              "text": "Overview",
+              "rel": [
+                "overview",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            },
+            {
+              "language": "en-US",
+              "shortText": "Bat vs Pitch",
+              "href": "https://www.espn.com/mlb/player/batvspitch/_/id/42845/nate-eaton",
+              "text": "Bat vs Pitch",
+              "rel": [
+                "batvspitch",
+                "desktop",
+                "athlete"
+              ],
+              "isExternal": false,
+              "isPremium": false
+            }
+          ],
+          "slug": "nate-eaton",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/42845.png",
+            "alt": "Nate Eaton"
+          },
+          "jersey": "40",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "14",
+              "name": "Outfielder",
+              "displayName": "Outfielder",
+              "abbreviation": "OF",
+              "leaf": false
+            },
+            "id": "9",
+            "name": "Right Field",
+            "displayName": "Right Fielder",
+            "abbreviation": "RF",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [],
+          "contracts": [],
+          "experience": {
+            "years": 0
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
+          }
+        },
+        {
+          "debutYear": 2023,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
+              "id": "8",
+              "name": "Center Field",
+              "displayName": "Center Fielder",
+              "abbreviation": "CF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4987382/statistics/84?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
+              "id": "12",
+              "name": "Pinch Runner",
+              "displayName": "Pinch Runner",
+              "abbreviation": "PR",
+              "leaf": true
+            }
+          ],
+          "bats": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "4987382",
           "uid": "s:1~l:10~a:4987382",
           "guid": "e6c4099e-80c4-3ee3-8cf9-dc4fc0a06b1c",
+          "alternateIds": {
+            "sdr": "4987382"
+          },
           "firstName": "Ceddanne",
           "lastName": "Rafaela",
           "fullName": "Ceddanne Rafaela",
@@ -5256,6 +5273,11 @@
           "displayHeight": "5' 10\"",
           "age": 24,
           "dateOfBirth": "2000-09-18T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Willemstad, Curacao",
+            "city": "Willemstad",
+            "country": "Curacao"
+          },
           "links": [
             {
               "language": "en-US",
@@ -5369,10 +5391,6 @@
           },
           "jersey": "3",
           "position": {
-            "id": "8",
-            "name": "Center Field",
-            "displayName": "Center Fielder",
-            "abbreviation": "CF",
             "leaf": true,
             "parent": {
               "id": "14",
@@ -5380,32 +5398,13 @@
               "displayName": "Outfielder",
               "abbreviation": "OF",
               "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/8?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/4987382/statistics/84?lang=en&region=us"
-              },
-              "id": "8",
-              "name": "Center Field",
-              "displayName": "Center Fielder",
-              "abbreviation": "CF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
             },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/12?lang=en&region=us",
-              "id": "12",
-              "name": "Pinch Runner",
-              "displayName": "Pinch Runner",
-              "abbreviation": "PR",
-              "leaf": true
-            }
-          ],
+            "id": "8",
+            "name": "Center Field",
+            "displayName": "Center Fielder",
+            "abbreviation": "CF",
+            "items": []
+          },
           "injuries": [],
           "teams": [
             {
@@ -5421,7 +5420,54 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
+          }
+        },
+        {
+          "debutYear": 2015,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
+              "id": "7",
+              "name": "Left Field",
+              "displayName": "Left Fielder",
+              "abbreviation": "LF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/83?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
+              "id": "9",
+              "name": "Right Field",
+              "displayName": "Right Fielder",
+              "abbreviation": "RF",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/85?lang=en&region=us"
+              }
+            },
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
+              "id": "11",
+              "name": "Pinch Hitter",
+              "displayName": "Pinch Hitter",
+              "abbreviation": "PH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/87?lang=en&region=us"
+              }
+            }
+          ],
           "bats": {
             "type": "RIGHT",
             "abbreviation": "R",
@@ -5432,20 +5478,12 @@
             "abbreviation": "R",
             "displayValue": "Right"
           },
-          "alternateIds": {
-            "sdr": "4987382"
-          },
-          "debutYear": 2023,
-          "birthPlace": {
-            "city": "Willemstad",
-            "country": "Curacao",
-            "displayText": "Willemstad, Curacao"
-          }
-        },
-        {
           "id": "33411",
           "uid": "s:1~l:10~a:33411",
           "guid": "4f709b23-4cab-76ce-352e-ba4014c8a69b",
+          "alternateIds": {
+            "sdr": "2962507"
+          },
           "firstName": "Rob",
           "lastName": "Refsnyder",
           "fullName": "Rob Refsnyder",
@@ -5457,6 +5495,11 @@
           "displayHeight": "6' 0\"",
           "age": 34,
           "dateOfBirth": "1991-03-26T08:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Seoul, South Korea",
+            "city": "Seoul",
+            "country": "South Korea"
+          },
           "links": [
             {
               "language": "en-US",
@@ -5563,108 +5606,9 @@
               "isPremium": false
             }
           ],
-          "slug": "rob-refsnyder",
-          "headshot": {
-            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33411.png",
-            "alt": "Rob Refsnyder"
-          },
-          "jersey": "30",
-          "position": {
-            "id": "9",
-            "name": "Right Field",
-            "displayName": "Right Fielder",
-            "abbreviation": "RF",
-            "leaf": true,
-            "parent": {
-              "id": "14",
-              "name": "Outfielder",
-              "displayName": "Outfielder",
-              "abbreviation": "OF",
-              "leaf": false
-            }
-          },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/7?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/83?lang=en&region=us"
-              },
-              "id": "7",
-              "name": "Left Field",
-              "displayName": "Left Fielder",
-              "abbreviation": "LF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/9?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/85?lang=en&region=us"
-              },
-              "id": "9",
-              "name": "Right Field",
-              "displayName": "Right Fielder",
-              "abbreviation": "RF",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/14?lang=en&region=us"
-              }
-            },
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/11?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33411/statistics/87?lang=en&region=us"
-              },
-              "id": "11",
-              "name": "Pinch Hitter",
-              "displayName": "Pinch Hitter",
-              "abbreviation": "PH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
-          "injuries": [],
-          "teams": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
-            }
-          ],
-          "contracts": [],
-          "experience": {
-            "years": 10
-          },
-          "status": {
-            "id": "1",
-            "name": "Active",
-            "type": "active",
-            "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "2962507"
-          },
-          "debutYear": 2015,
-          "birthPlace": {
-            "city": "Seoul",
-            "country": "South Korea",
-            "displayText": "Seoul, South Korea"
-          },
           "college": {
-            "id": "12",
             "guid": "eed5201f-d67e-3967-9507-a5c3d0f6c847",
+            "id": "12",
             "mascot": "Wildcats",
             "name": "Arizona",
             "shortName": "Arizona",
@@ -5693,6 +5637,43 @@
                 ]
               }
             ]
+          },
+          "slug": "rob-refsnyder",
+          "headshot": {
+            "href": "https://a.espncdn.com/i/headshots/mlb/players/full/33411.png",
+            "alt": "Rob Refsnyder"
+          },
+          "jersey": "30",
+          "position": {
+            "leaf": true,
+            "parent": {
+              "id": "14",
+              "name": "Outfielder",
+              "displayName": "Outfielder",
+              "abbreviation": "OF",
+              "leaf": false
+            },
+            "id": "9",
+            "name": "Right Field",
+            "displayName": "Right Fielder",
+            "abbreviation": "RF",
+            "items": []
+          },
+          "injuries": [],
+          "teams": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/teams/2?lang=en&region=us"
+            }
+          ],
+          "contracts": [],
+          "experience": {
+            "years": 10
+          },
+          "status": {
+            "id": "1",
+            "name": "Active",
+            "type": "active",
+            "abbreviation": "Active"
           }
         }
       ]
@@ -5701,9 +5682,40 @@
       "position": "Designated Hitter",
       "items": [
         {
+          "nickname": "",
+          "debutYear": 2017,
+          "positions": [
+            {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
+              "id": "10",
+              "name": "Designated Hitter",
+              "displayName": "Designated Hitter",
+              "abbreviation": "DH",
+              "leaf": true,
+              "parent": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
+              },
+              "statistics": {
+                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33859/statistics/86?lang=en&region=us"
+              }
+            }
+          ],
+          "bats": {
+            "type": "LEFT",
+            "abbreviation": "L",
+            "displayValue": "Left"
+          },
+          "throws": {
+            "type": "RIGHT",
+            "abbreviation": "R",
+            "displayValue": "Right"
+          },
           "id": "33859",
           "uid": "s:1~l:10~a:33859",
           "guid": "9a29840a-6ec6-8b17-995a-f01bc7567f2d",
+          "alternateIds": {
+            "sdr": "3173511"
+          },
           "firstName": "Rafael",
           "lastName": "Devers",
           "fullName": "Rafael Devers",
@@ -5715,6 +5727,11 @@
           "displayHeight": "6' 0\"",
           "age": 28,
           "dateOfBirth": "1996-10-24T07:00:00+00:00",
+          "birthPlace": {
+            "displayText": "Sanchez, Dominican Republic",
+            "city": "Sanchez",
+            "country": "Dominican Republic"
+          },
           "links": [
             {
               "language": "en-US",
@@ -5828,10 +5845,6 @@
           },
           "jersey": "11",
           "position": {
-            "id": "10",
-            "name": "Designated Hitter",
-            "displayName": "Designated Hitter",
-            "abbreviation": "DH",
             "leaf": true,
             "parent": {
               "id": "18",
@@ -5839,24 +5852,13 @@
               "displayName": "Batter",
               "abbreviation": "BA",
               "leaf": false
-            }
+            },
+            "id": "10",
+            "name": "Designated Hitter",
+            "displayName": "Designated Hitter",
+            "abbreviation": "DH",
+            "items": []
           },
-          "positions": [
-            {
-              "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/10?lang=en&region=us",
-              "statistics": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/seasons/2025/types/2/athletes/33859/statistics/86?lang=en&region=us"
-              },
-              "id": "10",
-              "name": "Designated Hitter",
-              "displayName": "Designated Hitter",
-              "abbreviation": "DH",
-              "leaf": true,
-              "parent": {
-                "$ref": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/mlb/positions/18?lang=en&region=us"
-              }
-            }
-          ],
           "injuries": [],
           "teams": [
             {
@@ -5872,50 +5874,9 @@
             "name": "Active",
             "type": "active",
             "abbreviation": "Active"
-          },
-          "bats": {
-            "type": "LEFT",
-            "abbreviation": "L",
-            "displayValue": "Left"
-          },
-          "throws": {
-            "type": "RIGHT",
-            "abbreviation": "R",
-            "displayValue": "Right"
-          },
-          "alternateIds": {
-            "sdr": "3173511"
-          },
-          "nickname": "",
-          "debutYear": 2017,
-          "birthPlace": {
-            "city": "Sanchez",
-            "country": "Dominican Republic",
-            "displayText": "Sanchez, Dominican Republic"
           }
         }
       ]
     }
-  ],
-  "coach": [
-    {
-      "id": "160",
-      "firstName": "Alex",
-      "lastName": "Cora",
-      "experience": 8
-    }
-  ],
-  "team": {
-    "id": "2",
-    "abbreviation": "BOS",
-    "location": "Boston",
-    "name": "Red Sox",
-    "displayName": "Boston Red Sox",
-    "clubhouse": "https://www.espn.com/mlb/team/_/name/bos/boston-red-sox",
-    "color": "0d2b56",
-    "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
-    "recordSummary": "28-32",
-    "seasonSummary": "2025",
-    "standingSummary": "4th in AL East"
-  }
+  ]
 }

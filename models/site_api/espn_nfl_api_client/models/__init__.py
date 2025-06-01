@@ -57,7 +57,6 @@ from .geo_broadcast_market import GeoBroadcastMarket
 from .geo_broadcast_media import GeoBroadcastMedia
 from .geo_broadcast_type import GeoBroadcastType
 from .get_mlb_team_details_team_id_or_abbrev import GetMLBTeamDetailsTeamIdOrAbbrev
-from .get_mlb_team_roster_team_id_or_abbrev import GetMLBTeamRosterTeamIdOrAbbrev
 from .get_rankings_league import GetRankingsLeague
 from .get_rankings_sport import GetRankingsSport
 from .get_scoreboard_seasontype import GetScoreboardSeasontype
@@ -357,7 +356,6 @@ __all__ = (
     "GeoBroadcastMedia",
     "GeoBroadcastType",
     "GetMLBTeamDetailsTeamIdOrAbbrev",
-    "GetMLBTeamRosterTeamIdOrAbbrev",
     "GetRankingsLeague",
     "GetRankingsSport",
     "GetScoreboardSeasontype",

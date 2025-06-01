@@ -273,6 +273,44 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}:
+    get:
+      summary: Get League Information
+      description: Retrieve detailed information about a specific league, including current season, teams, franchises, and other league-specific data.
+      operationId: getLeagueInfo
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl, college-football, mens-college-basketball)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeagueInfoResponse'
+        '404':
+          description: League not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/calendar:
     get:
       summary: Get League Calendar
@@ -2723,6 +2761,223 @@ components:
         - pageSize
         - pageCount
         - items
+
+    LeagueInfoResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          example: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl?lang=en&region=us"
+        id:
+          type: string
+          example: "28"
+        uid:
+          type: string
+          example: "s:20~l:28"
+        guid:
+          type: string
+          example: "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4"
+        name:
+          type: string
+          example: "National Football League"
+        displayName:
+          type: string
+          example: "NFL"
+        abbreviation:
+          type: string
+          example: "NFL"
+        shortName:
+          type: string
+          example: "NFL"
+        midsizeName:
+          type: string
+          example: "NCAA Football"
+        slug:
+          type: string
+          example: "nfl"
+        isTournament:
+          type: boolean
+          example: false
+        gender:
+          type: string
+          example: "MALE"
+        season:
+          $ref: '#/components/schemas/LeagueSeason'
+        seasons:
+          $ref: '#/components/schemas/Reference'
+        franchises:
+          $ref: '#/components/schemas/Reference'
+        teams:
+          $ref: '#/components/schemas/Reference'
+        group:
+          $ref: '#/components/schemas/Reference'
+        groups:
+          $ref: '#/components/schemas/Reference'
+        events:
+          $ref: '#/components/schemas/Reference'
+        notes:
+          $ref: '#/components/schemas/Reference'
+        rankings:
+          $ref: '#/components/schemas/Reference'
+        awards:
+          $ref: '#/components/schemas/Reference'
+        calendar:
+          $ref: '#/components/schemas/Reference'
+        transactions:
+          $ref: '#/components/schemas/Reference'
+        draft:
+          $ref: '#/components/schemas/Reference'
+        leaders:
+          $ref: '#/components/schemas/Reference'
+        athletes:
+          $ref: '#/components/schemas/Reference'
+        freeAgents:
+          $ref: '#/components/schemas/Reference'
+        talentPicks:
+          $ref: '#/components/schemas/Reference'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+      required:
+        - id
+        - name
+        - displayName
+        - abbreviation
+        - slug
+
+    LeagueSeason:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        year:
+          type: integer
+          example: 2024
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        displayName:
+          type: string
+          example: "2024"
+        type:
+          $ref: '#/components/schemas/SeasonType'
+        types:
+          $ref: '#/components/schemas/SeasonTypesList'
+        rankings:
+          $ref: '#/components/schemas/Reference'
+        athletes:
+          $ref: '#/components/schemas/Reference'
+        futures:
+          $ref: '#/components/schemas/Reference'
+        leaders:
+          $ref: '#/components/schemas/Reference'
+        coaches:
+          $ref: '#/components/schemas/Reference'
+        awards:
+          $ref: '#/components/schemas/Reference'
+        powerIndexes:
+          $ref: '#/components/schemas/Reference'
+        powerIndexLeaders:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - year
+        - startDate
+        - endDate
+        - displayName
+
+    SeasonType:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        id:
+          type: string
+        type:
+          type: integer
+        name:
+          type: string
+        abbreviation:
+          type: string
+        year:
+          type: integer
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        hasGroups:
+          type: boolean
+        hasStandings:
+          type: boolean
+        hasLegs:
+          type: boolean
+        groups:
+          $ref: '#/components/schemas/Reference'
+        weeks:
+          $ref: '#/components/schemas/Reference'
+        week:
+          $ref: '#/components/schemas/SeasonWeek'
+        corrections:
+          $ref: '#/components/schemas/Reference'
+        leaders:
+          $ref: '#/components/schemas/Reference'
+        slug:
+          type: string
+      required:
+        - id
+        - type
+        - name
+        - abbreviation
+
+    SeasonWeek:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        number:
+          type: integer
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        text:
+          type: string
+        rankings:
+          $ref: '#/components/schemas/Reference'
+
+    SeasonTypesList:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+        count:
+          type: integer
+        pageIndex:
+          type: integer
+        pageSize:
+          type: integer
+        pageCount:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SeasonType'
 
     PaginatedReferenceListResponse:
       type: object

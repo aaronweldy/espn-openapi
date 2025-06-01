@@ -2846,6 +2846,37 @@ components:
         slug:
           type: string
           description: URL slug
+        name:
+          type: string
+          description: Team name
+        nickname:
+          type: string
+          description: Team nickname
+        abbreviation:
+          type: string
+          description: Team abbreviation
+        displayName:
+          type: string
+          description: Full team display name
+        shortDisplayName:
+          type: string
+          description: Short display name
+        color:
+          type: string
+          description: Primary team color (hex)
+        alternateColor:
+          type: string
+          description: Alternate team color (hex)
+        logos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Logo'
+          description: Team logos
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+          description: Related links
 
     AthleteBioResponse:
       type: object

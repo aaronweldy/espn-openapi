@@ -1,0 +1,170 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/4426414?lang=en&region=us",
+  "birthPlace": {
+    "city": "Cincinnati",
+    "state": "OH",
+    "country": "USA"
+  },
+  "birthCountry": {
+    "alternateId": "1",
+    "abbreviation": "USA"
+  },
+  "college": {
+    "$ref": "http://sports.core.api.espn.com/v2/colleges/152?lang=en&region=us"
+  },
+  "slug": "zeke-correll",
+  "headshot": {
+    "href": "https://a.espncdn.com/i/headshots/college-football/players/full/4426414.png",
+    "alt": "Zeke Correll"
+  },
+  "flag": {
+    "href": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "alt": "USA",
+    "rel": [
+      "country-flag"
+    ]
+  },
+  "linked": true,
+  "proAthlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/4426414?lang=en&region=us"
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/4426414/statisticslog?lang=en&region=us"
+  },
+  "id": "4426414",
+  "uid": "s:20~l:23~a:4426414",
+  "fullName": "Zeke Correll",
+  "guid": "506d1541-4cb8-04c6-0df1-f17a91f92a0c",
+  "type": "football",
+  "alternateIds": {
+    "sdr": "4426414"
+  },
+  "firstName": "Zeke",
+  "lastName": "Correll",
+  "displayName": "Zeke Correll",
+  "shortName": "Z. Correll",
+  "weight": 307.0,
+  "displayWeight": "307 lbs",
+  "height": 75.0,
+  "displayHeight": "6' 3\"",
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/_/id/4426414/zeke-correll",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Player Card"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/stats/_/id/4426414/zeke-correll",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Stats"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/splits/_/id/4426414/zeke-correll",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Splits"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/gamelog/_/id/4426414/zeke-correll",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Game Log"
+    },
+    {
+      "language": "en-US",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/news/_/id/4426414/zeke-correll",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "text": "News"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/bio/_/id/4426414/zeke-correll",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Bio"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/college-football/player/_/id/4426414/zeke-correll",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Overview"
+    }
+  ],
+  "jersey": "56",
+  "position": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/positions/4?lang=en&region=us",
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/positions/70?lang=en&region=us"
+    },
+    "id": "4",
+    "name": "Center",
+    "abbreviation": "C",
+    "displayName": "Center",
+    "leaf": true
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2023/teams/152?lang=en&region=us"
+  },
+  "active": false,
+  "status": {
+    "id": "2",
+    "name": "Inactive",
+    "type": "inactive",
+    "abbreviation": "Inactive"
+  },
+  "experience": {
+    "abbreviation": "SR",
+    "years": 4,
+    "displayValue": "Senior"
+  }
+}

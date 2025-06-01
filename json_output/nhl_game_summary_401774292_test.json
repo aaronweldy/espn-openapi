@@ -2203,7 +2203,62 @@
           }
         ]
       },
-      "injuries": []
+      "injuries": [
+        {
+          "status": "Day-To-Day",
+          "date": "2025-05-31T16:29Z",
+          "athlete": {
+            "id": "3648015",
+            "uid": "s:70~l:90~a:3648015",
+            "guid": "40f6b6f6-34c5-b446-bc3f-298cfd5d1c59",
+            "lastName": "Greer",
+            "fullName": "A.J. Greer",
+            "displayName": "A.J. Greer",
+            "shortName": "A.J. Greer",
+            "links": [
+              {
+                "rel": [
+                  "playercard",
+                  "desktop",
+                  "athlete"
+                ],
+                "href": "https://www.espn.com/nhl/player/_/id/3648015",
+                "text": "Player Card"
+              }
+            ],
+            "headshot": {
+              "href": "https://a.espncdn.com/i/headshots/nhl/players/full/3648015.png",
+              "alt": "A.J. Greer"
+            },
+            "jersey": "10",
+            "position": {
+              "name": "Left Wing",
+              "displayName": "Left Wing",
+              "abbreviation": "LW"
+            },
+            "status": {
+              "id": "1",
+              "name": "Active",
+              "type": "active",
+              "abbreviation": "Active"
+            }
+          },
+          "type": {
+            "id": "6",
+            "name": "INJURY_STATUS_DAYTODAY",
+            "description": "day-to-day",
+            "abbreviation": "DD"
+          },
+          "details": {
+            "fantasyStatus": {
+              "description": "Day-To-Day",
+              "abbreviation": "Day-To-Day"
+            },
+            "type": "Lower Body",
+            "returnDate": "2025-06-04"
+          }
+        }
+      ]
     }
   ],
   "broadcasts": [
@@ -3430,106 +3485,6 @@
       }
     ]
   },
-  "onIce": [
-    {
-      "entries": [
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "2300"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "5428"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3025662"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3904173"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "4352683"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "4697396"
-        }
-      ],
-      "teamId": "7"
-    },
-    {
-      "entries": [
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "5571"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3041970"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3041992"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3114722"
-        },
-        {
-          "whereabouts": {
-            "id": "1",
-            "description": "In Play",
-            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
-          },
-          "athleteid": "3942354"
-        }
-      ],
-      "teamId": "26"
-    }
-  ],
   "article": {
     "id": 45368428,
     "nowId": "1-45368428",
@@ -6503,6 +6458,106 @@
         "trackingName": "NHL_One-Play (Panthers presented with their 3rd consecutive ECF trophy) 2025/05/28 ESHEET",
         "trackingId": "evc_20250528_fla_@_car_ee784f46-6554-46fd-a173-1529d0cdd5be_15461"
       }
+    }
+  ],
+  "onIce": [
+    {
+      "entries": [
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "2300"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "5428"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3025662"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3904173"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "4352683"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "4697396"
+        }
+      ],
+      "teamId": "7"
+    },
+    {
+      "entries": [
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "5571"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3041970"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3041992"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3114722"
+        },
+        {
+          "whereabouts": {
+            "id": "1",
+            "description": "In Play",
+            "name": "ROSTER_WHEREABOUTS_IN_PLAY"
+          },
+          "athleteid": "3942354"
+        }
+      ],
+      "teamId": "26"
     }
   ],
   "wallclockAvailable": true,
