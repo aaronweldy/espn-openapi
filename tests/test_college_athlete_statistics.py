@@ -67,8 +67,8 @@ def test_get_mens_college_basketball_athlete_details(sports_core_api_client, ens
 @pytest.mark.api 
 def test_get_womens_college_basketball_athlete_details(sports_core_api_client, ensure_json_output_dir):
     """Test getting women's college basketball athlete details using generic endpoint."""
-    # Using a known women's college basketball athlete ID
-    athlete_id = "4698927"  # Example athlete ID
+    # Using Sydney Affolter from Iowa
+    athlete_id = "4898389"  # Sydney Affolter - Iowa Guard
     
     from models.sports_core_api.espn_sports_core_api_client.api.default import get_athlete_details
     

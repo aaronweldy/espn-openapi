@@ -19,8 +19,8 @@ ATHLETE_TEST_DATA = [
     # College sports
     ("football", "college-football", "4426414", "Zeke Correll"),
     ("basketball", "mens-college-basketball", "4397189", "Jalen Smith"),
-    # Note: Women's college basketball athlete IDs can be harder to find/may expire
-    # ("basketball", "womens-college-basketball", "4433054", "Caitlin Clark"),  # May not be active
+    ("basketball", "womens-college-basketball", "4898389", "Sydney Affolter"),  # Iowa
+    ("basketball", "womens-college-basketball", "5174285", "MiLaysia Fulwiley"),  # South Carolina
 ]
 
 
@@ -218,17 +218,30 @@ def test_mens_college_basketball_specific_athletes(sports_core_api_client):
 
 
 @pytest.mark.api
-def test_womens_college_basketball_specific_athletes(sports_core_api_client):
+def test_womens_college_basketball_specific_athletes(sports_core_api_client, ensure_json_output_dir):
     """Test women's college basketball athletes."""
-    # Using Caitlin Clark as a known athlete
-    response = get_athlete_details.sync_detailed(
-        client=sports_core_api_client,
-        sport="basketball",
-        league="womens-college-basketball",
-        athlete_id="4433054"
-    )
+    # Test multiple women's college basketball athletes
+    womens_cbb_athletes = [
+        ("4898389", "Sydney Affolter", "Iowa"),
+        ("5174285", "MiLaysia Fulwiley", "South Carolina"),
+        ("4434019", "Maryam Dauda", "South Carolina"),
+    ]
     
-    if response.status_code == 200:
+    for athlete_id, athlete_name, team in womens_cbb_athletes:
+        response = get_athlete_details.sync_detailed(
+            client=sports_core_api_client,
+            sport="basketball",
+            league="womens-college-basketball",
+            athlete_id=athlete_id
+        )
+        
+        assert response.status_code == 200, f"Failed to get {athlete_name} ({team})"
         result = response.parsed
         assert result is not None
-        print("✓ Retrieved women's college basketball athlete")
+        assert result.id == athlete_id
+        print(f"✓ Retrieved women's college basketball athlete: {athlete_name} ({team})")
+        
+        # Save one for reference
+        if athlete_id == "4898389" and hasattr(result, 'to_dict'):
+            with open(f"{ensure_json_output_dir}/womens_cbb_athlete_{athlete_id}.json", "w") as f:
+                json.dump(result.to_dict(), f, indent=2)
