@@ -17,6 +17,7 @@ from .athlete_statistics_log_response import AthleteStatisticsLogResponse
 from .athlete_statistics_response import AthleteStatisticsResponse
 from .athlete_statistics_response_splits import AthleteStatisticsResponseSplits
 from .athlete_status import AthleteStatus
+from .athletes_list_response import AthletesListResponse
 from .betting_odds import BettingOdds
 from .betting_odds_team_odds import BettingOddsTeamOdds
 from .broadcast_logo import BroadcastLogo
@@ -219,6 +220,7 @@ __all__ = (
     "AthleteDetailsResponseAlternateIds",
     "AthleteDetailsResponseExperience",
     "AthleteReference",
+    "AthletesListResponse",
     "AthleteStatisticsByCategoryResponse",
     "AthleteStatisticsByCategoryResponseSplits",
     "AthleteStatisticsLogResponse",

@@ -35,6 +35,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statisticslog - Athlete Statistics Log. Path Params: {sport}, {league}, {athlete_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts - Athlete Contracts. Path Params: {sport}, {league}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/contracts/{year} - Athlete Contract by Year. Path Params: {sport}, {league}, {athlete_id}, {year}
+[x] /v2/sports/{sport}/leagues/{league}/athletes - List Athletes. Path Params: {sport}, {league}. Query Params: pageIndex, pageSize - Generic endpoint (covers all sports)
 II. NFL Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/{sport}/{league}/scoreboard - Generic Scoreboard Endpoint. Path Params: {sport}, {league}. Query Params: dates, week (football only), seasontype (football only) - Implemented as generic endpoint
@@ -168,7 +169,7 @@ site.api.espn.com/apis/site/v2
 [x] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
 [x] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/teams endpoint
-[ ] /sports/soccer/{league_slug}/players - Soccer Players List. Path Param: {league_slug}
+[x] /sports/soccer/{league_slug}/players - Soccer Players List. Path Param: {league_slug} - Implemented as generic /v2/sports/{sport}/leagues/{league}/athletes in sports.core.api
 [ ] /sports/soccer/{league_slug}/statistics/players - Soccer Aggregate Player Statistics. Path Param: {league_slug}
 [x] /sports/soccer/{league_slug}/news - Soccer News. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/soccer/{competition_slug}/teams/{team_id}/schedule - Soccer Team Schedule. Path Params: {competition_slug}, {team_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule endpoint
