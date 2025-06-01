@@ -22,6 +22,9 @@ from .broadcast_market import BroadcastMarket
 from .broadcast_media import BroadcastMedia
 from .broadcast_type import BroadcastType
 from .calendar_list_response import CalendarListResponse
+from .coach_details_response import CoachDetailsResponse
+from .coach_details_response_birth_place import CoachDetailsResponseBirthPlace
+from .coach_details_response_records_item import CoachDetailsResponseRecordsItem
 from .competition_athlete_statistics_response import CompetitionAthleteStatisticsResponse
 from .competition_athlete_statistics_response_splits import CompetitionAthleteStatisticsResponseSplits
 from .competition_broadcast import CompetitionBroadcast
@@ -225,6 +228,9 @@ __all__ = (
     "BroadcastMedia",
     "BroadcastType",
     "CalendarListResponse",
+    "CoachDetailsResponse",
+    "CoachDetailsResponseBirthPlace",
+    "CoachDetailsResponseRecordsItem",
     "CompetitionAthleteStatisticsResponse",
     "CompetitionAthleteStatisticsResponseSplits",
     "CompetitionBroadcast",

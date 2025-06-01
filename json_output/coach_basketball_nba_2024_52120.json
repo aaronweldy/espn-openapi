@@ -1,0 +1,27 @@
+{
+  "id": "52120",
+  "firstName": "Quin",
+  "lastName": "Snyder",
+  "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/coaches/52120?lang=en&region=us",
+  "uid": "s:40~l:46~co:52120",
+  "college": {
+    "$ref": "http://sports.core.api.espn.com/v2/colleges/2000?lang=en&region=us"
+  },
+  "person": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/52120?lang=en&region=us"
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/teams/1?lang=en&region=us"
+  },
+  "experience": 10,
+  "records": [
+    {
+      "team": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/teams/1?lang=en&region=us"
+      },
+      "record": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/types/2/coaches/52120/record?lang=en&region=us"
+      }
+    }
+  ]
+}

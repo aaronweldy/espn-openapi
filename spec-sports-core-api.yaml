@@ -1488,6 +1488,58 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id}:
+    get:
+      summary: Get Season Coach Details
+      description: Retrieve details for a specific coach in a given sport, league, and season.
+      operationId: getSeasonCoachDetails
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: coach_id
+          in: path
+          required: true
+          description: The coach ID
+          schema:
+            type: string
+            example: "17751"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoachDetailsResponse'
+        '404':
+          description: Coach not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/seasons/{year}/draft/athletes/{athlete_id}:
     get:
       summary: Get NFL Draft Athlete Details
@@ -6253,3 +6305,61 @@ components:
         count:
           type: integer
           description: Count for this metric
+
+    CoachDetailsResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          example: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/coaches/17751?lang=en&region=us"
+        id:
+          type: string
+          example: "17751"
+        uid:
+          type: string
+          example: "s:20~l:28~co:17751"
+        firstName:
+          type: string
+          example: "Jonathan"
+        lastName:
+          type: string
+          example: "Gannon"
+        dateOfBirth:
+          type: string
+          format: date-time
+          example: "1983-04-04T08:00Z"
+        birthPlace:
+          type: object
+          properties:
+            city:
+              type: string
+              example: "Cleveland"
+            state:
+              type: string
+              example: "Ohio"
+            country:
+              type: string
+              example: "USA"
+        college:
+          $ref: '#/components/schemas/Reference'
+        person:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        experience:
+          type: integer
+          example: 1
+        records:
+          type: array
+          items:
+            type: object
+            properties:
+              team:
+                $ref: '#/components/schemas/Reference'
+              record:
+                $ref: '#/components/schemas/Reference'
+      required:
+        - id
+        - firstName
+        - lastName

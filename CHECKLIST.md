@@ -238,7 +238,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/groups/{group_id}
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/athletes/{athlete_id}/statisticslog-  Draft Athlete Contracts. Path Params: {year}, {athlete_id}
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads
