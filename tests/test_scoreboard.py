@@ -156,6 +156,8 @@ def format_scoreboard(data: GenericScoreboardResponse, sport: str, league: str) 
         ("baseball", GetScoreboardSport.BASEBALL, "mlb", False, True),
         ("basketball", GetScoreboardSport.BASKETBALL, "nba", False, True),
         ("hockey", GetScoreboardSport.HOCKEY, "nhl", False, False),
+        ("soccer", GetScoreboardSport.SOCCER, "eng.1", False, False),
+        ("soccer", GetScoreboardSport.SOCCER, "usa.1", False, False),
     ],
 )
 def test_get_scoreboard(

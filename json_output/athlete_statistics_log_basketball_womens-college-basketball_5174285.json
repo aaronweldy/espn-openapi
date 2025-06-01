@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2025?lang=en&region=us"
+      },
+      "statistics": [
+        {
+          "type": "total",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2025/types/0/athletes/5174285/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "type": "team",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2025/types/0/teams/2579/athletes/5174285/statistics?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2025/teams/2579?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2024?lang=en&region=us"
+      },
+      "statistics": [
+        {
+          "type": "total",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2024/types/0/athletes/5174285/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "type": "team",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2024/types/0/teams/2579/athletes/5174285/statistics?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/seasons/2024/teams/2579?lang=en&region=us"
+          }
+        }
+      ]
+    }
+  ],
+  "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball/athletes/5174285/statisticslog?lang=en&region=us"
+}

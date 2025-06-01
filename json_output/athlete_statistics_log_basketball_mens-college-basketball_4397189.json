@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020?lang=en&region=us"
+      },
+      "statistics": [
+        {
+          "type": "total",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/types/0/athletes/4397189/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "type": "team",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/types/0/teams/120/athletes/4397189/statistics?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/teams/120?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "season": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019?lang=en&region=us"
+      },
+      "statistics": [
+        {
+          "type": "total",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019/types/0/athletes/4397189/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "type": "team",
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019/types/0/teams/120/athletes/4397189/statistics?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2019/teams/120?lang=en&region=us"
+          }
+        }
+      ]
+    }
+  ],
+  "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/athletes/4397189/statisticslog?lang=en&region=us"
+}

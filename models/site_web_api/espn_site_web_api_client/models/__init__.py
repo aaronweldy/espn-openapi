@@ -35,6 +35,58 @@ from .error_response import ErrorResponse
 from .event_status import EventStatus
 from .event_status_state import EventStatusState
 from .experience import Experience
+from .fantasy_against_the_spread import FantasyAgainstTheSpread
+from .fantasy_against_the_spread_current_line import FantasyAgainstTheSpreadCurrentLine
+from .fantasy_against_the_spread_current_line_team_score import FantasyAgainstTheSpreadCurrentLineTeamScore
+from .fantasy_against_the_spread_team import FantasyAgainstTheSpreadTeam
+from .fantasy_athlete import FantasyAthlete
+from .fantasy_athlete_headshot import FantasyAthleteHeadshot
+from .fantasy_athlete_position import FantasyAthletePosition
+from .fantasy_broadcast import FantasyBroadcast
+from .fantasy_competitor import FantasyCompetitor
+from .fantasy_competitor_home_away import FantasyCompetitorHomeAway
+from .fantasy_competitor_records_item import FantasyCompetitorRecordsItem
+from .fantasy_full_status import FantasyFullStatus
+from .fantasy_full_status_type import FantasyFullStatusType
+from .fantasy_game_event import FantasyGameEvent
+from .fantasy_game_event_against_the_spread import FantasyGameEventAgainstTheSpread
+from .fantasy_game_event_drive import FantasyGameEventDrive
+from .fantasy_game_event_last_play import FantasyGameEventLastPlay
+from .fantasy_game_event_links_item import FantasyGameEventLinksItem
+from .fantasy_game_event_odds import FantasyGameEventOdds
+from .fantasy_game_event_pickcenter_item import FantasyGameEventPickcenterItem
+from .fantasy_game_event_scoring_plays_item import FantasyGameEventScoringPlaysItem
+from .fantasy_games_response import FantasyGamesResponse
+from .fantasy_leader import FantasyLeader
+from .fantasy_leader_leaders_item import FantasyLeaderLeadersItem
+from .fantasy_odds import FantasyOdds
+from .fantasy_odds_home_team_odds import FantasyOddsHomeTeamOdds
+from .fantasy_odds_home_team_odds_current_line import FantasyOddsHomeTeamOddsCurrentLine
+from .fantasy_odds_home_team_odds_current_line_team_score import FantasyOddsHomeTeamOddsCurrentLineTeamScore
+from .fantasy_odds_home_team_odds_team import FantasyOddsHomeTeamOddsTeam
+from .fantasy_odds_provider import FantasyOddsProvider
+from .fantasy_pickcenter import FantasyPickcenter
+from .fantasy_pickcenter_away_team_odds import FantasyPickcenterAwayTeamOdds
+from .fantasy_pickcenter_away_team_odds_team_score import FantasyPickcenterAwayTeamOddsTeamScore
+from .fantasy_pickcenter_home_team_odds import FantasyPickcenterHomeTeamOdds
+from .fantasy_pickcenter_home_team_odds_team_score import FantasyPickcenterHomeTeamOddsTeamScore
+from .fantasy_pickcenter_provider import FantasyPickcenterProvider
+from .fantasy_probable import FantasyProbable
+from .fantasy_probable_statistics_item import FantasyProbableStatisticsItem
+from .fantasy_probable_status import FantasyProbableStatus
+from .fantasy_scoring_play import FantasyScoringPlay
+from .fantasy_scoring_play_clock import FantasyScoringPlayClock
+from .fantasy_scoring_play_participants_item import FantasyScoringPlayParticipantsItem
+from .fantasy_scoring_play_participants_item_athlete import FantasyScoringPlayParticipantsItemAthlete
+from .fantasy_scoring_play_period import FantasyScoringPlayPeriod
+from .fantasy_scoring_play_scoring_type import FantasyScoringPlayScoringType
+from .fantasy_scoring_play_team import FantasyScoringPlayTeam
+from .fantasy_scoring_play_type import FantasyScoringPlayType
+from .fantasy_statistic import FantasyStatistic
+from .fantasy_venue import FantasyVenue
+from .fantasy_venue_address import FantasyVenueAddress
+from .fantasy_weather import FantasyWeather
+from .fantasy_weather_link import FantasyWeatherLink
 from .filter_option import FilterOption
 from .flag_type_0 import FlagType0
 from .game_event import GameEvent
@@ -224,6 +276,58 @@ __all__ = (
     "EventStatus",
     "EventStatusState",
     "Experience",
+    "FantasyAgainstTheSpread",
+    "FantasyAgainstTheSpreadCurrentLine",
+    "FantasyAgainstTheSpreadCurrentLineTeamScore",
+    "FantasyAgainstTheSpreadTeam",
+    "FantasyAthlete",
+    "FantasyAthleteHeadshot",
+    "FantasyAthletePosition",
+    "FantasyBroadcast",
+    "FantasyCompetitor",
+    "FantasyCompetitorHomeAway",
+    "FantasyCompetitorRecordsItem",
+    "FantasyFullStatus",
+    "FantasyFullStatusType",
+    "FantasyGameEvent",
+    "FantasyGameEventAgainstTheSpread",
+    "FantasyGameEventDrive",
+    "FantasyGameEventLastPlay",
+    "FantasyGameEventLinksItem",
+    "FantasyGameEventOdds",
+    "FantasyGameEventPickcenterItem",
+    "FantasyGameEventScoringPlaysItem",
+    "FantasyGamesResponse",
+    "FantasyLeader",
+    "FantasyLeaderLeadersItem",
+    "FantasyOdds",
+    "FantasyOddsHomeTeamOdds",
+    "FantasyOddsHomeTeamOddsCurrentLine",
+    "FantasyOddsHomeTeamOddsCurrentLineTeamScore",
+    "FantasyOddsHomeTeamOddsTeam",
+    "FantasyOddsProvider",
+    "FantasyPickcenter",
+    "FantasyPickcenterAwayTeamOdds",
+    "FantasyPickcenterAwayTeamOddsTeamScore",
+    "FantasyPickcenterHomeTeamOdds",
+    "FantasyPickcenterHomeTeamOddsTeamScore",
+    "FantasyPickcenterProvider",
+    "FantasyProbable",
+    "FantasyProbableStatisticsItem",
+    "FantasyProbableStatus",
+    "FantasyScoringPlay",
+    "FantasyScoringPlayClock",
+    "FantasyScoringPlayParticipantsItem",
+    "FantasyScoringPlayParticipantsItemAthlete",
+    "FantasyScoringPlayPeriod",
+    "FantasyScoringPlayScoringType",
+    "FantasyScoringPlayTeam",
+    "FantasyScoringPlayType",
+    "FantasyStatistic",
+    "FantasyVenue",
+    "FantasyVenueAddress",
+    "FantasyWeather",
+    "FantasyWeatherLink",
     "FilterOption",
     "FlagType0",
     "GameEvent",

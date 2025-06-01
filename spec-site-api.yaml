@@ -18,10 +18,10 @@ paths:
         - name: sport
           in: path
           required: true
-          description: The sport (e.g., football, basketball, baseball, hockey)
+          description: The sport (e.g., football, basketball, baseball, hockey, soccer)
           schema:
             type: string
-            enum: [football, basketball, baseball, hockey]
+            enum: [football, basketball, baseball, hockey, soccer]
             example: "football"
         - name: league
           in: path
@@ -1652,8 +1652,27 @@ components:
           items:
             type: string
             example: "FOX"
-      required:
-        - market
+        type:
+          type: object
+          properties:
+            id:
+              type: string
+              example: "1"
+            shortName:
+              type: string
+              example: "TV"
+        media:
+          type: object
+          properties:
+            shortName:
+              type: string
+              example: "ESPN"
+        lang:
+          type: string
+          example: "en"
+        region:
+          type: string
+          example: "us"
 
     GeoBroadcast:
       type: object
@@ -2055,6 +2074,7 @@ components:
             - $ref: '#/components/schemas/MlbStatisticName'
             - $ref: '#/components/schemas/NhlStatisticName'
             - $ref: '#/components/schemas/NbaStatisticName'
+            - $ref: '#/components/schemas/SoccerStatisticName'
         displayName:
           type: string
           example: "First Downs"
@@ -4613,6 +4633,20 @@ components:
         - avgPoints
         - avgAssists
         - threesMade
+
+    SoccerStatisticName:
+      type: string
+      description: Statistic name identifiers used in Soccer API responses
+      enum:
+        - appearances
+        - foulsCommitted
+        - goalAssists
+        - possessionPct
+        - shotAssists
+        - shotsOnTarget
+        - totalGoals
+        - totalShots
+        - wonCorners
 
     NhlTeamRosterResponse:
       type: object

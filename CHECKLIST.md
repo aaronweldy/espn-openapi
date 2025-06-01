@@ -168,13 +168,13 @@ site.api.espn.com/apis/common/v3
 [x] /sports/baseball/college-baseball/season - College Baseball Season Info - Implemented as generic /apis/common/v3/sports/{sport}/{league}/season
 XI. Soccer Endpoints
 site.api.espn.com/apis/site/v2
-[ ] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates
+[x] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [ ] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
-[ ] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug}
+[x] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/teams endpoint
 [ ] /sports/soccer/{league_slug}/players - Soccer Players List. Path Param: {league_slug}
 [ ] /sports/soccer/{league_slug}/statistics/players - Soccer Aggregate Player Statistics. Path Param: {league_slug}
-[ ] /sports/soccer/{league_slug}/news - Soccer News. Path Param: {league_slug}
-[ ] /sports/soccer/{competition_slug}/teams/{team_id}/schedule - Soccer Team Schedule. Path Params: {competition_slug}, {team_id}
+[x] /sports/soccer/{league_slug}/news - Soccer News. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/news endpoint
+[x] /sports/soccer/{competition_slug}/teams/{team_id}/schedule - Soccer Team Schedule. Path Params: {competition_slug}, {team_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule endpoint
 XII. Other Sports Endpoints (Examples)
 site.api.espn.com/apis/site/v2 (Pattern)
 [ ] /sports/golf/{league_slug}/players - e.g., Golf Players. Path Param: {league_slug} (pga, lpga, etc.)

@@ -14,6 +14,8 @@ from .boxscore import Boxscore
 from .boxscore_player import BoxscorePlayer
 from .boxscore_team import BoxscoreTeam
 from .broadcast import Broadcast
+from .broadcast_media import BroadcastMedia
+from .broadcast_type import BroadcastType
 from .calendar_entry import CalendarEntry
 from .calendar_item import CalendarItem
 from .category import Category
@@ -42,6 +44,11 @@ from .event_competition_highlights_item import EventCompetitionHighlightsItem
 from .event_competition_notes_item import EventCompetitionNotesItem
 from .event_season import EventSeason
 from .event_week import EventWeek
+from .fantasy_news_image import FantasyNewsImage
+from .fantasy_news_link import FantasyNewsLink
+from .fantasy_player_news_item import FantasyPlayerNewsItem
+from .fantasy_player_news_item_links import FantasyPlayerNewsItemLinks
+from .fantasy_player_news_response import FantasyPlayerNewsResponse
 from .game_format import GameFormat
 from .game_format_overtime import GameFormatOvertime
 from .game_format_regulation import GameFormatRegulation
@@ -258,6 +265,7 @@ from .scoreboard import Scoreboard
 from .season import Season
 from .season_info import SeasonInfo
 from .season_type import SeasonType
+from .soccer_statistic_name import SoccerStatisticName
 from .sport import Sport
 from .sport_enum import SportEnum
 from .sport_league import SportLeague
@@ -313,6 +321,8 @@ __all__ = (
     "BoxscorePlayer",
     "BoxscoreTeam",
     "Broadcast",
+    "BroadcastMedia",
+    "BroadcastType",
     "CalendarEntry",
     "CalendarItem",
     "Category",
@@ -341,6 +351,11 @@ __all__ = (
     "EventCompetitionNotesItem",
     "EventSeason",
     "EventWeek",
+    "FantasyNewsImage",
+    "FantasyNewsLink",
+    "FantasyPlayerNewsItem",
+    "FantasyPlayerNewsItemLinks",
+    "FantasyPlayerNewsResponse",
     "GameFormat",
     "GameFormatOvertime",
     "GameFormatRegulation",
@@ -557,6 +572,7 @@ __all__ = (
     "Season",
     "SeasonInfo",
     "SeasonType",
+    "SoccerStatisticName",
     "Sport",
     "SportEnum",
     "SportLeague",
