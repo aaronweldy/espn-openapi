@@ -6,6 +6,7 @@ from models.sports_core_api.espn_sports_core_api_client.api.default import (
     get_athlete_statistics,
     get_athlete_statistics_log,
 )
+from models.sports_core_api.espn_sports_core_api_client.models import GetAthleteStatisticsSeasontype
 
 
 # Test data for various sports/leagues with known athlete IDs
@@ -134,7 +135,7 @@ def test_get_athlete_details_with_query_params(sports_core_api_client):
         sport="football",
         league="nfl",
         athlete_id="3139477",  # Patrick Mahomes
-        seasontype=2,  # Regular season
+        seasontype=GetAthleteStatisticsSeasontype.VALUE_2,  # Regular season
         year=2023,
         limit=10
     )

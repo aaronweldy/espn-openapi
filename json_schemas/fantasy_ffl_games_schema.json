@@ -1,0 +1,1170 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/FantasyFflGamesSchema",
+    "definitions": {
+        "FantasyFflGamesSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "statistics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Statistic"
+                    }
+                },
+                "events": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Event"
+                    }
+                }
+            },
+            "required": [
+                "events",
+                "statistics"
+            ],
+            "title": "FantasyFflGamesSchema"
+        },
+        "Event": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "competitionId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "timeValid": {
+                    "type": "boolean"
+                },
+                "period": {
+                    "type": "integer"
+                },
+                "clock": {
+                    "$ref": "#/definitions/ClockEnum"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "status": {
+                    "$ref": "#/definitions/Stat"
+                },
+                "summary": {
+                    "$ref": "#/definitions/Summary"
+                },
+                "lastPlay": {
+                    "$ref": "#/definitions/LastPlay"
+                },
+                "drive": {
+                    "$ref": "#/definitions/Drive"
+                },
+                "percentComplete": {
+                    "type": "integer"
+                },
+                "venue": {
+                    "$ref": "#/definitions/Venue"
+                },
+                "weather": {
+                    "$ref": "#/definitions/Weather"
+                },
+                "scoringPlays": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ScoringPlay"
+                    }
+                },
+                "fullStatus": {
+                    "$ref": "#/definitions/FullStatus"
+                },
+                "link": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "broadcasts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/BroadcastElement"
+                    }
+                },
+                "broadcast": {
+                    "$ref": "#/definitions/BroadcastEnum"
+                },
+                "fantasySource": {
+                    "$ref": "#/definitions/FantasySource"
+                },
+                "competitors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Competitor"
+                    }
+                },
+                "pickcenter": {
+                    "type": "array",
+                    "items": {}
+                },
+                "againstTheSpread": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AgainstTheSpread"
+                    }
+                },
+                "odds": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "againstTheSpread",
+                "broadcast",
+                "broadcasts",
+                "clock",
+                "competitionId",
+                "competitors",
+                "date",
+                "drive",
+                "fantasySource",
+                "fullStatus",
+                "id",
+                "lastPlay",
+                "link",
+                "links",
+                "odds",
+                "percentComplete",
+                "period",
+                "pickcenter",
+                "scoringPlays",
+                "status",
+                "summary",
+                "timeValid",
+                "uid",
+                "venue",
+                "weather"
+            ],
+            "title": "Event"
+        },
+        "AgainstTheSpread": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "records": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "records",
+                "team"
+            ],
+            "title": "AgainstTheSpread"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "logos"
+            ],
+            "title": "Team"
+        },
+        "BroadcastElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/BroadcastType"
+                },
+                "lang": {
+                    "$ref": "#/definitions/Lang"
+                },
+                "region": {
+                    "$ref": "#/definitions/Region"
+                },
+                "typeId": {
+                    "type": "integer"
+                },
+                "isNational": {
+                    "type": "boolean"
+                },
+                "shortName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "isNational",
+                "lang",
+                "region",
+                "shortName",
+                "type",
+                "typeId"
+            ],
+            "title": "BroadcastElement"
+        },
+        "Competitor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/CompetitorType"
+                },
+                "homeAway": {
+                    "$ref": "#/definitions/HomeAway"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "score": {
+                    "type": "number"
+                },
+                "winner": {
+                    "type": "boolean"
+                },
+                "record": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "lineup": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "abbreviation",
+                "homeAway",
+                "id",
+                "lineup",
+                "name",
+                "record",
+                "score",
+                "type",
+                "winner"
+            ],
+            "title": "Competitor"
+        },
+        "Drive": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "start": {
+                    "$ref": "#/definitions/DriveEnd"
+                },
+                "end": {
+                    "$ref": "#/definitions/DriveEnd"
+                },
+                "teamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "numberOfPlays": {
+                    "type": "integer"
+                },
+                "isRedZone": {
+                    "type": "boolean"
+                },
+                "plays": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Play"
+                    }
+                },
+                "yards": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "end",
+                "id",
+                "isRedZone",
+                "numberOfPlays",
+                "plays",
+                "start",
+                "teamId",
+                "yards"
+            ],
+            "title": "Drive"
+        },
+        "DriveEnd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "period": {
+                    "$ref": "#/definitions/Period"
+                },
+                "yardLine": {
+                    "type": "integer"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "clock": {
+                    "$ref": "#/definitions/ClockClass"
+                }
+            },
+            "required": [
+                "period",
+                "text",
+                "yardLine"
+            ],
+            "title": "DriveEnd"
+        },
+        "ClockClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "displayValue",
+                "value"
+            ],
+            "title": "ClockClass"
+        },
+        "Period": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/PeriodType"
+                },
+                "number": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "number",
+                "type"
+            ],
+            "title": "Period"
+        },
+        "Play": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "playId": {
+                    "type": "string"
+                },
+                "playType": {
+                    "$ref": "#/definitions/PlayType"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "shortText": {
+                    "type": "string"
+                },
+                "scoringPlay": {
+                    "type": "boolean"
+                },
+                "players": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PlayPlayer"
+                    }
+                },
+                "period": {
+                    "type": "integer"
+                },
+                "clock": {
+                    "type": "number"
+                },
+                "homeScore": {
+                    "type": "integer"
+                },
+                "awayScore": {
+                    "type": "integer"
+                },
+                "sequenceNumber": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "start": {
+                    "$ref": "#/definitions/Start"
+                },
+                "end": {
+                    "$ref": "#/definitions/Start"
+                },
+                "wallclock": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "statYardage": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "awayScore",
+                "clock",
+                "end",
+                "homeScore",
+                "period",
+                "playId",
+                "playType",
+                "players",
+                "scoringPlay",
+                "sequenceNumber",
+                "shortText",
+                "start",
+                "statYardage",
+                "text",
+                "wallclock"
+            ],
+            "title": "Play"
+        },
+        "Start": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "down": {
+                    "type": "integer"
+                },
+                "distance": {
+                    "type": "integer"
+                },
+                "yardLine": {
+                    "type": "integer"
+                },
+                "yardsToEndzone": {
+                    "type": "integer"
+                },
+                "downDistanceText": {
+                    "type": "string"
+                },
+                "shortDownDistanceText": {
+                    "type": "string"
+                },
+                "possessionText": {
+                    "type": "string"
+                },
+                "team": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "distance",
+                "down",
+                "yardLine",
+                "yardsToEndzone"
+            ],
+            "title": "Start"
+        },
+        "PlayType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Abbreviation"
+                }
+            },
+            "required": [
+                "id",
+                "text"
+            ],
+            "title": "PlayType"
+        },
+        "PlayPlayer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "playerId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "position": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/PlayerType"
+                }
+            },
+            "required": [
+                "id",
+                "order",
+                "playerId",
+                "position",
+                "type"
+            ],
+            "title": "PlayPlayer"
+        },
+        "FantasySource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "state": {
+                    "$ref": "#/definitions/State"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "state"
+            ],
+            "title": "FantasySource"
+        },
+        "FullStatus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "clock": {
+                    "type": "number"
+                },
+                "displayClock": {
+                    "$ref": "#/definitions/ClockEnum"
+                },
+                "period": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/TypeClass"
+                }
+            },
+            "required": [
+                "clock",
+                "displayClock",
+                "period",
+                "type"
+            ],
+            "title": "FullStatus"
+        },
+        "TypeClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "state": {
+                    "$ref": "#/definitions/Stat"
+                },
+                "completed": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "$ref": "#/definitions/Summary"
+                },
+                "detail": {
+                    "$ref": "#/definitions/Summary"
+                },
+                "shortDetail": {
+                    "$ref": "#/definitions/Summary"
+                },
+                "altDetail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "completed",
+                "description",
+                "detail",
+                "id",
+                "name",
+                "shortDetail",
+                "state"
+            ],
+            "title": "TypeClass"
+        },
+        "LastPlay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "playId": {
+                    "type": "string"
+                },
+                "playType": {
+                    "$ref": "#/definitions/PlayType"
+                },
+                "text": {
+                    "$ref": "#/definitions/LastPlayText"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/LastPlayShortText"
+                },
+                "scoringPlay": {
+                    "type": "boolean"
+                },
+                "players": {
+                    "type": "array",
+                    "items": {}
+                },
+                "period": {
+                    "type": "integer"
+                },
+                "clock": {
+                    "type": "number"
+                },
+                "homeScore": {
+                    "type": "integer"
+                },
+                "awayScore": {
+                    "type": "integer"
+                },
+                "start": {
+                    "$ref": "#/definitions/LastPlayEnd"
+                },
+                "end": {
+                    "$ref": "#/definitions/LastPlayEnd"
+                },
+                "statYardage": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "awayScore",
+                "clock",
+                "end",
+                "homeScore",
+                "period",
+                "playId",
+                "playType",
+                "players",
+                "scoringPlay",
+                "shortText",
+                "start",
+                "statYardage",
+                "text"
+            ],
+            "title": "LastPlay"
+        },
+        "LastPlayEnd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "down": {
+                    "type": "integer"
+                },
+                "distance": {
+                    "type": "integer"
+                },
+                "yardLine": {
+                    "type": "integer"
+                },
+                "yardsToEndzone": {
+                    "type": "integer"
+                },
+                "team": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "distance",
+                "down",
+                "yardLine",
+                "yardsToEndzone"
+            ],
+            "title": "LastPlayEnd"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Rel"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/LinkText"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/LinkShortText"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "ScoringPlay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "playId": {
+                    "type": "string"
+                },
+                "playType": {
+                    "$ref": "#/definitions/PlayType"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "shortText": {
+                    "type": "string"
+                },
+                "scoringPlay": {
+                    "type": "boolean"
+                },
+                "players": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ScoringPlayPlayer"
+                    }
+                },
+                "period": {
+                    "type": "integer"
+                },
+                "clock": {
+                    "type": "number"
+                },
+                "homeScore": {
+                    "type": "integer"
+                },
+                "awayScore": {
+                    "type": "integer"
+                },
+                "sequenceNumber": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "start": {
+                    "$ref": "#/definitions/Start"
+                },
+                "end": {
+                    "$ref": "#/definitions/LastPlayEnd"
+                },
+                "wallclock": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "statYardage": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "awayScore",
+                "clock",
+                "end",
+                "homeScore",
+                "period",
+                "playId",
+                "playType",
+                "players",
+                "scoringPlay",
+                "sequenceNumber",
+                "shortText",
+                "start",
+                "statYardage",
+                "text",
+                "wallclock"
+            ],
+            "title": "ScoringPlay"
+        },
+        "ScoringPlayPlayer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "playerId": {
+                    "$ref": "#/definitions/PositionID"
+                },
+                "id": {
+                    "$ref": "#/definitions/PositionID"
+                },
+                "order": {
+                    "type": "integer"
+                },
+                "position": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "proTeamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/PlayerType"
+                },
+                "stats": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "order",
+                "playerId",
+                "position",
+                "proTeamId",
+                "type"
+            ],
+            "title": "ScoringPlayPlayer"
+        },
+        "Venue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fullName": {
+                    "type": "string"
+                },
+                "indoor": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "fullName",
+                "indoor"
+            ],
+            "title": "Venue"
+        },
+        "Weather": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "snow": {
+                    "type": "boolean"
+                },
+                "wind": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "snow",
+                "wind"
+            ],
+            "title": "Weather"
+        },
+        "Statistic": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "gameId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "proTeamId": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "positionId": {
+                    "$ref": "#/definitions/PositionID"
+                },
+                "stats": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "$ref": "#/definitions/LastName"
+                }
+            },
+            "required": [
+                "gameId",
+                "id",
+                "positionId",
+                "proTeamId",
+                "stats"
+            ],
+            "title": "Statistic"
+        },
+        "PositionID": {
+            "anyOf": [
+                {
+                    "type": "integer"
+                },
+                {
+                    "type": "string",
+                    "format": "integer"
+                }
+            ],
+            "title": "PositionID"
+        },
+        "BroadcastEnum": {
+            "type": "string",
+            "enum": [
+                "CBS",
+                "FOX",
+                "NBC/Peacock"
+            ],
+            "title": "BroadcastEnum"
+        },
+        "Lang": {
+            "type": "string",
+            "enum": [
+                "en"
+            ],
+            "title": "Lang"
+        },
+        "Region": {
+            "type": "string",
+            "enum": [
+                "us"
+            ],
+            "title": "Region"
+        },
+        "BroadcastType": {
+            "type": "string",
+            "enum": [
+                "TV",
+                "Subscription Package",
+                "Streaming"
+            ],
+            "title": "BroadcastType"
+        },
+        "ClockEnum": {
+            "type": "string",
+            "enum": [
+                "0:00"
+            ],
+            "title": "ClockEnum"
+        },
+        "HomeAway": {
+            "type": "string",
+            "enum": [
+                "home",
+                "away"
+            ],
+            "title": "HomeAway"
+        },
+        "CompetitorType": {
+            "type": "string",
+            "enum": [
+                "team"
+            ],
+            "title": "CompetitorType"
+        },
+        "PeriodType": {
+            "type": "string",
+            "enum": [
+                "quarter"
+            ],
+            "title": "PeriodType"
+        },
+        "Abbreviation": {
+            "type": "string",
+            "enum": [
+                "RUSH",
+                "TO",
+                "EG",
+                "TD",
+                "2Min Warn",
+                "K",
+                "REC",
+                "FGM",
+                "FG"
+            ],
+            "title": "Abbreviation"
+        },
+        "PlayerType": {
+            "type": "string",
+            "enum": [
+                "rusher",
+                "scorer",
+                "kicker",
+                "patScorer",
+                "snapper",
+                "holder",
+                "teamQuarterback",
+                "passer",
+                "passDefender",
+                "returner",
+                "patPasser",
+                "receiver",
+                "fumbler",
+                "forcedBy",
+                "sackedBy",
+                "tackler",
+                "recoverer",
+                "patRusher",
+                "assistedBy"
+            ],
+            "title": "PlayerType"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "scrubbed"
+            ],
+            "title": "Description"
+        },
+        "State": {
+            "type": "string",
+            "enum": [
+                "full"
+            ],
+            "title": "State"
+        },
+        "Summary": {
+            "type": "string",
+            "enum": [
+                "Final",
+                "Final/OT"
+            ],
+            "title": "Summary"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "STATUS_FINAL"
+            ],
+            "title": "Name"
+        },
+        "Stat": {
+            "type": "string",
+            "enum": [
+                "post"
+            ],
+            "title": "Stat"
+        },
+        "LastPlayShortText": {
+            "type": "string",
+            "enum": [
+                "End Game ",
+                "End Game"
+            ],
+            "title": "LastPlayShortText"
+        },
+        "LastPlayText": {
+            "type": "string",
+            "enum": [
+                "END GAME"
+            ],
+            "title": "LastPlayText"
+        },
+        "Language": {
+            "type": "string",
+            "enum": [
+                "en-US"
+            ],
+            "title": "Language"
+        },
+        "Rel": {
+            "type": "string",
+            "enum": [
+                "summary",
+                "desktop",
+                "event"
+            ],
+            "title": "Rel"
+        },
+        "LinkShortText": {
+            "type": "string",
+            "enum": [
+                "Summary"
+            ],
+            "title": "LinkShortText"
+        },
+        "LinkText": {
+            "type": "string",
+            "enum": [
+                "Gamecast"
+            ],
+            "title": "LinkText"
+        },
+        "LastName": {
+            "type": "string",
+            "enum": [
+                "Head Coach",
+                "TQB",
+                "D/ST"
+            ],
+            "title": "LastName"
+        }
+    }
+}

@@ -472,6 +472,35 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/fantasy/v2/games/ffl/games:
+    get:
+      tags:
+        - Fantasy Football
+      summary: Get Fantasy Football Games
+      description: Retrieve a list of NFL games with fantasy-relevant information
+      operationId: getFantasyFootballGames
+      parameters:
+        - name: dates
+          in: query
+          required: false
+          description: Date or date range (YYYYMMDD or YYYYMMDD-YYYYMMDD)
+          schema:
+            type: string
+            example: "20241201"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasyGamesResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     Reference:
@@ -3482,3 +3511,509 @@ components:
           country:
             type: string
             example: "USA"
+
+    FantasyGamesResponse:
+      type: object
+      required:
+        - events
+        - statistics
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyGameEvent'
+        statistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyStatistic'
+
+    FantasyGameEvent:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Event ID
+        competitionId:
+          type: string
+          description: Competition ID
+        uid:
+          type: string
+          description: Unique identifier
+        date:
+          type: string
+          format: date-time
+          description: Game date and time
+        timeValid:
+          type: boolean
+          description: Whether the time is confirmed
+        period:
+          type: integer
+          description: Current period/quarter
+        clock:
+          type: string
+          description: Game clock
+        status:
+          type: string
+          description: Game status (pre, in, post, etc.)
+        summary:
+          type: string
+          description: Game summary text
+        fullStatus:
+          $ref: '#/components/schemas/FantasyFullStatus'
+        competitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyCompetitor'
+        venue:
+          $ref: '#/components/schemas/FantasyVenue'
+        weather:
+          $ref: '#/components/schemas/FantasyWeather'
+        broadcasts:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyBroadcast'
+        links:
+          type: array
+          items:
+            type: object
+            description: Link information
+        odds:
+          type: object
+          description: Odds information
+        againstTheSpread:
+          type: object
+          description: Against the spread information
+        pickcenter:
+          type: array
+          items:
+            type: object
+            description: Pickcenter information
+        scoringPlays:
+          type: array
+          items:
+            type: object
+            description: Scoring play information
+        percentComplete:
+          type: integer
+          description: Percentage of game completed
+        lastPlay:
+          type: object
+          description: Last play information
+        drive:
+          type: object
+          description: Current drive information
+        broadcast:
+          type: string
+          description: Broadcast information
+        link:
+          type: string
+          format: uri
+          description: Link to game
+
+
+    FantasyBroadcast:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Broadcast type (TV, Streaming, etc.)
+        lang:
+          type: string
+          description: Language code
+        region:
+          type: string
+          description: Region code
+        typeId:
+          type: integer
+          description: Type ID
+        isNational:
+          type: boolean
+          description: Whether broadcast is national
+        shortName:
+          type: string
+          description: Broadcast network short name
+
+    FantasyOdds:
+      type: object
+      properties:
+        details:
+          type: string
+        overUnder:
+          type: number
+        spread:
+          type: number
+        overOdds:
+          type: number
+        underOdds:
+          type: number
+        provider:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            priority:
+              type: integer
+        homeTeamOdds:
+          type: object
+          properties:
+            favorite:
+              type: boolean
+            underdog:
+              type: boolean
+            team:
+              type: object
+              properties:
+                id:
+                  type: string
+                abbreviation:
+                  type: string
+            currentLine:
+              type: object
+              properties:
+                spreadOdds:
+                  type: number
+                moneyLine:
+                  type: number
+                teamScore:
+                  type: object
+                  properties:
+                    pointSpread:
+                      type: number
+
+    FantasyAgainstTheSpread:
+      type: object
+      properties:
+        team:
+          type: object
+          properties:
+            id:
+              type: string
+            abbreviation:
+              type: string
+        currentLine:
+          type: object
+          properties:
+            spreadOdds:
+              type: number
+            teamScore:
+              type: object
+              properties:
+                pointSpread:
+                  type: number
+
+    FantasyPickcenter:
+      type: object
+      properties:
+        id:
+          type: string
+        homeTeamOdds:
+          type: object
+          properties:
+            spreadOdds:
+              type: number
+            teamScore:
+              type: object
+              properties:
+                pointSpread:
+                  type: number
+        awayTeamOdds:
+          type: object
+          properties:
+            spreadOdds:
+              type: number
+            teamScore:
+              type: object
+              properties:
+                pointSpread:
+                  type: number
+        provider:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            priority:
+              type: integer
+        details:
+          type: string
+        overUnder:
+          type: number
+        spread:
+          type: number
+
+    FantasyScoringPlay:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: object
+          properties:
+            id:
+              type: string
+            text:
+              type: string
+            abbreviation:
+              type: string
+        text:
+          type: string
+        awayScore:
+          type: integer
+        homeScore:
+          type: integer
+        period:
+          type: object
+          properties:
+            number:
+              type: integer
+            displayValue:
+              type: string
+        scoringType:
+          type: object
+          properties:
+            name:
+              type: string
+            displayName:
+              type: string
+            abbreviation:
+              type: string
+        clock:
+          type: object
+          properties:
+            displayValue:
+              type: string
+        team:
+          type: object
+          properties:
+            id:
+              type: string
+        participants:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              athlete:
+                type: object
+                properties:
+                  id:
+                    type: string
+
+    FantasyStatistic:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        abbreviation:
+          type: string
+        type:
+          type: string
+        recipientType:
+          type: string
+        slug:
+          type: string
+
+    FantasyFullStatus:
+      type: object
+      properties:
+        clock:
+          type: string
+        displayClock:
+          type: string
+        period:
+          type: integer
+        type:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            state:
+              type: string
+            completed:
+              type: boolean
+            description:
+              type: string
+            detail:
+              type: string
+            shortDetail:
+              type: string
+
+    FantasyCompetitor:
+      type: object
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+        homeAway:
+          type: string
+          enum: ["home", "away"]
+        winner:
+          type: boolean
+        name:
+          type: string
+        abbreviation:
+          type: string
+        displayName:
+          type: string
+        logo:
+          type: string
+        score:
+          type: string
+        records:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              summary:
+                type: string
+        leaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyLeader'
+        probables:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyProbable'
+
+    FantasyLeader:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        displayValue:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+              displayValue:
+                type: string
+              athlete:
+                $ref: '#/components/schemas/FantasyAthlete'
+
+    FantasyAthlete:
+      type: object
+      properties:
+        id:
+          type: string
+        uid:
+          type: string
+        guid:
+          type: string
+        lastName:
+          type: string
+        fullName:
+          type: string
+        displayName:
+          type: string
+        shortName:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        headshot:
+          type: object
+          properties:
+            href:
+              type: string
+            alt:
+              type: string
+        jersey:
+          type: string
+        position:
+          type: object
+          properties:
+            id:
+              type: string
+            abbreviation:
+              type: string
+
+    FantasyProbable:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        abbreviation:
+          type: string
+        playerId:
+          type: integer
+        athlete:
+          $ref: '#/components/schemas/FantasyAthlete'
+        status:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            type:
+              type: string
+            abbreviation:
+              type: string
+        statistics:
+          type: array
+          items:
+            type: object
+
+    FantasyVenue:
+      type: object
+      properties:
+        id:
+          type: string
+        fullName:
+          type: string
+        address:
+          type: object
+          properties:
+            city:
+              type: string
+            state:
+              type: string
+            zipCode:
+              type: string
+        capacity:
+          type: integer
+        grass:
+          type: boolean
+        indoor:
+          type: boolean
+
+    FantasyWeather:
+      type: object
+      properties:
+        displayValue:
+          type: string
+        highTemperature:
+          type: integer
+        conditionId:
+          type: string
+        link:
+          type: object
+          properties:
+            text:
+              type: string
+            href:
+              type: string
+            isExternal:
+              type: boolean
