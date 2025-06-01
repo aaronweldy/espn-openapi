@@ -1,0 +1,220 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966?lang=en&region=us",
+  "birthPlace": {
+    "city": "Akron",
+    "state": "OH",
+    "country": "USA"
+  },
+  "slug": "lebron-james",
+  "headshot": {
+    "href": "https://a.espncdn.com/i/headshots/nba/players/full/1966.png",
+    "alt": "LeBron James"
+  },
+  "linked": true,
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/statistics?lang=en&region=us"
+  },
+  "contracts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/contracts?lang=en&region=us"
+  },
+  "contract": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/contracts/2025?lang=en&region=us",
+    "birdStatus": 0,
+    "baseYearCompensation": {
+      "active": false
+    },
+    "poisonPillProvision": {
+      "active": false
+    },
+    "incomingTradeValue": 48728845,
+    "outgoingTradeValue": 48728845,
+    "minimumSalaryException": false,
+    "optionType": 0,
+    "salary": 48728845,
+    "salaryRemaining": 0,
+    "yearsRemaining": 2,
+    "season": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025?lang=en&region=us"
+    },
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/13?lang=en&region=us"
+    },
+    "tradeKicker": {
+      "active": false,
+      "percentage": 0.0,
+      "value": 0,
+      "tradeValue": 0
+    },
+    "tradeRestriction": true,
+    "unsignedForeignPick": false,
+    "active": true
+  },
+  "draft": {
+    "displayText": "Year: 2003 Round: 1 Pick: 1",
+    "round": 1,
+    "year": 2003,
+    "selection": 1,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2003/teams/5?lang=en&region=us"
+    },
+    "pick": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2003/draft/rounds/1/picks/1?lang=en&region=us"
+    }
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/statisticslog?lang=en&region=us"
+  },
+  "seasons": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/seasons?lang=en&region=us"
+  },
+  "id": "1966",
+  "uid": "s:40~l:46~a:1966",
+  "fullName": "LeBron James",
+  "guid": "1f6592b3-ff53-d321-8dc5-6038d48c1786",
+  "type": "basketball",
+  "alternateIds": {
+    "sdr": "2126588"
+  },
+  "firstName": "LeBron",
+  "lastName": "James",
+  "displayName": "LeBron James",
+  "shortName": "L. James",
+  "weight": 250.0,
+  "displayWeight": "250 lbs",
+  "height": 81.0,
+  "displayHeight": "6' 9\"",
+  "age": 40,
+  "dateOfBirth": "1984-12-30T08:00:00+00:00",
+  "debutYear": 2003,
+  "links": [
+    {
+      "language": "en-US",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/_/id/1966/lebron-james",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Player Card"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/stats/_/id/1966/lebron-james",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Stats"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/splits/_/id/1966/lebron-james",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Splits"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/gamelog/_/id/1966/lebron-james",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Game Log"
+    },
+    {
+      "language": "en-US",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/news/_/id/1966/lebron-james",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "text": "News"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/bio/_/id/1966/lebron-james",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Bio"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/_/id/1966/lebron-james",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Overview"
+    },
+    {
+      "language": "en-US",
+      "shortText": "Advanced Stats",
+      "isExternal": false,
+      "isPremium": false,
+      "href": "https://www.espn.com/nba/player/advancedstats/_/id/1966/lebron-james",
+      "rel": [
+        "advancedstats",
+        "desktop",
+        "athlete"
+      ],
+      "text": "Advanced Stats"
+    }
+  ],
+  "jersey": "23",
+  "position": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions/5?lang=en&region=us",
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions/7?lang=en&region=us"
+    },
+    "id": "5",
+    "name": "Small Forward",
+    "abbreviation": "SF",
+    "displayName": "Small Forward",
+    "leaf": true
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/13?lang=en&region=us"
+  },
+  "active": true,
+  "status": {
+    "id": "1",
+    "name": "Active",
+    "type": "active",
+    "abbreviation": "Active"
+  },
+  "experience": {
+    "years": 21
+  }
+}
