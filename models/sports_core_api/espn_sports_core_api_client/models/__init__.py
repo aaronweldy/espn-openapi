@@ -157,6 +157,9 @@ from .play_type import PlayType
 from .plays_list_response import PlaysListResponse
 from .position import Position
 from .positions_list_response import PositionsListResponse
+from .probabilities_list_response import ProbabilitiesListResponse
+from .probability_item import ProbabilityItem
+from .probability_source import ProbabilitySource
 from .reference import Reference
 from .season import Season
 from .split_stats import SplitStats
@@ -336,6 +339,9 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionsListResponse",
+    "ProbabilitiesListResponse",
+    "ProbabilityItem",
+    "ProbabilitySource",
     "Reference",
     "Season",
     "SplitStats",

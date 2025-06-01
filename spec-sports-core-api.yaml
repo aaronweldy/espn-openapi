@@ -1965,6 +1965,72 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/probabilities:
+    get:
+      summary: Get Game Win Probabilities
+      description: Retrieve win probability data for each play in a game. Shows how the probability of each team winning changed throughout the game.
+      operationId: getGameProbabilities
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401547417"
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID (usually the same as event_id)
+          schema:
+            type: string
+            example: "401547417"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of probabilities to return per page
+          schema:
+            type: integer
+            default: 25
+        - name: page
+          in: query
+          required: false
+          description: Page number for pagination
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProbabilitiesListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -5497,3 +5563,110 @@ components:
         teams:
           $ref: '#/components/schemas/Reference'
       description: Detailed information about a specific group (conference/division) in a league season.
+
+    ProbabilitiesListResponse:
+      type: object
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+      properties:
+        count:
+          type: integer
+          description: Total number of probability entries
+          example: 187
+        pageIndex:
+          type: integer
+          description: Current page index
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 8
+        items:
+          type: array
+          description: List of probability entries for each play
+          items:
+            $ref: '#/components/schemas/ProbabilityItem'
+
+    ProbabilityItem:
+      type: object
+      required:
+        - $ref
+        - competition
+        - play
+        - homeTeam
+        - awayTeam
+        - tiePercentage
+        - homeWinPercentage
+        - awayWinPercentage
+        - lastModified
+        - sequenceNumber
+        - source
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL to this probability entry
+          example: "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/probabilities/4015474171?lang=en&region=us"
+        competition:
+          $ref: '#/components/schemas/Reference'
+        play:
+          $ref: '#/components/schemas/Reference'
+        homeTeam:
+          $ref: '#/components/schemas/Reference'
+        awayTeam:
+          $ref: '#/components/schemas/Reference'
+        tiePercentage:
+          type: number
+          description: Probability of the game ending in a tie (0 for sports without ties)
+          example: 0
+        homeWinPercentage:
+          type: number
+          description: Probability of the home team winning (0-1)
+          example: 0.5168
+        awayWinPercentage:
+          type: number
+          description: Probability of the away team winning (0-1)
+          example: 0.4832
+        lastModified:
+          type: string
+          format: date-time
+          description: When this probability was last updated
+          example: "2023-09-17T22:24Z"
+        sequenceNumber:
+          type: string
+          description: Sequence number for ordering probabilities
+          example: "100"
+        source:
+          $ref: '#/components/schemas/ProbabilitySource'
+        secondsLeft:
+          type: integer
+          description: Seconds remaining in the game (optional, may not be present for all sports)
+          example: 0
+
+    ProbabilitySource:
+      type: object
+      required:
+        - id
+        - description
+        - state
+      properties:
+        id:
+          type: string
+          description: Source identifier
+          example: "2"
+        description:
+          type: string
+          description: Source description
+          example: "feed"
+        state:
+          type: string
+          description: Source state
+          example: "full"

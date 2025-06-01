@@ -1,0 +1,152 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/ProbabilitiesListSchema",
+    "definitions": {
+        "ProbabilitiesListSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "ProbabilitiesListSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "competition": {
+                    "$ref": "#/definitions/AwayTeam"
+                },
+                "play": {
+                    "$ref": "#/definitions/AwayTeam"
+                },
+                "homeTeam": {
+                    "$ref": "#/definitions/AwayTeam"
+                },
+                "awayTeam": {
+                    "$ref": "#/definitions/AwayTeam"
+                },
+                "tiePercentage": {
+                    "type": "integer"
+                },
+                "homeWinPercentage": {
+                    "type": "number"
+                },
+                "awayWinPercentage": {
+                    "type": "number"
+                },
+                "lastModified": {
+                    "type": "string"
+                },
+                "sequenceNumber": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "source": {
+                    "$ref": "#/definitions/Source"
+                },
+                "secondsLeft": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "$ref",
+                "awayTeam",
+                "awayWinPercentage",
+                "competition",
+                "homeTeam",
+                "homeWinPercentage",
+                "lastModified",
+                "play",
+                "sequenceNumber",
+                "source",
+                "tiePercentage"
+            ],
+            "title": "Item"
+        },
+        "AwayTeam": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "AwayTeam"
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "state": {
+                    "$ref": "#/definitions/State"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "state"
+            ],
+            "title": "Source"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "feed"
+            ],
+            "title": "Description"
+        },
+        "State": {
+            "type": "string",
+            "enum": [
+                "full"
+            ],
+            "title": "State"
+        }
+    }
+}
