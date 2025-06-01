@@ -1,0 +1,140 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/types/2/teams/12/attendance?lang=en&region=us",
+  "id": "0",
+  "name": "Attendance",
+  "abbreviation": "ATTND",
+  "categories": [
+    {
+      "name": "home",
+      "displayName": "Home",
+      "stats": [
+        {
+          "name": "games",
+          "displayName": "Home Games",
+          "abbreviation": "GMS",
+          "value": 6.0,
+          "displayValue": "6",
+          "shortDisplayName": "GMS",
+          "description": "The total amount of games played as home."
+        },
+        {
+          "name": "total",
+          "displayName": "Home Total",
+          "abbreviation": "TOTAL",
+          "value": 441559.0,
+          "displayValue": "441559",
+          "shortDisplayName": "Total",
+          "description": "The team's total attendance for the entire tournament as home."
+        },
+        {
+          "name": "avg",
+          "displayName": "Home Average",
+          "abbreviation": "AVG",
+          "value": 73593.0,
+          "displayValue": "73593",
+          "shortDisplayName": "Average",
+          "description": "The team's average attendance for the entire tournament as home."
+        },
+        {
+          "name": "pct",
+          "displayName": "Home Percentage",
+          "abbreviation": "PCT",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "Percentage",
+          "description": "The team's percentage attendance for the entire tournament as home."
+        }
+      ],
+      "shortDisplayName": "Home",
+      "abbreviation": "home"
+    },
+    {
+      "name": "away",
+      "displayName": "Away",
+      "stats": [
+        {
+          "name": "games",
+          "displayName": "Home Games",
+          "abbreviation": "GMS",
+          "value": 9.0,
+          "displayValue": "9",
+          "shortDisplayName": "GMS",
+          "description": "The total amount of games played as home."
+        },
+        {
+          "name": "total",
+          "displayName": "Home Total",
+          "abbreviation": "TOTAL",
+          "value": 632634.0,
+          "displayValue": "632634",
+          "shortDisplayName": "Total",
+          "description": "The team's total attendance for the entire tournament as home."
+        },
+        {
+          "name": "avg",
+          "displayName": "Home Average",
+          "abbreviation": "AVG",
+          "value": 70292.0,
+          "displayValue": "70292",
+          "shortDisplayName": "Average",
+          "description": "The team's average attendance for the entire tournament as home."
+        },
+        {
+          "name": "pct",
+          "displayName": "Home Percentage",
+          "abbreviation": "PCT",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "Percentage",
+          "description": "The team's percentage attendance for the entire tournament as home."
+        }
+      ],
+      "shortDisplayName": "Away",
+      "abbreviation": "away"
+    },
+    {
+      "name": "all",
+      "displayName": "Overall",
+      "stats": [
+        {
+          "name": "games",
+          "displayName": "Home Games",
+          "abbreviation": "GMS",
+          "value": 15.0,
+          "displayValue": "15",
+          "shortDisplayName": "GMS",
+          "description": "The total amount of games played as home."
+        },
+        {
+          "name": "total",
+          "displayName": "Home Total",
+          "abbreviation": "TOTAL",
+          "value": 1074193.0,
+          "displayValue": "1074193",
+          "shortDisplayName": "Total",
+          "description": "The team's total attendance for the entire tournament as home."
+        },
+        {
+          "name": "avg",
+          "displayName": "Home Average",
+          "abbreviation": "AVG",
+          "value": 71612.0,
+          "displayValue": "71612",
+          "shortDisplayName": "Average",
+          "description": "The team's average attendance for the entire tournament as home."
+        },
+        {
+          "name": "pct",
+          "displayName": "Home Percentage",
+          "abbreviation": "PCT",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "Percentage",
+          "description": "The team's percentage attendance for the entire tournament as home."
+        }
+      ],
+      "shortDisplayName": "Overall",
+      "abbreviation": "overall"
+    }
+  ]
+}

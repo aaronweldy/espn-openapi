@@ -18,6 +18,8 @@ from .athlete_statistics_response import AthleteStatisticsResponse
 from .athlete_statistics_response_splits import AthleteStatisticsResponseSplits
 from .athlete_status import AthleteStatus
 from .athletes_list_response import AthletesListResponse
+from .attendance_category import AttendanceCategory
+from .attendance_stat import AttendanceStat
 from .betting_odds import BettingOdds
 from .betting_odds_team_odds import BettingOddsTeamOdds
 from .betting_provider import BettingProvider
@@ -214,6 +216,7 @@ from .statistics_log_entry import StatisticsLogEntry
 from .statistics_reference import StatisticsReference
 from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
+from .team_attendance_response import TeamAttendanceResponse
 from .team_odds import TeamOdds
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
@@ -239,6 +242,8 @@ __all__ = (
     "AthleteStatisticsResponse",
     "AthleteStatisticsResponseSplits",
     "AthleteStatus",
+    "AttendanceCategory",
+    "AttendanceStat",
     "BettingOdds",
     "BettingOddsTeamOdds",
     "BettingProvider",
@@ -435,6 +440,7 @@ __all__ = (
     "StatisticsTypeEntry",
     "StatItem",
     "Team",
+    "TeamAttendanceResponse",
     "TeamOdds",
     "TeamReference",
     "TransactionsListResponse",

@@ -1371,6 +1371,59 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance:
+    get:
+      summary: Get Team Attendance
+      description: Retrieve attendance statistics for a specific team in a given season.
+      operationId: getTeamAttendance
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasontype
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular season, 3=postseason)
+          schema:
+            type: integer
+            example: 2
+        - name: teamId
+          in: path
+          required: true
+          description: The team ID
+          schema:
+            type: string
+            example: "12"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamAttendanceResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog:
     get:
       summary: Get NFL Athlete Event Log
@@ -6908,5 +6961,100 @@ components:
           example: "63.6"
       required:
         - name
+        - value
+        - displayValue
+    
+    TeamAttendanceResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for this attendance data
+        id:
+          type: string
+          description: ID of the attendance record
+        name:
+          type: string
+          description: Name of the attendance record
+          example: "Attendance"
+        abbreviation:
+          type: string
+          description: Abbreviation for attendance
+          example: "ATTND"
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttendanceCategory'
+      required:
+        - $ref
+        - id
+        - name
+        - abbreviation
+        - categories
+    
+    AttendanceCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Category name (home, away, all)
+          example: "home"
+        displayName:
+          type: string
+          description: Display name for the category
+          example: "Home"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "Home"
+        abbreviation:
+          type: string
+          description: Category abbreviation
+          example: "home"
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttendanceStat'
+      required:
+        - name
+        - displayName
+        - stats
+    
+    AttendanceStat:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Stat name
+          example: "games"
+        displayName:
+          type: string
+          description: Display name for the stat
+          example: "Home Games"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "GMS"
+        description:
+          type: string
+          description: Description of the stat
+          example: "The total amount of games played as home."
+        abbreviation:
+          type: string
+          description: Stat abbreviation
+          example: "GMS"
+        value:
+          type: number
+          description: Numeric value of the stat
+          example: 6.0
+        displayValue:
+          type: string
+          description: Display-formatted value
+          example: "6"
+      required:
+        - name
+        - displayName
+        - abbreviation
         - value
         - displayValue

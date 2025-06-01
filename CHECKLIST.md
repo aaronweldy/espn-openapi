@@ -169,8 +169,6 @@ site.api.espn.com/apis/site/v2
 [x] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 [x] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
 [x] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/teams endpoint
-[x] /sports/soccer/{league_slug}/players - Soccer Players List. Path Param: {league_slug} - Implemented as generic /v2/sports/{sport}/leagues/{league}/athletes in sports.core.api
-[ ] /sports/soccer/{league_slug}/statistics/players - Soccer Aggregate Player Statistics. Path Param: {league_slug}
 [x] /sports/soccer/{league_slug}/news - Soccer News. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/news endpoint
 [x] /sports/soccer/{competition_slug}/teams/{team_id}/schedule - Soccer Team Schedule. Path Params: {competition_slug}, {team_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule endpoint
 XII. Other Sports Endpoints (Examples)
@@ -178,7 +176,6 @@ site.api.espn.com/apis/site/v2 (Pattern)
 [ ] /sports/golf/{league_slug}/players - e.g., Golf Players. Path Param: {league_slug} (pga, lpga, etc.)
 [ ] /sports/golf/{league_slug}/statistics/players - e.g., Golf Player Stats. Path Param: {league_slug}
 [ ] /sports/racing/{league_slug}/... - e.g., Racing data. Path Param: {league_slug} (f1, nascar-premier, etc.)
-[ ] /sports/tennis/{tour}/players - Tennis Players. Path Param: {tour} (atp, wta)
 [ ] /sports/tennis/{tour}/statistics/players - Tennis Player Statistics. Path Param: {tour}
 [ ] /sports/hockey/{league_slug}/... - Other Hockey Leagues (e.g., mens-college-hockey)
 XIII. Fantasy Sports Endpoints
@@ -214,7 +211,6 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities - Game Win Probabilities. Path Params: {sport}, {league}, {event_id}. Query Param: limit
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds - List Odds Providers for Game. Path Params: {sport}, {league}, {event_id} - Already implemented
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id} - Odds from Specific Provider. Path Params: {sport}, {league}, {event_id}, {provider_id} - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/history/0/movement - Odds History/Movement. Path Params & Query: As above, limit
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/head-to-heads - Head-to-Head Odds. Path Params: As above.
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/futures - Futures Bets. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint
 [ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/ats - Team ATS Records. Path Params: {sport}, {league}, {year}, {seasontype}, {team_id}
@@ -257,7 +253,7 @@ sports.core.api.espn.com
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/status - NFL Draft Status
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/attendance - NFL Team Attendance
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance - Team Attendance. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId} - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/leaders - NFL Team Leaders
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/record - NFL Team Record
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/weeks/{week}/qbr/10000 - NFL Weekly QBR
