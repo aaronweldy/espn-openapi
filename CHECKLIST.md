@@ -249,7 +249,7 @@ XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
 [x] /apis/site/v3/sports/{sport}/{league}/leaders - League Leaders (Site API v3). Path Params: {sport}, {league}. Query Params: season - Implemented as generic endpoint (supports NFL, NHL, NBA, MLB, college sports)
 site.web.api.espn.com  
-[ ] /apis/site/v3/sports/football/nfl/teamleaders - NFL Team Leaders (Site API v3)
+[x] /apis/site/v3/sports/football/nfl/teamleaders - NFL Team Leaders (Site API v3) - Implemented as generic /apis/site/v3/sports/{sport}/{league}/teamleaders
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/bio - NFL Athlete Bio - Implemented as generic /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/bio
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/stats - NFL Athlete Stats - Implemented as generic /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/stats
 sports.core.api.espn.com
