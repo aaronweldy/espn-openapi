@@ -169,7 +169,7 @@ site.api.espn.com/apis/common/v3
 XI. Soccer Endpoints
 site.api.espn.com/apis/site/v2
 [x] /sports/soccer/{league_slug}/scoreboard - Soccer Scoreboard/Schedule. Path Param: {league_slug}. Query Param: dates - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
-[ ] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
+[x] /sports/soccer/{league_slug}/standings - Soccer Standings. Path Param: {league_slug}. Query Param: season (YYYY)
 [x] /sports/soccer/{league_slug}/teams - Soccer Teams List. Path Param: {league_slug} - Covered by generic /sports/{sport}/{league}/teams endpoint
 [ ] /sports/soccer/{league_slug}/players - Soccer Players List. Path Param: {league_slug}
 [ ] /sports/soccer/{league_slug}/statistics/players - Soccer Aggregate Player Statistics. Path Param: {league_slug}

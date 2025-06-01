@@ -264,7 +264,10 @@ from .roster_athlete_teams_item import RosterAthleteTeamsItem
 from .scoreboard import Scoreboard
 from .season import Season
 from .season_info import SeasonInfo
+from .season_reference import SeasonReference
 from .season_type import SeasonType
+from .soccer_standings_group import SoccerStandingsGroup
+from .soccer_standings_response import SoccerStandingsResponse
 from .soccer_statistic_name import SoccerStatisticName
 from .sport import Sport
 from .sport_enum import SportEnum
@@ -275,7 +278,6 @@ from .standing_entry import StandingEntry
 from .standing_group import StandingGroup
 from .statistic import Statistic
 from .statistic_entry import StatisticEntry
-from .statistic_entry_name import StatisticEntryName
 from .status_type import StatusType
 from .status_type_state import StatusTypeState
 from .sunday_night_football_response import SundayNightFootballResponse
@@ -571,7 +573,10 @@ __all__ = (
     "Scoreboard",
     "Season",
     "SeasonInfo",
+    "SeasonReference",
     "SeasonType",
+    "SoccerStandingsGroup",
+    "SoccerStandingsResponse",
     "SoccerStatisticName",
     "Sport",
     "SportEnum",
@@ -582,7 +587,6 @@ __all__ = (
     "StandingGroup",
     "Statistic",
     "StatisticEntry",
-    "StatisticEntryName",
     "StatusType",
     "StatusTypeState",
     "SundayNightFootballResponse",

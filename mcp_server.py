@@ -27,7 +27,7 @@ async def http_request(
         url: The URL to request
         method: The HTTP method (GET or POST)
         output_file: The file to write the response to (optional)
-        jq_command: A JQ command to run on the response (optional)
+        jq_command: A JQ command to run on the response, to filter the response down to specific fields (optional)
     Returns:
         The response body as text, or None if output_file is provided
     Only provide one of output_file or jq_command.
@@ -45,7 +45,7 @@ async def http_request(
                 f.write(response.text)
         elif jq_command:
             return subprocess.run(
-                jq_command.split(" "),
+                ["jq", *jq_command.split(" ")],
                 input=response.text,
                 capture_output=True,
                 text=True,

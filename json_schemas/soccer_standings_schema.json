@@ -1,0 +1,578 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/SoccerStandingsSchema",
+    "definitions": {
+        "SoccerStandingsSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Child"
+                    }
+                },
+                "seasons": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Season"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "children",
+                "id",
+                "name",
+                "seasons",
+                "uid"
+            ],
+            "title": "SoccerStandingsSchema"
+        },
+        "Child": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uid": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "standings": {
+                    "$ref": "#/definitions/Standings"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "id",
+                "name",
+                "standings",
+                "uid"
+            ],
+            "title": "Child"
+        },
+        "Standings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "season": {
+                    "type": "integer"
+                },
+                "seasonType": {
+                    "type": "integer"
+                },
+                "seasonDisplayName": {
+                    "type": "string"
+                },
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Entry"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "entries",
+                "id",
+                "links",
+                "name",
+                "season",
+                "seasonDisplayName",
+                "seasonType"
+            ],
+            "title": "Standings"
+        },
+        "Entry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "team": {
+                    "$ref": "#/definitions/Team"
+                },
+                "note": {
+                    "$ref": "#/definitions/Note"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                }
+            },
+            "required": [
+                "stats",
+                "team"
+            ],
+            "title": "Entry"
+        },
+        "Note": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "rank": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "color",
+                "description",
+                "rank"
+            ],
+            "title": "Note"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/Description"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/ShortDisplayName"
+                },
+                "description": {
+                    "$ref": "#/definitions/Description"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/Abbreviation"
+                },
+                "type": {
+                    "$ref": "#/definitions/TypeEnum"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "summary": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "type"
+            ],
+            "title": "Stat"
+        },
+        "Team": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "uid": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "shortDisplayName": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                },
+                "logos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "isNational": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "id",
+                "isActive",
+                "isNational",
+                "links",
+                "location",
+                "logos",
+                "name",
+                "shortDisplayName",
+                "uid"
+            ],
+            "title": "Team"
+        },
+        "Link": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "$ref": "#/definitions/Language"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkRel"
+                    }
+                },
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".1"
+                    ]
+                },
+                "text": {
+                    "$ref": "#/definitions/Text"
+                },
+                "shortText": {
+                    "$ref": "#/definitions/DisplayName"
+                },
+                "isExternal": {
+                    "type": "boolean"
+                },
+                "isPremium": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "href",
+                "isExternal",
+                "isPremium",
+                "language",
+                "rel",
+                "shortText",
+                "text"
+            ],
+            "title": "Link"
+        },
+        "Logo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".png"
+                    ]
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "alt": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LogoRel"
+                    }
+                },
+                "lastUpdated": {
+                    "$ref": "#/definitions/LastUpdated"
+                }
+            },
+            "required": [
+                "alt",
+                "height",
+                "href",
+                "lastUpdated",
+                "rel",
+                "width"
+            ],
+            "title": "Logo"
+        },
+        "Season": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TypeElement"
+                    }
+                }
+            },
+            "required": [
+                "displayName",
+                "endDate",
+                "startDate",
+                "types",
+                "year"
+            ],
+            "title": "Season"
+        },
+        "TypeElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "hasStandings": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "endDate",
+                "hasStandings",
+                "id",
+                "name",
+                "startDate"
+            ],
+            "title": "TypeElement"
+        },
+        "DisplayName": {
+            "type": "string",
+            "enum": [
+                "Clubhouse",
+                "Standings"
+            ],
+            "title": "DisplayName"
+        },
+        "Abbreviation": {
+            "type": "string",
+            "enum": [
+                "GP",
+                "L",
+                "GD",
+                "P",
+                "A",
+                "F",
+                "D",
+                "W",
+                "PD",
+                "PPG",
+                "R",
+                "RC",
+                "Total"
+            ],
+            "title": "Abbreviation"
+        },
+        "Description": {
+            "type": "string",
+            "enum": [
+                "Games Played",
+                "Losses",
+                "Goal Difference",
+                "Points",
+                "Goals Against",
+                "Goals For",
+                "Draws",
+                "Wins",
+                "Point Deductions",
+                "Points Per Game",
+                "Rank",
+                "Rank Change",
+                "Overall Record",
+                "Overall"
+            ],
+            "title": "Description"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "gamesPlayed",
+                "losses",
+                "pointDifferential",
+                "points",
+                "pointsAgainst",
+                "pointsFor",
+                "ties",
+                "wins",
+                "deductions",
+                "ppg",
+                "rank",
+                "rankChange",
+                "overall"
+            ],
+            "title": "Name"
+        },
+        "ShortDisplayName": {
+            "type": "string",
+            "enum": [
+                "GP",
+                "L",
+                "GD",
+                "P",
+                "A",
+                "F",
+                "D",
+                "W",
+                "Deductions",
+                "PPG",
+                "Rank",
+                "Rank Change",
+                "OVER"
+            ],
+            "title": "ShortDisplayName"
+        },
+        "TypeEnum": {
+            "type": "string",
+            "enum": [
+                "gamesplayed",
+                "losses",
+                "pointdifferential",
+                "points",
+                "pointsagainst",
+                "pointsfor",
+                "ties",
+                "wins",
+                "deductions",
+                "ppg",
+                "rank",
+                "rankchange",
+                "total"
+            ],
+            "title": "TypeEnum"
+        },
+        "Language": {
+            "type": "string",
+            "enum": [
+                "en-US"
+            ],
+            "title": "Language"
+        },
+        "LinkRel": {
+            "type": "string",
+            "enum": [
+                "clubhouse",
+                "desktop",
+                "team",
+                "standings"
+            ],
+            "title": "LinkRel"
+        },
+        "Text": {
+            "type": "string",
+            "enum": [
+                "Clubhouse",
+                "Full Table"
+            ],
+            "title": "Text"
+        },
+        "LastUpdated": {
+            "type": "string",
+            "enum": [
+                "2024-01-04T17:49Z",
+                "2019-05-08T16:07Z",
+                "2025-03-21T13:31Z",
+                "2020-07-16T16:13Z"
+            ],
+            "title": "LastUpdated"
+        },
+        "LogoRel": {
+            "type": "string",
+            "enum": [
+                "full",
+                "default"
+            ],
+            "title": "LogoRel"
+        }
+    }
+}

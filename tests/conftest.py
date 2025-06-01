@@ -55,6 +55,17 @@ def site_api_fantasy_client():
 
 
 @pytest.fixture(scope="session")
+def site_api_v2_client():
+    """Fixture for ESPN site API client with v2 base URL.
+    
+    This is used for endpoints that are under site.api.espn.com/apis/v2/
+    instead of the regular site.api.espn.com/apis/site/v2/
+    This includes soccer standings and potentially other standings endpoints.
+    """
+    return SiteApiClient(base_url="https://site.api.espn.com/apis/v2")
+
+
+@pytest.fixture(scope="session")
 def ensure_json_output_dir():
     """Ensure the json_output directory exists."""
     os.makedirs("json_output", exist_ok=True)

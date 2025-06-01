@@ -3,7 +3,6 @@ from typing import Any, Dict, List, Type, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from ..models.statistic_entry_name import StatisticEntryName
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="StatisticEntry")
@@ -13,7 +12,7 @@ T = TypeVar("T", bound="StatisticEntry")
 class StatisticEntry:
     """
     Attributes:
-        name (StatisticEntryName): Name of the statistic Example: clincher.
+        name (str): Name of the statistic (varies by sport) Example: wins.
         type (str): Type of the statistic Example: clincher.
         display_name (Union[Unset, str]): Display name of the statistic Example: Clincher.
         short_display_name (Union[Unset, str]): Short display name of the statistic Example: CLINCH.
@@ -23,7 +22,7 @@ class StatisticEntry:
         display_value (Union[Unset, str]): Displayable value of the statistic Example: z.
     """
 
-    name: StatisticEntryName
+    name: str
     type: str
     display_name: Union[Unset, str] = UNSET
     short_display_name: Union[Unset, str] = UNSET
@@ -34,7 +33,7 @@ class StatisticEntry:
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
-        name = self.name.value
+        name = self.name
 
         type = self.type
 
@@ -76,7 +75,7 @@ class StatisticEntry:
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
         d = src_dict.copy()
-        name = StatisticEntryName(d.pop("name"))
+        name = d.pop("name")
 
         type = d.pop("type")
 

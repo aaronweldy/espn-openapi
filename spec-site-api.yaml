@@ -833,6 +833,49 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /sports/soccer/{league}/standings:
+    get:
+      summary: Get Soccer League Standings
+      description: Retrieve current standings for a soccer league including table positions, points, and statistics
+      operationId: getSoccerStandings
+      servers:
+        - url: https://site.api.espn.com/apis/v2
+          description: ESPN Site API v2 Server
+      parameters:
+        - name: league
+          in: path
+          required: true
+          description: The soccer league slug (e.g., eng.1, uefa.champions, esp.1, ger.1, ita.1, fra.1, usa.1)
+          schema:
+            type: string
+            example: "eng.1"
+        - name: season
+          in: query
+          required: false
+          description: Season year (YYYY format)
+          schema:
+            type: integer
+            example: 2024
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoccerStandingsResponse'
+        '400':
+          description: Bad request - Invalid league or season
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Standings not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     GenericScoreboardResponse:
@@ -3234,49 +3277,14 @@ components:
       properties:
         name:
           type: string
-          enum:
-            - passing
-            - rushing
-            - receiving
-            - fumbles
-            - defensive
-            - interceptions
-            - kickReturns
-            - puntReturns
-            - kicking
-            - punting
-            - firstDowns
-            - firstDownsPassing
-            - firstDownsRushing
-            - firstDownsPenalty
-            - thirdDownEff
-            - fourthDownEff
-            - totalOffensivePlays
-            - totalYards
-            - yardsPerPlay
-            - totalDrives
-            - netPassingYards
-            - completionAttempts
-            - yardsPerPass
-            - sacksYardsLost
-            - rushingYards
-            - rushingAttempts
-            - yardsPerRushAttempt
-            - redZoneAttempts
-            - totalPenaltiesYards
-            - turnovers
-            - fumblesLost
-            - defensiveTouchdowns
-            - possessionTime
-            - wins
-            - losses
-            - ties
-            - pointsFor
-            - pointsAgainst
-            - winPercent
-            - overall
-          example: "clincher"
-          description: "Name of the statistic"
+          description: "Name of the statistic (varies by sport)"
+          # Note: Removed enum to support multiple sports
+          # Common values by sport:
+          # NFL: passing, rushing, receiving, fumbles, defensive, etc.
+          # Soccer: gamesPlayed, goals, assists, points, wins, losses, ties, etc.
+          # NBA: points, rebounds, assists, steals, blocks, etc.
+          # MLB: hits, runs, rbi, homeRuns, strikeouts, etc.
+          example: "wins"
         displayName:
           type: string
           example: "Clincher"
@@ -5350,3 +5358,80 @@ components:
           format: uri
           description: Link URL
       description: Fantasy news link
+
+    SoccerStandingsResponse:
+      type: object
+      required:
+        - id
+        - name
+        - abbreviation
+        - children
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the standings
+          example: "s:600~l:23"
+        id:
+          type: string
+          description: League ID
+          example: "23"
+        name:
+          type: string
+          description: League name
+          example: "English Premier League"
+        abbreviation:
+          type: string
+          description: League abbreviation
+          example: "ENG"
+        children:
+          type: array
+          description: Array of standings groups (e.g., overall standings, group standings)
+          items:
+            $ref: '#/components/schemas/SoccerStandingsGroup'
+        seasons:
+          type: array
+          description: Available seasons
+          items:
+            $ref: '#/components/schemas/SeasonReference'
+      description: Soccer league standings response
+
+    SoccerStandingsGroup:
+      type: object
+      required:
+        - id
+        - name
+        - abbreviation
+        - standings
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the group
+        id:
+          type: string
+          description: Group ID
+        name:
+          type: string
+          description: Group name (e.g., "overall", "Group A")
+        abbreviation:
+          type: string
+          description: Group abbreviation
+        standings:
+          $ref: '#/components/schemas/StandingGroup'
+      description: Soccer standings group (overall or by group)
+
+    SeasonReference:
+      type: object
+      properties:
+        year:
+          type: integer
+          description: Season year
+        displayName:
+          type: string
+          description: Season display name
+        type:
+          type: integer
+          description: Season type
+        name:
+          type: string
+          description: Season name
+      description: Season reference
