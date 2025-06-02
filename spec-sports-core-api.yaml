@@ -3121,6 +3121,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{eventId}/competitions/{competitionId}/competitors/{competitorId}/records:
+    get:
+      summary: Get Competitor Records for Event
+      description: Retrieve team records (overall, home, away) for a specific competitor in an event/competition
+      operationId: getCompetitorRecords
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: eventId
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401547417"
+        - name: competitionId
+          in: path
+          required: true
+          description: The competition ID (usually same as event ID)
+          schema:
+            type: string
+            example: "401547417"
+        - name: competitorId
+          in: path
+          required: true
+          description: The competitor (team) ID
+          schema:
+            type: string
+            example: "1"
+      responses:
+        '200':
+          description: Successful response with competitor records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitorRecordsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -8740,3 +8799,138 @@ components:
       required:
         - name
         - displayName
+
+    CompetitorRecordsResponse:
+      type: object
+      description: Response containing team records for an event competitor
+      properties:
+        count:
+          type: integer
+          description: Total number of records
+          example: 3
+        pageIndex:
+          type: integer
+          description: Current page index
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 1
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamRecord'
+          description: Array of team records
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    TeamRecord:
+      type: object
+      description: Individual team record (overall, home, away, etc.)
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for the record
+        id:
+          type: string
+          description: Record ID
+          example: "369"
+        name:
+          type: string
+          description: Internal name of the record type
+          example: "overall"
+        abbreviation:
+          type: string
+          description: Abbreviation for the record
+          example: "Game"
+        displayName:
+          type: string
+          description: Display name of the record
+          example: "Record Year To Date"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "YTD"
+        description:
+          type: string
+          description: Description of the record type
+          example: "Overall Record"
+        type:
+          type: string
+          description: Type of record
+          example: "total"
+        summary:
+          type: string
+          description: Summary of the record (wins-losses)
+          example: "2-0"
+        displayValue:
+          type: string
+          description: Display value of the record
+          example: "2-0"
+        value:
+          type: number
+          description: Numeric value (usually win percentage)
+          example: 1.0
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordStat'
+          description: Array of detailed statistics for this record
+      required:
+        - $ref
+        - id
+        - name
+        - displayName
+        - type
+
+    RecordStat:
+      type: object
+      description: Individual statistic within a team record
+      properties:
+        name:
+          type: string
+          description: Internal name of the statistic
+          example: "wins"
+        displayName:
+          type: string
+          description: Display name of the statistic
+          example: "Wins"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "W"
+        description:
+          type: string
+          description: Description of the statistic
+          example: "Wins"
+        abbreviation:
+          type: string
+          description: Abbreviation for the statistic
+          example: "W"
+        type:
+          type: string
+          description: Type of statistic
+          example: "wins"
+        value:
+          type: number
+          description: Numeric value of the statistic
+          example: 2.0
+        displayValue:
+          type: string
+          description: Formatted display value
+          example: "2"
+      required:
+        - name
+        - displayName
+        - type
+        - value
+        - displayValue

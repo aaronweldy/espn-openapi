@@ -59,6 +59,7 @@ from .competition_source import CompetitionSource
 from .competition_status import CompetitionStatus
 from .competition_status_type import CompetitionStatusType
 from .competition_type import CompetitionType
+from .competitor_records_response import CompetitorRecordsResponse
 from .competitor_roster_response import CompetitorRosterResponse
 from .competitor_stat import CompetitorStat
 from .competitor_statistics_response import CompetitorStatisticsResponse
@@ -219,6 +220,7 @@ from .probability_item import ProbabilityItem
 from .probability_source import ProbabilitySource
 from .provider_details import ProviderDetails
 from .providers_list_response import ProvidersListResponse
+from .record_stat import RecordStat
 from .reference import Reference
 from .roster_entry import RosterEntry
 from .season import Season
@@ -250,6 +252,7 @@ from .team_odds import TeamOdds
 from .team_odds_record import TeamOddsRecord
 from .team_odds_records_response import TeamOddsRecordsResponse
 from .team_past_performances_response import TeamPastPerformancesResponse
+from .team_record import TeamRecord
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
 from .transactions_list_response_items_item import TransactionsListResponseItemsItem
@@ -315,6 +318,7 @@ __all__ = (
     "CompetitionStatus",
     "CompetitionStatusType",
     "CompetitionType",
+    "CompetitorRecordsResponse",
     "CompetitorRosterResponse",
     "CompetitorStat",
     "CompetitorStatisticsResponse",
@@ -475,6 +479,7 @@ __all__ = (
     "ProbabilitySource",
     "ProviderDetails",
     "ProvidersListResponse",
+    "RecordStat",
     "Reference",
     "RosterEntry",
     "Season",
@@ -506,6 +511,7 @@ __all__ = (
     "TeamOddsRecord",
     "TeamOddsRecordsResponse",
     "TeamPastPerformancesResponse",
+    "TeamRecord",
     "TeamReference",
     "TransactionsListResponse",
     "TransactionsListResponseItemsItem",

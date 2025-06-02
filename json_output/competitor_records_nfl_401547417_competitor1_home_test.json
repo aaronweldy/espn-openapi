@@ -1,0 +1,380 @@
+{
+  "count": 3,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 1,
+  "items": [
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/records/369?lang=en&region=us",
+      "id": "369",
+      "name": "overall",
+      "displayName": "Record Year To Date",
+      "type": "total",
+      "abbreviation": "Game",
+      "shortDisplayName": "YTD",
+      "description": "Overall Record",
+      "summary": "2-0",
+      "displayValue": "2-0",
+      "value": 1.0,
+      "stats": [
+        {
+          "name": "OTLosses",
+          "displayName": "Overtime Losses",
+          "type": "otlosses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "OTL",
+          "description": "Number of Overtime Losses",
+          "abbreviation": "OTL"
+        },
+        {
+          "name": "OTWins",
+          "displayName": "Overtime Wins",
+          "type": "otwins",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "OT Wins",
+          "description": "Number of Overtime Wins",
+          "abbreviation": "OTW"
+        },
+        {
+          "name": "avgPointsAgainst",
+          "displayName": "Opponent Points Per Game",
+          "type": "avgpointsagainst",
+          "value": 12.0,
+          "displayValue": "12.0",
+          "shortDisplayName": "OPTS/G",
+          "description": "Opponent Points Per Game",
+          "abbreviation": "OPTS/G"
+        },
+        {
+          "name": "avgPointsFor",
+          "displayName": "Points Per Game",
+          "type": "avgpointsfor",
+          "value": 12.5,
+          "displayValue": "12.5",
+          "shortDisplayName": "PTS/G",
+          "description": "Points Per Game",
+          "abbreviation": "PTS/G"
+        },
+        {
+          "name": "differential",
+          "displayName": "Point Differential",
+          "type": "differential",
+          "value": 1.0,
+          "displayValue": "+1",
+          "shortDisplayName": "DIFF",
+          "description": "Point Differential",
+          "abbreviation": "DIFF"
+        },
+        {
+          "name": "divisionWinPercent",
+          "displayName": "Division Win Percentage",
+          "type": "divisionwinpercent",
+          "value": 1.0,
+          "displayValue": "1.000",
+          "shortDisplayName": "DPCT",
+          "description": "Division Winning Percentage",
+          "abbreviation": "DPCT"
+        },
+        {
+          "name": "gamesBehind",
+          "displayName": "Games Back",
+          "type": "gamesbehind",
+          "value": 0.0,
+          "displayValue": "-",
+          "shortDisplayName": "GB",
+          "description": "Games Back",
+          "abbreviation": "GB"
+        },
+        {
+          "name": "gamesPlayed",
+          "displayName": "Games Played",
+          "type": "gamesplayed",
+          "value": 2.0,
+          "displayValue": "2",
+          "shortDisplayName": "GP",
+          "description": "Games Played",
+          "abbreviation": "GP"
+        },
+        {
+          "name": "leagueWinPercent",
+          "displayName": "League Win Percentage",
+          "type": "leaguewinpercent",
+          "value": 1.0,
+          "displayValue": "1.000",
+          "shortDisplayName": "LPCT",
+          "description": "League Winning Percentage",
+          "abbreviation": "LPCT"
+        },
+        {
+          "name": "losses",
+          "displayName": "Losses",
+          "type": "losses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "L",
+          "description": "Losses",
+          "abbreviation": "L"
+        },
+        {
+          "name": "playoffSeed",
+          "displayName": "Position",
+          "type": "playoffseed",
+          "value": 1.0,
+          "displayValue": "1",
+          "shortDisplayName": "POS",
+          "description": "Playoff Seed",
+          "abbreviation": "SEED"
+        },
+        {
+          "name": "pointDifferential",
+          "displayName": "Point Differential",
+          "type": "pointdifferential",
+          "value": 1.0,
+          "displayValue": "+1",
+          "shortDisplayName": "DIFF",
+          "description": "Point Differential",
+          "abbreviation": "DIFF"
+        },
+        {
+          "name": "points",
+          "displayName": "Points",
+          "type": "points",
+          "value": 1.0,
+          "displayValue": "1.0",
+          "shortDisplayName": "PTS",
+          "description": "Total Points",
+          "abbreviation": "PTS"
+        },
+        {
+          "name": "pointsAgainst",
+          "displayName": "Points Against",
+          "type": "pointsagainst",
+          "value": 24.0,
+          "displayValue": "24",
+          "shortDisplayName": "PA",
+          "description": "Total Points Against",
+          "abbreviation": "PA"
+        },
+        {
+          "name": "pointsFor",
+          "displayName": "Points For",
+          "type": "pointsfor",
+          "value": 25.0,
+          "displayValue": "25",
+          "shortDisplayName": "PF",
+          "description": "Total Points For",
+          "abbreviation": "PF"
+        },
+        {
+          "name": "streak",
+          "displayName": "Streak",
+          "type": "streak",
+          "value": 2.0,
+          "displayValue": "W2",
+          "shortDisplayName": "STRK",
+          "description": "Current Streak",
+          "abbreviation": "STRK"
+        },
+        {
+          "name": "ties",
+          "displayName": "Ties",
+          "type": "ties",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "T",
+          "description": "Ties",
+          "abbreviation": "T"
+        },
+        {
+          "name": "winPercent",
+          "displayName": "Win Percentage",
+          "type": "winpercent",
+          "value": 1.0,
+          "displayValue": "1.000",
+          "shortDisplayName": "PCT",
+          "description": "Winning Percentage",
+          "abbreviation": "PCT"
+        },
+        {
+          "name": "wins",
+          "displayName": "Wins",
+          "type": "wins",
+          "value": 2.0,
+          "displayValue": "2",
+          "shortDisplayName": "W",
+          "description": "Wins",
+          "abbreviation": "W"
+        },
+        {
+          "name": "divisionLosses",
+          "displayName": "Division Losses",
+          "type": "divisionlosses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "DL",
+          "description": "Division Losses",
+          "abbreviation": "DL"
+        },
+        {
+          "name": "divisionRecord",
+          "displayName": "Division record",
+          "type": "divisionrecord",
+          "value": 0.0,
+          "displayValue": "1-0",
+          "shortDisplayName": "DIV",
+          "description": "Division Record",
+          "abbreviation": "DIV"
+        },
+        {
+          "name": "divisionTies",
+          "displayName": "Division Tie ",
+          "type": "divisionties",
+          "value": 0.0,
+          "displayValue": "0.000",
+          "shortDisplayName": "DT",
+          "description": "Division Tie ",
+          "abbreviation": "DT"
+        },
+        {
+          "name": "divisionWins",
+          "displayName": "Division Wins ",
+          "type": "divisionwins",
+          "value": 1.0,
+          "displayValue": "1.000",
+          "shortDisplayName": "DW",
+          "description": "Division Winning ",
+          "abbreviation": "DW"
+        }
+      ]
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/records/13?lang=en&region=us",
+      "id": "13",
+      "name": "Home",
+      "displayName": "Home",
+      "type": "home",
+      "shortDisplayName": "HOME",
+      "description": "Home Record",
+      "summary": "2-0",
+      "displayValue": "2-0",
+      "value": 1.0,
+      "stats": [
+        {
+          "name": "wins",
+          "displayName": "Wins",
+          "type": "wins",
+          "value": 2.0,
+          "displayValue": "2",
+          "shortDisplayName": "W",
+          "description": "Wins",
+          "abbreviation": "W"
+        },
+        {
+          "name": "losses",
+          "displayName": "Losses",
+          "type": "losses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "L",
+          "description": "Losses",
+          "abbreviation": "L"
+        },
+        {
+          "name": "ties",
+          "displayName": "Ties",
+          "type": "ties",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "T",
+          "description": "Ties",
+          "abbreviation": "T"
+        },
+        {
+          "name": "winPercent",
+          "displayName": "Win Percentage",
+          "type": "winpercent",
+          "value": 1.0,
+          "displayValue": "1.000",
+          "shortDisplayName": "PCT",
+          "description": "Winning Percentage",
+          "abbreviation": "PCT"
+        },
+        {
+          "name": "OTLosses",
+          "displayName": "Overtime Losses",
+          "type": "otlosses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "OTL",
+          "description": "Number of Overtime Losses",
+          "abbreviation": "OTL"
+        }
+      ]
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/1/records/14?lang=en&region=us",
+      "id": "14",
+      "name": "Road",
+      "displayName": "Road",
+      "type": "road",
+      "shortDisplayName": "AWAY",
+      "description": "Away Record",
+      "summary": "0-0",
+      "displayValue": "0-0",
+      "stats": [
+        {
+          "name": "wins",
+          "displayName": "Wins",
+          "type": "wins",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "W",
+          "description": "Wins",
+          "abbreviation": "W"
+        },
+        {
+          "name": "losses",
+          "displayName": "Losses",
+          "type": "losses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "L",
+          "description": "Losses",
+          "abbreviation": "L"
+        },
+        {
+          "name": "ties",
+          "displayName": "Ties",
+          "type": "ties",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "T",
+          "description": "Ties",
+          "abbreviation": "T"
+        },
+        {
+          "name": "winPercent",
+          "displayName": "Win Percentage",
+          "type": "winpercent",
+          "value": 0.0,
+          "displayValue": ".000",
+          "shortDisplayName": "PCT",
+          "description": "Winning Percentage",
+          "abbreviation": "PCT"
+        },
+        {
+          "name": "OTLosses",
+          "displayName": "Overtime Losses",
+          "type": "otlosses",
+          "value": 0.0,
+          "displayValue": "0",
+          "shortDisplayName": "OTL",
+          "description": "Number of Overtime Losses",
+          "abbreviation": "OTL"
+        }
+      ]
+    }
+  ]
+}

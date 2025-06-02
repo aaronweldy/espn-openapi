@@ -46,6 +46,41 @@ def test_get_odds_predictors_nfl(sports_core_api_client, ensure_json_output_dir)
     print(f"First predictor: Rank {first_predictor.rank}, Value {first_predictor.display_value}")
 
 
+@pytest.mark.api
+def test_get_odds_predictors_multiple_events(sports_core_api_client, ensure_json_output_dir):
+    """Test odds predictors with different NFL events."""
+    # Test multiple NFL events that have predictors (from 2020-2021 seasons)
+    test_events = [
+        {"event_id": "401326315", "season": "2021-early"},
+        {"event_id": "401326317", "season": "2021-recent"},
+        {"event_id": "401249063", "season": "2020"}
+    ]
+    
+    for event_data in test_events:
+        event_id = event_data["event_id"]
+        season = event_data["season"]
+        
+        response = get_odds_predictors.sync_detailed(
+            client=sports_core_api_client,
+            sport="football",
+            league="nfl",
+            event_id=event_id,
+            competition_id=event_id,
+            provider_id="1003"
+        )
+        
+        assert response.status_code == 200, f"Expected 200 for event {event_id}, got {response.status_code}"
+        result = response.parsed
+        assert isinstance(result, OddsPredictorsResponse), f"Should parse for event {event_id}"
+        assert result.items, f"Should have predictors for event {event_id}"
+        
+        # Save response
+        with open(f"{ensure_json_output_dir}/odds_predictors_nfl_{event_id}_provider1003_multi_events_test.json", "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+            
+        print(f"✓ NFL Event {event_id} ({season}): {len(result.items)} predictors")
+
+
 @pytest.mark.api 
 def test_get_odds_predictors_multiple_providers(sports_core_api_client, ensure_json_output_dir):
     """Test odds predictors with different providers."""
