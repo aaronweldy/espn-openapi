@@ -240,7 +240,7 @@ site.web.api.espn.com
 [x] /apis/common/v3/sports/football/nfl/athletes/{athlete_id}/stats - NFL Athlete Stats - Implemented as generic /apis/common/v3/sports/{sport}/{league}/athletes/{athleteId}/stats
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics/{category_id} - Athlete Statistics by Category. Path Params: {sport}, {league}, {athlete_id}, {category_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
-[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores - NFL Game Linescores
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores - Competitor Linescores. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster - NFL Game Roster
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records - NFL Team Records for Event
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics - NFL Team Statistics for Event

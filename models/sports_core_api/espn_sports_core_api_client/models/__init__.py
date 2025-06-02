@@ -101,6 +101,9 @@ from .leader_category import LeaderCategory
 from .league_enum import LeagueEnum
 from .league_info_response import LeagueInfoResponse
 from .league_season import LeagueSeason
+from .linescore_item import LinescoreItem
+from .linescore_source import LinescoreSource
+from .linescores_response import LinescoresResponse
 from .link import Link
 from .logo import Logo
 from .mlb_athlete_details_response import MlbAthleteDetailsResponse
@@ -345,6 +348,9 @@ __all__ = (
     "LeagueEnum",
     "LeagueInfoResponse",
     "LeagueSeason",
+    "LinescoreItem",
+    "LinescoreSource",
+    "LinescoresResponse",
     "Link",
     "Logo",
     "MlbAthleteDetailsResponse",

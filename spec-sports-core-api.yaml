@@ -2803,6 +2803,62 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores:
+    get:
+      summary: Get Competitor Linescores
+      description: Retrieve scoring by period/quarter for a specific competitor in a competition.
+      operationId: getCompetitorLinescores
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+        - name: competitor_id
+          in: path
+          required: true
+          description: The competitor/team ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with paginated linescores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinescoresResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -6140,6 +6196,70 @@ components:
         - moneylineWinner
         - spreadWinner
         - line
+
+    LinescoresResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of periods/quarters
+        pageIndex:
+          type: integer
+          description: Current page index
+        pageSize:
+          type: integer
+          description: Number of items per page
+        pageCount:
+          type: integer
+          description: Total number of pages
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinescoreItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    LinescoreItem:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for this linescore
+        value:
+          type: number
+          description: Score value for this period
+        displayValue:
+          type: string
+          description: Display value of the score
+        source:
+          $ref: '#/components/schemas/LinescoreSource'
+        period:
+          type: integer
+          description: Period/quarter number
+      required:
+        - $ref
+        - value
+        - displayValue
+        - source
+        - period
+
+    LinescoreSource:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Source ID
+        description:
+          type: string
+          description: Source description (e.g., "Basic/Manual")
+      required:
+        - id
+        - description
 
     CompetitionBroadcastsResponse:
       type: object
