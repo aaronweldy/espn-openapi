@@ -1,4 +1,7 @@
 I. General & Cross-Sport Endpoints
+partners.api.espn.com
+[ ] /v2/sports/{sport}/{league}/athletes - Partners API Athletes List. Path Params: {sport}, {league}. Query Params: limit (e.g., 7000)
+[ ] /v2/sports/{sport}/{league}/events - Partners API Events List. Path Params: {sport}, {league}. Query Params: limit (e.g., 1000), dates (supports: YYYYMMDD for single date, YYYYMMDD-YYYYMMDD for date range, YYYY for full season)
 site.api.espn.com
 [x] /apis/site/v2/sports/{sport}/{league}/news - List News (League). Path Params: {sport}, {league}. Query Params: limit
 (Note: NFL-specific news was marked implemented, this is generic. If NFL covers the pattern, this might be implicitly partially done)
@@ -182,7 +185,8 @@ XIII. Fantasy Sports Endpoints
 fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id} - Fantasy League Data (Current >2018). Path Params: {year}, {league_id}. Query Params: view={view_name} (e.g., mTeam, mRoster, mSettings). Headers: X-Fantasy-Filter (JSON string), Cookies: espn_s2, SWID (for private leagues)
 [ ] /apis/v3/games/ffl/leagueHistory/{league_id}?seasonId={year} - Fantasy League Data (Historical <2018). Path Param: {league_id}. Query Params: seasonId={year}, view={view_name}. Headers: X-Fantasy-Filter, Cookies.
-[ ] /apis/v3/games/ffl/seasons/{year}/players?view=players_wl - Fantasy Player Info List. Path Param: {year}. Query Param: view=players_wl. Headers: X-Fantasy-Filter (for filtering by ID, stat, etc.)
+[ ] /apis/v3/games/ffl/seasons/{year}/players?view={view_name} - Fantasy Player Info List. Path Param: {year}. Query Param: view={view_name}. Headers: X-Fantasy-Filter (for filtering by ID, stat, etc. Use {"games":{"limit":2000}} to get more than 50 items)
+    Available views: mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, kona_player_info, player_wl, allon
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/0/leaguedefaults/{PPR_ID}?view=kona_player_info - Detailed Fantasy Player Info. Path Params: {year}, {PPR_ID}. Query Param: view=kona_player_info. Headers: X-Fantasy-Filter.
 [ ] /apis/v3/games/ffl/seasons/{year}?view=proTeamSchedules_wl - Fantasy Team Bye Weeks/Pro Schedules. Path Param: {year}. Query Param: view=proTeamSchedules_wl.
 [ ] /apis/v3/games/ffl/seasons/{year}/players?scoringPeriodId=0&view=players_wl - Get % Owned Players (use with X-Fantasy-Filter). Path Param: {year}. Query Params: scoringPeriodId, view. Headers: X-Fantasy-Filter.
@@ -278,3 +282,7 @@ site.web.api.espn.com
 [ ] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard
 sports.core.api.espn.com
 [ ] /v2/sports/basketball/leagues/mens-college-basketball/events?dates={startDate}-{endDate} - College Basketball Events by Date Range
+
+XXI. Fantasy Reference Data (Not endpoints, but important API details)
+Fantasy Stat Column IDs: The gist includes a comprehensive mapping of fantasy stat IDs to their abbreviations and descriptions (e.g., id:0=PY=Passing Yards, id:4=PTD=TD Pass, etc.)
+This reference is crucial for interpreting fantasy API responses that use numeric stat IDs.
