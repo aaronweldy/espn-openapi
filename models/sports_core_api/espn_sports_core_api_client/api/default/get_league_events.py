@@ -19,6 +19,8 @@ def _get_kwargs(
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
     seasontypes: Union[Unset, str] = UNSET,
+    dates: Union[Unset, str] = UNSET,
+    limit: Union[Unset, int] = 25,
     lang: Union[Unset, str] = UNSET,
     region: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
@@ -29,6 +31,10 @@ def _get_kwargs(
     params["season"] = season
 
     params["seasontypes"] = seasontypes
+
+    params["dates"] = dates
+
+    params["limit"] = limit
 
     params["lang"] = lang
 
@@ -85,6 +91,8 @@ def sync_detailed(
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
     seasontypes: Union[Unset, str] = UNSET,
+    dates: Union[Unset, str] = UNSET,
+    limit: Union[Unset, int] = 25,
     lang: Union[Unset, str] = UNSET,
     region: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, PaginatedReferenceListResponse]]:
@@ -99,6 +107,8 @@ def sync_detailed(
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
+        dates (Union[Unset, str]):  Example: 20250301-20250302.
+        limit (Union[Unset, int]):  Default: 25. Example: 25.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
 
@@ -116,6 +126,8 @@ def sync_detailed(
         week=week,
         season=season,
         seasontypes=seasontypes,
+        dates=dates,
+        limit=limit,
         lang=lang,
         region=region,
     )
@@ -135,6 +147,8 @@ def sync(
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
     seasontypes: Union[Unset, str] = UNSET,
+    dates: Union[Unset, str] = UNSET,
+    limit: Union[Unset, int] = 25,
     lang: Union[Unset, str] = UNSET,
     region: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, PaginatedReferenceListResponse]]:
@@ -149,6 +163,8 @@ def sync(
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
+        dates (Union[Unset, str]):  Example: 20250301-20250302.
+        limit (Union[Unset, int]):  Default: 25. Example: 25.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
 
@@ -167,6 +183,8 @@ def sync(
         week=week,
         season=season,
         seasontypes=seasontypes,
+        dates=dates,
+        limit=limit,
         lang=lang,
         region=region,
     ).parsed
@@ -180,6 +198,8 @@ async def asyncio_detailed(
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
     seasontypes: Union[Unset, str] = UNSET,
+    dates: Union[Unset, str] = UNSET,
+    limit: Union[Unset, int] = 25,
     lang: Union[Unset, str] = UNSET,
     region: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, PaginatedReferenceListResponse]]:
@@ -194,6 +214,8 @@ async def asyncio_detailed(
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
+        dates (Union[Unset, str]):  Example: 20250301-20250302.
+        limit (Union[Unset, int]):  Default: 25. Example: 25.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
 
@@ -211,6 +233,8 @@ async def asyncio_detailed(
         week=week,
         season=season,
         seasontypes=seasontypes,
+        dates=dates,
+        limit=limit,
         lang=lang,
         region=region,
     )
@@ -228,6 +252,8 @@ async def asyncio(
     week: Union[Unset, int] = UNSET,
     season: Union[Unset, int] = UNSET,
     seasontypes: Union[Unset, str] = UNSET,
+    dates: Union[Unset, str] = UNSET,
+    limit: Union[Unset, int] = 25,
     lang: Union[Unset, str] = UNSET,
     region: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, PaginatedReferenceListResponse]]:
@@ -242,6 +268,8 @@ async def asyncio(
         week (Union[Unset, int]):  Example: 1.
         season (Union[Unset, int]):  Example: 2024.
         seasontypes (Union[Unset, str]):  Example: 2.
+        dates (Union[Unset, str]):  Example: 20250301-20250302.
+        limit (Union[Unset, int]):  Default: 25. Example: 25.
         lang (Union[Unset, str]):  Example: en.
         region (Union[Unset, str]):  Example: us.
 
@@ -261,6 +289,8 @@ async def asyncio(
             week=week,
             season=season,
             seasontypes=seasontypes,
+            dates=dates,
+            limit=limit,
             lang=lang,
             region=region,
         )

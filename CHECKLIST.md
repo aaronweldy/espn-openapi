@@ -272,7 +272,7 @@ XX. Other Sports Endpoints
 site.web.api.espn.com
 [ ] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard
 sports.core.api.espn.com
-[ ] /v2/sports/basketball/leagues/mens-college-basketball/events?dates={startDate}-{endDate} - College Basketball Events by Date Range
+[x] /v2/sports/basketball/leagues/mens-college-basketball/events?dates={startDate}-{endDate} - College Basketball Events by Date Range - Implemented as generic date filtering in existing /v2/sports/{sport}/leagues/{league}/events endpoint
 
 XXI. Fantasy Reference Data (Not endpoints, but important API details)
 Fantasy Stat Column IDs: The gist includes a comprehensive mapping of fantasy stat IDs to their abbreviations and descriptions (e.g., id:0=PY=Passing Yards, id:4=PTD=TD Pass, etc.)
