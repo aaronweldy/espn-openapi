@@ -93,6 +93,7 @@ from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
 from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
+from .head_to_heads_list_response import HeadToHeadsListResponse
 from .last_play_reference import LastPlayReference
 from .leader_category import LeaderCategory
 from .league_enum import LeagueEnum
@@ -322,6 +323,7 @@ __all__ = (
     "GetNFLConferenceStandingsSeasontype",
     "GroupDetailsResponse",
     "HeadToHeads",
+    "HeadToHeadsListResponse",
     "LastPlayReference",
     "LeaderCategory",
     "LeagueEnum",

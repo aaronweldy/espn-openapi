@@ -127,7 +127,7 @@
       "items": [
         {
           "type": "total",
-          "summary": "2-5",
+          "summary": "2-6",
           "description": "Overall Record",
           "stats": [
             {
@@ -140,15 +140,15 @@
             },
             {
               "name": "avgPointsAgainst",
-              "value": 84.14286
+              "value": 84.25
             },
             {
               "name": "avgPointsFor",
-              "value": 81.71429
+              "value": 81.5
             },
             {
               "name": "differential",
-              "value": -2.3999999999999915
+              "value": -2.799999999999997
             },
             {
               "name": "divisionWinPercent",
@@ -156,19 +156,19 @@
             },
             {
               "name": "gamesBehind",
-              "value": 4.5
+              "value": 5.0
             },
             {
               "name": "gamesPlayed",
-              "value": 7.0
+              "value": 8.0
             },
             {
               "name": "leagueWinPercent",
-              "value": 0.2
+              "value": 0.16666667
             },
             {
               "name": "losses",
-              "value": 5.0
+              "value": 6.0
             },
             {
               "name": "playoffSeed",
@@ -176,23 +176,23 @@
             },
             {
               "name": "pointDifferential",
-              "value": -17.0
+              "value": -22.0
             },
             {
               "name": "points",
-              "value": -1.5
+              "value": -2.0
             },
             {
               "name": "pointsAgainst",
-              "value": 589.0
+              "value": 674.0
             },
             {
               "name": "pointsFor",
-              "value": 572.0
+              "value": 652.0
             },
             {
               "name": "streak",
-              "value": -2.0
+              "value": -3.0
             },
             {
               "name": "ties",
@@ -200,7 +200,7 @@
             },
             {
               "name": "winPercent",
-              "value": 0.2857143
+              "value": 0.25
             },
             {
               "name": "wins",
@@ -210,7 +210,7 @@
         },
         {
           "type": "home",
-          "summary": "1-3",
+          "summary": "1-4",
           "description": "Home Record",
           "stats": [
             {
@@ -219,7 +219,7 @@
             },
             {
               "name": "losses",
-              "value": 3.0
+              "value": 4.0
             },
             {
               "name": "ties",
@@ -227,7 +227,7 @@
             },
             {
               "name": "winPercent",
-              "value": 0.25
+              "value": 0.20000000298023224
             },
             {
               "name": "OTLosses",
@@ -398,7 +398,7 @@
           {
             "id": "401736153",
             "date": "2025-06-01T22:00Z",
-            "attendance": 0,
+            "attendance": 11033,
             "type": {
               "id": "1",
               "text": "Standard",
@@ -408,8 +408,8 @@
             },
             "timeValid": true,
             "neutralSite": false,
-            "boxscoreAvailable": false,
-            "ticketsAvailable": true,
+            "boxscoreAvailable": true,
+            "ticketsAvailable": false,
             "venue": {
               "fullName": "crypto.com Arena",
               "address": {
@@ -423,6 +423,7 @@
                 "type": "team",
                 "order": 0,
                 "homeAway": "home",
+                "winner": false,
                 "team": {
                   "id": "6",
                   "location": "Los Angeles",
@@ -615,13 +616,45 @@
                       "text": "Draft Picks"
                     }
                   ]
-                }
+                },
+                "score": {
+                  "value": 80.0,
+                  "displayValue": "80"
+                },
+                "record": [
+                  {
+                    "id": "900",
+                    "abbreviation": "Game",
+                    "displayName": "Record Year To Date",
+                    "shortDisplayName": "YTD",
+                    "description": "Overall Record",
+                    "type": "total",
+                    "displayValue": "2-6"
+                  },
+                  {
+                    "id": "33",
+                    "displayName": "Home",
+                    "shortDisplayName": "HOME",
+                    "description": "Home Record",
+                    "type": "home",
+                    "displayValue": "1-4"
+                  },
+                  {
+                    "id": "34",
+                    "displayName": "Road",
+                    "shortDisplayName": "AWAY",
+                    "description": "Away Record",
+                    "type": "road",
+                    "displayValue": "1-2"
+                  }
+                ]
               },
               {
                 "id": "11",
                 "type": "team",
                 "order": 1,
                 "homeAway": "away",
+                "winner": true,
                 "team": {
                   "id": "11",
                   "location": "Phoenix",
@@ -814,7 +847,38 @@
                       "text": "Draft Picks"
                     }
                   ]
-                }
+                },
+                "score": {
+                  "value": 85.0,
+                  "displayValue": "85"
+                },
+                "record": [
+                  {
+                    "id": "900",
+                    "abbreviation": "Game",
+                    "displayName": "Record Year To Date",
+                    "shortDisplayName": "YTD",
+                    "description": "Overall Record",
+                    "type": "total",
+                    "displayValue": "5-2"
+                  },
+                  {
+                    "id": "33",
+                    "displayName": "Home",
+                    "shortDisplayName": "HOME",
+                    "description": "Home Record",
+                    "type": "home",
+                    "displayValue": "4-1"
+                  },
+                  {
+                    "id": "34",
+                    "displayName": "Road",
+                    "shortDisplayName": "AWAY",
+                    "description": "Away Record",
+                    "type": "road",
+                    "displayValue": "1-1"
+                  }
+                ]
               }
             ],
             "notes": [
@@ -870,47 +934,18 @@
                 "region": "us"
               }
             ],
-            "tickets": [
-              {
-                "id": "5393518",
-                "summary": "Tickets as low as $6",
-                "description": "Phoenix Mercury at Los Angeles Sparks",
-                "maxPrice": 364.0,
-                "startingPrice": 6.0,
-                "numberAvailable": 1102,
-                "totalPostings": 246,
-                "links": [
-                  {
-                    "rel": [
-                      "tickets",
-                      "desktop",
-                      "event"
-                    ],
-                    "href": "https://www.vividseats.com/los-angeles-sparks-tickets-cryptocom-arena-6-1-2025--sports-wnba/production/5393518?wsUser=717"
-                  },
-                  {
-                    "rel": [
-                      "tickets",
-                      "desktop",
-                      "venue"
-                    ],
-                    "href": "https://www.vividseats.com/crypto-arena-tickets/venue/1604?wsUser=717"
-                  }
-                ]
-              }
-            ],
             "status": {
               "clock": 0.0,
               "displayClock": "0.0",
-              "period": 0,
+              "period": 4,
               "type": {
-                "id": "1",
-                "name": "STATUS_SCHEDULED",
-                "state": "pre",
-                "completed": false,
-                "description": "Scheduled",
-                "detail": "Sun, June 1st at 6:00 PM EDT",
-                "shortDetail": "6/1 - 6:00 PM EDT"
+                "id": "3",
+                "name": "STATUS_FINAL",
+                "state": "post",
+                "completed": true,
+                "description": "Final",
+                "detail": "Final",
+                "shortDetail": "Final"
               }
             }
           }
@@ -953,6 +988,112 @@
             "href": "https://www.espn.com/wnba/game/_/gameId/401736153",
             "text": "Now",
             "shortText": "Now",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "teamstats",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/wnba/matchup?gameId=401736153",
+            "text": "Team Stats",
+            "shortText": "Team Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "boxscore",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/wnba/boxscore/_/gameId/401736153",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "boxscore",
+              "sportscenter",
+              "app",
+              "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401736153",
+            "text": "Box Score",
+            "shortText": "Box Score",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/wnba/game/_/gameId/401736153",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "mobile",
+              "event"
+            ],
+            "href": "http://m.espn.com/wnba/gamecast?gameId=401736153&action=summary",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "gamecast",
+              "sportscenter",
+              "app",
+              "event"
+            ],
+            "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401736153",
+            "text": "Gamecast",
+            "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "pbp",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/wnba/playbyplay/_/gameId/401736153",
+            "text": "Play-by-Play",
+            "shortText": "Play-by-Play",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "videos",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/wnba/video?gameId=401736153",
+            "text": "Videos",
+            "shortText": "Videos",
             "isExternal": false,
             "isPremium": false
           }

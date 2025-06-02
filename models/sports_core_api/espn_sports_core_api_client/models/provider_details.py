@@ -13,14 +13,14 @@ class ProviderDetails:
     """
     Attributes:
         ref (str): Reference URL for this provider
-        id (str): Provider ID Example: 58.
-        name (str): Provider name Example: ESPN BET.
+        id (Union[Unset, str]): Provider ID Example: 58.
+        name (Union[Unset, str]): Provider name Example: ESPN BET.
         priority (Union[Unset, int]): Provider priority/ranking Example: 1.
     """
 
     ref: str
-    id: str
-    name: str
+    id: Union[Unset, str] = UNSET
+    name: Union[Unset, str] = UNSET
     priority: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -38,10 +38,12 @@ class ProviderDetails:
         field_dict.update(
             {
                 "$ref": ref,
-                "id": id,
-                "name": name,
             }
         )
+        if id is not UNSET:
+            field_dict["id"] = id
+        if name is not UNSET:
+            field_dict["name"] = name
         if priority is not UNSET:
             field_dict["priority"] = priority
 
@@ -52,9 +54,9 @@ class ProviderDetails:
         d = src_dict.copy()
         ref = d.pop("$ref")
 
-        id = d.pop("id")
+        id = d.pop("id", UNSET)
 
-        name = d.pop("name")
+        name = d.pop("name", UNSET)
 
         priority = d.pop("priority", UNSET)
 

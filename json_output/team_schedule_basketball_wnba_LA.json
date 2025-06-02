@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-06-01T15:55:45+00:00",
+  "timestamp": "2025-06-02T02:08:13+00:00",
   "status": "success",
   "season": {
     "year": 2025,
@@ -11,7 +11,7 @@
   "team": {
     "clubhouse": "https://www.espn.com/wnba/team/_/name/la/los-angeles-sparks",
     "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/la.png",
-    "recordSummary": "2-5",
+    "recordSummary": "2-6",
     "seasonSummary": "2025",
     "id": "6",
     "displayName": "Los Angeles Sparks",
@@ -6373,41 +6373,226 @@
       "date": "2025-06-01T22:00:00+00:00",
       "competitions": [
         {
-          "boxscoreAvailable": false,
-          "ticketsAvailable": true,
-          "tickets": [
-            {
-              "id": "5393518",
-              "summary": "Tickets as low as $6",
-              "description": "Phoenix Mercury at Los Angeles Sparks",
-              "maxPrice": 364.0,
-              "startingPrice": 6.0,
-              "numberAvailable": 1118,
-              "totalPostings": 248,
-              "links": [
-                {
-                  "rel": [
-                    "tickets",
-                    "desktop",
-                    "event"
-                  ],
-                  "href": "https://www.vividseats.com/los-angeles-sparks-tickets-cryptocom-arena-6-1-2025--sports-wnba/production/5393518?wsUser=717"
-                },
-                {
-                  "rel": [
-                    "tickets",
-                    "desktop",
-                    "venue"
-                  ],
-                  "href": "https://www.vividseats.com/crypto-arena-tickets/venue/1604?wsUser=717"
-                }
-              ]
-            }
-          ],
+          "boxscoreAvailable": true,
+          "ticketsAvailable": false,
           "id": "401736153",
           "date": "2025-06-01T22:00:00+00:00",
           "competitors": [
             {
+              "leaders": [
+                {
+                  "name": "points",
+                  "displayName": "Points",
+                  "abbreviation": "Pts",
+                  "leaders": [
+                    {
+                      "displayValue": "32",
+                      "value": 32.0,
+                      "athlete": {
+                        "id": "2529047",
+                        "lastName": "Sims",
+                        "displayName": "Odyssey Sims",
+                        "shortName": "O. Sims",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/2529047/odyssey-sims"
+                          },
+                          {
+                            "rel": [
+                              "stats",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/stats/_/id/2529047/odyssey-sims"
+                          },
+                          {
+                            "rel": [
+                              "gamelog",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/gamelog/_/id/2529047/odyssey-sims"
+                          },
+                          {
+                            "rel": [
+                              "news",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/news/_/id/2529047/odyssey-sims"
+                          },
+                          {
+                            "rel": [
+                              "bio",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/bio/_/id/2529047/odyssey-sims"
+                          },
+                          {
+                            "rel": [
+                              "overview",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/2529047/odyssey-sims"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "assists",
+                  "displayName": "Assists",
+                  "abbreviation": "Ast",
+                  "leaders": [
+                    {
+                      "displayValue": "6",
+                      "value": 6.0,
+                      "athlete": {
+                        "id": "4001679",
+                        "lastName": "Allemand",
+                        "displayName": "Julie Allemand",
+                        "shortName": "J. Allemand",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/4001679/julie-allemand"
+                          },
+                          {
+                            "rel": [
+                              "stats",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/stats/_/id/4001679/julie-allemand"
+                          },
+                          {
+                            "rel": [
+                              "gamelog",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/gamelog/_/id/4001679/julie-allemand"
+                          },
+                          {
+                            "rel": [
+                              "news",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/news/_/id/4001679/julie-allemand"
+                          },
+                          {
+                            "rel": [
+                              "bio",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/bio/_/id/4001679/julie-allemand"
+                          },
+                          {
+                            "rel": [
+                              "overview",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/4001679/julie-allemand"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "rebounds",
+                  "displayName": "Rebounds",
+                  "abbreviation": "Reb",
+                  "leaders": [
+                    {
+                      "displayValue": "8",
+                      "value": 8.0,
+                      "athlete": {
+                        "id": "2566106",
+                        "lastName": "Hamby",
+                        "displayName": "Dearica Hamby",
+                        "shortName": "D. Hamby",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/2566106/dearica-hamby"
+                          },
+                          {
+                            "rel": [
+                              "stats",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/stats/_/id/2566106/dearica-hamby"
+                          },
+                          {
+                            "rel": [
+                              "gamelog",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/gamelog/_/id/2566106/dearica-hamby"
+                          },
+                          {
+                            "rel": [
+                              "news",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/news/_/id/2566106/dearica-hamby"
+                          },
+                          {
+                            "rel": [
+                              "bio",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/bio/_/id/2566106/dearica-hamby"
+                          },
+                          {
+                            "rel": [
+                              "overview",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/wnba/player/_/id/2566106/dearica-hamby"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "record": [
+                {
+                  "id": "900",
+                  "abbreviation": "Game",
+                  "displayName": "Record Year To Date",
+                  "shortDisplayName": "YTD",
+                  "description": "Overall Record",
+                  "type": "total",
+                  "displayValue": "2-6"
+                }
+              ],
               "id": "6",
               "order": 0,
               "homeAway": "home",
@@ -6551,11 +6736,27 @@
                 ]
               },
               "type": "team",
+              "winner": false,
+              "score": {
+                "value": 80.0,
+                "displayValue": "80"
+              },
               "linescores": [],
               "statistics": [],
               "records": []
             },
             {
+              "record": [
+                {
+                  "id": "900",
+                  "abbreviation": "Game",
+                  "displayName": "Record Year To Date",
+                  "shortDisplayName": "YTD",
+                  "description": "Overall Record",
+                  "type": "total",
+                  "displayValue": "5-2"
+                }
+              ],
               "id": "11",
               "order": 1,
               "homeAway": "away",
@@ -6699,12 +6900,17 @@
                 ]
               },
               "type": "team",
+              "winner": true,
+              "score": {
+                "value": 85.0,
+                "displayValue": "85"
+              },
               "linescores": [],
               "statistics": [],
               "records": []
             }
           ],
-          "attendance": 0,
+          "attendance": 11033,
           "type": {
             "slug": "standard",
             "type": "standard",
@@ -6730,17 +6936,17 @@
           ],
           "status": {
             "type": {
-              "id": "1",
-              "name": "STATUS_SCHEDULED",
-              "state": "pre",
-              "completed": false,
-              "description": "Scheduled",
-              "detail": "Sun, June 1st at 6:00 PM EDT",
-              "shortDetail": "6/1 - 6:00 PM EDT"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
             "clock": 0.0,
             "displayClock": "0.0",
-            "period": 0
+            "period": 4
           },
           "broadcasts": [
             {
@@ -6841,6 +7047,112 @@
           ],
           "isExternal": false,
           "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Team Stats",
+          "href": "https://www.espn.com/wnba/matchup?gameId=401736153",
+          "text": "Team Stats",
+          "rel": [
+            "teamstats",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "https://www.espn.com/wnba/boxscore/_/gameId/401736153",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Box Score",
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401736153",
+          "text": "Box Score",
+          "rel": [
+            "boxscore",
+            "sportscenter",
+            "app",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Gamecast",
+          "href": "https://www.espn.com/wnba/game/_/gameId/401736153",
+          "text": "Gamecast",
+          "rel": [
+            "gamecast",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Gamecast",
+          "href": "http://m.espn.com/wnba/gamecast?gameId=401736153&action=summary",
+          "text": "Gamecast",
+          "rel": [
+            "gamecast",
+            "mobile",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Gamecast",
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401736153",
+          "text": "Gamecast",
+          "rel": [
+            "gamecast",
+            "sportscenter",
+            "app",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Play-by-Play",
+          "href": "https://www.espn.com/wnba/playbyplay/_/gameId/401736153",
+          "text": "Play-by-Play",
+          "rel": [
+            "pbp",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Videos",
+          "href": "https://www.espn.com/wnba/video?gameId=401736153",
+          "text": "Videos",
+          "rel": [
+            "videos",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
         }
       ]
     },
@@ -6865,8 +7177,8 @@
               "description": "Los Angeles Sparks at Dallas Wings (Sneakerhead Night)",
               "maxPrice": 906.0,
               "startingPrice": 36.0,
-              "numberAvailable": 734,
-              "totalPostings": 134,
+              "numberAvailable": 721,
+              "totalPostings": 132,
               "links": [
                 {
                   "rel": [
@@ -7333,8 +7645,8 @@
               "description": "Golden State Valkyries at Los Angeles Sparks",
               "maxPrice": 487.0,
               "startingPrice": 9.0,
-              "numberAvailable": 1447,
-              "totalPostings": 322,
+              "numberAvailable": 1426,
+              "totalPostings": 316,
               "links": [
                 {
                   "rel": [
@@ -7850,12 +8162,12 @@
           "tickets": [
             {
               "id": "5393401",
-              "summary": "Tickets as low as $14",
+              "summary": "Tickets as low as $17",
               "description": "Los Angeles Sparks at Las Vegas Aces",
               "maxPrice": 875.0,
-              "startingPrice": 14.0,
-              "numberAvailable": 700,
-              "totalPostings": 173,
+              "startingPrice": 17.0,
+              "numberAvailable": 994,
+              "totalPostings": 192,
               "links": [
                 {
                   "rel": [
@@ -8337,8 +8649,8 @@
               "description": "Commissioners Cup - Los Angeles Sparks at Minnesota Lynx",
               "maxPrice": 498.0,
               "startingPrice": 50.0,
-              "numberAvailable": 315,
-              "totalPostings": 54,
+              "numberAvailable": 308,
+              "totalPostings": 53,
               "links": [
                 {
                   "rel": [
@@ -8805,8 +9117,8 @@
               "description": "Seattle Storm at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 9.0,
-              "numberAvailable": 1871,
-              "totalPostings": 397,
+              "numberAvailable": 1812,
+              "totalPostings": 390,
               "links": [
                 {
                   "rel": [
@@ -9322,10 +9634,10 @@
           "tickets": [
             {
               "id": "5393624",
-              "summary": "Tickets as low as $50",
+              "summary": "Tickets as low as $49",
               "description": "Los Angeles Sparks at Minnesota Lynx",
               "maxPrice": 498.0,
-              "startingPrice": 50.0,
+              "startingPrice": 49.0,
               "numberAvailable": 313,
               "totalPostings": 53,
               "links": [
@@ -9800,12 +10112,12 @@
           "tickets": [
             {
               "id": "5393597",
-              "summary": "Tickets as low as $30",
+              "summary": "Tickets as low as $26",
               "description": "Los Angeles Sparks at Chicago Sky",
               "maxPrice": 1275.0,
-              "startingPrice": 30.0,
-              "numberAvailable": 2161,
-              "totalPostings": 491,
+              "startingPrice": 26.0,
+              "numberAvailable": 2160,
+              "totalPostings": 492,
               "links": [
                 {
                   "rel": [
@@ -10282,8 +10594,8 @@
               "description": "Los Angeles Sparks at Indiana Fever",
               "maxPrice": 4099.0,
               "startingPrice": 17.0,
-              "numberAvailable": 2413,
-              "totalPostings": 697,
+              "numberAvailable": 2391,
+              "totalPostings": 688,
               "links": [
                 {
                   "rel": [
@@ -10760,8 +11072,8 @@
               "description": "Chicago Sky at Los Angeles Sparks (Candace Parker Jersey Retirement)",
               "maxPrice": 1437.0,
               "startingPrice": 31.0,
-              "numberAvailable": 2865,
-              "totalPostings": 596,
+              "numberAvailable": 2816,
+              "totalPostings": 588,
               "links": [
                 {
                   "rel": [
@@ -11251,8 +11563,8 @@
               "description": "Los Angeles Sparks at New York Liberty",
               "maxPrice": 7746.0,
               "startingPrice": 19.0,
-              "numberAvailable": 2947,
-              "totalPostings": 743,
+              "numberAvailable": 2924,
+              "totalPostings": 740,
               "links": [
                 {
                   "rel": [
@@ -11744,8 +12056,8 @@
               "description": "Los Angeles Sparks at Indiana Fever",
               "maxPrice": 4099.0,
               "startingPrice": 27.0,
-              "numberAvailable": 3055,
-              "totalPostings": 838,
+              "numberAvailable": 3029,
+              "totalPostings": 835,
               "links": [
                 {
                   "rel": [
@@ -12222,8 +12534,8 @@
               "description": "Minnesota Lynx at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 10.0,
-              "numberAvailable": 2003,
-              "totalPostings": 428,
+              "numberAvailable": 1974,
+              "totalPostings": 423,
               "links": [
                 {
                   "rel": [
@@ -12700,8 +13012,8 @@
               "description": "Connecticut Sun at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 12.0,
-              "numberAvailable": 1602,
-              "totalPostings": 348,
+              "numberAvailable": 2101,
+              "totalPostings": 440,
               "links": [
                 {
                   "rel": [
@@ -13178,8 +13490,8 @@
               "description": "Washington Mystics at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 9.0,
-              "numberAvailable": 2087,
-              "totalPostings": 433,
+              "numberAvailable": 2039,
+              "totalPostings": 426,
               "links": [
                 {
                   "rel": [
@@ -13652,11 +13964,11 @@
           "tickets": [
             {
               "id": "5393601",
-              "summary": "Tickets as low as $24",
+              "summary": "Tickets as low as $32",
               "description": "Los Angeles Sparks at Washington Mystics",
               "maxPrice": 2240.0,
-              "startingPrice": 24.0,
-              "numberAvailable": 598,
+              "startingPrice": 32.0,
+              "numberAvailable": 594,
               "totalPostings": 155,
               "links": [
                 {
@@ -14162,8 +14474,8 @@
               "description": "Los Angeles Sparks at Connecticut Sun",
               "maxPrice": 1008.0,
               "startingPrice": 8.0,
-              "numberAvailable": 1904,
-              "totalPostings": 530,
+              "numberAvailable": 1902,
+              "totalPostings": 529,
               "links": [
                 {
                   "rel": [
@@ -14640,8 +14952,8 @@
               "description": "Los Angeles Sparks at New York Liberty",
               "maxPrice": 7746.0,
               "startingPrice": 20.0,
-              "numberAvailable": 2902,
-              "totalPostings": 668,
+              "numberAvailable": 2884,
+              "totalPostings": 664,
               "links": [
                 {
                   "rel": [
@@ -15129,11 +15441,11 @@
           "tickets": [
             {
               "id": "5393534",
-              "summary": "Tickets as low as $23",
+              "summary": "Tickets as low as $21",
               "description": "Las Vegas Aces at Los Angeles Sparks",
               "maxPrice": 1163.0,
-              "startingPrice": 23.0,
-              "numberAvailable": 2394,
+              "startingPrice": 21.0,
+              "numberAvailable": 2361,
               "totalPostings": 462,
               "links": [
                 {
@@ -15626,8 +15938,8 @@
               "description": "Los Angeles Sparks at Seattle Storm",
               "maxPrice": 1318.0,
               "startingPrice": 20.0,
-              "numberAvailable": 2858,
-              "totalPostings": 460,
+              "numberAvailable": 2852,
+              "totalPostings": 459,
               "links": [
                 {
                   "rel": [
@@ -16110,10 +16422,10 @@
               "id": "5393535",
               "summary": "Tickets as low as $58",
               "description": "Indiana Fever at Los Angeles Sparks",
-              "maxPrice": 2461.0,
+              "maxPrice": 2396.0,
               "startingPrice": 58.0,
-              "numberAvailable": 2371,
-              "totalPostings": 517,
+              "numberAvailable": 2335,
+              "totalPostings": 510,
               "links": [
                 {
                   "rel": [
@@ -16601,12 +16913,12 @@
           "tickets": [
             {
               "id": "5393536",
-              "summary": "Tickets as low as $11",
+              "summary": "Tickets as low as $10",
               "description": "Connecticut Sun at Los Angeles Sparks",
               "maxPrice": 8464.0,
-              "startingPrice": 11.0,
-              "numberAvailable": 2267,
-              "totalPostings": 456,
+              "startingPrice": 10.0,
+              "numberAvailable": 2236,
+              "totalPostings": 451,
               "links": [
                 {
                   "rel": [
@@ -17083,8 +17395,8 @@
               "description": "Los Angeles Sparks at Golden State Valkyries",
               "maxPrice": 5223.0,
               "startingPrice": 21.0,
-              "numberAvailable": 1856,
-              "totalPostings": 462,
+              "numberAvailable": 1880,
+              "totalPostings": 470,
               "links": [
                 {
                   "rel": [
@@ -17584,8 +17896,8 @@
               "description": "Seattle Storm at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 15.0,
-              "numberAvailable": 2454,
-              "totalPostings": 475,
+              "numberAvailable": 2421,
+              "totalPostings": 469,
               "links": [
                 {
                   "rel": [
@@ -18085,8 +18397,8 @@
               "description": "New York Liberty at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 25.0,
-              "numberAvailable": 2964,
-              "totalPostings": 577,
+              "numberAvailable": 2931,
+              "totalPostings": 571,
               "links": [
                 {
                   "rel": [
@@ -18589,11 +18901,11 @@
           "tickets": [
             {
               "id": "5393530",
-              "summary": "Tickets as low as $60",
+              "summary": "Tickets as low as $59",
               "description": "Los Angeles Sparks at Dallas Wings (Rock the Pink)",
               "maxPrice": 989.0,
-              "startingPrice": 60.0,
-              "numberAvailable": 857,
+              "startingPrice": 59.0,
+              "numberAvailable": 856,
               "totalPostings": 152,
               "links": [
                 {
@@ -19052,11 +19364,11 @@
           "tickets": [
             {
               "id": "5393623",
-              "summary": "Tickets as low as $55",
+              "summary": "Tickets as low as $56",
               "description": "Los Angeles Sparks at Washington Mystics",
               "maxPrice": 2240.0,
-              "startingPrice": 55.0,
-              "numberAvailable": 413,
+              "startingPrice": 56.0,
+              "numberAvailable": 421,
               "totalPostings": 104,
               "links": [
                 {
@@ -19558,12 +19870,12 @@
           "tickets": [
             {
               "id": "5393541",
-              "summary": "Tickets as low as $38",
+              "summary": "Tickets as low as $39",
               "description": "Dallas Wings at Los Angeles Sparks",
-              "maxPrice": 1231.0,
-              "startingPrice": 38.0,
-              "numberAvailable": 2317,
-              "totalPostings": 449,
+              "maxPrice": 1163.0,
+              "startingPrice": 39.0,
+              "numberAvailable": 2281,
+              "totalPostings": 443,
               "links": [
                 {
                   "rel": [
@@ -20036,12 +20348,12 @@
           "tickets": [
             {
               "id": "5393546",
-              "summary": "Tickets as low as $11",
+              "summary": "Tickets as low as $10",
               "description": "Phoenix Mercury at Los Angeles Sparks",
               "maxPrice": 1163.0,
-              "startingPrice": 11.0,
-              "numberAvailable": 2407,
-              "totalPostings": 474,
+              "startingPrice": 10.0,
+              "numberAvailable": 2374,
+              "totalPostings": 468,
               "links": [
                 {
                   "rel": [
@@ -20531,10 +20843,10 @@
               "id": "5393550",
               "summary": "Tickets as low as $58",
               "description": "Indiana Fever at Los Angeles Sparks",
-              "maxPrice": 2461.0,
+              "maxPrice": 2395.0,
               "startingPrice": 58.0,
-              "numberAvailable": 4373,
-              "totalPostings": 855,
+              "numberAvailable": 4340,
+              "totalPostings": 849,
               "links": [
                 {
                   "rel": [
@@ -20996,8 +21308,8 @@
               "description": "Washington Mystics at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 16.0,
-              "numberAvailable": 2514,
-              "totalPostings": 489,
+              "numberAvailable": 2477,
+              "totalPostings": 482,
               "links": [
                 {
                   "rel": [
@@ -21474,7 +21786,7 @@
               "description": "Los Angeles Sparks at Seattle Storm",
               "maxPrice": 759.0,
               "startingPrice": 12.0,
-              "numberAvailable": 3024,
+              "numberAvailable": 3025,
               "totalPostings": 485,
               "links": [
                 {
@@ -21975,8 +22287,8 @@
               "description": "Los Angeles Sparks at Atlanta Dream",
               "maxPrice": 4784.0,
               "startingPrice": 29.0,
-              "numberAvailable": 843,
-              "totalPostings": 213,
+              "numberAvailable": 837,
+              "totalPostings": 212,
               "links": [
                 {
                   "rel": [
@@ -22454,7 +22766,7 @@
               "maxPrice": 4784.0,
               "startingPrice": 50.0,
               "numberAvailable": 814,
-              "totalPostings": 203,
+              "totalPostings": 204,
               "links": [
                 {
                   "rel": [
@@ -22914,10 +23226,10 @@
               "id": "5393565",
               "summary": "Tickets as low as $38",
               "description": "Dallas Wings at Los Angeles Sparks",
-              "maxPrice": 1477.0,
+              "maxPrice": 1163.0,
               "startingPrice": 38.0,
-              "numberAvailable": 2522,
-              "totalPostings": 481,
+              "numberAvailable": 2481,
+              "totalPostings": 473,
               "links": [
                 {
                   "rel": [
@@ -23409,8 +23721,8 @@
               "description": "Los Angeles Sparks at Phoenix Mercury",
               "maxPrice": 3352.0,
               "startingPrice": 20.0,
-              "numberAvailable": 3096,
-              "totalPostings": 508,
+              "numberAvailable": 3087,
+              "totalPostings": 507,
               "links": [
                 {
                   "rel": [
@@ -23887,8 +24199,8 @@
               "description": "Las Vegas Aces at Los Angeles Sparks",
               "maxPrice": 1163.0,
               "startingPrice": 21.0,
-              "numberAvailable": 2967,
-              "totalPostings": 560,
+              "numberAvailable": 2936,
+              "totalPostings": 555,
               "links": [
                 {
                   "rel": [

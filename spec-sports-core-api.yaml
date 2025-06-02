@@ -2170,6 +2170,62 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads:
+    get:
+      summary: Get Head-to-Head Odds from Provider
+      description: Retrieve head-to-head betting odds from a specific provider for a competition.
+      operationId: getCompetitionOddsHeadToHeads
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+        - name: provider_id
+          in: path
+          required: true
+          description: The odds provider ID (e.g., 58 for ESPN BET)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with paginated head-to-head odds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HeadToHeadsListResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts:
     get:
       summary: Get Competition Broadcasts
@@ -7342,5 +7398,34 @@ components:
           example: 1
       required:
         - $ref
-        - id
-        - name
+    
+    HeadToHeadsListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of head-to-head odds
+          example: 0
+        pageIndex:
+          type: integer
+          description: Current page index (0-based)
+          example: 0
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 0
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+          description: List of head-to-head odds references
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
