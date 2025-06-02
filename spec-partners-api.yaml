@@ -1,0 +1,324 @@
+openapi: 3.0.3
+info:
+  title: ESPN Partners API
+  version: 1.0.0
+  description: Unofficial ESPN Partners API for retrieving sports data from partners.api.espn.com. This API is not officially supported by ESPN and may change without notice.
+
+servers:
+  - url: https://partners.api.espn.com
+    description: ESPN Partners API Production Server
+
+paths:
+  /v2/sports/{sport}/{league}/athletes:
+    get:
+      summary: Get Athletes List
+      description: |
+        Retrieve a paginated list of athletes for a specific sport and league. 
+        This endpoint supports large result sets with limits up to 7000+.
+      operationId: getAthletesList
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of athletes to return (can be very large, e.g., 7000)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10000
+            default: 100
+            example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthletesListResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    SportEnum:
+      type: string
+      enum:
+        - football
+        - basketball
+        - baseball
+        - hockey
+        - soccer
+        - golf
+        - tennis
+        - racing
+      description: Sport identifier
+
+    LeagueEnum:
+      type: string
+      enum:
+        - nfl
+        - nba
+        - mlb
+        - nhl
+        - college-football
+        - mens-college-basketball
+        - womens-college-basketball
+        - college-baseball
+        - wnba
+        - pga
+        - lpga
+        - atp
+        - wta
+        - f1
+        - nascar
+        - eng.1
+        - esp.1
+        - ger.1
+        - ita.1
+        - fra.1
+        - uefa.champions
+        - usa.1
+      description: League identifier
+
+    AthletesListResponse:
+      type: object
+      properties:
+        athletes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Athlete'
+        count:
+          type: integer
+          description: Total number of athletes available
+          example: 6737
+        pageIndex:
+          type: integer
+          description: Current page index (1-based)
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 100
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 68
+      required:
+        - athletes
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+
+    Athlete:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique athlete identifier
+          example: "4429202"
+        firstName:
+          type: string
+          description: Athlete's first name
+          example: "Israel"
+        lastName:
+          type: string
+          description: Athlete's last name
+          example: "Abanikanda"
+        displayName:
+          type: string
+          description: Full display name
+          example: "Israel Abanikanda"
+        weight:
+          type: number
+          description: Athlete's weight in pounds
+          example: 216.0
+        height:
+          type: number
+          description: Athlete's height in inches
+          example: 70.0
+        age:
+          type: integer
+          description: Athlete's age
+          example: 22
+        team:
+          $ref: '#/components/schemas/Team'
+        jersey:
+          type: string
+          description: Jersey number
+          example: "47"
+        position:
+          $ref: '#/components/schemas/Position'
+        draft:
+          $ref: '#/components/schemas/Draft'
+        status:
+          $ref: '#/components/schemas/Status'
+        alternateIds:
+          $ref: '#/components/schemas/AlternateIds'
+        injuries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Injury'
+      required:
+        - id
+        - displayName
+
+    Team:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Team identifier
+          example: "25"
+        abbreviation:
+          type: string
+          description: Team abbreviation
+          example: "SF"
+        displayName:
+          type: string
+          description: Full team name
+          example: "San Francisco 49ers"
+      required:
+        - id
+        - displayName
+
+    Position:
+      type: object
+      properties:
+        abbreviation:
+          type: string
+          description: Position abbreviation
+          example: "RB"
+      required:
+        - abbreviation
+
+    Draft:
+      type: object
+      properties:
+        round:
+          type: integer
+          description: Draft round
+          example: 5
+        year:
+          type: integer
+          description: Draft year
+          example: 2023
+        selection:
+          type: integer
+          description: Overall draft pick number
+          example: 143
+      required:
+        - round
+        - year
+        - selection
+
+    Status:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Status type (active, free-agent, etc.)
+          example: "active"
+      required:
+        - type
+
+    AlternateIds:
+      type: object
+      properties:
+        sdr:
+          type: string
+          description: SDR identifier
+          example: "4429202"
+
+    Injury:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Injury identifier
+          example: "-1676597"
+        status:
+          type: string
+          description: Injury status
+          example: "Questionable"
+        date:
+          type: string
+          format: date-time
+          description: Date of injury report
+          example: "2025-01-06T13:42Z"
+        type:
+          $ref: '#/components/schemas/InjuryType'
+        details:
+          $ref: '#/components/schemas/InjuryDetails'
+      required:
+        - id
+        - status
+
+    InjuryType:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Injury type identifier
+          example: "2"
+        description:
+          type: string
+          description: Injury type description
+          example: "questionable"
+      required:
+        - id
+        - description
+
+    InjuryDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Specific injury description
+          example: "Foot"
+        returnDate:
+          type: string
+          format: date
+          description: Expected return date
+          example: "2025-05-01"
+      required:
+        - type
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Error message
+            code:
+              type: integer
+              description: HTTP error code
+          required:
+            - message
+            - code
+      required:
+        - error

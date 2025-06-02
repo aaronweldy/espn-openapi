@@ -12,6 +12,7 @@ from models.sports_core_api.espn_sports_core_api_client import (
     Client as SportsCoreApiClient,
 )
 from models.fantasy_api.espn_fantasy_api_client import Client as FantasyApiClient
+from models.partners_api.espn_partners_api_client import Client as PartnersApiClient
 
 
 @pytest.fixture(scope="session")
@@ -42,6 +43,12 @@ def sports_core_api_client():
 def fantasy_api_client():
     """Fixture for ESPN fantasy API client."""
     return FantasyApiClient(base_url="https://fantasy.espn.com")
+
+
+@pytest.fixture(scope="session")
+def partners_api_client():
+    """Fixture for ESPN partners API client."""
+    return PartnersApiClient(base_url="https://partners.api.espn.com")
 
 
 @pytest.fixture(scope="session")
