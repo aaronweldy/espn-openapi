@@ -173,6 +173,7 @@ from .odds_detail import OddsDetail
 from .odds_item import OddsItem
 from .odds_item_current import OddsItemCurrent
 from .odds_provider import OddsProvider
+from .odds_record_stat import OddsRecordStat
 from .odds_response import OddsResponse
 from .odds_team_current import OddsTeamCurrent
 from .odds_value import OddsValue
@@ -227,6 +228,8 @@ from .team_attendance_response import TeamAttendanceResponse
 from .team_leader import TeamLeader
 from .team_leaders_response import TeamLeadersResponse
 from .team_odds import TeamOdds
+from .team_odds_record import TeamOddsRecord
+from .team_odds_records_response import TeamOddsRecordsResponse
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
 from .transactions_list_response_items_item import TransactionsListResponseItemsItem
@@ -406,6 +409,7 @@ __all__ = (
     "OddsItem",
     "OddsItemCurrent",
     "OddsProvider",
+    "OddsRecordStat",
     "OddsResponse",
     "OddsTeamCurrent",
     "OddsValue",
@@ -460,6 +464,8 @@ __all__ = (
     "TeamLeader",
     "TeamLeadersResponse",
     "TeamOdds",
+    "TeamOddsRecord",
+    "TeamOddsRecordsResponse",
     "TeamReference",
     "TransactionsListResponse",
     "TransactionsListResponseItemsItem",

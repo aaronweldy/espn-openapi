@@ -214,7 +214,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/head-to-heads - Head-to-Head Odds. Path Params: As above. - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/futures - Futures Bets. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/ats - Team ATS Records. Path Params: {sport}, {league}, {year}, {seasontype}, {team_id} - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/0/teams/{team_id}/odds-records - Team Odds Records. Path Params: As above (type often 0)
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/odds-records - Team Odds Records. Path Params: {sport}, {league}, {year}, {seasontype} (typically 0), {teamId} - Implemented as generic endpoint (NFL confirmed working)
 [ ] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances - Team Past Performance vs Odds. Path Params & Query: As above, limit
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor - ESPN Predictor Metrics. Path Params: As above. - Implemented as generic endpoint
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/powerindex/{team_id} - ESPN Power Index for Game. Path Params: As above.
@@ -246,6 +246,7 @@ site.web.api.espn.com
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics/{category_id} - Athlete Statistics by Category. Path Params: {sport}, {league}, {athlete_id}, {category_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/linescores - NFL Game Linescores
+[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster - NFL Game Roster
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records - NFL Team Records for Event
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/statistics - NFL Team Statistics for Event
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
