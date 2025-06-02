@@ -181,6 +181,8 @@ from .odds_item import OddsItem
 from .odds_item_current import OddsItemCurrent
 from .odds_movement import OddsMovement
 from .odds_movement_response import OddsMovementResponse
+from .odds_predictor import OddsPredictor
+from .odds_predictors_response import OddsPredictorsResponse
 from .odds_provider import OddsProvider
 from .odds_record_stat import OddsRecordStat
 from .odds_response import OddsResponse
@@ -435,6 +437,8 @@ __all__ = (
     "OddsItemCurrent",
     "OddsMovement",
     "OddsMovementResponse",
+    "OddsPredictor",
+    "OddsPredictorsResponse",
     "OddsProvider",
     "OddsRecordStat",
     "OddsResponse",

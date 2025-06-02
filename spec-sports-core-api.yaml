@@ -2429,6 +2429,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors:
+    get:
+      summary: Get Odds Predictors
+      description: Retrieve odds predictions from a specific provider for a game
+      operationId: getOddsPredictors
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401326315"
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID (usually same as event ID)
+          schema:
+            type: string
+            example: "401326315"
+        - name: provider_id
+          in: path
+          required: true
+          description: The odds provider ID
+          schema:
+            type: string
+            example: "1003"
+      responses:
+        '200':
+          description: Successful response with odds predictions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OddsPredictorsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/broadcasts:
     get:
       summary: Get Competition Broadcasts
@@ -6399,6 +6458,60 @@ components:
         - moneylineWinner
         - spreadWinner
         - line
+
+    OddsPredictorsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of predictors
+        pageIndex:
+          type: integer
+          description: Current page index
+        pageSize:
+          type: integer
+          description: Number of items per page
+        pageCount:
+          type: integer
+          description: Total number of pages
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OddsPredictor'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    OddsPredictor:
+      type: object
+      properties:
+        rank:
+          type: integer
+          description: Predictor rank
+        total:
+          type: string
+          description: Total prediction (OVER/UNDER)
+        value:
+          type: number
+          description: Prediction value/score
+        displayValue:
+          type: string
+          description: Display value for prediction
+        predictorCompetition:
+          $ref: '#/components/schemas/Reference'
+        projectedWinner:
+          $ref: '#/components/schemas/Reference'
+        cover:
+          $ref: '#/components/schemas/Reference'
+        projectedCover:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - rank
+        - value
+        - displayValue
 
     LinescoresResponse:
       type: object

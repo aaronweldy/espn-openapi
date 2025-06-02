@@ -227,7 +227,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/{history_type}/movement - Odds Movement History. Path Params: {sport}, {league}, {event_id}, {competition_id}, {provider_id}, {history_type} (0=moneyline, 1=spread, 2=total). Query Params: limit - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: As above. (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401326315/competitions/401326315/odds/1003/predictors)
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: {sport}, {league}, {event_id}, {competition_id}, {provider_id} - Implemented as generic endpoint (works for NFL with provider 1003)
 XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
 [x] /apis/site/v3/sports/{sport}/{league}/leaders - League Leaders (Site API v3). Path Params: {sport}, {league}. Query Params: season - Implemented as generic endpoint (supports NFL, NHL, NBA, MLB, college sports)
