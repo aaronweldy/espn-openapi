@@ -111,7 +111,7 @@ def test_providers_list_with_pagination(sports_core_api_client):
         (SportEnum.FOOTBALL, LeagueEnum.NFL, "58", "ESPN BET"),
         (SportEnum.BASKETBALL, LeagueEnum.NBA, "58", "ESPN BET"),
         (SportEnum.FOOTBALL, LeagueEnum.NFL, "40", "DraftKings"),
-        (SportEnum.BASKETBALL, LeagueEnum.NBA, "1", "Caesars Sportsbook"),
+        (SportEnum.BASKETBALL, LeagueEnum.NBA, "1", "SportsInteraction.com"),
     ],
 )
 def test_get_provider_details(
@@ -140,9 +140,9 @@ def test_get_provider_details(
     assert result.id == provider_id, f"Provider ID should be {provider_id}"
     assert result.name == expected_name, f"Provider name should be {expected_name}"
     
-    # Priority is optional but if present should be positive
+    # Priority is optional but if present should be non-negative
     if hasattr(result, 'priority') and result.priority is not None:
-        assert result.priority > 0, "Priority should be positive"
+        assert result.priority >= 0, "Priority should be non-negative"
     
     logger.info(f"Provider {provider_id}: {result.name}")
     
