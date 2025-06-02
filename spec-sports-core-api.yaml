@@ -1547,6 +1547,9 @@ paths:
       description: |
         Retrieve comprehensive odds records for a specific team in a given season, including money line 
         and spread performance broken down by various categories (overall, home, away, underdog, favorite).
+        
+        **Supported Sports**: NFL, NBA, MLB, College Football, Men's College Basketball
+        **Not Supported**: NHL, WNBA (return 404)
       operationId: getTeamOddsRecords
       parameters:
         - name: sport
