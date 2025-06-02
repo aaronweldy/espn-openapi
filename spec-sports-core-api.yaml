@@ -1487,7 +1487,11 @@ paths:
   /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/ats:
     get:
       summary: Get Team ATS Records
-      description: Retrieve Against The Spread (ATS) records for a specific team in a given season.
+      description: |
+        Retrieve Against The Spread (ATS) records for a specific team in a given season.
+        
+        **Note**: This endpoint is only supported for sports with variable point spreads (NFL, NBA).
+        MLB and NHL will return 500 errors as they use fixed spreads (run line and puck line respectively).
       operationId: getTeamAtsRecords
       parameters:
         - name: sport

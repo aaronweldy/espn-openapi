@@ -24,11 +24,11 @@ logger = logging.getLogger(__name__)
         (SportEnum.BASKETBALL, LeagueEnum.NBA, 2023, 2, "13"),  # LA Lakers
         pytest.param(
             SportEnum.BASEBALL, LeagueEnum.MLB, 2023, 2, "15",  # NY Yankees
-            marks=pytest.mark.xfail(reason="MLB ATS endpoint returns 500 error")
+            marks=pytest.mark.xfail(reason="MLB doesn't support ATS - uses run line betting instead")
         ),
         pytest.param(
             SportEnum.HOCKEY, LeagueEnum.NHL, 2023, 2, "10",  # Toronto Maple Leafs
-            marks=pytest.mark.xfail(reason="NHL ATS endpoint may return 500 error")
+            marks=pytest.mark.xfail(reason="NHL doesn't support ATS - uses puck line betting instead")
         ),
     ],
 )
@@ -196,3 +196,36 @@ def test_ats_records_different_season_types(sports_core_api_client):
                 logger.info(f"  No ATS records available")
         else:
             logger.info(f"\n{type_name}: No data available (HTTP {response.status_code})")
+
+
+@pytest.mark.api
+def test_mlb_nhl_ats_not_supported(sports_core_api_client):
+    """Test that MLB and NHL don't support ATS endpoints."""
+    # Test MLB
+    response = get_team_ats_records.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.BASEBALL,
+        league=LeagueEnum.MLB,
+        year=2023,
+        seasontype=2,
+        team_id="15",
+    )
+    
+    assert response.status_code == 500, "MLB should return 500 for ATS endpoint"
+    logger.info("\n✓ MLB correctly returns 500 - ATS not supported (uses run line betting instead)")
+    
+    # Test NHL
+    response = get_team_ats_records.sync_detailed(
+        client=sports_core_api_client,
+        sport=SportEnum.HOCKEY,
+        league=LeagueEnum.NHL,
+        year=2023,
+        seasontype=2,
+        team_id="10",
+    )
+    
+    assert response.status_code == 500, "NHL should return 500 for ATS endpoint"
+    logger.info("✓ NHL correctly returns 500 - ATS not supported (uses puck line betting instead)")
+    
+    logger.info("\nNote: ATS (Against The Spread) is only applicable to sports with variable point spreads.")
+    logger.info("MLB uses run line betting and NHL uses puck line betting, which are fixed spreads.")

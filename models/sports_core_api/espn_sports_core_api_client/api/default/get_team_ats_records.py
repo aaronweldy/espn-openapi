@@ -68,6 +68,9 @@ def sync_detailed(
 
      Retrieve Against The Spread (ATS) records for a specific team in a given season.
 
+    **Note**: This endpoint is only supported for sports with variable point spreads (NFL, NBA).
+    MLB and NHL will return 500 errors as they use fixed spreads (run line and puck line respectively).
+
     Args:
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
@@ -111,6 +114,9 @@ def sync(
 
      Retrieve Against The Spread (ATS) records for a specific team in a given season.
 
+    **Note**: This endpoint is only supported for sports with variable point spreads (NFL, NBA).
+    MLB and NHL will return 500 errors as they use fixed spreads (run line and puck line respectively).
+
     Args:
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
         league (LeagueEnum): Common league identifiers used in ESPN APIs.
@@ -148,6 +154,9 @@ async def asyncio_detailed(
     """Get Team ATS Records
 
      Retrieve Against The Spread (ATS) records for a specific team in a given season.
+
+    **Note**: This endpoint is only supported for sports with variable point spreads (NFL, NBA).
+    MLB and NHL will return 500 errors as they use fixed spreads (run line and puck line respectively).
 
     Args:
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
@@ -189,6 +198,9 @@ async def asyncio(
     """Get Team ATS Records
 
      Retrieve Against The Spread (ATS) records for a specific team in a given season.
+
+    **Note**: This endpoint is only supported for sports with variable point spreads (NFL, NBA).
+    MLB and NHL will return 500 errors as they use fixed spreads (run line and puck line respectively).
 
     Args:
         sport (SportEnum): Common sport identifiers used in ESPN APIs.
