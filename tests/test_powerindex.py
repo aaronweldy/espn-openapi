@@ -64,35 +64,33 @@ def test_get_competition_powerindex_nfl(sports_core_api_client, ensure_json_outp
 
 @pytest.mark.api
 @pytest.mark.parametrize("sport,league,event_id,team_id", [
-    # Pro Football
-    ("football", "nfl", "401547602", "12"),  # Kansas City Chiefs
-    ("football", "nfl", "401437954", "30"),  # Jacksonville Jaguars (known working)
+    # Pro Football - valid future events
+    ("football", "nfl", "401772510", "21"),  # Philadelphia Eagles (Sept 2025)
+    ("football", "nfl", "401772510", "6"),   # Dallas Cowboys
+    ("football", "nfl", "401437954", "30"),  # Jacksonville Jaguars (known working from 2022)
     
-    # Pro Basketball
-    ("basketball", "nba", "401584793", "13"),  # LA Lakers
-    ("basketball", "wnba", "401577566", "5"),  # Phoenix Mercury
+    # Pro Basketball - valid future events
+    ("basketball", "nba", "401766122", "25"),  # Oklahoma City Thunder (June 2025 Finals)
+    ("basketball", "nba", "401766122", "11"),  # Indiana Pacers
+    ("basketball", "wnba", "401736152", "9"),  # New York Liberty (June 2025)
     
-    # College Sports
-    ("football", "college-football", "401525517", "333"),  # Alabama
-    ("basketball", "mens-college-basketball", "401524202", "150"),  # Duke
-    ("basketball", "womens-college-basketball", "401524812", "52"),  # South Carolina
+    # College Sports - valid future events
+    ("football", "college-football", "401756846", "2306"),  # Kansas State (Aug 2025)
+    ("football", "college-football", "401756846", "66"),    # Iowa State
+    ("basketball", "mens-college-basketball", "401746082", "248"),  # Houston (April 2025 Championship)
+    ("basketball", "mens-college-basketball", "401746082", "57"),   # Florida
     
-    # Baseball
-    ("baseball", "mlb", "401472463", "10"),  # Yankees
-    ("baseball", "college-baseball", "401514749", "236"),  # LSU
+    # Baseball - valid current event
+    ("baseball", "mlb", "401695789", "13"),  # Texas Rangers (June 2025)
+    ("baseball", "mlb", "401695789", "24"),  # St. Louis Cardinals
     
-    # Hockey
-    ("hockey", "nhl", "401559593", "10"),  # Toronto Maple Leafs
+    # Hockey - valid future event
+    ("hockey", "nhl", "401777455", "6"),   # Edmonton Oilers (June 2025 Finals)
+    ("hockey", "nhl", "401777455", "26"),  # Florida Panthers
     
-    # Soccer
-    ("soccer", "mls", "401453140", "360"),  # LA Galaxy
-    ("soccer", "eng.1", "401547845", "364"),  # Manchester United
-    ("soccer", "uefa.champions", "401449051", "86"),  # Real Madrid
-    
-    # Other Sports
-    ("golf", "pga", "401465533", "1810"),  # Scottie Scheffler
-    ("racing", "f1", "401439649", "5502"),  # Red Bull Racing
-    ("tennis", "atp", "401450810", "1972"),  # Carlos Alcaraz
+    # Soccer - valid current event
+    ("soccer", "usa.1", "727049", "9726"),    # Seattle Sounders (MLS - June 2025)
+    ("soccer", "usa.1", "727049", "17362"),   # Minnesota United
 ])
 def test_get_competition_powerindex_multiple_sports(
     sports_core_api_client, sport, league, event_id, team_id, ensure_json_output_dir
