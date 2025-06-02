@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 @pytest.mark.api
 @pytest.mark.parametrize("sport,league,year,seasontype,team_id", [
     ("football", "nfl", 2024, 0, "12"),  # Kansas City Chiefs
-    pytest.param("basketball", "nba", 2024, 0, "13", marks=pytest.mark.xfail(reason="NBA might not have odds records for this season")),  # Los Angeles Lakers
+    ("basketball", "nba", 2025, 0, "13"),  # Los Angeles Lakers (2025 season)
 ])
 def test_get_team_odds_records(sports_core_api_client, sport, league, year, seasontype, team_id, ensure_json_output_dir):
     """Test getting team odds records for different sports."""
