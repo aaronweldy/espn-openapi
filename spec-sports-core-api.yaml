@@ -2859,6 +2859,62 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics:
+    get:
+      summary: Get Competitor Statistics
+      description: Retrieve team/competitor statistics for a specific competition.
+      operationId: getCompetitorStatistics
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID
+          schema:
+            type: string
+        - name: competitor_id
+          in: path
+          required: true
+          description: The competitor/team ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with competitor statistics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitorStatisticsResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -6260,6 +6316,111 @@ components:
       required:
         - id
         - description
+
+    CompetitorStatisticsResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for these statistics
+        competition:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        splits:
+          $ref: '#/components/schemas/StatisticsSplits'
+      required:
+        - $ref
+        - splits
+
+    StatisticsSplits:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Split ID
+        name:
+          type: string
+          description: Split name (e.g., "All Splits")
+        abbreviation:
+          type: string
+          description: Split abbreviation
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatisticsCategory'
+      required:
+        - name
+        - categories
+
+    StatisticsCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Category name (e.g., "passing", "rushing")
+        displayName:
+          type: string
+          description: Display name for the category
+        shortDisplayName:
+          type: string
+          description: Short display name
+        abbreviation:
+          type: string
+          description: Category abbreviation
+        summary:
+          type: string
+          description: Summary of category stats
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompetitorStat'
+      required:
+        - name
+        - displayName
+        - stats
+
+    CompetitorStat:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Stat name
+        displayName:
+          type: string
+          description: Display name for the stat
+        shortDisplayName:
+          type: string
+          description: Short display name
+        description:
+          type: string
+          description: Stat description
+        abbreviation:
+          type: string
+          description: Stat abbreviation
+        value:
+          type: number
+          description: Stat value
+        displayValue:
+          type: string
+          description: Display value
+        perGameValue:
+          type: number
+          description: Per game value
+        perGameDisplayValue:
+          type: string
+          description: Per game display value
+        rank:
+          type: integer
+          description: Rank for this stat
+        rankDisplayValue:
+          type: string
+          description: Rank display value
+      required:
+        - name
+        - displayName
+        - abbreviation
 
     CompetitionBroadcastsResponse:
       type: object

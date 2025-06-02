@@ -1,0 +1,31 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437954/competitions/401437954/competitors/30/roster?lang=en&region=us",
+  "entries": [
+    {
+      "playerId": 17037,
+      "period": 0,
+      "active": false,
+      "starter": true,
+      "forPlayerId": 0,
+      "jersey": "69",
+      "valid": true,
+      "athlete": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/athletes/17037?lang=en&region=us"
+      },
+      "position": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/4?lang=en&region=us"
+      },
+      "statistics": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437954/competitions/401437954/competitors/30/roster/17037/statistics/0?lang=en&region=us"
+      },
+      "didNotPlay": false,
+      "displayName": "Shatley"
+    }
+  ],
+  "competition": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437954/competitions/401437954?lang=en&region=us"
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/teams/30?lang=en&region=us"
+  }
+}

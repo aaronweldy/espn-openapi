@@ -59,6 +59,8 @@ from .competition_source import CompetitionSource
 from .competition_status import CompetitionStatus
 from .competition_status_type import CompetitionStatusType
 from .competition_type import CompetitionType
+from .competitor_stat import CompetitorStat
+from .competitor_statistics_response import CompetitorStatisticsResponse
 from .core_nfl_season_team_response import CoreNflSeasonTeamResponse
 from .draft_athlete_analysis import DraftAthleteAnalysis
 from .draft_athlete_attribute import DraftAthleteAttribute
@@ -228,8 +230,10 @@ from .stat_corrections_response import StatCorrectionsResponse
 from .stat_item import StatItem
 from .statistic import Statistic
 from .statistic_category import StatisticCategory
+from .statistics_category import StatisticsCategory
 from .statistics_log_entry import StatisticsLogEntry
 from .statistics_reference import StatisticsReference
+from .statistics_splits import StatisticsSplits
 from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
 from .team_ats_record import TeamAtsRecord
@@ -306,6 +310,8 @@ __all__ = (
     "CompetitionStatus",
     "CompetitionStatusType",
     "CompetitionType",
+    "CompetitorStat",
+    "CompetitorStatisticsResponse",
     "CoreNflSeasonTeamResponse",
     "DraftAthleteAnalysis",
     "DraftAthleteAttribute",
@@ -474,8 +480,10 @@ __all__ = (
     "StatCorrectionsResponse",
     "Statistic",
     "StatisticCategory",
+    "StatisticsCategory",
     "StatisticsLogEntry",
     "StatisticsReference",
+    "StatisticsSplits",
     "StatisticsTypeEntry",
     "StatItem",
     "Team",
