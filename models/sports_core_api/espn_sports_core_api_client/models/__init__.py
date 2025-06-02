@@ -198,6 +198,8 @@ from .play_type import PlayType
 from .plays_list_response import PlaysListResponse
 from .position import Position
 from .positions_list_response import PositionsListResponse
+from .power_index_response import PowerIndexResponse
+from .power_index_stat import PowerIndexStat
 from .predictor_response import PredictorResponse
 from .predictor_statistic import PredictorStatistic
 from .predictor_team import PredictorTeam
@@ -437,6 +439,8 @@ __all__ = (
     "PlayType",
     "Position",
     "PositionsListResponse",
+    "PowerIndexResponse",
+    "PowerIndexStat",
     "PredictorResponse",
     "PredictorStatistic",
     "PredictorTeam",

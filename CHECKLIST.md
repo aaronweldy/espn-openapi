@@ -201,7 +201,6 @@ gambit-api.fantasy.espn.com
 [ ] /apis/v1/propositions?challengeId={challenge_id}&view={view} - Pick'em Propositions. Query Params: challengeId={challenge_id}, view
 XIV. Stats Endpoints (Play-by-Play)
 site.api.espn.com
-[ ] /apis/v3/stats/football/nfl/playbyplay/{event_id} - NFL Play-by-Play. Path Param: {event_id} (Path structure based on initial checklist, param assumed)
 [ ] /apis/v3/stats/basketball/nba/playbyplay/{event_id} - NBA Play-by-Play. Path Param: {event_id}
 [ ] /apis/v3/stats/baseball/mlb/playbyplay/{event_id} - MLB Play-by-Play. Path Param: {event_id}
 [ ] /apis/v3/stats/hockey/nhl/playbyplay/{event_id} - NHL Play-by-Play. Path Param: {event_id}
@@ -216,7 +215,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/odds-records - Team Odds Records. Path Params: {sport}, {league}, {year}, {seasontype} (typically 0), {teamId} - Implemented as generic endpoint (Supported: NFL, NBA, MLB, NCAAF, NCAAM; Not supported: NHL, WNBA)
 [x] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances - Team Past Performance vs Odds. Path Params & Query: As above, limit - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor - ESPN Predictor Metrics. Path Params: As above. - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/powerindex/{team_id} - ESPN Power Index for Game. Path Params: As above.
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/powerindex/{team_id} - ESPN Power Index for Game. Path Params: As above. - Implemented as generic endpoint
 XVI. Utility & Miscellaneous Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/positions - List Player Positions. Path Params: {sport}, {league}. Query Param: limit

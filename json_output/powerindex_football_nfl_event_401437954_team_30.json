@@ -1,0 +1,40 @@
+{
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/teams/30?lang=en&region=us"
+  },
+  "season": 2022,
+  "stats": [
+    {
+      "name": "teampredptdiff",
+      "displayName": "PRED PT DIFF",
+      "description": "Expected margin of victory for the FPI favorite.",
+      "abbreviation": "PRED PT DIFF",
+      "value": 12.175,
+      "displayValue": "12.2"
+    },
+    {
+      "name": "gameprojection",
+      "displayName": "WIN PROB",
+      "description": "Team's predicted win percentage in this game at time of given BPI run",
+      "abbreviation": "GAME PROJ",
+      "value": 84.81,
+      "displayValue": "84.8%"
+    },
+    {
+      "name": "matchupquality",
+      "displayName": "MATCHUP QUALITY",
+      "description": "A measure of projected competitiveness and excitement in the game, using a 0 to 100 scale, with 100 as the most exciting",
+      "abbreviation": "MATCHUP QUALITY",
+      "value": 35.261,
+      "displayValue": "35.3"
+    },
+    {
+      "name": "teamadjgamescore",
+      "displayName": "GAME SCORE",
+      "description": "A measure of how well a team performed compared to their expected performance and the expected performance of a typical top 25 team.",
+      "abbreviation": "TEAM ADJ GAMESCORE",
+      "displayValue": ""
+    }
+  ],
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437954/competitions/401437954/powerindex/30?lang=en&region=us"
+}

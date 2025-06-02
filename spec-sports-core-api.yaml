@@ -2670,6 +2670,68 @@ paths:
         '404':
           description: Game or predictor data not found
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/powerindex/{team_id}:
+    get:
+      summary: Get Team Power Index for Game
+      description: |
+        Retrieve ESPN Power Index metrics for a specific team in a game. 
+        Power Index includes predictive analytics like expected point differential, 
+        win probability, matchup quality, and game score.
+      operationId: getCompetitionPowerindex
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, college-football)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401437954"
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID (usually the same as event_id)
+          schema:
+            type: string
+            example: "401437954"
+        - name: team_id
+          in: path
+          required: true
+          description: The team ID
+          schema:
+            type: string
+            example: "30"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PowerIndexResponse'
+        '404':
+          description: Power index data not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -7850,3 +7912,59 @@ components:
         pastCompetition:
           $ref: '#/components/schemas/Reference'
           description: Reference to the competition/game details
+    PowerIndexResponse:
+      type: object
+      description: ESPN Power Index metrics for a team in a specific game
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL to this power index data
+        team:
+          $ref: '#/components/schemas/Reference'
+          description: Reference to the team
+        season:
+          type: integer
+          description: Season year
+          example: 2022
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/PowerIndexStat'
+          description: Array of power index statistics
+      required:
+        - team
+        - season
+        - stats
+
+    PowerIndexStat:
+      type: object
+      description: Individual power index statistic
+      properties:
+        name:
+          type: string
+          description: Internal name of the statistic
+          example: "teampredptdiff"
+        displayName:
+          type: string
+          description: Display name of the statistic
+          example: "PRED PT DIFF"
+        description:
+          type: string
+          description: Detailed description of what this statistic represents
+          example: "Expected margin of victory for the FPI favorite."
+        abbreviation:
+          type: string
+          description: Abbreviation for the statistic
+          example: "PRED PT DIFF"
+        value:
+          type: number
+          description: Numeric value of the statistic
+          example: 12.175
+        displayValue:
+          type: string
+          description: Formatted display value of the statistic
+          example: "12.2"
+      required:
+        - name
+        - displayName
