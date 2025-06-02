@@ -1,7 +1,7 @@
 I. General & Cross-Sport Endpoints
 partners.api.espn.com
 [x] /v2/sports/{sport}/{league}/athletes - Partners API Athletes List. Path Params: {sport}, {league}. Query Params: limit (e.g., 7000) - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/{league}/events - Partners API Events List. Path Params: {sport}, {league}. Query Params: limit (e.g., 1000), dates (supports: YYYYMMDD for single date, YYYYMMDD-YYYYMMDD for date range, YYYY for full season)
+[x] /v2/sports/{sport}/{league}/events - Partners API Events List. Path Params: {sport}, {league}. Query Params: limit (e.g., 1000), dates (supports: YYYYMMDD for single date, YYYYMMDD-YYYYMMDD for date range, YYYY for full season) - Implemented as generic endpoint
 site.api.espn.com
 [x] /apis/site/v2/sports/{sport}/{league}/news - List News (League). Path Params: {sport}, {league}. Query Params: limit
 (Note: NFL-specific news was marked implemented, this is generic. If NFL covers the pattern, this might be implicitly partially done)

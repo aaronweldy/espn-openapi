@@ -58,6 +58,68 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+  
+  /v2/sports/{sport}/{league}/events:
+    get:
+      summary: Get Events List
+      description: |
+        Retrieve a paginated list of events (games/matches) for a specific sport and league.
+        This endpoint supports flexible date filtering.
+      operationId: getEventsList
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of events to return
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+            default: 100
+            example: 100
+        - name: dates
+          in: query
+          required: false
+          description: |
+            Date filter for events. Supports multiple formats:
+            - Single date: YYYYMMDD (e.g., 20250601)
+            - Date range: YYYYMMDD-YYYYMMDD (e.g., 20250901-20250907)
+            - Full year: YYYY (e.g., 2024)
+          schema:
+            type: string
+            pattern: '^(\d{4}|\d{8}|\d{8}-\d{8})$'
+            example: "20250901-20250907"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventsListResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
 components:
   schemas:
@@ -322,3 +384,365 @@ components:
             - code
       required:
         - error
+
+    EventsListResponse:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+        count:
+          type: integer
+          description: Total number of events available
+          example: 335
+        pageIndex:
+          type: integer
+          description: Current page index (1-based)
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 100
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 4
+      required:
+        - events
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique event identifier
+          example: "401772510"
+        date:
+          type: string
+          format: date-time
+          description: Event date and time
+          example: "2025-09-05T00:20Z"
+        name:
+          type: string
+          description: Full event name
+          example: "Dallas Cowboys at Philadelphia Eagles"
+        shortName:
+          type: string
+          description: Short event name
+          example: "DAL @ PHI"
+        timeValid:
+          type: boolean
+          description: Whether the time is confirmed
+          example: true
+        competitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Competition'
+      required:
+        - id
+        - date
+        - name
+        - shortName
+        - competitions
+
+    Competition:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Competition identifier
+          example: "401772510"
+        date:
+          type: string
+          format: date-time
+          description: Competition date and time
+          example: "2025-09-05T00:20Z"
+        attendance:
+          type: integer
+          description: Attendance count
+          example: 70355
+        dateValid:
+          type: boolean
+          description: Whether the date is confirmed
+          example: true
+        neutralSite:
+          type: boolean
+          description: Whether the game is at a neutral site
+          example: false
+        onWatchESPN:
+          type: boolean
+          description: Whether available on WatchESPN
+          example: false
+        wallclockAvailable:
+          type: boolean
+          description: Whether wallclock time is available
+          example: false
+        highlightsAvailable:
+          type: boolean
+          description: Whether highlights are available
+          example: true
+        divisionCompetition:
+          type: boolean
+          description: Whether this is a division competition (NBA/NHL)
+        conferenceCompetition:
+          type: boolean
+          description: Whether this is a conference competition (NBA/NHL)
+        competitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Competitor'
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventNote'
+        status:
+          $ref: '#/components/schemas/EventStatus'
+        format:
+          $ref: '#/components/schemas/EventFormat'
+        hasDefensiveStats:
+          type: boolean
+          description: Whether defensive stats are available
+          example: false
+        time:
+          $ref: '#/components/schemas/EventTime'
+      required:
+        - id
+        - date
+        - competitors
+        - status
+
+    Competitor:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Competitor identifier
+          example: "21"
+        type:
+          type: string
+          description: Competitor type
+          example: "team"
+        order:
+          type: integer
+          description: Display order
+          example: 0
+        homeAway:
+          type: string
+          description: Home or away designation
+          enum: ["home", "away"]
+          example: "home"
+        winner:
+          type: boolean
+          description: Whether this competitor won (for completed events)
+        team:
+          $ref: '#/components/schemas/EventTeam'
+        score:
+          $ref: '#/components/schemas/Score'
+        record:
+          $ref: '#/components/schemas/Record'
+        displayOrder:
+          type: integer
+          description: Display order
+          example: 2
+      required:
+        - id
+        - type
+        - homeAway
+        - team
+
+    EventTeam:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Team identifier
+          example: "21"
+        location:
+          type: string
+          description: Team location
+          example: "Philadelphia"
+        name:
+          type: string
+          description: Team name
+          example: "Eagles"
+        abbreviation:
+          type: string
+          description: Team abbreviation
+          example: "PHI"
+        displayName:
+          type: string
+          description: Full team name
+          example: "Philadelphia Eagles"
+        shortDisplayName:
+          type: string
+          description: Short team name
+          example: "Eagles"
+        color:
+          type: string
+          description: Primary team color (hex)
+          example: "06424d"
+        alternateColor:
+          type: string
+          description: Alternate team color (hex)
+          example: "000000"
+      required:
+        - id
+        - displayName
+        - abbreviation
+
+    Score:
+      type: object
+      properties:
+        value:
+          type: number
+          description: Numeric score value
+          example: 31.0
+        displayValue:
+          type: string
+          description: Display score value
+          example: "31"
+        winner:
+          type: boolean
+          description: Whether this is the winning score
+      required:
+        - displayValue
+
+    Record:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Record type
+          example: "overall"
+        displayName:
+          type: string
+          description: Record display name
+          example: "Record Year To Date"
+        displayValue:
+          type: string
+          description: Record display value
+          example: "13-4"
+
+    EventNote:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Note type
+          example: "event"
+        headline:
+          type: string
+          description: Note headline
+          example: "NFL São Paulo Game"
+      required:
+        - type
+        - headline
+
+    EventStatus:
+      type: object
+      properties:
+        clock:
+          type: number
+          description: Game clock in seconds
+          example: 0.0
+        displayClock:
+          type: string
+          description: Display clock value
+          example: "0:00"
+        period:
+          type: integer
+          description: Current period
+          example: 0
+        type:
+          $ref: '#/components/schemas/EventStatusType'
+      required:
+        - type
+
+    EventStatusType:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Status type identifier
+          example: "1"
+        name:
+          type: string
+          description: Status name
+          example: "STATUS_SCHEDULED"
+        state:
+          type: string
+          description: Status state
+          enum: ["pre", "in", "post"]
+          example: "pre"
+        completed:
+          type: boolean
+          description: Whether the event is completed
+          example: false
+        description:
+          type: string
+          description: Status description
+          example: "Scheduled"
+        detail:
+          type: string
+          description: Status detail
+          example: "Thu, September 4th at 8:20 PM EDT"
+        shortDetail:
+          type: string
+          description: Short status detail
+          example: "9/4 - 8:20 PM EDT"
+      required:
+        - id
+        - name
+        - state
+        - completed
+        - description
+
+    EventFormat:
+      type: object
+      properties:
+        regulation:
+          $ref: '#/components/schemas/PeriodFormat'
+        overtime:
+          $ref: '#/components/schemas/PeriodFormat'
+
+    PeriodFormat:
+      type: object
+      properties:
+        periods:
+          type: integer
+          description: Number of periods
+          example: 4
+        displayName:
+          type: string
+          description: Period display name
+          example: "Quarter"
+        slug:
+          type: string
+          description: Period slug
+          example: "quarter"
+        clock:
+          type: number
+          description: Period clock duration in seconds
+          example: 900.0
+
+    EventTime:
+      type: object
+      properties:
+        value:
+          type: string
+          format: date-time
+          description: Event time value
+          example: "2025-09-05T00:20Z"
+        timeValid:
+          type: boolean
+          description: Whether the time is confirmed
+          example: true
+        displayValue:
+          type: string
+          description: Display time value
+          example: "8:20 ET"

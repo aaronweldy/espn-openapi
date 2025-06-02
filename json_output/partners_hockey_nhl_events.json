@@ -1,0 +1,113 @@
+{
+  "events": [
+    {
+      "id": "401777455",
+      "date": "2025-06-05T00:00:00+00:00",
+      "name": "Florida Panthers at Edmonton Oilers",
+      "shortName": "FLA @ EDM",
+      "competitions": [
+        {
+          "id": "401777455",
+          "date": "2025-06-05T00:00:00+00:00",
+          "competitors": [
+            {
+              "id": "6",
+              "type": "team",
+              "homeAway": "home",
+              "team": {
+                "id": "6",
+                "abbreviation": "EDM",
+                "displayName": "Edmonton Oilers",
+                "location": "Edmonton",
+                "name": "Oilers",
+                "shortDisplayName": "Oilers",
+                "color": "00205b",
+                "alternateColor": "ff4c00"
+              },
+              "order": 0,
+              "score": {
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Team Season Record",
+                "displayValue": "48-29-5, 101 PTS"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "26",
+              "type": "team",
+              "homeAway": "away",
+              "team": {
+                "id": "26",
+                "abbreviation": "FLA",
+                "displayName": "Florida Panthers",
+                "location": "Florida",
+                "name": "Panthers",
+                "shortDisplayName": "Panthers",
+                "color": "e51937",
+                "alternateColor": "002d62"
+              },
+              "order": 1,
+              "score": {
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Team Season Record",
+                "displayValue": "47-31-4, 98 PTS"
+              },
+              "displayOrder": 1
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Wed, June 4th at 8:00 PM EDT",
+              "shortDetail": "6/4 - 8:00 PM EDT"
+            },
+            "clock": 0.0,
+            "displayClock": "0:00",
+            "period": 0
+          },
+          "attendance": 0,
+          "neutralSite": false,
+          "onWatchESPN": false,
+          "wallclockAvailable": false,
+          "highlightsAvailable": true,
+          "notes": [
+            {
+              "type": "event",
+              "headline": "Stanley Cup Final - Game 1"
+            }
+          ],
+          "format": {
+            "regulation": {
+              "periods": 3,
+              "displayName": "Period",
+              "slug": "period",
+              "clock": 1200.0
+            }
+          },
+          "time": {
+            "value": "2025-06-05T00:00:00+00:00",
+            "timeValid": true,
+            "displayValue": "8 ET"
+          }
+        }
+      ],
+      "timeValid": true
+    }
+  ],
+  "count": 1,
+  "pageIndex": 1,
+  "pageSize": 5,
+  "pageCount": 1
+}

@@ -1,0 +1,106 @@
+{
+  "events": [
+    {
+      "id": "401772510",
+      "date": "2025-09-05T00:20Z",
+      "name": "Dallas Cowboys at Philadelphia Eagles",
+      "shortName": "DAL @ PHI",
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401772510",
+          "date": "2025-09-05T00:20Z",
+          "attendance": 0,
+          "dateValid": true,
+          "neutralSite": false,
+          "onWatchESPN": false,
+          "wallclockAvailable": false,
+          "highlightsAvailable": true,
+          "competitors": [
+            {
+              "id": "21",
+              "type": "team",
+              "order": 0,
+              "homeAway": "home",
+              "team": {
+                "id": "21",
+                "location": "Philadelphia",
+                "name": "Eagles",
+                "abbreviation": "PHI",
+                "displayName": "Philadelphia Eagles",
+                "shortDisplayName": "Eagles",
+                "color": "06424d",
+                "alternateColor": "000000"
+              },
+              "score": {
+                "value": 0.0,
+                "displayValue": "0"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "6",
+              "type": "team",
+              "order": 1,
+              "homeAway": "away",
+              "team": {
+                "id": "6",
+                "location": "Dallas",
+                "name": "Cowboys",
+                "abbreviation": "DAL",
+                "displayName": "Dallas Cowboys",
+                "shortDisplayName": "Cowboys",
+                "color": "002a5c",
+                "alternateColor": "b0b7bc"
+              },
+              "score": {
+                "value": 0.0,
+                "displayValue": "0"
+              },
+              "displayOrder": 1
+            }
+          ],
+          "notes": [],
+          "status": {
+            "clock": 0.0,
+            "displayClock": "0:00",
+            "period": 0,
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Thu, September 4th at 8:20 PM EDT",
+              "shortDetail": "9/4 - 8:20 PM EDT"
+            }
+          },
+          "format": {
+            "regulation": {
+              "periods": 4,
+              "displayName": "Quarter",
+              "slug": "quarter",
+              "clock": 900.0
+            },
+            "overtime": {
+              "periods": 1,
+              "displayName": "sudden-death",
+              "slug": "sudden-death",
+              "clock": 600.0
+            }
+          },
+          "hasDefensiveStats": false,
+          "time": {
+            "value": "2025-09-05T00:20Z",
+            "timeValid": true,
+            "displayValue": "8:20 ET"
+          }
+        }
+      ]
+    }
+  ],
+  "count": 16,
+  "pageIndex": 1,
+  "pageSize": 10,
+  "pageCount": 2
+}

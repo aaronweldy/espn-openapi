@@ -1,0 +1,118 @@
+{
+  "events": [
+    {
+      "id": "401766122",
+      "date": "2025-06-06T00:30:00+00:00",
+      "name": "Indiana Pacers at Oklahoma City Thunder",
+      "shortName": "IND @ OKC",
+      "competitions": [
+        {
+          "id": "401766122",
+          "date": "2025-06-06T00:30:00+00:00",
+          "competitors": [
+            {
+              "id": "25",
+              "type": "team",
+              "homeAway": "home",
+              "team": {
+                "id": "25",
+                "abbreviation": "OKC",
+                "displayName": "Oklahoma City Thunder",
+                "location": "Oklahoma City",
+                "name": "Thunder",
+                "shortDisplayName": "Thunder",
+                "color": "007ac1",
+                "alternateColor": "ef3b24"
+              },
+              "order": 0,
+              "score": {
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Overall",
+                "displayValue": "68-14"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "11",
+              "type": "team",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "abbreviation": "IND",
+                "displayName": "Indiana Pacers",
+                "location": "Indiana",
+                "name": "Pacers",
+                "shortDisplayName": "Pacers",
+                "color": "002d62",
+                "alternateColor": "fdbb30"
+              },
+              "order": 1,
+              "score": {
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Overall",
+                "displayValue": "50-32"
+              },
+              "displayOrder": 1
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Thu, June 5th at 8:30 PM EDT",
+              "shortDetail": "6/5 - 8:30 PM EDT"
+            },
+            "clock": 0.0,
+            "displayClock": "0.0",
+            "period": 0
+          },
+          "attendance": 0,
+          "neutralSite": false,
+          "onWatchESPN": true,
+          "wallclockAvailable": false,
+          "highlightsAvailable": true,
+          "divisionCompetition": false,
+          "conferenceCompetition": false,
+          "notes": [
+            {
+              "type": "event",
+              "headline": "NBA Finals - Game 1"
+            }
+          ],
+          "format": {
+            "regulation": {
+              "periods": 4,
+              "displayName": "Quarter",
+              "slug": "quarter",
+              "clock": 720.0
+            },
+            "overtime": {
+              "clock": 300.0
+            }
+          },
+          "time": {
+            "value": "2025-06-06T00:30:00+00:00",
+            "timeValid": true,
+            "displayValue": "8:30 ET"
+          }
+        }
+      ],
+      "timeValid": true
+    }
+  ],
+  "count": 1,
+  "pageIndex": 1,
+  "pageSize": 5,
+  "pageCount": 1
+}
