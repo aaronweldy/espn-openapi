@@ -143,8 +143,9 @@
 ## V. Betting & Odds Endpoints
 
 ### sports.core.api.espn.com
-- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities` - Win Probabilities
-- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{season}/team/{team_id}/projection` - Projections
+- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities` - Win Probabilities (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/probabilities?limit=200)
+- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{season}/team/{team_id}/projection` - Projections (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/12/projection)
+- [ ] 
 - [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}` - Odds from Provider (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds)
 - [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/history/0/movement` - Odds Movement (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds/1002/history/0/movement?limit=100)
 - [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor` - ESPN Predictor

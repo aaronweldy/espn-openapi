@@ -87,6 +87,7 @@ from .future_item_type import FutureItemType
 from .future_provider import FutureProvider
 from .futures_response import FuturesResponse
 from .get_athlete_statistics_seasontype import GetAthleteStatisticsSeasontype
+from .get_competition_odds_movement_history_type import GetCompetitionOddsMovementHistoryType
 from .get_league_season_corrections_season_type import GetLeagueSeasonCorrectionsSeasonType
 from .get_league_season_group_details_season_type import GetLeagueSeasonGroupDetailsSeasonType
 from .get_league_season_groups_season_type import GetLeagueSeasonGroupsSeasonType
@@ -172,6 +173,8 @@ from .nfl_team_depthchart_response import NflTeamDepthchartResponse
 from .odds_detail import OddsDetail
 from .odds_item import OddsItem
 from .odds_item_current import OddsItemCurrent
+from .odds_movement import OddsMovement
+from .odds_movement_response import OddsMovementResponse
 from .odds_provider import OddsProvider
 from .odds_record_stat import OddsRecordStat
 from .odds_response import OddsResponse
@@ -328,6 +331,7 @@ __all__ = (
     "FutureProvider",
     "FuturesResponse",
     "GetAthleteStatisticsSeasontype",
+    "GetCompetitionOddsMovementHistoryType",
     "GetLeagueSeasonCorrectionsSeasonType",
     "GetLeagueSeasonGroupDetailsSeasonType",
     "GetLeagueSeasonGroupsSeasonType",
@@ -413,6 +417,8 @@ __all__ = (
     "OddsDetail",
     "OddsItem",
     "OddsItemCurrent",
+    "OddsMovement",
+    "OddsMovementResponse",
     "OddsProvider",
     "OddsRecordStat",
     "OddsResponse",

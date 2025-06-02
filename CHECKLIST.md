@@ -229,7 +229,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement - Odds Movement History. Path Params: As above. (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds/1002/history/0/movement?limit=100)
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/{history_type}/movement - Odds Movement History. Path Params: {sport}, {league}, {event_id}, {competition_id}, {provider_id}, {history_type} (0=moneyline, 1=spread, 2=total). Query Params: limit - Implemented as generic endpoint
 [ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: As above.
 XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
