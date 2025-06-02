@@ -176,11 +176,6 @@ site.api.espn.com/apis/site/v2
 [x] /sports/soccer/{competition_slug}/teams/{team_id}/schedule - Soccer Team Schedule. Path Params: {competition_slug}, {team_id} - Covered by generic /sports/{sport}/{league}/teams/{team_id_or_abbrev}/schedule endpoint
 XII. Other Sports Endpoints (Examples)
 site.api.espn.com/apis/site/v2 (Pattern)
-[ ] /sports/golf/{league_slug}/players - e.g., Golf Players. Path Param: {league_slug} (pga, lpga, etc.)
-[ ] /sports/golf/{league_slug}/statistics/players - e.g., Golf Player Stats. Path Param: {league_slug}
-[ ] /sports/racing/{league_slug}/... - e.g., Racing data. Path Param: {league_slug} (f1, nascar-premier, etc.)
-[ ] /sports/tennis/{tour}/statistics/players - Tennis Player Statistics. Path Param: {tour}
-[ ] /sports/hockey/{league_slug}/... - Other Hockey Leagues (e.g., mens-college-hockey)
 XIII. Fantasy Sports Endpoints
 fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id} - Fantasy League Data (Current >2018). Path Params: {year}, {league_id}. Query Params: view={view_name} (e.g., mTeam, mRoster, mSettings). Headers: X-Fantasy-Filter (JSON string), Cookies: espn_s2, SWID (for private leagues)
@@ -235,11 +230,8 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{season_type}/corrections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/head-to-heads
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors
-[ ] /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances
+[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/0/movement - Odds Movement History. Path Params: As above. (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds/1002/history/0/movement?limit=100)
+[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: As above.
 XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
 [x] /apis/site/v3/sports/{sport}/{league}/leaders - League Leaders (Site API v3). Path Params: {sport}, {league}. Query Params: season - Implemented as generic endpoint (supports NFL, NHL, NBA, MLB, college sports)
