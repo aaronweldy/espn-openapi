@@ -1,0 +1,33 @@
+{
+  "count": 3,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 1,
+  "items": [
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437954/competitions/401437954/competitors/30/records/369?lang=en&region=us",
+      "id": "369",
+      "name": "overall",
+      "abbreviation": "Game",
+      "displayName": "Record Year To Date",
+      "shortDisplayName": "YTD",
+      "description": "Overall Record",
+      "type": "total",
+      "summary": "9-8",
+      "displayValue": "9-8",
+      "value": 0.5294117647058824,
+      "stats": [
+        {
+          "name": "wins",
+          "displayName": "Wins",
+          "shortDisplayName": "W",
+          "description": "Wins",
+          "abbreviation": "W",
+          "type": "wins",
+          "value": 9.0,
+          "displayValue": "9"
+        }
+      ]
+    }
+  ]
+}

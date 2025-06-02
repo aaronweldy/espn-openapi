@@ -267,7 +267,7 @@ sports.core.api.espn.com
 XIX. Additional Soccer Endpoints
 sports.core.api.espn.com
 [ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/types/1/standings - Soccer League Standings
-[ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/teams/{teamId}/athletes?active=true - Soccer Team Active Players
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/teams/{teamId}/athletes - Team Athletes. Path Params: {sport}, {league}, {year}, {teamId}. Query Params: active, pageIndex, limit - Implemented as generic endpoint
 XX. Other Sports Endpoints
 site.web.api.espn.com
 [ ] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard

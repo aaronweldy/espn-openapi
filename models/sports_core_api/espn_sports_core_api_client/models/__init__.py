@@ -236,6 +236,7 @@ from .statistics_reference import StatisticsReference
 from .statistics_splits import StatisticsSplits
 from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
+from .team_athletes_response import TeamAthletesResponse
 from .team_ats_record import TeamAtsRecord
 from .team_ats_records_response import TeamAtsRecordsResponse
 from .team_attendance_response import TeamAttendanceResponse
@@ -487,6 +488,7 @@ __all__ = (
     "StatisticsTypeEntry",
     "StatItem",
     "Team",
+    "TeamAthletesResponse",
     "TeamAtsRecord",
     "TeamAtsRecordsResponse",
     "TeamAttendanceResponse",

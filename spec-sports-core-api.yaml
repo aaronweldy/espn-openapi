@@ -2915,6 +2915,77 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/teams/{teamId}/athletes:
+    get:
+      summary: Get Team Athletes
+      description: Retrieve athletes for a specific team in a given season.
+      operationId: getTeamAthletes
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, soccer, basketball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, eng.1, nba)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: string
+        - name: teamId
+          in: path
+          required: true
+          description: The team ID
+          schema:
+            type: string
+        - name: active
+          in: query
+          required: false
+          description: Filter for active athletes only
+          schema:
+            type: boolean
+        - name: pageIndex
+          in: query
+          required: false
+          description: Page index for pagination
+          schema:
+            type: integer
+            minimum: 1
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of items to return
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Successful response with paginated list of athlete references
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamAthletesResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -6421,6 +6492,33 @@ components:
         - name
         - displayName
         - abbreviation
+
+    TeamAthletesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of athletes
+        pageIndex:
+          type: integer
+          description: Current page index
+        pageSize:
+          type: integer
+          description: Number of items per page
+        pageCount:
+          type: integer
+          description: Total number of pages
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reference'
+          description: List of athlete references
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
 
     CompetitionBroadcastsResponse:
       type: object
