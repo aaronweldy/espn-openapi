@@ -257,8 +257,8 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders - Team Leaders. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId}. Query Params: limit - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/record - NFL Team Record
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/weeks/{week}/qbr/10000 - NFL Weekly QBR
-[ ] /v2/sports/football/leagues/nfl/providers - NFL Betting Providers List
-[ ] /v2/sports/football/leagues/nfl/providers/{provider_id} - NFL Betting Provider Details
+[x] /v2/sports/{sport}/leagues/{league}/providers - Betting Providers List. Path Params: {sport}, {league}. Query Params: limit, page - Implemented as generic endpoint
+[x] /v2/sports/{sport}/leagues/{league}/providers/{providerId} - Betting Provider Details. Path Params: {sport}, {league}, {providerId} - Implemented as generic endpoint
 now.core.api.espn.com
 [x] /v1/sports/news - ESPN News API. Query Params: limit, sport - Implemented
 XVIII. Golf Endpoints

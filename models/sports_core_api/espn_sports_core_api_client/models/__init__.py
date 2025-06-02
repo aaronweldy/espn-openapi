@@ -199,6 +199,8 @@ from .predictor_team import PredictorTeam
 from .probabilities_list_response import ProbabilitiesListResponse
 from .probability_item import ProbabilityItem
 from .probability_source import ProbabilitySource
+from .provider_details import ProviderDetails
+from .providers_list_response import ProvidersListResponse
 from .reference import Reference
 from .season import Season
 from .season_type import SeasonType
@@ -426,6 +428,8 @@ __all__ = (
     "ProbabilitiesListResponse",
     "ProbabilityItem",
     "ProbabilitySource",
+    "ProviderDetails",
+    "ProvidersListResponse",
     "Reference",
     "Season",
     "SeasonType",
