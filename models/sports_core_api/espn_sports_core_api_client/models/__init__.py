@@ -94,6 +94,7 @@ from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSe
 from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
 from .last_play_reference import LastPlayReference
+from .leader_category import LeaderCategory
 from .league_enum import LeagueEnum
 from .league_info_response import LeagueInfoResponse
 from .league_season import LeagueSeason
@@ -217,6 +218,8 @@ from .statistics_reference import StatisticsReference
 from .statistics_type_entry import StatisticsTypeEntry
 from .team import Team
 from .team_attendance_response import TeamAttendanceResponse
+from .team_leader import TeamLeader
+from .team_leaders_response import TeamLeadersResponse
 from .team_odds import TeamOdds
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
@@ -318,6 +321,7 @@ __all__ = (
     "GroupDetailsResponse",
     "HeadToHeads",
     "LastPlayReference",
+    "LeaderCategory",
     "LeagueEnum",
     "LeagueInfoResponse",
     "LeagueSeason",
@@ -441,6 +445,8 @@ __all__ = (
     "StatItem",
     "Team",
     "TeamAttendanceResponse",
+    "TeamLeader",
+    "TeamLeadersResponse",
     "TeamOdds",
     "TeamReference",
     "TransactionsListResponse",

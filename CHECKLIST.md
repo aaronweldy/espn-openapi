@@ -254,7 +254,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/status - NFL Draft Status
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance - Team Attendance. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId} - Implemented as generic endpoint
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/leaders - NFL Team Leaders
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders - Team Leaders. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId}. Query Params: limit - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/record - NFL Team Record
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/weeks/{week}/qbr/10000 - NFL Weekly QBR
 [ ] /v2/sports/football/leagues/nfl/providers - NFL Betting Providers List

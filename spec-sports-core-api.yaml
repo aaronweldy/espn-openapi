@@ -1424,6 +1424,66 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders:
+    get:
+      summary: Get Team Leaders
+      description: Retrieve statistical leaders for a specific team in a given season.
+      operationId: getTeamLeaders
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: seasontype
+          in: path
+          required: true
+          description: The season type (1=preseason, 2=regular season, 3=postseason)
+          schema:
+            type: integer
+            example: 2
+        - name: teamId
+          in: path
+          required: true
+          description: The team ID
+          schema:
+            type: string
+            example: "12"
+        - name: limit
+          in: query
+          required: false
+          description: Limit the number of results
+          schema:
+            type: integer
+            example: 25
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamLeadersResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog:
     get:
       summary: Get NFL Athlete Event Log
@@ -7058,3 +7118,90 @@ components:
         - abbreviation
         - value
         - displayValue
+    
+    TeamLeadersResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for this team leaders data
+        id:
+          type: string
+          description: ID of the leaders record
+        name:
+          type: string
+          description: Name of the leaders record
+          example: "Leaders"
+        abbreviation:
+          type: string
+          description: Abbreviation for leaders
+          example: "LEAD"
+        type:
+          type: string
+          description: Type of leaders data
+          example: "team"
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderCategory'
+      required:
+        - $ref
+        - id
+        - name
+        - categories
+    
+    LeaderCategory:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Category name (e.g., passingLeader, pointsPerGame)
+          example: "passingLeader"
+        displayName:
+          type: string
+          description: Display name for the category
+          example: "Passing Leader"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "Pass"
+        abbreviation:
+          type: string
+          description: Category abbreviation
+          example: "PASS"
+        leaders:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamLeader'
+      required:
+        - name
+        - displayName
+        - leaders
+    
+    TeamLeader:
+      type: object
+      properties:
+        displayValue:
+          type: string
+          description: Display-formatted value for the leader
+          example: "282.9"
+        value:
+          type: number
+          description: Numeric value for the leader statistic
+          example: 282.9
+        rel:
+          type: array
+          items:
+            type: string
+          description: Relationship types
+          example: ["athlete"]
+        athlete:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+        statistics:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - displayValue
+        - value
