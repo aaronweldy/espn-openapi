@@ -6,6 +6,7 @@ class LeagueEnum(str, Enum):
     BUNDESLIGA = "bundesliga"
     COLLEGE_BASEBALL = "college-baseball"
     COLLEGE_FOOTBALL = "college-football"
+    COLLEGE_SOFTBALL = "college-softball"
     EPL = "epl"
     EUROPA_LEAGUE = "europa-league"
     F1 = "f1"

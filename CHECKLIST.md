@@ -201,9 +201,6 @@ gambit-api.fantasy.espn.com
 [ ] /apis/v1/propositions?challengeId={challenge_id}&view={view} - Pick'em Propositions. Query Params: challengeId={challenge_id}, view
 XIV. Stats Endpoints (Play-by-Play)
 site.api.espn.com
-[ ] /apis/v3/stats/basketball/nba/playbyplay/{event_id} - NBA Play-by-Play. Path Param: {event_id}
-[ ] /apis/v3/stats/baseball/mlb/playbyplay/{event_id} - MLB Play-by-Play. Path Param: {event_id}
-[ ] /apis/v3/stats/hockey/nhl/playbyplay/{event_id} - NHL Play-by-Play. Path Param: {event_id}
 XV. Betting & Odds Endpoints (NFL Example, pattern for other sports)
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities - Game Win Probabilities. Path Params: {sport}, {league}, {event_id}. Query Param: limit
@@ -230,7 +227,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches -  Coaches. 
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches/{coach_id} -  Specific coach.
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/history/{history_type}/movement - Odds Movement History. Path Params: {sport}, {league}, {event_id}, {competition_id}, {provider_id}, {history_type} (0=moneyline, 1=spread, 2=total). Query Params: limit - Implemented as generic endpoint
-[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: As above.
+[ ] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/odds/{provider_id}/predictors - Odds Predictors. Path Params: As above. (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401326315/competitions/401326315/odds/1003/predictors)
 XVII. Additional Endpoints from ESPN API Documentation
 site.api.espn.com
 [x] /apis/site/v3/sports/{sport}/{league}/leaders - League Leaders (Site API v3). Path Params: {sport}, {league}. Query Params: season - Implemented as generic endpoint (supports NFL, NHL, NBA, MLB, college sports)
@@ -270,7 +267,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/teams/{teamId}/athletes - Team Athletes. Path Params: {sport}, {league}, {year}, {teamId}. Query Params: active, pageIndex, limit - Implemented as generic endpoint
 XX. Other Sports Endpoints
 site.web.api.espn.com
-[ ] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard
+[x] /apis/site/v2/sports/baseball/college-softball/scoreboard - College Softball Scoreboard - Implemented as generic /sports/{sport}/{league}/scoreboard endpoint with college-softball league support
 sports.core.api.espn.com
 [x] /v2/sports/basketball/leagues/mens-college-basketball/events?dates={startDate}-{endDate} - College Basketball Events by Date Range - Implemented as generic date filtering in existing /v2/sports/{sport}/leagues/{league}/events endpoint
 
