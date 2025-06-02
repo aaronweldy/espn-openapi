@@ -26145,106 +26145,11 @@
       }
     },
     {
-      "weather": {
-        "displayValue": "6",
-        "temperature": 75,
-        "highTemperature": 75,
-        "conditionId": "Mostly cloudy",
-        "link": {
-          "language": "en-US",
-          "rel": [
-            "90090"
-          ],
-          "href": "http://www.accuweather.com/en/us/dodger-stadium-ca/90012/current-weather/30524_poi?lang=en-us",
-          "text": "Weather",
-          "shortText": "Weather",
-          "isExternal": true,
-          "isPremium": false
-        }
-      },
       "id": "401695792",
       "date": "2025-06-01T23:00:00+00:00",
       "competitions": [
         {
           "wasSuspended": false,
-          "situation": {
-            "lastPlay": {
-              "id": "4016957921603040021",
-              "type": {
-                "id": "21",
-                "text": "Foul Ball",
-                "abbreviation": "F",
-                "type": "foul-ball"
-              },
-              "text": "Pitch 3 : Strike 2 Foul",
-              "scoreValue": 0,
-              "team": {
-                "id": "19"
-              },
-              "atBatId": "4016957921603",
-              "summaryType": "P",
-              "athletesInvolved": []
-            },
-            "balls": 1,
-            "strikes": 2,
-            "outs": 1,
-            "onFirst": true,
-            "pitcher": {
-              "playerId": 32787,
-              "period": 9,
-              "athlete": {
-                "id": "32787",
-                "fullName": "Chris Stratton",
-                "displayName": "Chris Stratton",
-                "shortName": "C. Stratton",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/32787"
-                  }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/32787.png",
-                "jersey": "41",
-                "position": "RP",
-                "team": {
-                  "id": "19"
-                }
-              }
-            },
-            "batter": {
-              "playerId": 4683349,
-              "period": 9,
-              "athlete": {
-                "id": "4683349",
-                "fullName": "Austin Wells",
-                "displayName": "Austin Wells",
-                "shortName": "A. Wells",
-                "links": [
-                  {
-                    "rel": [
-                      "playercard",
-                      "desktop",
-                      "athlete"
-                    ],
-                    "href": "https://www.espn.com/mlb/player/_/id/4683349"
-                  }
-                ],
-                "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4683349.png",
-                "jersey": "28",
-                "position": "C",
-                "team": {
-                  "id": "10"
-                }
-              }
-            },
-            "onSecond": false,
-            "onThird": false
-          },
-          "outsText": "1 Out",
           "id": "401695792",
           "date": "2025-06-01T23:00:00+00:00",
           "competitors": [
@@ -26257,13 +26162,13 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": "0-4, 2 K",
-                      "value": 0.0,
+                      "displayValue": "2-4, HR, 2B, RBI, R, K",
+                      "value": 0.5,
                       "athlete": {
-                        "id": "33377",
-                        "fullName": "Teoscar Hernandez",
-                        "displayName": "Teoscar Hernandez",
-                        "shortName": "T. Hernandez",
+                        "id": "42468",
+                        "fullName": "Andy Pages",
+                        "displayName": "Andy Pages",
+                        "shortName": "A. Pages",
                         "links": [
                           {
                             "rel": [
@@ -26271,13 +26176,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/33377"
+                            "href": "https://www.espn.com/mlb/player/_/id/42468"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33377.png",
-                        "jersey": "37",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/42468.png",
+                        "jersey": "44",
                         "position": {
-                          "abbreviation": "RF"
+                          "abbreviation": "CF"
                         },
                         "team": {
                           "id": "19"
@@ -26377,8 +26282,8 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "2-3, HR, 2B, RBI, R, K",
-                      "value": 68.25,
+                      "displayValue": "2-4, HR, 2B, RBI, R, K",
+                      "value": 68.0,
                       "athlete": {
                         "id": "42468",
                         "fullName": "Andy Pages",
@@ -26417,8 +26322,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "2-3, HR, 2B, RBI, R, K",
-                      "value": 68.25,
+                      "displayValue": "2-4, HR, 2B, RBI, R, K",
+                      "value": 68.0,
                       "athlete": {
                         "id": "42468",
                         "fullName": "Andy Pages",
@@ -26490,7 +26395,7 @@
                     {
                       "name": "losses",
                       "abbreviation": "L",
-                      "displayValue": "3",
+                      "displayValue": "4",
                       "rankDisplayValue": "Tied-77th"
                     },
                     {
@@ -26502,7 +26407,7 @@
                     {
                       "name": "ERA",
                       "abbreviation": "ERA",
-                      "displayValue": "1.97",
+                      "displayValue": "2.39",
                       "rankDisplayValue": "6th"
                     },
                     {
@@ -26512,7 +26417,7 @@
                       "rankDisplayValue": "Tied-208th"
                     }
                   ],
-                  "record": "(6-3, 1.97)"
+                  "record": "(6-4, 2.39)"
                 }
               ],
               "hits": 6,
@@ -26582,6 +26487,7 @@
               },
               "uid": "s:1~l:10~t:19",
               "type": "team",
+              "winner": false,
               "score": "3",
               "linescores": [
                 {
@@ -26623,6 +26529,11 @@
                   "displayValue": "0",
                   "period": 8,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 9,
+                  "value": 0.0
                 }
               ],
               "statistics": [
@@ -26639,7 +26550,7 @@
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".207"
+                  "displayValue": ".188"
                 },
                 {
                   "abbreviation": "SV",
@@ -26659,7 +26570,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "6.48"
+                  "displayValue": "7.00"
                 },
                 {
                   "abbreviation": "E",
@@ -26670,19 +26581,17 @@
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Total",
+                  "abbreviation": "Game",
                   "type": "total",
-                  "summary": "36-22"
+                  "summary": "36-23"
                 },
                 {
                   "name": "Home",
-                  "abbreviation": "Home",
                   "type": "home",
-                  "summary": "21-8"
+                  "summary": "21-9"
                 },
                 {
                   "name": "Road",
-                  "abbreviation": "AWAY",
                   "type": "road",
                   "summary": "15-14"
                 }
@@ -26697,8 +26606,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": "3-4, RBI, K",
-                      "value": 0.75,
+                      "displayValue": "4-5, 2B, 2 RBI, K",
+                      "value": 0.800000011920929,
                       "athlete": {
                         "id": "30765",
                         "fullName": "DJ LeMahieu",
@@ -26777,13 +26686,13 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "1-4, HR, 2 RBI, R, BB, 2 K",
+                      "displayValue": "4-5, 2B, 2 RBI, K",
                       "value": 2.0,
                       "athlete": {
-                        "id": "5016968",
-                        "fullName": "Ben Rice",
-                        "displayName": "Ben Rice",
-                        "shortName": "B. Rice",
+                        "id": "30765",
+                        "fullName": "DJ LeMahieu",
+                        "displayName": "DJ LeMahieu",
+                        "shortName": "D. LeMahieu",
                         "links": [
                           {
                             "rel": [
@@ -26791,13 +26700,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/5016968"
+                            "href": "https://www.espn.com/mlb/player/_/id/30765"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5016968.png",
-                        "jersey": "22",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/30765.png",
+                        "jersey": "26",
                         "position": {
-                          "abbreviation": "1B"
+                          "abbreviation": "2B"
                         },
                         "team": {
                           "id": "10"
@@ -26817,13 +26726,13 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "1-4, HR, 2 RBI, R, BB, 2 K",
-                      "value": 66.0,
+                      "displayValue": "4-5, 2B, 2 RBI, K",
+                      "value": 69.5,
                       "athlete": {
-                        "id": "5016968",
-                        "fullName": "Ben Rice",
-                        "displayName": "Ben Rice",
-                        "shortName": "B. Rice",
+                        "id": "30765",
+                        "fullName": "DJ LeMahieu",
+                        "displayName": "DJ LeMahieu",
+                        "shortName": "D. LeMahieu",
                         "links": [
                           {
                             "rel": [
@@ -26831,13 +26740,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/5016968"
+                            "href": "https://www.espn.com/mlb/player/_/id/30765"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5016968.png",
-                        "jersey": "22",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/30765.png",
+                        "jersey": "26",
                         "position": {
-                          "abbreviation": "1B"
+                          "abbreviation": "2B"
                         },
                         "team": {
                           "id": "10"
@@ -26857,13 +26766,13 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "1-4, HR, 2 RBI, R, BB, 2 K",
-                      "value": 66.0,
+                      "displayValue": "4-5, 2B, 2 RBI, K",
+                      "value": 69.5,
                       "athlete": {
-                        "id": "5016968",
-                        "fullName": "Ben Rice",
-                        "displayName": "Ben Rice",
-                        "shortName": "B. Rice",
+                        "id": "30765",
+                        "fullName": "DJ LeMahieu",
+                        "displayName": "DJ LeMahieu",
+                        "shortName": "D. LeMahieu",
                         "links": [
                           {
                             "rel": [
@@ -26871,13 +26780,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/mlb/player/_/id/5016968"
+                            "href": "https://www.espn.com/mlb/player/_/id/30765"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5016968.png",
-                        "jersey": "22",
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/30765.png",
+                        "jersey": "26",
                         "position": {
-                          "abbreviation": "1B"
+                          "abbreviation": "2B"
                         },
                         "team": {
                           "id": "10"
@@ -26936,13 +26845,13 @@
                     {
                       "name": "wins",
                       "abbreviation": "W",
-                      "displayValue": "2",
+                      "displayValue": "3",
                       "rankDisplayValue": "Tied-150th"
                     },
                     {
                       "name": "ERA",
                       "abbreviation": "ERA",
-                      "displayValue": "3.06"
+                      "displayValue": "2.83"
                     },
                     {
                       "name": "errors",
@@ -26951,10 +26860,10 @@
                       "rankDisplayValue": "Tied-408th"
                     }
                   ],
-                  "record": "(2-0, 3.06)"
+                  "record": "(3-0, 2.83)"
                 }
               ],
-              "hits": 10,
+              "hits": 11,
               "errors": 0,
               "id": "10",
               "order": 1,
@@ -27021,7 +26930,8 @@
               },
               "uid": "s:1~l:10~t:10",
               "type": "team",
-              "score": "6",
+              "winner": true,
+              "score": "7",
               "linescores": [
                 {
                   "displayValue": "1",
@@ -27064,26 +26974,26 @@
                   "value": 0.0
                 },
                 {
-                  "displayValue": "0",
+                  "displayValue": "1",
                   "period": 9,
-                  "value": 0.0
+                  "value": 1.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "H",
                   "name": "hits",
-                  "displayValue": "10"
+                  "displayValue": "11"
                 },
                 {
                   "abbreviation": "R",
                   "name": "runs",
-                  "displayValue": "6"
+                  "displayValue": "7"
                 },
                 {
                   "abbreviation": "AVG",
                   "name": "avg",
-                  "displayValue": ".294"
+                  "displayValue": ".297"
                 },
                 {
                   "abbreviation": "SV",
@@ -27103,7 +27013,7 @@
                 {
                   "abbreviation": "ERA",
                   "name": "ERA",
-                  "displayValue": "3.38"
+                  "displayValue": "3.00"
                 },
                 {
                   "abbreviation": "E",
@@ -27114,27 +27024,25 @@
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Total",
+                  "abbreviation": "Game",
                   "type": "total",
-                  "summary": "35-22"
+                  "summary": "36-22"
                 },
                 {
                   "name": "Home",
-                  "abbreviation": "Home",
                   "type": "home",
                   "summary": "18-9"
                 },
                 {
                   "name": "Road",
-                  "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "17-13"
+                  "summary": "18-13"
                 }
               ]
             }
           ],
           "uid": "s:1~l:10~e:401695792~c:401695792",
-          "attendance": 0,
+          "attendance": 54031,
           "type": {
             "id": "1",
             "abbreviation": "STD"
@@ -27143,7 +27051,7 @@
           "neutralSite": false,
           "conferenceCompetition": false,
           "playByPlayAvailable": true,
-          "recent": true,
+          "recent": false,
           "venue": {
             "id": "19",
             "fullName": "Dodger Stadium",
@@ -27156,14 +27064,134 @@
           },
           "notes": [],
           "status": {
+            "featuredAthletes": [
+              {
+                "name": "winningPitcher",
+                "displayName": "Winning Pitcher",
+                "shortDisplayName": "Win",
+                "abbreviation": "WP",
+                "playerId": 33735,
+                "athlete": {
+                  "id": "33735",
+                  "fullName": "Ryan Yarbrough",
+                  "displayName": "Ryan Yarbrough",
+                  "shortName": "R. Yarbrough",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/33735"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33735.png",
+                  "jersey": "33",
+                  "position": "RP",
+                  "team": {
+                    "id": "10"
+                  }
+                },
+                "team": {
+                  "id": "10"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "losses",
+                    "abbreviation": "L",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "wins",
+                    "abbreviation": "W",
+                    "displayValue": "3"
+                  },
+                  {
+                    "name": "ERA",
+                    "abbreviation": "ERA",
+                    "displayValue": "2.83"
+                  },
+                  {
+                    "name": "errors",
+                    "abbreviation": "E",
+                    "displayValue": "0"
+                  }
+                ]
+              },
+              {
+                "name": "losingPitcher",
+                "displayName": "Losing Pitcher",
+                "shortDisplayName": "Loss",
+                "abbreviation": "LP",
+                "playerId": 4872587,
+                "athlete": {
+                  "id": "4872587",
+                  "fullName": "Yoshinobu Yamamoto",
+                  "displayName": "Yoshinobu Yamamoto",
+                  "shortName": "Y. Yamamoto",
+                  "links": [
+                    {
+                      "rel": [
+                        "playercard",
+                        "desktop",
+                        "athlete"
+                      ],
+                      "href": "https://www.espn.com/mlb/player/_/id/4872587"
+                    }
+                  ],
+                  "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4872587.png",
+                  "jersey": "18",
+                  "position": "SP",
+                  "team": {
+                    "id": "19"
+                  }
+                },
+                "team": {
+                  "id": "19"
+                },
+                "statistics": [
+                  {
+                    "name": "saves",
+                    "abbreviation": "SV",
+                    "displayValue": "0"
+                  },
+                  {
+                    "name": "losses",
+                    "abbreviation": "L",
+                    "displayValue": "4"
+                  },
+                  {
+                    "name": "wins",
+                    "abbreviation": "W",
+                    "displayValue": "6"
+                  },
+                  {
+                    "name": "ERA",
+                    "abbreviation": "ERA",
+                    "displayValue": "2.39"
+                  },
+                  {
+                    "name": "errors",
+                    "abbreviation": "E",
+                    "displayValue": "1"
+                  }
+                ]
+              }
+            ],
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "Top 9th",
-              "shortDetail": "Top 9th"
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
             },
             "clock": 0.0,
             "displayClock": "0:00",
@@ -27183,8 +27211,42 @@
               "displayName": "MLB Rating",
               "leaders": [
                 {
-                  "displayValue": "2-3, HR, 2B, RBI, R, K",
-                  "value": 68.25,
+                  "displayValue": "4-5, 2B, 2 RBI, K",
+                  "value": 69.5,
+                  "athlete": {
+                    "fullName": "DJ LeMahieu",
+                    "displayName": "DJ LeMahieu",
+                    "shortName": "D. LeMahieu",
+                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/30765.png",
+                    "jersey": "26",
+                    "position": {
+                      "abbreviation": "2B"
+                    },
+                    "team": {
+                      "id": "10"
+                    },
+                    "active": true,
+                    "id": "30765",
+                    "links": [
+                      {
+                        "href": "https://www.espn.com/mlb/player/_/id/30765",
+                        "rel": [
+                          "playercard",
+                          "desktop",
+                          "athlete"
+                        ]
+                      }
+                    ]
+                  },
+                  "team": {
+                    "id": "10",
+                    "logos": [],
+                    "links": []
+                  }
+                },
+                {
+                  "displayValue": "2-4, HR, 2B, RBI, R, K",
+                  "value": 68.0,
                   "athlete": {
                     "fullName": "Andy Pages",
                     "displayName": "Andy Pages",
@@ -27202,40 +27264,6 @@
                     "links": [
                       {
                         "href": "https://www.espn.com/mlb/player/_/id/42468",
-                        "rel": [
-                          "playercard",
-                          "desktop",
-                          "athlete"
-                        ]
-                      }
-                    ]
-                  },
-                  "team": {
-                    "id": "19",
-                    "logos": [],
-                    "links": []
-                  }
-                },
-                {
-                  "displayValue": "2-3, HR, RBI, R",
-                  "value": 67.75,
-                  "athlete": {
-                    "fullName": "Max Muncy",
-                    "displayName": "Max Muncy",
-                    "shortName": "M. Muncy",
-                    "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/33303.png",
-                    "jersey": "13",
-                    "position": {
-                      "abbreviation": "3B"
-                    },
-                    "team": {
-                      "id": "19"
-                    },
-                    "active": true,
-                    "id": "33303",
-                    "links": [
-                      {
-                        "href": "https://www.espn.com/mlb/player/_/id/33303",
                         "rel": [
                           "playercard",
                           "desktop",
@@ -27296,8 +27324,463 @@
               "region": "us"
             }
           ],
-          "highlights": [],
-          "headlines": []
+          "highlights": [
+            {
+              "id": 45427142,
+              "cerebroId": "683ce9e04c762f5be9c14ec1",
+              "source": "espn",
+              "headline": "Yamamoto stunned after Ben Rice tattoos a massive 2-run shot",
+              "description": "Ben Rice crushes a two-run home run off Dodgers starter Yoshinobu Yamamoto to pad the Yankees' lead.",
+              "lastModified": "2025-06-02T02:29:29Z",
+              "originalPublishDate": "2025-06-01T23:56:32Z",
+              "duration": 45,
+              "timeRestrictions": {
+                "embargoDate": "2025-06-01T23:56:32Z",
+                "expirationDate": "2025-06-04T00:01:32Z"
+              },
+              "deviceRestrictions": {
+                "type": "whitelist",
+                "devices": [
+                  "desktop",
+                  "ipad",
+                  "settop",
+                  "handset",
+                  "tablet"
+                ]
+              },
+              "geoRestrictions": {
+                "type": "whitelist",
+                "countries": [
+                  "KN",
+                  "AO",
+                  "TG",
+                  "SX",
+                  "ET",
+                  "VI",
+                  "ER",
+                  "BR",
+                  "ZA",
+                  "BO",
+                  "AW",
+                  "MW",
+                  "UM",
+                  "DO",
+                  "BW",
+                  "NG",
+                  "PY",
+                  "MX",
+                  "CM",
+                  "VC",
+                  "CD",
+                  "GD",
+                  "GM",
+                  "KY",
+                  "FJ",
+                  "MH",
+                  "GQ",
+                  "YE",
+                  "PR",
+                  "CF",
+                  "LC",
+                  "LS",
+                  "VG",
+                  "SC",
+                  "PA",
+                  "BB",
+                  "SV",
+                  "UG",
+                  "FM",
+                  "KM",
+                  "AS",
+                  "BS",
+                  "GH",
+                  "GF",
+                  "SL",
+                  "BF",
+                  "BQ",
+                  "AM",
+                  "GB",
+                  "UK",
+                  "US",
+                  "GU",
+                  "MP",
+                  "HT",
+                  "MA",
+                  "NI",
+                  "BM",
+                  "HN",
+                  "NA",
+                  "GA",
+                  "IE",
+                  "MU",
+                  "GY",
+                  "GW",
+                  "MS",
+                  "CO",
+                  "SO",
+                  "GP",
+                  "BI",
+                  "CV",
+                  "EC",
+                  "CI",
+                  "MF",
+                  "TN",
+                  "BZ",
+                  "TC",
+                  "GT",
+                  "CL",
+                  "CR",
+                  "CG",
+                  "MQ",
+                  "NZ",
+                  "ST",
+                  "DJ",
+                  "ZW",
+                  "SN",
+                  "AU",
+                  "LY",
+                  "SR",
+                  "PE",
+                  "JM",
+                  "EG",
+                  "TT",
+                  "NE",
+                  "ML",
+                  "AG",
+                  "NL",
+                  "TD",
+                  "MZ",
+                  "PW",
+                  "BJ",
+                  "MR",
+                  "TZ",
+                  "VE",
+                  "MG",
+                  "AI",
+                  "RE",
+                  "SZ",
+                  "GN",
+                  "ZM",
+                  "UY",
+                  "DZ",
+                  "SD",
+                  "SS",
+                  "KE",
+                  "LR",
+                  "RW",
+                  "CU"
+                ]
+              },
+              "thumbnail": "https://a.espncdn.com/media/motion/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a771216/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a771216.jpg",
+              "links": {
+                "web": {
+                  "href": "https://www.espn.com/video/clip?id=45427142",
+                  "self": {
+                    "href": "https://www.espn.com/video/clip?id=45427142",
+                    "dsi": {
+                      "href": "https://www.espn.com/video/clip?id=9fb5027c2d290"
+                    }
+                  },
+                  "seo": {
+                    "href": "https://www.espn.com/video/clip/_/id/45427142"
+                  }
+                },
+                "mobile": {
+                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142",
+                  "source": {
+                    "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.mp4"
+                  },
+                  "alert": {
+                    "href": "http://m.espn.com/general/video/videoAlert?vid=45427142"
+                  },
+                  "streaming": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142"
+                  },
+                  "progressiveDownload": {
+                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142"
+                  }
+                },
+                "api": {
+                  "self": {
+                    "href": "https://content.core.api.espn.com/v1/video/clips/45427142"
+                  },
+                  "artwork": {
+                    "href": "https://artwork.api.espn.com/artwork/collections/media/76d31f02-d45d-41e5-9c47-c40c07c6e84e"
+                  }
+                },
+                "source": {
+                  "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_360p30_1464k.mp4",
+                  "mezzanine": {
+                    "href": "http://media.video-origin.espn.com/espnvideo/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.mp4"
+                  },
+                  "flash": {
+                    "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.smil"
+                  },
+                  "hds": {
+                    "href": "https://hds.video-cdn.espn.com/z/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_rel.smil/manifest.f4m"
+                  },
+                  "HLS": {
+                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8",
+                    "HD": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8"
+                    },
+                    "cmaf": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8",
+                      "shield": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/media/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset"
+                      }
+                    }
+                  },
+                  "HD": {
+                    "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_720p30_2896k.mp4"
+                  },
+                  "full": {
+                    "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_360p30_1464k.mp4"
+                  }
+                },
+                "sportscenter": {
+                  "href": "sportscenter://x-callback-url/showVideo?videoID=45427142&videoDSI=9fb5027c2d290"
+                }
+              },
+              "ad": {
+                "sport": "mlb",
+                "bundle": "mlbhighlightsoneplay"
+              },
+              "tracking": {
+                "sportName": "mlb",
+                "leagueName": "No League",
+                "coverageType": "Final Game Highlight",
+                "trackingName": "MLB_One-Play (Yamamoto stunned after Ben Rice tattoos a massive 2-run shot) 2025/06/01 ESHEET",
+                "trackingId": "evc_20250601_nyy_@_lad_2f131f8a-4582-4f47-941a-55227b9f1f3e_7044"
+              }
+            }
+          ],
+          "headlines": [
+            {
+              "video": [
+                {
+                  "id": 45427142,
+                  "source": "espn",
+                  "headline": "Yamamoto stunned after Ben Rice tattoos a massive 2-run shot",
+                  "thumbnail": "https://a.espncdn.com/media/motion/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a771216/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a771216.jpg",
+                  "duration": 45,
+                  "tracking": {
+                    "sportName": "mlb",
+                    "leagueName": "No League",
+                    "coverageType": "Final Game Highlight",
+                    "trackingName": "MLB_One-Play (Yamamoto stunned after Ben Rice tattoos a massive 2-run shot) 2025/06/01 ESHEET",
+                    "trackingId": "evc_20250601_nyy_@_lad_2f131f8a-4582-4f47-941a-55227b9f1f3e_7044"
+                  },
+                  "deviceRestrictions": {
+                    "type": "whitelist",
+                    "devices": [
+                      "desktop",
+                      "ipad",
+                      "settop",
+                      "handset",
+                      "tablet"
+                    ]
+                  },
+                  "geoRestrictions": {
+                    "type": "whitelist",
+                    "countries": [
+                      "KN",
+                      "AO",
+                      "TG",
+                      "SX",
+                      "ET",
+                      "VI",
+                      "ER",
+                      "BR",
+                      "ZA",
+                      "BO",
+                      "AW",
+                      "MW",
+                      "UM",
+                      "DO",
+                      "BW",
+                      "NG",
+                      "PY",
+                      "MX",
+                      "CM",
+                      "VC",
+                      "CD",
+                      "GD",
+                      "GM",
+                      "KY",
+                      "FJ",
+                      "MH",
+                      "GQ",
+                      "YE",
+                      "PR",
+                      "CF",
+                      "LC",
+                      "LS",
+                      "VG",
+                      "SC",
+                      "PA",
+                      "BB",
+                      "SV",
+                      "UG",
+                      "FM",
+                      "KM",
+                      "AS",
+                      "BS",
+                      "GH",
+                      "GF",
+                      "SL",
+                      "BF",
+                      "BQ",
+                      "AM",
+                      "GB",
+                      "UK",
+                      "US",
+                      "GU",
+                      "MP",
+                      "HT",
+                      "MA",
+                      "NI",
+                      "BM",
+                      "HN",
+                      "NA",
+                      "GA",
+                      "IE",
+                      "MU",
+                      "GY",
+                      "GW",
+                      "MS",
+                      "CO",
+                      "SO",
+                      "GP",
+                      "BI",
+                      "CV",
+                      "EC",
+                      "CI",
+                      "MF",
+                      "TN",
+                      "BZ",
+                      "TC",
+                      "GT",
+                      "CL",
+                      "CR",
+                      "CG",
+                      "MQ",
+                      "NZ",
+                      "ST",
+                      "DJ",
+                      "ZW",
+                      "SN",
+                      "AU",
+                      "LY",
+                      "SR",
+                      "PE",
+                      "JM",
+                      "EG",
+                      "TT",
+                      "NE",
+                      "ML",
+                      "AG",
+                      "NL",
+                      "TD",
+                      "MZ",
+                      "PW",
+                      "BJ",
+                      "MR",
+                      "TZ",
+                      "VE",
+                      "MG",
+                      "AI",
+                      "RE",
+                      "SZ",
+                      "GN",
+                      "ZM",
+                      "UY",
+                      "DZ",
+                      "SD",
+                      "SS",
+                      "KE",
+                      "LR",
+                      "RW",
+                      "CU"
+                    ]
+                  },
+                  "links": {
+                    "web": {
+                      "href": "https://www.espn.com/video/clip?id=45427142",
+                      "self": {
+                        "href": "https://www.espn.com/video/clip?id=45427142",
+                        "dsi": {
+                          "href": "https://www.espn.com/video/clip?id=9fb5027c2d290"
+                        }
+                      },
+                      "seo": {
+                        "href": "https://www.espn.com/video/clip/_/id/45427142"
+                      }
+                    },
+                    "mobile": {
+                      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142",
+                      "source": {
+                        "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.mp4"
+                      },
+                      "alert": {
+                        "href": "http://m.espn.com/general/video/videoAlert?vid=45427142"
+                      },
+                      "streaming": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142"
+                      },
+                      "progressiveDownload": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/brightcove/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45427142"
+                      }
+                    },
+                    "api": {
+                      "self": {
+                        "href": "https://content.core.api.espn.com/v1/video/clips/45427142"
+                      },
+                      "artwork": {
+                        "href": "https://artwork.api.espn.com/artwork/collections/media/76d31f02-d45d-41e5-9c47-c40c07c6e84e"
+                      }
+                    },
+                    "source": {
+                      "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_360p30_1464k.mp4",
+                      "mezzanine": {
+                        "href": "http://media.video-origin.espn.com/espnvideo/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.mp4"
+                      },
+                      "flash": {
+                        "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044.smil"
+                      },
+                      "hds": {
+                        "href": "https://hds.video-cdn.espn.com/z/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_rel.smil/manifest.f4m"
+                      },
+                      "HLS": {
+                        "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8",
+                        "HD": {
+                          "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8"
+                        },
+                        "cmaf": {
+                          "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/playlist.m3u8",
+                          "shield": {
+                            "href": "https://watch.auth.api.espn.com/video/auth/media/76d31f02-d45d-41e5-9c47-c40c07c6e84e/asset"
+                          }
+                        }
+                      },
+                      "HD": {
+                        "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_720p30_2896k.mp4"
+                      },
+                      "full": {
+                        "href": "https://media.video-cdn.espn.com/motion/fastclipper/2025/0601/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044/evc__20250601_nyy__lad_8c51fd69_2443_44ca_901b_a77d2c835282_7044_360p30_1464k.mp4"
+                      }
+                    },
+                    "sportscenter": {
+                      "href": "sportscenter://x-callback-url/showVideo?videoID=45427142&videoDSI=9fb5027c2d290"
+                    }
+                  }
+                }
+              ],
+              "type": "Recap",
+              "description": "\u2014 Ryan Yarbrough limited baseball\u2019s best offense to four hits over six innings, Ben Rice hit a tiebreaking two-run homer and the New York Yankees defeated the Los Angeles Dodgers 7-3 on Sunday to avoid getting swept for the first time this season.",
+              "shortLinkText": "Yarbrough shines as Yankees avoid sweep with 7-3 win over Dodgers. Judge and Ohtani are hitless"
+            }
+          ]
         }
       ],
       "uid": "s:1~l:10~e:401695792",
@@ -27312,23 +27795,10 @@
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/mlb/game/_/gameId/401695792",
+          "href": "https://www.espn.com/mlb/game/_/gameId/401695792/yankees-dodgers",
           "text": "Gamecast",
           "rel": [
-            "gamecast",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Gamecast",
-          "href": "https://www.espn.com/mlb/game/_/gameId/401695792",
-          "text": "Gamecast",
-          "rel": [
-            "live",
+            "summary",
             "desktop",
             "event"
           ],
@@ -27372,17 +27842,30 @@
           ],
           "isExternal": false,
           "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "shortText": "Recap",
+          "href": "https://www.espn.com/mlb/recap?gameId=401695792",
+          "text": "Recap",
+          "rel": [
+            "recap",
+            "desktop",
+            "event"
+          ],
+          "isExternal": false,
+          "isPremium": false
         }
       ],
       "status": {
         "type": {
-          "id": "2",
-          "name": "STATUS_IN_PROGRESS",
-          "state": "in",
-          "completed": false,
-          "description": "In Progress",
-          "detail": "Top 9th",
-          "shortDetail": "Top 9th"
+          "id": "3",
+          "name": "STATUS_FINAL",
+          "state": "post",
+          "completed": true,
+          "description": "Final",
+          "detail": "Final",
+          "shortDetail": "Final"
         },
         "clock": 0.0,
         "displayClock": "0:00",

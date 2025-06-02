@@ -182,6 +182,8 @@ from .odds_value_with_outcome_outcome import OddsValueWithOutcomeOutcome
 from .odds_value_with_outcome_outcome_type import OddsValueWithOutcomeOutcomeType
 from .official_position import OfficialPosition
 from .paginated_reference_list_response import PaginatedReferenceListResponse
+from .past_performance import PastPerformance
+from .past_performance_total_result import PastPerformanceTotalResult
 from .play import Play
 from .play_clock import PlayClock
 from .play_field_position import PlayFieldPosition
@@ -230,6 +232,7 @@ from .team_leaders_response import TeamLeadersResponse
 from .team_odds import TeamOdds
 from .team_odds_record import TeamOddsRecord
 from .team_odds_records_response import TeamOddsRecordsResponse
+from .team_past_performances_response import TeamPastPerformancesResponse
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
 from .transactions_list_response_items_item import TransactionsListResponseItemsItem
@@ -418,6 +421,8 @@ __all__ = (
     "OddsValueWithOutcomeOutcomeType",
     "OfficialPosition",
     "PaginatedReferenceListResponse",
+    "PastPerformance",
+    "PastPerformanceTotalResult",
     "Play",
     "PlayClock",
     "PlayFieldPosition",
@@ -466,6 +471,7 @@ __all__ = (
     "TeamOdds",
     "TeamOddsRecord",
     "TeamOddsRecordsResponse",
+    "TeamPastPerformancesResponse",
     "TeamReference",
     "TransactionsListResponse",
     "TransactionsListResponseItemsItem",

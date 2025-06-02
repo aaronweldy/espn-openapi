@@ -2832,6 +2832,68 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/teams/{team_id}/odds/{provider_id}/past-performances:
+    get:
+      summary: Get Team Past Performances vs Odds
+      description: |
+        Retrieve historical betting performance data for a specific team against odds from a specific provider.
+        Shows how the team performed against the spread, money line, and over/under betting lines.
+      operationId: getTeamPastPerformances
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: team_id
+          in: path
+          required: true
+          description: The team ID
+          schema:
+            type: string
+            example: "8"
+        - name: provider_id
+          in: path
+          required: true
+          description: The betting provider ID (e.g., 1002 for certain providers)
+          schema:
+            type: string
+            example: "1002"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of past performances to return
+          schema:
+            type: integer
+            default: 25
+            maximum: 1000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamPastPerformancesResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/transactions:
     get:
       summary: Get League Transactions
@@ -7706,4 +7768,85 @@ components:
         - pageIndex
         - pageSize
         - pageCount
+        - items    
+    TeamPastPerformancesResponse:
+      type: object
+      description: Response containing team past performance data against betting odds
+      properties:
+        count:
+          type: integer
+          description: Total number of past performances
+          example: 169
+        pageIndex:
+          type: integer
+          description: Current page index (1-based)
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 140
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 2
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PastPerformance'
+          description: List of past performance records
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
         - items
+    
+    PastPerformance:
+      type: object
+      description: Individual past performance record showing betting results
+      properties:
+        spread:
+          type: number
+          description: Point spread for the game (negative means team was favored)
+          example: -3.5
+        spreadOdds:
+          type: number
+          description: Odds for the spread bet
+          example: -108
+        spreadWinner:
+          type: boolean
+          description: Whether the team covered the spread
+          example: false
+        overOdds:
+          type: number
+          description: Odds for the over bet
+          example: -101
+        underOdds:
+          type: number
+          description: Odds for the under bet
+          example: -109
+        lineDate:
+          type: string
+          format: date-time
+          description: Date and time when the betting line was set
+          example: "2012-09-23T17:00Z"
+        totalLine:
+          type: number
+          description: Over/under total line
+          example: 47.0
+        totalResult:
+          type: string
+          description: Result of the total bet (O=Over, U=Under, P=Push)
+          enum: ["O", "U", "P"]
+          example: "O"
+        moneyLineOdds:
+          type: number
+          description: Money line odds for the team
+          example: -195
+        moneylineWinner:
+          type: boolean
+          description: Whether the team won the game outright
+          example: false
+        pastCompetition:
+          $ref: '#/components/schemas/Reference'
+          description: Reference to the competition/game details

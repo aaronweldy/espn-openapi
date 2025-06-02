@@ -81,7 +81,7 @@
 - [x] `/v2/sports/football/leagues/nfl/athletes/{athlete_id}/statisticslog` - NFL Athlete statistics log
 - [x] `/v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/plays` - NFL Game Plays. Query: limit
 - [x] `/v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/drives` - NFL Game Drives
-- [x] `/v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}` - NFL Get Team (Core API)
+- [ ] `/v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}` - NFL Get Team (Core API) (still need to implement params: enable=roster,projection,stats)
 - [x] `/v2/sports/football/leagues/nfl/teams/{team_id}/injuries` - NFL Team Injuries
 - [x] `/v2/sports/football/leagues/nfl/seasons/{year}/teams/{team_id}/depthcharts` - NFL Team Depth Chart
 - [x] `/v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/eventlog` - NFL Athlete Eventlog
@@ -144,8 +144,9 @@
 
 ### sports.core.api.espn.com
 - [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/probabilities` - Win Probabilities
-- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}` - Odds from Provider
-- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/history/0/movement` - Odds Movement
+- [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{season}/team/{team_id}/projection` - Projections
+- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}` - Odds from Provider (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds)
+- [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider_id}/history/0/movement` - Odds Movement (ex: https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401249063/competitions/401249063/odds/1002/history/0/movement?limit=100)
 - [ ] `/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/predictor` - ESPN Predictor
 - [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/futures` - Futures Bets
 - [ ] `/v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/ats` - Team ATS Records
