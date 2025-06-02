@@ -192,3 +192,11 @@ def test_head_to_heads_summary(sports_core_api_client):
     # At least some providers should return 200 OK
     ok_count = sum(1 for r in results if "✅" in r["status"])
     assert ok_count > 0, "At least one provider should return 200 OK"
+    
+    # Note about empty results
+    logger.info("\n📝 Note: Head-to-head odds endpoints consistently return empty results")
+    logger.info("   This appears to be normal behavior for this endpoint")
+    logger.info("   Possible reasons:")
+    logger.info("   - Head-to-head refers to specific player prop comparisons")
+    logger.info("   - Data is only available during active betting periods")
+    logger.info("   - Historical head-to-head data is not preserved")
