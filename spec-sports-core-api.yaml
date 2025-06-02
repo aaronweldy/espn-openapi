@@ -3003,6 +3003,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{eventId}/competitions/{competitionId}/competitors/{competitorId}/roster:
+    get:
+      summary: Get Competitor Roster for Event
+      description: Retrieve the roster of a specific competitor (team) for a given event/competition
+      operationId: getCompetitorRoster
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport identifier
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league identifier
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: eventId
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401547417"
+        - name: competitionId
+          in: path
+          required: true
+          description: The competition ID (usually same as event ID)
+          schema:
+            type: string
+            example: "401547417"
+        - name: competitorId
+          in: path
+          required: true
+          description: The competitor (team) ID
+          schema:
+            type: string
+            example: "1"
+      responses:
+        '200':
+          description: Successful response with competitor roster details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompetitorRosterResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/baseball/leagues/mlb/athletes/{athleteId}:
     get:
       summary: Get MLB Athlete Details
@@ -6509,6 +6568,71 @@ components:
         - name
         - displayName
         - abbreviation
+
+    CompetitorRosterResponse:
+      type: object
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: Reference URL for this roster
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/RosterEntry'
+          description: List of roster entries (players)
+        competition:
+          $ref: '#/components/schemas/Reference'
+        team:
+          $ref: '#/components/schemas/Reference'
+      required:
+        - $ref
+        - entries
+
+    RosterEntry:
+      type: object
+      properties:
+        playerId:
+          type: integer
+          description: Player ID
+        period:
+          type: integer
+          description: Period number
+        active:
+          type: boolean
+          description: Whether the player is active
+        starter:
+          type: boolean
+          description: Whether the player is a starter
+        forPlayerId:
+          type: integer
+          description: For player ID (replacement scenarios)
+        jersey:
+          type: string
+          description: Jersey number
+        valid:
+          type: boolean
+          description: Whether the entry is valid
+        athlete:
+          $ref: '#/components/schemas/Reference'
+        position:
+          $ref: '#/components/schemas/Reference'
+        statistics:
+          $ref: '#/components/schemas/Reference'
+        didNotPlay:
+          type: boolean
+          description: Whether the player did not play
+        displayName:
+          type: string
+          description: Player display name
+      required:
+        - playerId
+        - starter
+        - jersey
+        - valid
+        - athlete
+        - didNotPlay
+        - displayName
 
     TeamAthletesResponse:
       type: object

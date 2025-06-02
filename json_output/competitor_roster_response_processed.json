@@ -1,0 +1,31 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster?lang=en&region=us",
+  "entries": [
+    {
+      "playerId": 2577446,
+      "period": 0,
+      "active": false,
+      "starter": true,
+      "forPlayerId": 0,
+      "jersey": "91",
+      "valid": true,
+      "athlete": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/2577446?lang=en&region=us"
+      },
+      "position": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/30?lang=en&region=us"
+      },
+      "statistics": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417/competitors/9/roster/2577446/statistics/0?lang=en&region=us"
+      },
+      "didNotPlay": false,
+      "displayName": "Smith"
+    }
+  ],
+  "competition": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401547417/competitions/401547417?lang=en&region=us"
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/teams/9?lang=en&region=us"
+  }
+}

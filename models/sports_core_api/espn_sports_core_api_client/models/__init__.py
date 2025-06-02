@@ -59,6 +59,7 @@ from .competition_source import CompetitionSource
 from .competition_status import CompetitionStatus
 from .competition_status_type import CompetitionStatusType
 from .competition_type import CompetitionType
+from .competitor_roster_response import CompetitorRosterResponse
 from .competitor_stat import CompetitorStat
 from .competitor_statistics_response import CompetitorStatisticsResponse
 from .core_nfl_season_team_response import CoreNflSeasonTeamResponse
@@ -217,6 +218,7 @@ from .probability_source import ProbabilitySource
 from .provider_details import ProviderDetails
 from .providers_list_response import ProvidersListResponse
 from .reference import Reference
+from .roster_entry import RosterEntry
 from .season import Season
 from .season_type import SeasonType
 from .season_types_list import SeasonTypesList
@@ -311,6 +313,7 @@ __all__ = (
     "CompetitionStatus",
     "CompetitionStatusType",
     "CompetitionType",
+    "CompetitorRosterResponse",
     "CompetitorStat",
     "CompetitorStatisticsResponse",
     "CoreNflSeasonTeamResponse",
@@ -469,6 +472,7 @@ __all__ = (
     "ProviderDetails",
     "ProvidersListResponse",
     "Reference",
+    "RosterEntry",
     "Season",
     "SeasonType",
     "SeasonTypesList",

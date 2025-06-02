@@ -238,7 +238,7 @@ site.web.api.espn.com
 sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statistics/{category_id} - Athlete Statistics by Category. Path Params: {sport}, {league}, {athlete_id}, {category_id} - Generic endpoint (consolidates NFL, NBA, MLB, NHL)
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores - Competitor Linescores. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint
-[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster - NFL Game Roster
+[x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster - Competitor Roster for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/competitors/{team_id}/records - NFL Team Records for Event
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics - Competitor Statistics for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
