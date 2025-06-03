@@ -193,6 +193,7 @@ site.api.espn.com
 [x] /apis/fantasy/v2/games/ffl/news/players - Fantasy Player News. Query Params: playerId={athlete_id}, limit - Implemented
 site.web.api.espn.com
 [x] /apis/fantasy/v2/games/ffl/games - Fantasy Games List. Query Params: dates (YYYYMMDD or YYYYMMDD-YYYYMMDD) - Implemented
+[ ] /apis/v2/flex - Contributor Posts. Query Params: region, lang, contentorigin, contributor, limit, pubkey
 gambit-api.fantasy.espn.com
 [ ] /apis/v1/challenges/{challenge_name}?scoringPeriodId={week}&view={view} - Pick'em Challenge Scoring. Path Params: {challenge_name}. Query Params: scoringPeriodId={week}, view
 [ ] /apis/v1/challenges/{challenge_name}/groups/{group_id}?view={view} - Pick'em Challenge Group. Path Params: {challenge_name}, {group_id}. Query Param: view
