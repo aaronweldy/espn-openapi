@@ -42,7 +42,7 @@ def sports_core_api_client():
 @pytest.fixture(scope="session")
 def fantasy_api_client():
     """Fixture for ESPN fantasy API client."""
-    return FantasyApiClient(base_url="https://fantasy.espn.com")
+    return FantasyApiClient(base_url="https://lm-api-reads.fantasy.espn.com")
 
 
 @pytest.fixture(scope="session")

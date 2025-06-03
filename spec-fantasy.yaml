@@ -5,8 +5,10 @@ info:
   description: Unofficial ESPN Fantasy API for retrieving fantasy sports data from fantasy.espn.com. This API is not officially supported by ESPN and may change without notice.
 
 servers:
-  - url: https://fantasy.espn.com
+  - url: https://lm-api-reads.fantasy.espn.com
     description: ESPN Fantasy API Production Server
+  - url: https://fantasy.espn.com
+    description: ESPN Fantasy API Legacy Server
 
 paths:
   /apis/v3/games/ffl/seasons/{year}/segments/{segment}/leagues/{leagueId}:
@@ -191,6 +193,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v3/games/ffl/seasons/{year}/players:
+    get:
+      summary: Get Fantasy Football Players
+      description: Retrieve a list of fantasy football players with various statistics and information
+      operationId: getFantasyFootballPlayers
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2024
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, player_wl, allon]
+            example: "kona_player_info"
+        - name: X-Fantasy-Filter
+          in: header
+          required: false
+          description: JSON filter for player limits and other criteria
+          schema:
+            type: string
+            example: '{"players":{"limit":2000}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FantasyPlayer'
         '400':
           description: Bad request
           content:
@@ -1023,6 +1069,148 @@ components:
       required:
         - players
         - scoringPeriodId
+
+    FantasyPlayer:
+      type: object
+      properties:
+        active:
+          type: boolean
+          description: Whether the player is currently active
+        defaultPositionId:
+          type: integer
+          description: The player's default position ID
+        draftRanksByRankType:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/DraftRank'
+          description: Draft rankings by type (STANDARD, PPR, etc.)
+        droppable:
+          type: boolean
+          description: Whether the player can be dropped
+        eligibleSlots:
+          type: array
+          items:
+            type: integer
+          description: Position slots the player is eligible for
+        firstName:
+          type: string
+          description: Player's first name
+        fullName:
+          type: string
+          description: Player's full name
+        id:
+          type: integer
+          description: Player's unique ID
+        injured:
+          type: boolean
+          description: Whether the player is injured
+        injuryStatus:
+          type: string
+          description: Current injury status (ACTIVE, QUESTIONABLE, OUT, etc.)
+        jersey:
+          type: string
+          description: Jersey number
+        lastName:
+          type: string
+          description: Player's last name
+        ownership:
+          $ref: '#/components/schemas/PlayerOwnership'
+        proTeamId:
+          type: integer
+          description: Professional team ID
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/FantasyPlayerStats'
+          description: Player statistics
+
+    DraftRank:
+      type: object
+      properties:
+        auctionValue:
+          type: number
+          description: Auction draft value
+        published:
+          type: boolean
+          description: Whether the rank is published
+        rank:
+          type: integer
+          description: Draft rank
+        rankSourceId:
+          type: integer
+          description: Source ID for the ranking
+        rankType:
+          type: string
+          description: Type of ranking (STANDARD, PPR, etc.)
+        slotId:
+          type: integer
+          description: Slot ID
+
+    PlayerOwnership:
+      type: object
+      properties:
+        activityLevel:
+          type: string
+          nullable: true
+          description: Player activity level
+        auctionValueAverage:
+          type: number
+          description: Average auction value
+        auctionValueAverageChange:
+          type: number
+          description: Change in average auction value
+        averageDraftPosition:
+          type: number
+          description: Average draft position
+        averageDraftPositionPercentChange:
+          type: number
+          description: Percent change in average draft position
+        date:
+          type: string
+          nullable: true
+          description: Date of ownership data
+        leagueType:
+          type: integer
+          description: Type of league
+        percentChange:
+          type: number
+          description: Percent change in ownership
+        percentOwned:
+          type: number
+          description: Percentage of leagues where player is owned
+        percentStarted:
+          type: number
+          description: Percentage of leagues where player is started
+
+    FantasyPlayerStats:
+      type: object
+      properties:
+        externalId:
+          type: string
+          description: External ID for the stats
+        id:
+          type: string
+          description: Stats ID
+        proTeamId:
+          type: integer
+          description: Professional team ID
+        scoringPeriodId:
+          type: integer
+          description: Scoring period ID
+        seasonId:
+          type: integer
+          description: Season ID
+        statSourceId:
+          type: integer
+          description: Source ID for the stats
+        statSplitTypeId:
+          type: integer
+          description: Split type ID for the stats
+        stats:
+          type: object
+          additionalProperties:
+            type: number
+          description: Statistical values
 
     ErrorResponse:
       type: object

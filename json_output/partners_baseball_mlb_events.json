@@ -1,192 +1,78 @@
 {
   "events": [
     {
-      "id": "401695789",
-      "date": "2025-06-01T17:05:00+00:00",
-      "name": "St. Louis Cardinals at Texas Rangers",
-      "shortName": "STL @ TEX",
+      "id": "401695796",
+      "date": "2025-06-02T22:40:00+00:00",
+      "name": "Colorado Rockies at Miami Marlins",
+      "shortName": "COL @ MIA",
       "competitions": [
         {
           "timeOfDay": "DAY",
           "duration": {
-            "displayValue": "2:32"
+            "displayValue": "2:35"
           },
           "wasSuspended": false,
           "dataFormat": "API",
-          "id": "401695789",
-          "date": "2025-06-01T17:05:00+00:00",
+          "id": "401695796",
+          "date": "2025-06-02T22:40:00+00:00",
           "competitors": [
             {
-              "id": "13",
+              "id": "28",
               "type": "team",
               "homeAway": "home",
               "team": {
-                "id": "13",
-                "abbreviation": "TEX",
-                "displayName": "Texas Rangers",
-                "location": "Texas",
-                "name": "Rangers",
-                "shortDisplayName": "Rangers",
-                "color": "003278",
-                "alternateColor": "c0111f"
+                "id": "28",
+                "abbreviation": "MIA",
+                "displayName": "Miami Marlins",
+                "location": "Miami",
+                "name": "Marlins",
+                "shortDisplayName": "Marlins",
+                "color": "00a3e0",
+                "alternateColor": "000000"
               },
               "order": 0,
-              "winner": true,
-              "score": {
-                "hits": 9,
-                "errors": 1,
-                "displayValue": "8",
-                "value": 8.0,
-                "winner": true
-              },
-              "record": {
-                "name": "overall",
-                "displayName": "Record Year To Date",
-                "displayValue": "29-31"
-              },
-              "displayOrder": 2
-            },
-            {
-              "id": "24",
-              "type": "team",
-              "homeAway": "away",
-              "team": {
-                "id": "24",
-                "abbreviation": "STL",
-                "displayName": "St. Louis Cardinals",
-                "location": "St. Louis",
-                "name": "Cardinals",
-                "shortDisplayName": "Cardinals",
-                "color": "be0a14",
-                "alternateColor": "001541"
-              },
-              "order": 1,
               "winner": false,
               "score": {
-                "hits": 5,
-                "errors": 1,
-                "displayValue": "1",
-                "value": 1.0,
+                "hits": 11,
+                "errors": 0,
+                "displayValue": "4",
+                "value": 4.0,
                 "winner": false
               },
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "33-26"
-              },
-              "displayOrder": 1
-            }
-          ],
-          "status": {
-            "halfInning": 16,
-            "type": {
-              "id": "3",
-              "name": "STATUS_FINAL",
-              "state": "post",
-              "completed": true,
-              "description": "Final",
-              "detail": "Final",
-              "shortDetail": "Final"
-            },
-            "clock": 0.0,
-            "displayClock": "0:00",
-            "period": 9
-          },
-          "attendance": 28138,
-          "neutralSite": false,
-          "onWatchESPN": false,
-          "wallclockAvailable": true,
-          "highlightsAvailable": true,
-          "notes": [],
-          "format": {
-            "regulation": {
-              "periods": 9,
-              "displayName": "Inning",
-              "slug": "inning"
-            }
-          },
-          "time": {
-            "value": "2025-06-01T17:05:00+00:00",
-            "timeValid": true,
-            "displayValue": "1:05 ET"
-          }
-        }
-      ],
-      "timeValid": true
-    },
-    {
-      "id": "401695781",
-      "date": "2025-06-01T17:35:00+00:00",
-      "name": "Boston Red Sox at Atlanta Braves",
-      "shortName": "BOS @ ATL",
-      "competitions": [
-        {
-          "timeOfDay": "DAY",
-          "duration": {
-            "displayValue": "2:13"
-          },
-          "wasSuspended": false,
-          "dataFormat": "API",
-          "id": "401695781",
-          "date": "2025-06-01T17:35:00+00:00",
-          "competitors": [
-            {
-              "id": "15",
-              "type": "team",
-              "homeAway": "home",
-              "team": {
-                "id": "15",
-                "abbreviation": "ATL",
-                "displayName": "Atlanta Braves",
-                "location": "Atlanta",
-                "name": "Braves",
-                "shortDisplayName": "Braves",
-                "color": "0c2340",
-                "alternateColor": "ba0c2f"
-              },
-              "order": 0,
-              "winner": false,
-              "score": {
-                "hits": 5,
-                "errors": 0,
-                "displayValue": "1",
-                "value": 1.0,
-                "winner": false
-              },
-              "record": {
-                "name": "overall",
-                "displayName": "Record Year To Date",
-                "displayValue": "27-31"
+                "displayValue": "23-35"
               },
               "displayOrder": 2
             },
             {
-              "id": "2",
+              "id": "27",
               "type": "team",
               "homeAway": "away",
               "team": {
-                "id": "2",
-                "abbreviation": "BOS",
-                "displayName": "Boston Red Sox",
-                "location": "Boston",
-                "name": "Red Sox",
-                "shortDisplayName": "Red Sox",
-                "color": "0d2b56",
-                "alternateColor": "bd3039"
+                "id": "27",
+                "abbreviation": "COL",
+                "displayName": "Colorado Rockies",
+                "location": "Colorado",
+                "name": "Rockies",
+                "shortDisplayName": "Rockies",
+                "color": "33006f",
+                "alternateColor": "000000"
               },
               "order": 1,
               "winner": true,
               "score": {
-                "hits": 7,
-                "errors": 0,
-                "displayValue": "3",
-                "value": 3.0,
+                "hits": 12,
+                "errors": 2,
+                "displayValue": "6",
+                "value": 6.0,
                 "winner": true
               },
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "29-32"
+                "displayValue": "10-50"
               },
               "displayOrder": 1
             }
@@ -206,7 +92,7 @@
             "displayClock": "0:00",
             "period": 9
           },
-          "attendance": 38279,
+          "attendance": 5894,
           "neutralSite": false,
           "onWatchESPN": false,
           "wallclockAvailable": true,
@@ -220,93 +106,93 @@
             }
           },
           "time": {
-            "value": "2025-06-01T17:35:00+00:00",
+            "value": "2025-06-02T22:40:00+00:00",
             "timeValid": true,
-            "displayValue": "1:35 ET"
+            "displayValue": "6:40 ET"
           }
         }
       ],
       "timeValid": true
     },
     {
-      "id": "401695782",
-      "date": "2025-06-01T17:35:00+00:00",
-      "name": "Chicago White Sox at Baltimore Orioles",
-      "shortName": "CHW @ BAL",
+      "id": "401695795",
+      "date": "2025-06-02T23:10:00+00:00",
+      "name": "Los Angeles Angels at Boston Red Sox",
+      "shortName": "LAA @ BOS",
       "competitions": [
         {
           "timeOfDay": "DAY",
           "duration": {
-            "displayValue": "2:22"
+            "displayValue": "2:49"
           },
           "wasSuspended": false,
           "dataFormat": "API",
-          "id": "401695782",
-          "date": "2025-06-01T17:35:00+00:00",
+          "id": "401695795",
+          "date": "2025-06-02T23:10:00+00:00",
           "competitors": [
             {
-              "id": "1",
+              "id": "2",
               "type": "team",
               "homeAway": "home",
               "team": {
-                "id": "1",
-                "abbreviation": "BAL",
-                "displayName": "Baltimore Orioles",
-                "location": "Baltimore",
-                "name": "Orioles",
-                "shortDisplayName": "Orioles",
-                "color": "df4601",
-                "alternateColor": "000000"
+                "id": "2",
+                "abbreviation": "BOS",
+                "displayName": "Boston Red Sox",
+                "location": "Boston",
+                "name": "Red Sox",
+                "shortDisplayName": "Red Sox",
+                "color": "0d2b56",
+                "alternateColor": "bd3039"
               },
               "order": 0,
-              "winner": true,
-              "score": {
-                "hits": 8,
-                "errors": 2,
-                "displayValue": "3",
-                "value": 3.0,
-                "winner": true
-              },
-              "record": {
-                "name": "overall",
-                "displayName": "Record Year To Date",
-                "displayValue": "22-36"
-              },
-              "displayOrder": 2
-            },
-            {
-              "id": "4",
-              "type": "team",
-              "homeAway": "away",
-              "team": {
-                "id": "4",
-                "abbreviation": "CHW",
-                "displayName": "Chicago White Sox",
-                "location": "Chicago",
-                "name": "White Sox",
-                "shortDisplayName": "White Sox",
-                "color": "000000",
-                "alternateColor": "c4ced4"
-              },
-              "order": 1,
               "winner": false,
               "score": {
-                "hits": 7,
-                "errors": 0,
-                "displayValue": "2",
-                "value": 2.0,
+                "hits": 11,
+                "errors": 2,
+                "displayValue": "6",
+                "value": 6.0,
                 "winner": false
               },
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "18-41"
+                "displayValue": "29-33"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "3",
+              "type": "team",
+              "homeAway": "away",
+              "team": {
+                "id": "3",
+                "abbreviation": "LAA",
+                "displayName": "Los Angeles Angels",
+                "location": "Los Angeles",
+                "name": "Angels",
+                "shortDisplayName": "Angels",
+                "color": "ba0021",
+                "alternateColor": "c4ced4"
+              },
+              "order": 1,
+              "winner": true,
+              "score": {
+                "hits": 8,
+                "errors": 0,
+                "displayValue": "7",
+                "value": 7.0,
+                "winner": true
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Record Year To Date",
+                "displayValue": "27-32"
               },
               "displayOrder": 1
             }
           ],
           "status": {
-            "halfInning": 16,
+            "halfInning": 17,
             "type": {
               "id": "3",
               "name": "STATUS_FINAL",
@@ -320,7 +206,7 @@
             "displayClock": "0:00",
             "period": 9
           },
-          "attendance": 33037,
+          "attendance": 31688,
           "neutralSite": false,
           "onWatchESPN": false,
           "wallclockAvailable": true,
@@ -334,49 +220,49 @@
             }
           },
           "time": {
-            "value": "2025-06-01T17:35:00+00:00",
+            "value": "2025-06-02T23:10:00+00:00",
             "timeValid": true,
-            "displayValue": "1:35 ET"
+            "displayValue": "7:10 ET"
           }
         }
       ],
       "timeValid": true
     },
     {
-      "id": "401695784",
-      "date": "2025-06-01T17:35:00+00:00",
-      "name": "Milwaukee Brewers at Philadelphia Phillies",
-      "shortName": "MIL @ PHI",
+      "id": "401695797",
+      "date": "2025-06-02T23:10:00+00:00",
+      "name": "Milwaukee Brewers at Cincinnati Reds",
+      "shortName": "MIL @ CIN",
       "competitions": [
         {
           "timeOfDay": "DAY",
           "duration": {
-            "displayValue": "2:36"
+            "displayValue": "2:30"
           },
           "wasSuspended": false,
           "dataFormat": "API",
-          "id": "401695784",
-          "date": "2025-06-01T17:35:00+00:00",
+          "id": "401695797",
+          "date": "2025-06-02T23:10:00+00:00",
           "competitors": [
             {
-              "id": "22",
+              "id": "17",
               "type": "team",
               "homeAway": "home",
               "team": {
-                "id": "22",
-                "abbreviation": "PHI",
-                "displayName": "Philadelphia Phillies",
-                "location": "Philadelphia",
-                "name": "Phillies",
-                "shortDisplayName": "Phillies",
-                "color": "e81828",
-                "alternateColor": "003278"
+                "id": "17",
+                "abbreviation": "CIN",
+                "displayName": "Cincinnati Reds",
+                "location": "Cincinnati",
+                "name": "Reds",
+                "shortDisplayName": "Reds",
+                "color": "c6011f",
+                "alternateColor": "ffffff"
               },
               "order": 0,
               "winner": false,
               "score": {
-                "hits": 6,
-                "errors": 2,
+                "hits": 8,
+                "errors": 0,
                 "displayValue": "2",
                 "value": 2.0,
                 "winner": false
@@ -384,7 +270,7 @@
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "36-23"
+                "displayValue": "29-32"
               },
               "displayOrder": 2
             },
@@ -405,16 +291,16 @@
               "order": 1,
               "winner": true,
               "score": {
-                "hits": 9,
-                "errors": 0,
-                "displayValue": "5",
-                "value": 5.0,
+                "hits": 5,
+                "errors": 1,
+                "displayValue": "3",
+                "value": 3.0,
                 "winner": true
               },
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "32-28"
+                "displayValue": "33-28"
               },
               "displayOrder": 1
             }
@@ -434,7 +320,7 @@
             "displayClock": "0:00",
             "period": 9
           },
-          "attendance": 44076,
+          "attendance": 18711,
           "neutralSite": false,
           "onWatchESPN": false,
           "wallclockAvailable": true,
@@ -448,93 +334,93 @@
             }
           },
           "time": {
-            "value": "2025-06-01T17:35:00+00:00",
+            "value": "2025-06-02T23:10:00+00:00",
             "timeValid": true,
-            "displayValue": "1:35 ET"
+            "displayValue": "7:10 ET"
           }
         }
       ],
       "timeValid": true
     },
     {
-      "id": "401695785",
-      "date": "2025-06-01T17:37:00+00:00",
-      "name": "Athletics Athletics at Toronto Blue Jays",
-      "shortName": "ATH @ TOR",
+      "id": "401695798",
+      "date": "2025-06-02T23:40:00+00:00",
+      "name": "Detroit Tigers at Chicago White Sox",
+      "shortName": "DET @ CHW",
       "competitions": [
         {
           "timeOfDay": "DAY",
           "duration": {
-            "displayValue": "2:54"
+            "displayValue": "2:34"
           },
           "wasSuspended": false,
           "dataFormat": "API",
-          "id": "401695785",
-          "date": "2025-06-01T17:37:00+00:00",
+          "id": "401695798",
+          "date": "2025-06-02T23:40:00+00:00",
           "competitors": [
             {
-              "id": "14",
+              "id": "4",
               "type": "team",
               "homeAway": "home",
               "team": {
-                "id": "14",
-                "abbreviation": "TOR",
-                "displayName": "Toronto Blue Jays",
-                "location": "Toronto",
-                "name": "Blue Jays",
-                "shortDisplayName": "Blue Jays",
-                "color": "134a8e",
-                "alternateColor": "6cace5"
+                "id": "4",
+                "abbreviation": "CHW",
+                "displayName": "Chicago White Sox",
+                "location": "Chicago",
+                "name": "White Sox",
+                "shortDisplayName": "White Sox",
+                "color": "000000",
+                "alternateColor": "c4ced4"
               },
               "order": 0,
-              "winner": true,
-              "score": {
-                "hits": 13,
-                "errors": 0,
-                "displayValue": "8",
-                "value": 8.0,
-                "winner": true
-              },
-              "record": {
-                "name": "overall",
-                "displayName": "Record Year To Date",
-                "displayValue": "31-28"
-              },
-              "displayOrder": 2
-            },
-            {
-              "id": "11",
-              "type": "team",
-              "homeAway": "away",
-              "team": {
-                "id": "11",
-                "abbreviation": "ATH",
-                "displayName": "Athletics",
-                "location": "Athletics",
-                "name": "Athletics",
-                "shortDisplayName": "Athletics",
-                "color": "003831",
-                "alternateColor": "efb21e"
-              },
-              "order": 1,
               "winner": false,
               "score": {
-                "hits": 11,
-                "errors": 2,
-                "displayValue": "4",
-                "value": 4.0,
+                "hits": 5,
+                "errors": 0,
+                "displayValue": "1",
+                "value": 1.0,
                 "winner": false
               },
               "record": {
                 "name": "overall",
                 "displayName": "Record Year To Date",
-                "displayValue": "23-37"
+                "displayValue": "18-42"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "6",
+              "type": "team",
+              "homeAway": "away",
+              "team": {
+                "id": "6",
+                "abbreviation": "DET",
+                "displayName": "Detroit Tigers",
+                "location": "Detroit",
+                "name": "Tigers",
+                "shortDisplayName": "Tigers",
+                "color": "0a2240",
+                "alternateColor": "ff4713"
+              },
+              "order": 1,
+              "winner": true,
+              "score": {
+                "hits": 16,
+                "errors": 0,
+                "displayValue": "13",
+                "value": 13.0,
+                "winner": true
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Record Year To Date",
+                "displayValue": "40-21"
               },
               "displayOrder": 1
             }
           ],
           "status": {
-            "halfInning": 16,
+            "halfInning": 17,
             "type": {
               "id": "3",
               "name": "STATUS_FINAL",
@@ -548,7 +434,7 @@
             "displayClock": "0:00",
             "period": 9
           },
-          "attendance": 30130,
+          "attendance": 11852,
           "neutralSite": false,
           "onWatchESPN": false,
           "wallclockAvailable": true,
@@ -562,17 +448,124 @@
             }
           },
           "time": {
-            "value": "2025-06-01T17:37:00+00:00",
+            "value": "2025-06-02T23:40:00+00:00",
             "timeValid": true,
-            "displayValue": "1:37 ET"
+            "displayValue": "7:40 ET"
+          }
+        }
+      ],
+      "timeValid": true
+    },
+    {
+      "id": "401695801",
+      "date": "2025-06-03T01:45:00+00:00",
+      "name": "San Diego Padres at San Francisco Giants",
+      "shortName": "SD @ SF",
+      "competitions": [
+        {
+          "timeOfDay": "DAY",
+          "wasSuspended": false,
+          "dataFormat": "API",
+          "id": "401695801",
+          "date": "2025-06-03T01:45:00+00:00",
+          "competitors": [
+            {
+              "id": "26",
+              "type": "team",
+              "homeAway": "home",
+              "team": {
+                "id": "26",
+                "abbreviation": "SF",
+                "displayName": "San Francisco Giants",
+                "location": "San Francisco",
+                "name": "Giants",
+                "shortDisplayName": "Giants",
+                "color": "000000",
+                "alternateColor": "fd5a1e"
+              },
+              "order": 0,
+              "score": {
+                "hits": 2,
+                "errors": 0,
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Overall",
+                "displayValue": "33-26"
+              },
+              "displayOrder": 2
+            },
+            {
+              "id": "25",
+              "type": "team",
+              "homeAway": "away",
+              "team": {
+                "id": "25",
+                "abbreviation": "SD",
+                "displayName": "San Diego Padres",
+                "location": "San Diego",
+                "name": "Padres",
+                "shortDisplayName": "Padres",
+                "color": "2f241d",
+                "alternateColor": "ffc425"
+              },
+              "order": 1,
+              "score": {
+                "hits": 3,
+                "errors": 0,
+                "displayValue": "0",
+                "value": 0.0
+              },
+              "record": {
+                "name": "overall",
+                "displayName": "Overall",
+                "displayValue": "33-24"
+              },
+              "displayOrder": 1
+            }
+          ],
+          "status": {
+            "halfInning": 5,
+            "type": {
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
+              "state": "in",
+              "completed": false,
+              "description": "In Progress",
+              "detail": "Bottom 3rd",
+              "shortDetail": "Bot 3rd"
+            },
+            "clock": 0.0,
+            "displayClock": "0:00",
+            "period": 3
+          },
+          "attendance": 0,
+          "neutralSite": false,
+          "onWatchESPN": false,
+          "wallclockAvailable": true,
+          "highlightsAvailable": true,
+          "notes": [],
+          "format": {
+            "regulation": {
+              "periods": 9,
+              "displayName": "Inning",
+              "slug": "inning"
+            }
+          },
+          "time": {
+            "value": "2025-06-03T01:45:00+00:00",
+            "timeValid": true,
+            "displayValue": "9:45 ET"
           }
         }
       ],
       "timeValid": true
     }
   ],
-  "count": 15,
+  "count": 7,
   "pageIndex": 1,
   "pageSize": 5,
-  "pageCount": 3
+  "pageCount": 2
 }
