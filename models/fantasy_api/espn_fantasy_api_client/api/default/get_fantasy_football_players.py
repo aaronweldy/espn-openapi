@@ -83,12 +83,16 @@ def sync_detailed(
 ) -> Response[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
 
-     Retrieve a list of fantasy football players with various statistics and information
+     Retrieve a list of fantasy football players with various statistics and information.
+
+    Note: The X-Fantasy-Filter header can be used to limit the number of players returned.
+    Without it, the API returns all players (typically 2000+). The limit in the filter
+    doesn't always work as expected - some views ignore it and return all players.
 
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
-        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":2000}}.
+        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -120,12 +124,16 @@ def sync(
 ) -> Optional[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
 
-     Retrieve a list of fantasy football players with various statistics and information
+     Retrieve a list of fantasy football players with various statistics and information.
+
+    Note: The X-Fantasy-Filter header can be used to limit the number of players returned.
+    Without it, the API returns all players (typically 2000+). The limit in the filter
+    doesn't always work as expected - some views ignore it and return all players.
 
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
-        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":2000}}.
+        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -152,12 +160,16 @@ async def asyncio_detailed(
 ) -> Response[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
 
-     Retrieve a list of fantasy football players with various statistics and information
+     Retrieve a list of fantasy football players with various statistics and information.
+
+    Note: The X-Fantasy-Filter header can be used to limit the number of players returned.
+    Without it, the API returns all players (typically 2000+). The limit in the filter
+    doesn't always work as expected - some views ignore it and return all players.
 
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
-        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":2000}}.
+        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -187,12 +199,16 @@ async def asyncio(
 ) -> Optional[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
 
-     Retrieve a list of fantasy football players with various statistics and information
+     Retrieve a list of fantasy football players with various statistics and information.
+
+    Note: The X-Fantasy-Filter header can be used to limit the number of players returned.
+    Without it, the API returns all players (typically 2000+). The limit in the filter
+    doesn't always work as expected - some views ignore it and return all players.
 
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
-        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":2000}}.
+        x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

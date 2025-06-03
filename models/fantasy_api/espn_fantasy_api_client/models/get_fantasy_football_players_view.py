@@ -12,6 +12,7 @@ class GetFantasyFootballPlayersView(str, Enum):
     MROSTER = "mRoster"
     MSTANDINGS = "mStandings"
     MTEAM = "mTeam"
+    PLAYERS_WL = "players_wl"
     PLAYER_WL = "player_wl"
 
     def __str__(self) -> str:

@@ -203,7 +203,12 @@ paths:
   /apis/v3/games/ffl/seasons/{year}/players:
     get:
       summary: Get Fantasy Football Players
-      description: Retrieve a list of fantasy football players with various statistics and information
+      description: |
+        Retrieve a list of fantasy football players with various statistics and information.
+        
+        Note: The X-Fantasy-Filter header can be used to limit the number of players returned.
+        Without it, the API returns all players (typically 2000+). The limit in the filter
+        doesn't always work as expected - some views ignore it and return all players.
       operationId: getFantasyFootballPlayers
       parameters:
         - name: year
@@ -219,15 +224,18 @@ paths:
           description: The data view to retrieve
           schema:
             type: string
-            enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, player_wl, allon]
+            enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, player_wl, players_wl, allon]
             example: "kona_player_info"
         - name: X-Fantasy-Filter
           in: header
           required: false
-          description: JSON filter for player limits and other criteria
+          description: |
+            JSON filter for player limits and other criteria.
+            Example: {"players":{"limit":3000}}
+            Note: The limit parameter may not always be respected by the API.
           schema:
             type: string
-            example: '{"players":{"limit":2000}}'
+            example: '{"players":{"limit":3000}}'
       responses:
         '200':
           description: Successful response
