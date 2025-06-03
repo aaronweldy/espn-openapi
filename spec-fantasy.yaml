@@ -244,6 +244,41 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/v3/games/ffl/seasons/{year}:
+    get:
+      summary: Get Fantasy Football Season Data
+      description: Retrieve season-level data for fantasy football, including pro team schedules and bye weeks
+      operationId: getFantasyFootballSeason
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2024
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [proTeamSchedules_wl]
+            example: "proTeamSchedules_wl"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasySeasonResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
     SportEnum:
@@ -1221,4 +1256,121 @@ components:
             code:
               type: integer
             message:
-              type: string 
+              type: string
+
+    FantasySeasonResponse:
+      type: object
+      properties:
+        display:
+          type: boolean
+          description: Whether to display the data
+        settings:
+          type: object
+          properties:
+            defaultDraftPosition:
+              type: integer
+              nullable: true
+            draftLobbyMinimumLeagueCount:
+              type: integer
+            gameNotificationSettings:
+              type: object
+              properties:
+                availabilityNotificationsEnabled:
+                  type: boolean
+                draftNotificationsEnabled:
+                  type: boolean
+                injuryNotificationsEnabled:
+                  type: boolean
+                lineupNotificationsEnabled:
+                  type: boolean
+                positionEligibilityNotificationsEnabled:
+                  type: boolean
+                rosterNewsNotificationsEnabled:
+                  type: boolean
+                startBenchNotificationsEnabled:
+                  type: boolean
+                tradeNotificationsEnabled:
+                  type: boolean
+            gated:
+              type: boolean
+            playerOwnershipSettings:
+              type: object
+              additionalProperties: true
+            proTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/ProTeam'
+            readOnly:
+              type: boolean
+            statIdToOverridePosition:
+              type: object
+              additionalProperties: true
+            teamActivityEnabled:
+              type: boolean
+            typeNames:
+              type: object
+              additionalProperties:
+                type: string
+
+    ProTeam:
+      type: object
+      properties:
+        abbrev:
+          type: string
+          description: Team abbreviation
+        byeWeek:
+          type: integer
+          description: Week number of the team's bye week
+        id:
+          type: integer
+          description: Team ID
+        location:
+          type: string
+          description: Team location/city
+        name:
+          type: string
+          description: Team name
+        proGamesByScoringPeriod:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/ProGame'
+          description: Games organized by scoring period
+        teamPlayersByPosition:
+          type: object
+          additionalProperties:
+            type: integer
+          description: Player IDs by position
+        universeId:
+          type: integer
+          description: Universe ID for the team
+
+    ProGame:
+      type: object
+      properties:
+        awayProTeamId:
+          type: integer
+          description: Away team ID
+        date:
+          type: integer
+          format: int64
+          description: Game date in milliseconds
+        homeProTeamId:
+          type: integer
+          description: Home team ID
+        id:
+          type: integer
+          description: Game ID
+        scoringPeriodId:
+          type: integer
+          description: Scoring period ID (week number)
+        startTimeTBD:
+          type: boolean
+          description: Whether start time is to be determined
+        statsOfficial:
+          type: boolean
+          description: Whether stats are official
+        validForLocking:
+          type: boolean
+          description: Whether game is valid for lineup locking 

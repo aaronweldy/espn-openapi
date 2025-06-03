@@ -17,6 +17,7 @@ mcp = FastMCP("http-request-server")
 async def http_request(
     url: str,
     method: str = "GET",
+    headers: dict[str, str] | None = None,
     output_file: str | None = None,
     jq_command: str | None = None,
 ) -> str | None:
@@ -26,6 +27,7 @@ async def http_request(
     Args:
         url: The URL to request
         method: The HTTP method (GET or POST)
+        headers: Dictionary of HTTP headers to include in the request (optional)
         output_file: The file to write the response to (optional)
         jq_command: A JQ command to run on the response, to filter the response down to specific fields (optional)
     Returns:
@@ -33,10 +35,12 @@ async def http_request(
     Only provide one of output_file or jq_command.
     """
     async with httpx.AsyncClient() as client:
+        request_headers = headers or {}
+        
         if method.upper() == "GET":
-            response = await client.get(url)
+            response = await client.get(url, headers=request_headers)
         elif method.upper() == "POST":
-            response = await client.post(url)
+            response = await client.post(url, headers=request_headers)
         else:
             return f"Unsupported method: {method}"
 

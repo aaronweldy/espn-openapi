@@ -1,0 +1,195 @@
+{
+  "kona_player_info": {
+    "view_name": "kona_player_info",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "full_name",
+      "active",
+      "injury_status",
+      "stats",
+      "id",
+      "eligible_slots",
+      "default_position_id",
+      "ownership",
+      "draft_ranks_by_rank_type",
+      "pro_team_id",
+      "jersey",
+      "first_name",
+      "injured",
+      "last_name"
+    ],
+    "unique_features": [
+      "General player information with ownership and draft data"
+    ],
+    "sample_count": 3
+  },
+  "mRoster": {
+    "view_name": "mRoster",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "full_name",
+      "active",
+      "injury_status",
+      "stats",
+      "additional:universeId",
+      "id",
+      "eligible_slots",
+      "default_position_id",
+      "ownership",
+      "draft_ranks_by_rank_type",
+      "pro_team_id",
+      "first_name",
+      "injured",
+      "last_name"
+    ],
+    "unique_features": [
+      "Full roster information with all player details"
+    ],
+    "sample_count": 3
+  },
+  "mLiveScoring": {
+    "view_name": "mLiveScoring",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "full_name",
+      "stats",
+      "id",
+      "pro_team_id"
+    ],
+    "unique_features": [
+      "Live scoring focus, may include real-time stats"
+    ],
+    "sample_count": 3
+  },
+  "mMatchup": {
+    "view_name": "mMatchup",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "full_name",
+      "active",
+      "injury_status",
+      "additional:universeId",
+      "id",
+      "eligible_slots",
+      "default_position_id",
+      "pro_team_id",
+      "first_name",
+      "injured",
+      "last_name"
+    ],
+    "unique_features": [
+      "Matchup-specific information"
+    ],
+    "sample_count": 3
+  },
+  "mBoxscore": {
+    "view_name": "mBoxscore",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "full_name",
+      "stats",
+      "additional:universeId",
+      "id",
+      "eligible_slots",
+      "pro_team_id",
+      "first_name",
+      "last_name"
+    ],
+    "unique_features": [
+      "Detailed boxscore statistics"
+    ],
+    "sample_count": 3
+  },
+  "allon": {
+    "view_name": "allon",
+    "total_players": 2887,
+    "players_with_data": 3,
+    "empty_objects": 0,
+    "common_fields": [
+      "additional:historicalInjuryStatus",
+      "injury_status",
+      "default_position_id",
+      "additional:dualPositionEligible",
+      "additional:injuryStatusOverridden",
+      "additional:laterality",
+      "last_name",
+      "active",
+      "additional:universeId",
+      "id",
+      "draft_ranks_by_rank_type",
+      "pro_team_id",
+      "first_name",
+      "additional:activationInfo",
+      "additional:draftedSeasonId",
+      "additional:replacementId",
+      "jersey",
+      "additional:stance",
+      "injured",
+      "full_name",
+      "stats",
+      "eligible_slots",
+      "additional:invalid",
+      "ownership",
+      "additional:dateUniverseChanged"
+    ],
+    "unique_features": [
+      "Comprehensive view with all available data"
+    ],
+    "sample_count": 3
+  },
+  "mDraftDetail": {
+    "view_name": "mDraftDetail",
+    "total_players": 2887,
+    "players_with_data": 0,
+    "empty_objects": 3,
+    "common_fields": [],
+    "unique_features": [],
+    "sample_count": 0
+  },
+  "mTeam": {
+    "view_name": "mTeam",
+    "total_players": 2887,
+    "players_with_data": 0,
+    "empty_objects": 3,
+    "common_fields": [],
+    "unique_features": [],
+    "sample_count": 0
+  },
+  "mMatchupScore": {
+    "view_name": "mMatchupScore",
+    "total_players": 2887,
+    "players_with_data": 0,
+    "empty_objects": 3,
+    "common_fields": [],
+    "unique_features": [],
+    "sample_count": 0
+  },
+  "mStandings": {
+    "view_name": "mStandings",
+    "total_players": 2887,
+    "players_with_data": 0,
+    "empty_objects": 3,
+    "common_fields": [],
+    "unique_features": [],
+    "sample_count": 0
+  },
+  "player_wl": {
+    "view_name": "player_wl",
+    "total_players": 2887,
+    "players_with_data": 0,
+    "empty_objects": 3,
+    "common_fields": [],
+    "unique_features": [],
+    "sample_count": 0
+  }
+}

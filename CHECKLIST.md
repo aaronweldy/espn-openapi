@@ -183,7 +183,7 @@ fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [x] /apis/v3/games/ffl/seasons/{year}/players?view={view_name} - Fantasy Player Info List. Path Param: {year}. Query Param: view={view_name}. Headers: X-Fantasy-Filter (for filtering by ID, stat, etc. Use {"games":{"limit":2000}} to get more than 50 items)
     Available views: mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, kona_player_info, player_wl, allon
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/0/leaguedefaults/{PPR_ID}?view=kona_player_info - Detailed Fantasy Player Info. Path Params: {year}, {PPR_ID}. Query Param: view=kona_player_info. Headers: X-Fantasy-Filter.
-[ ] /apis/v3/games/ffl/seasons/{year}?view=proTeamSchedules_wl - Fantasy Team Bye Weeks/Pro Schedules. Path Param: {year}. Query Param: view=proTeamSchedules_wl.
+[x] /apis/v3/games/ffl/seasons/{year}?view=proTeamSchedules_wl - Fantasy Team Bye Weeks/Pro Schedules. Path Param: {year}. Query Param: view=proTeamSchedules_wl. - Implemented
 [ ] /apis/v3/games/ffl/seasons/{year}/players?scoringPeriodId=0&view=players_wl - Get % Owned Players (use with X-Fantasy-Filter). Path Param: {year}. Query Params: scoringPeriodId, view. Headers: X-Fantasy-Filter.
 (The initial checklist had specific FFL league/team/players/available endpoints. These are generally covered by the main league endpoint with different view params or X-Fantasy-Filter on players endpoint.)
 [ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id} (More generic from checklist)

@@ -464,6 +464,9 @@
       "competitions": [
         {
           "timeOfDay": "DAY",
+          "duration": {
+            "displayValue": "2:51"
+          },
           "wasSuspended": false,
           "dataFormat": "API",
           "id": "401695801",
@@ -484,16 +487,18 @@
                 "alternateColor": "fd5a1e"
               },
               "order": 0,
+              "winner": false,
               "score": {
-                "hits": 2,
-                "errors": 0,
+                "hits": 5,
+                "errors": 1,
                 "displayValue": "0",
-                "value": 0.0
+                "value": 0.0,
+                "winner": false
               },
               "record": {
                 "name": "overall",
-                "displayName": "Overall",
-                "displayValue": "33-26"
+                "displayName": "Record Year To Date",
+                "displayValue": "33-27"
               },
               "displayOrder": 2
             },
@@ -512,36 +517,39 @@
                 "alternateColor": "ffc425"
               },
               "order": 1,
+              "winner": true,
               "score": {
-                "hits": 3,
+                "hits": 6,
                 "errors": 0,
-                "displayValue": "0",
-                "value": 0.0
+                "displayValue": "1",
+                "value": 1.0,
+                "winner": true
               },
               "record": {
                 "name": "overall",
-                "displayName": "Overall",
-                "displayValue": "33-24"
+                "displayName": "Record Year To Date",
+                "displayValue": "34-24"
               },
               "displayOrder": 1
             }
           ],
           "status": {
-            "halfInning": 5,
+            "halfInning": 19,
             "type": {
-              "id": "2",
-              "name": "STATUS_IN_PROGRESS",
-              "state": "in",
-              "completed": false,
-              "description": "In Progress",
-              "detail": "Bottom 3rd",
-              "shortDetail": "Bot 3rd"
+              "altDetail": "F/10",
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final/10",
+              "shortDetail": "Final/10"
             },
             "clock": 0.0,
             "displayClock": "0:00",
-            "period": 3
+            "period": 10
           },
-          "attendance": 0,
+          "attendance": 35680,
           "neutralSite": false,
           "onWatchESPN": false,
           "wallclockAvailable": true,
