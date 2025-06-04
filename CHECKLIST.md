@@ -185,9 +185,9 @@ fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [x] /apis/v3/games/ffl/seasons/{year}?view=proTeamSchedules_wl - Fantasy Team Bye Weeks/Pro Schedules. Path Param: {year}. Query Param: view=proTeamSchedules_wl. - Implemented
 [x] /apis/v3/games/ffl/seasons/{year}/players?scoringPeriodId=0&view=players_wl - Get % Owned Players (use with X-Fantasy-Filter). Path Param: {year}. Query Params: scoringPeriodId, view. Headers: X-Fantasy-Filter. - Already implemented (added scoringPeriodId param to existing endpoint)
 (The initial checklist had specific FFL league/team/players/available endpoints. These are generally covered by the main league endpoint with different view params or X-Fantasy-Filter on players endpoint.)
-[ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id} (More generic from checklist)
-[ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/teams/{team_id} (Likely view=mTeam or similar on league endpoint)
-[ ] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/players/available (Likely player list with filters)
+[x] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id} (More generic from checklist) - Already implemented
+[x] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/teams/{team_id} (Likely view=mTeam or similar on league endpoint) - Already implemented
+[x] /apis/v3/games/ffl/seasons/{year}/segments/{segment_id}/leagues/{league_id}/players/available (Likely player list with filters) - Already implemented
 site.api.espn.com
 [x] /apis/fantasy/v2/games/ffl/news/players - Fantasy Player News. Query Params: playerId={athlete_id}, limit - Implemented
 site.web.api.espn.com
@@ -241,7 +241,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster - Competitor Roster for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records - Competitor Records for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics - Competitor Statistics for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
-[ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
+[x] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability - Implemented as generic /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/probabilities/{play_id}
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/notes - NFL Athlete Season Notes
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/status - Draft Status. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint

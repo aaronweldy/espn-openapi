@@ -2832,6 +2832,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/probabilities/{play_id}:
+    get:
+      summary: Get Play Probability
+      description: Retrieve win probability data for a specific play in a game. Shows the probability of each team winning at the moment of this specific play.
+      operationId: getPlayProbability
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: event_id
+          in: path
+          required: true
+          description: The event ID
+          schema:
+            type: string
+            example: "401547417"
+        - name: competition_id
+          in: path
+          required: true
+          description: The competition ID (usually the same as event_id)
+          schema:
+            type: string
+            example: "401547417"
+        - name: play_id
+          in: path
+          required: true
+          description: The specific play ID
+          schema:
+            type: string
+            example: "4015474171"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProbabilityItem'
+        '404':
+          description: Play probability not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/predictor:
     get:
       summary: Get Game Predictor Metrics

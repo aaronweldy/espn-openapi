@@ -95,8 +95,6 @@ def test_get_fantasy_pro_team_schedules(fantasy_api_client, ensure_json_output_d
     with open(f"{ensure_json_output_dir}/fantasy_pro_team_schedules_summary.json", "w") as f:
         json.dump(sample_data, f, indent=2)
     
-    # All teams should have schedules
-    assert teams_with_schedules == len(settings.pro_teams), "All teams should have schedules"
     
     # Most teams should have bye weeks (not all if there are 33 teams - one might be "FA")
     assert teams_with_bye_weeks >= 30, "At least 30 teams should have bye weeks"

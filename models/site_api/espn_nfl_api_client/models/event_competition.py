@@ -30,7 +30,6 @@ class EventCompetition:
     Attributes:
         id (str):  Example: 401671889.
         date (datetime.datetime):
-        competitors (List['Competitor']):
         uid (Union[Unset, str]):  Example: s:20~l:28~e:401671889~c:401671889.
         attendance (Union[Unset, int]):  Example: 65719.
         type (Union[Unset, CompetitionType]):
@@ -40,6 +39,7 @@ class EventCompetition:
         play_by_play_available (Union[Unset, bool]):
         recent (Union[Unset, bool]):
         venue (Union[Unset, Venue]):
+        competitors (Union[Unset, List['Competitor']]):
         notes (Union[Unset, List['EventCompetitionNotesItem']]):
         status (Union[Unset, GameStatus]):
         broadcasts (Union[Unset, List['Broadcast']]):
@@ -54,7 +54,6 @@ class EventCompetition:
 
     id: str
     date: datetime.datetime
-    competitors: List["Competitor"]
     uid: Union[Unset, str] = UNSET
     attendance: Union[Unset, int] = UNSET
     type: Union[Unset, "CompetitionType"] = UNSET
@@ -64,6 +63,7 @@ class EventCompetition:
     play_by_play_available: Union[Unset, bool] = UNSET
     recent: Union[Unset, bool] = UNSET
     venue: Union[Unset, "Venue"] = UNSET
+    competitors: Union[Unset, List["Competitor"]] = UNSET
     notes: Union[Unset, List["EventCompetitionNotesItem"]] = UNSET
     status: Union[Unset, "GameStatus"] = UNSET
     broadcasts: Union[Unset, List["Broadcast"]] = UNSET
@@ -80,11 +80,6 @@ class EventCompetition:
         id = self.id
 
         date = self.date.isoformat()
-
-        competitors = []
-        for competitors_item_data in self.competitors:
-            competitors_item = competitors_item_data.to_dict()
-            competitors.append(competitors_item)
 
         uid = self.uid
 
@@ -107,6 +102,13 @@ class EventCompetition:
         venue: Union[Unset, Dict[str, Any]] = UNSET
         if not isinstance(self.venue, Unset):
             venue = self.venue.to_dict()
+
+        competitors: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.competitors, Unset):
+            competitors = []
+            for competitors_item_data in self.competitors:
+                competitors_item = competitors_item_data.to_dict()
+                competitors.append(competitors_item)
 
         notes: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.notes, Unset):
@@ -170,7 +172,6 @@ class EventCompetition:
             {
                 "id": id,
                 "date": date,
-                "competitors": competitors,
             }
         )
         if uid is not UNSET:
@@ -191,6 +192,8 @@ class EventCompetition:
             field_dict["recent"] = recent
         if venue is not UNSET:
             field_dict["venue"] = venue
+        if competitors is not UNSET:
+            field_dict["competitors"] = competitors
         if notes is not UNSET:
             field_dict["notes"] = notes
         if status is not UNSET:
@@ -233,13 +236,6 @@ class EventCompetition:
 
         date = isoparse(d.pop("date"))
 
-        competitors = []
-        _competitors = d.pop("competitors")
-        for competitors_item_data in _competitors:
-            competitors_item = Competitor.from_dict(competitors_item_data)
-
-            competitors.append(competitors_item)
-
         uid = d.pop("uid", UNSET)
 
         attendance = d.pop("attendance", UNSET)
@@ -267,6 +263,13 @@ class EventCompetition:
             venue = UNSET
         else:
             venue = Venue.from_dict(_venue)
+
+        competitors = []
+        _competitors = d.pop("competitors", UNSET)
+        for competitors_item_data in _competitors or []:
+            competitors_item = Competitor.from_dict(competitors_item_data)
+
+            competitors.append(competitors_item)
 
         notes = []
         _notes = d.pop("notes", UNSET)
@@ -336,7 +339,6 @@ class EventCompetition:
         event_competition = cls(
             id=id,
             date=date,
-            competitors=competitors,
             uid=uid,
             attendance=attendance,
             type=type,
@@ -346,6 +348,7 @@ class EventCompetition:
             play_by_play_available=play_by_play_available,
             recent=recent,
             venue=venue,
+            competitors=competitors,
             notes=notes,
             status=status,
             broadcasts=broadcasts,

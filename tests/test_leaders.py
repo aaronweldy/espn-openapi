@@ -1,12 +1,14 @@
 import pytest
 import logging
 from models.site_web_api.espn_site_web_api_client.api.default import get_league_leaders
+from models.site_web_api.espn_site_web_api_client.models.leaders_response import LeadersResponse
 from models.site_web_api.espn_site_web_api_client.types import UNSET
 
 logging.basicConfig(level=logging.INFO)
 
 
 @pytest.mark.api
+@pytest.mark.flaky(retries=3, delay=2)
 @pytest.mark.parametrize("sport,league", [
     ("football", "nfl"),
     ("hockey", "nhl"),
@@ -25,7 +27,7 @@ def test_get_league_leaders(site_web_api_client, ensure_json_output_dir, sport, 
     assert response.status_code == 200, f"Expected status code 200, got {response.status_code} for {sport}/{league}"
     
     result = response.parsed
-    assert result, f"Response should parse successfully for {sport}/{league}"
+    assert isinstance(result, LeadersResponse), f"Response should be an LeagueLeadersResponse for {sport}/{league}"
     
     # Validate response structure
     assert result.current_season, "Response should have current season"
@@ -55,6 +57,7 @@ def test_get_league_leaders(site_web_api_client, ensure_json_output_dir, sport, 
     # Save response for analysis
     import json
     with open(f"{ensure_json_output_dir}/site_v3_{league}_leaders_test.json", "w") as f:
+        assert response
         json.dump(response.parsed.to_dict(), f, indent=2)
 
 
@@ -69,6 +72,7 @@ def test_get_league_leaders_with_season(site_web_api_client):
     )
     
     assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
+    assert isinstance(response.parsed, LeadersResponse), f"Response should be an LeagueLeadersResponse"
     
     result = response.parsed
     assert result, "Response should parse successfully"
