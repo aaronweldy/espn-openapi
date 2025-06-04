@@ -10,6 +10,8 @@ from .athlete_contracts_response import AthleteContractsResponse
 from .athlete_details_response import AthleteDetailsResponse
 from .athlete_details_response_alternate_ids import AthleteDetailsResponseAlternateIds
 from .athlete_details_response_experience import AthleteDetailsResponseExperience
+from .athlete_note import AthleteNote
+from .athlete_notes_response import AthleteNotesResponse
 from .athlete_reference import AthleteReference
 from .athlete_statistics_by_category_response import AthleteStatisticsByCategoryResponse
 from .athlete_statistics_by_category_response_splits import AthleteStatisticsByCategoryResponseSplits
@@ -271,6 +273,8 @@ __all__ = (
     "AthleteDetailsResponse",
     "AthleteDetailsResponseAlternateIds",
     "AthleteDetailsResponseExperience",
+    "AthleteNote",
+    "AthleteNotesResponse",
     "AthleteReference",
     "AthletesListResponse",
     "AthleteStatisticsByCategoryResponse",

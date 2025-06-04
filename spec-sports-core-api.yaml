@@ -384,6 +384,58 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/athletes/{athleteId}/notes:
+    get:
+      summary: Get Athlete Season Notes
+      description: Retrieve notes for a specific athlete in a specific season. Notes typically include news updates, injury reports, and other relevant information.
+      operationId: getAthleteSeasonNotes
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: string
+            example: "2025"
+        - name: athleteId
+          in: path
+          required: true
+          description: The athlete ID
+          schema:
+            type: string
+            example: "3139477"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AthleteNotesResponse'
+        '404':
+          description: Athlete or season not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}:
     get:
       summary: Get League Information
@@ -9097,3 +9149,72 @@ components:
         - type
         - value
         - displayValue
+
+    AthleteNotesResponse:
+      type: object
+      description: Response containing notes for an athlete in a specific season
+      properties:
+        count:
+          type: integer
+          description: Total number of notes
+          example: 1
+        pageIndex:
+          type: integer
+          description: Current page index
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 1
+        items:
+          type: array
+          description: List of notes
+          items:
+            $ref: '#/components/schemas/AthleteNote'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    AthleteNote:
+      type: object
+      description: Individual note for an athlete
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the note
+          example: "597206"
+        type:
+          type: string
+          description: Type of note (e.g., news)
+          example: "news"
+        date:
+          type: string
+          format: date-time
+          description: Date and time of the note
+          example: "2025-03-12T15:55Z"
+        headline:
+          type: string
+          description: Brief summary of the note
+          example: "Mahomes agreed Wednesday with the Chiefs on a restructure of his contract, Adam Teicher of ESPN.com reports."
+        text:
+          type: string
+          description: Full text of the note
+          example: "Mahomes and star defensive tackle Chris Jones both agreed to restructure their contracts Wednesday..."
+        source:
+          type: string
+          description: Source of the note
+          example: "RotoWire"
+      required:
+        - id
+        - type
+        - date
+        - headline
+        - text
+        - source

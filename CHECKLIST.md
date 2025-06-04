@@ -242,7 +242,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/records - Competitor Records for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [x] /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics - Competitor Statistics for Event. Path Params: {sport}, {league}, {event_id}, {competition_id}, {competitor_id} - Implemented as generic endpoint (primarily works for NFL)
 [x] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability - Implemented as generic /v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/probabilities/{play_id}
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/notes - NFL Athlete Season Notes
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/athletes/{athlete_id}/notes - Athlete Season Notes. Path Params: {sport}, {league}, {year}, {athlete_id} - Implemented as generic endpoint
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/status - Draft Status. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
