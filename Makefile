@@ -1,7 +1,7 @@
 .PHONY: openapi openapi-site openapi-sports-core openapi-site-web openapi-fantasy openapi-partners openapi-cdn run-test clean
 
 # Main target to generate clients for all OpenAPI specs
-openapi: openapi-site openapi-sports-core openapi-site-web openapi-fantasy openapi-partners
+openapi: openapi-site openapi-sports-core openapi-site-web openapi-fantasy openapi-partners openapi-gambit
 
 # Generate Python client for site.api.espn.com
 openapi-site:
@@ -25,6 +25,10 @@ openapi-partners:
 
 openapi-cdn:
 	openapi-python-client generate --path spec-cdn.yaml --output-path models/cdn_api/ --overwrite
+
+# Generate Python client for gambit-api.fantasy.espn.com
+openapi-gambit:
+	openapi-python-client generate --path spec-gambit.yaml --output-path models/gambit_api/ --overwrite
 
 # Run a specific test file
 run-test:

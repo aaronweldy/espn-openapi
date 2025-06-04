@@ -1,0 +1,411 @@
+openapi: 3.0.3
+info:
+  title: ESPN Gambit API
+  version: 1.0.0
+  description: Unofficial ESPN Gambit API for Pick'em challenges and fantasy games. This API is not officially supported by ESPN and may change without notice.
+
+servers:
+  - url: https://gambit-api.fantasy.espn.com
+    description: ESPN Gambit API Production Server
+
+paths:
+  /apis/v1/challenges/{challengeName}:
+    get:
+      summary: Get Challenge Details
+      description: |
+        Retrieve detailed information about a specific Pick'em challenge.
+        Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+      operationId: getChallengeDetails
+      parameters:
+        - name: challengeName
+          in: path
+          required: true
+          description: |
+            The challenge name or key (e.g., 'nfl-pigskin-pickem-2025').
+            Note: UUID-style IDs do not work, use the human-readable name.
+          schema:
+            type: string
+            example: "nfl-pigskin-pickem-2025"
+        - name: scoringPeriodId
+          in: query
+          required: false
+          description: The scoring period (week) to retrieve data for
+          schema:
+            type: integer
+            example: 1
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [picks, details]
+            example: "picks"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChallengeResponse'
+        '404':
+          description: Challenge not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v1/challenges/{challengeName}/leaderboard:
+    get:
+      summary: Get Challenge Leaderboard
+      description: Retrieve the leaderboard for a specific Pick'em challenge
+      operationId: getChallengeLeaderboard
+      parameters:
+        - name: challengeName
+          in: path
+          required: true
+          description: The challenge name (e.g., 'nfl-pigskin-pickem-2025')
+          schema:
+            type: string
+            example: "nfl-pigskin-pickem-2025"
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [ranks, details]
+            example: "ranks"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of entries to return
+          schema:
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaderboardResponse'
+        '404':
+          description: Challenge not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v1/challenges/{challengeName}/groups/{groupId}:
+    get:
+      summary: Get Challenge Group
+      description: Retrieve information about a specific group within a challenge
+      operationId: getChallengeGroup
+      parameters:
+        - name: challengeName
+          in: path
+          required: true
+          description: The challenge name
+          schema:
+            type: string
+            example: "nfl-pigskin-pickem-2025"
+        - name: groupId
+          in: path
+          required: true
+          description: The group ID
+          schema:
+            type: string
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+        '404':
+          description: Group or challenge not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v1/challenges/{challengeName}/entries/{userId}:
+    get:
+      summary: Get User Entry
+      description: Retrieve a specific user's entry in a challenge
+      operationId: getUserEntry
+      parameters:
+        - name: challengeName
+          in: path
+          required: true
+          description: The challenge name
+          schema:
+            type: string
+            example: "nfl-pigskin-pickem-2025"
+        - name: userId
+          in: path
+          required: true
+          description: The user ID
+          schema:
+            type: string
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntryResponse'
+        '404':
+          description: Entry or challenge not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v1/propositions:
+    get:
+      summary: Get Propositions
+      description: Retrieve propositions (picks) for a challenge
+      operationId: getPropositions
+      parameters:
+        - name: challengeId
+          in: query
+          required: true
+          description: The challenge ID
+          schema:
+            type: string
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropositionsResponse'
+        '404':
+          description: Challenge not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            type: string
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              shortMessage:
+                type: string
+              resolution:
+                type: string
+                nullable: true
+              type:
+                type: string
+              metaData:
+                type: object
+                nullable: true
+
+    ChallengeResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Challenge ID
+        key:
+          type: string
+          description: Challenge key/name
+        name:
+          type: string
+          description: Display name
+        abbrev:
+          type: string
+          description: Abbreviation
+        active:
+          type: boolean
+        gameId:
+          type: integer
+          description: Associated game ID
+        currentScoringPeriod:
+          type: integer
+          description: Current scoring period
+        requestedScoringPeriodId:
+          type: integer
+          description: Requested scoring period
+        startDate:
+          type: integer
+          description: Start date as Unix timestamp in milliseconds
+        endDate:
+          type: integer
+          description: End date as Unix timestamp in milliseconds
+        state:
+          type: string
+          description: Challenge state (e.g., 'active')
+        settings:
+          type: object
+          additionalProperties: true
+        propositions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Proposition'
+        scoringPeriods:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        leaderboardSortOptions:
+          type: array
+          items:
+            type: string
+
+    Proposition:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        text:
+          type: string
+        shortText:
+          type: string
+        locked:
+          type: boolean
+        scoringPeriodId:
+          type: integer
+        options:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              text:
+                type: string
+              winner:
+                type: boolean
+                nullable: true
+
+    LeaderboardResponse:
+      type: object
+      properties:
+        challengeId:
+          type: string
+        groupId:
+          type: string
+          nullable: true
+        size:
+          type: integer
+          description: Total number of entries
+        locked:
+          type: boolean
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderboardEntry'
+        featuredEntryIds:
+          type: array
+          items:
+            type: string
+
+    LeaderboardEntry:
+      type: object
+      properties:
+        id:
+          type: string
+        rank:
+          type: integer
+        score:
+          type: number
+        percentile:
+          type: number
+        userName:
+          type: string
+        displayName:
+          type: string
+        profileImageUrl:
+          type: string
+          nullable: true
+
+    GroupResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        challengeId:
+          type: string
+        size:
+          type: integer
+        settings:
+          type: object
+          additionalProperties: true
+
+    EntryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        challengeId:
+          type: string
+        groupIds:
+          type: array
+          items:
+            type: string
+        picks:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        score:
+          type: number
+        rank:
+          type: integer
+
+    PropositionsResponse:
+      type: object
+      properties:
+        challengeId:
+          type: string
+        propositions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Proposition'

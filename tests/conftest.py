@@ -13,6 +13,7 @@ from models.sports_core_api.espn_sports_core_api_client import (
 )
 from models.fantasy_api.espn_fantasy_api_client import Client as FantasyApiClient
 from models.partners_api.espn_partners_api_client import Client as PartnersApiClient
+from models.gambit_api.espn_gambit_api_client import Client as GambitApiClient
 
 
 @pytest.fixture(scope="session")
@@ -70,6 +71,12 @@ def site_api_v2_client():
     This includes soccer standings and potentially other standings endpoints.
     """
     return SiteApiClient(base_url="https://site.api.espn.com/apis/v2")
+
+
+@pytest.fixture(scope="session")
+def gambit_api_client():
+    """Fixture for ESPN Gambit API client."""
+    return GambitApiClient(base_url="https://gambit-api.fantasy.espn.com")
 
 
 @pytest.fixture(scope="session")

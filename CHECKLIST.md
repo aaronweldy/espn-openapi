@@ -195,11 +195,11 @@ site.web.api.espn.com
 [x] /apis/fantasy/v2/games/ffl/games - Fantasy Games List. Query Params: dates (YYYYMMDD or YYYYMMDD-YYYYMMDD) - Implemented
 [x] /apis/v2/flex - Contributor Posts. Query Params: region, lang, contentorigin, contributor, limit, pubkey
 gambit-api.fantasy.espn.com
-[ ] /apis/v1/challenges/{challenge_name}?scoringPeriodId={week}&view={view} - Pick'em Challenge Scoring. Path Params: {challenge_name}. Query Params: scoringPeriodId={week}, view - UNABLE TO FIND VALID CHALLENGE NAMES
-[ ] /apis/v1/challenges/{challenge_name}/groups/{group_id}?view={view} - Pick'em Challenge Group. Path Params: {challenge_name}, {group_id}. Query Param: view - UNABLE TO FIND VALID CHALLENGE NAMES
-[ ] /apis/v1/challenges/{challenge_name}/entries/{user_id}?view={view} - Pick'em Challenge User Entry. Path Params: {challenge_name}, {user_id}. Query Param: view - UNABLE TO FIND VALID CHALLENGE NAMES
-[ ] /apis/v1/challenges/{challenge_name}/leaderboard?view={view} - Pick'em Challenge Leaderboard. Path Param: {challenge_name}. Query Param: view - UNABLE TO FIND VALID CHALLENGE NAMES
-[ ] /apis/v1/propositions?challengeId={challenge_id}&view={view} - Pick'em Propositions. Query Params: challengeId={challenge_id}, view - UNABLE TO FIND VALID CHALLENGE NAMES
+[x] /apis/v1/challenges/{challenge_name}?scoringPeriodId={week}&view={view} - Pick'em Challenge Scoring. Path Params: {challenge_name}. Query Params: scoringPeriodId={week}, view - Implemented (valid challenge name: nfl-pigskin-pickem-2025)
+[x] /apis/v1/challenges/{challenge_name}/groups/{group_id}?view={view} - Pick'em Challenge Group. Path Params: {challenge_name}, {group_id}. Query Param: view - Implemented
+[x] /apis/v1/challenges/{challenge_name}/entries/{user_id}?view={view} - Pick'em Challenge User Entry. Path Params: {challenge_name}, {user_id}. Query Param: view - Implemented
+[x] /apis/v1/challenges/{challenge_name}/leaderboard?view={view} - Pick'em Challenge Leaderboard. Path Param: {challenge_name}. Query Param: view - Implemented
+[x] /apis/v1/propositions?challengeId={challenge_id}&view={view} - Pick'em Propositions. Query Params: challengeId={challenge_id}, view - Implemented 
 XIV. Stats Endpoints (Play-by-Play)
 site.api.espn.com
 XV. Betting & Odds Endpoints (NFL Example, pattern for other sports)
