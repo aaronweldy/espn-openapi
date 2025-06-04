@@ -9,6 +9,7 @@ from .article_links_api import ArticleLinksApi
 from .article_links_app import ArticleLinksApp
 from .article_type import ArticleType
 from .athlete import Athlete
+from .athlete_flag import AthleteFlag
 from .athlete_links import AthleteLinks
 from .boxscore import Boxscore
 from .boxscore_player import BoxscorePlayer
@@ -318,6 +319,7 @@ __all__ = (
     "ArticleLinksApp",
     "ArticleType",
     "Athlete",
+    "AthleteFlag",
     "AthleteLinks",
     "Boxscore",
     "BoxscorePlayer",

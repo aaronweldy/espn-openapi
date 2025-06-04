@@ -224,7 +224,7 @@ paths:
           description: The data view to retrieve
           schema:
             type: string
-            enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, player_wl, players_wl, allon]
+            enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, players_wl, allon]
             example: "kona_player_info"
         - name: X-Fantasy-Filter
           in: header

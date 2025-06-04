@@ -5,7 +5,7 @@ from models.fantasy_api.espn_fantasy_api_client.models import GetFantasyFootball
 
 @pytest.mark.api
 @pytest.mark.parametrize("view", [
-    GetFantasyFootballPlayersView.PLAYER_WL,
+    GetFantasyFootballPlayersView.PLAYERS_WL,
     GetFantasyFootballPlayersView.PLAYERS_WL
 ])
 def test_fantasy_players_wl_views(fantasy_api_client, view):
@@ -40,7 +40,7 @@ def test_fantasy_filter_limit_behavior(fantasy_api_client):
     
     views_to_test = [
         (GetFantasyFootballPlayersView.KONA_PLAYER_INFO, 10),
-        (GetFantasyFootballPlayersView.PLAYER_WL, 10),
+        (GetFantasyFootballPlayersView.PLAYERS_WL, 10),
         (GetFantasyFootballPlayersView.MDRAFTDETAIL, 10),
     ]
     

@@ -155,7 +155,7 @@ def test_fantasy_views_detailed_analysis(fantasy_api_client, ensure_json_output_
         (GetFantasyFootballPlayersView.MTEAM, '{"players":{"limit":5,"filterActive":{"value":true}}}'),
         (GetFantasyFootballPlayersView.MMATCHUPSCORE, '{"players":{"limit":5,"filterActive":{"value":true}}}'),
         (GetFantasyFootballPlayersView.MSTANDINGS, '{"players":{"limit":5,"filterActive":{"value":true}}}'),
-        (GetFantasyFootballPlayersView.PLAYER_WL, '{"players":{"limit":5,"filterIds":{"value":[3139477,2576980]}}}')
+        (GetFantasyFootballPlayersView.PLAYERS_WL, '{"players":{"limit":5,"filterIds":{"value":[3139477,2576980]}}}')
     ]
     
     detailed_results = {}

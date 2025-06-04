@@ -1,0 +1,169 @@
+{
+  "kona_player_info": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": true,
+      "ownership": true,
+      "draft_ranks": true,
+      "injury_info": true,
+      "position_info": true,
+      "team_info": false,
+      "additional_fields": []
+    },
+    "description": "General player information with ownership and draft data",
+    "use_case": "Player research, draft preparation, waiver wire decisions"
+  },
+  "mDraftDetail": {
+    "has_data": false,
+    "player_count": 2887,
+    "all_empty": true,
+    "description": "Draft-specific player details",
+    "use_case": "Draft preparation, ADP analysis"
+  },
+  "mLiveScoring": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": true,
+      "ownership": false,
+      "draft_ranks": false,
+      "injury_info": true,
+      "position_info": false,
+      "team_info": false,
+      "additional_fields": []
+    },
+    "description": "Live scoring and real-time stats",
+    "use_case": "In-game tracking, live fantasy scoring"
+  },
+  "mMatchup": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": false,
+      "ownership": false,
+      "draft_ranks": false,
+      "injury_info": true,
+      "position_info": true,
+      "team_info": false,
+      "additional_fields": [
+        "universeId"
+      ]
+    },
+    "description": "Matchup-specific player information",
+    "use_case": "Head-to-head matchup analysis"
+  },
+  "mTeam": {
+    "has_data": false,
+    "player_count": 2887,
+    "all_empty": true,
+    "description": "Team-oriented player data",
+    "use_case": "Team roster management"
+  },
+  "mMatchupScore": {
+    "has_data": false,
+    "player_count": 2887,
+    "all_empty": true,
+    "description": "Matchup scoring details",
+    "use_case": "Scoring breakdown for matchups"
+  },
+  "mStandings": {
+    "has_data": false,
+    "player_count": 2887,
+    "all_empty": true,
+    "description": "Standings-related player data",
+    "use_case": "League standings context"
+  },
+  "mRoster": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": true,
+      "ownership": true,
+      "draft_ranks": true,
+      "injury_info": true,
+      "position_info": true,
+      "team_info": false,
+      "additional_fields": [
+        "universeId"
+      ]
+    },
+    "description": "Complete roster information",
+    "use_case": "Full roster management, lineup decisions"
+  },
+  "mBoxscore": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": true,
+      "ownership": false,
+      "draft_ranks": false,
+      "injury_info": true,
+      "position_info": false,
+      "team_info": false,
+      "additional_fields": [
+        "universeId"
+      ]
+    },
+    "description": "Detailed statistical boxscore",
+    "use_case": "Post-game analysis, statistical breakdown"
+  },
+  "players_wl": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": false,
+      "ownership": true,
+      "draft_ranks": false,
+      "injury_info": true,
+      "position_info": true,
+      "team_info": false,
+      "additional_fields": [
+        "universeId"
+      ]
+    },
+    "description": "Waiver wire and free agent focused data",
+    "use_case": "Waiver wire decisions, free agent pickups"
+  },
+  "allon": {
+    "has_data": true,
+    "player_count": 2887,
+    "sample_size": 3,
+    "fields": {
+      "basic_info": true,
+      "stats": true,
+      "ownership": true,
+      "draft_ranks": true,
+      "injury_info": true,
+      "position_info": true,
+      "team_info": false,
+      "additional_fields": [
+        "replacementId",
+        "injuryStatusOverridden",
+        "invalid",
+        "universeId",
+        "historicalInjuryStatus",
+        "activationInfo",
+        "dualPositionEligible",
+        "dateUniverseChanged",
+        "stance",
+        "draftedSeasonId",
+        "laterality"
+      ]
+    },
+    "description": "All available player data combined",
+    "use_case": "Comprehensive analysis, data export"
+  }
+}

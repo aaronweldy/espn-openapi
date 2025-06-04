@@ -1995,8 +1995,6 @@ components:
       required:
         - id
         - order
-        - homeAway
-        - team
       properties:
         id:
           type: string
@@ -2012,10 +2010,15 @@ components:
         homeAway:
           type: string
           enum: [home, away]
+          description: Home/away designation for team sports (not present in individual sports like golf)
         winner:
           type: boolean
         team:
           $ref: '#/components/schemas/Team'
+          description: Team information for team sports
+        athlete:
+          $ref: '#/components/schemas/Athlete'
+          description: Athlete information for individual sports like golf, tennis
         score:
           type: string
           example: "35"
@@ -2668,21 +2671,44 @@ components:
       properties:
         id:
           type: integer
-          description: Athlete identifier
+          description: Athlete identifier (may not be present in some contexts like golf scoreboards)
           example: 15846
         description:
           type: string
           description: Athlete name
           example: "John Jenkins"
+        displayName:
+          type: string
+          description: Display name of the athlete
+          example: "John Jenkins"
+        fullName:
+          type: string
+          description: Full name of the athlete
+          example: "John Jenkins"
+        shortName:
+          type: string
+          description: Shortened name of the athlete
+          example: "J. Jenkins"
+        flag:
+          type: object
+          description: Country flag information
+          properties:
+            href:
+              type: string
+              description: URL to the flag image
+            alt:
+              type: string
+              description: Country name
+            rel:
+              type: array
+              items:
+                type: string
         links:
           oneOf:
             - $ref: '#/components/schemas/AthleteLinks'
             - type: array
               items:
                 $ref: '#/components/schemas/Link'
-      required:
-        - id
-        - links
 
     AthleteLinks:
       type: object

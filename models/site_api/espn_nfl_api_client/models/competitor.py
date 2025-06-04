@@ -7,6 +7,7 @@ from ..models.competitor_home_away import CompetitorHomeAway
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
+    from ..models.athlete import Athlete
     from ..models.linescore import Linescore
     from ..models.record import Record
     from ..models.statistic import Statistic
@@ -22,11 +23,13 @@ class Competitor:
     Attributes:
         id (str):  Example: 21.
         order (int):
-        home_away (CompetitorHomeAway):
-        team (Team):
         uid (Union[Unset, str]):  Example: s:20~l:28~t:21.
         type (Union[Unset, str]):  Example: team.
+        home_away (Union[Unset, CompetitorHomeAway]): Home/away designation for team sports (not present in individual
+            sports like golf)
         winner (Union[Unset, bool]):
+        team (Union[Unset, Team]):
+        athlete (Union[Unset, Athlete]):
         score (Union[Unset, str]):  Example: 35.
         linescores (Union[Unset, List['Linescore']]):
         statistics (Union[Unset, List['Statistic']]):
@@ -35,11 +38,12 @@ class Competitor:
 
     id: str
     order: int
-    home_away: CompetitorHomeAway
-    team: "Team"
     uid: Union[Unset, str] = UNSET
     type: Union[Unset, str] = UNSET
+    home_away: Union[Unset, CompetitorHomeAway] = UNSET
     winner: Union[Unset, bool] = UNSET
+    team: Union[Unset, "Team"] = UNSET
+    athlete: Union[Unset, "Athlete"] = UNSET
     score: Union[Unset, str] = UNSET
     linescores: Union[Unset, List["Linescore"]] = UNSET
     statistics: Union[Unset, List["Statistic"]] = UNSET
@@ -51,15 +55,23 @@ class Competitor:
 
         order = self.order
 
-        home_away = self.home_away.value
-
-        team = self.team.to_dict()
-
         uid = self.uid
 
         type = self.type
 
+        home_away: Union[Unset, str] = UNSET
+        if not isinstance(self.home_away, Unset):
+            home_away = self.home_away.value
+
         winner = self.winner
+
+        team: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.team, Unset):
+            team = self.team.to_dict()
+
+        athlete: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.athlete, Unset):
+            athlete = self.athlete.to_dict()
 
         score = self.score
 
@@ -90,16 +102,20 @@ class Competitor:
             {
                 "id": id,
                 "order": order,
-                "homeAway": home_away,
-                "team": team,
             }
         )
         if uid is not UNSET:
             field_dict["uid"] = uid
         if type is not UNSET:
             field_dict["type"] = type
+        if home_away is not UNSET:
+            field_dict["homeAway"] = home_away
         if winner is not UNSET:
             field_dict["winner"] = winner
+        if team is not UNSET:
+            field_dict["team"] = team
+        if athlete is not UNSET:
+            field_dict["athlete"] = athlete
         if score is not UNSET:
             field_dict["score"] = score
         if linescores is not UNSET:
@@ -113,6 +129,7 @@ class Competitor:
 
     @classmethod
     def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+        from ..models.athlete import Athlete
         from ..models.linescore import Linescore
         from ..models.record import Record
         from ..models.statistic import Statistic
@@ -123,15 +140,32 @@ class Competitor:
 
         order = d.pop("order")
 
-        home_away = CompetitorHomeAway(d.pop("homeAway"))
-
-        team = Team.from_dict(d.pop("team"))
-
         uid = d.pop("uid", UNSET)
 
         type = d.pop("type", UNSET)
 
+        _home_away = d.pop("homeAway", UNSET)
+        home_away: Union[Unset, CompetitorHomeAway]
+        if isinstance(_home_away, Unset):
+            home_away = UNSET
+        else:
+            home_away = CompetitorHomeAway(_home_away)
+
         winner = d.pop("winner", UNSET)
+
+        _team = d.pop("team", UNSET)
+        team: Union[Unset, Team]
+        if isinstance(_team, Unset):
+            team = UNSET
+        else:
+            team = Team.from_dict(_team)
+
+        _athlete = d.pop("athlete", UNSET)
+        athlete: Union[Unset, Athlete]
+        if isinstance(_athlete, Unset):
+            athlete = UNSET
+        else:
+            athlete = Athlete.from_dict(_athlete)
 
         score = d.pop("score", UNSET)
 
@@ -159,11 +193,12 @@ class Competitor:
         competitor = cls(
             id=id,
             order=order,
-            home_away=home_away,
-            team=team,
             uid=uid,
             type=type,
+            home_away=home_away,
             winner=winner,
+            team=team,
+            athlete=athlete,
             score=score,
             linescores=linescores,
             statistics=statistics,

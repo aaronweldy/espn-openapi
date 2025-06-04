@@ -99,6 +99,10 @@ from .get_league_leaders_sport import GetLeagueLeadersSport
 from .get_nfl_athlete_game_log_seasontype import GetNFLAthleteGameLogSeasontype
 from .get_team_leaders_sport import GetTeamLeadersSport
 from .glossary_entry import GlossaryEntry
+from .golf_athlete_stats_response import GolfAthleteStatsResponse
+from .golf_athlete_stats_response_leagues_stats_item import GolfAthleteStatsResponseLeaguesStatsItem
+from .golf_stat_split import GolfStatSplit
+from .golf_statistics import GolfStatistics
 from .hand_type_0 import HandType0
 from .headshot import Headshot
 from .href_link import HrefLink
@@ -340,6 +344,10 @@ __all__ = (
     "GetNFLAthleteGameLogSeasontype",
     "GetTeamLeadersSport",
     "GlossaryEntry",
+    "GolfAthleteStatsResponse",
+    "GolfAthleteStatsResponseLeaguesStatsItem",
+    "GolfStatistics",
+    "GolfStatSplit",
     "HandType0",
     "Headshot",
     "HrefLink",

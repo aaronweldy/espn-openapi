@@ -13,7 +13,7 @@ from models.fantasy_api.espn_fantasy_api_client.types import UNSET
         "Top 10 most owned players"
     ),
     (
-        GetFantasyFootballPlayersView.PLAYER_WL,
+        GetFantasyFootballPlayersView.PLAYERS_WL,
         '{"players":{"filterIds":{"value":[3139477,2576980]}},"filterActive":{"value":true}}',
         "Specific players by ID with active filter"
     ),
@@ -137,7 +137,7 @@ def test_player_wl_with_scoring_period(fantasy_api_client):
     response = get_fantasy_football_players.sync_detailed(
         client=fantasy_api_client,
         year=2024,
-        view=GetFantasyFootballPlayersView.PLAYER_WL,
+        view=GetFantasyFootballPlayersView.PLAYERS_WL,
         x_fantasy_filter=filter_json
     )
     
@@ -235,7 +235,7 @@ def test_all_fantasy_views(fantasy_api_client, ensure_json_output_dir):
         GetFantasyFootballPlayersView.MSTANDINGS,
         GetFantasyFootballPlayersView.MROSTER,
         GetFantasyFootballPlayersView.MBOXSCORE,
-        GetFantasyFootballPlayersView.PLAYER_WL,
+        GetFantasyFootballPlayersView.PLAYERS_WL,
         GetFantasyFootballPlayersView.ALLON
     ]
     

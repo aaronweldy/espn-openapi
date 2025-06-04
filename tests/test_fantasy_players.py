@@ -82,7 +82,7 @@ def test_get_fantasy_players_with_filter(fantasy_api_client):
 @pytest.mark.api
 @pytest.mark.parametrize("view", [
     GetFantasyFootballPlayersView.KONA_PLAYER_INFO, 
-    GetFantasyFootballPlayersView.PLAYER_WL,
+    GetFantasyFootballPlayersView.PLAYERS_WL,
     GetFantasyFootballPlayersView.MDRAFTDETAIL,
     GetFantasyFootballPlayersView.MROSTER
 ])
@@ -176,7 +176,7 @@ def test_fantasy_players_with_scoring_period(fantasy_api_client):
     response = get_fantasy_football_players.sync_detailed(
         client=fantasy_api_client,
         year=2024,
-        view=GetFantasyFootballPlayersView.PLAYER_WL
+        view=GetFantasyFootballPlayersView.PLAYERS_WL
     )
     
     assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"

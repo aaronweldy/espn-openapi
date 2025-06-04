@@ -257,9 +257,9 @@ now.core.api.espn.com
 [x] /v1/sports/news - ESPN News API. Query Params: limit, sport - Implemented
 XVIII. Golf Endpoints
 site.api.espn.com
-[ ] /apis/site/v2/sports/golf/pga/scoreboard - PGA Tournament Scoreboard
+[x] /apis/site/v2/sports/golf/pga/scoreboard - PGA Tournament Scoreboard - Covered by generic /sports/{sport}/{league}/scoreboard endpoint
 site.web.api.espn.com
-[ ] /apis/common/v3/sports/golf/athletes/{playerId}/stats - Golf Player Stats. Query Params: season
+[x] /apis/common/v3/sports/golf/athletes/{playerId}/stats - Golf Player Stats. Query Params: season - Implemented as golf-specific endpoint
 sports.core.api.espn.com
 [ ] /v2/sports/golf/leagues/pga/seasons/{year}/athletes/{playerId}/eventlog - Golf Player Event Log
 XIX. Additional Soccer Endpoints

@@ -161,623 +161,47 @@
   ],
   "events": [
     {
-      "id": "401774564",
-      "date": "2025-06-02T23:00:00+00:00",
+      "id": "401774565",
+      "date": "2025-06-05T00:00:00+00:00",
       "competitions": [
         {
           "wasSuspended": false,
-          "id": "401774564",
-          "date": "2025-06-02T23:00:00+00:00",
-          "competitors": [
-            {
-              "curatedRank": {
-                "current": 12
+          "series": {
+            "type": "playoff",
+            "title": "Playoff Series",
+            "summary": "Series starts 6/4",
+            "completed": false,
+            "totalCompetitions": 3,
+            "competitors": [
+              {
+                "id": "538",
+                "uid": "s:1~l:102~t:538",
+                "wins": 0,
+                "ties": 0,
+                "href": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/college-softball/seasons/2025/teams/538?lang=en&region=us"
               },
-              "hits": 6,
-              "errors": 0,
-              "id": "613",
-              "order": 0,
-              "homeAway": "home",
-              "team": {
+              {
                 "id": "613",
                 "uid": "s:1~l:102~t:613",
-                "location": "Texas Tech",
-                "name": "Red Raiders",
-                "abbreviation": "TTU",
-                "displayName": "Texas Tech",
-                "shortDisplayName": "Texas Tech",
-                "color": "D60039",
-                "isActive": true,
-                "logo": "https://a.espncdn.com/guid/36be32e7-44f9-3e1d-9990-ebe750249131/logos/default.png",
-                "logos": [],
-                "links": []
-              },
-              "uid": "s:1~l:102~t:613",
-              "type": "team",
-              "winner": true,
-              "score": "3",
-              "linescores": [
-                {
-                  "displayValue": "0",
-                  "period": 1,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "2",
-                  "period": 2,
-                  "value": 2.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 3,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 4,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 5,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 6,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "1",
-                  "period": 7,
-                  "value": 1.0
-                }
-              ],
-              "statistics": [
-                {
-                  "abbreviation": "H",
-                  "name": "hits",
-                  "displayValue": "6"
-                },
-                {
-                  "abbreviation": "R",
-                  "name": "runs",
-                  "displayValue": "3"
-                },
-                {
-                  "abbreviation": "AVG",
-                  "name": "avg",
-                  "displayValue": ".240"
-                },
-                {
-                  "abbreviation": "SV",
-                  "name": "saves",
-                  "displayValue": "0"
-                },
-                {
-                  "abbreviation": "ERA",
-                  "name": "ERA",
-                  "displayValue": "2.00"
-                },
-                {
-                  "abbreviation": "E",
-                  "name": "errors",
-                  "displayValue": "0"
-                }
-              ],
-              "records": [
-                {
-                  "name": "overall",
-                  "abbreviation": "Ytd",
-                  "type": "total",
-                  "summary": "53-12"
-                }
-              ]
-            },
-            {
-              "curatedRank": {
-                "current": 2
-              },
-              "hits": 5,
-              "errors": 2,
-              "id": "524",
-              "order": 1,
-              "homeAway": "away",
-              "team": {
-                "id": "524",
-                "uid": "s:1~l:102~t:524",
-                "location": "Oklahoma",
-                "name": "Sooners",
-                "abbreviation": "OU",
-                "displayName": "Oklahoma",
-                "shortDisplayName": "Oklahoma",
-                "color": "7B0000",
-                "isActive": true,
-                "logo": "https://a.espncdn.com/guid/c99b3fbc-4d58-3a08-9763-5993ebb428e9/logos/default.png",
-                "logos": [],
-                "links": []
-              },
-              "uid": "s:1~l:102~t:524",
-              "type": "team",
-              "winner": false,
-              "score": "2",
-              "linescores": [
-                {
-                  "displayValue": "0",
-                  "period": 1,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 2,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 3,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 4,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 5,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 6,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "2",
-                  "period": 7,
-                  "value": 2.0
-                }
-              ],
-              "statistics": [
-                {
-                  "abbreviation": "H",
-                  "name": "hits",
-                  "displayValue": "5"
-                },
-                {
-                  "abbreviation": "R",
-                  "name": "runs",
-                  "displayValue": "2"
-                },
-                {
-                  "abbreviation": "AVG",
-                  "name": "avg",
-                  "displayValue": ".192"
-                },
-                {
-                  "abbreviation": "SV",
-                  "name": "saves",
-                  "displayValue": "0"
-                },
-                {
-                  "abbreviation": "ERA",
-                  "name": "ERA",
-                  "displayValue": "3.15"
-                },
-                {
-                  "abbreviation": "E",
-                  "name": "errors",
-                  "displayValue": "2"
-                }
-              ],
-              "records": [
-                {
-                  "name": "overall",
-                  "abbreviation": "Ytd",
-                  "type": "total",
-                  "summary": "52-9"
-                }
-              ]
-            }
-          ],
-          "uid": "s:1~l:102~e:401774564~c:401774564",
-          "attendance": 0,
-          "timeValid": true,
-          "neutralSite": false,
-          "conferenceCompetition": false,
-          "playByPlayAvailable": true,
-          "recent": false,
-          "venue": {
-            "id": "5006",
-            "fullName": "OGE Energy Field at Devon Park",
-            "address": {
-              "city": "Oklahoma City",
-              "state": "Oklahoma"
-            },
-            "indoor": false,
-            "images": []
-          },
-          "notes": [
-            {
-              "type": "event",
-              "headline": "Women's College World Series - Texas Tech advances to Championship Finals"
-            }
-          ],
-          "status": {
-            "type": {
-              "altDetail": "Final",
-              "id": "3",
-              "name": "STATUS_FINAL",
-              "state": "post",
-              "completed": true,
-              "description": "Final",
-              "detail": "Final",
-              "shortDetail": "Final"
-            },
-            "period": 7
-          },
-          "broadcasts": [
-            {
-              "market": "national",
-              "names": [
-                "ESPN",
-                "ESPN+"
-              ]
-            }
-          ],
-          "leaders": [],
-          "format": {
-            "regulation": {
-              "periods": 7
-            }
-          },
-          "startDate": "2025-06-02T23:00:00+00:00",
-          "broadcast": "ESPN/ESPN+",
-          "geoBroadcasts": [
-            {
-              "type": {
-                "id": "1",
-                "shortName": "TV"
-              },
-              "market": {
-                "id": "1",
-                "type": "National"
-              },
-              "media": {
-                "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
-                "darkLogo": "",
-                "shortName": "ESPN"
-              },
-              "lang": "en",
-              "region": "us"
-            },
-            {
-              "type": {
-                "id": "4",
-                "shortName": "Streaming"
-              },
-              "market": {
-                "id": "1",
-                "type": "National"
-              },
-              "media": {
-                "logo": "https://a.espncdn.com/guid/322a7e47-3cdb-3b5c-ab1b-678e1f2c27e5/logos/default.png",
-                "darkLogo": "https://a.espncdn.com/guid/322a7e47-3cdb-3b5c-ab1b-678e1f2c27e5/logos/default-dark.png",
-                "shortName": "ESPN+"
-              },
-              "lang": "en",
-              "region": "us"
-            }
-          ],
-          "highlights": [
-            {
-              "id": 45439280,
-              "cerebroId": "683e509e7e8e6605ce3feaf5",
-              "source": "espn",
-              "headline": "Texas Tech walks off Oklahoma to earn first ever WCWS finals berth",
-              "description": "Lauren Allred drives in the winning run to walk off No. 2 Oklahoma, ending the Sooners' dynasty and sending the Red Raiders to their first Women's College World Series championship series.",
-              "lastModified": "2025-06-03T02:40:10Z",
-              "originalPublishDate": "2025-06-03T01:31:08Z",
-              "duration": 38,
-              "timeRestrictions": {
-                "embargoDate": "2025-06-03T01:31:08Z",
-                "expirationDate": "2037-07-01T01:31:08Z"
-              },
-              "deviceRestrictions": {
-                "type": "whitelist",
-                "devices": [
-                  "desktop",
-                  "ipad",
-                  "settop",
-                  "handset",
-                  "tablet"
-                ]
-              },
-              "thumbnail": "https://a.espncdn.com/media/motion/2025/0602/dm_250602_softball_texas_tech_walkoff1358/dm_250602_softball_texas_tech_walkoff1358.jpg",
-              "links": {
-                "web": {
-                  "href": "https://www.espn.com/video/clip?id=45439280",
-                  "self": {
-                    "href": "https://www.espn.com/video/clip?id=45439280",
-                    "dsi": {
-                      "href": "https://www.espn.com/video/clip?id=4bbb7cde309f0"
-                    }
-                  },
-                  "seo": {
-                    "href": "https://www.espn.com/video/clip/_/id/45439280"
-                  }
-                },
-                "mobile": {
-                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ecbf9101-8b65-4df5-bcaf-33ec1d6122f3/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439280",
-                  "source": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff.mp4"
-                  },
-                  "alert": {
-                    "href": "http://m.espn.com/general/video/videoAlert?vid=45439280"
-                  },
-                  "streaming": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ecbf9101-8b65-4df5-bcaf-33ec1d6122f3/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439280"
-                  },
-                  "progressiveDownload": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/ecbf9101-8b65-4df5-bcaf-33ec1d6122f3/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439280"
-                  }
-                },
-                "api": {
-                  "self": {
-                    "href": "https://content.core.api.espn.com/v1/video/clips/45439280"
-                  },
-                  "artwork": {
-                    "href": "https://artwork.api.espn.com/artwork/collections/media/ecbf9101-8b65-4df5-bcaf-33ec1d6122f3"
-                  }
-                },
-                "source": {
-                  "href": "https://media.video-cdn.espn.com/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff_360p30_1464k.mp4",
-                  "mezzanine": {
-                    "href": "http://media.video-origin.espn.com/espnvideo/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff.mp4"
-                  },
-                  "flash": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff.smil"
-                  },
-                  "hds": {
-                    "href": "https://hds.video-cdn.espn.com/z/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff_rel.smil/manifest.f4m"
-                  },
-                  "HLS": {
-                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff/playlist.m3u8",
-                    "HD": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff/playlist.m3u8"
-                    },
-                    "cmaf": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff/playlist.m3u8",
-                      "shield": {
-                        "href": "https://watch.auth.api.espn.com/video/auth/media/ecbf9101-8b65-4df5-bcaf-33ec1d6122f3/asset"
-                      }
-                    }
-                  },
-                  "HD": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff_720p30_2896k.mp4"
-                  },
-                  "full": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/dm_250602_softball_texas_tech_walkoff/dm_250602_softball_texas_tech_walkoff_360p30_1464k.mp4"
-                  }
-                },
-                "sportscenter": {
-                  "href": "sportscenter://x-callback-url/showVideo?videoID=45439280&videoDSI=4bbb7cde309f0"
-                }
-              },
-              "ad": {
-                "sport": "softball",
-                "bundle": "espnw"
-              },
-              "tracking": {
-                "sportName": "softball",
-                "leagueName": "No League",
-                "coverageType": "Final Game Highlight",
-                "trackingName": "SBALL_One-Play (Texas Tech walks off Oklahoma to earn first ever WCWS finals berth) 2025/6/2",
-                "trackingId": "dm_250602_softball_texas_tech_walkoff"
+                "wins": 0,
+                "ties": 0,
+                "href": "http://sports.core.api.espn.pvt/v2/sports/baseball/leagues/college-softball/seasons/2025/teams/613?lang=en&region=us"
               }
-            },
-            {
-              "id": 45439337,
-              "cerebroId": "683e53d07e8e6605ce3feed9",
-              "source": "espn",
-              "headline": "NiJaree Canady dominates as Texas Tech ends Oklahoma's dynasty",
-              "description": "NiJaree Canady strikes out eight as Texas Tech takes down four-time defending champion Oklahoma to reach the WCWS final.\n",
-              "lastModified": "2025-06-03T02:37:19Z",
-              "originalPublishDate": "2025-06-03T01:45:51Z",
-              "duration": 72,
-              "timeRestrictions": {
-                "embargoDate": "2025-06-03T01:45:51Z",
-                "expirationDate": "2038-01-01T04:59:59Z"
-              },
-              "deviceRestrictions": {
-                "type": "whitelist",
-                "devices": [
-                  "desktop",
-                  "ipad",
-                  "settop",
-                  "handset",
-                  "tablet"
-                ]
-              },
-              "thumbnail": "https://a.espncdn.com/media/motion/2025/0602/ss_20250602_214553624_28728251352/ss_20250602_214553624_28728251352.jpg",
-              "links": {
-                "web": {
-                  "href": "https://www.espn.com/video/clip?id=45439337",
-                  "self": {
-                    "href": "https://www.espn.com/video/clip?id=45439337",
-                    "dsi": {
-                      "href": "https://www.espn.com/video/clip?id=33792edac97ee"
-                    }
-                  },
-                  "seo": {
-                    "href": "https://www.espn.com/video/clip/_/id/45439337"
-                  }
-                },
-                "mobile": {
-                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e0dce6c1-f84b-4e8e-acdb-6673641d3961/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439337",
-                  "source": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825.mp4"
-                  },
-                  "alert": {
-                    "href": "http://m.espn.com/general/video/videoAlert?vid=45439337"
-                  },
-                  "streaming": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e0dce6c1-f84b-4e8e-acdb-6673641d3961/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439337"
-                  },
-                  "progressiveDownload": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/e0dce6c1-f84b-4e8e-acdb-6673641d3961/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45439337"
-                  }
-                },
-                "api": {
-                  "self": {
-                    "href": "https://content.core.api.espn.com/v1/video/clips/45439337"
-                  },
-                  "artwork": {
-                    "href": "https://artwork.api.espn.com/artwork/collections/media/e0dce6c1-f84b-4e8e-acdb-6673641d3961"
-                  }
-                },
-                "source": {
-                  "href": "https://media.video-cdn.espn.com/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825_360p30_1464k.mp4",
-                  "mezzanine": {
-                    "href": "http://media.video-origin.espn.com/espnvideo/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825.mp4"
-                  },
-                  "flash": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825.smil"
-                  },
-                  "hds": {
-                    "href": "https://hds.video-cdn.espn.com/z/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825_rel.smil/manifest.f4m"
-                  },
-                  "HLS": {
-                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825/playlist.m3u8",
-                    "HD": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825/playlist.m3u8"
-                    },
-                    "cmaf": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825/playlist.m3u8",
-                      "shield": {
-                        "href": "https://watch.auth.api.espn.com/video/auth/media/e0dce6c1-f84b-4e8e-acdb-6673641d3961/asset"
-                      }
-                    }
-                  },
-                  "HD": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825_720p30_2896k.mp4"
-                  },
-                  "full": {
-                    "href": "https://media.video-cdn.espn.com/motion/2025/0602/ss_20250602_214553624_2872825/ss_20250602_214553624_2872825_360p30_1464k.mp4"
-                  }
-                },
-                "sportscenter": {
-                  "href": "sportscenter://x-callback-url/showVideo?videoID=45439337&videoDSI=33792edac97ee"
-                }
-              },
-              "ad": {
-                "sport": "softball",
-                "bundle": "espn_w"
-              },
-              "tracking": {
-                "sportName": "softball",
-                "leagueName": "No League",
-                "coverageType": "Final Game Highlight",
-                "trackingName": "SBALL_One-Play (NiJaree Canady dominates as Texas Tech ends Oklahoma's dynasty) 2025/06/02 ESHEET",
-                "trackingId": "dm_20250602_SOFTBALL_nijaree_canady_dominates_as_texas_tech_ends_oklahomas_dynasty"
-              }
-            }
-          ],
-          "headlines": []
-        }
-      ],
-      "uid": "s:1~l:102~e:401774564",
-      "name": "Oklahoma Sooners at Texas Tech Red Raiders",
-      "shortName": "OU @ TTU",
-      "season": {
-        "year": 2025,
-        "type": 5,
-        "slug": "world-series"
-      },
-      "links": [
-        {
-          "language": "en-US",
-          "shortText": "Gamecast",
-          "href": "https://www.espn.com/college-softball/game/_/gameId/401774564/oklahoma-texas-tech",
-          "text": "Gamecast",
-          "rel": [
-            "summary",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Box Score",
-          "href": "https://www.espn.com/college-softball/boxscore/_/gameId/401774564",
-          "text": "Box Score",
-          "rel": [
-            "boxscore",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Highlights",
-          "href": "https://www.espn.com/college-softball/video?gameId=401774564",
-          "text": "Highlights",
-          "rel": [
-            "highlights",
-            "desktop"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Play-by-Play",
-          "href": "https://www.espn.com/college-softball/playbyplay/_/gameId/401774564",
-          "text": "Play-by-Play",
-          "rel": [
-            "pbp",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        }
-      ],
-      "status": {
-        "type": {
-          "altDetail": "Final",
-          "id": "3",
-          "name": "STATUS_FINAL",
-          "state": "post",
-          "completed": true,
-          "description": "Final",
-          "detail": "Final",
-          "shortDetail": "Final"
-        },
-        "period": 7
-      }
-    },
-    {
-      "id": "401774561",
-      "date": "2025-06-02T16:00:00+00:00",
-      "competitions": [
-        {
-          "wasSuspended": false,
-          "id": "401774561",
-          "date": "2025-06-02T16:00:00+00:00",
+            ]
+          },
+          "id": "401774565",
+          "date": "2025-06-05T00:00:00+00:00",
           "competitors": [
             {
               "curatedRank": {
                 "current": 6
               },
-              "hits": 5,
+              "hits": 0,
               "errors": 0,
               "id": "538",
               "order": 0,
+              "uid": "s:1~l:102~t:538",
+              "type": "team",
               "homeAway": "home",
               "team": {
                 "id": "538",
@@ -793,78 +217,13 @@
                 "logos": [],
                 "links": []
               },
-              "uid": "s:1~l:102~t:538",
-              "type": "team",
-              "winner": true,
-              "score": "2",
-              "linescores": [
-                {
-                  "displayValue": "0",
-                  "period": 1,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 2,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 3,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "1",
-                  "period": 4,
-                  "value": 1.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 5,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "1",
-                  "period": 6,
-                  "value": 1.0
-                }
-              ],
-              "statistics": [
-                {
-                  "abbreviation": "H",
-                  "name": "hits",
-                  "displayValue": "5"
-                },
-                {
-                  "abbreviation": "R",
-                  "name": "runs",
-                  "displayValue": "2"
-                },
-                {
-                  "abbreviation": "AVG",
-                  "name": "avg",
-                  "displayValue": ".200"
-                },
-                {
-                  "abbreviation": "SV",
-                  "name": "saves",
-                  "displayValue": "0"
-                },
-                {
-                  "abbreviation": "ERA",
-                  "name": "ERA",
-                  "displayValue": "0.00"
-                },
-                {
-                  "abbreviation": "E",
-                  "name": "errors",
-                  "displayValue": "0"
-                }
-              ],
+              "score": "0",
+              "linescores": [],
+              "statistics": [],
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Ytd",
+                  "abbreviation": "Total",
                   "type": "total",
                   "summary": "54-11"
                 }
@@ -872,116 +231,48 @@
             },
             {
               "curatedRank": {
-                "current": 7
+                "current": 12
               },
-              "hits": 3,
-              "errors": 2,
-              "id": "611",
+              "hits": 0,
+              "errors": 0,
+              "id": "613",
               "order": 1,
+              "uid": "s:1~l:102~t:613",
+              "type": "team",
               "homeAway": "away",
               "team": {
-                "id": "611",
-                "uid": "s:1~l:102~t:611",
-                "location": "Tennessee",
-                "name": "Lady Volunteers",
-                "abbreviation": "TENN",
-                "displayName": "Tennessee",
-                "shortDisplayName": "Tennessee",
-                "color": "EE9627",
+                "id": "613",
+                "uid": "s:1~l:102~t:613",
+                "location": "Texas Tech",
+                "name": "Red Raiders",
+                "abbreviation": "TTU",
+                "displayName": "Texas Tech",
+                "shortDisplayName": "Texas Tech",
+                "color": "D60039",
                 "isActive": true,
-                "logo": "https://a.espncdn.com/guid/6fd39e66-540c-3e65-95f4-ef80e4c7a9bb/logos/default.png",
+                "logo": "https://a.espncdn.com/guid/36be32e7-44f9-3e1d-9990-ebe750249131/logos/default.png",
                 "logos": [],
                 "links": []
               },
-              "uid": "s:1~l:102~t:611",
-              "type": "team",
-              "winner": false,
               "score": "0",
-              "linescores": [
-                {
-                  "displayValue": "0",
-                  "period": 1,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 2,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 3,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 4,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 5,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 6,
-                  "value": 0.0
-                },
-                {
-                  "displayValue": "0",
-                  "period": 7,
-                  "value": 0.0
-                }
-              ],
-              "statistics": [
-                {
-                  "abbreviation": "H",
-                  "name": "hits",
-                  "displayValue": "3"
-                },
-                {
-                  "abbreviation": "R",
-                  "name": "runs",
-                  "displayValue": "0"
-                },
-                {
-                  "abbreviation": "AVG",
-                  "name": "avg",
-                  "displayValue": ".125"
-                },
-                {
-                  "abbreviation": "SV",
-                  "name": "saves",
-                  "displayValue": "0"
-                },
-                {
-                  "abbreviation": "ERA",
-                  "name": "ERA",
-                  "displayValue": "1.17"
-                },
-                {
-                  "abbreviation": "E",
-                  "name": "errors",
-                  "displayValue": "2"
-                }
-              ],
+              "linescores": [],
+              "statistics": [],
               "records": [
                 {
                   "name": "overall",
-                  "abbreviation": "Ytd",
+                  "abbreviation": "Total",
                   "type": "total",
-                  "summary": "47-17"
+                  "summary": "53-12"
                 }
               ]
             }
           ],
-          "uid": "s:1~l:102~e:401774561~c:401774561",
+          "uid": "s:1~l:102~e:401774565~c:401774565",
           "attendance": 0,
           "timeValid": true,
           "neutralSite": false,
           "conferenceCompetition": false,
-          "playByPlayAvailable": true,
+          "playByPlayAvailable": false,
           "recent": false,
           "venue": {
             "id": "5006",
@@ -996,21 +287,20 @@
           "notes": [
             {
               "type": "event",
-              "headline": "Women's College World Series - Texas advances to Championship Finals"
+              "headline": "Women's College World Series Championship Finals - Game 1"
             }
           ],
           "status": {
             "type": {
-              "altDetail": "Final",
-              "id": "3",
-              "name": "STATUS_FINAL",
-              "state": "post",
-              "completed": true,
-              "description": "Final",
-              "detail": "Final",
-              "shortDetail": "Final"
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Wed, June 4th at 8:00 PM EDT",
+              "shortDetail": "6/4 - 8:00 PM EDT"
             },
-            "period": 7
+            "period": 1
           },
           "broadcasts": [
             {
@@ -1027,7 +317,7 @@
               "periods": 7
             }
           },
-          "startDate": "2025-06-02T16:00:00+00:00",
+          "startDate": "2025-06-05T00:00:00+00:00",
           "broadcast": "ESPN/ESPN+",
           "geoBroadcasts": [
             {
@@ -1065,174 +355,26 @@
               "region": "us"
             }
           ],
-          "highlights": [
-            {
-              "id": 45437309,
-              "cerebroId": "683deabd518fc46aef004472",
-              "source": "espn",
-              "headline": "Tennessee vs. Texas: Game Highlights",
-              "description": "Tennessee vs. Texas: Game Highlights",
-              "lastModified": "2025-06-02T18:29:58Z",
-              "originalPublishDate": "2025-06-02T18:17:30Z",
-              "duration": 116,
-              "timeRestrictions": {
-                "embargoDate": "2025-06-02T18:17:30Z",
-                "expirationDate": "2038-01-01T04:59:59Z"
-              },
-              "deviceRestrictions": {
-                "type": "whitelist",
-                "devices": [
-                  "desktop",
-                  "ipad",
-                  "settop",
-                  "handset",
-                  "tablet"
-                ]
-              },
-              "thumbnail": "https://a.espncdn.com/media/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc.jpg",
-              "links": {
-                "web": {
-                  "href": "https://www.espn.com/video/clip?id=45437309",
-                  "self": {
-                    "href": "https://www.espn.com/video/clip?id=45437309",
-                    "dsi": {
-                      "href": "https://www.espn.com/video/clip?id=31619ba897e0e"
-                    }
-                  },
-                  "seo": {
-                    "href": "https://www.espn.com/video/clip/_/id/45437309"
-                  }
-                },
-                "mobile": {
-                  "href": "https://watch.auth.api.espn.com/video/auth/brightcove/d8636bdd-8e42-4e33-bf64-4698b202aab7/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45437309",
-                  "source": {
-                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc.mp4"
-                  },
-                  "alert": {
-                    "href": "http://m.espn.com/general/video/videoAlert?vid=45437309"
-                  },
-                  "streaming": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/d8636bdd-8e42-4e33-bf64-4698b202aab7/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45437309"
-                  },
-                  "progressiveDownload": {
-                    "href": "https://watch.auth.api.espn.com/video/auth/brightcove/d8636bdd-8e42-4e33-bf64-4698b202aab7/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=45437309"
-                  }
-                },
-                "api": {
-                  "self": {
-                    "href": "https://content.core.api.espn.com/v1/video/clips/45437309"
-                  },
-                  "artwork": {
-                    "href": "https://artwork.api.espn.com/artwork/collections/media/d8636bdd-8e42-4e33-bf64-4698b202aab7"
-                  }
-                },
-                "source": {
-                  "href": "https://media.video-cdn.espn.com/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc_360p30_1464k.mp4",
-                  "mezzanine": {
-                    "href": "http://media.video-origin.espn.com/espnvideo/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc.mp4"
-                  },
-                  "flash": {
-                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc.smil"
-                  },
-                  "hds": {
-                    "href": "https://hds.video-cdn.espn.com/z/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc_rel.smil/manifest.f4m"
-                  },
-                  "HLS": {
-                    "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc/playlist.m3u8",
-                    "HD": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc/playlist.m3u8"
-                    },
-                    "cmaf": {
-                      "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc/playlist.m3u8",
-                      "9x16": {
-                        "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/9x16/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc/playlist.m3u8"
-                      },
-                      "shield": {
-                        "href": "https://watch.auth.api.espn.com/video/auth/media/d8636bdd-8e42-4e33-bf64-4698b202aab7/asset"
-                      }
-                    }
-                  },
-                  "HD": {
-                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc_720p30_2896k.mp4"
-                  },
-                  "full": {
-                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/0602/58781c6d-24b0-46a4-aa07-b4a279a728dc/58781c6d-24b0-46a4-aa07-b4a279a728dc_360p30_1464k.mp4"
-                  }
-                },
-                "sportscenter": {
-                  "href": "sportscenter://x-callback-url/showVideo?videoID=45437309&videoDSI=31619ba897e0e"
-                }
-              },
-              "ad": {
-                "sport": "softball",
-                "bundle": "sportscenter"
-              },
-              "tracking": {
-                "sportName": "softball",
-                "leagueName": "No League",
-                "coverageType": "Final Game Highlight",
-                "trackingName": "SBALL_One-Play (Tennessee vs. Texas: Game Highlights) 2025/06/02 ESHEET",
-                "trackingId": "dm_20250602_SOFTBALL_tennessee_vs_texas_game_highlights"
-              }
-            }
-          ],
+          "highlights": [],
           "headlines": []
         }
       ],
-      "uid": "s:1~l:102~e:401774561",
-      "name": "Tennessee Lady Volunteers at Texas Longhorns",
-      "shortName": "TENN @ TEX",
+      "uid": "s:1~l:102~e:401774565",
+      "name": "Texas Tech Red Raiders at Texas Longhorns",
+      "shortName": "TTU @ TEX",
       "season": {
         "year": 2025,
-        "type": 5,
-        "slug": "world-series"
+        "type": 6,
+        "slug": "championship-series"
       },
       "links": [
         {
           "language": "en-US",
           "shortText": "Gamecast",
-          "href": "https://www.espn.com/college-softball/game/_/gameId/401774561/tennessee-texas",
+          "href": "https://www.espn.com/college-softball/game/_/gameId/401774565/texas-tech-texas",
           "text": "Gamecast",
           "rel": [
             "summary",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Box Score",
-          "href": "https://www.espn.com/college-softball/boxscore/_/gameId/401774561",
-          "text": "Box Score",
-          "rel": [
-            "boxscore",
-            "desktop",
-            "event"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Highlights",
-          "href": "https://www.espn.com/college-softball/video?gameId=401774561",
-          "text": "Highlights",
-          "rel": [
-            "highlights",
-            "desktop"
-          ],
-          "isExternal": false,
-          "isPremium": false
-        },
-        {
-          "language": "en-US",
-          "shortText": "Play-by-Play",
-          "href": "https://www.espn.com/college-softball/playbyplay/_/gameId/401774561",
-          "text": "Play-by-Play",
-          "rel": [
-            "pbp",
             "desktop",
             "event"
           ],
@@ -1242,24 +384,23 @@
       ],
       "status": {
         "type": {
-          "altDetail": "Final",
-          "id": "3",
-          "name": "STATUS_FINAL",
-          "state": "post",
-          "completed": true,
-          "description": "Final",
-          "detail": "Final",
-          "shortDetail": "Final"
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "state": "pre",
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Wed, June 4th at 8:00 PM EDT",
+          "shortDetail": "6/4 - 8:00 PM EDT"
         },
-        "period": 7
+        "period": 1
       }
     }
   ],
   "season": {
-    "type": 5,
+    "type": 6,
     "year": 2025
   },
   "day": {
-    "date": "2025-06-02"
+    "date": "2025-06-04"
   }
 }

@@ -394,6 +394,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/common/v3/sports/golf/athletes/{athleteId}/stats:
+    get:
+      summary: Get Golf Athlete Statistics
+      description: Retrieve detailed career statistics for a specific golf athlete
+      operationId: getGolfAthleteStats
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          description: Golf athlete ID
+          schema:
+            type: integer
+        - name: season
+          in: query
+          required: false
+          description: Season year
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GolfAthleteStatsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /apis/site/v3/sports/{sport}/{league}/leaders:
     get:
       summary: Get League Leaders
@@ -1711,6 +1743,79 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/Error'
+
+    GolfAthleteStatsResponse:
+      type: object
+      required:
+        - filters
+      properties:
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatsFilter'
+          description: Available filters for statistics
+        statistics:
+          $ref: '#/components/schemas/GolfStatistics'
+          description: Golf statistics data
+        glossary:
+          type: array
+          items:
+            $ref: '#/components/schemas/GlossaryEntry'
+          description: Definitions for statistical abbreviations
+        leaguesStats:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          description: League-specific statistics
+
+    GolfStatistics:
+      type: object
+      required:
+        - displayName
+        - labels
+        - names
+        - displayNames
+        - splits
+      properties:
+        displayName:
+          type: string
+          description: Display name for the statistics set (e.g., "2024 Season Overview")
+        labels:
+          type: array
+          items:
+            type: string
+          description: Short labels for statistics (e.g., "EVENTS", "CUTS")
+        names:
+          type: array
+          items:
+            type: string
+          description: Full names for statistics (e.g., "Tournaments Played")
+        displayNames:
+          type: array
+          items:
+            type: string
+          description: Display names for statistics (e.g., "Tournaments played")
+        splits:
+          type: array
+          items:
+            $ref: '#/components/schemas/GolfStatSplit'
+          description: Statistical splits
+
+    GolfStatSplit:
+      type: object
+      required:
+        - displayName
+        - stats
+      properties:
+        displayName:
+          type: string
+          description: Split display name (e.g., "2024")
+        stats:
+          type: array
+          items:
+            type: string
+          description: Statistical values as strings
 
     CareerStatistics:
       type: object

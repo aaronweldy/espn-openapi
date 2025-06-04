@@ -12,7 +12,7 @@
       "displayName": "Series"
     },
     {
-      "totalFound": 121285,
+      "totalFound": 121300,
       "type": "article",
       "displayName": "Articles"
     },
@@ -22,7 +22,7 @@
       "displayName": "On Demand"
     },
     {
-      "totalFound": 290,
+      "totalFound": 291,
       "type": "clips",
       "displayName": "Clips"
     }
@@ -551,6 +551,37 @@
       "displayName": "Clips",
       "contents": [
         {
+          "duration": 71000,
+          "displayDuration": "1:11",
+          "timeRestrictions": {
+            "embargoDate": "2025-06-03T15:56:53.000+00:00",
+            "expirationDate": "2037-09-30T11:00:00.000+00:00"
+          },
+          "deviceRestrictions": {
+            "type": "whitelist",
+            "devices": [
+              "desktop",
+              "ipad",
+              "settop",
+              "handset",
+              "tablet"
+            ]
+          },
+          "id": "45442484",
+          "type": "vod",
+          "displayName": "Who are the other sporting owners of soccer teams?",
+          "link": {
+            "app": "sportscenter://x-callback-url/showVideo?videoID=45442484",
+            "web": "https://www.espn.com/video/clip/_/id/45442484"
+          },
+          "guid": "45442484",
+          "subtitle": "As Peyton Manning joins the ownership group of the new NWSL franchise in Denver, who are the other sporting owners of soccer teams?",
+          "image": {
+            "default": "https://a.espncdn.com/media/motion/2025/0603/dm_250603_Who_are_the_other_sporting_owners_of_soccer_teams3F/dm_250603_Who_are_the_other_sporting_owners_of_soccer_teams3F.jpg"
+          },
+          "date": "2025-06-03T15:56:53+00:00"
+        },
+        {
           "duration": 53000,
           "displayDuration": "0:53",
           "timeRestrictions": {
@@ -580,37 +611,6 @@
             "default": "https://a.espncdn.com/media/motion/2024/1118/dm_241118_dm_nfl_mbros_belichick_on_brady_rev1/dm_241118_dm_nfl_mbros_belichick_on_brady_rev1.jpg"
           },
           "date": "2024-11-19T03:13:30+00:00"
-        },
-        {
-          "duration": 144000,
-          "displayDuration": "2:24",
-          "timeRestrictions": {
-            "embargoDate": "2024-09-30T18:16:21.000+00:00",
-            "expirationDate": "2025-10-03T18:16:21.000+00:00"
-          },
-          "deviceRestrictions": {
-            "type": "whitelist",
-            "devices": [
-              "desktop",
-              "ipad",
-              "settop",
-              "handset",
-              "tablet"
-            ]
-          },
-          "id": "41533806",
-          "type": "vod",
-          "displayName": "Bill Belichick to McAfee: Tom Brady and I were a good match on Pats",
-          "link": {
-            "app": "sportscenter://x-callback-url/showVideo?videoID=41533806",
-            "web": "https://www.espn.com/video/clip/_/id/41533806"
-          },
-          "guid": "41533806",
-          "subtitle": "Bill Belichick tells Pat McAfee that Tom Brady was a great match for the Patriots' winning culture.",
-          "image": {
-            "default": "https://a.espncdn.com/media/motion/2024/0930/dm_240930_Bill_Belichick_Tom_Brady_Pats/dm_240930_Bill_Belichick_Tom_Brady_Pats.jpg"
-          },
-          "date": "2024-09-30T18:16:21+00:00"
         }
       ]
     }

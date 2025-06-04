@@ -1017,32 +1017,6 @@
       "injuries": []
     },
     {
-      "id": "28968",
-      "displayName": "Carlos Carrasco",
-      "firstName": "Carlos",
-      "lastName": "Carrasco",
-      "weight": 224.0,
-      "height": 76.0,
-      "age": 38,
-      "team": {
-        "id": "10",
-        "displayName": "New York Yankees",
-        "abbreviation": "NYY"
-      },
-      "jersey": "59",
-      "position": {
-        "abbreviation": "SP"
-      },
-      "status": {
-        "type": "active"
-      },
-      "alternateIds": {
-        "mlbam": "471911",
-        "sdr": "2291980"
-      },
-      "injuries": []
-    },
-    {
       "id": "28976",
       "displayName": "Max Scherzer",
       "firstName": "Max",
@@ -1073,9 +1047,9 @@
       },
       "injuries": [
         {
-          "id": "965692",
+          "id": "966521",
           "status": "60-Day-IL",
-          "date": "2025-05-30T19:45:00+00:00",
+          "date": "2025-06-03T20:47:00+00:00",
           "type": {
             "id": "11",
             "description": "60-day IL"
@@ -1386,9 +1360,54 @@
         "sdr": "2153228"
       },
       "injuries": []
+    },
+    {
+      "id": "29551",
+      "displayName": "Jason Heyward",
+      "firstName": "Jason",
+      "lastName": "Heyward",
+      "weight": 240.0,
+      "height": 77.0,
+      "age": 35,
+      "team": {
+        "id": "25",
+        "displayName": "San Diego Padres",
+        "abbreviation": "SD"
+      },
+      "jersey": "22",
+      "position": {
+        "abbreviation": "LF"
+      },
+      "draft": {
+        "round": 1,
+        "year": 2007,
+        "selection": 14
+      },
+      "status": {
+        "type": "injured"
+      },
+      "alternateIds": {
+        "mlbam": "518792",
+        "sdr": "2271015"
+      },
+      "injuries": [
+        {
+          "id": "-152094",
+          "status": "10-Day-IL",
+          "date": "2025-05-24T19:58:00+00:00",
+          "type": {
+            "id": "14",
+            "description": "10-day IL"
+          },
+          "details": {
+            "type": "Oblique",
+            "returnDate": "2025-06-03"
+          }
+        }
+      ]
     }
   ],
-  "count": 6630,
+  "count": 6629,
   "pageIndex": 1,
   "pageSize": 50,
   "pageCount": 133
