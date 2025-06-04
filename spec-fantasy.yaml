@@ -226,6 +226,15 @@ paths:
             type: string
             enum: [kona_player_info, mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, players_wl, allon]
             example: "kona_player_info"
+        - name: scoringPeriodId
+          in: query
+          required: false
+          description: |
+            The scoring period (week) to get player data for.
+            Use 0 for preseason/current data. Used with players_wl view to get ownership percentages.
+          schema:
+            type: integer
+            example: 0
         - name: X-Fantasy-Filter
           in: header
           required: false
@@ -280,6 +289,67 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FantasySeasonResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /apis/v3/games/ffl/seasons/{year}/segments/{segment}/leaguedefaults/{scoringPeriodId}:
+    get:
+      summary: Get Fantasy Player Details with Defaults
+      description: |
+        Retrieve detailed fantasy player information with league default settings.
+        This endpoint returns player data with additional fantasy-specific information
+        like draft values, keeper values, and ratings.
+      operationId: getFantasyPlayerDefaults
+      parameters:
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: integer
+            example: 2025
+        - name: segment
+          in: path
+          required: true
+          description: The league segment (0 for regular season)
+          schema:
+            type: integer
+            example: 0
+        - name: scoringPeriodId
+          in: path
+          required: true
+          description: The scoring period ID (use 1 for standard PPR leagues)
+          schema:
+            type: integer
+            example: 1
+        - name: view
+          in: query
+          required: false
+          description: The data view to retrieve
+          schema:
+            type: string
+            enum: [kona_player_info]
+            example: "kona_player_info"
+        - name: X-Fantasy-Filter
+          in: header
+          required: false
+          description: |
+            JSON filter for player limits and other criteria.
+            Note: When using limit, you must also provide a sort criteria.
+          schema:
+            type: string
+            example: '{"players":{"limit":50,"sortDraftRanks":{"sortPriority":100,"sortAsc":true,"value":"STANDARD"}}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FantasyPlayerDefaultsResponse'
         '400':
           description: Bad request
           content:
@@ -1381,4 +1451,57 @@ components:
           description: Whether stats are official
         validForLocking:
           type: boolean
-          description: Whether game is valid for lineup locking 
+          description: Whether game is valid for lineup locking
+
+    FantasyPlayerDefaultsResponse:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Player entry ID
+              draftAuctionValue:
+                type: number
+                description: Auction draft value
+              keeperValue:
+                type: number
+                description: Keeper league value
+              keeperValueFuture:
+                type: number
+                description: Future keeper value
+              lineupLocked:
+                type: boolean
+                description: Whether player is locked in lineup
+              onTeamId:
+                type: integer
+                description: Team ID player is on (0 if free agent)
+              player:
+                $ref: '#/components/schemas/FantasyPlayer'
+              ratings:
+                type: object
+                description: Player ratings by period
+                additionalProperties:
+                  type: object
+                  properties:
+                    positionalRanking:
+                      type: number
+                    totalRanking:
+                      type: number
+                    totalRating:
+                      type: number
+              rosterLocked:
+                type: boolean
+                description: Whether player is locked on roster
+              status:
+                type: string
+                description: Player status
+              tradeLocked:
+                type: boolean
+                description: Whether player is locked from trades
+              waiverProcessDate:
+                type: integer
+                description: Waiver process date timestamp 

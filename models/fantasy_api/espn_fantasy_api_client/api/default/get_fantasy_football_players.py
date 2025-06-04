@@ -15,6 +15,7 @@ def _get_kwargs(
     year: int,
     *,
     view: Union[Unset, GetFantasyFootballPlayersView] = UNSET,
+    scoring_period_id: Union[Unset, int] = UNSET,
     x_fantasy_filter: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
     headers: Dict[str, Any] = {}
@@ -28,6 +29,8 @@ def _get_kwargs(
         json_view = view.value
 
     params["view"] = json_view
+
+    params["scoringPeriodId"] = scoring_period_id
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -79,6 +82,7 @@ def sync_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     view: Union[Unset, GetFantasyFootballPlayersView] = UNSET,
+    scoring_period_id: Union[Unset, int] = UNSET,
     x_fantasy_filter: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
@@ -92,6 +96,7 @@ def sync_detailed(
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
+        scoring_period_id (Union[Unset, int]):
         x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
@@ -105,6 +110,7 @@ def sync_detailed(
     kwargs = _get_kwargs(
         year=year,
         view=view,
+        scoring_period_id=scoring_period_id,
         x_fantasy_filter=x_fantasy_filter,
     )
 
@@ -120,6 +126,7 @@ def sync(
     *,
     client: Union[AuthenticatedClient, Client],
     view: Union[Unset, GetFantasyFootballPlayersView] = UNSET,
+    scoring_period_id: Union[Unset, int] = UNSET,
     x_fantasy_filter: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
@@ -133,6 +140,7 @@ def sync(
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
+        scoring_period_id (Union[Unset, int]):
         x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
@@ -147,6 +155,7 @@ def sync(
         year=year,
         client=client,
         view=view,
+        scoring_period_id=scoring_period_id,
         x_fantasy_filter=x_fantasy_filter,
     ).parsed
 
@@ -156,6 +165,7 @@ async def asyncio_detailed(
     *,
     client: Union[AuthenticatedClient, Client],
     view: Union[Unset, GetFantasyFootballPlayersView] = UNSET,
+    scoring_period_id: Union[Unset, int] = UNSET,
     x_fantasy_filter: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
@@ -169,6 +179,7 @@ async def asyncio_detailed(
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
+        scoring_period_id (Union[Unset, int]):
         x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
@@ -182,6 +193,7 @@ async def asyncio_detailed(
     kwargs = _get_kwargs(
         year=year,
         view=view,
+        scoring_period_id=scoring_period_id,
         x_fantasy_filter=x_fantasy_filter,
     )
 
@@ -195,6 +207,7 @@ async def asyncio(
     *,
     client: Union[AuthenticatedClient, Client],
     view: Union[Unset, GetFantasyFootballPlayersView] = UNSET,
+    scoring_period_id: Union[Unset, int] = UNSET,
     x_fantasy_filter: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, List["FantasyPlayer"]]]:
     """Get Fantasy Football Players
@@ -208,6 +221,7 @@ async def asyncio(
     Args:
         year (int):  Example: 2024.
         view (Union[Unset, GetFantasyFootballPlayersView]):  Example: kona_player_info.
+        scoring_period_id (Union[Unset, int]):
         x_fantasy_filter (Union[Unset, str]):  Example: {"players":{"limit":3000}}.
 
     Raises:
@@ -223,6 +237,7 @@ async def asyncio(
             year=year,
             client=client,
             view=view,
+            scoring_period_id=scoring_period_id,
             x_fantasy_filter=x_fantasy_filter,
         )
     ).parsed

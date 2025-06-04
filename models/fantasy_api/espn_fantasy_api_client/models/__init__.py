@@ -7,6 +7,12 @@ from .error_response import ErrorResponse
 from .error_response_error import ErrorResponseError
 from .fantasy_league_response import FantasyLeagueResponse
 from .fantasy_player import FantasyPlayer
+from .fantasy_player_defaults_response import FantasyPlayerDefaultsResponse
+from .fantasy_player_defaults_response_players_item import FantasyPlayerDefaultsResponsePlayersItem
+from .fantasy_player_defaults_response_players_item_ratings import FantasyPlayerDefaultsResponsePlayersItemRatings
+from .fantasy_player_defaults_response_players_item_ratings_additional_property import (
+    FantasyPlayerDefaultsResponsePlayersItemRatingsAdditionalProperty,
+)
 from .fantasy_player_draft_ranks_by_rank_type import FantasyPlayerDraftRanksByRankType
 from .fantasy_player_stats import FantasyPlayerStats
 from .fantasy_player_stats_stats import FantasyPlayerStatsStats
@@ -28,6 +34,7 @@ from .get_fantasy_football_league_view import GetFantasyFootballLeagueView
 from .get_fantasy_football_players_view import GetFantasyFootballPlayersView
 from .get_fantasy_football_season_view import GetFantasyFootballSeasonView
 from .get_fantasy_football_team_view import GetFantasyFootballTeamView
+from .get_fantasy_player_defaults_view import GetFantasyPlayerDefaultsView
 from .league_communication import LeagueCommunication
 from .league_enum import LeagueEnum
 from .league_member import LeagueMember
@@ -75,6 +82,10 @@ __all__ = (
     "ErrorResponseError",
     "FantasyLeagueResponse",
     "FantasyPlayer",
+    "FantasyPlayerDefaultsResponse",
+    "FantasyPlayerDefaultsResponsePlayersItem",
+    "FantasyPlayerDefaultsResponsePlayersItemRatings",
+    "FantasyPlayerDefaultsResponsePlayersItemRatingsAdditionalProperty",
     "FantasyPlayerDraftRanksByRankType",
     "FantasyPlayerStats",
     "FantasyPlayerStatsStats",
@@ -90,6 +101,7 @@ __all__ = (
     "GetFantasyFootballPlayersView",
     "GetFantasyFootballSeasonView",
     "GetFantasyFootballTeamView",
+    "GetFantasyPlayerDefaultsView",
     "LeagueCommunication",
     "LeagueEnum",
     "LeagueMember",
