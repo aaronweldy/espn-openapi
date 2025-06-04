@@ -226,6 +226,72 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /apis/v2/flex:
+    get:
+      summary: Get Contributor Posts
+      description: Retrieve contributor posts and content in a flexible layout format
+      operationId: getContributorPosts
+      parameters:
+        - name: region
+          in: query
+          required: false
+          description: Region code (e.g., us)
+          schema:
+            type: string
+            default: us
+        - name: lang
+          in: query
+          required: false
+          description: Language code (e.g., en)
+          schema:
+            type: string
+            default: en
+        - name: contentorigin
+          in: query
+          required: false
+          description: Content origin (e.g., espn)
+          schema:
+            type: string
+            default: espn
+        - name: contributor
+          in: query
+          required: false
+          description: Contributor slug or identifier (e.g., adam-schefter)
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of items to return
+          schema:
+            type: integer
+            default: 10
+        - name: pubkey
+          in: query
+          required: false
+          description: Publication key filter
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlexResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '1008':
+          description: Script error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /apis/common/v3/sports/football/nfl/athletes/{athleteId}:
     get:
       tags:
@@ -1743,6 +1809,242 @@ components:
       properties:
         error:
           $ref: '#/components/schemas/Error'
+
+    FlexResponse:
+      type: object
+      required:
+        - columns
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexColumn'
+          description: Layout columns containing content items
+
+    FlexColumn:
+      type: object
+      required:
+        - name
+        - description
+        - items
+      properties:
+        name:
+          type: string
+          description: Column identifier (e.g., leftcolumn, middlecolumn, rightcolumn)
+        description:
+          type: string
+          description: Human-readable column description
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexItem'
+          description: Content items in this column
+
+    FlexItem:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: Item type (e.g., contributor-page)
+        contributor:
+          $ref: '#/components/schemas/ContributorInfo'
+        count:
+          type: integer
+          description: Total number of feed items
+        pageSize:
+          type: integer
+          description: Number of items per page
+        cursor:
+          type: string
+          description: Pagination cursor
+        feed:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedItem'
+          description: Array of content feed items
+
+    ContributorInfo:
+      type: object
+      properties:
+        id:
+          type: string
+        ids:
+          $ref: '#/components/schemas/ContributorIds'
+        type:
+          type: string
+        displayName:
+          type: string
+        biography:
+          type: string
+        sourceLine:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexImage'
+        social:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialLink'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexLink'
+
+    ContributorIds:
+      type: object
+      properties:
+        now:
+          type: string
+        cms:
+          type: string
+        slug:
+          type: string
+        guid:
+          type: string
+
+    FeedItem:
+      type: object
+      required:
+        - id
+        - type
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          description: Content type (e.g., shortstop)
+        ids:
+          type: object
+          additionalProperties:
+            type: string
+        dates:
+          $ref: '#/components/schemas/FeedItemDates'
+        descriptions:
+          $ref: '#/components/schemas/FeedItemDescriptions'
+        payload:
+          type: string
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexImage'
+        contributors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContributorInfo'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedCategory'
+        attributes:
+          type: object
+          additionalProperties:
+            type: object
+        locales:
+          type: array
+          items:
+            type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexLink'
+
+    FeedItemDates:
+      type: object
+      properties:
+        created:
+          type: string
+          format: date-time
+        modified:
+          type: string
+          format: date-time
+        processed:
+          type: string
+          format: date-time
+
+    FeedItemDescriptions:
+      type: object
+      properties:
+        headline:
+          type: string
+        title:
+          type: string
+
+    FeedCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        description:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexLink'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlexImage'
+        sport:
+          type: string
+        league:
+          type: string
+        uid:
+          type: string
+        color:
+          type: string
+        alternateColor:
+          type: string
+        subText:
+          type: string
+
+    FlexImage:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        rels:
+          type: array
+          items:
+            type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        attributes:
+          type: object
+          additionalProperties:
+            type: object
+
+    FlexLink:
+      type: object
+      properties:
+        rels:
+          type: array
+          items:
+            type: string
+        href:
+          type: string
+          format: uri
+        locale:
+          type: string
+
+    SocialLink:
+      type: object
+      properties:
+        label:
+          type: string
+        icon:
+          type: string
+          format: uri
+        href:
+          type: string
+          format: uri
 
     GolfAthleteStatsResponse:
       type: object

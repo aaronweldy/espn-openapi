@@ -2295,7 +2295,7 @@
           "neutralSite": false,
           "conferenceCompetition": false,
           "playByPlayAvailable": true,
-          "recent": true,
+          "recent": false,
           "venue": {
             "id": "2029",
             "fullName": "Target Center",
@@ -2709,17 +2709,20 @@
         {
           "situation": {
             "lastPlay": {
-              "id": "401736158295",
+              "id": "401736158453",
               "type": {
-                "id": "412",
-                "text": "End Period"
+                "id": "156",
+                "text": "Offensive Rebound"
               },
-              "text": "End of the 2nd Quarter",
+              "text": "Wings offensive team rebound",
               "scoreValue": 0,
+              "team": {
+                "id": "3"
+              },
               "probability": {
                 "tiePercentage": 0.0,
-                "homeWinPercentage": 0.28,
-                "awayWinPercentage": 0.72
+                "homeWinPercentage": 0.318,
+                "awayWinPercentage": 0.6819999999999999
               }
             }
           },
@@ -2735,13 +2738,13 @@
                   "abbreviation": "Pts",
                   "leaders": [
                     {
-                      "displayValue": "7",
-                      "value": 7.0,
+                      "displayValue": "11",
+                      "value": 11.0,
                       "athlete": {
-                        "id": "4432832",
-                        "fullName": "Zia Cooke",
-                        "displayName": "Zia Cooke",
-                        "shortName": "Z. Cooke",
+                        "id": "1068",
+                        "fullName": "Nneka Ogwumike",
+                        "displayName": "Nneka Ogwumike",
+                        "shortName": "N. Ogwumike",
                         "links": [
                           {
                             "rel": [
@@ -2749,13 +2752,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/4432832/zia-cooke"
+                            "href": "https://www.espn.com/wnba/player/_/id/1068/nneka-ogwumike"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4432832.png",
-                        "jersey": "7",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/1068.png",
+                        "jersey": "3",
                         "position": {
-                          "abbreviation": "G"
+                          "abbreviation": "F"
                         },
                         "team": {
                           "id": "14"
@@ -2775,8 +2778,8 @@
                   "abbreviation": "Reb",
                   "leaders": [
                     {
-                      "displayValue": "3",
-                      "value": 3.0,
+                      "displayValue": "7",
+                      "value": 7.0,
                       "athlete": {
                         "id": "1068",
                         "fullName": "Nneka Ogwumike",
@@ -2815,13 +2818,13 @@
                   "abbreviation": "Ast",
                   "leaders": [
                     {
-                      "displayValue": "4",
-                      "value": 4.0,
+                      "displayValue": "5",
+                      "value": 5.0,
                       "athlete": {
-                        "id": "2491205",
-                        "fullName": "Skylar Diggins",
-                        "displayName": "Skylar Diggins",
-                        "shortName": "S. Diggins",
+                        "id": "2491214",
+                        "fullName": "Erica Wheeler",
+                        "displayName": "Erica Wheeler",
+                        "shortName": "E. Wheeler",
                         "links": [
                           {
                             "rel": [
@@ -2829,11 +2832,11 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/2491205/skylar-diggins"
+                            "href": "https://www.espn.com/wnba/player/_/id/2491214/erica-wheeler"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/2491205.png",
-                        "jersey": "4",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/2491214.png",
+                        "jersey": "17",
                         "position": {
                           "abbreviation": "G"
                         },
@@ -2855,8 +2858,8 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "5 BLK",
-                      "value": 11.800000190734863,
+                      "displayValue": "7 PTS, 5 BLK",
+                      "value": 21.649999618530273,
                       "athlete": {
                         "id": "4420318",
                         "fullName": "Ezi Magbegor",
@@ -2968,7 +2971,7 @@
                   }
                 ]
               },
-              "score": "30",
+              "score": "56",
               "linescores": [
                 {
                   "displayValue": "19",
@@ -2979,13 +2982,23 @@
                   "displayValue": "11",
                   "period": 2,
                   "value": 11.0
+                },
+                {
+                  "displayValue": "24",
+                  "period": 3,
+                  "value": 24.0
+                },
+                {
+                  "displayValue": "2",
+                  "period": 4,
+                  "value": 2.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "REB",
                   "name": "rebounds",
-                  "displayValue": "17"
+                  "displayValue": "26"
                 },
                 {
                   "abbreviation": "REB",
@@ -2995,57 +3008,57 @@
                 {
                   "abbreviation": "AST",
                   "name": "assists",
-                  "displayValue": "10"
+                  "displayValue": "17"
                 },
                 {
                   "abbreviation": "FGA",
                   "name": "fieldGoalsAttempted",
-                  "displayValue": "33"
+                  "displayValue": "50"
                 },
                 {
                   "abbreviation": "FGM",
                   "name": "fieldGoalsMade",
-                  "displayValue": "12"
+                  "displayValue": "22"
                 },
                 {
                   "abbreviation": "FG%",
                   "name": "fieldGoalPct",
-                  "displayValue": "36.4"
+                  "displayValue": "44.0"
                 },
                 {
                   "abbreviation": "FT%",
                   "name": "freeThrowPct",
-                  "displayValue": "33.3"
+                  "displayValue": "60.0"
                 },
                 {
                   "abbreviation": "FTA",
                   "name": "freeThrowsAttempted",
-                  "displayValue": "3"
+                  "displayValue": "10"
                 },
                 {
                   "abbreviation": "FTM",
                   "name": "freeThrowsMade",
-                  "displayValue": "1"
+                  "displayValue": "6"
                 },
                 {
                   "abbreviation": "PTS",
                   "name": "points",
-                  "displayValue": "30"
+                  "displayValue": "56"
                 },
                 {
                   "abbreviation": "3P%",
                   "name": "threePointPct",
-                  "displayValue": "45.5"
+                  "displayValue": "35.3"
                 },
                 {
                   "abbreviation": "3PA",
                   "name": "threePointFieldGoalsAttempted",
-                  "displayValue": "11"
+                  "displayValue": "17"
                 },
                 {
                   "abbreviation": "3PM",
                   "name": "threePointFieldGoalsMade",
-                  "displayValue": "5"
+                  "displayValue": "6"
                 },
                 {
                   "abbreviation": "PTS",
@@ -3060,7 +3073,7 @@
                 {
                   "abbreviation": "3P%",
                   "name": "threePointFieldGoalPct",
-                  "displayValue": "45.5"
+                  "displayValue": "35.3"
                 }
               ],
               "records": [
@@ -3091,8 +3104,8 @@
                   "abbreviation": "Pts",
                   "leaders": [
                     {
-                      "displayValue": "12",
-                      "value": 12.0,
+                      "displayValue": "20",
+                      "value": 20.0,
                       "athlete": {
                         "id": "4066548",
                         "fullName": "DiJonai Carrington",
@@ -3134,10 +3147,10 @@
                       "displayValue": "7",
                       "value": 7.0,
                       "athlete": {
-                        "id": "4399415",
-                        "fullName": "Maddy Siegrist",
-                        "displayName": "Maddy Siegrist",
-                        "shortName": "M. Siegrist",
+                        "id": "4066548",
+                        "fullName": "DiJonai Carrington",
+                        "displayName": "DiJonai Carrington",
+                        "shortName": "D. Carrington",
                         "links": [
                           {
                             "rel": [
@@ -3145,13 +3158,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/4399415/maddy-siegrist"
+                            "href": "https://www.espn.com/wnba/player/_/id/4066548/dijonai-carrington"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4399415.png",
-                        "jersey": "20",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/4066548.png",
+                        "jersey": "21",
                         "position": {
-                          "abbreviation": "F"
+                          "abbreviation": "G"
                         },
                         "team": {
                           "id": "3"
@@ -3171,13 +3184,13 @@
                   "abbreviation": "Ast",
                   "leaders": [
                     {
-                      "displayValue": "2",
-                      "value": 2.0,
+                      "displayValue": "3",
+                      "value": 3.0,
                       "athlete": {
-                        "id": "3904577",
-                        "fullName": "Arike Ogunbowale",
-                        "displayName": "Arike Ogunbowale",
-                        "shortName": "A. Ogunbowale",
+                        "id": "3142055",
+                        "fullName": "Myisha Hines-Allen",
+                        "displayName": "Myisha Hines-Allen",
+                        "shortName": "M. Hines-Allen",
                         "links": [
                           {
                             "rel": [
@@ -3185,13 +3198,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/wnba/player/_/id/3904577/arike-ogunbowale"
+                            "href": "https://www.espn.com/wnba/player/_/id/3142055/myisha-hines-allen"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/3904577.png",
-                        "jersey": "24",
+                        "headshot": "https://a.espncdn.com/i/headshots/wnba/players/full/3142055.png",
+                        "jersey": "2",
                         "position": {
-                          "abbreviation": "G"
+                          "abbreviation": "F"
                         },
                         "team": {
                           "id": "3"
@@ -3211,8 +3224,8 @@
                   "abbreviation": "RAT",
                   "leaders": [
                     {
-                      "displayValue": "12 PTS, 6 REB",
-                      "value": 19.549999237060547,
+                      "displayValue": "20 PTS, 7 REB",
+                      "value": 31.0,
                       "athlete": {
                         "id": "4066548",
                         "fullName": "DiJonai Carrington",
@@ -3324,7 +3337,7 @@
                   }
                 ]
               },
-              "score": "38",
+              "score": "59",
               "linescores": [
                 {
                   "displayValue": "20",
@@ -3335,13 +3348,23 @@
                   "displayValue": "18",
                   "period": 2,
                   "value": 18.0
+                },
+                {
+                  "displayValue": "17",
+                  "period": 3,
+                  "value": 17.0
+                },
+                {
+                  "displayValue": "4",
+                  "period": 4,
+                  "value": 4.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "REB",
                   "name": "rebounds",
-                  "displayValue": "30"
+                  "displayValue": "38"
                 },
                 {
                   "abbreviation": "REB",
@@ -3351,22 +3374,22 @@
                 {
                   "abbreviation": "AST",
                   "name": "assists",
-                  "displayValue": "9"
+                  "displayValue": "15"
                 },
                 {
                   "abbreviation": "FGA",
                   "name": "fieldGoalsAttempted",
-                  "displayValue": "46"
+                  "displayValue": "65"
                 },
                 {
                   "abbreviation": "FGM",
                   "name": "fieldGoalsMade",
-                  "displayValue": "14"
+                  "displayValue": "23"
                 },
                 {
                   "abbreviation": "FG%",
                   "name": "fieldGoalPct",
-                  "displayValue": "30.4"
+                  "displayValue": "35.4"
                 },
                 {
                   "abbreviation": "FT%",
@@ -3376,32 +3399,32 @@
                 {
                   "abbreviation": "FTA",
                   "name": "freeThrowsAttempted",
-                  "displayValue": "9"
+                  "displayValue": "12"
                 },
                 {
                   "abbreviation": "FTM",
                   "name": "freeThrowsMade",
-                  "displayValue": "6"
+                  "displayValue": "8"
                 },
                 {
                   "abbreviation": "PTS",
                   "name": "points",
-                  "displayValue": "38"
+                  "displayValue": "59"
                 },
                 {
                   "abbreviation": "3P%",
                   "name": "threePointPct",
-                  "displayValue": "30.8"
+                  "displayValue": "27.8"
                 },
                 {
                   "abbreviation": "3PA",
                   "name": "threePointFieldGoalsAttempted",
-                  "displayValue": "13"
+                  "displayValue": "18"
                 },
                 {
                   "abbreviation": "3PM",
                   "name": "threePointFieldGoalsMade",
-                  "displayValue": "4"
+                  "displayValue": "5"
                 },
                 {
                   "abbreviation": "PTS",
@@ -3416,7 +3439,7 @@
                 {
                   "abbreviation": "3P%",
                   "name": "threePointFieldGoalPct",
-                  "displayValue": "30.8"
+                  "displayValue": "27.8"
                 }
               ],
               "records": [
@@ -3440,7 +3463,7 @@
             }
           ],
           "uid": "s:40~l:59~e:401736158~c:401736158",
-          "attendance": 0,
+          "attendance": 10252,
           "type": {
             "id": "1",
             "abbreviation": "STD"
@@ -3468,17 +3491,17 @@
           ],
           "status": {
             "type": {
-              "id": "23",
-              "name": "STATUS_HALFTIME",
+              "id": "2",
+              "name": "STATUS_IN_PROGRESS",
               "state": "in",
               "completed": false,
-              "description": "Halftime",
-              "detail": "Halftime",
-              "shortDetail": "Halftime"
+              "description": "In Progress",
+              "detail": "8:12 - 4th Quarter",
+              "shortDetail": "8:12 - 4th"
             },
-            "clock": 0.0,
-            "displayClock": "0.0",
-            "period": 2
+            "clock": 492.0,
+            "displayClock": "8:12",
+            "period": 4
           },
           "broadcasts": [
             {
@@ -3588,17 +3611,17 @@
       ],
       "status": {
         "type": {
-          "id": "23",
-          "name": "STATUS_HALFTIME",
+          "id": "2",
+          "name": "STATUS_IN_PROGRESS",
           "state": "in",
           "completed": false,
-          "description": "Halftime",
-          "detail": "Halftime",
-          "shortDetail": "Halftime"
+          "description": "In Progress",
+          "detail": "8:12 - 4th Quarter",
+          "shortDetail": "8:12 - 4th"
         },
-        "clock": 0.0,
-        "displayClock": "0.0",
-        "period": 2
+        "clock": 492.0,
+        "displayClock": "8:12",
+        "period": 4
       }
     }
   ],

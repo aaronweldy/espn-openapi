@@ -235,7 +235,7 @@
             },
             {
               "name": "divisionPercent",
-              "value": 1.2999999523162842
+              "value": 1.0
             },
             {
               "name": "divisionTied",
@@ -263,7 +263,7 @@
             },
             {
               "name": "playoffPercent",
-              "value": 14.699999809265137
+              "value": 12.600000381469727
             },
             {
               "name": "roadLosses",
@@ -279,7 +279,7 @@
             },
             {
               "name": "wildCardPercent",
-              "value": 13.399999618530273
+              "value": 11.600000381469727
             }
           ]
         },
@@ -1733,6 +1733,19 @@
             "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401695802",
             "text": "Gamecast",
             "shortText": "Gamecast",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-US",
+            "rel": [
+              "recap",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/mlb/recap?gameId=401695802",
+            "text": "Recap",
+            "shortText": "Recap",
             "isExternal": false,
             "isPremium": false
           },

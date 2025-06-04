@@ -29,6 +29,8 @@ from .career_statistics import CareerStatistics
 from .career_statistics_categories_item import CareerStatisticsCategoriesItem
 from .career_statistics_splits_item import CareerStatisticsSplitsItem
 from .college import College
+from .contributor_ids import ContributorIds
+from .contributor_info import ContributorInfo
 from .draft import Draft
 from .error import Error
 from .error_response import ErrorResponse
@@ -87,8 +89,22 @@ from .fantasy_venue import FantasyVenue
 from .fantasy_venue_address import FantasyVenueAddress
 from .fantasy_weather import FantasyWeather
 from .fantasy_weather_link import FantasyWeatherLink
+from .feed_category import FeedCategory
+from .feed_item import FeedItem
+from .feed_item_attributes import FeedItemAttributes
+from .feed_item_attributes_additional_property import FeedItemAttributesAdditionalProperty
+from .feed_item_dates import FeedItemDates
+from .feed_item_descriptions import FeedItemDescriptions
+from .feed_item_ids import FeedItemIds
 from .filter_option import FilterOption
 from .flag_type_0 import FlagType0
+from .flex_column import FlexColumn
+from .flex_image import FlexImage
+from .flex_image_attributes import FlexImageAttributes
+from .flex_image_attributes_additional_property import FlexImageAttributesAdditionalProperty
+from .flex_item import FlexItem
+from .flex_link import FlexLink
+from .flex_response import FlexResponse
 from .game_event import GameEvent
 from .game_event_at_vs import GameEventAtVs
 from .game_event_game_result import GameEventGameResult
@@ -203,6 +219,7 @@ from .season_statistics import SeasonStatistics
 from .season_type import SeasonType
 from .season_type_info import SeasonTypeInfo
 from .self_link import SelfLink
+from .social_link import SocialLink
 from .sport_enum import SportEnum
 from .sport_reference import SportReference
 from .stat_category import StatCategory
@@ -274,6 +291,8 @@ __all__ = (
     "CareerStatisticsCategoriesItem",
     "CareerStatisticsSplitsItem",
     "College",
+    "ContributorIds",
+    "ContributorInfo",
     "Draft",
     "Error",
     "ErrorResponse",
@@ -332,8 +351,22 @@ __all__ = (
     "FantasyVenueAddress",
     "FantasyWeather",
     "FantasyWeatherLink",
+    "FeedCategory",
+    "FeedItem",
+    "FeedItemAttributes",
+    "FeedItemAttributesAdditionalProperty",
+    "FeedItemDates",
+    "FeedItemDescriptions",
+    "FeedItemIds",
     "FilterOption",
     "FlagType0",
+    "FlexColumn",
+    "FlexImage",
+    "FlexImageAttributes",
+    "FlexImageAttributesAdditionalProperty",
+    "FlexItem",
+    "FlexLink",
+    "FlexResponse",
     "GameEvent",
     "GameEventAtVs",
     "GameEventGameResult",
@@ -430,6 +463,7 @@ __all__ = (
     "SeasonType",
     "SeasonTypeInfo",
     "SelfLink",
+    "SocialLink",
     "SportEnum",
     "SportReference",
     "StatCategory",
