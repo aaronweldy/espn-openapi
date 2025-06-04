@@ -13,7 +13,7 @@
 - ✓ Draft rankings
 - ✓ Injury status
 - ✓ Position eligibility
-- ✓ Additional fields: dateUniverseChanged, injuryStatusOverridden, stance, invalid, universeId
+- ✓ Additional fields: dateUniverseChanged, draftedSeasonId, invalid, dualPositionEligible, injuryStatusOverridden
 
 ---
 

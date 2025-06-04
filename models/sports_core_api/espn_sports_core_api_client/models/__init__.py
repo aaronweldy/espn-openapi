@@ -257,6 +257,8 @@ from .team_odds_record import TeamOddsRecord
 from .team_odds_records_response import TeamOddsRecordsResponse
 from .team_past_performances_response import TeamPastPerformancesResponse
 from .team_record import TeamRecord
+from .team_record_item import TeamRecordItem
+from .team_record_response import TeamRecordResponse
 from .team_reference import TeamReference
 from .transactions_list_response import TransactionsListResponse
 from .transactions_list_response_items_item import TransactionsListResponseItemsItem
@@ -520,6 +522,8 @@ __all__ = (
     "TeamOddsRecordsResponse",
     "TeamPastPerformancesResponse",
     "TeamRecord",
+    "TeamRecordItem",
+    "TeamRecordResponse",
     "TeamReference",
     "TransactionsListResponse",
     "TransactionsListResponseItemsItem",

@@ -5,20 +5,20 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "stats",
-      "eligible_slots",
       "pro_team_id",
-      "default_position_id",
-      "injured",
-      "full_name",
-      "id",
+      "draft_ranks_by_rank_type",
+      "eligible_slots",
       "active",
-      "ownership",
-      "jersey",
       "first_name",
       "injury_status",
-      "draft_ranks_by_rank_type",
-      "last_name"
+      "full_name",
+      "injured",
+      "id",
+      "last_name",
+      "ownership",
+      "stats",
+      "default_position_id",
+      "jersey"
     ],
     "unique_features": [
       "General player information with ownership and draft data"
@@ -31,20 +31,20 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "stats",
-      "eligible_slots",
       "pro_team_id",
-      "default_position_id",
-      "injured",
-      "full_name",
-      "id",
+      "additional:universeId",
+      "draft_ranks_by_rank_type",
+      "eligible_slots",
       "active",
-      "ownership",
       "first_name",
       "injury_status",
-      "draft_ranks_by_rank_type",
+      "full_name",
+      "injured",
+      "id",
       "last_name",
-      "additional:universeId"
+      "ownership",
+      "stats",
+      "default_position_id"
     ],
     "unique_features": [
       "Full roster information with all player details"
@@ -57,10 +57,10 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "stats",
-      "full_name",
       "id",
-      "pro_team_id"
+      "pro_team_id",
+      "stats",
+      "full_name"
     ],
     "unique_features": [
       "Live scoring focus, may include real-time stats"
@@ -73,17 +73,17 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "eligible_slots",
       "pro_team_id",
-      "default_position_id",
-      "injured",
-      "full_name",
-      "id",
+      "additional:universeId",
+      "eligible_slots",
       "active",
       "first_name",
       "injury_status",
+      "full_name",
+      "injured",
+      "id",
       "last_name",
-      "additional:universeId"
+      "default_position_id"
     ],
     "unique_features": [
       "Matchup-specific information"
@@ -96,14 +96,14 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "stats",
-      "eligible_slots",
       "pro_team_id",
+      "additional:universeId",
+      "eligible_slots",
+      "first_name",
       "full_name",
       "id",
-      "first_name",
       "last_name",
-      "additional:universeId"
+      "stats"
     ],
     "unique_features": [
       "Detailed boxscore statistics"
@@ -116,31 +116,31 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "eligible_slots",
-      "additional:dualPositionEligible",
-      "additional:replacementId",
-      "jersey",
-      "additional:injuryStatusOverridden",
-      "draft_ranks_by_rank_type",
-      "last_name",
       "pro_team_id",
-      "default_position_id",
-      "active",
-      "additional:historicalInjuryStatus",
-      "additional:draftedSeasonId",
       "additional:universeId",
-      "additional:activationInfo",
+      "last_name",
+      "default_position_id",
+      "additional:injuryStatusOverridden",
       "additional:laterality",
+      "additional:replacementId",
+      "first_name",
+      "additional:dualPositionEligible",
+      "additional:dateUniverseChanged",
+      "draft_ranks_by_rank_type",
+      "active",
+      "injury_status",
+      "full_name",
       "injured",
       "id",
-      "first_name",
-      "additional:dateUniverseChanged",
+      "additional:stance",
+      "eligible_slots",
+      "additional:draftedSeasonId",
+      "ownership",
+      "additional:activationInfo",
       "additional:invalid",
       "stats",
-      "additional:stance",
-      "full_name",
-      "ownership",
-      "injury_status"
+      "additional:historicalInjuryStatus",
+      "jersey"
     ],
     "unique_features": [
       "Comprehensive view with all available data"
@@ -189,15 +189,15 @@
     "players_with_data": 3,
     "empty_objects": 0,
     "common_fields": [
-      "eligible_slots",
       "pro_team_id",
-      "default_position_id",
+      "additional:universeId",
+      "eligible_slots",
+      "first_name",
       "full_name",
       "id",
-      "ownership",
-      "first_name",
       "last_name",
-      "additional:universeId"
+      "ownership",
+      "default_position_id"
     ],
     "unique_features": [],
     "sample_count": 3

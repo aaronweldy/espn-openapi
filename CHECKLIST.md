@@ -248,7 +248,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance - Team Attendance. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId} - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders - Team Leaders. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId}. Query Params: limit - Implemented as generic endpoint
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/teams/{team_id}/record - NFL Team Record
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/record - Team Record. Path Params: {sport}, {league}, {year}, {seasontype}, {team_id} - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/weeks/{week}/qbr/10000 - NFL Weekly QBR
 [x] /v2/sports/{sport}/leagues/{league}/providers - Betting Providers List. Path Params: {sport}, {league}. Query Params: limit, page - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/providers/{providerId} - Betting Provider Details. Path Params: {sport}, {league}, {providerId} - Implemented as generic endpoint

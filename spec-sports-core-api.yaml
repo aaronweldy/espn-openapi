@@ -1493,6 +1493,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/record:
+    get:
+      summary: Get Team Record
+      description: Retrieve detailed record information for a specific team in a given season, including overall, home/away, division, and conference records.
+      operationId: getTeamRecord
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball, hockey)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb, nhl)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year
+          schema:
+            type: string
+            example: "2024"
+        - name: seasontype
+          in: path
+          required: true
+          description: The season type (e.g., 2 for regular season)
+          schema:
+            type: string
+            example: "2"
+        - name: teamId
+          in: path
+          required: true
+          description: The team ID or abbreviation
+          schema:
+            type: string
+            example: "12"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamRecordResponse'
+        '404':
+          description: Team or season not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders:
     get:
       summary: Get Team Leaders
@@ -9218,3 +9277,96 @@ components:
         - headline
         - text
         - source
+
+    TeamRecordResponse:
+      type: object
+      description: Response containing team record information
+      properties:
+        count:
+          type: integer
+          description: Total number of record types
+          example: 5
+        pageIndex:
+          type: integer
+          description: Current page index
+          example: 1
+        pageSize:
+          type: integer
+          description: Number of items per page
+          example: 25
+        pageCount:
+          type: integer
+          description: Total number of pages
+          example: 1
+        items:
+          type: array
+          description: List of team records (overall, home, away, division, conference, etc.)
+          items:
+            $ref: '#/components/schemas/TeamRecordItem'
+      required:
+        - count
+        - pageIndex
+        - pageSize
+        - pageCount
+        - items
+
+    TeamRecordItem:
+      type: object
+      description: Individual team record entry
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: API reference URL for this record
+        id:
+          type: string
+          description: Record type identifier
+          example: "0"
+        name:
+          type: string
+          description: Internal name of the record type
+          example: "overall"
+        displayName:
+          type: string
+          description: Display name of the record type
+          example: "Home"
+        shortDisplayName:
+          type: string
+          description: Short display name
+          example: "HOME"
+        description:
+          type: string
+          description: Description of the record type
+          example: "Home Record"
+        abbreviation:
+          type: string
+          description: Abbreviation for the record type
+          example: "Any"
+        type:
+          type: string
+          description: Type of record
+          example: "total"
+        summary:
+          type: string
+          description: Summary of the record (e.g., "15-2")
+          example: "15-2"
+        displayValue:
+          type: string
+          description: Display value of the record
+          example: "15-2"
+        value:
+          type: number
+          description: Numeric value (usually win percentage)
+          example: 0.8823529411764706
+        stats:
+          type: array
+          description: Detailed statistics for this record type
+          items:
+            $ref: '#/components/schemas/RecordStat'
+      required:
+        - id
+        - name
+        - type
+        - summary
+        - displayValue
+        - stats
