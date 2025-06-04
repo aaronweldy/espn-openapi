@@ -1783,6 +1783,65 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/status:
+    get:
+      summary: Get Draft Status
+      description: Retrieve the current status of the draft for a specific sport, league, and season. Includes the current round and draft type/state information.
+      operationId: getDraftStatus
+      parameters:
+        - name: sport
+          in: path
+          required: true
+          description: The sport key (e.g., football, basketball, baseball)
+          schema:
+            $ref: '#/components/schemas/SportEnum'
+        - name: league
+          in: path
+          required: true
+          description: The league key (e.g., nfl, nba, mlb)
+          schema:
+            $ref: '#/components/schemas/LeagueEnum'
+        - name: year
+          in: path
+          required: true
+          description: The season year (e.g., 2024)
+          schema:
+            type: integer
+            example: 2024
+        - name: lang
+          in: query
+          required: false
+          description: Language code
+          schema:
+            type: string
+            example: en
+        - name: region
+          in: query
+          required: false
+          description: Region code
+          schema:
+            type: string
+            example: us
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DraftStatusResponse'
+        '404':
+          description: Draft status not found or sport/league does not support draft
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches:
     get:
       summary: Get Season Coaches List
@@ -4132,6 +4191,51 @@ components:
         - pageSize
         - pageCount
         - items
+
+    DraftStatusResponse:
+      type: object
+      description: Draft status information including current round and type
+      properties:
+        $ref:
+          type: string
+          format: uri
+          description: API reference URL
+        round:
+          type: integer
+          description: Current draft round number
+          example: 7
+        type:
+          $ref: '#/components/schemas/DraftType'
+      required:
+        - $ref
+        - round
+        - type
+
+    DraftType:
+      type: object
+      description: Draft type information
+      properties:
+        id:
+          type: integer
+          description: Draft type ID (1=SCHEDULED, 3=COMPLETED)
+          example: 3
+        name:
+          type: string
+          description: Draft type name
+          example: "COMPLETED"
+        state:
+          type: string
+          description: Draft state (pre, post)
+          example: "post"
+        description:
+          type: string
+          description: Draft type description
+          example: "Completed"
+      required:
+        - id
+        - name
+        - state
+        - description
 
     LeagueInfoResponse:
       type: object

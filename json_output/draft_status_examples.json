@@ -1,0 +1,32 @@
+{
+  "nfl_2024": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/draft/status?lang=en&region=us",
+    "round": 7,
+    "type": {
+      "id": 3,
+      "name": "COMPLETED",
+      "state": "post",
+      "description": "Completed"
+    }
+  },
+  "nba_2024": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/status?lang=en&region=us",
+    "round": 2,
+    "type": {
+      "id": 3,
+      "name": "COMPLETED",
+      "state": "post",
+      "description": "Completed"
+    }
+  },
+  "mlb_2024": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2024/draft/status?lang=en&region=us",
+    "round": 1,
+    "type": {
+      "id": 1,
+      "name": "SCHEDULED",
+      "state": "pre",
+      "description": "Scheduled"
+    }
+  }
+}

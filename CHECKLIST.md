@@ -179,7 +179,6 @@ site.api.espn.com/apis/site/v2 (Pattern)
 XIII. Fantasy Sports Endpoints
 fantasy.espn.com (or lm-api-reads.fantasy.espn.com)
 [x] /apis/v3/games/ffl/seasons/{year}/segments/0/leagues/{league_id} - Fantasy League Data (Current >2018). Path Params: {year}, {league_id}. Query Params: view={view_name} (e.g., mTeam, mRoster, mSettings). Headers: X-Fantasy-Filter (JSON string), Cookies: espn_s2, SWID (for private leagues) - Already implemented
-[ ] /apis/v3/games/ffl/leagueHistory/{league_id}?seasonId={year} - Fantasy League Data (Historical <2018). Path Param: {league_id}. Query Params: seasonId={year}, view={view_name}. Headers: X-Fantasy-Filter, Cookies. - DOES NOT WORK/NOT FOUND
 [x] /apis/v3/games/ffl/seasons/{year}/players?view={view_name} - Fantasy Player Info List. Path Param: {year}. Query Param: view={view_name}. Headers: X-Fantasy-Filter (for filtering by ID, stat, etc. Use {"games":{"limit":2000}} to get more than 50 items)
     Available views: mDraftDetail, mLiveScoring, mMatchup, mTeam, mMatchupScore, mStandings, mRoster, mBoxscore, kona_player_info, player_wl, allon
 [x] /apis/v3/games/ffl/seasons/{year}/segments/0/leaguedefaults/{PPR_ID}?view=kona_player_info - Detailed Fantasy Player Info. Path Params: {year}, {PPR_ID}. Query Param: view=kona_player_info. Headers: X-Fantasy-Filter. - Implemented
@@ -245,7 +244,7 @@ sports.core.api.espn.com
 [ ] /v2/sports/football/leagues/nfl/events/{event_id}/competitions/{event_id}/probabilities/{play_id} - NFL Play Probability
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/athletes/{athlete_id}/notes - NFL Athlete Season Notes
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/draft/status - NFL Draft Status
+[x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/status - Draft Status. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint
 [ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance - Team Attendance. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId} - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders - Team Leaders. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId}. Query Params: limit - Implemented as generic endpoint

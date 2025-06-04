@@ -68,6 +68,8 @@ from .draft_athlete_analysis import DraftAthleteAnalysis
 from .draft_athlete_attribute import DraftAthleteAttribute
 from .draft_athlete_headshot import DraftAthleteHeadshot
 from .draft_athlete_response import DraftAthleteResponse
+from .draft_status_response import DraftStatusResponse
+from .draft_type import DraftType
 from .drive import Drive
 from .drive_clock import DriveClock
 from .drive_field_position import DriveFieldPosition
@@ -327,6 +329,8 @@ __all__ = (
     "DraftAthleteAttribute",
     "DraftAthleteHeadshot",
     "DraftAthleteResponse",
+    "DraftStatusResponse",
+    "DraftType",
     "Drive",
     "DriveClock",
     "DriveFieldPosition",
