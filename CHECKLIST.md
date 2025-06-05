@@ -263,7 +263,7 @@ sports.core.api.espn.com
 [x] /v2/sports/golf/leagues/pga/seasons/{year}/athletes/{playerId}/eventlog - Golf Player Event Log - Implemented as generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/athletes/{athleteId}/eventlog
 XIX. Additional Soccer Endpoints
 sports.core.api.espn.com
-[ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/types/1/standings - Soccer League Standings
+[x] /v2/sports/soccer/leagues/{league}/seasons/{year}/types/1/standings - Soccer League Standings - DOES NOT WORK (returns 500 error on detail endpoints)
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/teams/{teamId}/athletes - Team Athletes. Path Params: {sport}, {league}, {year}, {teamId}. Query Params: active, pageIndex, limit - Implemented as generic endpoint
 XX. Other Sports Endpoints
 site.web.api.espn.com
