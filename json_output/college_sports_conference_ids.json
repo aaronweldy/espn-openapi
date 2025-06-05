@@ -1,0 +1,84 @@
+{
+  "college_sports_conferences": {
+    "description": "Conference IDs for use with the 'groups' query parameter in college sports endpoints",
+    "usage_example": "/sports/football/college-football/scoreboard?groups=8",
+    "football": {
+      "fbs_conferences": [
+        {"id": "151", "name": "American Athletic Conference", "abbreviation": "aac"},
+        {"id": "1", "name": "Atlantic Coast Conference", "abbreviation": "acc"},
+        {"id": "4", "name": "Big 12 Conference", "abbreviation": "big12"},
+        {"id": "5", "name": "Big Ten Conference", "abbreviation": "big10"},
+        {"id": "12", "name": "Conference USA", "abbreviation": "usa"},
+        {"id": "18", "name": "FBS Independents", "abbreviation": "ind"},
+        {"id": "15", "name": "Mid-American Conference", "abbreviation": "midam"},
+        {"id": "17", "name": "Mountain West Conference", "abbreviation": "mwest"},
+        {"id": "9", "name": "Pac-12 Conference", "abbreviation": "pac12"},
+        {"id": "8", "name": "Southeastern Conference", "abbreviation": "sec"},
+        {"id": "37", "name": "Sun Belt Conference", "abbreviation": "belt"}
+      ],
+      "fcs_conferences": [
+        {"id": "48", "name": "Big Sky Conference", "abbreviation": "bsky"},
+        {"id": "49", "name": "Big South Conference", "abbreviation": "bsouth"},
+        {"id": "50", "name": "Colonial Athletic Association", "abbreviation": "col"},
+        {"id": "21", "name": "Ivy League", "abbreviation": "ivy"},
+        {"id": "40", "name": "MEAC", "abbreviation": "meac"},
+        {"id": "24", "name": "Missouri Valley Conference", "abbreviation": "mvc"},
+        {"id": "25", "name": "Northeast Conference", "abbreviation": "nec"},
+        {"id": "26", "name": "Ohio Valley Conference", "abbreviation": "ovc"},
+        {"id": "27", "name": "Patriot League", "abbreviation": "pat"},
+        {"id": "29", "name": "Southern Conference", "abbreviation": "scon"},
+        {"id": "30", "name": "Southland Conference", "abbreviation": "slc"},
+        {"id": "31", "name": "SWAC", "abbreviation": "swac"}
+      ],
+      "division_groups": [
+        {"id": "80", "name": "FBS (I-A)", "abbreviation": "fbs", "description": "All FBS teams"},
+        {"id": "81", "name": "FCS (I-AA)", "abbreviation": "fcs", "description": "All FCS teams"},
+        {"id": "35", "name": "Division II/III", "abbreviation": "yy", "description": "Division II and III teams"},
+        {"id": "90", "name": "NCAA Division I", "abbreviation": "NCAA", "description": "All Division I teams"}
+      ]
+    },
+    "basketball": {
+      "mens_conferences": [
+        {"id": "46", "name": "ASUN Conference", "abbreviation": "a-sun"},
+        {"id": "1", "name": "America East Conference", "abbreviation": "aeast"},
+        {"id": "62", "name": "American Athletic Conference", "abbreviation": "aac"},
+        {"id": "3", "name": "Atlantic 10 Conference", "abbreviation": "a10"},
+        {"id": "2", "name": "Atlantic Coast Conference", "abbreviation": "acc"},
+        {"id": "8", "name": "Big 12 Conference", "abbreviation": "big12"},
+        {"id": "4", "name": "Big East Conference", "abbreviation": "bige"},
+        {"id": "5", "name": "Big Sky Conference", "abbreviation": "bsky"},
+        {"id": "6", "name": "Big South Conference", "abbreviation": "bsouth"},
+        {"id": "7", "name": "Big Ten Conference", "abbreviation": "bigten"},
+        {"id": "9", "name": "Big West Conference", "abbreviation": "bwest"},
+        {"id": "10", "name": "Coastal Athletic Association", "abbreviation": "col"},
+        {"id": "11", "name": "Conference USA", "abbreviation": "usa"},
+        {"id": "45", "name": "Horizon League", "abbreviation": "hor"},
+        {"id": "12", "name": "Ivy League", "abbreviation": "ivy"},
+        {"id": "13", "name": "Metro Atlantic Athletic Conference", "abbreviation": "maac"},
+        {"id": "14", "name": "Mid-American Conference", "abbreviation": "mac"},
+        {"id": "16", "name": "MEAC", "abbreviation": "meac"},
+        {"id": "18", "name": "Missouri Valley Conference", "abbreviation": "mvc"},
+        {"id": "44", "name": "Mountain West Conference", "abbreviation": "mwest"},
+        {"id": "19", "name": "Northeast Conference", "abbreviation": "nec"},
+        {"id": "20", "name": "Ohio Valley Conference", "abbreviation": "ovc"},
+        {"id": "21", "name": "Pac-12 Conference", "abbreviation": "pac12"},
+        {"id": "22", "name": "Patriot League", "abbreviation": "pat"},
+        {"id": "23", "name": "Southeastern Conference", "abbreviation": "sec"},
+        {"id": "24", "name": "Southern Conference", "abbreviation": "scon"},
+        {"id": "25", "name": "Southland Conference", "abbreviation": "slc"},
+        {"id": "26", "name": "SWAC", "abbreviation": "swac"},
+        {"id": "27", "name": "Sun Belt Conference", "abbreviation": "sbelt"},
+        {"id": "28", "name": "Summit League", "abbreviation": "sum"},
+        {"id": "29", "name": "West Coast Conference", "abbreviation": "wcc"},
+        {"id": "30", "name": "Western Athletic Conference", "abbreviation": "wac"}
+      ],
+      "womens_conferences": [
+        {"note": "Women's college basketball uses the same conference IDs as men's basketball"}
+      ],
+      "division_groups": [
+        {"id": "50", "name": "NCAA Division I", "abbreviation": "d1", "description": "All Division I teams"},
+        {"id": "51", "name": "NCAA Division II/III", "abbreviation": "other", "description": "Division II and III teams"}
+      ]
+    }
+  }
+}

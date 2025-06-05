@@ -52,6 +52,13 @@ paths:
             type: integer
             enum: [1, 2, 3, 4]
             example: 2
+        - name: groups
+          in: query
+          required: false
+          description: Filter by conference/group ID - primarily for college sports. See CollegeFootballConferenceEnum and CollegeBasketballConferenceEnum for valid values.
+          schema:
+            type: string
+            example: "8"
       responses:
         '200':
           description: Successful response
@@ -5461,3 +5468,194 @@ components:
           type: string
           description: Season name
       description: Season reference
+
+    CollegeFootballConferenceEnum:
+      type: string
+      description: College Football Conference IDs for use with groups parameter
+      enum:
+        - "1"   # ACC - Atlantic Coast Conference
+        - "4"   # Big 12 Conference
+        - "5"   # Big Ten Conference
+        - "8"   # SEC - Southeastern Conference
+        - "9"   # Pac-12 Conference
+        - "12"  # Conference USA
+        - "15"  # Mid-American Conference
+        - "17"  # Mountain West Conference
+        - "18"  # FBS Independents
+        - "37"  # Sun Belt Conference
+        - "151" # American Athletic Conference
+        - "21"  # Ivy League (FCS)
+        - "24"  # Missouri Valley Conference (FCS)
+        - "25"  # Northeast Conference (FCS)
+        - "26"  # Ohio Valley Conference (FCS)
+        - "27"  # Patriot League (FCS)
+        - "29"  # Southern Conference (FCS)
+        - "30"  # Southland Conference (FCS)
+        - "31"  # SWAC (FCS)
+        - "40"  # MEAC (FCS)
+        - "48"  # Big Sky Conference (FCS)
+        - "49"  # Big South Conference (FCS)
+        - "50"  # Colonial Athletic Association (FCS)
+        - "80"  # FBS (All FBS teams)
+        - "81"  # FCS (All FCS teams)
+        - "90"  # NCAA Division I (All teams)
+      x-enum-varnames:
+        - ACC
+        - BIG_12
+        - BIG_TEN
+        - SEC
+        - PAC_12
+        - CONFERENCE_USA
+        - MID_AMERICAN
+        - MOUNTAIN_WEST
+        - FBS_INDEPENDENTS
+        - SUN_BELT
+        - AMERICAN_ATHLETIC
+        - IVY_LEAGUE
+        - MISSOURI_VALLEY
+        - NORTHEAST
+        - OHIO_VALLEY
+        - PATRIOT
+        - SOUTHERN
+        - SOUTHLAND
+        - SWAC
+        - MEAC
+        - BIG_SKY
+        - BIG_SOUTH
+        - COLONIAL_ATHLETIC
+        - ALL_FBS
+        - ALL_FCS
+        - NCAA_DIVISION_I
+      x-enum-descriptions:
+        - "ACC - Atlantic Coast Conference"
+        - "Big 12 Conference"
+        - "Big Ten Conference"
+        - "SEC - Southeastern Conference"
+        - "Pac-12 Conference"
+        - "Conference USA"
+        - "Mid-American Conference"
+        - "Mountain West Conference"
+        - "FBS Independents"
+        - "Sun Belt Conference"
+        - "American Athletic Conference"
+        - "Ivy League (FCS)"
+        - "Missouri Valley Conference (FCS)"
+        - "Northeast Conference (FCS)"
+        - "Ohio Valley Conference (FCS)"
+        - "Patriot League (FCS)"
+        - "Southern Conference (FCS)"
+        - "Southland Conference (FCS)"
+        - "SWAC (FCS)"
+        - "MEAC (FCS)"
+        - "Big Sky Conference (FCS)"
+        - "Big South Conference (FCS)"
+        - "Colonial Athletic Association (FCS)"
+        - "All FBS teams"
+        - "All FCS teams"
+        - "All NCAA Division I teams"
+
+    CollegeBasketballConferenceEnum:
+      type: string
+      description: College Basketball Conference IDs for use with groups parameter
+      enum:
+        - "1"   # America East Conference
+        - "2"   # ACC - Atlantic Coast Conference
+        - "3"   # Atlantic 10 Conference
+        - "4"   # Big East Conference
+        - "5"   # Big Sky Conference
+        - "6"   # Big South Conference
+        - "7"   # Big Ten Conference
+        - "8"   # Big 12 Conference
+        - "9"   # Big West Conference
+        - "10"  # Coastal Athletic Association
+        - "11"  # Conference USA
+        - "12"  # Ivy League
+        - "13"  # Metro Atlantic Athletic Conference
+        - "14"  # Mid-American Conference
+        - "16"  # MEAC
+        - "18"  # Missouri Valley Conference
+        - "19"  # Northeast Conference
+        - "20"  # Ohio Valley Conference
+        - "21"  # Pac-12 Conference
+        - "22"  # Patriot League
+        - "23"  # SEC - Southeastern Conference
+        - "24"  # Southern Conference
+        - "25"  # Southland Conference
+        - "26"  # SWAC
+        - "27"  # Sun Belt Conference
+        - "28"  # Summit League
+        - "29"  # West Coast Conference
+        - "30"  # Western Athletic Conference
+        - "44"  # Mountain West Conference
+        - "45"  # Horizon League
+        - "46"  # ASUN Conference
+        - "62"  # American Athletic Conference
+        - "50"  # NCAA Division I (All teams)
+      x-enum-varnames:
+        - AMERICA_EAST
+        - ACC
+        - ATLANTIC_10
+        - BIG_EAST
+        - BIG_SKY
+        - BIG_SOUTH
+        - BIG_TEN
+        - BIG_12
+        - BIG_WEST
+        - COASTAL_ATHLETIC
+        - CONFERENCE_USA
+        - IVY_LEAGUE
+        - METRO_ATLANTIC
+        - MID_AMERICAN
+        - MEAC
+        - MISSOURI_VALLEY
+        - NORTHEAST
+        - OHIO_VALLEY
+        - PAC_12
+        - PATRIOT
+        - SEC
+        - SOUTHERN
+        - SOUTHLAND
+        - SWAC
+        - SUN_BELT
+        - SUMMIT
+        - WEST_COAST
+        - WESTERN_ATHLETIC
+        - MOUNTAIN_WEST
+        - HORIZON
+        - ASUN
+        - AMERICAN_ATHLETIC
+        - NCAA_DIVISION_I
+      x-enum-descriptions:
+        - "America East Conference"
+        - "ACC - Atlantic Coast Conference"
+        - "Atlantic 10 Conference"
+        - "Big East Conference"
+        - "Big Sky Conference"
+        - "Big South Conference"
+        - "Big Ten Conference"
+        - "Big 12 Conference"
+        - "Big West Conference"
+        - "Coastal Athletic Association"
+        - "Conference USA"
+        - "Ivy League"
+        - "Metro Atlantic Athletic Conference"
+        - "Mid-American Conference"
+        - "MEAC"
+        - "Missouri Valley Conference"
+        - "Northeast Conference"
+        - "Ohio Valley Conference"
+        - "Pac-12 Conference"
+        - "Patriot League"
+        - "SEC - Southeastern Conference"
+        - "Southern Conference"
+        - "Southland Conference"
+        - "SWAC"
+        - "Sun Belt Conference"
+        - "Summit League"
+        - "West Coast Conference"
+        - "Western Athletic Conference"
+        - "Mountain West Conference"
+        - "Horizon League"
+        - "ASUN Conference"
+        - "American Athletic Conference"
+        - "All NCAA Division I teams"

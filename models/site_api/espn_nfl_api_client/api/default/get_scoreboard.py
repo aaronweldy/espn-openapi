@@ -19,6 +19,7 @@ def _get_kwargs(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetScoreboardSeasontype] = UNSET,
+    groups: Union[Unset, str] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
 
@@ -31,6 +32,8 @@ def _get_kwargs(
         json_seasontype = seasontype.value
 
     params["seasontype"] = json_seasontype
+
+    params["groups"] = groups
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -83,6 +86,7 @@ def sync_detailed(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetScoreboardSeasontype] = UNSET,
+    groups: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, GenericScoreboardResponse]]:
     """Get Scoreboard
 
@@ -95,6 +99,7 @@ def sync_detailed(
         dates (Union[Unset, str]):  Example: 20240201.
         week (Union[Unset, int]):  Example: 1.
         seasontype (Union[Unset, GetScoreboardSeasontype]):  Example: 2.
+        groups (Union[Unset, str]):  Example: 8.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -110,6 +115,7 @@ def sync_detailed(
         dates=dates,
         week=week,
         seasontype=seasontype,
+        groups=groups,
     )
 
     response = client.get_httpx_client().request(
@@ -127,6 +133,7 @@ def sync(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetScoreboardSeasontype] = UNSET,
+    groups: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, GenericScoreboardResponse]]:
     """Get Scoreboard
 
@@ -139,6 +146,7 @@ def sync(
         dates (Union[Unset, str]):  Example: 20240201.
         week (Union[Unset, int]):  Example: 1.
         seasontype (Union[Unset, GetScoreboardSeasontype]):  Example: 2.
+        groups (Union[Unset, str]):  Example: 8.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -155,6 +163,7 @@ def sync(
         dates=dates,
         week=week,
         seasontype=seasontype,
+        groups=groups,
     ).parsed
 
 
@@ -166,6 +175,7 @@ async def asyncio_detailed(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetScoreboardSeasontype] = UNSET,
+    groups: Union[Unset, str] = UNSET,
 ) -> Response[Union[ErrorResponse, GenericScoreboardResponse]]:
     """Get Scoreboard
 
@@ -178,6 +188,7 @@ async def asyncio_detailed(
         dates (Union[Unset, str]):  Example: 20240201.
         week (Union[Unset, int]):  Example: 1.
         seasontype (Union[Unset, GetScoreboardSeasontype]):  Example: 2.
+        groups (Union[Unset, str]):  Example: 8.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -193,6 +204,7 @@ async def asyncio_detailed(
         dates=dates,
         week=week,
         seasontype=seasontype,
+        groups=groups,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -208,6 +220,7 @@ async def asyncio(
     dates: Union[Unset, str] = UNSET,
     week: Union[Unset, int] = UNSET,
     seasontype: Union[Unset, GetScoreboardSeasontype] = UNSET,
+    groups: Union[Unset, str] = UNSET,
 ) -> Optional[Union[ErrorResponse, GenericScoreboardResponse]]:
     """Get Scoreboard
 
@@ -220,6 +233,7 @@ async def asyncio(
         dates (Union[Unset, str]):  Example: 20240201.
         week (Union[Unset, int]):  Example: 1.
         seasontype (Union[Unset, GetScoreboardSeasontype]):  Example: 2.
+        groups (Union[Unset, str]):  Example: 8.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -237,5 +251,6 @@ async def asyncio(
             dates=dates,
             week=week,
             seasontype=seasontype,
+            groups=groups,
         )
     ).parsed

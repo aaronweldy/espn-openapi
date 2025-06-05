@@ -1,0 +1,40 @@
+from enum import Enum
+
+
+class CollegeBasketballConferenceEnum(str, Enum):
+    VALUE_0 = "1"
+    VALUE_1 = "2"
+    VALUE_10 = "11"
+    VALUE_11 = "12"
+    VALUE_12 = "13"
+    VALUE_13 = "14"
+    VALUE_14 = "16"
+    VALUE_15 = "18"
+    VALUE_16 = "19"
+    VALUE_17 = "20"
+    VALUE_18 = "21"
+    VALUE_19 = "22"
+    VALUE_2 = "3"
+    VALUE_20 = "23"
+    VALUE_21 = "24"
+    VALUE_22 = "25"
+    VALUE_23 = "26"
+    VALUE_24 = "27"
+    VALUE_25 = "28"
+    VALUE_26 = "29"
+    VALUE_27 = "30"
+    VALUE_28 = "44"
+    VALUE_29 = "45"
+    VALUE_3 = "4"
+    VALUE_30 = "46"
+    VALUE_31 = "62"
+    VALUE_32 = "50"
+    VALUE_4 = "5"
+    VALUE_5 = "6"
+    VALUE_6 = "7"
+    VALUE_7 = "8"
+    VALUE_8 = "9"
+    VALUE_9 = "10"
+
+    def __str__(self) -> str:
+        return str(self.value)

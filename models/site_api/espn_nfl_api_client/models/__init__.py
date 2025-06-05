@@ -23,6 +23,8 @@ from .category import Category
 from .category_type import CategoryType
 from .coach import Coach
 from .college import College
+from .college_basketball_conference_enum import CollegeBasketballConferenceEnum
+from .college_football_conference_enum import CollegeFootballConferenceEnum
 from .competition import Competition
 from .competition_leader import CompetitionLeader
 from .competition_type import CompetitionType
@@ -333,6 +335,8 @@ __all__ = (
     "CategoryType",
     "Coach",
     "College",
+    "CollegeBasketballConferenceEnum",
+    "CollegeFootballConferenceEnum",
     "Competition",
     "CompetitionLeader",
     "CompetitionType",
