@@ -102,6 +102,7 @@ from .get_league_season_groups_season_type import GetLeagueSeasonGroupsSeasonTyp
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
 from .get_nfl_athlete_projections_seasontype import GetNFLAthleteProjectionsSeasontype
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
+from .get_nfl_weekly_qbr_seasontype import GetNFLWeeklyQBRSeasontype
 from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
 from .head_to_heads_list_response import HeadToHeadsListResponse
@@ -182,6 +183,7 @@ from .nfl_team_depthchart_group import NflTeamDepthchartGroup
 from .nfl_team_depthchart_group_positions import NflTeamDepthchartGroupPositions
 from .nfl_team_depthchart_position import NflTeamDepthchartPosition
 from .nfl_team_depthchart_response import NflTeamDepthchartResponse
+from .nfl_weekly_qbr_response import NFLWeeklyQBRResponse
 from .odds_detail import OddsDetail
 from .odds_item import OddsItem
 from .odds_item_current import OddsItemCurrent
@@ -225,6 +227,10 @@ from .probability_item import ProbabilityItem
 from .probability_source import ProbabilitySource
 from .provider_details import ProviderDetails
 from .providers_list_response import ProvidersListResponse
+from .qbr_category import QBRCategory
+from .qbr_item import QBRItem
+from .qbr_splits import QBRSplits
+from .qbr_stat import QBRStat
 from .record_stat import RecordStat
 from .reference import Reference
 from .roster_entry import RosterEntry
@@ -368,6 +374,7 @@ __all__ = (
     "GetLeagueSeasonWeeksSeasonType",
     "GetNFLAthleteProjectionsSeasontype",
     "GetNFLConferenceStandingsSeasontype",
+    "GetNFLWeeklyQBRSeasontype",
     "GroupDetailsResponse",
     "HeadToHeads",
     "HeadToHeadsListResponse",
@@ -448,6 +455,7 @@ __all__ = (
     "NflTeamDepthchartGroupPositions",
     "NflTeamDepthchartPosition",
     "NflTeamDepthchartResponse",
+    "NFLWeeklyQBRResponse",
     "OddsDetail",
     "OddsItem",
     "OddsItemCurrent",
@@ -491,6 +499,10 @@ __all__ = (
     "ProbabilitySource",
     "ProviderDetails",
     "ProvidersListResponse",
+    "QBRCategory",
+    "QBRItem",
+    "QBRSplits",
+    "QBRStat",
     "RecordStat",
     "Reference",
     "RosterEntry",

@@ -1,0 +1,200 @@
+{
+  "athlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/8439?lang=en&region=us"
+  },
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/20?lang=en&region=us"
+  },
+  "event": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671696?lang=en&region=us"
+  },
+  "season": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024?lang=en&region=us"
+  },
+  "splits": {
+    "id": "10000",
+    "name": "QBR Weekly/Game stats",
+    "abbreviation": "QBRWeek",
+    "categories": [
+      {
+        "name": "general",
+        "displayName": "General",
+        "shortDisplayName": "General",
+        "abbreviation": "GEN",
+        "stats": [
+          {
+            "name": "qbpaa",
+            "displayName": "Points Added",
+            "shortDisplayName": "PTS Added",
+            "description": "Number of points contributed by a quarterback, accounting for QBR and how much he plays, above the level of an average quarterback.",
+            "abbreviation": "PA",
+            "value": -0.25,
+            "displayValue": "-0.3"
+          },
+          {
+            "name": "cwepaPassesCondensed",
+            "displayName": "Pass",
+            "shortDisplayName": "Pass",
+            "description": "Expected points added on pass attempts with low leverage plays down-weighted.",
+            "abbreviation": "PAS",
+            "value": 1.42,
+            "displayValue": "1.4"
+          },
+          {
+            "name": "cwepaRushes",
+            "displayName": "RUSH EPA",
+            "shortDisplayName": "RUSH EPA",
+            "description": "Expected points added on rushes with low leverage plays down-weighted.",
+            "abbreviation": "REP",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaSackedCondensed",
+            "displayName": "SACK",
+            "shortDisplayName": "SACK",
+            "description": "Expected points added on sacks with low leverage plays down-weighted.",
+            "abbreviation": "SAC",
+            "value": -0.53,
+            "displayValue": "-0.5"
+          },
+          {
+            "name": "cwepaPenalties",
+            "displayName": "PENALTY",
+            "shortDisplayName": "PENALTY",
+            "description": "Expected points added on penalties with low leverage plays down-weighted.",
+            "abbreviation": "PEN",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaTotal",
+            "displayName": "TOTAL EPA",
+            "shortDisplayName": "TOTAL EPA",
+            "description": "Total expected points added with low leverage plays, according to ESPN Win Probability model, down-weighted.",
+            "abbreviation": "TOT",
+            "value": 1.42,
+            "displayValue": "1.4"
+          },
+          {
+            "name": "actionPlays",
+            "displayName": "QB PLAYS",
+            "shortDisplayName": "QB PLAYS",
+            "description": "Plays on which the QB has a non-zero expected points contribution. Includes most plays that are not handoffs.",
+            "abbreviation": "QBP",
+            "value": 22,
+            "displayValue": "22"
+          },
+          {
+            "name": "cwAverage",
+            "displayName": "CW AVG",
+            "shortDisplayName": "CW AVG",
+            "description": "Average clutch weight on QB action plays. Smaller than 1 means QB was in relatively fewer clutch situations; greater than 1 means he was in more.",
+            "abbreviation": "CWA",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "qbr",
+            "displayName": "RAW QBR",
+            "shortDisplayName": "RAW QBR",
+            "description": "Raw Total Quarterback Rating, which values quarterback on all play types on a 0-100 scale (not adjusted for opposing defenses faced)",
+            "abbreviation": "QBR",
+            "value": 45.96,
+            "displayValue": "46.0"
+          },
+          {
+            "name": "cwepaPasses",
+            "displayName": "EXP PASS EPA",
+            "shortDisplayName": "EXP PASS EPA",
+            "description": "Clutch-weighted expected points added through completions and incompletions.",
+            "abbreviation": "EPE",
+            "value": 1.42,
+            "displayValue": "1.4"
+          },
+          {
+            "name": "cwepaInterceptions",
+            "displayName": "INT EPA",
+            "shortDisplayName": "INT EPA",
+            "description": "Clutch-weighted expected points added (lost) through interceptions and returns.",
+            "abbreviation": "INT",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaYardsAfterCarry",
+            "displayName": "YAC EPA",
+            "shortDisplayName": "YAC EPA",
+            "description": "Clutch-weighted expected points added (lost) on yards after the catch above/below expectation.",
+            "abbreviation": "YAC",
+            "value": 0.16,
+            "displayValue": "0.2"
+          },
+          {
+            "name": "cwepaRuns",
+            "displayName": "RUN",
+            "shortDisplayName": "RUN",
+            "description": "Clutch-weighted expected points added through rushes",
+            "abbreviation": "RUN",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaScrambles",
+            "displayName": "SCRAM EPA",
+            "shortDisplayName": "SCRAM EPA",
+            "description": "Clutch-weighted expected points added through improvised scrambles.",
+            "abbreviation": "SCR",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaSacked",
+            "displayName": "EXP SACK",
+            "shortDisplayName": "EXP SACK",
+            "description": "Clutch-weighted expected points added (lost) from sacks (not fumbles that may occur because of sacks).",
+            "abbreviation": "EXP",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "cwepaFumbles",
+            "displayName": "FUM EPA",
+            "shortDisplayName": "FUM EPA",
+            "description": "Clutch-weighted expected points added (lost) through fumbles, recoveries, and returns.",
+            "abbreviation": "FUM",
+            "value": 0,
+            "displayValue": "0.0"
+          },
+          {
+            "name": "avgOppDQBR",
+            "displayName": "DEF FACED",
+            "shortDisplayName": "DEF FACED",
+            "description": "Difficulty of defenses faced.",
+            "abbreviation": "DEF",
+            "value": 56.56,
+            "displayValue": "56.6"
+          },
+          {
+            "name": "schedAdjQBR",
+            "displayName": "TOTAL QBR",
+            "shortDisplayName": "TOTAL QBR",
+            "description": "Adjusted Total Quarterback Rating, which values the quarterback on all play types on a 0-100 scale adjusted for the strength of opposing defenses faced.",
+            "abbreviation": "TQBR",
+            "value": 49.71,
+            "displayValue": "49.7"
+          },
+          {
+            "name": "unqualifiedRank",
+            "displayName": "Unqualified Rank",
+            "shortDisplayName": "Unqualified Rank",
+            "description": "Rank in unqualified QBR list.",
+            "abbreviation": "UNQRK",
+            "value": 18,
+            "displayValue": "18"
+          }
+        ]
+      }
+    ]
+  }
+}

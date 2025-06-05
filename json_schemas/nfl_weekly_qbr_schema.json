@@ -1,0 +1,301 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/NflWeeklyQbrSchema",
+    "definitions": {
+        "NflWeeklyQbrSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                },
+                "count": {
+                    "type": "integer"
+                },
+                "pageIndex": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "pageCount": {
+                    "type": "integer"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                }
+            },
+            "required": [
+                "$ref",
+                "count",
+                "items",
+                "pageCount",
+                "pageIndex",
+                "pageSize"
+            ],
+            "title": "NflWeeklyQbrSchema"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "athlete": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "team": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "event": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "season": {
+                    "$ref": "#/definitions/Athlete"
+                },
+                "splits": {
+                    "$ref": "#/definitions/Splits"
+                }
+            },
+            "required": [
+                "athlete",
+                "event",
+                "season",
+                "splits",
+                "team"
+            ],
+            "title": "Item"
+        },
+        "Athlete": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$ref": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ]
+                }
+            },
+            "required": [
+                "$ref"
+            ],
+            "title": "Athlete"
+        },
+        "Splits": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/SplitsName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/SplitsAbbreviation"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "categories",
+                "id",
+                "name"
+            ],
+            "title": "Splits"
+        },
+        "Category": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/CategoryName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/CategoryDisplayName"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/CategoryDisplayName"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/CategoryAbbreviation"
+                },
+                "stats": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Stat"
+                    }
+                }
+            },
+            "required": [
+                "abbreviation",
+                "displayName",
+                "name",
+                "shortDisplayName",
+                "stats"
+            ],
+            "title": "Category"
+        },
+        "Stat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "$ref": "#/definitions/StatName"
+                },
+                "displayName": {
+                    "$ref": "#/definitions/StatDisplayName"
+                },
+                "shortDisplayName": {
+                    "$ref": "#/definitions/StatDisplayName"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "abbreviation": {
+                    "$ref": "#/definitions/StatAbbreviation"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "displayValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "abbreviation",
+                "description",
+                "displayName",
+                "displayValue",
+                "name",
+                "shortDisplayName",
+                "value"
+            ],
+            "title": "Stat"
+        },
+        "SplitsAbbreviation": {
+            "type": "string",
+            "enum": [
+                "QBRWeek"
+            ],
+            "title": "SplitsAbbreviation"
+        },
+        "CategoryAbbreviation": {
+            "type": "string",
+            "enum": [
+                "GEN"
+            ],
+            "title": "CategoryAbbreviation"
+        },
+        "CategoryDisplayName": {
+            "type": "string",
+            "enum": [
+                "General"
+            ],
+            "title": "CategoryDisplayName"
+        },
+        "CategoryName": {
+            "type": "string",
+            "enum": [
+                "general"
+            ],
+            "title": "CategoryName"
+        },
+        "StatAbbreviation": {
+            "type": "string",
+            "enum": [
+                "PA",
+                "PAS",
+                "REP",
+                "SAC",
+                "PEN",
+                "TOT",
+                "QBP",
+                "CWA",
+                "QBR",
+                "EPE",
+                "INT",
+                "YAC",
+                "RUN",
+                "SCR",
+                "EXP",
+                "FUM",
+                "DEF",
+                "TQBR",
+                "UNQRK"
+            ],
+            "title": "StatAbbreviation"
+        },
+        "StatDisplayName": {
+            "type": "string",
+            "enum": [
+                "Points Added",
+                "Pass",
+                "RUSH EPA",
+                "SACK",
+                "PENALTY",
+                "TOTAL EPA",
+                "QB PLAYS",
+                "CW AVG",
+                "RAW QBR",
+                "EXP PASS EPA",
+                "INT EPA",
+                "YAC EPA",
+                "RUN",
+                "SCRAM EPA",
+                "EXP SACK",
+                "FUM EPA",
+                "DEF FACED",
+                "TOTAL QBR",
+                "Unqualified Rank",
+                "PTS Added"
+            ],
+            "title": "StatDisplayName"
+        },
+        "StatName": {
+            "type": "string",
+            "enum": [
+                "qbpaa",
+                "cwepaPassesCondensed",
+                "cwepaRushes",
+                "cwepaSackedCondensed",
+                "cwepaPenalties",
+                "cwepaTotal",
+                "actionPlays",
+                "cwAverage",
+                "qbr",
+                "cwepaPasses",
+                "cwepaInterceptions",
+                "cwepaYardsAfterCarry",
+                "cwepaRuns",
+                "cwepaScrambles",
+                "cwepaSacked",
+                "cwepaFumbles",
+                "avgOppDQBR",
+                "schedAdjQBR",
+                "unqualifiedRank"
+            ],
+            "title": "StatName"
+        },
+        "SplitsName": {
+            "type": "string",
+            "enum": [
+                "QBR Weekly/Game stats"
+            ],
+            "title": "SplitsName"
+        }
+    }
+}
