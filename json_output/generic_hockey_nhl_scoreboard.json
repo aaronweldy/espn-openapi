@@ -302,41 +302,14 @@
         {
           "situation": {
             "lastPlay": {
-              "id": "401777455000010040",
+              "id": "401777455000005710",
               "type": {
-                "id": "508",
-                "text": "Blocked",
-                "abbreviation": "shot-blocked"
+                "id": "516",
+                "text": "Stoppage",
+                "abbreviation": "stoppage"
               },
-              "text": "Evan Bouchard shot blocked by Eetu Luostarinen",
-              "scoreValue": 0,
-              "team": {
-                "id": "26"
-              },
-              "athletesInvolved": [
-                {
-                  "id": "4352722",
-                  "fullName": "Evan Bouchard",
-                  "displayName": "Evan Bouchard",
-                  "shortName": "E. Bouchard",
-                  "links": [
-                    {
-                      "rel": [
-                        "playercard",
-                        "desktop",
-                        "athlete"
-                      ],
-                      "href": "https://www.espn.com/nhl/player/_/id/4352722"
-                    }
-                  ],
-                  "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/4352722.png",
-                  "jersey": "2",
-                  "position": "D",
-                  "team": {
-                    "id": "6"
-                  }
-                }
-              ]
+              "text": "Puck in Netting",
+              "scoreValue": 0
             }
           },
           "series": {
@@ -394,6 +367,103 @@
                   "shortDisplayName": "Goals",
                   "abbreviation": "G",
                   "leaders": [
+                    {
+                      "displayValue": "1",
+                      "value": 1.0,
+                      "athlete": {
+                        "id": "2558631",
+                        "fullName": "Mattias Ekholm",
+                        "displayName": "Mattias Ekholm",
+                        "shortName": "M. Ekholm",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/nhl/player/_/id/2558631"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/2558631.png",
+                        "jersey": "14",
+                        "position": {
+                          "abbreviation": "D"
+                        },
+                        "team": {
+                          "id": "6"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "6"
+                      },
+                      "statistics": [
+                        {
+                          "name": "saves",
+                          "displayName": "Saves",
+                          "shortDisplayName": "Saves",
+                          "description": "Total saves.",
+                          "abbreviation": "SV",
+                          "value": 0.0,
+                          "displayValue": "0"
+                        },
+                        {
+                          "name": "savePct",
+                          "displayName": "Save Percentage",
+                          "shortDisplayName": "Save Percentage",
+                          "description": "Percentage of shots saved.",
+                          "abbreviation": "SV%",
+                          "value": 0.0,
+                          "displayValue": ".000"
+                        },
+                        {
+                          "name": "plusMinus",
+                          "displayName": "Plus/Minus Rating",
+                          "shortDisplayName": "Plus/Minus",
+                          "description": "Plus/Minus Rating",
+                          "abbreviation": "+/-",
+                          "value": 2.0,
+                          "displayValue": "2"
+                        },
+                        {
+                          "name": "goals",
+                          "displayName": "Goals",
+                          "shortDisplayName": "Goals",
+                          "description": "Total goals scored.",
+                          "abbreviation": "G",
+                          "value": 1.0,
+                          "displayValue": "1"
+                        },
+                        {
+                          "name": "ytdGoals",
+                          "displayName": "Year to Date Goals",
+                          "shortDisplayName": "Year to Date Goals",
+                          "description": "Year to date goals/",
+                          "abbreviation": "YTDG",
+                          "value": 1.0,
+                          "displayValue": "1"
+                        },
+                        {
+                          "name": "assists",
+                          "displayName": "Assists",
+                          "shortDisplayName": "Assists",
+                          "description": "Total goal assists.",
+                          "abbreviation": "A",
+                          "value": 0.0,
+                          "displayValue": "0"
+                        },
+                        {
+                          "name": "points",
+                          "displayName": "Points",
+                          "shortDisplayName": "Points",
+                          "description": "Points",
+                          "abbreviation": "PTS",
+                          "value": 1.0,
+                          "displayValue": "1"
+                        }
+                      ]
+                    },
                     {
                       "displayValue": "1",
                       "value": 1.0,
@@ -597,8 +667,8 @@
                   "abbreviation": "A",
                   "leaders": [
                     {
-                      "displayValue": "1",
-                      "value": 1.0,
+                      "displayValue": "2",
+                      "value": 2.0,
                       "athlete": {
                         "id": "3114775",
                         "fullName": "Kasperi Kapanen",
@@ -637,13 +707,13 @@
                   "abbreviation": "PTS",
                   "leaders": [
                     {
-                      "displayValue": "1",
-                      "value": 1.0,
+                      "displayValue": "2",
+                      "value": 2.0,
                       "athlete": {
-                        "id": "3114727",
-                        "fullName": "Leon Draisaitl",
-                        "displayName": "Leon Draisaitl",
-                        "shortName": "L. Draisaitl",
+                        "id": "3114775",
+                        "fullName": "Kasperi Kapanen",
+                        "displayName": "Kasperi Kapanen",
+                        "shortName": "K. Kapanen",
                         "links": [
                           {
                             "rel": [
@@ -651,13 +721,13 @@
                               "desktop",
                               "athlete"
                             ],
-                            "href": "https://www.espn.com/nhl/player/_/id/3114727"
+                            "href": "https://www.espn.com/nhl/player/_/id/3114775"
                           }
                         ],
-                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3114727.png",
-                        "jersey": "29",
+                        "headshot": "https://a.espncdn.com/i/headshots/nhl/players/full/3114775.png",
+                        "jersey": "42",
                         "position": {
-                          "abbreviation": "C"
+                          "abbreviation": "RW"
                         },
                         "team": {
                           "id": "6"
@@ -792,7 +862,7 @@
                   }
                 ]
               },
-              "score": "2",
+              "score": "3",
               "linescores": [
                 {
                   "displayValue": "1",
@@ -805,8 +875,13 @@
                   "value": 1.0
                 },
                 {
-                  "displayValue": "0",
+                  "displayValue": "1",
                   "period": 3,
+                  "value": 1.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 4,
                   "value": 0.0
                 }
               ],
@@ -814,17 +889,17 @@
                 {
                   "abbreviation": "SV",
                   "name": "saves",
-                  "displayValue": "21"
+                  "displayValue": "28"
                 },
                 {
                   "abbreviation": "SV%",
                   "name": "savePct",
-                  "displayValue": ".875"
+                  "displayValue": ".903"
                 },
                 {
                   "abbreviation": "G",
                   "name": "goals",
-                  "displayValue": "2"
+                  "displayValue": "3"
                 },
                 {
                   "abbreviation": "YTDG",
@@ -834,12 +909,12 @@
                 {
                   "abbreviation": "A",
                   "name": "assists",
-                  "displayValue": "4"
+                  "displayValue": "6"
                 },
                 {
                   "abbreviation": "PTS",
                   "name": "points",
-                  "displayValue": "6"
+                  "displayValue": "9"
                 }
               ],
               "records": [
@@ -927,8 +1002,8 @@
                           "shortDisplayName": "Plus/Minus",
                           "description": "Plus/Minus Rating",
                           "abbreviation": "+/-",
-                          "value": 1.0,
-                          "displayValue": "1"
+                          "value": 0.0,
+                          "displayValue": "0"
                         },
                         {
                           "name": "goals",
@@ -1285,18 +1360,23 @@
                   "displayValue": "0",
                   "period": 3,
                   "value": 0.0
+                },
+                {
+                  "displayValue": "0",
+                  "period": 4,
+                  "value": 0.0
                 }
               ],
               "statistics": [
                 {
                   "abbreviation": "SV",
                   "name": "saves",
-                  "displayValue": "20"
+                  "displayValue": "33"
                 },
                 {
                   "abbreviation": "SV%",
                   "name": "savePct",
-                  "displayValue": ".909"
+                  "displayValue": ".917"
                 },
                 {
                   "abbreviation": "G",
@@ -1354,12 +1434,12 @@
               "state": "in",
               "completed": false,
               "description": "In Progress",
-              "detail": "18:27 - 3rd Period",
-              "shortDetail": "18:27 - 3rd"
+              "detail": "17:09 - OT",
+              "shortDetail": "17:09 - OT"
             },
-            "clock": 1107.0,
-            "displayClock": "18:27",
-            "period": 3
+            "clock": 1029.0,
+            "displayClock": "17:09",
+            "period": 4
           },
           "broadcasts": [
             {
@@ -1498,12 +1578,12 @@
           "state": "in",
           "completed": false,
           "description": "In Progress",
-          "detail": "18:27 - 3rd Period",
-          "shortDetail": "18:27 - 3rd"
+          "detail": "17:09 - OT",
+          "shortDetail": "17:09 - OT"
         },
-        "clock": 1107.0,
-        "displayClock": "18:27",
-        "period": 3
+        "clock": 1029.0,
+        "displayClock": "17:09",
+        "period": 4
       }
     }
   ],

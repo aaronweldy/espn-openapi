@@ -260,7 +260,7 @@ site.api.espn.com
 site.web.api.espn.com
 [x] /apis/common/v3/sports/golf/athletes/{playerId}/stats - Golf Player Stats. Query Params: season - Implemented as golf-specific endpoint
 sports.core.api.espn.com
-[ ] /v2/sports/golf/leagues/pga/seasons/{year}/athletes/{playerId}/eventlog - Golf Player Event Log
+[x] /v2/sports/golf/leagues/pga/seasons/{year}/athletes/{playerId}/eventlog - Golf Player Event Log - Implemented as generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/athletes/{athleteId}/eventlog
 XIX. Additional Soccer Endpoints
 sports.core.api.espn.com
 [ ] /v2/sports/soccer/leagues/{league}/seasons/{year}/types/1/standings - Soccer League Standings

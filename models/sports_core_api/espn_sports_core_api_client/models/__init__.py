@@ -10,6 +10,13 @@ from .athlete_contracts_response import AthleteContractsResponse
 from .athlete_details_response import AthleteDetailsResponse
 from .athlete_details_response_alternate_ids import AthleteDetailsResponseAlternateIds
 from .athlete_details_response_experience import AthleteDetailsResponseExperience
+from .athlete_eventlog_response import AthleteEventlogResponse
+from .athlete_eventlog_response_events import AthleteEventlogResponseEvents
+from .athlete_eventlog_response_events_items_item import AthleteEventlogResponseEventsItemsItem
+from .athlete_eventlog_response_leagues import AthleteEventlogResponseLeagues
+from .athlete_eventlog_response_leagues_additional_property import AthleteEventlogResponseLeaguesAdditionalProperty
+from .athlete_eventlog_response_teams import AthleteEventlogResponseTeams
+from .athlete_eventlog_response_teams_additional_property import AthleteEventlogResponseTeamsAdditionalProperty
 from .athlete_note import AthleteNote
 from .athlete_notes_response import AthleteNotesResponse
 from .athlete_reference import AthleteReference
@@ -282,6 +289,13 @@ __all__ = (
     "AthleteDetailsResponse",
     "AthleteDetailsResponseAlternateIds",
     "AthleteDetailsResponseExperience",
+    "AthleteEventlogResponse",
+    "AthleteEventlogResponseEvents",
+    "AthleteEventlogResponseEventsItemsItem",
+    "AthleteEventlogResponseLeagues",
+    "AthleteEventlogResponseLeaguesAdditionalProperty",
+    "AthleteEventlogResponseTeams",
+    "AthleteEventlogResponseTeamsAdditionalProperty",
     "AthleteNote",
     "AthleteNotesResponse",
     "AthleteReference",
