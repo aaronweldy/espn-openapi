@@ -107,27 +107,15 @@ from models.site_api.espn_nfl_api_client.models.college_football_conference_enum
 from models.site_api.espn_nfl_api_client.models.college_basketball_conference_enum import CollegeBasketballConferenceEnum
 
 # The enums contain all valid conference IDs
-# Note: Due to openapi-python-client limitations, enum names are auto-generated
+# Note: enum names are auto-generated
 # (e.g., VALUE_0, VALUE_1, etc.) rather than using conference names
 ```
-
-For convenience, you can create your own mapping:
-
-```python
-FOOTBALL_CONFERENCES = {
-    "SEC": "8",
-    "ACC": "1", 
-    "BIG_TEN": "5",
-    "BIG_12": "4",
-    "PAC_12": "9",
-    "ALL_FBS": "80"
-}
 
 # Use in API calls
 response = get_scoreboard.sync_detailed(
     client=site_api_client,
     sport="football",
     league="college-football",
-    groups=FOOTBALL_CONFERENCES["SEC"]
+    groups=CollegeFootballConferenceEnum.VALUE_8 # SEC
 )
 ```
