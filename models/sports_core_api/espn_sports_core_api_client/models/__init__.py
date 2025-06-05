@@ -100,6 +100,7 @@ from .get_league_season_corrections_season_type import GetLeagueSeasonCorrection
 from .get_league_season_group_details_season_type import GetLeagueSeasonGroupDetailsSeasonType
 from .get_league_season_groups_season_type import GetLeagueSeasonGroupsSeasonType
 from .get_league_season_weeks_season_type import GetLeagueSeasonWeeksSeasonType
+from .get_nfl_athlete_projections_seasontype import GetNFLAthleteProjectionsSeasontype
 from .get_nfl_conference_standings_seasontype import GetNFLConferenceStandingsSeasontype
 from .group_details_response import GroupDetailsResponse
 from .head_to_heads import HeadToHeads
@@ -365,6 +366,7 @@ __all__ = (
     "GetLeagueSeasonGroupDetailsSeasonType",
     "GetLeagueSeasonGroupsSeasonType",
     "GetLeagueSeasonWeeksSeasonType",
+    "GetNFLAthleteProjectionsSeasontype",
     "GetNFLConferenceStandingsSeasontype",
     "GroupDetailsResponse",
     "HeadToHeads",

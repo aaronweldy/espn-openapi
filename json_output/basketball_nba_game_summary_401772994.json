@@ -2372,6 +2372,66 @@
       },
       "injuries": [
         {
+          "status": "Day-To-Day",
+          "date": "2025-06-04T22:37Z",
+          "athlete": {
+            "id": "4065673",
+            "uid": "s:40~l:46~a:4065673",
+            "guid": "78cd79a1-db81-4a11-9177-c0b340ccf5a3",
+            "lastName": "Bradley",
+            "fullName": "Tony Bradley",
+            "displayName": "Tony Bradley",
+            "shortName": "T. Bradley",
+            "links": [
+              {
+                "rel": [
+                  "playercard",
+                  "desktop",
+                  "athlete"
+                ],
+                "href": "https://www.espn.com/nba/player/_/id/4065673/tony-bradley",
+                "text": "Player Card"
+              }
+            ],
+            "headshot": {
+              "href": "https://a.espncdn.com/i/headshots/nba/players/full/4065673.png",
+              "alt": "Tony Bradley"
+            },
+            "jersey": "13",
+            "position": {
+              "name": "Center",
+              "displayName": "Center",
+              "abbreviation": "C"
+            },
+            "collegeAthlete": {
+              "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/mens-college-basketball/athletes/4065673?lang=en&region=us"
+            },
+            "status": {
+              "id": "1",
+              "name": "Active",
+              "type": "active",
+              "abbreviation": "Active"
+            }
+          },
+          "type": {
+            "id": "6",
+            "name": "INJURY_STATUS_DAYTODAY",
+            "description": "day-to-day",
+            "abbreviation": "DD"
+          },
+          "details": {
+            "fantasyStatus": {
+              "description": "GTD",
+              "abbreviation": "GTD"
+            },
+            "type": "Hip",
+            "location": "Torso",
+            "detail": "Strain",
+            "side": "Left",
+            "returnDate": "2025-06-05"
+          }
+        },
+        {
           "status": "Out",
           "date": "2025-06-02T14:28Z",
           "athlete": {
@@ -2761,289 +2821,23 @@
     },
     "articles": [
       {
-        "id": 45447336,
-        "nowId": "1-45447336",
-        "contentKey": "45447336-1-293-1",
-        "dataSourceIdentifier": "6fbc6ec680b29",
+        "id": 45452794,
+        "nowId": "1-45452794",
+        "contentKey": "45452794-1-293-1",
+        "dataSourceIdentifier": "b184e081d3fb8",
         "type": "Media",
-        "headline": "Why Stephen A. wouldn't complain if Michael Malone gets Knicks job",
-        "description": "Stephen A. Smith tells Scott Van Pelt some of the names that he feels are capable replacements for Tom Thibodeau as the next coach of the New York Knicks.",
-        "lastModified": "2025-06-04T04:20:02Z",
-        "published": "2025-06-04T04:10:14Z",
+        "headline": "Ohm Youngmisuk predicts the NBA Finals",
+        "description": "Ohm Youngmisuk predicts the Oklahoma Thunder will close out the Indiana Pacers in six games.",
+        "lastModified": "2025-06-04T23:26:22Z",
+        "published": "2025-06-04T23:22:46Z",
         "images": [
           {
-            "name": "Why Stephen A. wouldn't complain if Michael Malone gets Knicks job",
-            "caption": "Stephen A. Smith tells Scott Van Pelt some of the names that he feels are capable replacements for Tom Thibodeau as the next coach of the New York Knicks.",
+            "name": "Ohm Youngmisuk predicts the NBA Finals",
+            "caption": "Ohm Youngmisuk predicts the Oklahoma Thunder will close out the Indiana Pacers in six games.",
             "alt": "",
             "height": 324,
             "width": 576,
-            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_SAS_on_Knicks/dm_250604_SAS_on_Knicks.jpg"
-          }
-        ],
-        "categories": [
-          {
-            "id": 4293,
-            "type": "team",
-            "uid": "s:40~l:46~t:18",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b",
-            "description": "New York Knicks",
-            "sportId": 46,
-            "teamId": 18,
-            "team": {
-              "id": 18,
-              "description": "New York Knicks",
-              "links": {
-                "web": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                },
-                "mobile": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 9577,
-            "type": "league",
-            "uid": "s:40~l:46",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
-            "description": "NBA",
-            "sportId": 46,
-            "leagueId": 46,
-            "league": {
-              "id": 46,
-              "description": "NBA",
-              "abbreviation": "NBA",
-              "links": {
-                "web": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                },
-                "mobile": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "type": "guid",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b"
-          },
-          {
-            "type": "guid",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
-          }
-        ],
-        "premium": false,
-        "links": {
-          "web": {
-            "href": "https://www.espn.com/video/clip?id=45447336",
-            "self": {
-              "href": "https://www.espn.com/video/clip?id=45447336"
-            },
-            "seo": {
-              "href": "https://www.espn.com/video/clip/_/id/45447336"
-            }
-          },
-          "api": {
-            "self": {
-              "href": "https://content.core.api.espn.com/v1/video/clips/45447336"
-            },
-            "artwork": {
-              "href": "https://artwork.api.espn.com/artwork/collections/media/374aef2f-3213-4a54-b975-56aaaf5d1b57"
-            }
-          },
-          "sportscenter": {
-            "href": "sportscenter://x-callback-url/showVideo?videoID=45447336&videoDSI=6fbc6ec680b29"
-          }
-        }
-      },
-      {
-        "id": 45445389,
-        "nowId": "1-45445389",
-        "contentKey": "45445389-1-6-1",
-        "dataSourceIdentifier": "e4c31251f4037",
-        "type": "Story",
-        "headline": "Tom Thibodeau among winningest coaches without a title",
-        "description": "Including Thibodeau, just eight coaches in the NBA's history have over 500 regular season wins, a regular season winning percentage above .550, but never won a title.",
-        "lastModified": "2025-06-03T23:52:21Z",
-        "published": "2025-06-03T23:52:00Z",
-        "images": [
-          {
-            "dataSourceIdentifier": "768c777ec4013",
-            "id": 45443980,
-            "type": "header",
-            "name": "Tom Thibodeau 3 [608x342]",
-            "credit": "Patrick McDermott/Getty Images",
-            "height": 342,
-            "width": 608,
-            "url": "https://a.espncdn.com/photo/2025/0603/r1502057_608x342_16-9.jpg"
-          },
-          {
-            "dataSourceIdentifier": "6f120114eb7e2",
-            "id": 45445261,
-            "type": "header",
-            "name": "stan van gundy [608x342]",
-            "caption": "Stan Van Gundy won 554 games as an NBA head coach, with his closest brush with championship glory coming in 2008-09 with the Orlando Magic.",
-            "credit": "Chris Graythen/Getty Images",
-            "height": 342,
-            "width": 608,
-            "url": "https://a.espncdn.com/photo/2025/0603/r1502138_608x342_16-9.jpg"
-          }
-        ],
-        "categories": [
-          {
-            "id": 4293,
-            "type": "team",
-            "uid": "s:40~l:46~t:18",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b",
-            "description": "New York Knicks",
-            "sportId": 46,
-            "teamId": 18,
-            "team": {
-              "id": 18,
-              "description": "New York Knicks",
-              "links": {
-                "web": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                },
-                "mobile": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 9577,
-            "type": "league",
-            "uid": "s:40~l:46",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
-            "description": "NBA",
-            "sportId": 46,
-            "leagueId": 46,
-            "league": {
-              "id": 46,
-              "description": "NBA",
-              "abbreviation": "NBA",
-              "links": {
-                "web": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                },
-                "mobile": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "type": "guid",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b"
-          },
-          {
-            "type": "guid",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
-          }
-        ],
-        "premium": false,
-        "links": {
-          "web": {
-            "href": "https://www.espn.com/nba/story/_/id/45445389/tom-thibodeau-winningest-nba-coaches-no-championship"
-          },
-          "mobile": {
-            "href": "http://m.espn.go.com/nba/story?storyId=45445389"
-          },
-          "api": {
-            "self": {
-              "href": "https://content.core.api.espn.com/v1/sports/news/45445389"
-            }
-          },
-          "app": {
-            "sportscenter": {
-              "href": "sportscenter://x-callback-url/showStory?uid=45445389"
-            }
-          }
-        },
-        "byline": "J.J. Post"
-      },
-      {
-        "id": 45365424,
-        "nowId": "1-45365424",
-        "contentKey": "45365424-1-6-1",
-        "dataSourceIdentifier": "cf9a987e8cd95",
-        "type": "Story",
-        "headline": "NBA Finals 2025: What to know ahead of Pacers-Thunder championship matchup",
-        "description": "The 2025 NBA Finals are here! Our NBA insiders break down everything you need to know ahead of this Pacers-Thunder championship showdown.",
-        "lastModified": "2025-06-03T23:13:13Z",
-        "published": "2025-06-03T23:13:00Z",
-        "images": [
-          {
-            "dataSourceIdentifier": "439f30678c245",
-            "id": 45394796,
-            "type": "header",
-            "name": "NBA Finals Preview: Thunder vs. Pacers [1500x844]",
-            "caption": "The Oklahoma City Thunder and the Indiana Pacers each look to claim the first championship in franchise history.",
-            "alt": "Shai Gilgeous-Alexander, Lu Dort, Tyrese Haliburton, Andrew Nembhard",
-            "credit": "Illustration by ESPN",
-            "height": 844,
-            "width": 1500,
-            "url": "https://a.espncdn.com/photo/2025/0530/nba_finals-thunder-pacers_fc_16x9.jpg"
-          },
-          {
-            "dataSourceIdentifier": "2856f96000000",
-            "id": 45427751,
-            "type": "header",
-            "name": "Tyrese Haliburton vs. Luguentz Dort [1296x729]",
-            "caption": "Tyrese Haliburton is averaging 18.8 points per game this postseason for the Pacers. Luguentz Dort was named to the NBA All-Defensive first team this season for the Thunder.",
-            "credit": "(AP Photo/Michael Conroy)",
-            "height": 729,
-            "width": 1296,
-            "url": "https://a.espncdn.com/photo/2025/0602/r1501407_1296x729_16-9.jpg"
-          },
-          {
-            "dataSourceIdentifier": "444c4b5e7a901",
-            "id": 45427775,
-            "type": "header",
-            "name": "OKC [1296x729]",
-            "caption": "The Thunder lead the league in defensive rating in both the regular season and the postseason.",
-            "credit": "(Photo by Zach Beeker/NBAE via Getty Images)",
-            "height": 729,
-            "width": 1296,
-            "url": "https://a.espncdn.com/photo/2025/0602/r1501408_1296x729_16-9.jpg"
-          },
-          {
-            "dataSourceIdentifier": "7004c10ddc457",
-            "id": 45427810,
-            "type": "header",
-            "name": "IND [1296x729]",
-            "caption": "The Pacers are second in the league in offensive rating (117.7), behind only the Cleveland Cavaliers this postseason.",
-            "alt": "The Pacers are second in the league in offensive rating (117.7), behind only the Cleveland Cavaliers this postseason.",
-            "credit": "Trevor Ruszkowski-Imagn Images",
-            "height": 729,
-            "width": 1296,
-            "url": "https://a.espncdn.com/photo/2025/0602/r1501410_1296x729_16-9.jpg"
-          },
-          {
-            "type": "Media",
-            "name": "Stephen A. and Canty disagree on the NBA Finals' key player",
-            "caption": "Stephen A. Smith and Chris Canty debate who the most important player in the NBA Finals is between Jalen Williams and Pascal Siakam.",
-            "height": 324,
-            "width": 576,
-            "url": "https://a.espncdn.com/media/motion/2025/0603/dm_250603_SAS_CANTY_FINALS_KEY_PLAYER/dm_250603_SAS_CANTY_FINALS_KEY_PLAYER.jpg"
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_finals/dm_250604_finals.jpg"
           }
         ],
         "categories": [
@@ -3139,329 +2933,370 @@
         "premium": false,
         "links": {
           "web": {
-            "href": "https://www.espn.com/nba/story/_/id/45365424/nba-finals-2025-preview-thunder-pacers-championship-series"
-          },
-          "mobile": {
-            "href": "http://m.espn.go.com/nba/story?storyId=45365424"
-          },
-          "api": {
+            "href": "https://www.espn.com/video/clip?id=45452794",
             "self": {
-              "href": "https://content.core.api.espn.com/v1/sports/news/45365424"
-            }
-          },
-          "app": {
-            "sportscenter": {
-              "href": "sportscenter://x-callback-url/showStory?uid=45365424"
-            }
-          }
-        },
-        "byline": "NBA Insiders"
-      },
-      {
-        "id": 45445385,
-        "nowId": "1-45445385",
-        "contentKey": "45445385-1-5-1",
-        "dataSourceIdentifier": "4dabd031bd1fa",
-        "type": "HeadlineNews",
-        "headline": "Indiana Pacers land in OKC for NBA Finals after weather diverted flight",
-        "description": "The Indiana Pacers' arrival in Oklahoma City for the NBA Finals was delayed by weather on Tuesday afternoon, but the Eastern Conference champions eventually landed later in the day ahead of Game 1 on Thursday.",
-        "lastModified": "2025-06-04T00:28:25Z",
-        "published": "2025-06-03T22:51:00Z",
-        "images": [
-          {
-            "dataSourceIdentifier": "7b5e3b60255c4",
-            "id": 37751095,
-            "type": "header",
-            "name": "NBA Larry O'Brien Trophy [1296x729]",
-            "alt": "NBA Larry O'Brien Trophy",
-            "credit": "Mark J. Rebilas/USA TODAY Sports",
-            "height": 729,
-            "width": 1296,
-            "url": "https://a.espncdn.com/photo/2023/0529/r1179681_1296x729_16-9.jpg"
-          },
-          {
-            "type": "Media",
-            "name": "Stephen A.: Tyrese Haliburton is key to Pacers-Thunder series",
-            "caption": "Stephen A. Smith details why Tyrese Haliburton and Myles Turner will be key to the Pacers' success in the NBA Finals vs. the Thunder.",
-            "height": 324,
-            "width": 576,
-            "url": "https://a.espncdn.com/media/motion/2025/0603/dm_250603_SAS_TYRESE_FINALS/dm_250603_SAS_TYRESE_FINALS.jpg"
-          }
-        ],
-        "categories": [
-          {
-            "id": 4695,
-            "type": "team",
-            "uid": "s:40~l:46~t:25",
-            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c",
-            "description": "Oklahoma City Thunder",
-            "sportId": 46,
-            "teamId": 25,
-            "team": {
-              "id": 25,
-              "description": "Oklahoma City Thunder",
-              "links": {
-                "web": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
-                  }
-                },
-                "mobile": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 409224,
-            "type": "topic",
-            "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
-            "description": "news",
-            "sportId": 0,
-            "topicId": 781
-          },
-          {
-            "id": 9577,
-            "type": "league",
-            "uid": "s:40~l:46",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
-            "description": "NBA",
-            "sportId": 46,
-            "leagueId": 46,
-            "league": {
-              "id": 46,
-              "description": "NBA",
-              "abbreviation": "NBA",
-              "links": {
-                "web": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                },
-                "mobile": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 4438,
-            "type": "team",
-            "uid": "s:40~l:46~t:11",
-            "guid": "547fc042-3e02-4795-9637-9ab84322b625",
-            "description": "Indiana Pacers",
-            "sportId": 46,
-            "teamId": 11,
-            "team": {
-              "id": 11,
-              "description": "Indiana Pacers",
-              "links": {
-                "web": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ind/indiana-pacers"
-                  }
-                },
-                "mobile": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ind/indiana-pacers"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "type": "guid",
-            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c"
-          },
-          {
-            "type": "guid",
-            "guid": "52313677-19f8-b106-ec91-d8d17e6087fe"
-          },
-          {
-            "type": "guid",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
-          },
-          {
-            "type": "guid",
-            "guid": "547fc042-3e02-4795-9637-9ab84322b625"
-          }
-        ],
-        "premium": false,
-        "links": {
-          "web": {
-            "href": "https://www.espn.com/nba/story/_/id/45445385/indiana-pacers-arrival-nba-finals-okc-delayed-weather"
-          },
-          "mobile": {
-            "href": "http://m.espn.go.com/nba/story?storyId=45445385"
-          },
-          "api": {
-            "self": {
-              "href": "https://content.core.api.espn.com/v1/sports/news/45445385"
-            }
-          },
-          "app": {
-            "sportscenter": {
-              "href": "sportscenter://x-callback-url/showStory?uid=45445385"
-            }
-          }
-        }
-      },
-      {
-        "id": 45445307,
-        "nowId": "1-45445307",
-        "contentKey": "45445307-1-293-1",
-        "dataSourceIdentifier": "af40edc305aaf",
-        "type": "Media",
-        "headline": "Frank Isola isn't surprised Knicks fired Thibodeau",
-        "description": "Frank Isola and Tony Kornheiser discuss the Knicks' baffling decision to fire head coach Tom Thibodeau.",
-        "lastModified": "2025-06-03T23:05:58Z",
-        "published": "2025-06-03T22:22:34Z",
-        "images": [
-          {
-            "name": "Frank Isola isn't surprised Knicks fired Thibodeau",
-            "caption": "Frank Isola and Tony Kornheiser discuss the Knicks' baffling decision to fire head coach Tom Thibodeau.",
-            "alt": "",
-            "height": 324,
-            "width": 576,
-            "url": "https://a.espncdn.com/media/motion/2025/0603/dm_250603_thibodeau1144/dm_250603_thibodeau1144.jpg"
-          }
-        ],
-        "categories": [
-          {
-            "id": 4293,
-            "type": "team",
-            "uid": "s:40~l:46~t:18",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b",
-            "description": "New York Knicks",
-            "sportId": 46,
-            "teamId": 18,
-            "team": {
-              "id": 18,
-              "description": "New York Knicks",
-              "links": {
-                "web": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                },
-                "mobile": {
-                  "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "id": 9577,
-            "type": "league",
-            "uid": "s:40~l:46",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
-            "description": "NBA",
-            "sportId": 46,
-            "leagueId": 46,
-            "league": {
-              "id": 46,
-              "description": "NBA",
-              "abbreviation": "NBA",
-              "links": {
-                "web": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                },
-                "mobile": {
-                  "leagues": {
-                    "href": "https://www.espn.com/nba/"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "type": "guid",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b"
-          },
-          {
-            "type": "guid",
-            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
-          }
-        ],
-        "premium": false,
-        "links": {
-          "web": {
-            "href": "https://www.espn.com/video/clip?id=45445307",
-            "self": {
-              "href": "https://www.espn.com/video/clip?id=45445307",
+              "href": "https://www.espn.com/video/clip?id=45452794",
               "dsi": {
-                "href": "https://www.espn.com/video/clip?id=af40edc305aaf"
+                "href": "https://www.espn.com/video/clip?id=b184e081d3fb8"
               }
             },
             "seo": {
-              "href": "https://www.espn.com/video/clip/_/id/45445307"
+              "href": "https://www.espn.com/video/clip/_/id/45452794"
             }
           },
           "api": {
             "self": {
-              "href": "https://content.core.api.espn.com/v1/video/clips/45445307"
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452794"
             },
             "artwork": {
-              "href": "https://artwork.api.espn.com/artwork/collections/media/6fadbd3c-8863-467e-843b-d43c7b80316b"
+              "href": "https://artwork.api.espn.com/artwork/collections/media/7f19bc22-5426-4934-8a1c-cee9573606d7"
             }
           },
           "sportscenter": {
-            "href": "sportscenter://x-callback-url/showVideo?videoID=45445307&videoDSI=af40edc305aaf"
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452794&videoDSI=b184e081d3fb8"
           }
         }
       },
       {
-        "id": 45444294,
-        "nowId": "1-45444294",
-        "contentKey": "45444294-1-6-1",
-        "dataSourceIdentifier": "6ed430909ca11",
-        "type": "Story",
-        "headline": "Knicks fire Tom Thibodeau: What's next for New York's open job?",
-        "description": "NBA insiders examine why the Knicks parted ways with coach Tom Thibodeau and which candidates could be right for New York.",
-        "lastModified": "2025-06-04T00:35:18Z",
-        "published": "2025-06-03T20:49:00Z",
+        "id": 45452791,
+        "nowId": "1-45452791",
+        "contentKey": "45452791-1-293-1",
+        "dataSourceIdentifier": "78ccf035be110",
+        "type": "Media",
+        "headline": "Why SGA vs. Haliburton will determine the NBA Finals",
+        "description": "Tyrese Haliburton has to have big games for the Pacers to have a chance to beat the Thunder in the NBA Finals.",
+        "lastModified": "2025-06-04T23:22:33Z",
+        "published": "2025-06-04T23:13:20Z",
         "images": [
           {
-            "dataSourceIdentifier": "aba11a628663c",
-            "id": 45443923,
-            "type": "header",
-            "name": "Tom Thibodeau  [1296x729]",
-            "caption": "The Knicks fired head coach Tom Thibodeau on Tuesday.",
-            "credit": "Photo by Gregory Shamus/Getty Images",
-            "height": 729,
-            "width": 1296,
-            "url": "https://a.espncdn.com/photo/2025/0603/r1502053_1296x729_16-9.jpg"
+            "name": "Why SGA vs. Haliburton will determine the NBA Finals",
+            "caption": "Tyrese Haliburton has to have big games for the Pacers to have a chance to beat the Thunder in the NBA Finals.",
+            "alt": "",
+            "height": 324,
+            "width": 576,
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_SGA_vs_Haliburton/dm_250604_SGA_vs_Haliburton.jpg"
           }
         ],
         "categories": [
           {
-            "id": 4293,
+            "id": 4695,
             "type": "team",
-            "uid": "s:40~l:46~t:18",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b",
-            "description": "New York Knicks",
+            "uid": "s:40~l:46~t:25",
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c",
+            "description": "Oklahoma City Thunder",
             "sportId": 46,
-            "teamId": 18,
+            "teamId": 25,
             "team": {
-              "id": 18,
-              "description": "New York Knicks",
+              "id": 25,
+              "description": "Oklahoma City Thunder",
               "links": {
                 "web": {
                   "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
                   }
                 },
                 "mobile": {
                   "teams": {
-                    "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks"
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 187309,
+            "type": "athlete",
+            "uid": "s:40~l:46~a:4278073",
+            "guid": "4dcec409-3ff9-2881-2bc3-b4289ce6c36d",
+            "description": "Shai Gilgeous-Alexander",
+            "sportId": 46,
+            "athleteId": 4278073,
+            "athlete": {
+              "id": 4278073,
+              "description": "Shai Gilgeous-Alexander",
+              "links": {
+                "web": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4278073/shai-gilgeous-alexander"
+                  }
+                },
+                "mobile": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4278073/shai-gilgeous-alexander"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 457677,
+            "type": "athlete",
+            "uid": "s:40~l:46~a:4396993",
+            "guid": "c4a0ba92-4e50-60af-a617-3345255115a7",
+            "description": "Tyrese Haliburton",
+            "sportId": 46,
+            "athleteId": 4396993,
+            "athlete": {
+              "id": 4396993,
+              "description": "Tyrese Haliburton",
+              "links": {
+                "web": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4396993/tyrese-haliburton"
+                  }
+                },
+                "mobile": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4396993/tyrese-haliburton"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 9577,
+            "type": "league",
+            "uid": "s:40~l:46",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
+            "description": "NBA",
+            "sportId": 46,
+            "leagueId": 46,
+            "league": {
+              "id": 46,
+              "description": "NBA",
+              "abbreviation": "NBA",
+              "links": {
+                "web": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                },
+                "mobile": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 4438,
+            "type": "team",
+            "uid": "s:40~l:46~t:11",
+            "guid": "547fc042-3e02-4795-9637-9ab84322b625",
+            "description": "Indiana Pacers",
+            "sportId": 46,
+            "teamId": 11,
+            "team": {
+              "id": 11,
+              "description": "Indiana Pacers",
+              "links": {
+                "web": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/ind/indiana-pacers"
+                  }
+                },
+                "mobile": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/ind/indiana-pacers"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "guid",
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c"
+          },
+          {
+            "type": "guid",
+            "guid": "4dcec409-3ff9-2881-2bc3-b4289ce6c36d"
+          },
+          {
+            "type": "guid",
+            "guid": "c4a0ba92-4e50-60af-a617-3345255115a7"
+          },
+          {
+            "type": "guid",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
+          },
+          {
+            "type": "guid",
+            "guid": "547fc042-3e02-4795-9637-9ab84322b625"
+          }
+        ],
+        "premium": false,
+        "links": {
+          "web": {
+            "href": "https://www.espn.com/video/clip?id=45452791",
+            "self": {
+              "href": "https://www.espn.com/video/clip?id=45452791",
+              "dsi": {
+                "href": "https://www.espn.com/video/clip?id=78ccf035be110"
+              }
+            },
+            "seo": {
+              "href": "https://www.espn.com/video/clip/_/id/45452791"
+            }
+          },
+          "api": {
+            "self": {
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452791"
+            },
+            "artwork": {
+              "href": "https://artwork.api.espn.com/artwork/collections/media/3116fca4-74a8-4a85-9c2f-c9823f703f35"
+            }
+          },
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452791&videoDSI=78ccf035be110"
+          }
+        }
+      },
+      {
+        "id": 45452788,
+        "nowId": "1-45452788",
+        "contentKey": "45452788-1-293-1",
+        "dataSourceIdentifier": "d9a7da18d8d43",
+        "type": "Media",
+        "headline": "Why OKC will have to be their best to beat the Pacers",
+        "description": "The Thunder are heavy favorites in the NBA Finals, but they will have to be at the top of their game to win the title against the Pacers.",
+        "lastModified": "2025-06-04T23:20:33Z",
+        "published": "2025-06-04T23:13:05Z",
+        "images": [
+          {
+            "name": "Why OKC will have to be their best to beat the Pacers",
+            "caption": "The Thunder are heavy favorites in the NBA Finals, but they will have to be at the top of their game to win the title against the Pacers.",
+            "alt": "",
+            "height": 324,
+            "width": 576,
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_dm_nba_okc_will_need_to_be_at_best/dm_250604_dm_nba_okc_will_need_to_be_at_best.jpg"
+          }
+        ],
+        "categories": [
+          {
+            "id": 9577,
+            "type": "league",
+            "uid": "s:40~l:46",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
+            "description": "NBA",
+            "sportId": 46,
+            "leagueId": 46,
+            "league": {
+              "id": 46,
+              "description": "NBA",
+              "abbreviation": "NBA",
+              "links": {
+                "web": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                },
+                "mobile": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "guid",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
+          }
+        ],
+        "premium": false,
+        "links": {
+          "web": {
+            "href": "https://www.espn.com/video/clip?id=45452788",
+            "self": {
+              "href": "https://www.espn.com/video/clip?id=45452788",
+              "dsi": {
+                "href": "https://www.espn.com/video/clip?id=d9a7da18d8d43"
+              }
+            },
+            "seo": {
+              "href": "https://www.espn.com/video/clip/_/id/45452788"
+            }
+          },
+          "api": {
+            "self": {
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452788"
+            },
+            "artwork": {
+              "href": "https://artwork.api.espn.com/artwork/collections/media/2e8d51e8-8bb1-408b-835c-2ad46a9c0aab"
+            }
+          },
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452788&videoDSI=d9a7da18d8d43"
+          }
+        }
+      },
+      {
+        "id": 45452777,
+        "nowId": "1-45452777",
+        "contentKey": "45452777-1-293-1",
+        "dataSourceIdentifier": "8a9243e1ebc65",
+        "type": "Media",
+        "headline": "OKC's Alex Caruso on bonding with younger teammates",
+        "description": "Veteran guard Alex Caruso discusses how the Thunder's team chemistry carried the team through a long season.",
+        "lastModified": "2025-06-04T23:15:53Z",
+        "published": "2025-06-04T23:11:59Z",
+        "images": [
+          {
+            "name": "OKC's Alex Caruso on bonding with younger teammates",
+            "caption": "Veteran guard Alex Caruso discusses how the Thunder's team chemistry carried the team through a long season.",
+            "alt": "",
+            "height": 324,
+            "width": 576,
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_dm_nba_caruso_okc_teammates/dm_250604_dm_nba_caruso_okc_teammates.jpg"
+          }
+        ],
+        "categories": [
+          {
+            "id": 4695,
+            "type": "team",
+            "uid": "s:40~l:46~t:25",
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c",
+            "description": "Oklahoma City Thunder",
+            "sportId": 46,
+            "teamId": 25,
+            "team": {
+              "id": 25,
+              "description": "Oklahoma City Thunder",
+              "links": {
+                "web": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+                  }
+                },
+                "mobile": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 156907,
+            "type": "athlete",
+            "uid": "s:40~l:46~a:2991350",
+            "guid": "41bcf5f1-07fd-effe-1f0c-5b58221253f0",
+            "description": "Alex Caruso",
+            "sportId": 46,
+            "athleteId": 2991350,
+            "athlete": {
+              "id": 2991350,
+              "description": "Alex Caruso",
+              "links": {
+                "web": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/2991350/alex-caruso"
+                  }
+                },
+                "mobile": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/2991350/alex-caruso"
                   }
                 }
               }
@@ -3495,7 +3330,11 @@
           },
           {
             "type": "guid",
-            "guid": "61719eb2-11c3-4e3d-90c3-0a1319fd850b"
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c"
+          },
+          {
+            "type": "guid",
+            "guid": "41bcf5f1-07fd-effe-1f0c-5b58221253f0"
           },
           {
             "type": "guid",
@@ -3505,23 +3344,259 @@
         "premium": false,
         "links": {
           "web": {
-            "href": "https://www.espn.com/nba/story/_/id/45444294/knicks-fire-tom-thibodeau-candidates-changes-next-new-york"
-          },
-          "mobile": {
-            "href": "http://m.espn.go.com/nba/story?storyId=45444294"
+            "href": "https://www.espn.com/video/clip?id=45452777",
+            "self": {
+              "href": "https://www.espn.com/video/clip?id=45452777"
+            },
+            "seo": {
+              "href": "https://www.espn.com/video/clip/_/id/45452777"
+            }
           },
           "api": {
             "self": {
-              "href": "https://content.core.api.espn.com/v1/sports/news/45444294"
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452777"
+            },
+            "artwork": {
+              "href": "https://artwork.api.espn.com/artwork/collections/media/f084dc27-7828-4e88-880f-79fb7d99aeb4"
             }
           },
-          "app": {
-            "sportscenter": {
-              "href": "sportscenter://x-callback-url/showStory?uid=45444294"
-            }
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452777&videoDSI=8a9243e1ebc65"
           }
-        },
-        "byline": "NBA Insiders"
+        }
+      },
+      {
+        "id": 45452782,
+        "nowId": "1-45452782",
+        "contentKey": "45452782-1-293-1",
+        "dataSourceIdentifier": "052bdf8275b8e",
+        "type": "Media",
+        "headline": "OKC's Jalen Williams is poised for a breakout Finals",
+        "description": "Jalen Williams is an emerging talent that can do everything for the Thunder.",
+        "lastModified": "2025-06-04T23:16:53Z",
+        "published": "2025-06-04T23:11:32Z",
+        "images": [
+          {
+            "name": "OKC's Jalen Williams is poised for a breakout Finals",
+            "caption": "Jalen Williams is an emerging talent that can do everything for the Thunder.",
+            "alt": "",
+            "height": 324,
+            "width": 576,
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_okc_jalen_williams/dm_250604_okc_jalen_williams.jpg"
+          }
+        ],
+        "categories": [
+          {
+            "id": 4695,
+            "type": "team",
+            "uid": "s:40~l:46~t:25",
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c",
+            "description": "Oklahoma City Thunder",
+            "sportId": 46,
+            "teamId": 25,
+            "team": {
+              "id": 25,
+              "description": "Oklahoma City Thunder",
+              "links": {
+                "web": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+                  }
+                },
+                "mobile": {
+                  "teams": {
+                    "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 533818,
+            "type": "athlete",
+            "uid": "s:40~l:46~a:4593803",
+            "guid": "2381f346-9247-3ba1-b632-fcef378a2799",
+            "description": "Jalen Williams",
+            "sportId": 46,
+            "athleteId": 4593803,
+            "athlete": {
+              "id": 4593803,
+              "description": "Jalen Williams",
+              "links": {
+                "web": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4593803/jalen-williams"
+                  }
+                },
+                "mobile": {
+                  "athletes": {
+                    "href": "https://www.espn.com/nba/player/_/id/4593803/jalen-williams"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 9577,
+            "type": "league",
+            "uid": "s:40~l:46",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
+            "description": "NBA",
+            "sportId": 46,
+            "leagueId": 46,
+            "league": {
+              "id": 46,
+              "description": "NBA",
+              "abbreviation": "NBA",
+              "links": {
+                "web": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                },
+                "mobile": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "guid",
+            "guid": "bd458c44-2d33-47eb-cebc-35d3d4ac595c"
+          },
+          {
+            "type": "guid",
+            "guid": "2381f346-9247-3ba1-b632-fcef378a2799"
+          },
+          {
+            "type": "guid",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
+          }
+        ],
+        "premium": false,
+        "links": {
+          "web": {
+            "href": "https://www.espn.com/video/clip?id=45452782",
+            "self": {
+              "href": "https://www.espn.com/video/clip?id=45452782"
+            },
+            "seo": {
+              "href": "https://www.espn.com/video/clip/_/id/45452782"
+            }
+          },
+          "api": {
+            "self": {
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452782"
+            },
+            "artwork": {
+              "href": "https://artwork.api.espn.com/artwork/collections/media/c9ccb2af-42a3-46d4-9979-284a0acb279d"
+            }
+          },
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452782&videoDSI=052bdf8275b8e"
+          }
+        }
+      },
+      {
+        "id": 45452519,
+        "nowId": "1-45452519",
+        "contentKey": "45452519-1-293-1",
+        "dataSourceIdentifier": "1380244587dcc",
+        "type": "Media",
+        "headline": "Joan Beringer's NBA draft profile",
+        "description": "Check out some of the highlights that have made Joan Beringer a top NBA draft prospect.",
+        "lastModified": "2025-06-04T22:27:43Z",
+        "published": "2025-06-04T22:24:45Z",
+        "images": [
+          {
+            "name": "Joan Beringer's NBA draft profile",
+            "caption": "Check out some of the highlights that have made Joan Beringer a top NBA draft prospect.",
+            "alt": "",
+            "height": 324,
+            "width": 576,
+            "url": "https://a.espncdn.com/media/motion/2025/0604/dm_250604_Joan_Beringer_NBA_draft_profile/dm_250604_Joan_Beringer_NBA_draft_profile.jpg"
+          }
+        ],
+        "categories": [
+          {
+            "id": 30935,
+            "type": "league",
+            "guid": "fb228df5-8327-43d2-8397-22138f9bbf47",
+            "description": "NBA Draft",
+            "sportId": 0,
+            "leagueId": 3380,
+            "league": {
+              "id": 3380,
+              "description": "NBA Draft",
+              "links": {
+                "web": {},
+                "mobile": {}
+              }
+            }
+          },
+          {
+            "id": 9577,
+            "type": "league",
+            "uid": "s:40~l:46",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154",
+            "description": "NBA",
+            "sportId": 46,
+            "leagueId": 46,
+            "league": {
+              "id": 46,
+              "description": "NBA",
+              "abbreviation": "NBA",
+              "links": {
+                "web": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                },
+                "mobile": {
+                  "leagues": {
+                    "href": "https://www.espn.com/nba/"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "guid",
+            "guid": "fb228df5-8327-43d2-8397-22138f9bbf47"
+          },
+          {
+            "type": "guid",
+            "guid": "7b3729c9-7f69-308a-bf8a-ee15a6aba154"
+          }
+        ],
+        "premium": false,
+        "links": {
+          "web": {
+            "href": "https://www.espn.com/video/clip?id=45452519",
+            "self": {
+              "href": "https://www.espn.com/video/clip?id=45452519",
+              "dsi": {
+                "href": "https://www.espn.com/video/clip?id=1380244587dcc"
+              }
+            },
+            "seo": {
+              "href": "https://www.espn.com/video/clip/_/id/45452519"
+            }
+          },
+          "api": {
+            "self": {
+              "href": "https://content.core.api.espn.com/v1/video/clips/45452519"
+            },
+            "artwork": {
+              "href": "https://artwork.api.espn.com/artwork/collections/media/4ff6a5c7-4bbb-43bc-9b10-6f92ae8d5ec4"
+            }
+          },
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showVideo?videoID=45452519&videoDSI=1380244587dcc"
+          }
+        }
       }
     ]
   },

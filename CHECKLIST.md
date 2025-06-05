@@ -245,7 +245,7 @@ sports.core.api.espn.com
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/athletes/{athlete_id}/notes - Athlete Season Notes. Path Params: {sport}, {league}, {year}, {athlete_id} - Implemented as generic endpoint
 [x] /v2/sports/football/leagues/nfl/seasons/{year}/coaches - NFL Coaches List - Covered by generic /v2/sports/{sport}/leagues/{league}/seasons/{year}/coaches
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/draft/status - Draft Status. Path Params: {sport}, {league}, {year} - Implemented as generic endpoint
-[ ] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
+[x] /v2/sports/football/leagues/nfl/seasons/{year}/types/{seasontype}/athletes/{athlete_id}/projections - NFL Athlete Projections
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/attendance - Team Attendance. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId} - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{teamId}/leaders - Team Leaders. Path Params: {sport}, {league}, {year}, {seasontype}, {teamId}. Query Params: limit - Implemented as generic endpoint
 [x] /v2/sports/{sport}/leagues/{league}/seasons/{year}/types/{seasontype}/teams/{team_id}/record - Team Record. Path Params: {sport}, {league}, {year}, {seasontype}, {team_id} - Implemented as generic endpoint
