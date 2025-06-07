@@ -44,8 +44,8 @@ from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_e
 from models.sports_core_api.espn_sports_core_api_client.api.default.get_league_event_details import (
     sync as get_league_event_details,
 )
-from models.sports_core_api.espn_sports_core_api_client.api.default.get_nfl_team_injuries import (
-    sync as get_nfl_team_injuries,
+from models.sports_core_api.espn_sports_core_api_client.api.default.get_team_injuries import (
+    sync as get_team_injuries,
 )
 from models.sports_core_api.espn_sports_core_api_client.models.athlete_details_response import (
     AthleteDetailsResponse,
@@ -727,7 +727,9 @@ def test_nfl_team_injuries(
     sports_core_api_client, ensure_json_output_dir, team_id: str = "1"
 ):
     """Tests fetching NFL team injuries."""
-    response = get_nfl_team_injuries(
+    response = get_team_injuries(
+        sport="football",
+        league="nfl",
         team_id=team_id,
         client=sports_core_api_client,
     )

@@ -11,12 +11,17 @@ from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
+    sport: str,
+    league: str,
     team_id: str,
     *,
+    limit: Union[Unset, int] = UNSET,
     page_index: Union[Unset, int] = UNSET,
     page_size: Union[Unset, int] = UNSET,
 ) -> Dict[str, Any]:
     params: Dict[str, Any] = {}
+
+    params["limit"] = limit
 
     params["pageIndex"] = page_index
 
@@ -26,7 +31,7 @@ def _get_kwargs(
 
     _kwargs: Dict[str, Any] = {
         "method": "get",
-        "url": f"/v2/sports/football/leagues/nfl/teams/{team_id}/injuries",
+        "url": f"/v2/sports/{sport}/leagues/{league}/teams/{team_id}/injuries",
         "params": params,
     }
 
@@ -66,18 +71,24 @@ def _build_response(
 
 
 def sync_detailed(
+    sport: str,
+    league: str,
     team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
+    limit: Union[Unset, int] = UNSET,
     page_index: Union[Unset, int] = UNSET,
     page_size: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, PaginatedReferenceListResponse]]:
-    """Get NFL Team Injuries
+    """Get Team Injuries
 
-     Retrieve a paginated list of injury references for a specific NFL team.
+     Retrieve a paginated list of injury references for a specific team.
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         team_id (str):  Example: 12.
+        limit (Union[Unset, int]):  Example: 100.
         page_index (Union[Unset, int]):  Example: 1.
         page_size (Union[Unset, int]):  Example: 25.
 
@@ -90,7 +101,10 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         team_id=team_id,
+        limit=limit,
         page_index=page_index,
         page_size=page_size,
     )
@@ -103,18 +117,24 @@ def sync_detailed(
 
 
 def sync(
+    sport: str,
+    league: str,
     team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
+    limit: Union[Unset, int] = UNSET,
     page_index: Union[Unset, int] = UNSET,
     page_size: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, PaginatedReferenceListResponse]]:
-    """Get NFL Team Injuries
+    """Get Team Injuries
 
-     Retrieve a paginated list of injury references for a specific NFL team.
+     Retrieve a paginated list of injury references for a specific team.
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         team_id (str):  Example: 12.
+        limit (Union[Unset, int]):  Example: 100.
         page_index (Union[Unset, int]):  Example: 1.
         page_size (Union[Unset, int]):  Example: 25.
 
@@ -127,26 +147,35 @@ def sync(
     """
 
     return sync_detailed(
+        sport=sport,
+        league=league,
         team_id=team_id,
         client=client,
+        limit=limit,
         page_index=page_index,
         page_size=page_size,
     ).parsed
 
 
 async def asyncio_detailed(
+    sport: str,
+    league: str,
     team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
+    limit: Union[Unset, int] = UNSET,
     page_index: Union[Unset, int] = UNSET,
     page_size: Union[Unset, int] = UNSET,
 ) -> Response[Union[ErrorResponse, PaginatedReferenceListResponse]]:
-    """Get NFL Team Injuries
+    """Get Team Injuries
 
-     Retrieve a paginated list of injury references for a specific NFL team.
+     Retrieve a paginated list of injury references for a specific team.
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         team_id (str):  Example: 12.
+        limit (Union[Unset, int]):  Example: 100.
         page_index (Union[Unset, int]):  Example: 1.
         page_size (Union[Unset, int]):  Example: 25.
 
@@ -159,7 +188,10 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        sport=sport,
+        league=league,
         team_id=team_id,
+        limit=limit,
         page_index=page_index,
         page_size=page_size,
     )
@@ -170,18 +202,24 @@ async def asyncio_detailed(
 
 
 async def asyncio(
+    sport: str,
+    league: str,
     team_id: str,
     *,
     client: Union[AuthenticatedClient, Client],
+    limit: Union[Unset, int] = UNSET,
     page_index: Union[Unset, int] = UNSET,
     page_size: Union[Unset, int] = UNSET,
 ) -> Optional[Union[ErrorResponse, PaginatedReferenceListResponse]]:
-    """Get NFL Team Injuries
+    """Get Team Injuries
 
-     Retrieve a paginated list of injury references for a specific NFL team.
+     Retrieve a paginated list of injury references for a specific team.
 
     Args:
+        sport (str):  Example: football.
+        league (str):  Example: nfl.
         team_id (str):  Example: 12.
+        limit (Union[Unset, int]):  Example: 100.
         page_index (Union[Unset, int]):  Example: 1.
         page_size (Union[Unset, int]):  Example: 25.
 
@@ -195,8 +233,11 @@ async def asyncio(
 
     return (
         await asyncio_detailed(
+            sport=sport,
+            league=league,
             team_id=team_id,
             client=client,
+            limit=limit,
             page_index=page_index,
             page_size=page_size,
         )
