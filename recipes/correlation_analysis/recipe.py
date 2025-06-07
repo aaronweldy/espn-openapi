@@ -13,6 +13,15 @@ import math
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 
+# Try to import scipy for better statistical calculations
+try:
+    from scipy import stats as scipy_stats
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    # Fallback to basic statistics module
+    import statistics
+
 # Import API clients
 from models.fantasy_api.espn_fantasy_api_client import Client as FantasyApiClient
 from models.site_web_api.espn_site_web_api_client import Client as SiteWebApiClient
@@ -43,22 +52,97 @@ class CorrelationAnalyzer:
             16: "D/ST"
         }
         
-        # Stat ID mappings (from ESPN fantasy)
+        # Comprehensive stat ID mappings (from ESPN fantasy)
         self.stat_names = {
+            # Passing stats
             0: "passing_yds",
-            1: "passing_tds",
+            1: "passing_tds",  
             2: "interceptions",
-            3: "rushing_att",
-            4: "rushing_yds", 
-            5: "rushing_tds",
-            6: "receptions",
-            7: "receiving_yds",
-            8: "receiving_tds",
-            9: "targets",
-            15: "fumbles",
+            3: "passing_2pt_conv",
+            4: "passing_att",  # Sometimes used for attempts
+            19: "passing_int_tds",  # Pick-6s against
             20: "passing_att",
             21: "completions",
-            24: "fantasy_points"
+            22: "incompletions",
+            23: "passing_comp_pct",
+            24: "passing_yds_per_att",
+            25: "passing_tds_pct",
+            26: "passing_int_pct",
+            27: "passing_yds_per_game",
+            28: "passing_tds_per_game",
+            29: "passing_300_yd_games",
+            30: "passing_400_yd_games",
+            
+            # Rushing stats (actual IDs based on ESPN)
+            33: "rushing_att",
+            34: "rushing_yds",
+            35: "rushing_tds",
+            36: "rushing_2pt_conv",
+            37: "rushing_fumbles",
+            38: "rushing_fumbles_lost",
+            39: "rushing_yds_per_att",
+            40: "rushing_yds_per_game",
+            
+            # Receiving stats (actual IDs)
+            41: "receptions",
+            42: "receiving_yds",  
+            43: "receiving_tds",
+            44: "receiving_2pt_conv",
+            45: "receiving_fumbles",
+            46: "receiving_fumbles_lost",
+            47: "receiving_yds_per_rec",
+            48: "receiving_yds_per_game",
+            49: "receiving_tds_per_game",
+            50: "receiving_100_yd_games",
+            51: "receiving_200_yd_games",
+            52: "receiving_targets_per_game",
+            53: "receptions_per_game",
+            57: "receiving_fumble_tds",
+            58: "targets_per_game",
+            59: "target_share_pct",
+            60: "catch_pct",
+            61: "receiving_yds_per_target",
+            
+            # Misc offensive stats
+            15: "fumbles",
+            16: "fumbles_lost",
+            17: "fumble_tds",
+            18: "total_tds",
+            
+            # Kicking stats
+            80: "fg_made_0_19",
+            81: "fg_made_20_29",
+            82: "fg_made_30_39",
+            83: "fg_made_40_49",
+            84: "fg_made_50_plus",
+            85: "fg_missed",
+            86: "xp_made",
+            87: "xp_missed",
+            
+            # Defensive/IDP stats
+            95: "tackles_solo",
+            96: "tackles_assist",
+            97: "tackles_total",
+            98: "sacks",
+            99: "interceptions_def",
+            100: "forced_fumbles",
+            101: "fumbles_recovered",
+            102: "int_tds",
+            103: "fumble_rec_tds",
+            104: "blocked_kicks",
+            105: "safeties",
+            106: "passes_defended",
+            
+            # Fantasy scoring
+            210: "fantasy_pts_per_game",
+            211: "fantasy_pts_last_1",
+            212: "fantasy_pts_last_5",
+            213: "fantasy_pts_total",
+            214: "fantasy_pts_avg",
+            
+            # Additional stats
+            300: "games_played",
+            301: "games_started"
         }
         
     def fetch_player_data(self, year: int, position: Optional[str] = None, 
@@ -116,6 +200,11 @@ class CorrelationAnalyzer:
                     if i == 0:
                         print(f"First player type: {type(player)}")
                         print(f"Player attributes: {[attr for attr in dir(player) if not attr.startswith('_')]}")
+                        # Check the player dict representation
+                        player_dict = player.to_dict()
+                        print(f"Player dict keys: {list(player_dict.keys())[:10]}")  # First 10 keys
+                        if 'stats' in player_dict and player_dict['stats']:
+                            print(f"Stats in dict: {player_dict['stats'][0] if isinstance(player_dict['stats'], list) else player_dict['stats']}")
                     
                     # Extract player info
                     player_data = {
@@ -188,47 +277,83 @@ class CorrelationAnalyzer:
         if len(x) != len(y) or len(x) < 3:
             return 0.0, 1.0
             
+        if HAS_SCIPY:
+            # Use scipy for accurate calculations
+            try:
+                r, p_value = scipy_stats.pearsonr(x, y)
+                return r, p_value
+            except Exception:
+                # Fall back to manual calculation if scipy fails
+                pass
+                
+        # Manual calculation if scipy is not available
         n = len(x)
         
-        # Calculate means
-        mean_x = sum(x) / n
-        mean_y = sum(y) / n
-        
-        # Calculate correlation
-        num = sum((x[i] - mean_x) * (y[i] - mean_y) for i in range(n))
-        den_x = sum((x[i] - mean_x) ** 2 for i in range(n))
-        den_y = sum((y[i] - mean_y) ** 2 for i in range(n))
-        
-        if den_x == 0 or den_y == 0:
-            return 0.0, 1.0
+        # Use statistics module if available
+        try:
+            mean_x = statistics.mean(x)
+            mean_y = statistics.mean(y)
             
-        r = num / math.sqrt(den_x * den_y)
-        
-        # Calculate t-statistic for p-value
-        if abs(r) == 1:
-            p_value = 0.0
-        else:
-            t = r * math.sqrt(n - 2) / math.sqrt(1 - r**2)
-            # Approximate p-value (two-tailed)
-            # This is a rough approximation
-            p_value = 2 * (1 - self.t_cdf(abs(t), n - 2))
+            # Calculate correlation using covariance and standard deviations
+            cov = statistics.covariance(x, y)
+            std_x = statistics.stdev(x)
+            std_y = statistics.stdev(y)
             
-        return r, p_value
-        
-    def t_cdf(self, t: float, df: int) -> float:
-        """Approximate CDF of t-distribution."""
-        # Very rough approximation for demonstration
-        # In production, would use scipy or proper implementation
-        if t > 3:
-            return 0.999
-        elif t > 2:
-            return 0.975
-        elif t > 1.5:
-            return 0.933
-        elif t > 1:
-            return 0.841
-        else:
-            return 0.5 + t * 0.341
+            if std_x == 0 or std_y == 0:
+                return 0.0, 1.0
+                
+            r = cov / (std_x * std_y)
+            
+            # Calculate t-statistic for p-value
+            if abs(r) >= 1:
+                p_value = 0.0
+            else:
+                t = r * math.sqrt(n - 2) / math.sqrt(1 - r**2)
+                # Use t-distribution approximation
+                df = n - 2
+                # Better approximation of p-value
+                if abs(t) > 4.0:
+                    p_value = 0.001
+                elif abs(t) > 3.355:  # ~99% confidence for df=10
+                    p_value = 0.01
+                elif abs(t) > 2.228:  # ~95% confidence for df=10
+                    p_value = 0.05
+                elif abs(t) > 1.812:  # ~90% confidence for df=10
+                    p_value = 0.1
+                else:
+                    # Rough linear approximation for smaller t values
+                    p_value = 1.0 - (abs(t) / 2.0)
+                    
+            return r, p_value
+            
+        except (AttributeError, statistics.StatisticsError):
+            # Fallback to basic calculation
+            mean_x = sum(x) / n
+            mean_y = sum(y) / n
+            
+            # Calculate correlation
+            num = sum((x[i] - mean_x) * (y[i] - mean_y) for i in range(n))
+            den_x = sum((x[i] - mean_x) ** 2 for i in range(n))
+            den_y = sum((y[i] - mean_y) ** 2 for i in range(n))
+            
+            if den_x == 0 or den_y == 0:
+                return 0.0, 1.0
+                
+            r = num / math.sqrt(den_x * den_y)
+            
+            # Simple p-value approximation
+            if abs(r) >= 1:
+                p_value = 0.0
+            else:
+                t = r * math.sqrt(n - 2) / math.sqrt(1 - r**2)
+                if abs(t) > 3:
+                    p_value = 0.01
+                elif abs(t) > 2:
+                    p_value = 0.05
+                else:
+                    p_value = 0.5
+                    
+            return r, p_value
             
     def calculate_correlations(self, players: List[Dict]) -> Dict[str, Dict]:
         """Calculate correlations between different statistics."""
