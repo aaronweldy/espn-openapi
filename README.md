@@ -1,8 +1,6 @@
 # ESPN OpenAPI Specs
-
-> **⚠️ DISCLAIMER**
-> 
-> This project is **NOT** affiliated with, endorsed by, or associated with ESPN in any way. This is an independent, community-driven project.
+ 
+> This project is **NOT** affiliated with, endorsed by, or associated with ESPN in any way.
 > 
 > **IMPORTANT**: When using these API specifications, you must:
 > - Comply with ESPN's Terms of Service
