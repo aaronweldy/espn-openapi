@@ -1,4 +1,12 @@
 # ESPN OpenAPI Specs
+ 
+> This project is **NOT** affiliated with, endorsed by, or associated with ESPN in any way.
+> 
+> **IMPORTANT**: When using these API specifications, you must:
+> - Comply with ESPN's Terms of Service
+> - Respect rate limits and usage policies
+> - Use the APIs responsibly and ethically
+> - Be aware that ESPN may change or restrict access to these APIs at any time
 
 The goal of this project is to provide a collection of OpenAPI specs for the various ESPN APIs with full type definitions for the responses. This will allow developers to generate clients in any language to interact with the API, generally to fetch real-time or historical sports data.
 
