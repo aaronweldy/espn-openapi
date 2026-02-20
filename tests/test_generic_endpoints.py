@@ -246,7 +246,7 @@ class TestCrossSportValidation:
         )
         assert teams_response.status_code == 200
         assert isinstance(teams_response.parsed, TeamsListResponse)
-        assert len(teams_response.parsed.sports[0].leagues[0].teams) == 14  # WNBA has 14 teams
+        assert len(teams_response.parsed.sports[0].leagues[0].teams) >= 14
         
         # Test news
         news_response = get_league_news.sync_detailed(

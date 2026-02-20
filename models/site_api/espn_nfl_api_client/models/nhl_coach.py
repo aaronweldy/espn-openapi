@@ -1,7 +1,9 @@
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="NhlCoach")
 
@@ -14,13 +16,13 @@ class NhlCoach:
         id (str):
         first_name (str):
         last_name (str):
-        experience (int):
+        experience (Union[Unset, int]):
     """
 
     id: str
     first_name: str
     last_name: str
-    experience: int
+    experience: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -39,9 +41,10 @@ class NhlCoach:
                 "id": id,
                 "firstName": first_name,
                 "lastName": last_name,
-                "experience": experience,
             }
         )
+        if not isinstance(experience, Unset):
+            field_dict["experience"] = experience
 
         return field_dict
 
@@ -54,7 +57,7 @@ class NhlCoach:
 
         last_name = d.pop("lastName")
 
-        experience = d.pop("experience")
+        experience = d.pop("experience", UNSET)
 
         nhl_coach = cls(
             id=id,

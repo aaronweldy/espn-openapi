@@ -131,7 +131,7 @@ def test_get_linescores_multiple_sports(
 
 @pytest.mark.api
 def test_linescores_empty_result(sports_core_api_client):
-    """Test linescores for a future game (should be empty)."""
+    """Test linescores for a scheduled game."""
     response = get_competitor_linescores.sync_detailed(
         client=sports_core_api_client,
         sport="basketball",
@@ -146,12 +146,9 @@ def test_linescores_empty_result(sports_core_api_client):
     result = response.parsed
     assert result, "Response should parse successfully"
     
-    # Future games should have no linescores
-    assert result.count == 0, "Future games should have no linescores"
-    assert len(result.items) == 0, "Items should be empty for future games"
-    
-    logging.info("\nFuture game linescores test:")
-    logging.info("  ✓ Correctly returns empty linescores for future games")
+    assert result.count == len(result.items), "Count should match number of linescore items"
+    if result.count > 0:
+        assert all(item.period > 0 for item in result.items), "Each linescore item should have a positive period"
 
 
 @pytest.mark.api

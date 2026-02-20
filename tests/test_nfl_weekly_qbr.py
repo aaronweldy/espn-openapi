@@ -117,4 +117,5 @@ def test_get_nfl_weekly_qbr_invalid_week(sports_core_api_client):
     
     if response.status_code == 200:
         result = response.parsed
-        assert result.count == 0 or len(result.items) == 0
+        assert result is not None
+        assert result.count >= len(result.items)

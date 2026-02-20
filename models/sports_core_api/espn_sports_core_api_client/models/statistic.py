@@ -71,7 +71,19 @@ class Statistic:
         d = src_dict.copy()
         name = d.pop("name")
 
-        value = d.pop("value")
+        display_value = d.pop("displayValue", UNSET)
+
+        value = d.pop("value", UNSET)
+        if isinstance(value, Unset):
+            if isinstance(display_value, (int, float)):
+                value = float(display_value)
+            elif isinstance(display_value, str):
+                try:
+                    value = float(display_value)
+                except ValueError:
+                    value = 0.0
+            else:
+                value = 0.0
 
         display_name = d.pop("displayName", UNSET)
 
@@ -80,8 +92,6 @@ class Statistic:
         description = d.pop("description", UNSET)
 
         abbreviation = d.pop("abbreviation", UNSET)
-
-        display_value = d.pop("displayValue", UNSET)
 
         statistic = cls(
             name=name,
