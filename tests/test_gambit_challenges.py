@@ -103,15 +103,7 @@ def test_get_challenge_leaderboard(gambit_api_client, ensure_json_output_dir):
         "challenge_id": result.challenge_id,
         "total_entries": result.size,
         "locked": result.locked,
-        "top_entries": [
-            {
-                "rank": entry.rank,
-                "display_name": entry.display_name,
-                "score": entry.score,
-                "percentile": entry.percentile
-            }
-            for entry in (result.entries or [])[:10]
-        ]
+        "top_entries": [entry.to_dict() for entry in (result.entries or [])[:10]]
     }
     
     with open(f"{ensure_json_output_dir}/gambit_leaderboard_sample.json", "w") as f:

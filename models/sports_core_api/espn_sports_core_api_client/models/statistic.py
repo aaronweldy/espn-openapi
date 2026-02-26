@@ -13,7 +13,7 @@ class Statistic:
     """
     Attributes:
         name (str):  Example: completions.
-        value (float):  Example: 401.0.
+        value (Union[Unset, float]):  Example: 401.0.
         display_name (Union[Unset, str]):  Example: Completions.
         short_display_name (Union[Unset, str]):  Example: COMP.
         description (Union[Unset, str]):  Example: The number of passes completed.
@@ -22,7 +22,7 @@ class Statistic:
     """
 
     name: str
-    value: float
+    value: Union[Unset, float] = UNSET
     display_name: Union[Unset, str] = UNSET
     short_display_name: Union[Unset, str] = UNSET
     description: Union[Unset, str] = UNSET
@@ -50,9 +50,10 @@ class Statistic:
         field_dict.update(
             {
                 "name": name,
-                "value": value,
             }
         )
+        if value is not UNSET:
+            field_dict["value"] = value
         if display_name is not UNSET:
             field_dict["displayName"] = display_name
         if short_display_name is not UNSET:
@@ -71,7 +72,7 @@ class Statistic:
         d = src_dict.copy()
         name = d.pop("name")
 
-        value = d.pop("value")
+        value = d.pop("value", UNSET)
 
         display_name = d.pop("displayName", UNSET)
 

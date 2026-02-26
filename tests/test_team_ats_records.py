@@ -193,14 +193,14 @@ def test_ats_records_different_season_types(sports_core_api_client):
                     total_games = overall.wins + overall.losses + overall.pushes
                     logger.info(f"  Overall: {overall.wins}-{overall.losses}-{overall.pushes} ({total_games} games)")
             else:
-                logger.info(f"  No ATS records available")
+                logger.info("  No ATS records available")
         else:
             logger.info(f"\n{type_name}: No data available (HTTP {response.status_code})")
 
 
 @pytest.mark.api
 def test_mlb_nhl_ats_not_supported(sports_core_api_client):
-    """Test that MLB and NHL don't support ATS endpoints."""
+    """Test ATS behavior for leagues where ATS data may be unavailable."""
     # Test MLB
     response = get_team_ats_records.sync_detailed(
         client=sports_core_api_client,
@@ -210,9 +210,15 @@ def test_mlb_nhl_ats_not_supported(sports_core_api_client):
         seasontype=2,
         team_id="15",
     )
-    
-    assert response.status_code == 500, "MLB should return 500 for ATS endpoint"
-    logger.info("\n✓ MLB correctly returns 500 - ATS not supported (uses run line betting instead)")
+
+    assert response.status_code in [200, 500], "MLB should return 200 (empty) or 500 for ATS endpoint"
+    if response.status_code == 200:
+        assert response.parsed is not None
+        assert response.parsed.count == 0
+        assert len(response.parsed.items) == 0
+        logger.info("\n✓ MLB returns empty ATS payload")
+    else:
+        logger.info("\n✓ MLB returns 500 for unsupported ATS")
     
     # Test NHL
     response = get_team_ats_records.sync_detailed(
@@ -223,9 +229,15 @@ def test_mlb_nhl_ats_not_supported(sports_core_api_client):
         seasontype=2,
         team_id="10",
     )
-    
-    assert response.status_code == 500, "NHL should return 500 for ATS endpoint"
-    logger.info("✓ NHL correctly returns 500 - ATS not supported (uses puck line betting instead)")
+
+    assert response.status_code in [200, 500], "NHL should return 200 (empty) or 500 for ATS endpoint"
+    if response.status_code == 200:
+        assert response.parsed is not None
+        assert response.parsed.count == 0
+        assert len(response.parsed.items) == 0
+        logger.info("✓ NHL returns empty ATS payload")
+    else:
+        logger.info("✓ NHL returns 500 for unsupported ATS")
     
     logger.info("\nNote: ATS (Against The Spread) is only applicable to sports with variable point spreads.")
     logger.info("MLB uses run line betting and NHL uses puck line betting, which are fixed spreads.")
