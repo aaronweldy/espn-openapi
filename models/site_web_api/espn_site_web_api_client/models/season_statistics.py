@@ -16,17 +16,17 @@ T = TypeVar("T", bound="SeasonStatistics")
 class SeasonStatistics:
     """
     Attributes:
-        team_id (str): Team ID
         season (StatsSeason):
         stats (List[str]): Statistical values
+        team_id (Union[Unset, str]): Team ID
         team_slug (Union[Unset, str]): Team slug
         position (Union[Unset, str]): Player position
         season_totals (Union[Unset, List[str]]): Season totals
     """
 
-    team_id: str
     season: "StatsSeason"
     stats: List[str]
+    team_id: Union[Unset, str] = UNSET
     team_slug: Union[Unset, str] = UNSET
     position: Union[Unset, str] = UNSET
     season_totals: Union[Unset, List[str]] = UNSET
@@ -51,11 +51,12 @@ class SeasonStatistics:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
-                "teamId": team_id,
                 "season": season,
                 "stats": stats,
             }
         )
+        if team_id is not UNSET:
+            field_dict["teamId"] = team_id
         if team_slug is not UNSET:
             field_dict["teamSlug"] = team_slug
         if position is not UNSET:
@@ -70,7 +71,7 @@ class SeasonStatistics:
         from ..models.stats_season import StatsSeason
 
         d = src_dict.copy()
-        team_id = d.pop("teamId")
+        team_id = d.pop("teamId", UNSET)
 
         season = StatsSeason.from_dict(d.pop("season"))
 

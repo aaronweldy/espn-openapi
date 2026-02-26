@@ -102,12 +102,12 @@ def test_get_nfl_weekly_qbr_pagination(sports_core_api_client):
 @pytest.mark.api
 def test_get_nfl_weekly_qbr_invalid_week(sports_core_api_client):
     """Test NFL weekly QBR with invalid week."""
-    # Test with future week that doesn't exist yet
+    # Use an out-of-range week value
     response = get_nfl_weekly_qbr.sync_detailed(
         client=sports_core_api_client,
         year=2025,
         seasontype=2,
-        week=10,
+        week=99,
         page=UNSET,
         limit=UNSET
     )
