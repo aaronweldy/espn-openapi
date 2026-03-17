@@ -47,7 +47,7 @@ paths:
         - name: seasontype
           in: query
           required: false
-          description: Season type (1=preseason, 2=regular, 3=postseason, 4=off-season) - football sports only
+          description: Season type (1=preseason, 2=regular, 3=postseason, 4=off-season). For college football and college basketball, 3 selects postseason play (e.g. NCAA tournament games for mens-college-basketball). Combine with dates during March Madness.
           schema:
             type: integer
             enum: [1, 2, 3, 4]

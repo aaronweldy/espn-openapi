@@ -76,6 +76,7 @@ This project includes clients for the following ESPN APIs, located in the `model
 
 Each client is generated from an OpenAPI specification and provides typed data models for API responses. You can explore the respective subdirectories for specific API operations and models.
 
+- **`models/gambit_api/` (ESPN Gambit API)** — Pick’em-style challenges (`spec-gambit.yaml`). Not the same as **Tournament Challenge** (March Madness brackets); see [TOURNAMENT_CHALLENGE.md](TOURNAMENT_CHALLENGE.md).
 
 ## License
 
