@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,19 +19,19 @@ class GroupResponse:
     Attributes:
         id (Union[Unset, str]):
         name (Union[Unset, str]):
-        challenge_id (Union[Unset, str]):
+        challenge_id (Union[Unset, int]):
         size (Union[Unset, int]):
         settings (Union[Unset, GroupResponseSettings]):
     """
 
     id: Union[Unset, str] = UNSET
     name: Union[Unset, str] = UNSET
-    challenge_id: Union[Unset, str] = UNSET
+    challenge_id: Union[Unset, int] = UNSET
     size: Union[Unset, int] = UNSET
     settings: Union[Unset, "GroupResponseSettings"] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         name = self.name
@@ -39,11 +40,11 @@ class GroupResponse:
 
         size = self.size
 
-        settings: Union[Unset, Dict[str, Any]] = UNSET
+        settings: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.settings, Unset):
             settings = self.settings.to_dict()
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -60,10 +61,10 @@ class GroupResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.group_response_settings import GroupResponseSettings
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id", UNSET)
 
         name = d.pop("name", UNSET)
@@ -91,7 +92,7 @@ class GroupResponse:
         return group_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

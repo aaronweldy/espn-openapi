@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,7 +7,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.challenge_response_scoring_periods_item import ChallengeResponseScoringPeriodsItem
+    from ..models.challenge_response_scoring_periods_item import (
+        ChallengeResponseScoringPeriodsItem,
+    )
     from ..models.challenge_response_settings import ChallengeResponseSettings
     from ..models.proposition import Proposition
 
@@ -18,8 +21,8 @@ T = TypeVar("T", bound="ChallengeResponse")
 class ChallengeResponse:
     """
     Attributes:
-        id (Union[Unset, str]): Challenge ID
-        key (Union[Unset, str]): Challenge key/name
+        id (Union[Unset, int]): Challenge ID
+        key (Union[Unset, str]): Canonical challenge key/name
         name (Union[Unset, str]): Display name
         abbrev (Union[Unset, str]): Abbreviation
         active (Union[Unset, bool]):
@@ -30,12 +33,12 @@ class ChallengeResponse:
         end_date (Union[Unset, int]): End date as Unix timestamp in milliseconds
         state (Union[Unset, str]): Challenge state (e.g., 'active')
         settings (Union[Unset, ChallengeResponseSettings]):
-        propositions (Union[Unset, List['Proposition']]):
-        scoring_periods (Union[Unset, List['ChallengeResponseScoringPeriodsItem']]):
-        leaderboard_sort_options (Union[Unset, List[str]]):
+        propositions (Union[Unset, list['Proposition']]):
+        scoring_periods (Union[Unset, list['ChallengeResponseScoringPeriodsItem']]):
+        leaderboard_sort_options (Union[Unset, list[str]]):
     """
 
-    id: Union[Unset, str] = UNSET
+    id: Union[Unset, int] = UNSET
     key: Union[Unset, str] = UNSET
     name: Union[Unset, str] = UNSET
     abbrev: Union[Unset, str] = UNSET
@@ -47,12 +50,12 @@ class ChallengeResponse:
     end_date: Union[Unset, int] = UNSET
     state: Union[Unset, str] = UNSET
     settings: Union[Unset, "ChallengeResponseSettings"] = UNSET
-    propositions: Union[Unset, List["Proposition"]] = UNSET
-    scoring_periods: Union[Unset, List["ChallengeResponseScoringPeriodsItem"]] = UNSET
-    leaderboard_sort_options: Union[Unset, List[str]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    propositions: Union[Unset, list["Proposition"]] = UNSET
+    scoring_periods: Union[Unset, list["ChallengeResponseScoringPeriodsItem"]] = UNSET
+    leaderboard_sort_options: Union[Unset, list[str]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         key = self.key
@@ -75,29 +78,29 @@ class ChallengeResponse:
 
         state = self.state
 
-        settings: Union[Unset, Dict[str, Any]] = UNSET
+        settings: Union[Unset, dict[str, Any]] = UNSET
         if not isinstance(self.settings, Unset):
             settings = self.settings.to_dict()
 
-        propositions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        propositions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.propositions, Unset):
             propositions = []
             for propositions_item_data in self.propositions:
                 propositions_item = propositions_item_data.to_dict()
                 propositions.append(propositions_item)
 
-        scoring_periods: Union[Unset, List[Dict[str, Any]]] = UNSET
+        scoring_periods: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.scoring_periods, Unset):
             scoring_periods = []
             for scoring_periods_item_data in self.scoring_periods:
                 scoring_periods_item = scoring_periods_item_data.to_dict()
                 scoring_periods.append(scoring_periods_item)
 
-        leaderboard_sort_options: Union[Unset, List[str]] = UNSET
+        leaderboard_sort_options: Union[Unset, list[str]] = UNSET
         if not isinstance(self.leaderboard_sort_options, Unset):
             leaderboard_sort_options = self.leaderboard_sort_options
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -134,12 +137,14 @@ class ChallengeResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.challenge_response_scoring_periods_item import ChallengeResponseScoringPeriodsItem
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.challenge_response_scoring_periods_item import (
+            ChallengeResponseScoringPeriodsItem,
+        )
         from ..models.challenge_response_settings import ChallengeResponseSettings
         from ..models.proposition import Proposition
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id", UNSET)
 
         key = d.pop("key", UNSET)
@@ -179,11 +184,15 @@ class ChallengeResponse:
         scoring_periods = []
         _scoring_periods = d.pop("scoringPeriods", UNSET)
         for scoring_periods_item_data in _scoring_periods or []:
-            scoring_periods_item = ChallengeResponseScoringPeriodsItem.from_dict(scoring_periods_item_data)
+            scoring_periods_item = ChallengeResponseScoringPeriodsItem.from_dict(
+                scoring_periods_item_data
+            )
 
             scoring_periods.append(scoring_periods_item)
 
-        leaderboard_sort_options = cast(List[str], d.pop("leaderboardSortOptions", UNSET))
+        leaderboard_sort_options = cast(
+            list[str], d.pop("leaderboardSortOptions", UNSET)
+        )
 
         challenge_response = cls(
             id=id,
@@ -207,7 +216,7 @@ class ChallengeResponse:
         return challenge_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

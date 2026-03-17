@@ -62,6 +62,10 @@ This project includes clients for the following ESPN APIs, located in the `model
     -   Allows interaction with ESPN's fantasy sports platform. You can manage leagues, teams, players, and scores.
     -   Client module: `models.fantasy_api.espn_fantasy_api_client`
 
+-   **`models/gambit_api/` (ESPN Gambit API)**:
+    -   Covers ESPN pick'em and bracket challenges, including Tournament Challenge.
+    -   Client module: `models.gambit_api.espn_gambit_api_client`
+
 -   **`models/site_api/` (ESPN Site API)**:
     -   Likely interacts with the main ESPN website's public-facing API. This could provide news, articles, standings, and team information.
     -   Client module: `models.site_api.espn_nfl_api_client` (Example for NFL)
@@ -75,6 +79,10 @@ This project includes clients for the following ESPN APIs, located in the `model
     -   Client module: `models.sports_core_api.espn_sports_core_api_client`
 
 Each client is generated from an OpenAPI specification and provides typed data models for API responses. You can explore the respective subdirectories for specific API operations and models.
+
+## Tournament Challenge
+
+Tournament Challenge rides on the Gambit API. The verified men's and women's challenge aliases, canonical keys, challenge IDs, and working endpoint patterns are documented in `TOURNAMENT_CHALLENGE.md`.
 
 
 ## License

@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: ESPN Gambit API
   version: 1.0.0
-  description: Unofficial ESPN Gambit API for Pick'em challenges and fantasy games. This API is not officially supported by ESPN and may change without notice.
+  description: Unofficial ESPN Gambit API for Pick'em and bracket challenges, including ESPN Tournament Challenge. This API is not officially supported by ESPN and may change without notice.
 
 servers:
   - url: https://gambit-api.fantasy.espn.com
@@ -13,19 +13,24 @@ paths:
     get:
       summary: Get Challenge Details
       description: |
-        Retrieve detailed information about a specific Pick'em challenge.
-        Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+        Retrieve detailed information about a specific Pick'em or bracket challenge.
+        Verified Tournament Challenge aliases include 'tcmen' and 'tcwomen'.
+        The live API also accepts season-specific keys such as
+        'tournament-challenge-bracket-2026' and
+        'tournament-challenge-bracket-women-2026'.
       operationId: getChallengeDetails
       parameters:
         - name: challengeName
           in: path
           required: true
           description: |
-            The challenge name or key (e.g., 'nfl-pigskin-pickem-2025').
-            Note: UUID-style IDs do not work, use the human-readable name.
+            The challenge name or key (e.g., 'nfl-pigskin-pickem-2025', 'tcmen', or
+            'tournament-challenge-bracket-2026').
+            Note: UUID-style IDs do not work. Use the short alias or the
+            season-specific human-readable key instead.
           schema:
             type: string
-            example: "nfl-pigskin-pickem-2025"
+            example: "tcmen"
         - name: scoringPeriodId
           in: query
           required: false
@@ -58,16 +63,16 @@ paths:
   /apis/v1/challenges/{challengeName}/leaderboard:
     get:
       summary: Get Challenge Leaderboard
-      description: Retrieve the leaderboard for a specific Pick'em challenge
+      description: Retrieve the leaderboard for a specific Pick'em or bracket challenge
       operationId: getChallengeLeaderboard
       parameters:
         - name: challengeName
           in: path
           required: true
-          description: The challenge name (e.g., 'nfl-pigskin-pickem-2025')
+          description: The challenge name or alias (e.g., 'nfl-pigskin-pickem-2025', 'tcmen', or 'tcwomen')
           schema:
             type: string
-            example: "nfl-pigskin-pickem-2025"
+            example: "tcmen"
         - name: view
           in: query
           required: false
@@ -113,10 +118,10 @@ paths:
         - name: challengeName
           in: path
           required: true
-          description: The challenge name
+          description: The challenge name or alias
           schema:
             type: string
-            example: "nfl-pigskin-pickem-2025"
+            example: "tcmen"
         - name: groupId
           in: path
           required: true
@@ -152,10 +157,10 @@ paths:
         - name: challengeName
           in: path
           required: true
-          description: The challenge name
+          description: The challenge name or alias
           schema:
             type: string
-            example: "nfl-pigskin-pickem-2025"
+            example: "tcmen"
         - name: userId
           in: path
           required: true
@@ -185,15 +190,19 @@ paths:
   /apis/v1/propositions:
     get:
       summary: Get Propositions
-      description: Retrieve propositions (picks) for a challenge
+      description: |
+        Retrieve propositions (picks) for a challenge.
+        Note: the live API returns a top-level JSON array of proposition objects,
+        not an envelope object. Use the numeric challenge ID returned by
+        `/apis/v1/challenges/{challengeName}`.
       operationId: getPropositions
       parameters:
         - name: challengeId
           in: query
           required: true
-          description: The challenge ID
+          description: The numeric challenge ID (for example 277 for 2026 men's Tournament Challenge)
           schema:
-            type: string
+            type: integer
         - name: view
           in: query
           required: false
@@ -206,7 +215,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PropositionsResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Proposition'
         '404':
           description: Challenge not found
           content:
@@ -245,11 +256,11 @@ components:
       type: object
       properties:
         id:
-          type: string
+          type: integer
           description: Challenge ID
         key:
           type: string
-          description: Challenge key/name
+          description: Canonical challenge key/name
         name:
           type: string
           description: Display name
@@ -325,7 +336,7 @@ components:
       type: object
       properties:
         challengeId:
-          type: string
+          type: integer
         groupId:
           type: string
           nullable: true
@@ -370,7 +381,7 @@ components:
         name:
           type: string
         challengeId:
-          type: string
+          type: integer
         size:
           type: integer
         settings:
@@ -385,7 +396,7 @@ components:
         userId:
           type: string
         challengeId:
-          type: string
+          type: integer
         groupIds:
           type: array
           items:
@@ -404,7 +415,7 @@ components:
       type: object
       properties:
         challengeId:
-          type: string
+          type: integer
         propositions:
           type: array
           items:

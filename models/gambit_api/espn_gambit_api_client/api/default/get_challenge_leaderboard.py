@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -17,8 +17,8 @@ def _get_kwargs(
     view: Union[Unset, GetChallengeLeaderboardView] = UNSET,
     limit: Union[Unset, int] = 50,
     offset: Union[Unset, int] = 0,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     json_view: Union[Unset, str] = UNSET
     if not isinstance(view, Unset):
@@ -32,7 +32,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": f"/apis/v1/challenges/{challenge_name}/leaderboard",
         "params": params,
@@ -79,10 +79,10 @@ def sync_detailed(
 ) -> Response[Union[ErrorResponse, LeaderboardResponse]]:
     """Get Challenge Leaderboard
 
-     Retrieve the leaderboard for a specific Pick'em challenge
+     Retrieve the leaderboard for a specific Pick'em or bracket challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         view (Union[Unset, GetChallengeLeaderboardView]):  Example: ranks.
         limit (Union[Unset, int]):  Default: 50.
         offset (Union[Unset, int]):  Default: 0.
@@ -119,10 +119,10 @@ def sync(
 ) -> Optional[Union[ErrorResponse, LeaderboardResponse]]:
     """Get Challenge Leaderboard
 
-     Retrieve the leaderboard for a specific Pick'em challenge
+     Retrieve the leaderboard for a specific Pick'em or bracket challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         view (Union[Unset, GetChallengeLeaderboardView]):  Example: ranks.
         limit (Union[Unset, int]):  Default: 50.
         offset (Union[Unset, int]):  Default: 0.
@@ -154,10 +154,10 @@ async def asyncio_detailed(
 ) -> Response[Union[ErrorResponse, LeaderboardResponse]]:
     """Get Challenge Leaderboard
 
-     Retrieve the leaderboard for a specific Pick'em challenge
+     Retrieve the leaderboard for a specific Pick'em or bracket challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         view (Union[Unset, GetChallengeLeaderboardView]):  Example: ranks.
         limit (Union[Unset, int]):  Default: 50.
         offset (Union[Unset, int]):  Default: 0.
@@ -192,10 +192,10 @@ async def asyncio(
 ) -> Optional[Union[ErrorResponse, LeaderboardResponse]]:
     """Get Challenge Leaderboard
 
-     Retrieve the leaderboard for a specific Pick'em challenge
+     Retrieve the leaderboard for a specific Pick'em or bracket challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         view (Union[Unset, GetChallengeLeaderboardView]):  Example: ranks.
         limit (Union[Unset, int]):  Default: 50.
         offset (Union[Unset, int]):  Default: 0.

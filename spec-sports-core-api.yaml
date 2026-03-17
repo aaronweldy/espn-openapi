@@ -9640,11 +9640,11 @@ components:
           example: "2025-03-12T15:55Z"
         headline:
           type: string
-          description: Brief summary of the note
+          description: Brief summary of the note (optional; some leagues omit, e.g. MLB season notes)
           example: "Mahomes agreed Wednesday with the Chiefs on a restructure of his contract, Adam Teicher of ESPN.com reports."
         text:
           type: string
-          description: Full text of the note
+          description: Full text of the note (optional when headline/text not returned)
           example: "Mahomes and star defensive tackle Chris Jones both agreed to restructure their contracts Wednesday..."
         source:
           type: string
@@ -9654,8 +9654,6 @@ components:
         - id
         - type
         - date
-        - headline
-        - text
         - source
 
     TeamRecordResponse:

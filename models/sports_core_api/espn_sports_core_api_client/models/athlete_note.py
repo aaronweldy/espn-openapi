@@ -1,9 +1,11 @@
 import datetime
-from typing import Any, Dict, List, Type, TypeVar
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
+
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="AthleteNote")
 
@@ -16,51 +18,59 @@ class AthleteNote:
         id (str): Unique identifier for the note Example: 597206.
         type (str): Type of note (e.g., news) Example: news.
         date (datetime.datetime): Date and time of the note Example: 2025-03-12T15:55Z.
-        headline (str): Brief summary of the note Example: Mahomes agreed Wednesday with the Chiefs on a restructure of
-            his contract, Adam Teicher of ESPN.com reports..
-        text (str): Full text of the note Example: Mahomes and star defensive tackle Chris Jones both agreed to
-            restructure their contracts Wednesday....
+        headline (Union[Unset, str]): Brief summary of the note (may be omitted by API).
+        text (Union[Unset, str]): Full text of the note (may be omitted by API).
         source (str): Source of the note Example: RotoWire.
     """
 
     id: str
     type: str
     date: datetime.datetime
-    headline: str
-    text: str
     source: str
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    headline: Union[Unset, str] = UNSET
+    text: Union[Unset, str] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         type = self.type
 
         date = self.date.isoformat()
 
-        headline = self.headline
+        headline: Union[Unset, str]
+        if isinstance(self.headline, Unset):
+            headline = UNSET
+        else:
+            headline = self.headline
 
-        text = self.text
+        text: Union[Unset, str]
+        if isinstance(self.text, Unset):
+            text = UNSET
+        else:
+            text = self.text
 
         source = self.source
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "id": id,
                 "type": type,
                 "date": date,
-                "headline": headline,
-                "text": text,
                 "source": source,
             }
         )
+        if headline is not UNSET:
+            field_dict["headline"] = headline
+        if text is not UNSET:
+            field_dict["text"] = text
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
         d = src_dict.copy()
         id = d.pop("id")
 
@@ -68,9 +78,9 @@ class AthleteNote:
 
         date = isoparse(d.pop("date"))
 
-        headline = d.pop("headline")
+        headline = d.pop("headline", UNSET)
 
-        text = d.pop("text")
+        text = d.pop("text", UNSET)
 
         source = d.pop("source")
 
@@ -78,16 +88,16 @@ class AthleteNote:
             id=id,
             type=type,
             date=date,
+            source=source,
             headline=headline,
             text=text,
-            source=source,
         )
 
         athlete_note.additional_properties = d
         return athlete_note
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

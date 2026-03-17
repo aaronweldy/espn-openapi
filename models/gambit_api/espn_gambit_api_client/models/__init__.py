@@ -7,7 +7,9 @@ from .entry_response import EntryResponse
 from .entry_response_picks_item import EntryResponsePicksItem
 from .error_response import ErrorResponse
 from .error_response_details_item import ErrorResponseDetailsItem
-from .error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+from .error_response_details_item_meta_data_type_0 import (
+    ErrorResponseDetailsItemMetaDataType0,
+)
 from .get_challenge_details_view import GetChallengeDetailsView
 from .get_challenge_leaderboard_view import GetChallengeLeaderboardView
 from .group_response import GroupResponse

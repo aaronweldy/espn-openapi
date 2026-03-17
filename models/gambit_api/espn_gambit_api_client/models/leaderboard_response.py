@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,23 +17,23 @@ T = TypeVar("T", bound="LeaderboardResponse")
 class LeaderboardResponse:
     """
     Attributes:
-        challenge_id (Union[Unset, str]):
+        challenge_id (Union[Unset, int]):
         group_id (Union[None, Unset, str]):
         size (Union[Unset, int]): Total number of entries
         locked (Union[Unset, bool]):
-        entries (Union[Unset, List['LeaderboardEntry']]):
-        featured_entry_ids (Union[Unset, List[str]]):
+        entries (Union[Unset, list['LeaderboardEntry']]):
+        featured_entry_ids (Union[Unset, list[str]]):
     """
 
-    challenge_id: Union[Unset, str] = UNSET
+    challenge_id: Union[Unset, int] = UNSET
     group_id: Union[None, Unset, str] = UNSET
     size: Union[Unset, int] = UNSET
     locked: Union[Unset, bool] = UNSET
-    entries: Union[Unset, List["LeaderboardEntry"]] = UNSET
-    featured_entry_ids: Union[Unset, List[str]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    entries: Union[Unset, list["LeaderboardEntry"]] = UNSET
+    featured_entry_ids: Union[Unset, list[str]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         challenge_id = self.challenge_id
 
         group_id: Union[None, Unset, str]
@@ -45,18 +46,18 @@ class LeaderboardResponse:
 
         locked = self.locked
 
-        entries: Union[Unset, List[Dict[str, Any]]] = UNSET
+        entries: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.entries, Unset):
             entries = []
             for entries_item_data in self.entries:
                 entries_item = entries_item_data.to_dict()
                 entries.append(entries_item)
 
-        featured_entry_ids: Union[Unset, List[str]] = UNSET
+        featured_entry_ids: Union[Unset, list[str]] = UNSET
         if not isinstance(self.featured_entry_ids, Unset):
             featured_entry_ids = self.featured_entry_ids
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if challenge_id is not UNSET:
@@ -75,10 +76,10 @@ class LeaderboardResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.leaderboard_entry import LeaderboardEntry
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         challenge_id = d.pop("challengeId", UNSET)
 
         def _parse_group_id(data: object) -> Union[None, Unset, str]:
@@ -101,7 +102,7 @@ class LeaderboardResponse:
 
             entries.append(entries_item)
 
-        featured_entry_ids = cast(List[str], d.pop("featuredEntryIds", UNSET))
+        featured_entry_ids = cast(list[str], d.pop("featuredEntryIds", UNSET))
 
         leaderboard_response = cls(
             challenge_id=challenge_id,
@@ -116,7 +117,7 @@ class LeaderboardResponse:
         return leaderboard_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

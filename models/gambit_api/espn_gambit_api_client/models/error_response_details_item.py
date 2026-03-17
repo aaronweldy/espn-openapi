@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,7 +7,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+    from ..models.error_response_details_item_meta_data_type_0 import (
+        ErrorResponseDetailsItemMetaDataType0,
+    )
 
 
 T = TypeVar("T", bound="ErrorResponseDetailsItem")
@@ -19,19 +22,21 @@ class ErrorResponseDetailsItem:
         message (Union[Unset, str]):
         short_message (Union[Unset, str]):
         resolution (Union[None, Unset, str]):
-        type (Union[Unset, str]):
+        type_ (Union[Unset, str]):
         meta_data (Union['ErrorResponseDetailsItemMetaDataType0', None, Unset]):
     """
 
     message: Union[Unset, str] = UNSET
     short_message: Union[Unset, str] = UNSET
     resolution: Union[None, Unset, str] = UNSET
-    type: Union[Unset, str] = UNSET
+    type_: Union[Unset, str] = UNSET
     meta_data: Union["ErrorResponseDetailsItemMetaDataType0", None, Unset] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+    def to_dict(self) -> dict[str, Any]:
+        from ..models.error_response_details_item_meta_data_type_0 import (
+            ErrorResponseDetailsItemMetaDataType0,
+        )
 
         message = self.message
 
@@ -43,9 +48,9 @@ class ErrorResponseDetailsItem:
         else:
             resolution = self.resolution
 
-        type = self.type
+        type_ = self.type_
 
-        meta_data: Union[Dict[str, Any], None, Unset]
+        meta_data: Union[None, Unset, dict[str, Any]]
         if isinstance(self.meta_data, Unset):
             meta_data = UNSET
         elif isinstance(self.meta_data, ErrorResponseDetailsItemMetaDataType0):
@@ -53,7 +58,7 @@ class ErrorResponseDetailsItem:
         else:
             meta_data = self.meta_data
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if message is not UNSET:
@@ -62,18 +67,20 @@ class ErrorResponseDetailsItem:
             field_dict["shortMessage"] = short_message
         if resolution is not UNSET:
             field_dict["resolution"] = resolution
-        if type is not UNSET:
-            field_dict["type"] = type
+        if type_ is not UNSET:
+            field_dict["type"] = type_
         if meta_data is not UNSET:
             field_dict["metaData"] = meta_data
 
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
+        from ..models.error_response_details_item_meta_data_type_0 import (
+            ErrorResponseDetailsItemMetaDataType0,
+        )
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         message = d.pop("message", UNSET)
 
         short_message = d.pop("shortMessage", UNSET)
@@ -87,9 +94,11 @@ class ErrorResponseDetailsItem:
 
         resolution = _parse_resolution(d.pop("resolution", UNSET))
 
-        type = d.pop("type", UNSET)
+        type_ = d.pop("type", UNSET)
 
-        def _parse_meta_data(data: object) -> Union["ErrorResponseDetailsItemMetaDataType0", None, Unset]:
+        def _parse_meta_data(
+            data: object,
+        ) -> Union["ErrorResponseDetailsItemMetaDataType0", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -102,7 +111,9 @@ class ErrorResponseDetailsItem:
                 return meta_data_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["ErrorResponseDetailsItemMetaDataType0", None, Unset], data)
+            return cast(
+                Union["ErrorResponseDetailsItemMetaDataType0", None, Unset], data
+            )
 
         meta_data = _parse_meta_data(d.pop("metaData", UNSET))
 
@@ -110,7 +121,7 @@ class ErrorResponseDetailsItem:
             message=message,
             short_message=short_message,
             resolution=resolution,
-            type=type,
+            type_=type_,
             meta_data=meta_data,
         )
 
@@ -118,7 +129,7 @@ class ErrorResponseDetailsItem:
         return error_response_details_item
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

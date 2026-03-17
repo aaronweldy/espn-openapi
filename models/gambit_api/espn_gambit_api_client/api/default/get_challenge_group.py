@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -15,14 +15,14 @@ def _get_kwargs(
     group_id: str,
     *,
     view: Union[Unset, str] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["view"] = view
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": f"/apis/v1/challenges/{challenge_name}/groups/{group_id}",
         "params": params,
@@ -71,7 +71,7 @@ def sync_detailed(
      Retrieve information about a specific group within a challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         group_id (str):
         view (Union[Unset, str]):
 
@@ -108,7 +108,7 @@ def sync(
      Retrieve information about a specific group within a challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         group_id (str):
         view (Union[Unset, str]):
 
@@ -140,7 +140,7 @@ async def asyncio_detailed(
      Retrieve information about a specific group within a challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         group_id (str):
         view (Union[Unset, str]):
 
@@ -175,7 +175,7 @@ async def asyncio(
      Retrieve information about a specific group within a challenge
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         group_id (str):
         view (Union[Unset, str]):
 

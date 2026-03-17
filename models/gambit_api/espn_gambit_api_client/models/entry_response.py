@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,34 +19,34 @@ class EntryResponse:
     Attributes:
         id (Union[Unset, str]):
         user_id (Union[Unset, str]):
-        challenge_id (Union[Unset, str]):
-        group_ids (Union[Unset, List[str]]):
-        picks (Union[Unset, List['EntryResponsePicksItem']]):
+        challenge_id (Union[Unset, int]):
+        group_ids (Union[Unset, list[str]]):
+        picks (Union[Unset, list['EntryResponsePicksItem']]):
         score (Union[Unset, float]):
         rank (Union[Unset, int]):
     """
 
     id: Union[Unset, str] = UNSET
     user_id: Union[Unset, str] = UNSET
-    challenge_id: Union[Unset, str] = UNSET
-    group_ids: Union[Unset, List[str]] = UNSET
-    picks: Union[Unset, List["EntryResponsePicksItem"]] = UNSET
+    challenge_id: Union[Unset, int] = UNSET
+    group_ids: Union[Unset, list[str]] = UNSET
+    picks: Union[Unset, list["EntryResponsePicksItem"]] = UNSET
     score: Union[Unset, float] = UNSET
     rank: Union[Unset, int] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         user_id = self.user_id
 
         challenge_id = self.challenge_id
 
-        group_ids: Union[Unset, List[str]] = UNSET
+        group_ids: Union[Unset, list[str]] = UNSET
         if not isinstance(self.group_ids, Unset):
             group_ids = self.group_ids
 
-        picks: Union[Unset, List[Dict[str, Any]]] = UNSET
+        picks: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.picks, Unset):
             picks = []
             for picks_item_data in self.picks:
@@ -56,7 +57,7 @@ class EntryResponse:
 
         rank = self.rank
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
@@ -77,17 +78,17 @@ class EntryResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.entry_response_picks_item import EntryResponsePicksItem
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id", UNSET)
 
         user_id = d.pop("userId", UNSET)
 
         challenge_id = d.pop("challengeId", UNSET)
 
-        group_ids = cast(List[str], d.pop("groupIds", UNSET))
+        group_ids = cast(list[str], d.pop("groupIds", UNSET))
 
         picks = []
         _picks = d.pop("picks", UNSET)
@@ -114,7 +115,7 @@ class EntryResponse:
         return entry_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

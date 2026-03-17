@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union, cast
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,27 +17,27 @@ T = TypeVar("T", bound="ErrorResponse")
 class ErrorResponse:
     """
     Attributes:
-        messages (Union[Unset, List[str]]):
-        details (Union[Unset, List['ErrorResponseDetailsItem']]):
+        messages (Union[Unset, list[str]]):
+        details (Union[Unset, list['ErrorResponseDetailsItem']]):
     """
 
-    messages: Union[Unset, List[str]] = UNSET
-    details: Union[Unset, List["ErrorResponseDetailsItem"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    messages: Union[Unset, list[str]] = UNSET
+    details: Union[Unset, list["ErrorResponseDetailsItem"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
-        messages: Union[Unset, List[str]] = UNSET
+    def to_dict(self) -> dict[str, Any]:
+        messages: Union[Unset, list[str]] = UNSET
         if not isinstance(self.messages, Unset):
             messages = self.messages
 
-        details: Union[Unset, List[Dict[str, Any]]] = UNSET
+        details: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.details, Unset):
             details = []
             for details_item_data in self.details:
                 details_item = details_item_data.to_dict()
                 details.append(details_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if messages is not UNSET:
@@ -47,11 +48,11 @@ class ErrorResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.error_response_details_item import ErrorResponseDetailsItem
 
-        d = src_dict.copy()
-        messages = cast(List[str], d.pop("messages", UNSET))
+        d = dict(src_dict)
+        messages = cast(list[str], d.pop("messages", UNSET))
 
         details = []
         _details = d.pop("details", UNSET)
@@ -69,7 +70,7 @@ class ErrorResponse:
         return error_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
