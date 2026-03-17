@@ -7,7 +7,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.challenge_response_scoring_periods_item import ChallengeResponseScoringPeriodsItem
+    from ..models.challenge_response_scoring_periods_item import (
+        ChallengeResponseScoringPeriodsItem,
+    )
     from ..models.challenge_response_settings import ChallengeResponseSettings
     from ..models.proposition import Proposition
 
@@ -136,7 +138,9 @@ class ChallengeResponse:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.challenge_response_scoring_periods_item import ChallengeResponseScoringPeriodsItem
+        from ..models.challenge_response_scoring_periods_item import (
+            ChallengeResponseScoringPeriodsItem,
+        )
         from ..models.challenge_response_settings import ChallengeResponseSettings
         from ..models.proposition import Proposition
 
@@ -180,11 +184,15 @@ class ChallengeResponse:
         scoring_periods = []
         _scoring_periods = d.pop("scoringPeriods", UNSET)
         for scoring_periods_item_data in _scoring_periods or []:
-            scoring_periods_item = ChallengeResponseScoringPeriodsItem.from_dict(scoring_periods_item_data)
+            scoring_periods_item = ChallengeResponseScoringPeriodsItem.from_dict(
+                scoring_periods_item_data
+            )
 
             scoring_periods.append(scoring_periods_item)
 
-        leaderboard_sort_options = cast(list[str], d.pop("leaderboardSortOptions", UNSET))
+        leaderboard_sort_options = cast(
+            list[str], d.pop("leaderboardSortOptions", UNSET)
+        )
 
         challenge_response = cls(
             id=id,

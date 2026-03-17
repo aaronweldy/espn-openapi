@@ -7,7 +7,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+    from ..models.error_response_details_item_meta_data_type_0 import (
+        ErrorResponseDetailsItemMetaDataType0,
+    )
 
 
 T = TypeVar("T", bound="ErrorResponseDetailsItem")
@@ -32,7 +34,9 @@ class ErrorResponseDetailsItem:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+        from ..models.error_response_details_item_meta_data_type_0 import (
+            ErrorResponseDetailsItemMetaDataType0,
+        )
 
         message = self.message
 
@@ -72,7 +76,9 @@ class ErrorResponseDetailsItem:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.error_response_details_item_meta_data_type_0 import ErrorResponseDetailsItemMetaDataType0
+        from ..models.error_response_details_item_meta_data_type_0 import (
+            ErrorResponseDetailsItemMetaDataType0,
+        )
 
         d = dict(src_dict)
         message = d.pop("message", UNSET)
@@ -90,7 +96,9 @@ class ErrorResponseDetailsItem:
 
         type_ = d.pop("type", UNSET)
 
-        def _parse_meta_data(data: object) -> Union["ErrorResponseDetailsItemMetaDataType0", None, Unset]:
+        def _parse_meta_data(
+            data: object,
+        ) -> Union["ErrorResponseDetailsItemMetaDataType0", None, Unset]:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -103,7 +111,9 @@ class ErrorResponseDetailsItem:
                 return meta_data_type_0
             except:  # noqa: E722
                 pass
-            return cast(Union["ErrorResponseDetailsItemMetaDataType0", None, Unset], data)
+            return cast(
+                Union["ErrorResponseDetailsItemMetaDataType0", None, Unset], data
+            )
 
         meta_data = _parse_meta_data(d.pop("metaData", UNSET))
 

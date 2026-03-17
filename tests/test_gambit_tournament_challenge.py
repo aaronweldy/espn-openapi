@@ -33,9 +33,9 @@ def test_get_mens_tournament_challenge_details(
         view=GetChallengeDetailsView.DETAILS,
     )
 
-    assert response.status_code == 200, (
-        f"Expected status code 200, got {response.status_code}"
-    )
+    assert (
+        response.status_code == 200
+    ), f"Expected status code 200, got {response.status_code}"
 
     result = response.parsed
     assert isinstance(result, ChallengeResponse)
@@ -71,9 +71,9 @@ def test_get_womens_tournament_challenge_alias_and_leaderboard(gambit_api_client
         view=GetChallengeDetailsView.DETAILS,
     )
 
-    assert details_response.status_code == 200, (
-        f"Expected status code 200, got {details_response.status_code}"
-    )
+    assert (
+        details_response.status_code == 200
+    ), f"Expected status code 200, got {details_response.status_code}"
 
     details = details_response.parsed
     assert isinstance(details, ChallengeResponse)
@@ -85,9 +85,9 @@ def test_get_womens_tournament_challenge_alias_and_leaderboard(gambit_api_client
         view=GetChallengeDetailsView.DETAILS,
     )
 
-    assert canonical_response.status_code == 200, (
-        f"Expected status code 200, got {canonical_response.status_code}"
-    )
+    assert (
+        canonical_response.status_code == 200
+    ), f"Expected status code 200, got {canonical_response.status_code}"
 
     canonical = canonical_response.parsed
     assert isinstance(canonical, ChallengeResponse)
@@ -100,9 +100,9 @@ def test_get_womens_tournament_challenge_alias_and_leaderboard(gambit_api_client
         limit=5,
     )
 
-    assert leaderboard_response.status_code == 200, (
-        f"Expected status code 200, got {leaderboard_response.status_code}"
-    )
+    assert (
+        leaderboard_response.status_code == 200
+    ), f"Expected status code 200, got {leaderboard_response.status_code}"
 
     leaderboard = leaderboard_response.parsed
     assert isinstance(leaderboard, LeaderboardResponse)
@@ -119,9 +119,9 @@ def test_get_tournament_challenge_propositions(gambit_api_client):
         view=GetChallengeDetailsView.DETAILS,
     )
 
-    assert details_response.status_code == 200, (
-        f"Expected status code 200, got {details_response.status_code}"
-    )
+    assert (
+        details_response.status_code == 200
+    ), f"Expected status code 200, got {details_response.status_code}"
 
     details = details_response.parsed
     assert isinstance(details, ChallengeResponse)
@@ -131,9 +131,9 @@ def test_get_tournament_challenge_propositions(gambit_api_client):
         challenge_id=details.id,
     )
 
-    assert response.status_code == 200, (
-        f"Expected status code 200, got {response.status_code}"
-    )
+    assert (
+        response.status_code == 200
+    ), f"Expected status code 200, got {response.status_code}"
 
     result = response.parsed
     assert isinstance(result, list)
