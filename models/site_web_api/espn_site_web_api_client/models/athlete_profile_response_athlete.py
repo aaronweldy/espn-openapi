@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -6,7 +6,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.athlete_profile_response_athlete_college import AthleteProfileResponseAthleteCollege
+    from ..models.athlete_profile_response_athlete_college import (
+        AthleteProfileResponseAthleteCollege,
+    )
     from ..models.headshot import Headshot
     from ..models.position import Position
     from ..models.status import Status
@@ -56,9 +58,9 @@ class AthleteProfileResponseAthlete:
     headshot: "Headshot"
     status: "Status"
     jersey: Union[Unset, str] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
         uid = self.uid
@@ -93,7 +95,7 @@ class AthleteProfileResponseAthlete:
 
         jersey = self.jersey
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
@@ -121,8 +123,10 @@ class AthleteProfileResponseAthlete:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
-        from ..models.athlete_profile_response_athlete_college import AthleteProfileResponseAthleteCollege
+    def from_dict(cls: type[T], src_dict: dict[str, Any]) -> T:
+        from ..models.athlete_profile_response_athlete_college import (
+            AthleteProfileResponseAthleteCollege,
+        )
         from ..models.headshot import Headshot
         from ..models.position import Position
         from ..models.status import Status
@@ -187,7 +191,7 @@ class AthleteProfileResponseAthlete:
         return athlete_profile_response_athlete
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
