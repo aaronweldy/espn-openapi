@@ -2,6 +2,7 @@ import json
 import pytest
 from models.sports_core_api.espn_sports_core_api_client.api.default import get_athlete_season_notes
 from models.sports_core_api.espn_sports_core_api_client.models import AthleteNotesResponse, AthleteNote
+from models.sports_core_api.espn_sports_core_api_client.types import UNSET
 
 
 @pytest.mark.api
@@ -51,8 +52,11 @@ def test_get_athlete_season_notes(sports_core_api_client, sport, league, year, a
         assert note.id, "Note should have an ID"
         assert note.type, "Note should have a type"
         assert note.date, "Note should have a date"
-        assert note.headline, "Note should have a headline"
-        assert note.text, "Note should have text"
+        # Some leagues (e.g. MLB) omit headline/text on season notes
+        if note.headline is not UNSET:
+            assert isinstance(note.headline, str)
+        if note.text is not UNSET:
+            assert isinstance(note.text, str)
         assert note.source, "Note should have a source"
     
     # Save response for analysis

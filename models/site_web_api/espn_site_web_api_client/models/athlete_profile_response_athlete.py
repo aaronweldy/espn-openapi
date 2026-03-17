@@ -1,7 +1,9 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.athlete_profile_response_athlete_college import AthleteProfileResponseAthleteCollege
@@ -26,7 +28,7 @@ class AthleteProfileResponseAthlete:
         last_name (str):
         display_name (str):
         full_name (str):
-        jersey (str):
+        jersey (Union[Unset, str]): Omitted when athlete has no assigned number.
         position (Position):
         age (int):
         display_height (str):
@@ -45,7 +47,6 @@ class AthleteProfileResponseAthlete:
     last_name: str
     display_name: str
     full_name: str
-    jersey: str
     position: "Position"
     age: int
     display_height: str
@@ -54,6 +55,7 @@ class AthleteProfileResponseAthlete:
     team: "Team"
     headshot: "Headshot"
     status: "Status"
+    jersey: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,8 +75,6 @@ class AthleteProfileResponseAthlete:
 
         full_name = self.full_name
 
-        jersey = self.jersey
-
         position = self.position.to_dict()
 
         age = self.age
@@ -91,6 +91,8 @@ class AthleteProfileResponseAthlete:
 
         status = self.status.to_dict()
 
+        jersey = self.jersey
+
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -103,7 +105,6 @@ class AthleteProfileResponseAthlete:
                 "lastName": last_name,
                 "displayName": display_name,
                 "fullName": full_name,
-                "jersey": jersey,
                 "position": position,
                 "age": age,
                 "displayHeight": display_height,
@@ -114,6 +115,8 @@ class AthleteProfileResponseAthlete:
                 "status": status,
             }
         )
+        if jersey is not UNSET:
+            field_dict["jersey"] = jersey
 
         return field_dict
 
@@ -142,8 +145,6 @@ class AthleteProfileResponseAthlete:
 
         full_name = d.pop("fullName")
 
-        jersey = d.pop("jersey")
-
         position = Position.from_dict(d.pop("position"))
 
         age = d.pop("age")
@@ -160,6 +161,8 @@ class AthleteProfileResponseAthlete:
 
         status = Status.from_dict(d.pop("status"))
 
+        jersey = d.pop("jersey", UNSET)
+
         athlete_profile_response_athlete = cls(
             id=id,
             uid=uid,
@@ -169,7 +172,6 @@ class AthleteProfileResponseAthlete:
             last_name=last_name,
             display_name=display_name,
             full_name=full_name,
-            jersey=jersey,
             position=position,
             age=age,
             display_height=display_height,
@@ -178,6 +180,7 @@ class AthleteProfileResponseAthlete:
             team=team,
             headshot=headshot,
             status=status,
+            jersey=jersey,
         )
 
         athlete_profile_response_athlete.additional_properties = d

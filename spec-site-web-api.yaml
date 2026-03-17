@@ -2770,6 +2770,7 @@ components:
               type: string
             jersey:
               type: string
+              description: Optional; omitted for some athletes (e.g. no current jersey)
             position:
               $ref: '#/components/schemas/Position'
             age:
@@ -2802,7 +2803,6 @@ components:
             - lastName
             - displayName
             - fullName
-            - jersey
             - position
             - age
             - displayHeight
