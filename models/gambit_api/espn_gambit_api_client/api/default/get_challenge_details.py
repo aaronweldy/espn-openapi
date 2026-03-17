@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Dict, Optional, Union
+from typing import Any, Optional, Union
 
 import httpx
 
@@ -16,8 +16,8 @@ def _get_kwargs(
     *,
     scoring_period_id: Union[Unset, int] = UNSET,
     view: Union[Unset, GetChallengeDetailsView] = UNSET,
-) -> Dict[str, Any]:
-    params: Dict[str, Any] = {}
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
 
     params["scoringPeriodId"] = scoring_period_id
 
@@ -29,7 +29,7 @@ def _get_kwargs(
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
-    _kwargs: Dict[str, Any] = {
+    _kwargs: dict[str, Any] = {
         "method": "get",
         "url": f"/apis/v1/challenges/{challenge_name}",
         "params": params,
@@ -75,11 +75,14 @@ def sync_detailed(
 ) -> Response[Union[ChallengeResponse, ErrorResponse]]:
     """Get Challenge Details
 
-     Retrieve detailed information about a specific Pick'em challenge.
-    Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+     Retrieve detailed information about a specific Pick'em or bracket challenge.
+    Verified Tournament Challenge aliases include 'tcmen' and 'tcwomen'.
+    The live API also accepts season-specific keys such as
+    'tournament-challenge-bracket-2026' and
+    'tournament-challenge-bracket-women-2026'.
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         scoring_period_id (Union[Unset, int]):  Example: 1.
         view (Union[Unset, GetChallengeDetailsView]):  Example: picks.
 
@@ -113,11 +116,14 @@ def sync(
 ) -> Optional[Union[ChallengeResponse, ErrorResponse]]:
     """Get Challenge Details
 
-     Retrieve detailed information about a specific Pick'em challenge.
-    Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+     Retrieve detailed information about a specific Pick'em or bracket challenge.
+    Verified Tournament Challenge aliases include 'tcmen' and 'tcwomen'.
+    The live API also accepts season-specific keys such as
+    'tournament-challenge-bracket-2026' and
+    'tournament-challenge-bracket-women-2026'.
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         scoring_period_id (Union[Unset, int]):  Example: 1.
         view (Union[Unset, GetChallengeDetailsView]):  Example: picks.
 
@@ -146,11 +152,14 @@ async def asyncio_detailed(
 ) -> Response[Union[ChallengeResponse, ErrorResponse]]:
     """Get Challenge Details
 
-     Retrieve detailed information about a specific Pick'em challenge.
-    Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+     Retrieve detailed information about a specific Pick'em or bracket challenge.
+    Verified Tournament Challenge aliases include 'tcmen' and 'tcwomen'.
+    The live API also accepts season-specific keys such as
+    'tournament-challenge-bracket-2026' and
+    'tournament-challenge-bracket-women-2026'.
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         scoring_period_id (Union[Unset, int]):  Example: 1.
         view (Union[Unset, GetChallengeDetailsView]):  Example: picks.
 
@@ -182,11 +191,14 @@ async def asyncio(
 ) -> Optional[Union[ChallengeResponse, ErrorResponse]]:
     """Get Challenge Details
 
-     Retrieve detailed information about a specific Pick'em challenge.
-    Common challenge names include 'nfl-pigskin-pickem-2025' for NFL Pick'em.
+     Retrieve detailed information about a specific Pick'em or bracket challenge.
+    Verified Tournament Challenge aliases include 'tcmen' and 'tcwomen'.
+    The live API also accepts season-specific keys such as
+    'tournament-challenge-bracket-2026' and
+    'tournament-challenge-bracket-women-2026'.
 
     Args:
-        challenge_name (str):  Example: nfl-pigskin-pickem-2025.
+        challenge_name (str):  Example: tcmen.
         scoring_period_id (Union[Unset, int]):  Example: 1.
         view (Union[Unset, GetChallengeDetailsView]):  Example: picks.
 

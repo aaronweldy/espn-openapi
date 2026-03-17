@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,25 +17,25 @@ T = TypeVar("T", bound="PropositionsResponse")
 class PropositionsResponse:
     """
     Attributes:
-        challenge_id (Union[Unset, str]):
-        propositions (Union[Unset, List['Proposition']]):
+        challenge_id (Union[Unset, int]):
+        propositions (Union[Unset, list['Proposition']]):
     """
 
-    challenge_id: Union[Unset, str] = UNSET
-    propositions: Union[Unset, List["Proposition"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    challenge_id: Union[Unset, int] = UNSET
+    propositions: Union[Unset, list["Proposition"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         challenge_id = self.challenge_id
 
-        propositions: Union[Unset, List[Dict[str, Any]]] = UNSET
+        propositions: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.propositions, Unset):
             propositions = []
             for propositions_item_data in self.propositions:
                 propositions_item = propositions_item_data.to_dict()
                 propositions.append(propositions_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if challenge_id is not UNSET:
@@ -45,10 +46,10 @@ class PropositionsResponse:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.proposition import Proposition
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         challenge_id = d.pop("challengeId", UNSET)
 
         propositions = []
@@ -67,7 +68,7 @@ class PropositionsResponse:
         return propositions_response
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:

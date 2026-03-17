@@ -1,4 +1,5 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
+from collections.abc import Mapping
+from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,27 +18,27 @@ class Proposition:
     """
     Attributes:
         id (Union[Unset, str]):
-        type (Union[Unset, str]):
+        type_ (Union[Unset, str]):
         text (Union[Unset, str]):
         short_text (Union[Unset, str]):
         locked (Union[Unset, bool]):
         scoring_period_id (Union[Unset, int]):
-        options (Union[Unset, List['PropositionOptionsItem']]):
+        options (Union[Unset, list['PropositionOptionsItem']]):
     """
 
     id: Union[Unset, str] = UNSET
-    type: Union[Unset, str] = UNSET
+    type_: Union[Unset, str] = UNSET
     text: Union[Unset, str] = UNSET
     short_text: Union[Unset, str] = UNSET
     locked: Union[Unset, bool] = UNSET
     scoring_period_id: Union[Unset, int] = UNSET
-    options: Union[Unset, List["PropositionOptionsItem"]] = UNSET
-    additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
+    options: Union[Unset, list["PropositionOptionsItem"]] = UNSET
+    additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         id = self.id
 
-        type = self.type
+        type_ = self.type_
 
         text = self.text
 
@@ -47,20 +48,20 @@ class Proposition:
 
         scoring_period_id = self.scoring_period_id
 
-        options: Union[Unset, List[Dict[str, Any]]] = UNSET
+        options: Union[Unset, list[dict[str, Any]]] = UNSET
         if not isinstance(self.options, Unset):
             options = []
             for options_item_data in self.options:
                 options_item = options_item_data.to_dict()
                 options.append(options_item)
 
-        field_dict: Dict[str, Any] = {}
+        field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
         if id is not UNSET:
             field_dict["id"] = id
-        if type is not UNSET:
-            field_dict["type"] = type
+        if type_ is not UNSET:
+            field_dict["type"] = type_
         if text is not UNSET:
             field_dict["text"] = text
         if short_text is not UNSET:
@@ -75,13 +76,13 @@ class Proposition:
         return field_dict
 
     @classmethod
-    def from_dict(cls: Type[T], src_dict: Dict[str, Any]) -> T:
+    def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.proposition_options_item import PropositionOptionsItem
 
-        d = src_dict.copy()
+        d = dict(src_dict)
         id = d.pop("id", UNSET)
 
-        type = d.pop("type", UNSET)
+        type_ = d.pop("type", UNSET)
 
         text = d.pop("text", UNSET)
 
@@ -100,7 +101,7 @@ class Proposition:
 
         proposition = cls(
             id=id,
-            type=type,
+            type_=type_,
             text=text,
             short_text=short_text,
             locked=locked,
@@ -112,7 +113,7 @@ class Proposition:
         return proposition
 
     @property
-    def additional_keys(self) -> List[str]:
+    def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
     def __getitem__(self, key: str) -> Any:
