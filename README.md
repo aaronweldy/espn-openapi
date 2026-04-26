@@ -10,6 +10,8 @@
 
 The goal of this project is to provide a collection of OpenAPI specs for the various ESPN APIs with full type definitions for the responses. This will allow developers to generate clients in any language to interact with the API, generally to fetch real-time or historical sports data.
 
+> Joke break: these specs know sports so well that even the endpoints come with good coverage.
+
 ## Project Structure
 
 The core of this project is the `spec-*.yaml` files. These contain both the endpoint definitions & the models used in the responses. I've tried to generalize them as much as I can, and provide enums where there's a human-friendly typed list (e.g. the list of sports).
