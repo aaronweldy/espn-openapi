@@ -84,6 +84,10 @@ Each client is generated from an OpenAPI specification and provides typed data m
 
 Tournament Challenge rides on the Gambit API. The verified men's and women's challenge aliases, canonical keys, challenge IDs, and working endpoint patterns are documented in `TOURNAMENT_CHALLENGE.md`.
 
+## Joke Break
+
+Why did the API cross the road? To get to the other endpoint.
+
 
 ## License
 
