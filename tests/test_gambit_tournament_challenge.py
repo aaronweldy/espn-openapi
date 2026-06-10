@@ -40,7 +40,9 @@ def test_get_mens_tournament_challenge_details(
     result = response.parsed
     assert isinstance(result, ChallengeResponse)
     assert result.key.startswith("tournament-challenge-bracket-")
-    assert result.active is True
+    # `active` reflects whether the tournament is currently running, which varies
+    # by season (it is False once the bracket is complete in the offseason).
+    assert isinstance(result.active, bool)
     assert result["gameType"] == "BRACKET"
 
     mappings = result["mappings"]

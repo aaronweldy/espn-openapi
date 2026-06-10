@@ -2622,7 +2622,7 @@ components:
           type: string
           description: Type of category
           example: "topic"
-          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator"]
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator", "podcast", "series"]
         guid:
           type: string
           format: uuid
@@ -2969,7 +2969,7 @@ components:
           type: string
           description: Type of category
           example: "topic"
-          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator"]
+          enum: ["topic", "athlete", "team", "contributor", "league", "guid", "editorialindicator", "podcast", "series"]
         guid:
           type: string
           format: uuid
@@ -3085,7 +3085,6 @@ components:
       required:
         - id
         - description
-        - links
 
     NewsTeam:
       type: object
@@ -5398,7 +5397,6 @@ components:
         - id
         - name
         - abbreviation
-        - children
       properties:
         uid:
           type: string
