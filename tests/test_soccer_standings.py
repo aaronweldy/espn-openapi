@@ -25,10 +25,19 @@ def validate_soccer_standings_response(data: SoccerStandingsResponse) -> None:
     assert data.id, "Missing id in response"
     assert data.name, "Missing name in response"
     assert data.abbreviation, "Missing abbreviation in response"
-    assert data.children, "Missing children in response"
-    
+
     logger.info(f"League: {data.name} ({data.abbreviation})")
-    
+
+    # Standings groups ("children") are only populated once a season is under way.
+    # Between seasons the API returns the league metadata without any children, so
+    # treat an empty/unset children list as a valid (off-season) response.
+    if not data.children or data.children is UNSET:
+        logger.info(
+            f"No standings groups for {data.name} (likely off-season); "
+            "skipping detailed standings validation"
+        )
+        return
+
     # Check children (standings groups)
     assert len(data.children) > 0, "Expected at least one standings group"
     logger.info(f"Found {len(data.children)} standings groups")
@@ -63,8 +72,8 @@ def format_soccer_standings(data: SoccerStandingsResponse) -> str:
     """Format soccer standings for display."""
     output = []
     output.append(f"=== {data.name} Standings ===")
-    
-    for group in data.children:
+
+    for group in data.children or []:
         if group.standings and group.standings.entries:
             output.append(f"\n{group.name}")
             output.append("Pos  Team                     P   W   D   L   GF  GA  GD  Pts")

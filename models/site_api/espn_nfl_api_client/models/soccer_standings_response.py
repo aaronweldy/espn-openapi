@@ -21,7 +21,8 @@ class SoccerStandingsResponse:
         id (str): League ID Example: 23.
         name (str): League name Example: English Premier League.
         abbreviation (str): League abbreviation Example: ENG.
-        children (List['SoccerStandingsGroup']): Array of standings groups (e.g., overall standings, group standings)
+        children (Union[Unset, List['SoccerStandingsGroup']]): Array of standings groups (e.g., overall standings,
+            group standings). May be omitted when the league is between seasons and standings are not yet available.
         uid (Union[Unset, str]): Unique identifier for the standings Example: s:600~l:23.
         seasons (Union[Unset, List['SeasonReference']]): Available seasons
     """
@@ -29,7 +30,7 @@ class SoccerStandingsResponse:
     id: str
     name: str
     abbreviation: str
-    children: List["SoccerStandingsGroup"]
+    children: Union[Unset, List["SoccerStandingsGroup"]] = UNSET
     uid: Union[Unset, str] = UNSET
     seasons: Union[Unset, List["SeasonReference"]] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -41,10 +42,12 @@ class SoccerStandingsResponse:
 
         abbreviation = self.abbreviation
 
-        children = []
-        for children_item_data in self.children:
-            children_item = children_item_data.to_dict()
-            children.append(children_item)
+        children: Union[Unset, List[Dict[str, Any]]] = UNSET
+        if not isinstance(self.children, Unset):
+            children = []
+            for children_item_data in self.children:
+                children_item = children_item_data.to_dict()
+                children.append(children_item)
 
         uid = self.uid
 
@@ -62,9 +65,10 @@ class SoccerStandingsResponse:
                 "id": id,
                 "name": name,
                 "abbreviation": abbreviation,
-                "children": children,
             }
         )
+        if children is not UNSET:
+            field_dict["children"] = children
         if uid is not UNSET:
             field_dict["uid"] = uid
         if seasons is not UNSET:
@@ -85,8 +89,8 @@ class SoccerStandingsResponse:
         abbreviation = d.pop("abbreviation")
 
         children = []
-        _children = d.pop("children")
-        for children_item_data in _children:
+        _children = d.pop("children", UNSET)
+        for children_item_data in _children or []:
             children_item = SoccerStandingsGroup.from_dict(children_item_data)
 
             children.append(children_item)

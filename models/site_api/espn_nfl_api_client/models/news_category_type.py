@@ -8,6 +8,7 @@ class NewsCategoryType(str, Enum):
     EVENT = "event"
     GUID = "guid"
     LEAGUE = "league"
+    SERIES = "series"
     TEAM = "team"
     TOPIC = "topic"
 

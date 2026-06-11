@@ -40,7 +40,12 @@ def test_get_mens_tournament_challenge_details(
     result = response.parsed
     assert isinstance(result, ChallengeResponse)
     assert result.key.startswith("tournament-challenge-bracket-")
-    assert result.active is True
+    # `active` tracks whether the bracket is currently open for play, which is only
+    # true during the tournament window. Outside of it the challenge reports
+    # active=False with state COMPLETE (or PENDING before the next bracket opens),
+    # so assert on the value being a well-formed flag/state rather than a fixed value.
+    assert isinstance(result.active, bool)
+    assert result.state in {"ACTIVE", "PENDING", "COMPLETE"}
     assert result["gameType"] == "BRACKET"
 
     mappings = result["mappings"]

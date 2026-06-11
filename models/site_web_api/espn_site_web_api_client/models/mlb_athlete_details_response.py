@@ -1,7 +1,9 @@
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
+
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.link import Link
@@ -28,8 +30,8 @@ class MLBAthleteDetailsResponse:
         player_switcher (MLBAthleteDetailsResponsePlayerSwitcher):
         quicklinks (List['MLBAthleteDetailsResponseQuicklinksItem']):
         links (List['Link']):
-        tickets_info (MLBAthleteDetailsResponseTicketsInfo):
-        standings (MLBAthleteDetailsResponseStandings):
+        tickets_info (Union[Unset, MLBAthleteDetailsResponseTicketsInfo]):
+        standings (Union[Unset, MLBAthleteDetailsResponseStandings]):
     """
 
     athlete: "MLBAthleteDetailsAthlete"
@@ -38,8 +40,8 @@ class MLBAthleteDetailsResponse:
     player_switcher: "MLBAthleteDetailsResponsePlayerSwitcher"
     quicklinks: List["MLBAthleteDetailsResponseQuicklinksItem"]
     links: List["Link"]
-    tickets_info: "MLBAthleteDetailsResponseTicketsInfo"
-    standings: "MLBAthleteDetailsResponseStandings"
+    tickets_info: Union[Unset, "MLBAthleteDetailsResponseTicketsInfo"] = UNSET
+    standings: Union[Unset, "MLBAthleteDetailsResponseStandings"] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -61,9 +63,13 @@ class MLBAthleteDetailsResponse:
             links_item = links_item_data.to_dict()
             links.append(links_item)
 
-        tickets_info = self.tickets_info.to_dict()
+        tickets_info: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.tickets_info, Unset):
+            tickets_info = self.tickets_info.to_dict()
 
-        standings = self.standings.to_dict()
+        standings: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.standings, Unset):
+            standings = self.standings.to_dict()
 
         field_dict: Dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -75,10 +81,12 @@ class MLBAthleteDetailsResponse:
                 "playerSwitcher": player_switcher,
                 "quicklinks": quicklinks,
                 "links": links,
-                "ticketsInfo": tickets_info,
-                "standings": standings,
             }
         )
+        if tickets_info is not UNSET:
+            field_dict["ticketsInfo"] = tickets_info
+        if standings is not UNSET:
+            field_dict["standings"] = standings
 
         return field_dict
 
@@ -116,9 +124,19 @@ class MLBAthleteDetailsResponse:
 
             links.append(links_item)
 
-        tickets_info = MLBAthleteDetailsResponseTicketsInfo.from_dict(d.pop("ticketsInfo"))
+        _tickets_info = d.pop("ticketsInfo", UNSET)
+        tickets_info: Union[Unset, MLBAthleteDetailsResponseTicketsInfo]
+        if isinstance(_tickets_info, Unset):
+            tickets_info = UNSET
+        else:
+            tickets_info = MLBAthleteDetailsResponseTicketsInfo.from_dict(_tickets_info)
 
-        standings = MLBAthleteDetailsResponseStandings.from_dict(d.pop("standings"))
+        _standings = d.pop("standings", UNSET)
+        standings: Union[Unset, MLBAthleteDetailsResponseStandings]
+        if isinstance(_standings, Unset):
+            standings = UNSET
+        else:
+            standings = MLBAthleteDetailsResponseStandings.from_dict(_standings)
 
         mlb_athlete_details_response = cls(
             athlete=athlete,
