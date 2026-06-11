@@ -25,10 +25,19 @@ def validate_soccer_standings_response(data: SoccerStandingsResponse) -> None:
     assert data.id, "Missing id in response"
     assert data.name, "Missing name in response"
     assert data.abbreviation, "Missing abbreviation in response"
-    assert data.children, "Missing children in response"
-    
+
     logger.info(f"League: {data.name} ({data.abbreviation})")
-    
+
+    # `children` (standings groups) may be empty when a league is between
+    # seasons (e.g. the new season has not started yet, so no standings exist).
+    # Treat this as a valid response and skip the per-group validation below.
+    if not data.children:
+        logger.info(
+            f"No standings groups available for {data.name}; "
+            "league is likely between seasons"
+        )
+        return
+
     # Check children (standings groups)
     assert len(data.children) > 0, "Expected at least one standings group"
     logger.info(f"Found {len(data.children)} standings groups")
