@@ -205,7 +205,14 @@ def test_soccer_standings_invalid_league(site_api_v2_client):
         client=site_api_v2_client,
         league=invalid_league
     )
-    
+
+    # Transient upstream gateway errors are unrelated to the invalid-league
+    # behavior under test; skip rather than fail on them.
+    if response.status_code in [502, 503, 504]:
+        pytest.skip(
+            f"Transient gateway error ({response.status_code}) for invalid league"
+        )
+
     # ESPN API typically returns 400 for invalid resources
     assert response.status_code in [400, 404], (
         f"Expected status code 400 or 404 for invalid league, got {response.status_code}"
