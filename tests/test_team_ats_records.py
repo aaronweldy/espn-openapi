@@ -22,10 +22,7 @@ logger = logging.getLogger(__name__)
     [
         (SportEnum.FOOTBALL, LeagueEnum.NFL, 2023, 2, "12"),  # Kansas City Chiefs
         (SportEnum.BASKETBALL, LeagueEnum.NBA, 2023, 2, "13"),  # LA Lakers
-        pytest.param(
-            SportEnum.BASEBALL, LeagueEnum.MLB, 2023, 2, "15",  # NY Yankees
-            marks=pytest.mark.xfail(reason="MLB doesn't support ATS - uses run line betting instead")
-        ),
+        (SportEnum.BASEBALL, LeagueEnum.MLB, 2023, 2, "15"),  # NY Yankees - returns empty ATS payload
         pytest.param(
             SportEnum.HOCKEY, LeagueEnum.NHL, 2023, 2, "10",  # Toronto Maple Leafs
             marks=pytest.mark.xfail(reason="NHL doesn't support ATS - uses puck line betting instead")
