@@ -25,9 +25,9 @@ logger = logging.getLogger(__name__)
     [
         (SportEnum.FOOTBALL, LeagueEnum.NFL, "401547602", ["gameProjection", "matchupQuality", "teamDefEff", "teamOffEff"]),
         (SportEnum.BASKETBALL, LeagueEnum.NBA, "401584793", ["gameProjection", "matchupQuality", "teamPredPtDiff"]),
-        pytest.param(SportEnum.BASEBALL, LeagueEnum.MLB, "401472463", ["gameProjection"], marks=pytest.mark.xfail(reason="MLB predictor might not be available")),
+        (SportEnum.BASEBALL, LeagueEnum.MLB, "401472463", ["gameProjection"]),
         pytest.param(SportEnum.HOCKEY, LeagueEnum.NHL, "401559593", ["gameProjection"], marks=pytest.mark.xfail(reason="NHL predictor not supported")),
-        pytest.param(SportEnum.FOOTBALL, LeagueEnum.COLLEGE_FOOTBALL, "401628444", ["gameProjection"], marks=pytest.mark.xfail(reason="College football predictor not supported")),
+        (SportEnum.FOOTBALL, LeagueEnum.COLLEGE_FOOTBALL, "401628444", ["gameProjection"]),
     ],
 )
 def test_get_game_predictor(sports_core_api_client, ensure_json_output_dir, sport, league, event_id, expected_stats):
