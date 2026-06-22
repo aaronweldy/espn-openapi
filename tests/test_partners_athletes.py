@@ -100,16 +100,22 @@ def test_get_athletes_large_limit(partners_api_client, ensure_json_output_dir):
 ])
 def test_get_athletes_other_leagues(partners_api_client, sport, league):
     """Test getting athletes for other leagues."""
-    response = get_athletes_list.sync_detailed(
-        client=partners_api_client,
-        sport=sport,
-        league=league,
-        limit=10
-    )
-    
-    # These might work or return 404/400 depending on what's supported
-    if response.status_code == 200:
-        result = response.parsed
-        logger.info(f"{sport.upper()}/{league.upper()} Athletes: Found {result.count} total")
+    # These might work or return 404/400 depending on what's supported. Some
+    # unsupported leagues (e.g. soccer eng.1 out of season) respond 200 with an
+    # empty body, which the generated client can't parse into a response model
+    # (raising KeyError). Treat any of those outcomes as "not supported".
+    try:
+        response = get_athletes_list.sync_detailed(
+            client=partners_api_client,
+            sport=sport,
+            league=league,
+            limit=10
+        )
+    except (KeyError, TypeError) as exc:
+        logger.info(f"{sport.upper()}/{league.upper()} Athletes: unparseable response ({exc!r}) - might not be supported")
+        return
+
+    if response.status_code == 200 and isinstance(response.parsed, AthletesListResponse):
+        logger.info(f"{sport.upper()}/{league.upper()} Athletes: Found {response.parsed.count} total")
     else:
-        logger.info(f"{sport.upper()}/{league.upper()} Athletes: Status {response.status_code} - might not be supported")
+        logger.info(f"{sport.upper()}/{league.upper()} Athletes: Status {response.status_code}, parsed={response.parsed!r} - might not be supported")
