@@ -32,7 +32,7 @@ class NewsArticle:
         images (List['NewsArticleImage']): Images associated with the article
         categories (List['NewsCategory']): Categories the article belongs to
         premium (bool): Whether the article is premium content
-        links (NewsArticleLinks):
+        links (Union[Unset, NewsArticleLinks]):
         description (Union[Unset, str]): Brief summary of the article Example: The Ravens on Friday signed journeyman
             nose tackle John Jenkins, who most recently played two seasons for the Raiders..
         byline (Union[Unset, str]): Author of the article Example: Jamison Hensley.
@@ -49,7 +49,7 @@ class NewsArticle:
     images: List["NewsArticleImage"]
     categories: List["NewsCategory"]
     premium: bool
-    links: "NewsArticleLinks"
+    links: Union[Unset, "NewsArticleLinks"] = UNSET
     description: Union[Unset, str] = UNSET
     byline: Union[Unset, str] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -83,7 +83,9 @@ class NewsArticle:
 
         premium = self.premium
 
-        links = self.links.to_dict()
+        links: Union[Unset, Dict[str, Any]] = UNSET
+        if not isinstance(self.links, Unset):
+            links = self.links.to_dict()
 
         description = self.description
 
@@ -104,9 +106,10 @@ class NewsArticle:
                 "images": images,
                 "categories": categories,
                 "premium": premium,
-                "links": links,
             }
         )
+        if links is not UNSET:
+            field_dict["links"] = links
         if description is not UNSET:
             field_dict["description"] = description
         if byline is not UNSET:
@@ -153,7 +156,12 @@ class NewsArticle:
 
         premium = d.pop("premium")
 
-        links = NewsArticleLinks.from_dict(d.pop("links"))
+        _links = d.pop("links", UNSET)
+        links: Union[Unset, NewsArticleLinks]
+        if isinstance(_links, Unset):
+            links = UNSET
+        else:
+            links = NewsArticleLinks.from_dict(_links)
 
         description = d.pop("description", UNSET)
 

@@ -12,6 +12,9 @@ from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
 )
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.news_article import NewsArticle
+from models.site_api.espn_nfl_api_client.models.news_article_type import (
+    NewsArticleType,
+)
 from models.site_api.espn_nfl_api_client.models.league_enum import (
     LeagueEnum,
 )
@@ -53,8 +56,8 @@ def test_nfl_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.data_source_identifier, str), (
         "Article data_source_identifier should be a string"
     )
-    assert article.type.value in ["HeadlineNews", "Media", "Story"], (
-        "Article type should be valid"
+    assert isinstance(article.type, NewsArticleType), (
+        f"Article type should be a known NewsArticleType, got {article.type!r}"
     )
     assert isinstance(article.headline, str), "Article headline should be a string"
     assert isinstance(article.description, str), (
@@ -206,8 +209,8 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.data_source_identifier, str), (
         "Article data_source_identifier should be a string"
     )
-    assert article.type.value in ["HeadlineNews", "Media", "Story", "Recap"], (
-        "Article type should be valid"
+    assert isinstance(article.type, NewsArticleType), (
+        f"Article type should be a known NewsArticleType, got {article.type!r}"
     )
     assert isinstance(article.headline, str), "Article headline should be a string"
     assert isinstance(article.description, str), (
