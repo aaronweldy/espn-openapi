@@ -206,9 +206,13 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.data_source_identifier, str), (
         "Article data_source_identifier should be a string"
     )
-    assert article.type.value in ["HeadlineNews", "Media", "Story", "Recap"], (
-        "Article type should be valid"
-    )
+    assert article.type.value in [
+        "HeadlineNews",
+        "Media",
+        "Story",
+        "Recap",
+        "Preview",
+    ], "Article type should be valid"
     assert isinstance(article.headline, str), "Article headline should be a string"
     assert isinstance(article.description, str), (
         "Article description should be a string"

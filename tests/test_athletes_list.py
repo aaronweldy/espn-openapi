@@ -30,8 +30,10 @@ logger = logging.getLogger(__name__)
     "sport,league,expected_min_count",
     [
         (SportEnum.SOCCER, LeagueEnum.ENG_1, 400),  # Premier League has many players
-        (SportEnum.FOOTBALL, LeagueEnum.NFL, 1500),  # NFL has many players  
-        (SportEnum.BASKETBALL, LeagueEnum.NBA, 400),  # NBA has many players
+        (SportEnum.FOOTBALL, LeagueEnum.NFL, 1500),  # NFL has many players
+        # NBA's active-athlete count shrinks during the offseason (~176 in July),
+        # so keep the floor low enough to be season-independent.
+        (SportEnum.BASKETBALL, LeagueEnum.NBA, 100),  # NBA has many players
         (SportEnum.HOCKEY, LeagueEnum.NHL, 700),  # NHL has many players
     ],
 )

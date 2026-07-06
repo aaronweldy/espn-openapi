@@ -101,5 +101,9 @@ def test_get_team_roster_invalid_team(site_api_client):
         team_id_or_abbrev="INVALID"
     )
     
-    # ESPN API typically returns 400 for invalid team IDs
-    assert response.status_code == 400, f"Expected status code 400 for invalid team, got {response.status_code}"
+    # ESPN's roster endpoint rejects unknown team IDs with an error status, but
+    # the exact code varies: historically 400, though it now often surfaces the
+    # lookup failure as a 500. Accept any client/server error.
+    assert response.status_code in (400, 404, 500), (
+        f"Expected an error status code for invalid team, got {response.status_code}"
+    )
