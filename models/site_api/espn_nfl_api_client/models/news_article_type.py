@@ -2,6 +2,8 @@ from enum import Enum
 
 
 class NewsArticleType(str, Enum):
+    COLUMNIST = "Columnist"
+    ETICKET = "Eticket"
     HEADLINENEWS = "HeadlineNews"
     MEDIA = "Media"
     PREVIEW = "Preview"

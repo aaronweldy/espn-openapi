@@ -5,8 +5,12 @@ class CategoryType(str, Enum):
     ATHLETE = "athlete"
     CONTRIBUTOR = "contributor"
     EDITORIALINDICATOR = "editorialindicator"
+    EVENT = "event"
     GUID = "guid"
     LEAGUE = "league"
+    PODCAST = "podcast"
+    SERIES = "series"
+    SPORTSEASON = "sportseason"
     TEAM = "team"
     TOPIC = "topic"
 

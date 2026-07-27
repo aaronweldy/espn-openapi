@@ -10,6 +10,7 @@ class NewsCategoryType(str, Enum):
     LEAGUE = "league"
     PODCAST = "podcast"
     SERIES = "series"
+    SPORTSEASON = "sportseason"
     TEAM = "team"
     TOPIC = "topic"
 

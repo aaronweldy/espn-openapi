@@ -12,6 +12,12 @@ from models.site_api.espn_nfl_api_client.models.sport_news_api_schema import (
 )
 from models.site_api.espn_nfl_api_client.models.error_response import ErrorResponse
 from models.site_api.espn_nfl_api_client.models.news_article import NewsArticle
+from models.site_api.espn_nfl_api_client.models.news_article_type import (
+    NewsArticleType,
+)
+from models.site_api.espn_nfl_api_client.models.news_category_type import (
+    NewsCategoryType,
+)
 from models.site_api.espn_nfl_api_client.models.league_enum import (
     LeagueEnum,
 )
@@ -53,12 +59,13 @@ def test_nfl_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.data_source_identifier, str), (
         "Article data_source_identifier should be a string"
     )
-    assert article.type.value in ["HeadlineNews", "Media", "Story"], (
-        "Article type should be valid"
+    assert isinstance(article.type, NewsArticleType), (
+        f"Article type should be a known NewsArticleType, got {article.type!r}"
     )
     assert isinstance(article.headline, str), "Article headline should be a string"
-    assert isinstance(article.description, str), (
-        "Article description should be a string"
+    # `description` is optional -- some articles (e.g. Media items) omit it.
+    assert article.description is UNSET or isinstance(article.description, str), (
+        "Article description should be a string when present"
     )
     assert isinstance(article.last_modified, (str, datetime)) or hasattr(
         article.last_modified, "isoformat"
@@ -206,12 +213,13 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     assert isinstance(article.data_source_identifier, str), (
         "Article data_source_identifier should be a string"
     )
-    assert article.type.value in ["HeadlineNews", "Media", "Story", "Recap"], (
-        "Article type should be valid"
+    assert isinstance(article.type, NewsArticleType), (
+        f"Article type should be a known NewsArticleType, got {article.type!r}"
     )
     assert isinstance(article.headline, str), "Article headline should be a string"
-    assert isinstance(article.description, str), (
-        "Article description should be a string"
+    # `description` is optional -- some articles (e.g. Media items) omit it.
+    assert article.description is UNSET or isinstance(article.description, str), (
+        "Article description should be a string when present"
     )
     assert isinstance(article.last_modified, (str, datetime)) or hasattr(
         article.last_modified, "isoformat"
@@ -232,3 +240,48 @@ def test_mlb_news(site_api_client, ensure_json_output_dir):
     logger.info(f"  Images: {len(article.images)}")
     logger.info(f"  Categories: {len(article.categories)}")
     logger.info(f"  Links: web={getattr(article.links.web, 'href', None)}")
+
+
+@pytest.mark.api
+@pytest.mark.parametrize(
+    "sport,league",
+    [
+        # These leagues surface article types beyond the common
+        # HeadlineNews/Media/Story trio -- Preview and Recap for game-driven
+        # feeds, Eticket for long-form features, Columnist for opinion pieces.
+        ("baseball", "mlb"),
+        ("basketball", "wnba"),
+        ("basketball", "mens-college-basketball"),
+        ("golf", "pga"),
+        ("mma", "ufc"),
+    ],
+)
+def test_news_article_types_parse(site_api_client, sport, league):
+    """All article types the news feed emits should parse into NewsArticleType.
+
+    ESPN keeps adding content types (Preview, Eticket, Columnist ...), and an
+    unknown value makes the generated client raise while deserializing rather
+    than fail an assertion. Pull a wide page so rarer types are included.
+    """
+    response = get_league_news.sync_detailed(
+        client=site_api_client, sport=sport, league=league, limit=50
+    )
+    assert response.status_code == 200, (
+        f"Expected status code 200, got {response.status_code}"
+    )
+    news = response.parsed
+    assert isinstance(news, SportNewsAPISchema), (
+        "Response should parse to SportNewsAPISchema"
+    )
+    for article in news.articles:
+        assert isinstance(article.type, NewsArticleType), (
+            f"Unknown article type {article.type!r} for {sport}/{league}"
+        )
+        for category in article.categories:
+            assert isinstance(category.type, NewsCategoryType), (
+                f"Unknown category type {category.type!r} for {sport}/{league}"
+            )
+    logger.info(
+        f"{sport}/{league}: {len(news.articles)} articles, types="
+        f"{sorted({a.type.value for a in news.articles})}"
+    )
