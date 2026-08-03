@@ -68,20 +68,20 @@ def test_get_linescores_nfl(sports_core_api_client, ensure_json_output_dir):
 @pytest.mark.api
 @pytest.mark.parametrize("sport,league,event_id,competitor_id,expected_periods", [
     # NFL - 4 quarters
-    ("football", "nfl", "401437954", "30", 4),  # Jacksonville
-    ("football", "nfl", "401437954", "33", 4),  # Baltimore
-    
+    ("football", "nfl", "401437954", "30", 4),  # Jacksonville Jaguars
+    ("football", "nfl", "401437954", "10", 4),  # Tennessee Titans
+
     # NBA - 4 quarters (or more with OT)
-    ("basketball", "nba", "401584793", "13", None),  # Lakers (might be empty for future game)
-    
+    ("basketball", "nba", "401584793", "15", 4),  # Milwaukee Bucks
+
     # NHL - 3 periods
-    ("hockey", "nhl", "401559593", "10", None),  # Toronto
-    
-    # MLB - 9 innings
-    ("baseball", "mlb", "401472463", "15", None),  # Colorado
-    
+    ("hockey", "nhl", "401559593", "7", 3),  # Carolina Hurricanes
+
+    # MLB - at least 8 half-innings recorded for the winning home side
+    ("baseball", "mlb", "401472463", "23", 8),  # Pittsburgh Pirates
+
     # College Football - 4 quarters
-    ("football", "college-football", "401547417", "130", None),  # Michigan
+    ("football", "college-football", "401628566", "194", 4),  # Ohio State Buckeyes
 ])
 def test_get_linescores_multiple_sports(
     sports_core_api_client, sport, league, event_id, competitor_id, expected_periods, ensure_json_output_dir
@@ -96,27 +96,38 @@ def test_get_linescores_multiple_sports(
         competitor_id=competitor_id
     )
     
-    # Linescores might not be available for all games/sports
+    # A 404 means the event/competitor pairing is stale, not that the endpoint
+    # is unsupported - surface it rather than skipping silently.
     if response.status_code == 404:
-        pytest.skip(f"Linescores not available for {sport}/{league} event {event_id}")
-    
-    # Some endpoints return 500 errors (API issues)
+        pytest.fail(
+            f"Competitor {competitor_id} is not part of {sport}/{league} event {event_id}"
+        )
+
+    # Upstream 500s are transient infrastructure blips, not schema changes
     if response.status_code == 500:
         pytest.skip(f"API error (500) for {sport}/{league} event {event_id}")
-    
+
     assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
-    
+
     result = response.parsed
     assert result, "Response should parse successfully"
-    
+
+    # This endpoint answers 200 with an empty item list when the competitor did
+    # not play in the event, so an empty payload means the fixture has drifted.
+    assert result.count > 0, (
+        f"No linescores returned for {sport}/{league} event {event_id} "
+        f"competitor {competitor_id} - the fixture is likely stale"
+    )
+    assert len(result.items) == result.count, "Count should match number of items"
+
     logging.info(f"\n{sport.upper()} ({league.upper()}) Linescores:")
     logging.info(f"  Event: {event_id}, Competitor: {competitor_id}")
     logging.info(f"  Periods: {getattr(result, 'count', 0)}")
     
     # Check expected number of periods if specified
-    if expected_periods and result.count > 0:
+    if expected_periods:
         assert result.count >= expected_periods, f"Expected at least {expected_periods} periods, got {result.count}"
-    
+
     if hasattr(result, 'items') and result.items:
         # Log first and last period scores
         first = result.items[0]

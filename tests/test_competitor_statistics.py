@@ -70,21 +70,21 @@ def test_get_competitor_statistics_nfl(sports_core_api_client, ensure_json_outpu
 
 @pytest.mark.api
 @pytest.mark.parametrize("sport,league,event_id,competitor_id", [
-    # NFL - Known working
-    ("football", "nfl", "401437954", "30"),  # Jacksonville
-    ("football", "nfl", "401437954", "33"),  # Baltimore (opponent)
-    
-    # College Football
-    ("football", "college-football", "401547417", "130"),  # Michigan
-    
-    # NBA - Test if available
-    ("basketball", "nba", "401360638", "13"),  # Lakers (older game)
-    
-    # NHL
-    ("hockey", "nhl", "401559593", "10"),  # Toronto
-    
-    # MLB
-    ("baseball", "mlb", "401472463", "15"),  # Colorado
+    # NFL - Jaguars vs Titans
+    ("football", "nfl", "401437954", "30"),  # Jacksonville Jaguars
+    ("football", "nfl", "401437954", "10"),  # Tennessee Titans (opponent)
+
+    # College Football - Michigan at Ohio State
+    ("football", "college-football", "401628566", "194"),  # Ohio State Buckeyes
+
+    # NBA - Rockets at Pelicans
+    ("basketball", "nba", "401360638", "10"),  # Houston Rockets
+
+    # NHL - Sabres at Hurricanes
+    ("hockey", "nhl", "401559593", "7"),  # Carolina Hurricanes
+
+    # MLB - Guardians at Pirates
+    ("baseball", "mlb", "401472463", "23"),  # Pittsburgh Pirates
 ])
 def test_get_competitor_statistics_multiple_sports(
     sports_core_api_client, sport, league, event_id, competitor_id, ensure_json_output_dir
@@ -99,22 +99,29 @@ def test_get_competitor_statistics_multiple_sports(
         competitor_id=competitor_id
     )
     
-    # Statistics might not be available for all games/sports
+    # A 404 here means the event/competitor pairing is stale rather than the
+    # endpoint being unsupported, so surface it instead of skipping silently.
     if response.status_code == 404:
         error_msg = "Not found"
         if response.parsed and hasattr(response.parsed, 'error') and hasattr(response.parsed.error, 'message'):
             error_msg = response.parsed.error.message
-        pytest.skip(f"Statistics not available for {sport}/{league} event {event_id}: {error_msg}")
-    
-    # Some endpoints return 500 errors (API issues)
+        pytest.fail(
+            f"Competitor {competitor_id} is not part of {sport}/{league} event {event_id}: {error_msg}"
+        )
+
+    # Upstream 500s are transient infrastructure blips, not schema changes
     if response.status_code == 500:
         pytest.skip(f"API error (500) for {sport}/{league} event {event_id}")
-    
+
     assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
-    
+
     result = response.parsed
     assert result, "Response should parse successfully"
-    
+
+    # Every supported sport returns a populated splits/categories tree
+    assert result.splits, f"{sport}/{league} should have splits"
+    assert result.splits.categories, f"{sport}/{league} should have statistic categories"
+
     logging.info(f"\n{sport.upper()} ({league.upper()}) Competitor Statistics:")
     logging.info(f"  Event: {event_id}, Competitor: {competitor_id}")
     
