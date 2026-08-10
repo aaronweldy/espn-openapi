@@ -35,15 +35,23 @@ def test_get_team_roster_cross_sport(site_api_client, ensure_json_output_dir, sp
     assert result.timestamp, f"Response should have timestamp field for {sport}/{league}"
     assert result.season, f"Response should have season field for {sport}/{league}"
     assert result.team, f"Response should have team field for {sport}/{league}"
-    assert result.athletes, f"Response should have athletes field for {sport}/{league}"
-    
+    assert result.athletes is not None, f"Response should have athletes field for {sport}/{league}"
+
     # Validate team info
     assert result.team.id, f"Team should have ID for {sport}/{league}"
     assert result.team.display_name, f"Team should have display name for {sport}/{league}"
-    
-    # Validate athletes structure (can be position groups or direct athletes)
-    assert len(result.athletes) > 0, f"Should have at least one athlete/position group for {sport}/{league}"
-    
+
+    # Rosters for the upcoming season aren't published until the preseason is
+    # under way (college basketball rosters, for instance, stay empty all
+    # summer), so an empty roster is only valid outside of an active season.
+    if not result.athletes:
+        if result.season and result.season.type == 1:
+            pytest.skip(
+                f"Roster not yet published for {sport}/{league}/{team_id} "
+                f"({result.season.display_name} preseason)"
+            )
+        pytest.fail(f"Should have at least one athlete/position group for {sport}/{league}")
+
     # Check if it's position groups (NFL/MLB style) or direct athletes (NBA style)
     first_item = result.athletes[0]
     

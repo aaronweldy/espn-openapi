@@ -59,8 +59,20 @@ def test_get_team_schedule(site_api_client, ensure_json_output_dir, sport, leagu
     
     # Sport-specific assertions
     if sport == SportEnum.FOOTBALL and league == LeagueEnum.NFL:
-        # NFL teams should have bye week info
-        assert result.bye_week is not UNSET, "NFL teams should have bye week information"
+        # NFL teams have bye week info, but only on regular season schedules —
+        # the endpoint defaults to the preseason schedule during the summer,
+        # and that response omits byeWeek entirely.
+        requested_season_type = (
+            result.requested_season.type if result.requested_season else None
+        )
+        if requested_season_type == 2:
+            assert result.bye_week is not UNSET, (
+                "NFL regular season schedule should have bye week information"
+            )
+        else:
+            logging.info(
+                f"  Skipping bye week check: schedule is for season type {requested_season_type}"
+            )
     else:
         # Other sports typically don't have bye weeks
         if result.bye_week is not UNSET:
@@ -101,6 +113,35 @@ def test_get_team_schedule_with_season(site_api_client, ensure_json_output_dir):
     output_file = f"{ensure_json_output_dir}/team_schedule_nba_LAL_2023.json"
     with open(output_file, "w") as f:
         json.dump(result.to_dict(), f, indent=2, default=str)
+
+
+@pytest.mark.api
+def test_get_nfl_team_schedule_has_bye_week(site_api_client):
+    """Test that an NFL regular season schedule reports the team's bye week.
+
+    Uses a completed season so the schedule is always the regular season one —
+    the unparameterized endpoint returns the preseason schedule (which has no
+    byeWeek) during the summer.
+    """
+    response = get_team_schedule.sync_detailed(
+        client=site_api_client,
+        sport=SportEnum.FOOTBALL,
+        league=LeagueEnum.NFL,
+        team_id_or_abbrev="KC",
+        season=2024,
+    )
+
+    assert response.status_code == 200, f"Expected status code 200, got {response.status_code}"
+
+    result = response.parsed
+    assert isinstance(result, TeamScheduleResponse), "Response should parse to TeamScheduleResponse"
+    assert result.requested_season, "requestedSeason should be present"
+    assert result.requested_season.type == 2, (
+        f"Expected regular season schedule, got season type {result.requested_season.type}"
+    )
+    assert result.bye_week is not UNSET, "NFL regular season schedule should have bye week information"
+
+    logging.info(f"NFL KC 2024 bye week: {result.bye_week}")
 
 
 @pytest.mark.api
