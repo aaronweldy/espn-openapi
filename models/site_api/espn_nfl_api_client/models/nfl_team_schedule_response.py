@@ -1,9 +1,11 @@
 import datetime
-from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Dict, List, Type, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
+
+from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
     from ..models.event import Event
@@ -25,7 +27,8 @@ class NFLTeamScheduleResponse:
         team (TeamDetailsFull):
         events (List['Event']):
         requested_season (Season):
-        bye_week (int):
+        bye_week (Union[Unset, int]): Week number of the team's bye week. Only present on regular season (season type 2)
+            responses.
     """
 
     timestamp: datetime.datetime
@@ -34,7 +37,7 @@ class NFLTeamScheduleResponse:
     team: "TeamDetailsFull"
     events: List["Event"]
     requested_season: "Season"
-    bye_week: int
+    bye_week: Union[Unset, int] = UNSET
     additional_properties: Dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -65,9 +68,10 @@ class NFLTeamScheduleResponse:
                 "team": team,
                 "events": events,
                 "requestedSeason": requested_season,
-                "byeWeek": bye_week,
             }
         )
+        if bye_week is not UNSET:
+            field_dict["byeWeek"] = bye_week
 
         return field_dict
 
@@ -95,7 +99,7 @@ class NFLTeamScheduleResponse:
 
         requested_season = Season.from_dict(d.pop("requestedSeason"))
 
-        bye_week = d.pop("byeWeek")
+        bye_week = d.pop("byeWeek", UNSET)
 
         nfl_team_schedule_response = cls(
             timestamp=timestamp,

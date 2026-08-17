@@ -461,7 +461,10 @@ paths:
   /sports/{sport}/{league}/rankings:
     get:
       summary: Get Rankings
-      description: Retrieve current rankings/polls for college sports (AP Top 25, Coaches Poll, etc.). Only available for college sports.
+      description: |
+        Retrieve current rankings/polls for college sports (AP Top 25, Coaches Poll, etc.). Only available for college sports.
+        Note that the polls returned vary by league: college basketball returns both the AP Top 25 and the Coaches Poll,
+        while college football currently returns only the AFCA Coaches Poll.
       operationId: getRankings
       parameters:
         - name: sport
@@ -3611,6 +3614,7 @@ components:
           $ref: '#/components/schemas/Season'
         byeWeek:
           type: integer
+          description: Week number of the team's bye week. Only present on regular season (season type 2) responses.
       required:
         - timestamp
         - status
@@ -3618,7 +3622,6 @@ components:
         - team
         - events
         - requestedSeason
-        - byeWeek
       description: NFL team schedule response, including all games for the team in the specified season.
 
     TeamScheduleResponse:
@@ -3648,7 +3651,7 @@ components:
         - season
         - team
         - events
-      description: Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only present for NFL teams.
+      description: Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only present for NFL teams, and only on regular season (season type 2) responses.
 
     MondayNightFootballResponse:
       type: object

@@ -11,7 +11,9 @@ logger = logging.getLogger(__name__)
 
 @pytest.mark.api
 @pytest.mark.parametrize("sport,league,expected_rankings", [
-    ("football", "college-football", ["AP Top 25", "AFCA Coaches Poll"]),
+    # ESPN no longer serves the AP Top 25 for college football on this endpoint
+    # (for any season/week); only the AFCA Coaches Poll is returned.
+    ("football", "college-football", ["Coaches Poll"]),
     ("basketball", "mens-college-basketball", ["AP Top 25"]),
     ("basketball", "womens-college-basketball", ["AP Top 25"]),
 ])
