@@ -19,7 +19,7 @@ T = TypeVar("T", bound="TeamScheduleResponse")
 @_attrs_define
 class TeamScheduleResponse:
     """Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only
-    present for NFL teams.
+    present for NFL teams, and only for regular-season schedules.
 
         Attributes:
             timestamp (datetime.datetime):

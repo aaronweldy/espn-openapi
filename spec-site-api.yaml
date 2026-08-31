@@ -2514,7 +2514,7 @@ components:
           type: string
           description: Type of article content
           example: "HeadlineNews"
-          enum: ["HeadlineNews", "Media", "Story", "Recap"]
+          enum: ["HeadlineNews", "Media", "Story", "Recap", "Preview"]
         headline:
           type: string
           description: Article headline
@@ -3035,7 +3035,6 @@ components:
       required:
         - id
         - description
-        - links
 
     NewsAthleteLinks:
       type: object
@@ -3611,6 +3610,7 @@ components:
           $ref: '#/components/schemas/Season'
         byeWeek:
           type: integer
+          description: Week number of the team's bye week. Only returned for regular-season schedules; absent for preseason/postseason requests.
       required:
         - timestamp
         - status
@@ -3618,7 +3618,6 @@ components:
         - team
         - events
         - requestedSeason
-        - byeWeek
       description: NFL team schedule response, including all games for the team in the specified season.
 
     TeamScheduleResponse:
@@ -3648,7 +3647,7 @@ components:
         - season
         - team
         - events
-      description: Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only present for NFL teams.
+      description: Generic team schedule response, including all games for the team in the specified season. The byeWeek field is only present for NFL teams, and only for regular-season schedules.
 
     MondayNightFootballResponse:
       type: object
